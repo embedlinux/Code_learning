@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o LinkList.o LinkStack.o GrammarMatch.o
-LINKOBJ  = main.o LinkList.o LinkStack.o GrammarMatch.o
+OBJ      = main.o LinkList.o LinkStack.o GrammarMatch.o Calculate.o
+LINKOBJ  = main.o LinkList.o LinkStack.o GrammarMatch.o Calculate.o
 LIBS     = -L"H:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"H:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32
 INCS     = -I"H:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"H:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"H:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"H:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"H:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"H:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"H:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -35,3 +35,6 @@ LinkStack.o: LinkStack.c
 
 GrammarMatch.o: GrammarMatch.c
 	$(CC) -c GrammarMatch.c -o GrammarMatch.o $(CFLAGS)
+
+Calculate.o: Calculate.c
+	$(CC) -c Calculate.c -o Calculate.o $(CFLAGS)
