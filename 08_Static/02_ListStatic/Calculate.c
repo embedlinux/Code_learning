@@ -78,7 +78,7 @@ int express(int left,int right,char c)
 	return ret;
 }
 
-int InfixtoSuffix(const char* exp, char* p)
+int InfixtoSuffix(const char* exp, char* const p)
 {
 	LinkStack* stack = LinkStack_Create();
 	int i = 0;
@@ -140,7 +140,7 @@ int value(char c)
     return (c - '0');
 }
 
-int CalRes(char* exp)
+int CalRes(char* const exp)
 {
 	LinkStack* stack = LinkStack_Create();
 	int i = 0;
