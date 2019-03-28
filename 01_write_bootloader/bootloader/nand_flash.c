@@ -94,12 +94,12 @@ int erase_nand(unsigned int addr, unsigned int len)
 	int page_addr = addr / 2048;
 	if(addr & (0x1ffff))
 	{
-		printf("nand_erase error, addr is not block align\n\r");
+//		printf("nand_erase error, addr is not block align\n\r");
 		return -1;
 	}
 	if(len & (0x1ffff))
 	{
-		printf("nand_erase error, len is not block align\n\r");
+//		printf("nand_erase error, len is not block align\n\r");
 		return -1;
 	}
 	nand_select();
@@ -216,7 +216,7 @@ void clear_bss()
 {
 	extern int bss_start, bss_end;
 	int *p = &bss_start;
-	for(;p<(&__bss_start);p++)
+	for(;p<(&bss_start);p++)
 	{
 		*p = 0;
 	}
