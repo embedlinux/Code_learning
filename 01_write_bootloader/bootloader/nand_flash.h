@@ -21,3 +21,4 @@ void copy_code_to_sdram(unsigned char* src, unsigned char* dest, unsigned int le
 void clear_bss();
 
 #endif
+
