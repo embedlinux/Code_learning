@@ -1,4 +1,4 @@
-#include <linux/module.h>
+﻿#include <linux/module.h>
 #include <linux/kernel.h>
 #include <linux/fs.h>
 #include <linux/init.h>
@@ -59,8 +59,8 @@ static int led_drv_init(void)
 	printk("init led driver...\n");
 	major = register_chrdev(0, "led_drv", &leddrv_fops); // 注册, 告诉内核
 
-	leddrv_class = class_create(THIS_MODULE, "leddrv");
-	leddrv_class_dev = class_device_create(leddrv_class, NULL, MKDEV(major, 0), NULL, "led"); /* /dev/xyz */
+	leddrv_class = class_create(THIS_MODULE, "led_drv");
+	leddrv_class_dev = class_device_create(leddrv_class, NULL, MKDEV(major, 0), NULL, "led"); /* /dev/led */
 
 	gpbcon = (volatile unsigned long *)ioremap(0x56000010, 16);   //映射
 	gpbdat = gpbcon + 1;
