@@ -1,0 +1,14 @@
+为了使设备支持异步通知机制，驱动程序中涉及以下3项工作：
+1. 支持F_SETOWN命令，能在这个控制命令处理中设置filp->f_owner为对应进程ID。
+   不过此项工作已由内核完成，设备驱动无须处理。
+2. 支持F_SETFL命令的处理，每当FASYNC标志改变时，驱动程序中的fasync()函数将得以执行。
+   驱动中应该实现fasync()函数。
+   
+3. 在设备资源可获得时，调用kill_fasync()函数激发相应的信号
+
+
+应用程序：
+fcntl(fd, F_SETOWN, getpid());  // 告诉内核，发给谁
+
+Oflags = fcntl(fd, F_GETFL);   
+fcntl(fd, F_SETFL, Oflags | FASYNC);  // 改变fasync标记，最终会调用到驱动的faync > fasync_helper：初始化/释放fasync_struct
