@@ -1,0 +1,3351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="canonical" href="https://blog.csdn.net/W_Honor/article/details/89418812"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+        <meta name="csdn-baidu-search"  content='{"autorun":true,"install":true,"keyword":"Julia——为数据科学和人工智能而生的编程语言 - W_Honor的博客"}'>
+    
+    <link href="https://csdnimg.cn/public/favicon.ico" rel="SHORTCUT ICON">
+    <title>Julia——为数据科学和人工智能而生的编程语言 - W_Honor的博客 - CSDN博客</title>
+
+        
+                    <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/detail-6dbab8d2dd.min.css">
+            
+            <script type="application/ld+json">{"@context":"https:\/\/ziyuan.baidu.com\/contexts\/cambrian.jsonld","@id":"https:\/\/blog.csdn.net\/W_Honor\/article\/details\/89418812","appid":"1563894916825412","title":"Julia\u2014\u2014\u4e3a\u6570\u636e\u79d1\u5b66\u548c\u4eba\u5de5\u667a\u80fd\u800c\u751f\u7684\u7f16\u7a0b\u8bed\u8a00 - W_Honor\u7684\u535a\u5ba2","images":["https:\/\/img-blog.csdnimg.cn\/2019042015541628.jpg"],"pubDate":"2019-05-19T11:08:42"}</script>
+        
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-9b39979775.min.css">
+        <script type="text/javascript">
+        var username = "W_Honor";
+        var blog_address = "https://blog.csdn.net/w_honor";
+        var static_host = "https://csdnimg.cn/release/phoenix/";
+        var currentUserName = "";
+        var isShowAds = true;
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/W_Honor/article/details/89418812"
+        var blogUrl = "https://blog.csdn.net/";
+
+        var curSkin = "skin3-template";
+        // 第四范式所需数据
+        var articleTitles = "Julia——为数据科学和人工智能而生的编程语言 - W_Honor的博客";
+        
+        var nickName = "W_Honor";
+        var isCorporate = false;
+        var subDomainBlogUrl = "https://blog.csdn.net/"
+        var digg_base_url = "https://blog.csdn.net/w_honor/phoenix/comment";
+        var articleDetailUrl = "https://blog.csdn.net/W_Honor/article/details/89418812";
+    </script>
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="https://csdnimg.cn/rabbit/exposure-click/main-1.0.6.js"></script>
+    <script src="//g.csdnimg.cn/??fixed-sidebar/1.1.3/fixed-sidebar.js,track/1.2.6/track.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+</head>
+<body class="nodata " > 
+    <link rel="stylesheet" href="https://csdnimg.cn/public/common/toolbar/content_toolbar_css/content_toolbar.css">
+    <script id="toolbar-tpl-scriptId" src="https://csdnimg.cn/public/common/toolbar/js/content_toolbar.js" type="text/javascript" domain="https://blog.csdn.net/"></script>
+<div id="kp_box_476" data-pid="476" data-track-view='{"mod":"kp_popu_476-896","con":",,"}' data-track-click='{"mod":"kp_popu_476-896","con":",,"}'><script src="//csdnimg.cn/public/common/indexSuperise/1.0.7/indexSuperise.js?20190508180304"></script>
+<script>
+window.csdn.indexSuperise({
+zIndex:11000,
+      smallMoveImg: '//img-ads.csdn.net/2019/201904301657144085.jpg',
+      bigMoveImg: '//img-ads.csdn.net/2019/201904301657411299.jpg',
+     link:'//h5.youzan.com/v2/goods/2xhr3dm4gpthr',
+boxStyle:140,
+trackSuperId:476,
+smallMove:'notMove',  
+trackSId:896
+    });
+</script></div><link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/blog_code-c3a0c33d5c.css">
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.css">
+<script type="text/javascript">
+	var NEWS_FEED = function(){}
+</script>
+
+<link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/chart-3456820cac.css" />
+<div class="container clearfix" id="mainBox">
+			<div class="recommend-right">
+  <ul class="recommend-fixed-box">
+    
+  </ul>
+</div>	    <main>
+        <div class="blog-content-box">
+  <div class="article-header-box">
+    <div class="article-header">
+      <div class="article-title-box">
+        <span class="article-type type-1 float-left">原</span>        <h1 class="title-article">Julia——为数据科学和人工智能而生的编程语言</h1>
+      </div>
+      <div class="article-info-box">
+        <div class="article-bar-top">
+                                                  <span class="time">2019年04月20日 15:59:47</span>
+          <a class="follow-nickName" href="https://me.csdn.net/W_Honor" target="_blank">W_Honor</a>
+          <span class="read-count">阅读数：85</span>
+          
+                                                      </div>
+        <div class="operating">
+                  </div>
+      </div>
+    </div>
+  </div>
+  <article class="baidu_pl">
+    <div id="article_content" class="article_content clearfix csdn-tracking-statistics" data-pid="blog" data-mod=popu_307 data-dsm="post">
+              <div class="article-copyright">
+                      <svg class="icon" title="CSDN认证原创" aria-hidden="true" style="width:53px; height: 18px; vertical-align: -4px;">
+              <use xlink:href="#CSDN_Cert"></use>
+            </svg>
+          
+          版权声明：本文为博主原创文章，未经博主允许不得转载。          https://blog.csdn.net/W_Honor/article/details/89418812        </div>
+            <link rel="stylesheet" href="https://csdnimg.cn/release/phoenix/template/css/ck_htmledit_views-f57960eb32.css" />
+                              <div id="content_views" class="markdown_views prism-atom-one-dark">
+            <!-- flowchart 箭头图标 勿删 -->
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+              <path stroke-linecap="round" d="M5,0 0,2.5 5,5z" id="raphael-marker-block" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+            </svg>
+            <p>​互联网界的大佬已经在公开发布表示“不要重复造轮子”，但是“轮子”一直在层出不穷。</p>
+<p>Python、Go、Scala、Kotlin、Julia——这些新鲜的“轮子”一个一个被开发者创造出来，并在这编程语言的漩涡中激流勇进。</p>
+<p>Python作为当今最火的语言之一，也许已经并不陌生了，在网页开发、机器学习、数据科学中随时都能看到它的影子，而对于职位的需求也是价位相对较高的。</p>
+<p>Go语言作为谷歌自己生产的本命语言，有人吹嘘说会取代JAVA成为企业级应用开发的首选技术，只能说还是用时间来检验吧。这种语言的特性毕竟只适合参与大型项目的编写。而且想在未来代替并且打算干掉JAVA的语言大有人在，比如Scala、Groovy、Ruby、Kotlin等，几乎兼容JAVA，但要比JAVA更加人性化。</p>
+<p>人更有所短，语言更有所长，不同的地形环境要选择合适的“轮子”。</p>
+<p>如果你想深入数据科学或者机器学习方向发展，我想向你介绍一下这个家伙——Julia。</p>
+<p>Julia（译：朱莉亚）这不是一个人名吗。对，说来也是非常神奇，MIT的开发团队选择了一个美国著名的电视烹饪艺人的名字作为这门语言的称呼。我想其中的意义在于他们希望这门语言能够像Julia本人一样把自己的技术推广给大众吧。</p>
+<p>Julia是一门为高性能数值计算设计的高层次动态语言，类似于matlab，其特点主要有以下几个方面;</p>
+<ul>
+<li>
+<p>多态并发</p>
+</li>
+<li>
+<p>动态类型系统</p>
+</li>
+<li>
+<p>简洁高效的数值类型转换机制</p>
+</li>
+<li>
+<p>多语言编码环境</p>
+</li>
+<li>
+<p>原生设计的并行与分布式计算机制</p>
+</li>
+<li>
+<p>优秀的运行性能</p>
+</li>
+<li>
+<p>内置的第三方功能包管理</p>
+</li>
+</ul>
+<p>线性代数运算、矩阵运算、科学数值运算是其最拿手的一部分，它可以毫无门槛的调用C语言，据说运行速度可以媲美C编译器。Julia是完全免费开源的，由于其开放包容的设计理念，开发社区发展十分迅速，官方注册的开发包已经有几千个，第三方包的规模也在不断增加。其内容涉及到网页开发、桌面应用开发、数据库管理、机器学习、图像处理、信号处理等等。</p>
+<p>Julia在2018年的八月份迎来了第一个正式的稳定版本V1.0，可以把18年当作Julia的元年了，它是多么的年轻！Julia支持Windows、MacOS、Linux等多种平台，可以选择在系统中安装Julia运行环境，大小也就几十兆，打开原生的交互式控制平台——REPL便可进行程序编写和运行。也可以选择在IntelliJ IDEA、Notepad++、VS code、Subline等平台中安装相应的插件编译和运行程序。</p>
+<p>来看一下Julia的第一声问候：</p>
+<pre><code>Hello = “大家好，我是Julia”
+println("Hello")
+</code></pre>
+<p>其实还可以编写的更加人性化和国产化：</p>
+<pre><code>你好 = “大家好，我认识中文哦”
+println(你好)
+</code></pre>
+<p>这是Julia语言的一大特色，它支持Unicode字符编码，所以变量可以用任意语言字符编写。</p>
+<p>Julia的初次见面就到这里，以后我还会带大家深入了解它的，如果你想在这个“轮子”上造车，那么请即时关注后续文章。</p>
+<p>欢迎关注个人公众号：<br>
+<img src="https://img-blog.csdnimg.cn/2019042015541628.jpg" alt="HonorWang"></p>
+
+          </div>
+          <link href="https://csdnimg.cn/release/phoenix/mdeditor/markdown_views-258a4616f7.css" rel="stylesheet">
+                  </div>
+  </article>
+</div>
+
+<div class="hide-article-box hide-article-pos text-center">
+  <div class="border"></div>
+      <a class="btn article-footer-btn" id="btn-readmore" data-track-view='{"mod":"popu_376","con":",https://blog.csdn.net/W_Honor/article/details/89418812,"}' data-track-click='{"mod":"popu_376","con":",https://blog.csdn.net/W_Honor/article/details/89418812,"}'>阅读更多</a>
+    <a class="btn article-footer-btn article-footer-bookmark-btn">
+    <svg class="icon no-active hover-hide" aria-hidden="true">
+      <use xlink:href="#csdnc-bookmark"></use>
+    </svg>
+    <span>收藏</span>
+  </a>
+  <div class="btn article-footer-btn  bds_weixin article-footer-share-btn" data-cmd="weixin" title="分享">
+    <svg class="icon no-active hover-hide" aria-hidden="true">
+      <use xlink:href="#csdnc-share"></use>
+    </svg>
+    <span>分享</span>
+    <div class="bdsharebuttonbox">
+      <a href="#" class="bds_weixin clear-share-style-article-footer" data-cmd="weixin" title="分享"></a>
+    </div>
+  </div>
+
+</div>
+<script>
+  $(".MathJax").remove();
+  if ($('div.markdown_views pre.prettyprint code.hljs').length > 0) {
+    $('div.markdown_views')[0].className = 'markdown_views';
+  }
+</script>        <div id="dmp_ad_58"><div id="kp_box_58" data-pid="58" data-track-view='{"mod":"kp_popu_58-402","con":",,"}' data-track-click='{"mod":"kp_popu_58-402","con":",,"}'><div style="width:100%;background:#fff;border:3px solid #fff;">
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<div id="three_ad1" class="mediav_ad" ></div>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 100,
+                showid : 'ztvJV8',
+                placeholderId: "three_ad1",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 0,
+                    imageWidth: 90,
+                    imageHeight: 68,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft YaHei',
+                    paddingTop : 20,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 20,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script>
+</div></div></div>        <a id="commentBox"></a>
+<div class="comment-box">
+	
+	<div class="comment-edit-box d-flex">
+		<a id="commentsedit"></a>
+		<div class="user-img">
+			<a href="javascript:void(0);" target="_blank">
+				<img class="show_loginbox" src="//g.csdnimg.cn/static/user-img/anonymous-User-img.png">
+			</a>
+		</div>
+		<form id="commentform">
+			<input type="hidden" id="comment_replyId">
+			<textarea class="comment-content" name="comment_content" id="comment_content" placeholder="想对作者说点什么"></textarea>
+			<div class="opt-box"> <!-- d-flex -->
+				<div id="ubbtools" class="add_code">
+					<a href="#insertcode" code="code" target="_self"><i class="icon iconfont icon-daima"></i></a>
+				</div>
+				<input type="hidden" id="comment_replyId" name="comment_replyId">
+				<input type="hidden" id="article_id" name="article_id" value="89418812">
+				<input type="hidden" id="comment_userId" name="comment_userId" value="">
+				<input type="hidden" id="commentId" name="commentId" value="">
+				<div style="display: none;" class="csdn-tracking-statistics tracking-click" data-mod="popu_384"><a href="#" target="_blank" class="comment_area_btn">发表评论</a></div>
+				<div class="dropdown" id="myDrap">
+					<a class="dropdown-face d-flex align-items-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<div class="txt-selected text-truncate">添加代码片</div>
+					<svg class="icon d-block" aria-hidden="true">
+						<use xlink:href="#csdnc-triangledown"></use>
+					</svg>
+					</a>
+					<ul class="dropdown-menu" id="commentCode" aria-labelledby="drop4">
+						<li><a data-code="html">HTML/XML</a></li>
+						<li><a data-code="objc">objective-c</a></li>
+						<li><a data-code="ruby">Ruby</a></li>
+						<li><a data-code="php">PHP</a></li>
+						<li><a data-code="csharp">C</a></li>
+						<li><a data-code="cpp">C++</a></li>
+						<li><a data-code="javascript">JavaScript</a></li>
+						<li><a data-code="python">Python</a></li>
+						<li><a data-code="java">Java</a></li>
+						<li><a data-code="css">CSS</a></li>
+						<li><a data-code="sql">SQL</a></li>
+						<li><a data-code="plain">其它</a></li>
+					</ul>
+				</div>  
+				<div class="right-box">
+					<span id="tip_comment" class="tip">还能输入<em>1000</em>个字符</span>
+					<input type="submit" class="btn btn-sm btn-red btn-comment" value="发表评论">
+				</div>
+			</div>
+		</form>
+	</div>
+
+		<div class="comment-list-container">
+		<a id="comments"></a>
+		<div class="comment-list-box">
+		</div>
+		<div id="commentPage" class="pagination-box d-none"></div>
+		<div class="opt-box text-center">
+			<div class="btn btn-sm btn-link-blue" id="btnMoreComment"></div>
+		</div>
+	</div>
+</div>
+        <div class="recommend-box">
+                            <div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/qq_42154484/article/details/80337402,BlogCommendFromBaidu_0"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_42154484/article/details/80337402,BlogCommendFromBaidu_0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_42154484/article/details/80337402" target="_blank" title="一个简单的Julia教程">
+		<h4 class="text-truncate oneline">
+				一个简单的<em>Julia</em>教程		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_42154484/article/details/80337402" target="_blank" title="一个简单的Julia教程">
+				<span class="desc oneline">原文链接：点击打开链接摘要： 当前版本v0.5因为在知乎上写的量子计算札记会涉及到使用Julia语言的数值模拟，同时随着中国的Julian越来越多，而之前几个在JuliaCN活跃的老司机最近一直没时间...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_42154484">来自：	<span class="blog_title"> qq_42154484的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/81490456,BlogCommendFromBaidu_1"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/81490456,BlogCommendFromBaidu_1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/conkty/article/details/81490456" target="_blank" title="Julia语言程序设计——实例：体型分布">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>语言程序设计——实例：体型分布		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2528</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/conkty/article/details/81490456" target="_blank" title="Julia语言程序设计——实例：体型分布">
+				<span class="desc oneline">      使用Julia实现一个比HelloWorld更复杂点的例子：有1000个人的体型样本，包括体重与身高两项指标，不考虑性别和年龄因素，计算每个人的BMI（BodyMassIndex）指数，并...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/conkty">来自：	<span class="blog_title"> 数据齿轮</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/jinyuan7708/article/details/83003509,BlogCommendFromBaidu_2"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/jinyuan7708/article/details/83003509,BlogCommendFromBaidu_2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/jinyuan7708/article/details/83003509" target="_blank" title="最好的机器学习语言Julia">
+		<h4 class="text-truncate oneline">
+				最好的机器学习语言<em>Julia</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2285</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/jinyuan7708/article/details/83003509" target="_blank" title="最好的机器学习语言Julia">
+				<span class="desc oneline">最好的机器学习语言Julia今天是2018年10月10号，据网友说今天是世界卖萌日，那今天小亮也就卖卖萌——最好的机器学习语言Julia。今天这篇博客编程语言方向的，介绍一种语言给大家，她叫Julia...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/jinyuan7708">来自：	<span class="blog_title"> 小亮Machine Learning</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/u013524455/article/details/81709154,BlogCommendFromBaidu_3"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u013524455/article/details/81709154,BlogCommendFromBaidu_3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u013524455/article/details/81709154" target="_blank" title="Julia体验 语言基础">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>体验 语言基础		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1584</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u013524455/article/details/81709154" target="_blank" title="Julia体验 语言基础">
+				<span class="desc oneline">杂说以前听说过Julia，不过那时候官网还处于时不时宕机状态，最近Julia发布了1.0released版本到处都是它的资讯，官网良心自带简体中文，趁着热度我也来试试，顺便聊记一二。关于JuliaJu...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u013524455">来自：	<span class="blog_title"> Racal</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_59" data-pid="59" data-track-view='{"mod":"kp_popu_59-78","con":",,"}' data-track-click='{"mod":"kp_popu_59-78","con":",,"}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3491668",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/83414314,BlogCommendFromBaidu_4"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/83414314,BlogCommendFromBaidu_4"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/conkty/article/details/83414314" target="_blank" title="国内第一本Julia语言书籍《Julia语言程序设计》出版了！">
+		<h4 class="text-truncate oneline">
+				国内第一本<em>Julia</em>语言书籍《<em>Julia</em>语言程序设计》出版了！		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2255</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/conkty/article/details/83414314" target="_blank" title="国内第一本Julia语言书籍《Julia语言程序设计》出版了！">
+				<span class="desc oneline">虽然Julia官网有不少文档，但总觉得极为不够调理，反复地折腾来折腾去，才好不容易搞明白一些概念和要点。《Julia语言程序设计》是国内第一本介绍Julia语言的书，内容很全面，也极为条理，实践要点也...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/conkty">来自：	<span class="blog_title"> 数据齿轮</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/kMD8d5R/article/details/82755486,BlogCommendFromBaidu_5"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/kMD8d5R/article/details/82755486,BlogCommendFromBaidu_5"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/kMD8d5R/article/details/82755486" target="_blank" title="Julia语言初体验">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>语言初体验		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4238</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/kMD8d5R/article/details/82755486" target="_blank" title="Julia语言初体验">
+				<span class="desc oneline">作者简介杜雨，EasyCharts团队成员，R语言中文社区专栏作者，兴趣方向为：Excel商务图表，R语言数据可视化，地理信息数据可视化。个人公众号：数据小魔方（微信ID......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/kMD8d5R">来自：	<span class="blog_title"> R语言中文社区</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/kwame211/article/details/81624922,BlogCommendFromBaidu_6"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/kwame211/article/details/81624922,BlogCommendFromBaidu_6"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/kwame211/article/details/81624922" target="_blank" title="最好的Julia语言">
+		<h4 class="text-truncate oneline">
+				最好的<em>Julia</em>语言		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/kwame211/article/details/81624922" target="_blank" title="最好的Julia语言">
+				<span class="desc oneline">终于发现了最适合我的编程语言Julia 做大数据/机器学习方面的工作多年.最为熟悉C++,Matlab/R/Python/Java/Scala都用过.但每种语言的体验总觉得有缺憾.一个理念:如果不是语...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/kwame211">来自：	<span class="blog_title"> kwame211的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/81544387,BlogCommendFromBaidu_7"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/81544387,BlogCommendFromBaidu_7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wowotuo/article/details/81544387" target="_blank" title="Julia : 终于1.0了，这一天来得有点久">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em> : 终于1.0了，这一天来得有点久		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-09</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8461</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wowotuo/article/details/81544387" target="_blank" title="Julia : 终于1.0了，这一天来得有点久">
+				<span class="desc oneline">昨天看着出0.7，今天看到出了1.0。一切有点急，一切感觉又有点晚。0.7试了一下，没有库跟上，现在1.0估计也没有库能跟上。先玩着吧，我自己的东东大部分的依赖库还在0.6水平，只能等等了。下了一个0...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wowotuo">来自：	<span class="blog_title"> Julia & Rust & Python</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wcy23580/article/details/82864753,BlogCommendFromBaidu_8"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wcy23580/article/details/82864753,BlogCommendFromBaidu_8"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wcy23580/article/details/82864753" target="_blank" title="Julia 终于正式发布了">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em> 终于正式发布了		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wcy23580/article/details/82864753" target="_blank" title="Julia 终于正式发布了">
+				<span class="desc oneline">文章目录什么是Julia?julia特点juliaV1.0特性什么是Julia?在我本科导师第一次给我介绍julia的时候，满奶子中都是“julia京香”，以至于在正式版发布之前，想去搜索一些指导文档...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wcy23580">来自：	<span class="blog_title"> Congying-Wang的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_60" data-pid="60" data-track-view='{"mod":"kp_popu_60-43","con":",,"}' data-track-click='{"mod":"kp_popu_60-43","con":",,"}'><div id="three_ad8" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 900,
+                h : 84,
+                showid : 'Afihld',
+                placeholderId: "three_ad8",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 10,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/81750466,BlogCommendFromBaidu_9"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/81750466,BlogCommendFromBaidu_9"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wowotuo/article/details/81750466" target="_blank" title="Julia：1.0与0.6 的几点不同">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>：1.0与0.6 的几点不同		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1426</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wowotuo/article/details/81750466" target="_blank" title="Julia：1.0与0.6 的几点不同">
+				<span class="desc oneline">在从0.6升1.0过程中，还是有不少的变化。就我库存代码，在升级过程中，现在简单总结一下：一、有一些库虽然在标准库内，但用之前需要显性引用1、usingPkgusingPkgPkg.add(&amp;amp;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wowotuo">来自：	<span class="blog_title"> Julia & Rust & Python</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/chd_lkl/article/details/82830747,BlogCommendFromBaidu_10"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/chd_lkl/article/details/82830747,BlogCommendFromBaidu_10"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/chd_lkl/article/details/82830747" target="_blank" title="Julia：数组简介">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>：数组简介		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					478</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/chd_lkl/article/details/82830747" target="_blank" title="Julia：数组简介">
+				<span class="desc oneline">functionprintsum(a)#summarygeneratesasummaryofanobjectprintln(summary(a),&amp;quot;:&amp;quot;,repr(a))end#a...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/chd_lkl">来自：	<span class="blog_title"> chd_lkl的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+			<div class="recommend-item-box blog-expert-recommend-box">
+			<div class="d-flex">
+				<div class="blog-expert-recommend">
+					<div class="blog-expert">
+						<div class="blog-expert-flexbox"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wcy23580/article/details/82843292,BlogCommendFromBaidu_11"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wcy23580/article/details/82843292,BlogCommendFromBaidu_11"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wcy23580/article/details/82843292" target="_blank" title="julia简易教程——安装Julia+jupyter notebooks">
+		<h4 class="text-truncate oneline">
+				<em>julia</em>简易教程——安装<em>Julia</em>+jupyter notebooks		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wcy23580/article/details/82843292" target="_blank" title="julia简易教程——安装Julia+jupyter notebooks">
+				<span class="desc oneline">文章目录0前言1安装Julia2安装Jupyternotebook3在Jupyternotebook中运行Julia0前言在遇到Python的时候，我发现Python是最好的语言，但是在慢慢熟悉Jul...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wcy23580">来自：	<span class="blog_title"> Congying-Wang的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/82086195,BlogCommendFromBaidu_12"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/82086195,BlogCommendFromBaidu_12"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37696990/article/details/82086195" target="_blank" title="julia:类型">
+		<h4 class="text-truncate oneline">
+				<em>julia</em>:类型		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					411</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37696990/article/details/82086195" target="_blank" title="julia:类型">
+				<span class="desc oneline">通常，我们把程序语言中的类型系统划分成两类：静态类型和动态类型。对于静态类型系统，在程序运行之前，我们就知道每一个表达式的类型。而对于动态类型系统，我们只有通过运行那个程序，得到表达式具体的值，才能确...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_37696990">来自：	<span class="blog_title"> 小Y的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/mifangdebaise/article/details/81091026,BlogCommendFromBaidu_13"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/mifangdebaise/article/details/81091026,BlogCommendFromBaidu_13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/mifangdebaise/article/details/81091026" target="_blank" title="安装Julia以及后续">
+		<h4 class="text-truncate oneline">
+				安装<em>Julia</em>以及后续		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					7936</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/mifangdebaise/article/details/81091026" target="_blank" title="安装Julia以及后续">
+				<span class="desc oneline">从官网下载：https://julialang.org/downloads/下载好后，我自己解压到了Documents目录下，然后建立一个绝对路径的软连接到/bin目录下：sudoln-s/home/...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/mifangdebaise">来自：	<span class="blog_title"> 米饭的白色的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_61" data-pid="61" data-track-view='{"mod":"kp_popu_61-557","con":",,"}' data-track-click='{"mod":"kp_popu_61-557","con":",,"}'><div id="three_ad13" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'GNKXx7',
+                placeholderId: "three_ad13",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/qq_42642945/article/details/89679448,BlogCommendFromBaidu_14"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_42642945/article/details/89679448,BlogCommendFromBaidu_14"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_42642945/article/details/89679448" target="_blank" title="Julia">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					59</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_42642945/article/details/89679448" target="_blank" title="Julia">
+				<span class="desc oneline"></span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_42642945">来自：	<span class="blog_title"> 提莫君的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/weixin_41923961/article/details/83687855,BlogCommendFromBaidu_15"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/weixin_41923961/article/details/83687855,BlogCommendFromBaidu_15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_41923961/article/details/83687855" target="_blank" title="Julia教程">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>教程		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					484</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_41923961/article/details/83687855" target="_blank" title="Julia教程">
+				<span class="desc oneline">HelloWorld!使用Julia的解释器我们可以新建一个脚本文件hello.jl，在里面写print(&amp;quot;helloworld\n&amp;quot;)我们先不要管这行命令具体是怎么回事，你知道它...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_41923961">来自：	<span class="blog_title"> WeisongZhao</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/amusi1994/article/details/81632817,BlogCommendFromBaidu_16"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/amusi1994/article/details/81632817,BlogCommendFromBaidu_16"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/amusi1994/article/details/81632817" target="_blank" title="Julia安装教程(Windows版)">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>安装教程(Windows版)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2660</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/amusi1994/article/details/81632817" target="_blank" title="Julia安装教程(Windows版)">
+				<span class="desc oneline">Julia相关网站官网：https://docs.julialang.org/Juliagithub：https://github.com/JuliaLang/juliaJulia在线文档：https...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/amusi1994">来自：	<span class="blog_title"> 阿木寺的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/weixin_41923961/article/details/84492396,BlogCommendFromBaidu_17"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/weixin_41923961/article/details/84492396,BlogCommendFromBaidu_17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/weixin_41923961/article/details/84492396" target="_blank" title="Julia面向对象（多重派发）">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>面向对象（多重派发）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					497</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/weixin_41923961/article/details/84492396" target="_blank" title="Julia面向对象（多重派发）">
+				<span class="desc oneline">类是编程语言基本抽象概念，比如实数、整数、字符串等等。一般分成静态和动态的，如果代码根据不同的类可以执行不同的操作，称为Polymorphism(多态的)，动态语言一般都是是多态的。Julia是动态类...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/weixin_41923961">来自：	<span class="blog_title"> WeisongZhao</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/guleileo/article/details/82185666,BlogCommendFromBaidu_18"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/guleileo/article/details/82185666,BlogCommendFromBaidu_18"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/guleileo/article/details/82185666" target="_blank" title="实例对比 Julia, R, Python，谁是狼语言？">
+		<h4 class="text-truncate oneline">
+				实例对比 <em>Julia</em>, R, Python，谁是狼语言？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					3万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/guleileo/article/details/82185666" target="_blank" title="实例对比 Julia, R, Python，谁是狼语言？">
+				<span class="desc oneline">目标受众：对Julia感兴趣的人阅读时长：本文大约800字。全文读完可能需要这首歌的时间狼，就是比狠，更狠一点！比京香还火？Julia到底是个什么来头最近突然火了一门语言......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/guleileo">来自：	<span class="blog_title"> CSDN人工智能头条</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_62" data-pid="62" data-track-view='{"mod":"kp_popu_62-556","con":",,"}' data-track-click='{"mod":"kp_popu_62-556","con":",,"}'><div id="three_ad18" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad18",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/82286855,BlogCommendFromBaidu_19"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/82286855,BlogCommendFromBaidu_19"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37696990/article/details/82286855" target="_blank" title="julia:流程控制(完结)">
+		<h4 class="text-truncate oneline">
+				<em>julia</em>:流程控制(完结)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					445</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37696990/article/details/82286855" target="_blank" title="julia:流程控制(完结)">
+				<span class="desc oneline">流程控制Julia提供了大量的流程控制组件：复合表达式:begin和(;)。条件表达式:if-elseif-else和?:(三元运算符)。短路求值:&amp;amp;amp;amp;&amp;amp;amp;amp;...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_37696990">来自：	<span class="blog_title"> 小Y的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/smart_graphics/article/details/78907656,BlogCommendFromBaidu_20"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/smart_graphics/article/details/78907656,BlogCommendFromBaidu_20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/smart_graphics/article/details/78907656" target="_blank" title="胡谈编程语言:从C语言到Julia">
+		<h4 class="text-truncate oneline">
+				胡谈<em>编程语言</em>:从C语言到<em>Julia</em>		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					944</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/smart_graphics/article/details/78907656" target="_blank" title="胡谈编程语言:从C语言到Julia">
+				<span class="desc oneline">转自：http://blog.csdn.net/lanonjj/article/details/50930620犀见日月，天地方圆有一天你会遇见一个彩虹般绚烂的人，从此以后，其他人不过匆匆浮云。C语言...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/smart_graphics">来自：	<span class="blog_title"> smart_graphics的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/lowpeys5166/article/details/88797352,BlogCommendFromBaidu_21"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/lowpeys5166/article/details/88797352,BlogCommendFromBaidu_21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/lowpeys5166/article/details/88797352" target="_blank" title="资料科学家的最爱程序语言Julia将释出Debugger">
+		<h4 class="text-truncate oneline">
+				资料科学家的最爱程序语言<em>Julia</em>将释出Debugger		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					79</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/lowpeys5166/article/details/88797352" target="_blank" title="资料科学家的最爱程序语言Julia将释出Debugger">
+				<span class="desc oneline">数据科学家爱用的程序语言Julia，释出了全新功能完整的侦错器（Debugger），可以让开发者轻松地侦错和内省（Introspect）程序代码，可以深入函式手动走访程序代码，并检查状态，也能在不需要...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/lowpeys5166">来自：	<span class="blog_title"> lowpeys的同步直播博文</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/88701683,BlogCommendFromBaidu_22"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/88701683,BlogCommendFromBaidu_22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wowotuo/article/details/88701683" target="_blank" title="Julia : HTTP.ExceptionRequest.StatusError(415, HTTP.Messages.Response">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em> : HTTP.ExceptionRequest.StatusError(415, HTTP.Messages.Response		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-20</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					66</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wowotuo/article/details/88701683" target="_blank" title="Julia : HTTP.ExceptionRequest.StatusError(415, HTTP.Messages.Response">
+				<span class="desc oneline">usingHTTP;usingJSON;consturl=&quot;http://103.10.3.83:4501//hqapi&quot;;constUserID=&quot;test&quot;constPassWord=&quot;passw...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wowotuo">来自：	<span class="blog_title"> Julia & Rust & Python</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/81490629,BlogCommendFromBaidu_23"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/81490629,BlogCommendFromBaidu_23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/conkty/article/details/81490629" target="_blank" title="Julia常用包简介">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>常用包简介		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2641</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/conkty/article/details/81490629" target="_blank" title="Julia常用包简介">
+				<span class="desc oneline">    第三方开发的Julia库（包），是Julia生态中极为重要的一部分。Julia包虽然目前没有Python那样丰富，但却极为快速地发展着。官方提供了包数量的统计趋势，见下图所示：图D-1Juli...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/conkty">来自：	<span class="blog_title"> 数据齿轮</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_63" data-pid="63" data-track-view='{"mod":"kp_popu_63-809","con":",,"}' data-track-click='{"mod":"kp_popu_63-809","con":",,"}'><script
+    async="async"
+    charset="utf-8"
+    src="https://shared.ydstatic.com/js/yatdk/3.0.1/stream.js"
+    data-id="6cb24153a03289ff3597c7aab4b69fe9"
+    data-div-Style="width:100%;"
+data-tit-Style="margin-bottom: 6px; font-size: 18px; line-height: 24px; color: #3d3d3d;display: inline-block;font-weight:bold;"
+data-des-Style="font-size: 13px; line-height: 22px; white-space: normal; color: #999;"
+data-img-Style="float:left;margin-right:15px;width:90px;height:60px;">
+</script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/guleileo/article/details/83112066,BlogCommendFromBaidu_24"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/guleileo/article/details/83112066,BlogCommendFromBaidu_24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/guleileo/article/details/83112066" target="_blank" title="Julia到底哪好在哪，让数学学霸接触2年就定了终生？还传授读者学数学的秘诀...">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>到底哪好在哪，让数学学霸接触2年就定了终生？还传授读者学数学的秘诀...		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					731</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/guleileo/article/details/83112066" target="_blank" title="Julia到底哪好在哪，让数学学霸接触2年就定了终生？还传授读者学数学的秘诀...">
+				<span class="desc oneline">大家好，我是为人造的智能操碎了心的智能禅师。今天内容很有料，禅师这里就不多说了。只提醒一句，有彩蛋。全文大约4000字。读完可能需要好几首下面这首歌的时间...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/guleileo">来自：	<span class="blog_title"> CSDN人工智能头条</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/mifangdebaise/article/details/85088570,BlogCommendFromBaidu_25"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/mifangdebaise/article/details/85088570,BlogCommendFromBaidu_25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/mifangdebaise/article/details/85088570" target="_blank" title="Julia 中 |&gt; 运算符">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em> 中 |&gt; 运算符		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					105</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/mifangdebaise/article/details/85088570" target="_blank" title="Julia 中 |&gt; 运算符">
+				<span class="desc oneline">Julia中|&amp;amp;amp;gt;运算符如何使用，首先看下解释：help?&amp;amp;amp;gt;|&amp;amp;amp;gt;search:|&amp;amp;amp;gt;|&amp;amp;amp;gt;(x,...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/mifangdebaise">来自：	<span class="blog_title"> 米饭的白色的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/han0373/article/details/81585127,BlogCommendFromBaidu_26"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/han0373/article/details/81585127,BlogCommendFromBaidu_26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/han0373/article/details/81585127" target="_blank" title="Julia语言热度飙升，可否结合区块链技术？">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>语言热度飙升，可否结合区块链技术？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1405</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/han0373/article/details/81585127" target="_blank" title="Julia语言热度飙升，可否结合区块链技术？">
+				<span class="desc oneline">可以说，Julia在我了解其语言魅力的时候。它是专门为&amp;quot;并行&amp;quot;数值计算设计的语言。备受期待的Julia语言的1.0版本积累了富有野心的程序员们的十年心血。在JuliaCon2018...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/han0373">来自：	<span class="blog_title"> han0373的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/84110476,BlogCommendFromBaidu_27"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/84110476,BlogCommendFromBaidu_27"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/conkty/article/details/84110476" target="_blank" title="博采众长的巅峰：Julia语言">
+		<h4 class="text-truncate oneline">
+				博采众长的巅峰：<em>Julia</em>语言		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					209</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/conkty/article/details/84110476" target="_blank" title="博采众长的巅峰：Julia语言">
+				<span class="desc oneline">一种计算机编程语言，同时能够*拥有C的速度*像Ruby的灵活*有像Lisp那样真正的宏*像Matlab能使用浅显熟悉的数学符号*像Python一样简单流畅*像R一样易于实现统计与各种数值计算*像Per...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/conkty">来自：	<span class="blog_title"> 数据齿轮</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/farley119/article/details/82178827,BlogCommendFromBaidu_28"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/farley119/article/details/82178827,BlogCommendFromBaidu_28"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/farley119/article/details/82178827" target="_blank" title="Julia是什么？为什么突然这么火？">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>是什么？为什么突然这么火？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4670</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/farley119/article/details/82178827" target="_blank" title="Julia是什么？为什么突然这么火？">
+				<span class="desc oneline">最近网上突然冒出来一个Julia，什么鬼？百度一查，卧槽，又是一门编程语言。之前的kotlin,python余热未散，怎么又冒出来一个？既然咱是搞IT的，那就不能忽视，赶紧去google一下学习一下吧...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/farley119">来自：	<span class="blog_title"> farley的成长之路</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_64" data-pid="64" data-track-view='{"mod":"kp_popu_64-81","con":",,"}' data-track-click='{"mod":"kp_popu_64-81","con":",,"}'><div id="three_ad28" class="mediav_ad" ></div>
+<script type="text/javascript" src="//static.mediav.com/js/mvf_news_feed.js"></script>
+<script>
+                                               NEWS_FEED({
+                w: 852,
+                h : 60,
+                showid : 'Afihld',
+                placeholderId: "three_ad28",
+                inject : 'define',
+                define : {
+                    imagePosition : 'left',
+                    imageBorderRadius : 3,
+                    imageWidth: 90,
+                    imageHeight: 60,
+                    imageFill : 'clip',
+                    displayImage : true,
+                    displayTitle : true,
+                    titleFontSize: 18,
+                    titleFontColor: '#000',
+                    titleFontFamily : 'Lato,-apple-system,SF UI Text,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif',
+                    titleFontWeight: 'bold',
+                    titlePaddingTop : 0,
+                    titlePaddingRight : 0,
+                    titlePaddingBottom : 5,
+                    titlePaddingLeft : 16,
+                    displayDesc : true,
+                    descFontSize: 14,
+                    descFontColor: '#8e959a',
+                    descFontFamily : 'Microsoft Yahei',
+                    paddingTop : 0,
+                    paddingRight : 0,
+                    paddingBottom : 0,
+                    paddingLeft : 0,
+                    backgroundColor: '#fff',
+                    hoverColor: '#000'
+                      }
+                  })
+                                        </script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37816922/article/details/85335622,BlogCommendFromBaidu_29"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37816922/article/details/85335622,BlogCommendFromBaidu_29"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37816922/article/details/85335622" target="_blank" title="julia图像处理">
+		<h4 class="text-truncate oneline">
+				<em>julia</em>图像处理		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					334</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37816922/article/details/85335622" target="_blank" title="julia图像处理">
+				<span class="desc oneline">juila图像处理入门julia简介与安装julia简介与安装julia和python一样是一门动态编程语言，不过据说有媲美C的速度，而且在数据科学领域很吃得开，这谁能顶得住啊，所以果断体验一波。首先...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_37816922">来自：	<span class="blog_title"> 微小冷的学习笔记</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/chd_lkl/article/details/83065901,BlogCommendFromBaidu_30"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/chd_lkl/article/details/83065901,BlogCommendFromBaidu_30"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/chd_lkl/article/details/83065901" target="_blank" title="Julia：juliaPro1.0.1使用Plots画图题记">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>：<em>julia</em>Pro1.0.1使用Plots画图题记		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					940</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/chd_lkl/article/details/83065901" target="_blank" title="Julia：juliaPro1.0.1使用Plots画图题记">
+				<span class="desc oneline">千呼万唤始出来，juliaPro1.0.1终于出来了。在使用Plots画图时，与以前有点不一样，现在记录如下。juliaPro1.0.1首先要安装Plots。本人安装步骤如下:1.usingPkg2....</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/chd_lkl">来自：	<span class="blog_title"> chd_lkl的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/50814458,BlogCommendFromBaidu_31"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/50814458,BlogCommendFromBaidu_31"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wowotuo/article/details/50814458" target="_blank" title="Julia: Atom 来了！如何在Atom中操作Julia?">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>: Atom 来了！如何在Atom中操作<em>Julia</em>?		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9548</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wowotuo/article/details/50814458" target="_blank" title="Julia: Atom 来了！如何在Atom中操作Julia?">
+				<span class="desc oneline">JUNO已经拥抱了Atom,弃了Lighttable.不多说。哎上图，说一下如何用吧。当然，首先要去下载Atom和Julia客户端。Atom可以从https://atom.io/下载。Julia的客户...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wowotuo">来自：	<span class="blog_title"> Julia & Rust & Python</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/yunxinan/article/details/81806374,BlogCommendFromBaidu_32"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/yunxinan/article/details/81806374,BlogCommendFromBaidu_32"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/yunxinan/article/details/81806374" target="_blank" title="Julia1.0编程语言浅析">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>1.0<em>编程语言</em>浅析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1456</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/yunxinan/article/details/81806374" target="_blank" title="Julia1.0编程语言浅析">
+				<span class="desc oneline">目前从网上得知Julia1.0这门语言是上升最热的语言，那么分析一门语言为什么会在短时间会很火爆，首先我们需要查看官方文档来理解基本特性：Julia语言的官网：https://julialang.or...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/yunxinan">来自：	<span class="blog_title"> yunxinan的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/whatday/article/details/54893889,BlogCommendFromBaidu_33"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/whatday/article/details/54893889,BlogCommendFromBaidu_33"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/whatday/article/details/54893889" target="_blank" title="ashx和aspx的区别">
+		<h4 class="text-truncate oneline">
+				ashx和aspx的区别		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">02-06</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/whatday/article/details/54893889" target="_blank" title="ashx和aspx的区别">
+				<span class="desc oneline">ashx是什么文件?.ashx文件用于写webhandler的。.ashx文件与.aspx文件类似，可以通过它来调用HttpHandler类，它免去了普通.aspx页面的控件解析以及页面处理的过程。其...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/whatday">来自：	<span class="blog_title"> whatday的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_65" data-pid="65" data-track-view='{"mod":"kp_popu_65-809","con":",,"}' data-track-click='{"mod":"kp_popu_65-809","con":",,"}'><script
+    async="async"
+    charset="utf-8"
+    src="https://shared.ydstatic.com/js/yatdk/3.0.1/stream.js"
+    data-id="6cb24153a03289ff3597c7aab4b69fe9"
+    data-div-Style="width:100%;"
+data-tit-Style="margin-bottom: 6px; font-size: 18px; line-height: 24px; color: #3d3d3d;display: inline-block;font-weight:bold;"
+data-des-Style="font-size: 13px; line-height: 22px; white-space: normal; color: #999;"
+data-img-Style="float:left;margin-right:15px;width:90px;height:60px;">
+</script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/qq_41910711/article/details/79719018,BlogCommendFromBaidu_34"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq_41910711/article/details/79719018,BlogCommendFromBaidu_34"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq_41910711/article/details/79719018" target="_blank" title="python+opencv学习之路（一 ）学习打开图片">
+		<h4 class="text-truncate oneline">
+				python+opencv学习之路（一 ）学习打开图片		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq_41910711/article/details/79719018" target="_blank" title="python+opencv学习之路（一 ）学习打开图片">
+				<span class="desc oneline">python+opencv学习之路（一）学习打开图片载入opencv和numpy模块importcv2importnumpyasnp读取图片img=cv2.imread(&amp;quot;1.jpg&amp;quo...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq_41910711">来自：	<span class="blog_title"> qq_41910711的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/u012247418/article/details/80555478,BlogCommendFromBaidu_35"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u012247418/article/details/80555478,BlogCommendFromBaidu_35"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u012247418/article/details/80555478" target="_blank" title="python3安装第三方库教程">
+		<h4 class="text-truncate oneline">
+				python3安装第三方库教程		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-03</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1700</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u012247418/article/details/80555478" target="_blank" title="python3安装第三方库教程">
+				<span class="desc oneline">测试环境：win1064bit+python3.6+cmd------------------------------------------------------1.安装第三方库这里安装一个第三方...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u012247418">来自：	<span class="blog_title"> 在路上</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/duozhishidai/article/details/87891549,BlogCommendFromBaidu_36"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/duozhishidai/article/details/87891549,BlogCommendFromBaidu_36"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/duozhishidai/article/details/87891549" target="_blank" title="Python与Swift、Go、Julia和R四种语言之间，如何继续保持在编程语言中的优势">
+		<h4 class="text-truncate oneline">
+				Python与Swift、Go、<em>Julia</em>和R四种语言之间，如何继续保持在<em>编程语言</em>中的优势		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-23</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					221</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/duozhishidai/article/details/87891549" target="_blank" title="Python与Swift、Go、Julia和R四种语言之间，如何继续保持在编程语言中的优势">
+				<span class="desc oneline">王权没有永恒，编程语言自然也不例外。作为当前雄踞各大语言人气榜冠军的Python，其似乎也面临着同样的挑战。不过各类后起之秀也都凭借着自身设计证明，Python所拥有的编程便捷性、强大的数学与科学运算...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/duozhishidai">来自：	<span class="blog_title"> 多智时代的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/j2IaYU7Y/article/details/82321113,BlogCommendFromBaidu_37"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/j2IaYU7Y/article/details/82321113,BlogCommendFromBaidu_37"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/j2IaYU7Y/article/details/82321113" target="_blank" title="新语言不焦虑！这里有一份Julia极简入门教程">
+		<h4 class="text-truncate oneline">
+				新语言不焦虑！这里有一份<em>Julia</em>极简入门教程		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1474</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/j2IaYU7Y/article/details/82321113" target="_blank" title="新语言不焦虑！这里有一份Julia极简入门教程">
+				<span class="desc oneline">没有银弹，Julia的特性更多不会有Python好学。但是不用担心，上手是非常容易的。之前因为准备用户见面会（JuliaUserMeetUp）准备了一个教程，......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/j2IaYU7Y">来自：	<span class="blog_title"> IT派</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/82229485,BlogCommendFromBaidu_38"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/82229485,BlogCommendFromBaidu_38"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37696990/article/details/82229485" target="_blank" title="julia:网络和流（完结）">
+		<h4 class="text-truncate oneline">
+				<em>julia</em>:网络和流（完结）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-30</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					625</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37696990/article/details/82229485" target="_blank" title="julia:网络和流（完结）">
+				<span class="desc oneline">网络和流Julia提供了一个丰富的接口来处理诸如终端、管道和TCP套接字等流I/O对象。这个接口虽然在系统级别上是异步的，但它是以同步的方式呈现给程序员的，通常不需要考虑底层的异步操作，这是通过大量使...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_37696990">来自：	<span class="blog_title"> 小Y的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_66" data-pid="66" data-track-view='{"mod":"kp_popu_66-881","con":",,"}' data-track-click='{"mod":"kp_popu_66-881","con":",,"}'><script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T38_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T38  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T38_render", "T38");
+</script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/redstorm/article/details/25889,BlogCommendFromBaidu_39"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/redstorm/article/details/25889,BlogCommendFromBaidu_39"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/redstorm/article/details/25889" target="_blank" title="告别 也许是新的开始">
+		<h4 class="text-truncate oneline">
+				告别 也许是新的开始		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					568</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/redstorm/article/details/25889" target="_blank" title="告别 也许是新的开始">
+				<span class="desc oneline">6月24日 大连  阴 有雾转身默默离开，离开23路车站。原来赌博没有开始我已经跌到在起跑线了。起码那是一场彻底属于我的赌博，但是我真没有勇气继续也没有勇气承认自己输掉。有一万次机会转身离开，有一万个...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/redstorm">来自：	<span class="blog_title"> 天马行空</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/sileixinhua/article/details/70183798,BlogCommendFromBaidu_40"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/sileixinhua/article/details/70183798,BlogCommendFromBaidu_40"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/sileixinhua/article/details/70183798" target="_blank" title="Julia语言的介绍">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>语言的介绍		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-15</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4763</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/sileixinhua/article/details/70183798" target="_blank" title="Julia语言的介绍">
+				<span class="desc oneline">Julia语言的介绍Julia是高性能的动态高级科学计算语言，提供了精致的编译器（sophisticatedcompiler），分布式并行计算（distributedparallelexecution...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/sileixinhua">来自：	<span class="blog_title"> 橘子派</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/81951931,BlogCommendFromBaidu_41"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/81951931,BlogCommendFromBaidu_41"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37696990/article/details/81951931" target="_blank" title="Julia:函数（完结）">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>:函数（完结）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					332</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37696990/article/details/81951931" target="_blank" title="Julia:函数（完结）">
+				<span class="desc oneline">33</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_37696990">来自：	<span class="blog_title"> 小Y的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/81490597,BlogCommendFromBaidu_42"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/81490597,BlogCommendFromBaidu_42"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/conkty/article/details/81490597" target="_blank" title="Julia语言与其他语言的异同">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>语言与其他语言的异同		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1416</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/conkty/article/details/81490597" target="_blank" title="Julia语言与其他语言的异同">
+				<span class="desc oneline">在编写Julia代码的过程中，会发现与其他语言有不少相似之处，例如Matlab、R或Python，但也有着明显的不同。通过与其他语言的对比，我们可以更加深入地理解Julia，也能够在熟悉其他语言的基础...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/conkty">来自：	<span class="blog_title"> 数据齿轮</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/u012783240/article/details/81611889,BlogCommendFromBaidu_43"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u012783240/article/details/81611889,BlogCommendFromBaidu_43"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u012783240/article/details/81611889" target="_blank" title="【奇淫技巧】Ecipse快速开发Gui窗体程序">
+		<h4 class="text-truncate oneline">
+				【奇淫技巧】Ecipse快速开发Gui窗体程序		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4443</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u012783240/article/details/81611889" target="_blank" title="【奇淫技巧】Ecipse快速开发Gui窗体程序">
+				<span class="desc oneline">【奇淫技巧】Ecipse快速开发Gui窗体程序今天不多说废话了，直接上干货打开你的eclipse选择help-installNewSoftWare打开WindowSbuilder下载页面(http:/...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u012783240">来自：	<span class="blog_title"> 东北小贰爷°的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_67" data-pid="67" data-track-view='{"mod":"kp_popu_67-882","con":",,"}' data-track-click='{"mod":"kp_popu_67-882","con":",,"}'><script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T43_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T43  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T43_render", "T43");
+</script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/82256494,BlogCommendFromBaidu_44"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/conkty/article/details/82256494,BlogCommendFromBaidu_44"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/conkty/article/details/82256494" target="_blank" title="【转】Julia会成为下一个编程大语言吗？">
+		<h4 class="text-truncate oneline">
+				【转】<em>Julia</em>会成为下一个编程大语言吗？		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1504</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/conkty/article/details/82256494" target="_blank" title="【转】Julia会成为下一个编程大语言吗？">
+				<span class="desc oneline">麻省理工学院认为肯定会成为的，因为他们发布1.0版，Julia于2012年发布，目标是结合C的速度与Python的可用性、Ruby的动态性、MATLAB的数学能力和R的统计能力。Julia是麻省理工学...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/conkty">来自：	<span class="blog_title"> 数据齿轮</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/85644034,BlogCommendFromBaidu_45"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/85644034,BlogCommendFromBaidu_45"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wowotuo/article/details/85644034" target="_blank" title="Julia : |&gt;的用法">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em> : |&gt;的用法		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					103</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wowotuo/article/details/85644034" target="_blank" title="Julia : |&gt;的用法">
+				<span class="desc oneline">有一个运算符，让人感到很奇怪，至少很多编程语言中没有出现，我这里指的是“|&amp;amp;amp;amp;amp;amp;gt;”.一、这个运算符是什么意思？|&amp;amp;amp;amp;amp;amp;gt...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wowotuo">来自：	<span class="blog_title"> Julia & Rust & Python</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/j2IaYU7Y/article/details/81611484,BlogCommendFromBaidu_46"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/j2IaYU7Y/article/details/81611484,BlogCommendFromBaidu_46"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/j2IaYU7Y/article/details/81611484" target="_blank" title="【Python、C++、R 三合一效果好】Julia 重磅发布，全球热度上升最快">
+		<h4 class="text-truncate oneline">
+				【Python、C++、R 三合一效果好】<em>Julia</em> 重磅发布，全球热度上升最快		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					568</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/j2IaYU7Y/article/details/81611484" target="_blank" title="【Python、C++、R 三合一效果好】Julia 重磅发布，全球热度上升最快">
+				<span class="desc oneline">IT派助力深广创业，免费代发招聘信息，了解一下？近年来，Julia语言已然成为编程界的......</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/j2IaYU7Y">来自：	<span class="blog_title"> IT派</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/82289365,BlogCommendFromBaidu_47"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/82289365,BlogCommendFromBaidu_47"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37696990/article/details/82289365" target="_blank" title="Julia的编程概念(learning julia 未完待续)">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>的编程概念(learning <em>julia</em> 未完待续)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					322</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37696990/article/details/82289365" target="_blank" title="Julia的编程概念(learning julia 未完待续)">
+				<span class="desc oneline">在上一章中，我们讨论了Julia如何适用于原型设计和执行几乎和C.朱莉娅同样适应经验丰富的程序员和新手。朱莉娅是设计的方式是刚开始编程的人能够在REPL或JupyterNotebook的帮助下，在一天...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_37696990">来自：	<span class="blog_title"> 小Y的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/81986431,BlogCommendFromBaidu_48"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/m0_37696990/article/details/81986431,BlogCommendFromBaidu_48"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/m0_37696990/article/details/81986431" target="_blank" title="Julia:元编程">
+		<h4 class="text-truncate oneline">
+				<em>Julia</em>:元编程		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-24</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					483</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/m0_37696990/article/details/81986431" target="_blank" title="Julia:元编程">
+				<span class="desc oneline">元编程朱莉娅语言中Lisp最大的遗留问题是它的元编程支持。与Lisp一样，Julia将自己的代码表示为语言本身的数据结构。由于代码是由可以在语言内部创建和操作的对象表示的，因此程序可以转换并生成自己的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/m0_37696990">来自：	<span class="blog_title"> 小Y的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	<div class="recommend-item-box recommend-ad-box"><div id="kp_box_68" data-pid="68" data-track-view='{"mod":"kp_popu_68-883","con":",,"}' data-track-click='{"mod":"kp_popu_68-883","con":",,"}'><!-- T48 位置 -->
+<script src="https://nbrecsys.4paradigm.com/resource/cus/csdn/sdk-csdn-render.js"></script>
+<div
+  id="_4paradigm_T48_render"
+  class="_paradigm_T_ads_render _4paradigm_box recommend-item-box clearfix"
+></div>
+<script>
+  //  渲染T48  传入 渲染位置的id和渲染位置的标记
+  p4CSDNRender_T("_4paradigm_T48_render", "T48");
+</script></div></div>
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/86585229,BlogCommendFromBaidu_49"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wowotuo/article/details/86585229,BlogCommendFromBaidu_49"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wowotuo/article/details/86585229" target="_blank" title="阿里前首席人力官: 从HR思维看阿里的战略与文化">
+		<h4 class="text-truncate oneline">
+				阿里前首席人力官: 从HR思维看阿里的战略与文化		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					231</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wowotuo/article/details/86585229" target="_blank" title="阿里前首席人力官: 从HR思维看阿里的战略与文化">
+				<span class="desc oneline">阿里前首席人力官:从HR思维看阿里的战略与文化邓康明华夏基石e洞察昨天文/邓康明，原阿里巴巴集团资深副总裁、首席人力官、阿里影业首席运营官（COO），中国人民大学商学院管理实践教授来源：华夏基石e洞察...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wowotuo">来自：	<span class="blog_title"> Julia & Rust & Python</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/pjxxlpsj/article/details/5817318,BlogCommendHotData_0"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/pjxxlpsj/article/details/5817318,BlogCommendHotData_0"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/pjxxlpsj/article/details/5817318" target="_blank" title="破解windows远程桌面无法访问智能卡/令牌卡/数字证书的限制">
+		<h4 class="text-truncate oneline">
+				破解windows远程桌面无法访问智能卡/令牌卡/数字证书的限制		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-17</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8082</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/pjxxlpsj/article/details/5817318" target="_blank" title="破解windows远程桌面无法访问智能卡/令牌卡/数字证书的限制">
+				<span class="desc oneline">经过2-3周工作空闲时间，解决了windows7下面远程桌面中无法访问令牌卡/智能卡的问题。    现象是：通过windows远程桌面，任何智能卡如：工商银行优盾/各行业数字证书等设备，无法找到，也就...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/pjxxlpsj">来自：	<span class="blog_title"> pjxxlpsj的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/dear_Alice_moon/article/details/77841887,BlogCommendHotData_1"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/dear_Alice_moon/article/details/77841887,BlogCommendHotData_1"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/dear_Alice_moon/article/details/77841887" target="_blank" title="sqlserver update或者Delete误操作恢复方法---【验证】">
+		<h4 class="text-truncate oneline">
+				sqlserver update或者Delete误操作恢复方法---【验证】		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-04</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2722</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/dear_Alice_moon/article/details/77841887" target="_blank" title="sqlserver update或者Delete误操作恢复方法---【验证】">
+				<span class="desc oneline">具体方法：
+
+　　　　 原文:http://blog.csdn.net/dba_huangzj/article/details/8491327
+
+经验教训：
+
+1、新建数据库一定要做一次全...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/dear_Alice_moon">来自：	<span class="blog_title"> dear_Alice_moon的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wangjun_pfc/article/details/3827631,BlogCommendHotData_2"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wangjun_pfc/article/details/3827631,BlogCommendHotData_2"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wangjun_pfc/article/details/3827631" target="_blank" title="修改mysql数据库的默认编码方式">
+		<h4 class="text-truncate oneline">
+				修改mysql数据库的默认编码方式		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wangjun_pfc/article/details/3827631" target="_blank" title="修改mysql数据库的默认编码方式">
+				<span class="desc oneline">修改my.ini文件加上default-character-set=gb2312设定数据库字符集alter database da_name default character set charset...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wangjun_pfc">来自：	<span class="blog_title"> 血色残阳的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/diandianxiyu/article/details/53068012,BlogCommendHotData_3"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/diandianxiyu/article/details/53068012,BlogCommendHotData_3"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
+		<h4 class="text-truncate oneline">
+				【小程序】微信小程序开发实践		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-07</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					29万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/diandianxiyu/article/details/53068012" target="_blank" title="【小程序】微信小程序开发实践">
+				<span class="desc oneline">帐号相关流程注册范围
+企业
+政府
+媒体
+其他组织换句话讲就是不让个人开发者注册。 :)填写企业信息不能使用和之前的公众号账户相同的邮箱,也就是说小程序是和微信公众号一个层级的。填写公司机构信息,对公账...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/diandianxiyu">来自：	<span class="blog_title"> 小雨同学的技术博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/themagickeyjianan/article/details/52386981,BlogCommendHotData_4"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/themagickeyjianan/article/details/52386981,BlogCommendHotData_4"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/themagickeyjianan/article/details/52386981" target="_blank" title="python图片处理类之~PIL.Image模块(ios android icon图标自动生成处理)">
+		<h4 class="text-truncate oneline">
+				python图片处理类之~PIL.Image模块(ios android icon图标自动生成处理)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-31</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					9万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/themagickeyjianan/article/details/52386981" target="_blank" title="python图片处理类之~PIL.Image模块(ios android icon图标自动生成处理)">
+				<span class="desc oneline">1.从pyCharm提示下载PIL包
+
+ http://www.pythonware.com/products/pil/
+
+ 
+
+2.解压后，进入到目录下
+
+
+cd /Users/jianan/Dow...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/themagickeyjianan">来自：	<span class="blog_title"> 专注于cocos+unity+服务器全栈</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/u012874222/article/details/79400154,BlogCommendHotData_5"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u012874222/article/details/79400154,BlogCommendHotData_5"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u012874222/article/details/79400154" target="_blank" title="卡顿监测之真正轻量级的卡顿监测工具BlockDetectUtil（仅一个类）">
+		<h4 class="text-truncate oneline">
+				卡顿监测之真正轻量级的卡顿监测工具BlockDetectUtil（仅一个类）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					7635</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u012874222/article/details/79400154" target="_blank" title="卡顿监测之真正轻量级的卡顿监测工具BlockDetectUtil（仅一个类）">
+				<span class="desc oneline">一、背景    一直以来，应用的流畅度都关乎着用户的体验性，而体验性好的产品自然而然会受到更多用户的欢迎，所以对于广大的工程师来说，界面的卡顿优化一直是Android应用性能优化的重要一环。而当前应用...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u012874222">来自：	<span class="blog_title"> u012874222的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/roguesir/article/details/77104246,BlogCommendHotData_6"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/roguesir/article/details/77104246,BlogCommendHotData_6"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/roguesir/article/details/77104246" target="_blank" title="人脸检测工具face_recognition的安装与应用">
+		<h4 class="text-truncate oneline">
+				人脸检测工具face_recognition的安装与应用		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					7万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/roguesir/article/details/77104246" target="_blank" title="人脸检测工具face_recognition的安装与应用">
+				<span class="desc oneline">人脸检测工具face_recognition的安装与应用</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/roguesir">来自：	<span class="blog_title"> roguesir的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/ymj7150697/article/details/7384126,BlogCommendHotData_7"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/ymj7150697/article/details/7384126,BlogCommendHotData_7"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/ymj7150697/article/details/7384126" target="_blank" title="expat介绍文档翻译">
+		<h4 class="text-truncate oneline">
+				expat介绍文档翻译		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/ymj7150697/article/details/7384126" target="_blank" title="expat介绍文档翻译">
+				<span class="desc oneline">原文地址：http://www.xml.com/pub/a/1999/09/expat/index.html
+
+
+因为需要用，所以才翻译了这个文档。但总归赖于英语水平很有限，翻译出来的中文有可能...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/ymj7150697">来自：	<span class="blog_title"> ymj7150697的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/jinping_shi/article/details/59613054,BlogCommendHotData_8"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/jinping_shi/article/details/59613054,BlogCommendHotData_8"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/jinping_shi/article/details/59613054" target="_blank" title="高斯混合模型（GMM）及其EM算法的理解">
+		<h4 class="text-truncate oneline">
+				高斯混合模型（GMM）及其EM算法的理解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">03-02</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					11万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/jinping_shi/article/details/59613054" target="_blank" title="高斯混合模型（GMM）及其EM算法的理解">
+				<span class="desc oneline">一个例子高斯混合模型（Gaussian Mixed Model）指的是多个高斯分布函数的线性组合，理论上GMM可以拟合出任意类型的分布，通常用于解决同一集合下的数据包含多个不同的分布的情况（或者是同一...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/jinping_shi">来自：	<span class="blog_title"> 小平子的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wxcdzhangping/article/details/78051233,BlogCommendHotData_9"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wxcdzhangping/article/details/78051233,BlogCommendHotData_9"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wxcdzhangping/article/details/78051233" target="_blank" title="手把手练习--cmake+VS2015编译OpenCV3.3源码(x86版本)">
+		<h4 class="text-truncate oneline">
+				手把手练习--cmake+VS2015编译OpenCV3.3源码(x86版本)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-21</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4784</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wxcdzhangping/article/details/78051233" target="_blank" title="手把手练习--cmake+VS2015编译OpenCV3.3源码(x86版本)">
+				<span class="desc oneline">下载对应的ffmpeg的动态库：打开文件ffmpeg.cmake文件，会看到有一个第一行，我们需要下载master_20170704打开https://github.com/opencv/opencv...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wxcdzhangping">来自：	<span class="blog_title"> 我们的时光！</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/maoyuanming0806/article/details/78067446,BlogCommendHotData_10"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/maoyuanming0806/article/details/78067446,BlogCommendHotData_10"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/maoyuanming0806/article/details/78067446" target="_blank" title="搭建图片服务器《二》-linux安装nginx">
+		<h4 class="text-truncate oneline">
+				搭建图片服务器《二》-linux安装nginx		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">09-22</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					6万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/maoyuanming0806/article/details/78067446" target="_blank" title="搭建图片服务器《二》-linux安装nginx">
+				<span class="desc oneline">nginx是个好东西，Nginx (engine x) 是一个高性能的HTTP和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。Nginx是由伊戈尔·赛索耶夫为俄罗斯访问量第二的Rambl...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/maoyuanming0806">来自：	<span class="blog_title"> maoyuanming0806的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/a314773862/article/details/51095276,BlogCommendHotData_11"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/a314773862/article/details/51095276,BlogCommendHotData_11"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/a314773862/article/details/51095276" target="_blank" title="弱网测试工具-ATC和NEWT">
+		<h4 class="text-truncate oneline">
+				弱网测试工具-ATC和NEWT		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-08</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					4497</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/a314773862/article/details/51095276" target="_blank" title="弱网测试工具-ATC和NEWT">
+				<span class="desc oneline">据目前了解的 模拟弱网，如2G，3G，4G网络信号的，工具主要有两个
+1个是微软出的Network Emulator for Windows Toolkit。 可以参考http://blog.csd...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/a314773862">来自：	<span class="blog_title"> a314773862的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/StillCity/article/details/16988317,BlogCommendHotData_12"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/StillCity/article/details/16988317,BlogCommendHotData_12"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/StillCity/article/details/16988317" target="_blank" title="openfire 3.8.2 源码部署 /开发配置 / 二次开发">
+		<h4 class="text-truncate oneline">
+				openfire 3.8.2 源码部署 /开发配置 / 二次开发		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-27</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8656</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/StillCity/article/details/16988317" target="_blank" title="openfire 3.8.2 源码部署 /开发配置 / 二次开发">
+				<span class="desc oneline">最近新搞了openfire 从网上找了很多源码部署的相关文章但都是大同小异，拷贝加修改，我如是按照各个文章版本部署目前最新的3.8.2版本，无一例外，各种报错，头疼死我也，一次次失败，我TMD就想为啥...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/StillCity">来自：	<span class="blog_title"> StillCity的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/silentpebble/article/details/41279285,BlogCommendHotData_13"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/silentpebble/article/details/41279285,BlogCommendHotData_13"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/silentpebble/article/details/41279285" target="_blank" title="centos 查看命令源码">
+		<h4 class="text-truncate oneline">
+				centos 查看命令源码		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-19</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					11万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/silentpebble/article/details/41279285" target="_blank" title="centos 查看命令源码">
+				<span class="desc oneline"># yum install yum-utils
+
+
+设置源:
+[base-src]
+name=CentOS-5.4 - Base src -
+baseurl=http://vault.ce...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/silentpebble">来自：	<span class="blog_title"> linux/unix</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/a378881925/article/details/42835497,BlogCommendHotData_14"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/a378881925/article/details/42835497,BlogCommendHotData_14"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/a378881925/article/details/42835497" target="_blank" title="Android 卸载监听详解">
+		<h4 class="text-truncate oneline">
+				Android 卸载监听详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">01-18</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					5万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/a378881925/article/details/42835497" target="_blank" title="Android 卸载监听详解">
+				<span class="desc oneline">目前市场上比较多的应用在用户卸载后会弹出意见反馈界面，比如360手机卫士，腾讯手机管家，应用宝等等，虽然本人不太认同其交互方式，但是在技术实现上还是可以稍微研究下的。其实要实现这个功能，最主要的就是监...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/u010258235/article/details/45666851,BlogCommendHotData_15"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u010258235/article/details/45666851,BlogCommendHotData_15"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u010258235/article/details/45666851" target="_blank" title="C语言函数操作大全----(超详细)">
+		<h4 class="text-truncate oneline">
+				C语言函数操作大全----(超详细)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-12</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					2万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u010258235/article/details/45666851" target="_blank" title="C语言函数操作大全----(超详细)">
+				<span class="desc oneline">fopen（打开文件）
+相关函数 open，fclose
+表头文件 #include
+定义函数 FILE * fopen(const char * path,const char * mode)...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u010258235">来自：	<span class="blog_title"> 独旅天涯</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/liufanghuangdi/article/details/52957094,BlogCommendHotData_16"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/liufanghuangdi/article/details/52957094,BlogCommendHotData_16"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/liufanghuangdi/article/details/52957094" target="_blank" title="java+opencv 目标图像调整">
+		<h4 class="text-truncate oneline">
+				java+opencv 目标图像调整		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">10-28</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					8139</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/liufanghuangdi/article/details/52957094" target="_blank" title="java+opencv 目标图像调整">
+				<span class="desc oneline">java+opencv 进行图像匹配，FeatureDetector ，DescriptorExtractor 
+        DescriptorMatcher 配合使用。分别进行关键点检测，提取...</span>
+			</a>
+			<span class="blog_title_box oneline no-title">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/luyan_abaci/article/details/48014807,BlogCommendHotData_17"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/luyan_abaci/article/details/48014807,BlogCommendHotData_17"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/luyan_abaci/article/details/48014807" target="_blank" title="VS下生成与配置静态库与动态库（一）">
+		<h4 class="text-truncate oneline">
+				VS下生成与配置静态库与动态库（一）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/luyan_abaci/article/details/48014807" target="_blank" title="VS下生成与配置静态库与动态库（一）">
+				<span class="desc oneline">此处仅以VS2010为例，详细说明一下如何在VS环境下生成和使用C++的静态库与动态库。Qt下生成和使用静态和动态库后续再讲。
+本文仅供初学者参考，如果有问题欢迎大家指正。
+       首先简单地理...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/luyan_abaci">来自：	<span class="blog_title"> luyan的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wangyaninglm/article/details/51531333,BlogCommendHotData_18"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wangyaninglm/article/details/51531333,BlogCommendHotData_18"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wangyaninglm/article/details/51531333" target="_blank" title="立体匹配导论">
+		<h4 class="text-truncate oneline">
+				立体匹配导论		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">05-29</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wangyaninglm/article/details/51531333" target="_blank" title="立体匹配导论">
+				<span class="desc oneline">转载请注明出处：http://blog.csdn.net/wangyaninglm/article/details/51531333，  
+来自：  
+shiter编写程序的艺术2.1 视差理论计算机...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wangyaninglm">来自：	<span class="blog_title"> shiter编写程序的艺术</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wojiushiwo987/article/details/52176045,BlogCommendHotData_19"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wojiushiwo987/article/details/52176045,BlogCommendHotData_19"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wojiushiwo987/article/details/52176045" target="_blank" title="esrally性能分析结果图形化展示深入详解">
+		<h4 class="text-truncate oneline">
+				esrally性能分析结果图形化展示深入详解		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">08-10</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wojiushiwo987/article/details/52176045" target="_blank" title="esrally性能分析结果图形化展示深入详解">
+				<span class="desc oneline">0、前提安装elasticsearch的最新版本，目前是2.3.4版本。 
+elsticsearch新增扮演的角色是：rally分析结果会存储到elasticsearch。1、运行esrally 高级...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wojiushiwo987">来自：	<span class="blog_title"> 铭毅天下</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/qq574857122/article/details/16361033,BlogCommendHotData_20"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/qq574857122/article/details/16361033,BlogCommendHotData_20"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/qq574857122/article/details/16361033" target="_blank" title="强连通分量及缩点tarjan算法解析">
+		<h4 class="text-truncate oneline">
+				强连通分量及缩点tarjan算法解析		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					61万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/qq574857122/article/details/16361033" target="_blank" title="强连通分量及缩点tarjan算法解析">
+				<span class="desc oneline">强连通分量：
+简言之 就是找环（每条边只走一次，两两可达）
+孤立的一个点也是一个连通分量 
+ 
+使用tarjan算法 在嵌套的多个环中优先得到最大环( 最小环就是每个孤立点）
+ 
+定义：
+int Ti...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/qq574857122">来自：	<span class="blog_title"> 九野的博客</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/xmdxcsj/article/details/37742239,BlogCommendHotData_21"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/xmdxcsj/article/details/37742239,BlogCommendHotData_21"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/xmdxcsj/article/details/37742239" target="_blank" title="语音识别方向的资料">
+		<h4 class="text-truncate oneline">
+				语音识别方向的资料		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-13</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1521</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/xmdxcsj/article/details/37742239" target="_blank" title="语音识别方向的资料">
+				<span class="desc oneline">http://blog.csdn.net/xiaoding133/article/details/8842945
+
+上面是别人总结的语音识别方向的资料来源...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/xmdxcsj">来自：	<span class="blog_title"> xmdxcsj的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/gefangshuai/article/details/50328451,BlogCommendHotData_22"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/gefangshuai/article/details/50328451,BlogCommendHotData_22"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
+		<h4 class="text-truncate oneline">
+				关于SpringBoot bean无法注入的问题（与文件包位置有关）		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">12-16</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					22万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/gefangshuai/article/details/50328451" target="_blank" title="关于SpringBoot bean无法注入的问题（与文件包位置有关）">
+				<span class="desc oneline">问题场景描述整个项目通过Maven构建，大致结构如下：
+核心Spring框架一个module spring-boot-base
+service和dao一个module server-core
+提供系统...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/gefangshuai">来自：	<span class="blog_title"> 开发随笔</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wuchengzeng/article/details/50037611,BlogCommendHotData_23"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wuchengzeng/article/details/50037611,BlogCommendHotData_23"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wuchengzeng/article/details/50037611" target="_blank" title="jquery/js实现一个网页同时调用多个倒计时(最新的)">
+		<h4 class="text-truncate oneline">
+				jquery/js实现一个网页同时调用多个倒计时(最新的)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">11-25</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					50万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wuchengzeng/article/details/50037611" target="_blank" title="jquery/js实现一个网页同时调用多个倒计时(最新的)">
+				<span class="desc oneline">jquery/js实现一个网页同时调用多个倒计时(最新的)
+
+最近需要网页添加多个倒计时. 查阅网络,基本上都是千遍一律的不好用. 自己按需写了个.希望对大家有用. 有用请赞一个哦!
+
+
+
+//js
+...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wuchengzeng">来自：	<span class="blog_title"> Websites</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/buildgood/article/details/51123312,BlogCommendHotData_24"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/buildgood/article/details/51123312,BlogCommendHotData_24"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/buildgood/article/details/51123312" target="_blank" title="在Windows下编译Caffe与其Python接口">
+		<h4 class="text-truncate oneline">
+				在Windows下编译Caffe与其Python接口		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">04-11</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/buildgood/article/details/51123312" target="_blank" title="在Windows下编译Caffe与其Python接口">
+				<span class="desc oneline">因为毕设的原因，最近一直在研究Caffe，按照网上自己搭建Caffe的教程无果后，最终参考了happynear与虾米ning的帖子，但是其中遗漏了一些细节。所以特意写一篇文章来记录自己搭建Caffe的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/buildgood">来自：	<span class="blog_title"> 小苗苗X的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/u011046042/article/details/47067037,BlogCommendHotData_25"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/u011046042/article/details/47067037,BlogCommendHotData_25"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/u011046042/article/details/47067037" target="_blank" title="基于Linux的智能家居的设计(5)">
+		<h4 class="text-truncate oneline">
+				基于Linux的智能家居的设计(5)		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">07-26</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/u011046042/article/details/47067037" target="_blank" title="基于Linux的智能家居的设计(5)">
+				<span class="desc oneline">4  软件设计
+ 
+软件设计部分主要包括uboot移植、内核编译、系统移植、设备驱动编程、应用程序编程（QT编程、mysql数据库编程、控制系统编程）、各个模块的功能函数（部分是在windows下面的...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/u011046042">来自：	<span class="blog_title"> 求是07的专栏</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+<div class="recommend-item-box type_blog clearfix" data-track-view='{"mod":"popu_387","con":",https://blog.csdn.net/wangyaninglm/article/details/51558310,BlogCommendHotData_26"}' data-track-click='{"mod":"popu_387","con":",https://blog.csdn.net/wangyaninglm/article/details/51558310,BlogCommendHotData_26"}'>
+	<div class="content">
+		<a href="https://blog.csdn.net/wangyaninglm/article/details/51558310" target="_blank" title="三维重建基础">
+		<h4 class="text-truncate oneline">
+				三维重建基础		</h4>
+		<div class="info-box d-flex align-content-center">
+			<p class="date-and-readNum oneline">
+				<span class="date hover-show">06-01</span>
+				<span class="read-num hover-hide">
+					阅读数 
+					1万+</span>
+				</p>
+			</div>
+		</a>
+		<p class="content">
+			<a href="https://blog.csdn.net/wangyaninglm/article/details/51558310" target="_blank" title="三维重建基础">
+				<span class="desc oneline">转载请注明出处：http://blog.csdn.net/wangyaninglm/article/details/51558310 
+来自：shiter编写程序的艺术 
+三维重建技术通过深度数据获取...</span>
+			</a>
+			<span class="blog_title_box oneline ">
+									<span class="type-show type-show-blog type-show-after">博文</span>
+											<a target="_blank" href="https://blog.csdn.net/wangyaninglm">来自：	<span class="blog_title"> shiter编写程序的艺术</span></a>
+												</span>
+		</p>
+	</div>
+	</div>
+
+	
+	
+                <div class="recommend-item-box type_hot_word">
+                                <div class="content clearfix">
+                    <div class="word float-left">
+                                                            <span>
+                        <a href="https://edu.csdn.net/courses/o5329_k " target="_blank">
+                        人工智能                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o363_l0_t " target="_blank">
+                        设计制作学习                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o5329_s5330_k " target="_blank">
+                        机器学习教程                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/courses/o280_s351_k " target="_blank">
+                        Objective-C培训                    </a></span>
+                                                                                <span>
+                        <a href="https://edu.csdn.net/combos/o7115_s388_l0_t " target="_blank">
+                        交互设计视频教程                    </a></span>
+                                                            </div>
+                </div>
+                                                <div class="content clearfix">
+                    <div class="float-left">
+                                        <span>
+                        <a href="https://www.csdn.net/gather_24/MtTaEg3sMDM5MS1ibG9n.html" target="_blank">
+                        mysql关联查询两次本表</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_10/MtjaIg3sMTUzMy1kb3dubG9hZAO0O0OO0O0O.html" target="_blank">
+                        native底部 react</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_1b/Ntzagg1sOTU3LWRvd25sb2Fk.html" target="_blank">
+                        extjs glyph 图标</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/MtTakg5sNDMtZWR1.html" target="_blank">
+                        julia编程语言教程</a>
+                    </span>
+                                        <span>
+                        <a href="https://www.csdn.net/gather_4a/NtDaUg1sNzEtZWR1.html" target="_blank">
+                        数据科学与大数据课程</a>
+                    </span>
+                                        </div>
+                </div>
+                                </div>
+                            <div class="recommend-loading-box">
+                <img src='https://csdnimg.cn/release/phoenix/images/feedLoading.gif'>
+            </div>
+            <div class="recommend-end-box">
+                <p class="text-center">没有更多推荐了，<a href="https://blog.csdn.net/" class="c-blue c-blue-hover c-blue-focus">返回首页</a></p>
+            </div>
+        </div>
+    </main>
+
+    <aside>
+		    <div id="asideProfile" class="aside-box">
+    <!-- <h3 class="aside-title">个人资料</h3> -->
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blog.csdn.net/W_Honor">
+              <img src="https://avatar.csdn.net/3/4/6/3_w_honor.jpg" class="avatar_pic">
+                              <img src="https://g.csdnimg.cn/static/user-reg-year/1x/4.png" class="user-years">
+                          </a>
+            
+        </div>
+        <div class="user-info d-flex justify-content-center flex-column">
+            <p class="name csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                <a href="https://blog.csdn.net/W_Honor" target="_blank" class="" id="uid">W_Honor</a>
+            </p>
+                    </div>
+                <div class="opt-box d-flex justify-content-center flex-column">
+            <span  class="csdn-tracking-statistics tracking-click" data-mod="popu_379">
+                <a class="btn btn-sm btn-red-hollow attention" id="btnAttent">关注</a>
+            </span>
+        </div>
+            </div>
+    <div class="data-info d-flex item-tiling">
+                <dl class="text-center" title="16">
+                        <dt><a href="https://blog.csdn.net/w_honor?t=1">原创</a></dt>
+            <dd><a href="https://blog.csdn.net/w_honor?t=1"><span class="count">16</span></a></dd>
+                    </dl>
+        <dl class="text-center" id="fanBox" title="15">
+            <dt>粉丝</dt>
+            <dd><span class="count" id="fan">15</span></dd>
+        </dl>
+        <dl class="text-center" title="2">
+            <dt>喜欢</dt>
+            <dd><span class="count">2</span></dd>
+        </dl>
+        <dl class="text-center" title="5">
+            <dt>评论</dt>
+            <dd><span class="count">5</span></dd>
+        </dl>
+    </div>
+    <div class="grade-box clearfix">
+        <dl>
+            <dt>等级：</dt>
+            <dd>
+                <a href="https://blog.csdn.net/home/help.html#level" title="2级,点击查看等级说明" target="_blank">
+                    <svg class="icon icon-level" aria-hidden="true">
+                        <use xlink:href="#csdnc-bloglevel-2"></use>
+                    </svg>
+                </a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>访问：</dt>
+            <dd title="30061">
+                3万+            </dd>
+        </dl>
+        <dl>
+            <dt>积分：</dt>
+            <dd title="471">
+                471            </dd>
+        </dl>
+        <dl title="145133">
+            <dt>排名：</dt>
+            <dd>14万+</dd>
+        </dl>
+    </div>
+        <div class="badge-box d-flex">
+        <span>勋章：</span>
+        <div class="badge d-flex">
+                                                        <div class="icon-badge" title="勤写标兵Lv1">
+                       <div class="mouse-box">
+                          <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t2.svg" alt="">
+                          <div class="icon-arrow"></div>
+                       </div>
+                       <div class="grade-detail-box">
+                           <div class="pos-box">
+                               <div class="left-box d-flex justify-content-center align-items-center flex-column">
+                                    <img src="https://g.csdnimg.cn/static/user-medal/qinxiebiaobing_l1_t2.svg" alt="">
+                                   <p>勤写标兵Lv1</p>
+                               </div>
+                               <div class="right-box">
+                                   授予每个自然周发布1篇到3篇原创IT博文的用户。本勋章将于次周上午根据用户上周的博文发布情况由系统自动颁发。                               </div>
+                           </div>
+                       </div>
+                   </div>
+                                             </div>
+        <script>
+            (function ($) {
+                setTimeout(function(){
+                    $('div.icon-badge.show-moment').removeClass('show-moment');
+                }, 5000);
+            })(window.jQuery)
+        </script>
+    </div>
+    </div>
+		    <div class="csdn-tracking-statistics mb8 box-shadow" data-pid="blog" data-mod="popu_4" style="height:250px;">
+    <div class="aside-content text-center" id="cpro_u2734133">
+      <div id="kp_box_56" data-pid="56" data-track-view='{"mod":"kp_popu_56-939","con":",,人工智能"}' data-track-click='{"mod":"kp_popu_56-939","con":",,人工智能"}'><iframe src="https://kunpeng-sc.csdnimg.cn/#/preview/112?positionId=56&queryWord=人工智能" frameborder="0" width= "300px"  height= "250px" scrolling="no" ></iframe></div>    </div>
+</div>
+		    <div id="asideNewArticle" class="aside-box">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix csdn-tracking-statistics tracking-click" data-mod="popu_382">
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/W_Honor/article/details/89603584" target="_blank">蓝桥杯CT107D比赛开发板参赛笔记（一）</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/W_Honor/article/details/53283454" target="_blank">MySQL服务器“无法启动，没有错误”——错误分析及解决方法</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/W_Honor/article/details/52769710" target="_blank">透过数据结构看C++的引用&amp;</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/W_Honor/article/details/52732941" target="_blank">LINUX安装移动设备上失败？出现Grub rescue？破解方法</a>
+            </li>
+                        <li class="clearfix">
+                <a href="https://blog.csdn.net/W_Honor/article/details/52728605" target="_blank">直播通过VM虚拟机和移动硬盘安装Kail Linux</a>
+            </li>
+                    </ul>
+    </div>
+</div>
+		    		    <div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">个人分类</h3>
+    <div class="aside-content">
+        <ul>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/w_honor/article/category/5852657">
+                    <span class="title oneline">ESP8266</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/w_honor/article/category/6071988">
+                    <span class="title oneline">Python</span>
+                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/w_honor/article/category/6112816">
+                    <span class="title oneline">数据结构与算法</span>
+                    <span class="count float-right">6篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/w_honor/article/category/6157773">
+                    <span class="title oneline">Androider</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/w_honor/article/category/6445998">
+                    <span class="title oneline">LINUX</span>
+                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/w_honor/article/category/6533376">
+                    <span class="title oneline">SQL</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/w_honor/article/category/8877900">
+                    <span class="title oneline">大数据与人工智能</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <li>
+                <a class="clearfix" href="https://blog.csdn.net/w_honor/article/category/8900256">
+                    <span class="title oneline">单片机</span>
+                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+		    <div id="asideArchive" class="aside-box flexible-box">
+    <h3 class="aside-title">归档</h3>
+    <div class="aside-content">
+        <ul class="archive-list">
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/w_honor/article/month/2019/04">
+                    2019年4月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/w_honor/article/month/2016/11">
+                    2016年11月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/w_honor/article/month/2016/10">
+                    2016年10月                    <span class="count float-right">3篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/w_honor/article/month/2016/09">
+                    2016年9月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/w_honor/article/month/2016/03">
+                    2016年3月                    <span class="count float-right">5篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/w_honor/article/month/2016/02">
+                    2016年2月                    <span class="count float-right">1篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/w_honor/article/month/2016/01">
+                    2016年1月                    <span class="count float-right">4篇</span>
+                </a>
+            </li>
+                        <!--归档统计-->
+            <li>
+                <a href="https://blog.csdn.net/w_honor/article/month/2015/10">
+                    2015年10月                    <span class="count float-right">2篇</span>
+                </a>
+            </li>
+                    </ul>
+    </div>
+        <p class="text-center">
+        <a class="btn btn-link-blue flexible-btn" data-fbox="aside-archive">展开</a>
+    </p>
+    </div>
+		    <div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list csdn-tracking-statistics tracking-click" data-mod="popu_521">
+							<li>
+					<a href="https://blog.csdn.net/w_honor/article/details/48858891">ESP8266-01细玩笔记（一）</a>
+					<p class="read">阅读数 <span>7021</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/w_honor/article/details/50531377">《Python for kids》学习笔记（一）</a>
+					<p class="read">阅读数 <span>4264</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/w_honor/article/details/51009299">有些头疼的Android Studio 联网配置和优化工作</a>
+					<p class="read">阅读数 <span>4125</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/w_honor/article/details/52728605">直播通过VM虚拟机和移动硬盘安装Kail Linux</a>
+					<p class="read">阅读数 <span>3277</span></p>
+				</li>
+							<li>
+					<a href="https://blog.csdn.net/w_honor/article/details/48860967">ESP8266-01细玩笔记（二）</a>
+					<p class="read">阅读数 <span>1792</span></p>
+				</li>
+					</ul>
+	</div>
+</div>
+		    <div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/w_honor/article/details/50531377#comments">《Python for kids》...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/W_Honor" class="user-name" target="_blank">W_Honor：</a>[reply]kjyqcl[/reply]
+实践出真理                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/w_honor/article/details/50531377#comments">《Python for kids》...</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/kjyqcl" class="user-name" target="_blank">kjyqcl：</a>虽然接触过一点Python，却第一次注意到，print()不需要包含头文件，确实吗？！                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/w_honor/article/details/48860967#comments">ESP8266-01细玩笔记（二）</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_39049191" class="user-name" target="_blank">qq_39049191：</a>没看见激活工具啊，求帮助                </p>
+            </li>
+                        <li>
+                <a class="title text-truncate" target="_blank" href="https://blog.csdn.net/w_honor/article/details/50810692#comments">关于直接插入排序算法的Bug</a>
+                <p class="comment ellipsis">
+                    <a href="https://my.csdn.net/qq_34161916" class="user-name" target="_blank">qq_34161916：</a>public static void insertSort(int arr[])
+	{
+		int index;
+		for (int i = 0; i &lt; arr.length; i++)
+		{
+			int j = i - 1;
+			index = arr[i];
+			for (; j &gt;= 0 &amp;&amp; index &lt; arr[j]; j--)
+			{
+				arr[j + 1] = arr[j];
+			}
+			arr[j + 1] = index;
+		}
+	}                </p>
+            </li>
+                    </ul>
+    </div>
+</div>
+		<div id="asideFooter">
+			
+		<div class="aside-box">
+			<div id="kp_box_57" data-pid="57" data-track-view='{"mod":"kp_popu_57-77","con":",,"}' data-track-click='{"mod":"kp_popu_57-77","con":",,"}'><script type="text/javascript">
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div style="" id="' + s + '"></div>');
+        (window.slotbydup = window.slotbydup || []).push({
+            id: "u3163270",
+            container:  s
+        });
+    })();
+</script>
+<!-- 多条广告如下脚本只需引入一次 -->
+<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script></div>		</div>
+				<div class="aside-box">
+			<div class="persion_article">
+			</div>
+		</div>
+	</div>
+</aside>
+<script src="https://csdnimg.cn/pubfooter/js/publib_footer-1.0.3.js" data-isfootertrack="false" type="text/javascript"></script>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).remove();
+	})
+</script>
+</div>
+<div class="mask-dark"></div>
+<div class="pulllog-box" style="display: block;">
+	<div class="pulllog clearfix">
+		<span class="text float-left">
+            <div id="dmp_ad_69"><div id="kp_box_69" data-pid="69" data-track-view='{"mod":"kp_popu_69-1017","con":",,"}' data-track-click='{"mod":"kp_popu_69-1017","con":",,"}'><div style="float:left;margin-right:5px;border:0px solid #f13d3d;padding:2px 5px 0px 5px;">
+<a href="https://click.hm.baidu.com/clk?5b3e6ee4eb2eaa88c891d04dd32c3a79" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">游戏开发</a>
+</div>
+
+<div style="float:left;margin-right:5px;border:0px solid #00BFFF;padding:2px 5px 0px 5px;">
+<a href="https://edu.csdn.net/topic/ai30?utm_source=ditong" target="_blank" style="font-weight:bold;text-decoration:none;font-size:15px;">AI工程师年薪！</a>
+</div>
+
+<div style="float:left;margin-right:5px;border:0px solid #f13d3d;padding:2px 5px 0px 5px;">
+<a href="https://www.bagevent.com/event/2586643?bag_track=bk" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">CTA核心技术与应用峰会</a>
+</div>
+
+<div style="float:left;margin-right:5px;border:0px solid #00BFFF;padding:2px 5px 0px 5px;">
+<a href="https://gitbook.cn/gitchat/column/5cc2b3afd575995386d3abc7?utm_source=wzl190429" target="_blank" style="font-weight:bold;text-decoration:none;font-size:15px;">15天共读深度学习</a>
+</div>
+
+
+<div style="float:left;margin-right:5px;border:0px solid #f13d3d;padding:2px 5px 0px 5px;">
+<a href="https://edu.csdn.net/topic/python115?utm_source=ditong" target="_blank" style="color:#f13d3d;font-weight:bold;text-decoration:none;font-size:15px;">Python全栈训练</a>
+</div>
+
+<div style="float:left;">
+<script type="text/javascript" src="//rabc1.iteye.com/common/js/ndr3h.js?b=wosyvccl"></script>
+<!-- 长文字链
+<script type="text/javascript" src="//rabc1.iteye.com/common/5klj5.js?kfxbghx=bx"></script>
+-->
+</div></div></div>            		</span>
+		<div class="pulllog-btn float-right clearfix">
+            <div class="float-left csdn-tracking-statistics tracking-click" data-mod="popu_557">
+                <a class="pulllog-login">登录</a>
+            </div>
+            <div class="pulllog-sigin float-left csdn-tracking-statistics tracking-click" data-mod="popu_558">
+                <a href="https://passport.csdn.net/account/mobileregister" target="_blank">注册</a>
+            </div>
+            <button class="btn-close">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#csdnc-times"></use>
+                </svg>
+            </button>
+		</div>
+	</div>
+</div>
+<div id="loginWrap" style="display:none"></div>
+<div class="tool-box">
+	<ul class="meau-list">
+		<li class="btn-like-box ">
+			<button class=" low-height hover-box btn-like " title="点赞">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-thumbsup"></use>
+				</svg>
+				<span class="hover-show text-box text">
+					<span class="no-active">点赞</span>
+					<span class="active">取消点赞</span>
+				</span>
+				<p>0</p>
+			</button>
+		</li>
+		<li class="">
+						<a class="btn-comments low-height hover-box" title="写评论" href="#commentBox">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-comments"></use>
+				</svg>
+				<span class="hover-show text">评论</span>
+				<p class="">
+										</p>
+			</a>
+		</li>
+		<li class="toc-container-box" id="liTocBox">
+			<button class="btn-toc low-height hover-box" title="目录">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-contents"></use>
+				</svg>
+				<span class="hover-show text">目录</span>
+			</button>
+			<div class="toc-container">
+				<div class="pos-box">
+					<div class="icon-arrow"></div>
+					<div class="scroll-box">
+						<div class="toc-box"></div>
+					</div>
+				</div>
+				<div class="opt-box">
+					<button class="btn-opt prev nomore" title="向上">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronup"></use>
+						</svg>
+					</button>
+					<button class="btn-opt next">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#csdnc-chevrondown"></use>
+						</svg>
+					</button>
+				</div>
+			</div>
+		</li>
+		<li>
+			<button class="btn-bookmark low-height hover-box" title="收藏">
+				<svg class="icon active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark-ok"></use>
+				</svg>
+				<svg class="icon no-active hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-bookmark"></use>
+				</svg>
+					<span class="hover-show text">收藏</span>
+				<!-- <span class="hover-show text-box text">
+					<span class="no-active">收藏</span>
+					<span class="active">取消收藏</span>
+				</span> -->
+			</button>
+		</li>
+		<li class="bdsharebuttonbox">
+			<div class="weixin-qr btn-comments low-height hover-box" >
+        <a href="#" class="bds_weixin clear-share-style" data-cmd="weixin" title="手机看"></a>
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-usephone"></use>
+				</svg>
+				<span class="hover-show text text3">
+					手机看
+				</span>
+			</div>
+		</li>
+							<li class="widescreen-hide">
+				<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/w_honor/article/details/53283454" title="MySQL服务器“无法启动，没有错误”——错误分析及解决方法">
+					<svg class="icon hover-hide" aria-hidden="true">
+						<use xlink:href="#csdnc-chevronleft"></use>
+					</svg>
+					<span class="hover-show text text3">上一篇</span>
+				</a>
+			</li>
+								<li class="widescreen-hide">
+			<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/w_honor/article/details/89603584" title="蓝桥杯CT107D比赛开发板参赛笔记（一）">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-chevronright"></use>
+				</svg>
+				<span class="hover-show text text3">下一篇</span>
+			</a>
+		</li>
+						<!-- 宽屏更多按钮 -->
+		<li class="widescreen-more">
+			<a class="btn-comments chat-ask-button low-height hover-box" title="快问" href="#chatqa">
+				<svg class="icon hover-hide" aria-hidden="true">
+					<use xlink:href="#csdnc-more"></use>
+				</svg>
+				<span class="hover-show text">更多</span>
+				
+			</a>
+			<ul class="widescreen-more-box">
+													<li class="widescreen-more">
+						<a class="btn-comments low-height hover-box" href="https://blog.csdn.net/w_honor/article/details/53283454" title="MySQL服务器“无法启动，没有错误”——错误分析及解决方法">
+							<svg class="icon hover-hide" aria-hidden="true">
+								<use xlink:href="#csdnc-chevronleft"></use>
+							</svg>
+							<span class="hover-show text text3">上一篇</span>
+						</a>
+					</li>
+																<li class="widescreen-more">
+					<a class="btn-comments hover-box low-height" href="https://blog.csdn.net/w_honor/article/details/89603584" title="蓝桥杯CT107D比赛开发板参赛笔记（一）">
+						<svg class="icon hover-hide" aria-hidden="true">
+							<use xlink:href="#csdnc-chevronright"></use>
+						</svg>
+						<span class="hover-show text text3">下一篇</span>
+					</a>
+				</li>
+							</ul>
+		</li>
+	</ul>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'https://csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+<script>
+    var recommendCount = 77;
+    recommendCount = recommendCount > 1 ? (recommendCount + (recommendCount>6 ? 2 : 1)) : recommendCount;
+    var ChannelId = 16;
+    var articleId = "89418812";
+    var commentscount = 0;
+    var islock = false;
+    var curentUrl = "https://blog.csdn.net/W_Honor/article/details/89418812";
+    var myUrl = "https://my.csdn.net/";
+    //1禁止评论，2正常
+    var commentAuth = 2;
+    //百度搜索
+    var baiduKey = "Julia——为数据科学和人工智能而生的编程语言 - W_Honor的博客";
+    var needInsertBaidu = true;
+    // 代码段样式
+    var codeStyle = '';
+	var highlight = ["julia","\u6570\u636e\u79d1\u5b66","\u4eba\u5de5\u667a\u80fd","\u751f\u7684","\u7f16\u7a0b\u8bed\u8a00"];//高亮数组
+
+    var RecommendBlogExpertList = [];
+	var articleType = 1;
+	var CopyrightContent = '本文为博主原创文章，未经博主允许不得转载。';
+</script>
+<script src="https://csdnimg.cn/public/sandalstrap/1.4/js/sandalstrap.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/vendor/pagination/paging.js"></script>
+<script src="https://csdnimg.cn/public/common/gotop/js/goTop-v1.0.min.js?v201904241615"></script><script>
+    GoTop({
+        right: 8,
+        hasReport: true,
+        reportFun: function() {
+            showReport(false,articleTitles);
+        }
+    })
+</script>
+<div style="display:none;">
+	<img src="" onerror='setTimeout(function(){if(!/(csdn.net|iteye.com|baiducontent.com|googleusercontent.com|360webcache.com|sogoucdn.com|bingj.com|baidu.com)$/.test(window.location.hostname)){window.location.href="\x68\x74\x74\x70\x73\x3a\x2f\x2f\x77\x77\x77\x2e\x63\x73\x64\x6e\x2e\x6e\x65\x74"}},3000);'>
+</div>
+</body>
+
+<!-- 高亮未与 markdown兼容  -->
+	<link rel="stylesheet" href="https://csdnimg.cn/release/blog_editor_html/release1.3.9/ckeditor/plugins/codesnippet/lib/highlight/styles/atom-one-light.css">
+	<script type="text/javascript" src="https://csdnimg.cn/release/phoenix/production/pc_wap_common-45af74a22e.js" /></script>
+
+<script src="https://csdnimg.cn/release/phoenix/template/js/common-0100d9c3da.min.js"></script>
+<script src="https://csdnimg.cn/release/phoenix/template/js/detail-a8a55c8dd3.min.js"></script>
+
+	<script src="https://csdnimg.cn/release/phoenix/themes/skin3-template/skin3-template-fc7383b956.min.js"></script>
+
+    <script src="//g.csdnimg.cn/??login-box/1.0.5/login-box.js,login-box/1.0.5/login-auto.js,copyright/1.0.3/copyright.js,baidu-search/1.0.0/baidu-search.js?t=20190307095522"  type="text/javascript"></script>
+
+<script type="text/javascript" src="https://csdnimg.cn/release/blog_mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            "HTML-CSS": {
+                    linebreaks: { automatic: true, width: "94%container" },
+                    imageFont: null
+            },
+            tex2jax: {
+                preview: "none"
+            },
+            mml2jax: {
+                preview: 'none'
+            }
+    });
+</script>
+<script type="text/javascript">
+    </script>
+<script src="https://gh.bdstatic.com/static/gh/js/sdk/bword.min.js"></script>
+</html>
