@@ -1,0 +1,573 @@
+###############################################################################
+#
+# IAR ELF Linker V8.30.1.114/W32 for ARM                  24/May/2019  22:50:06
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\hello_world.out
+#    Map file     =  
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\list\hello_world.map
+#    Command line =  
+#        -f C:\Users\MAIBEN~1\AppData\Local\Temp\EW1DC4.tmp
+#        (D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\board.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\clock_config.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\flash_config.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_assert.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_clock.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_common.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_debug_console.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_flexcomm.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_gpio.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_power.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_puf.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_reset.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_str.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\fsl_usart.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\generic_list.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\hello_world.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\pin_mux.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\serial_manager.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\serial_port_uart.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\startup_MIMXRT685S.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\system_MIMXRT685S.o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj\usart_adapter.o
+#        --no_out_extension -o
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\hello_world.out
+#        --map
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\list\hello_world.map
+#        --config
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\MIMXRT685Sxxxx_ram.icf
+#        --semihosting
+#        D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar/../../../../../devices/MIMXRT685S/iar/iar_lib_power.a
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = DLMalloc
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The advanced heap was selected because the application calls memory
+allocation functions outside of system library functions, and there
+are calls to deallocation functions in the application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x7'f400 { ro section .flash_conf };
+"A1":  place at 0x8'0000 { ro section .intvec };
+"P1":  place in [from 0x8'0000 to 0x8'0143] |
+                [from 0x8'0144 to 0x1b'ffff] { ro };
+define block RW { rw };
+"P2":  place in [from 0x1c'0000 to 0x2f'fbff] { block RW };
+define block ZI { zi };
+"P3":  place in [from 0x1c'0000 to 0x2f'fbff] { block ZI };
+define block CSTACK with size = 1K, alignment = 8 { };
+"P5":  place in [from 0x2f'fc00 to 0x2f'ffff] { block CSTACK };
+initialize by copy { rw, section .textrw };
+keep { section .flash_conf };
+
+No sections matched the following patterns:
+
+  section m_usb_bdt     in "P6"
+  section m_usb_global  in "P7"
+
+
+  Section            Kind       Address    Size  Object
+  -------            ----       -------    ----  ------
+"A0":                                     0x200
+  .flash_conf        const     0x7'f400   0x200  flash_config.o [1]
+                             - 0x7'f600   0x200
+
+"A1":                                     0x144
+  .intvec            ro code   0x8'0000   0x144  startup_MIMXRT685S.o [1]
+                             - 0x8'0144   0x144
+
+"P1":                                    0x3420
+  .text              ro code   0x8'0144   0xe74  fsl_clock.o [1]
+  .text              ro code   0x8'0fb8   0x230  I64DivMod.o [3]
+  .text              ro code   0x8'11e8     0x2  I64DivZer.o [3]
+  .text              ro code   0x8'11ea    0x3a  zero_init3.o [3]
+  .text              ro code   0x8'1224   0x376  fsl_puf.o [1]
+  .text              ro code   0x8'159a     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'159c   0x19e  fsl_reset.o [1]
+  .text              ro code   0x8'173a     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'173c    0x1c  fsl_assert.o [1]
+  .text              ro code   0x8'1758   0x1d8  fsl_debug_console.o [1]
+  .text              ro code   0x8'1930   0x1f8  serial_manager.o [1]
+  .text              ro code   0x8'1b28    0x86  ABImemcpy.o [3]
+  .text              ro code   0x8'1bae     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'1bb0    0x66  ABImemset.o [3]
+  .text              ro code   0x8'1c16     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'1c18     0x6  ABImemclr4.o [3]
+  .text              ro code   0x8'1c1e   0x310  fsl_str.o [1]
+  .text              ro code   0x8'1f2e     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'1f30    0xd4  serial_port_uart.o [1]
+  .text              ro code   0x8'2004    0x32  ABImemset48.o [3]
+  .text              ro code   0x8'2036     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'2038    0x36  strlen.o [3]
+  .text              ro code   0x8'206e     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'2070   0x178  usart_adapter.o [1]
+  .text              ro code   0x8'21e8   0x264  fsl_usart.o [1]
+  .text              ro code   0x8'244c   0x2fc  fsl_flexcomm.o [1]
+  .text              ro code   0x8'2748   0x230  clock_config.o [1]
+  .text              ro code   0x8'2978   0x1b8  system_MIMXRT685S.o [1]
+  .text              ro code   0x8'2b30     0x2  system_MIMXRT685S.o [1]
+  .text              ro code   0x8'2b32     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'2b34    0xd8  hello_world.o [1]
+  .text              ro code   0x8'2c0c    0x4e  pin_mux.o [1]
+  .text              ro code   0x8'2c5a     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'2c5c    0x3c  board.o [1]
+  .rodata            const     0x8'2c98    0x5c  fsl_debug_console.o [1]
+  .rodata            const     0x8'2cf4    0x4c  serial_port_uart.o [1]
+  .rodata            const     0x8'2d40    0x48  fsl_flexcomm.o [1]
+  .rodata            const     0x8'2d88    0x48  serial_manager.o [1]
+  .rodata            const     0x8'2dd0    0x48  usart_adapter.o [1]
+  .rodata            const     0x8'2e18    0x44  fsl_reset.o [1]
+  .rodata            const     0x8'2e5c    0x44  fsl_usart.o [1]
+  .rodata            const     0x8'2ea0    0x40  usart_adapter.o [1]
+  .rodata            const     0x8'2ee0    0x3c  fsl_usart.o [1]
+  .rodata            const     0x8'2f1c    0x38  fsl_usart.o [1]
+  .text              ro code   0x8'2f54    0x34  startup_MIMXRT685S.o [1]
+  .rodata            const     0x8'2f88    0x2c  fsl_assert.o [1]
+  .text              ro code   0x8'2fb4    0x2c  copy_init3.o [3]
+  .rodata            const     0x8'2fe0    0x28  fsl_debug_console.o [1]
+  .rodata            const     0x8'3008    0x28  usart_adapter.o [1]
+  .text              ro code   0x8'3030    0x28  data_init.o [3]
+  .iar.init_table    const     0x8'3058    0x24  - Linker created -
+  .rodata            const     0x8'307c    0x20  fsl_flexcomm.o [1]
+  .rodata            const     0x8'309c    0x20  fsl_flexcomm.o [1]
+  .rodata            const     0x8'30bc    0x20  fsl_usart.o [1]
+  .text              ro code   0x8'30dc    0x1e  cmain.o [3]
+  .text              ro code   0x8'30fa     0x4  low_level_init.o [2]
+  .text              ro code   0x8'30fe     0x4  exit.o [2]
+  .text              ro code   0x8'3102     0x2  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3104     0xa  cexit.o [3]
+  .text              ro code   0x8'3110    0x14  exit.o [4]
+  .rodata            const     0x8'3124    0x18  fsl_flexcomm.o [1]
+  .rodata            const     0x8'313c    0x18  fsl_flexcomm.o [1]
+  .rodata            const     0x8'3154    0x18  fsl_flexcomm.o [1]
+  .rodata            const     0x8'316c    0x18  fsl_flexcomm.o [1]
+  .rodata            const     0x8'3184    0x18  fsl_flexcomm.o [1]
+  .rodata            const     0x8'319c    0x18  fsl_flexcomm.o [1]
+  .rodata            const     0x8'31b4    0x18  hello_world.o [1]
+  .rodata            const     0x8'31cc    0x18  hello_world.o [1]
+  .rodata            const     0x8'31e4    0x18  usart_adapter.o [1]
+  .rodata            const     0x8'31fc    0x10  clock_config.o [1]
+  .rodata            const     0x8'320c    0x10  clock_config.o [1]
+  .rodata            const     0x8'321c    0x10  fsl_debug_console.o [1]
+  .rodata            const     0x8'322c    0x10  fsl_flexcomm.o [1]
+  .rodata            const     0x8'323c    0x10  fsl_flexcomm.o [1]
+  .rodata            const     0x8'324c    0x10  fsl_reset.o [1]
+  .rodata            const     0x8'325c    0x10  hello_world.o [1]
+  .rodata            const     0x8'326c    0x10  hello_world.o [1]
+  .rodata            const     0x8'327c    0x10  serial_manager.o [1]
+  .rodata            const     0x8'328c    0x10  serial_port_uart.o [1]
+  .rodata            const     0x8'329c    0x10  serial_port_uart.o [1]
+  .rodata            const     0x8'32ac     0xc  fsl_debug_console.o [1]
+  .rodata            const     0x8'32b8     0xc  fsl_usart.o [1]
+  .rodata            const     0x8'32c4     0xc  hello_world.o [1]
+  .rodata            const     0x8'32d0     0xc  serial_manager.o [1]
+  .rodata            const     0x8'32dc     0xc  serial_manager.o [1]
+  .text              ro code   0x8'32e8     0xc  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'32f4     0xc  cstartup_M.o [3]
+  .rodata            const     0x8'3300     0x8  fsl_debug_console.o [1]
+  .rodata            const     0x8'3308     0x8  serial_manager.o [1]
+  .rodata            const     0x8'3310     0x8  serial_manager.o [1]
+  .rodata            const     0x8'3318     0x8  serial_manager.o [1]
+  .rodata            const     0x8'3320     0x8  serial_manager.o [1]
+  .rodata            const     0x8'3328     0x8  serial_port_uart.o [1]
+  .rodata            const     0x8'3330     0x8  serial_port_uart.o [1]
+  .rodata            const     0x8'3338     0x8  usart_adapter.o [1]
+  .rodata            const     0x8'3340     0x8  usart_adapter.o [1]
+  .rodata            const     0x8'3348     0x8  usart_adapter.o [1]
+  .rodata            const     0x8'3350     0x8  usart_adapter.o [1]
+  .text              ro code   0x8'3358     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3360     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3368     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3370     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3378     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3380     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3388     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3390     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3398     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33a0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33a8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33b0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33b8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33c0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33c8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33d0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33d8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33e0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33e8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33f0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'33f8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3400     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3408     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3410     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3418     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3420     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3428     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3430     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3438     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3440     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3448     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3450     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3458     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3460     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3468     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3470     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3478     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3480     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3488     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3490     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3498     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34a0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34a8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34b0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34b8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34c0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34c8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34d0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34d8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34e0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34e8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34f0     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'34f8     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3500     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3508     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3510     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3518     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3520     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3528     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3530     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3538     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3540     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3548     0x8  startup_MIMXRT685S.o [1]
+  .text              ro code   0x8'3550     0x8  startup_MIMXRT685S.o [1]
+  .crp               ro code   0x8'3558     0x4  startup_MIMXRT685S.o [1]
+  .rodata            const     0x8'355c     0x4  board.o [1]
+  Initializer bytes  const     0x8'3560     0x4  <for RW-1>
+  .rodata            const     0x8'3564     0x0  zero_init3.o [3]
+  .rodata            const     0x8'3564     0x0  copy_init3.o [3]
+                             - 0x8'3564  0x3420
+
+"P2-P3", part 1 of 2:                       0x4
+  RW                          0x1c'0000     0x4  <Block>
+    RW-1                      0x1c'0000     0x4  <Init block>
+      .data          inited   0x1c'0000     0x4  system_MIMXRT685S.o [1]
+                            - 0x1c'0004     0x4
+
+"P2-P3", part 2 of 2:                      0x68
+  ZI                          0x1c'0004    0x68  <Block>
+    .bss             zero     0x1c'0004     0x4  fsl_clock.o [1]
+    .bss             zero     0x1c'0008     0x4  fsl_clock.o [1]
+    .bss             zero     0x1c'000c    0x1c  fsl_debug_console.o [1]
+    .bss             zero     0x1c'0028     0x4  fsl_debug_console.o [1]
+    .bss             zero     0x1c'002c    0x20  fsl_flexcomm.o [1]
+    .bss             zero     0x1c'004c    0x20  fsl_flexcomm.o [1]
+                            - 0x1c'006c    0x68
+
+"P5":                                     0x400
+  CSTACK                      0x2f'fc00   0x400  <Block>
+    CSTACK           uninit   0x2f'fc00   0x400  <Block tail>
+                            - 0x30'0000   0x400
+
+Unused ranges:
+
+       From         To       Size
+       ----         --       ----
+   0x8'3564  0x1b'ffff  0x13'ca9c
+  0x1c'006c  0x2f'fbff  0x13'fb94
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address    Size
+          -------    ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x68:
+          0x1c'0004  0x68
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4:
+           0x8'3560   0x4
+    1 destination range, total size 0x4:
+          0x1c'0000   0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                ro code  ro data  rw data
+    ------                -------  -------  -------
+command line/config:
+    -----------------------------------------------
+    Total:
+
+D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj: [1]
+    board.o                    60        4
+    clock_config.o            560       32
+    flash_config.o                     512
+    fsl_assert.o               28       44
+    fsl_clock.o             3 700                 8
+    fsl_debug_console.o       472      168       32
+    fsl_flexcomm.o            764      312       64
+    fsl_puf.o                 886
+    fsl_reset.o               414       84
+    fsl_str.o                 784
+    fsl_usart.o               612      228
+    hello_world.o             216       92
+    pin_mux.o                  78
+    serial_manager.o          504      144
+    serial_port_uart.o        212      124
+    startup_MIMXRT685S.o      924
+    system_MIMXRT685S.o       442        4        4
+    usart_adapter.o           376      232
+    -----------------------------------------------
+    Total:                 11 032    1 980      108
+
+dl7M_tln.a: [2]
+    exit.o                      4
+    low_level_init.o            4
+    -----------------------------------------------
+    Total:                      8
+
+rt7M_tl.a: [3]
+    ABImemclr4.o                6
+    ABImemcpy.o               134
+    ABImemset.o               102
+    ABImemset48.o              50
+    I64DivMod.o               560
+    I64DivZer.o                 2
+    cexit.o                    10
+    cmain.o                    30
+    copy_init3.o               44
+    cstartup_M.o               12
+    data_init.o                40
+    strlen.o                   54
+    zero_init3.o               58
+    -----------------------------------------------
+    Total:                  1 102
+
+shb_l.a: [4]
+    exit.o                     20
+    -----------------------------------------------
+    Total:                     20
+
+    Gaps                        2
+    Linker created                      36    1 024
+---------------------------------------------------
+    Grand Total:           12 164    2 016    1 132
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                     Address   Size  Type      Object
+-----                     -------   ----  ----      ------
+.iar.init_table$$Base    0x8'3058          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x8'307c          --   Gb  - Linker created -
+?main                    0x8'30dd         Code  Gb  cmain.o [3]
+BOARD_BootClockRUN       0x8'280d  0x10a  Code  Gb  clock_config.o [1]
+BOARD_InitDebugConsole   0x8'2c5d   0x3c  Code  Gb  board.o [1]
+BOARD_InitPins           0x8'2c27   0x34  Code  Gb  pin_mux.o [1]
+BOARD_SetQspiClock       0x8'2791   0x7c  Code  Gb  clock_config.o [1]
+CLOCK_AttachClk          0x8'01ab   0x60  Code  Gb  fsl_clock.o [1]
+CLOCK_DisableClock       0x8'1281   0x5c  Code  Lc  fsl_puf.o [1]
+CLOCK_EnableClock        0x8'244d   0x5c  Code  Lc  fsl_flexcomm.o [1]
+CLOCK_EnableClock        0x8'1225   0x5c  Code  Lc  fsl_puf.o [1]
+CLOCK_EnableOsc32K       0x8'276b   0x20  Code  Lc  clock_config.o [1]
+CLOCK_EnableSysOscClk    0x8'2749   0x22  Code  Lc  clock_config.o [1]
+CLOCK_GetAcmpClkFreq     0x8'0aa7   0x5e  Code  Gb  fsl_clock.o [1]
+CLOCK_GetAdcClkFreq      0x8'050f   0x8c  Code  Gb  fsl_clock.o [1]
+CLOCK_GetAudioPfdFreq    0x8'0399   0x82  Code  Gb  fsl_clock.o [1]
+CLOCK_GetAudioPllFreq    0x8'0333   0x66  Code  Gb  fsl_clock.o [1]
+CLOCK_GetClockOutClkFreq
+                         0x8'059b   0xda  Code  Gb  fsl_clock.o [1]
+CLOCK_GetDmicClkFreq     0x8'0a25   0x82  Code  Gb  fsl_clock.o [1]
+CLOCK_GetDspMainClkFreq
+                         0x8'0495   0x7a  Code  Gb  fsl_clock.o [1]
+CLOCK_GetFFroFreq        0x8'014b    0x6  Code  Lc  fsl_clock.o [1]
+CLOCK_GetFRGClock        0x8'0675   0xd8  Code  Gb  fsl_clock.o [1]
+CLOCK_GetFlexCommClkFreq
+                         0x8'074d   0x7c  Code  Gb  fsl_clock.o [1]
+CLOCK_GetFreq            0x8'0b29  0x164  Code  Gb  fsl_clock.o [1]
+CLOCK_GetI3cClkFreq      0x8'09c3   0x2e  Code  Gb  fsl_clock.o [1]
+CLOCK_GetLpOscFreq       0x8'0167    0x6  Code  Lc  fsl_clock.o [1]
+CLOCK_GetMainClkFreq     0x8'041b   0x7a  Code  Gb  fsl_clock.o [1]
+CLOCK_GetMclkClkFreq     0x8'08c3   0x46  Code  Gb  fsl_clock.o [1]
+CLOCK_GetMclkInClkFreq   0x8'08a7   0x1c  Code  Gb  fsl_clock.o [1]
+CLOCK_GetOsc32KFreq      0x8'016d   0x14  Code  Lc  fsl_clock.o [1]
+CLOCK_GetQspiClkFreq     0x8'07c9   0x60  Code  Gb  fsl_clock.o [1]
+CLOCK_GetSFroFreq        0x8'0145    0x6  Code  Lc  fsl_clock.o [1]
+CLOCK_GetSctClkFreq      0x8'0829   0x7e  Code  Gb  fsl_clock.o [1]
+CLOCK_GetSdioClkFreq     0x8'096f   0x54  Code  Gb  fsl_clock.o [1]
+CLOCK_GetSysPfdFreq      0x8'02b1   0x82  Code  Gb  fsl_clock.o [1]
+CLOCK_GetSysPllFreq      0x8'024b   0x66  Code  Gb  fsl_clock.o [1]
+CLOCK_GetSystickClkFreq
+                         0x8'0921   0x4e  Code  Gb  fsl_clock.o [1]
+CLOCK_GetUsbClkFreq      0x8'09f1   0x34  Code  Gb  fsl_clock.o [1]
+CLOCK_GetWakeClk32KFreq
+                         0x8'0181   0x2a  Code  Lc  fsl_clock.o [1]
+CLOCK_GetWdtOscFreq      0x8'0909   0x18  Code  Gb  fsl_clock.o [1]
+CLOCK_GetXtalInClkFreq   0x8'0151   0x16  Code  Lc  fsl_clock.o [1]
+CLOCK_InitAudioPfd       0x8'0e81   0x60  Code  Gb  fsl_clock.o [1]
+CLOCK_InitAudioPll       0x8'0e25   0x52  Code  Gb  fsl_clock.o [1]
+CLOCK_InitSysPfd         0x8'0dbd   0x60  Code  Gb  fsl_clock.o [1]
+CLOCK_InitSysPll         0x8'0cfd   0xc0  Code  Gb  fsl_clock.o [1]
+CLOCK_SetClkDiv          0x8'020b   0x40  Code  Gb  fsl_clock.o [1]
+CLOCK_SetFRGClock        0x8'0c99   0x50  Code  Gb  fsl_clock.o [1]
+CLOCK_SetXtalFreq        0x8'278b    0x6  Code  Lc  clock_config.o [1]
+CSTACK$$Base            0x2f'fc00          --   Gb  - Linker created -
+CSTACK$$Limit           0x30'0000          --   Gb  - Linker created -
+ConvertRadixNumToString
+                         0x8'1c1f   0xc0  Code  Lc  fsl_str.o [1]
+DbgConsole_Init          0x8'17df   0xe6  Code  Gb  fsl_debug_console.o [1]
+DbgConsole_PrintCallback
+                         0x8'17a1   0x3e  Code  Lc  fsl_debug_console.o [1]
+DbgConsole_Printf        0x8'18c5   0x44  Code  Gb  fsl_debug_console.o [1]
+DbgConsole_SendDataReliable
+                         0x8'1759   0x48  Code  Gb  fsl_debug_console.o [1]
+FLEXCOMM0_DriverIRQHandler
+                         0x8'259f   0x26  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM14_DriverIRQHandler
+                         0x8'2683   0x38  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM15_DriverIRQHandler
+                         0x8'26bb   0x38  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM1_DriverIRQHandler
+                         0x8'25c5   0x26  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM2_DriverIRQHandler
+                         0x8'25eb   0x26  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM3_DriverIRQHandler
+                         0x8'2611   0x26  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM4_DriverIRQHandler
+                         0x8'2637   0x26  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM5_DriverIRQHandler
+                         0x8'265d   0x26  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM_GetInstance     0x8'24e5   0x2e  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM_Init            0x8'2567   0x38  Code  Gb  fsl_flexcomm.o [1]
+FLEXCOMM_PeripheralIsPresent
+                         0x8'24a9   0x3c  Code  Lc  fsl_flexcomm.o [1]
+FLEXCOMM_SetPeriph       0x8'2513   0x54  Code  Lc  fsl_flexcomm.o [1]
+HAL_UartGetStatus        0x8'2071   0x10  Code  Lc  usart_adapter.o [1]
+HAL_UartInit             0x8'2081   0xec  Code  Gb  usart_adapter.o [1]
+HAL_UartSendBlocking     0x8'216d   0x5a  Code  Gb  usart_adapter.o [1]
+IOPCTL_PinMuxSet         0x8'2c0d   0x1a  Code  Lc  pin_mux.o [1]
+PUF_Deinit               0x8'13fd   0x40  Code  Gb  fsl_puf.o [1]
+PUF_GetKey               0x8'14d5   0xc6  Code  Gb  fsl_puf.o [1]
+PUF_Init                 0x8'13af   0x4e  Code  Gb  fsl_puf.o [1]
+PUF_Start                0x8'1471   0x64  Code  Gb  fsl_puf.o [1]
+RESET_ClearPeripheralReset
+                         0x8'1633   0xa2  Code  Gb  fsl_reset.o [1]
+RESET_PeripheralReset    0x8'1725   0x16  Code  Gb  fsl_reset.o [1]
+RESET_SetPeripheralReset
+                         0x8'159d   0x96  Code  Gb  fsl_reset.o [1]
+RW$$Base                0x1c'0000          --   Gb  - Linker created -
+RW$$Limit               0x1c'0004          --   Gb  - Linker created -
+Region$$Table$$Base      0x8'3058          --   Gb  - Linker created -
+Region$$Table$$Limit     0x8'307c          --   Gb  - Linker created -
+SerialManager_Init       0x8'19d7   0x6a  Code  Gb  serial_manager.o [1]
+SerialManager_OpenReadHandle
+                         0x8'1a97   0x5e  Code  Gb  serial_manager.o [1]
+SerialManager_OpenWriteHandle
+                         0x8'1a41   0x56  Code  Gb  serial_manager.o [1]
+SerialManager_StartWriting
+                         0x8'1931   0x32  Code  Lc  serial_manager.o [1]
+SerialManager_Write      0x8'1963   0x74  Code  Lc  serial_manager.o [1]
+SerialManager_WriteBlocking
+                         0x8'1af5   0x14  Code  Gb  serial_manager.o [1]
+Serial_UartInit          0x8'1f31   0x6e  Code  Gb  serial_port_uart.o [1]
+Serial_UartWrite         0x8'1f9f   0x52  Code  Gb  serial_port_uart.o [1]
+StrFormatPrintf          0x8'1cdf  0x250  Code  Gb  fsl_str.o [1]
+SystemCoreClock         0x1c'0000    0x4  Data  Gb  system_MIMXRT685S.o [1]
+SystemCoreClockUpdate    0x8'29b5   0xe4  Code  Gb  system_MIMXRT685S.o [1]
+SystemInit               0x8'2add   0x54  Code  Wk  system_MIMXRT685S.o [1]
+USART_GetDefaultConfig   0x8'22e9   0x54  Code  Gb  fsl_usart.o [1]
+USART_Init               0x8'21e9  0x100  Code  Gb  fsl_usart.o [1]
+USART_SetBaudRate        0x8'233d   0xa4  Code  Gb  fsl_usart.o [1]
+USART_WriteBlocking      0x8'23e1   0x56  Code  Gb  fsl_usart.o [1]
+ZI$$Base                0x1c'0004          --   Gb  - Linker created -
+ZI$$Limit               0x1c'006c          --   Gb  - Linker created -
+__RAM_VECTOR_TABLE_SIZE {Abs}
+                              0x0         Data  Gb  <internal module>
+__VECTOR_RAM {Abs}       0x8'0000         Data  Gb  <internal module>
+__VECTOR_TABLE {Abs}     0x8'0000         Data  Gb  <internal module>
+__Vectors                0x8'0000          --   Gb  startup_MIMXRT685S.o [1]
+__Vectors_End            0x8'0144         Data  Gb  startup_MIMXRT685S.o [1]
+__Vectors_Size {Abs}        0x144          --   Gb  startup_MIMXRT685S.o [1]
+__aeabi_assert           0x8'173d   0x1c  Code  Gb  fsl_assert.o [1]
+__aeabi_ldiv0            0x8'11e9         Code  Gb  I64DivZer.o [3]
+__aeabi_memclr4          0x8'1c19         Code  Gb  ABImemclr4.o [3]
+__aeabi_memcpy4          0x8'1b29         Code  Gb  ABImemcpy.o [3]
+__aeabi_memcpy8          0x8'1b29         Code  Gb  ABImemcpy.o [3]
+__aeabi_memset           0x8'1bb1         Code  Gb  ABImemset.o [3]
+__aeabi_uldivmod         0x8'0fb9         Code  Gb  I64DivMod.o [3]
+__cmain                  0x8'30dd         Code  Gb  cmain.o [3]
+__exit                   0x8'3111   0x14  Code  Gb  exit.o [4]
+__iar_Memset             0x8'1bb1         Code  Gb  ABImemset.o [3]
+__iar_Memset4_word       0x8'2005         Code  Gb  ABImemset48.o [3]
+__iar_Memset8_word       0x8'2005         Code  Gb  ABImemset48.o [3]
+__iar_Memset_word        0x8'1bb9         Code  Gb  ABImemset.o [3]
+__iar_copy_init3         0x8'2fb5   0x2c  Code  Gb  copy_init3.o [3]
+__iar_data_init3         0x8'3031   0x28  Code  Gb  data_init.o [3]
+__iar_program_start      0x8'32f5         Code  Gb  cstartup_M.o [3]
+__iar_zero_init3         0x8'11eb   0x3a  Code  Gb  zero_init3.o [3]
+__low_level_init         0x8'30fb    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x8'0000         Data  Gb  startup_MIMXRT685S.o [1]
+__vector_table_0x1c      0x8'001c         Data  Gb  startup_MIMXRT685S.o [1]
+_call_main               0x8'30e9         Code  Gb  cmain.o [3]
+_exit                    0x8'3105         Code  Gb  cexit.o [3]
+_main                    0x8'30f7         Code  Gb  cmain.o [3]
+exit                     0x8'30ff    0x4  Code  Gb  exit.o [2]
+g_MclkInFreq            0x1c'0008    0x4  Data  Gb  fsl_clock.o [1]
+g_configAudioPll         0x8'320c   0x10  Data  Gb  clock_config.o [1]
+g_configSysPll           0x8'31fc   0x10  Data  Gb  clock_config.o [1]
+g_serialHandle          0x1c'0028    0x4  Data  Gb  fsl_debug_console.o [1]
+g_xtalFreq              0x1c'0004    0x4  Data  Gb  fsl_clock.o [1]
+getFFroFreq              0x8'2979   0x3c  Code  Lc  system_MIMXRT685S.o [1]
+main                     0x8'2b35   0xd8  Code  Gb  hello_world.o [1]
+puf_powerCycle           0x8'1327   0x88  Code  Lc  fsl_puf.o [1]
+puf_powerOn              0x8'1313   0x14  Code  Lc  fsl_puf.o [1]
+puf_waitForInit          0x8'12f5   0x1e  Code  Lc  fsl_puf.o [1]
+puf_wait_usec            0x8'12dd   0x18  Code  Lc  fsl_puf.o [1]
+qspi_config              0x7'f400  0x200  Data  Gb  flash_config.o [1]
+s_UsartAdapterBase       0x8'31e4   0x18  Data  Lc  usart_adapter.o [1]
+s_debugConsoleState     0x1c'000c   0x1c  Data  Lc  fsl_debug_console.o [1]
+s_flexcommBaseAddrs      0x8'309c   0x20  Data  Lc  fsl_flexcomm.o [1]
+s_flexcommClocks         0x8'322c   0x10  Data  Lc  fsl_flexcomm.o [1]
+s_flexcommHandle        0x1c'004c   0x20  Data  Lc  fsl_flexcomm.o [1]
+s_flexcommIrqHandler    0x1c'002c   0x20  Data  Lc  fsl_flexcomm.o [1]
+s_flexcommResets         0x8'323c   0x10  Data  Lc  fsl_flexcomm.o [1]
+strlen                   0x8'2039         Code  Gb  strlen.o [3]
+
+
+[1] = D:\code\SDK_2.5.0_MIMXRT685S\boards\evkmimxrt685\demo_apps\hello_world\iar\debug\obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  12 164 bytes of readonly  code memory
+   2 016 bytes of readonly  data memory
+   1 132 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
