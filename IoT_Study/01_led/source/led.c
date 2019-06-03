@@ -36,6 +36,4 @@ int main(void)
 		GPIO_PinWrite(GPIO1, 9, 1U);
 		SysTick_DelayTicks(500U);
 	}	
-	
-	
 }

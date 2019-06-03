@@ -417,6 +417,18 @@
         </Group>
         <Group>
           <GroupName>core</GroupName>
+          <Files>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CORE\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CORE\delay.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>cmsis</GroupName>
@@ -889,6 +901,18 @@
         </Group>
         <Group>
           <GroupName>core</GroupName>
+          <Files>
+            <File>
+              <FileName>delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\CORE\delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CORE\delay.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>cmsis</GroupName>

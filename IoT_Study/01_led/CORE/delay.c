@@ -1,7 +1,6 @@
 #include "delay.h"
 
 
-
 volatile uint32_t g_systickCounter;
 void SysTick_DelayTicks(uint32_t n)
 {

@@ -1,0 +1,140 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.14.0.0
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Jone Wu, nxp, LIC=FQQBS-LYBVS-TJZ6H-WIA6W-FH8EV-D881Y
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.14.0.0
+Toolchain Path:  F:\Program Filesx86\MDK\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 1 (build 106)
+Assembler:       Armasm.exe V5.05 update 1 (build 106)
+Linker/Locator:  ArmLink.exe V5.05 update 1 (build 106)
+Library Manager: ArmAr.exe V5.05 update 1 (build 106)
+Hex Converter:   FromElf.exe V5.05 update 1 (build 106)
+CPU DLL:         SARMCM3.DLL V5.14.0.0
+Dialog DLL:      DCM.DLL V1.13.1.0
+Target DLL:      CMSIS_AGDI.dll V1.21.0.0
+Dialog DLL:      TCM.DLL V1.14.4.0
+ 
+<h2>Project:</h2>
+D:\code\c_language\data-struct\IoT_Study\02_key_led\led.uvprojx
+Project File Date:  06/03/2019
+
+<h2>Output:</h2>
+Build target 'led_debug'
+compiling main.c...
+compiling key.c...
+linking...
+.\scatter\MIMXRT1064xxxxx_ram.scf(61): warning: L6314W: No section matches pattern *(NonCacheable.init).
+.\scatter\MIMXRT1064xxxxx_ram.scf(62): warning: L6314W: No section matches pattern *(NonCacheable).
+Program Size: Code=5948 RO-data=1384 RW-data=20 ZI-data=2084  
+Finished: 0 information, 2 warning and 0 error messages.
+FromELF: creating hex file...
+".\OBJ\led.axf" - 0 Error(s), 2 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.4.2.0.pack
+                ARM::CMSIS:CORE:3.40.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 3.40.0
+
+Package Vendor: NXP
+                http://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.EVK-MIMXRT1064_BSP.10.0.0.pack
+                NXP::Board Support:SDK Project Template:project_template:evkmimxrt1064:1.0.0
+                Board Support Pack for EVK-MIMXRT1064
+   * Component: project_template Variant: evkmimxrt1064 Version: 1.0.0
+
+Package Vendor: NXP
+                http://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.MIMXRT1064_DFP.10.0.0.pack
+                NXP::Device:SDK Drivers:lpuart:2.2.5
+                Device Family Pack for MIMXRT1064
+   * Component: lpuart Version: 2.2.5
+   * Component: gpio Version: 2.0.1
+   * Component: iomuxc Version: 2.0.0
+   * Component: Startup Version: 1.0.0
+   * Component: clock Version: 2.1.0
+   * Component: common Version: 2.0.0
+   * Component: debug_console Version: 1.0.0
+   * Component: xip Version: 2.0.0
+
+<h2>Collection of Component include folders:</h2>
+  D:\code\c_language\data-struct\IoT_Study\02_key_led\RTE
+  D:\code\c_language\data-struct\IoT_Study\02_key_led\RTE\Board_Support\MIMXRT1064DVL6A
+  D:\code\c_language\data-struct\IoT_Study\02_key_led\RTE\Device\MIMXRT1064DVL6A
+  F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include
+  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers
+  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities
+  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io
+  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log
+  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str
+  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:3.40.0
+      Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
+
+   * Component: NXP::Board Support:SDK Project Template:project_template:evkmimxrt1064:1.0.0
+      Include file:  project_template\board.h
+      Include file:  project_template\peripherals.h
+      Include file:  project_template\pin_mux.h
+      Source file:   project_template\peripherals.c
+      Include file:  project_template\clock_config.h
+      Source file:   project_template\clock_config.c
+      Source file:   project_template\board.c
+      Source file:   project_template\pin_mux.c
+
+   * Component: NXP::Device:SDK Drivers:lpuart:2.2.5
+      Source file:   drivers\fsl_lpuart.c
+      Include file:  drivers\fsl_lpuart.h
+
+   * Component: NXP::Device:SDK Drivers:gpio:2.0.1
+      Source file:   drivers\fsl_gpio.c
+      Include file:  drivers\fsl_gpio.h
+
+   * Component: NXP::Device:SDK Drivers:iomuxc:2.0.0
+      Include file:  drivers\fsl_iomuxc.h
+
+   * Component: NXP::Device:Startup:1.0.0
+      Include file:  MIMXRT1064_features.h
+      Include file:  MIMXRT1064.h
+      Source file:   arm\startup_MIMXRT1064.s
+      Source file:   system_MIMXRT1064.c
+      Include file:  system_MIMXRT1064.h
+      Include file:  fsl_device_registers.h
+
+   * Component: NXP::Device:SDK Drivers:clock:2.1.0
+      Source file:   drivers\fsl_clock.c
+      Include file:  drivers\fsl_clock.h
+
+   * Component: NXP::Device:SDK Drivers:common:2.0.0
+      Source file:   drivers\fsl_common.c
+      Include file:  drivers\fsl_common.h
+
+   * Component: NXP::Device:SDK Utilities:debug_console:1.0.0
+      Include file:  utilities\fsl_debug_console_conf.h
+      Source file:   utilities\fsl_debug_console.c
+      Include file:  utilities\log\fsl_log.h
+      Source file:   utilities\str\fsl_str.c
+      Source file:   utilities\log\fsl_log.c
+      Include file:  utilities\io\fsl_io.h
+      Include file:  utilities\str\fsl_str.h
+      Source file:   utilities\io\fsl_io.c
+      Include file:  utilities\fsl_debug_console.h
+
+   * Component: NXP::Device:SDK Drivers:xip:2.0.0
+      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
+      Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
+      Source file:   xip\fsl_flexspi_nor_boot.c
+      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
+      Include file:  xip\fsl_flexspi_nor_boot.h
+      Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
+</pre>
+</body>
+</html>

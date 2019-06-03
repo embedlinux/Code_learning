@@ -1,308 +1,0 @@
-Dependencies for Project 'led_blinky', Target 'led_blinky flexspi_nor_release': (DO NOT MODIFY !)
-F (../led_blinky.c)(0x5CF46625)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\led_blinky.o --omf_browse flexspi_nor_release\led_blinky.crf --depend flexspi_nor_release\led_blinky.d)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A\board.h)(0x5BC585A0)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5BC585A0)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_gpio.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A\pin_mux.h)(0x5BC585A0)
-F (../readme.txt)(0x5BC5859A)()
-F (RTE\Board_Support\MIMXRT1064DVL6A\board.c)(0x5CE936BD)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\board.o --omf_browse flexspi_nor_release\board.crf --depend flexspi_nor_release\board.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console.h)(0x5BC5859A)
-I (RTE\Board_Support\MIMXRT1064DVL6A\board.h)(0x5BC585A0)
-I (RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5BC585A0)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_gpio.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_iomuxc.h)(0x5BC5859A)
-F (RTE\Board_Support\MIMXRT1064DVL6A\board.h)(0x5BC585A0)()
-F (RTE\Board_Support\MIMXRT1064DVL6A\clock_config.c)(0x5BC585A0)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\clock_config.o --omf_browse flexspi_nor_release\clock_config.crf --depend flexspi_nor_release\clock_config.d)
-I (RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5BC585A0)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-F (RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5BC585A0)()
-F (RTE\Board_Support\MIMXRT1064DVL6A\peripherals.c)(0x5CE9375D)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\peripherals.o --omf_browse flexspi_nor_release\peripherals.crf --depend flexspi_nor_release\peripherals.d)
-I (RTE\Board_Support\MIMXRT1064DVL6A\peripherals.h)(0x5BC5859C)
-F (RTE\Board_Support\MIMXRT1064DVL6A\peripherals.h)(0x5BC5859C)()
-F (RTE\Board_Support\MIMXRT1064DVL6A\pin_mux.c)(0x5BC585A0)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\pin_mux.o --omf_browse flexspi_nor_release\pin_mux.crf --depend flexspi_nor_release\pin_mux.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_iomuxc.h)(0x5BC5859A)
-I (RTE\Board_Support\MIMXRT1064DVL6A\pin_mux.h)(0x5BC585A0)
-F (RTE\Board_Support\MIMXRT1064DVL6A\pin_mux.h)(0x5BC585A0)()
-F (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Lib\ARM\arm_cortexM7lfdp_math.lib)(0x540CF30A)()
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_clock.o --omf_browse flexspi_nor_release\fsl_clock.crf --depend flexspi_nor_release\fsl_clock.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_common.o --omf_browse flexspi_nor_release\fsl_common.crf --depend flexspi_nor_release\fsl_common.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_gpio.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_gpio.o --omf_browse flexspi_nor_release\fsl_gpio.crf --depend flexspi_nor_release\fsl_gpio.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_gpio.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_lpuart.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_lpuart.o --omf_browse flexspi_nor_release\fsl_lpuart.crf --depend flexspi_nor_release\fsl_lpuart.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_lpuart.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_assert.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_assert.o --omf_browse flexspi_nor_release\fsl_assert.crf --depend flexspi_nor_release\fsl_assert.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_debug_console.o --omf_browse flexspi_nor_release\fsl_debug_console.crf --depend flexspi_nor_release\fsl_debug_console.d)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdio.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console_conf.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log\fsl_log.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str\fsl_str.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io\fsl_io.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_io.o --omf_browse flexspi_nor_release\fsl_io.crf --depend flexspi_nor_release\fsl_io.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io\fsl_io.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console_conf.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_lpuart.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log\fsl_log.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_log.o --omf_browse flexspi_nor_release\fsl_log.crf --depend flexspi_nor_release\fsl_log.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log\fsl_log.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console_conf.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io\fsl_io.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str\fsl_str.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_str.o --omf_browse flexspi_nor_release\fsl_str.crf --depend flexspi_nor_release\fsl_str.d)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\math.h)(0x5475F2FE)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdarg.h)(0x5475F2FA)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str\fsl_str.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console_conf.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\evkmimxrt1064_flexspi_nor_config.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\evkmimxrt1064_flexspi_nor_config.o --omf_browse flexspi_nor_release\evkmimxrt1064_flexspi_nor_config.crf --depend flexspi_nor_release\evkmimxrt1064_flexspi_nor_config.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\evkmimxrt1064_flexspi_nor_config.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\evkmimxrt1064_sdram_ini_dcd.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\evkmimxrt1064_sdram_ini_dcd.o --omf_browse flexspi_nor_release\evkmimxrt1064_sdram_ini_dcd.crf --depend flexspi_nor_release\evkmimxrt1064_sdram_ini_dcd.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\evkmimxrt1064_sdram_ini_dcd.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-F (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\fsl_flexspi_nor_boot.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\fsl_flexspi_nor_boot.o --omf_browse flexspi_nor_release\fsl_flexspi_nor_boot.crf --depend flexspi_nor_release\fsl_flexspi_nor_boot.d)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\fsl_flexspi_nor_boot.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A\board.h)(0x5BC585A0)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5BC585A0)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\assert.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdbool.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\string.h)(0x5475F300)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_gpio.h)(0x5BC5859A)
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_flexspi_nor.scf)(0x5BC5859A)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_flexspi_nor_sdram.scf)(0x5BC5859A)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_ram.scf)(0x5BC5859A)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_sdram.scf)(0x5BC5859A)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_sdram_txt.scf)(0x5BC5859A)()
-F (RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)()
-F (RTE\Device\MIMXRT1064DVL6A\startup_MIMXRT1064.s)(0x5BC5859A)(--cpu Cortex-M7.fp.dp --apcs=interwork --pd "__MICROLIB SETA 1"-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"--pd "__UVISION_VERSION SETA 514" --pd "_RTE_ SETA 1" --pd "CPU_MIMXRT1064DVL6A SETA 1" --pd "NDEBUG SETA 1" --pd "__STARTUP_INITIALIZE_NONCACHEDATA SETA 1"--list .\output\startup_mimxrt1064.lst -o flexspi_nor_release\startup_mimxrt1064.o --depend flexspi_nor_release\startup_mimxrt1064.d)
-F (RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -D__MICROLIB -O3 --apcs=interwork --split_sections -I../../.. -I.. --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186  -I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Board_Support\MIMXRT1064DVL6A-I D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE\Device\MIMXRT1064DVL6A-I "F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip"-I "F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\Device\Include"-D__UVISION_VERSION="514" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DXIP_EXTERNAL_FLASH="1" -DXIP_BOOT_HEADER_ENABLE="1" -DNDEBUG -DCPU_MIMXRT1064DVL6A-o flexspi_nor_release\system_mimxrt1064.o --omf_browse flexspi_nor_release\system_mimxrt1064.crf --depend flexspi_nor_release\system_mimxrt1064.d)
-I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x5475F300)
-I (RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5BC5859A)
-I (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5BC5859A)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm7.h)(0x540428EA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h)(0x53FEF2AA)
-I (F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmSimd.h)(0x53FC31DA)
-I (RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)
-I (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5BC5859A)
-F (RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5BC5859A)()
