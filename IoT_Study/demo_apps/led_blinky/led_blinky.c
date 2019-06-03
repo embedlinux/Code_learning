@@ -78,16 +78,17 @@ int main(void)
     {
 		GPIO_PinWrite(EXAMPLE_LED_GPIO, EXAMPLE_LED_GPIO_PIN, 0U);
         /* Delay 1000 ms */
-//        SysTick_DelayTicks(1000U);
-//        if (g_pinSet)
-//        {
-//            GPIO_PinWrite(EXAMPLE_LED_GPIO, EXAMPLE_LED_GPIO_PIN, 0U);
-//            g_pinSet = false;
-//        }
-//        else
-//        {
-//            GPIO_PinWrite(EXAMPLE_LED_GPIO, EXAMPLE_LED_GPIO_PIN, 1U);
-//            g_pinSet = true;
-//        }
-//    }
+        SysTick_DelayTicks(1000U);
+        if (g_pinSet)
+        {
+            GPIO_PinWrite(EXAMPLE_LED_GPIO, EXAMPLE_LED_GPIO_PIN, 0U);
+            g_pinSet = false;
+        }
+        else
+        {
+            GPIO_PinWrite(EXAMPLE_LED_GPIO, EXAMPLE_LED_GPIO_PIN, 1U);
+            g_pinSet = true;
+        }
+    }
 }
+	

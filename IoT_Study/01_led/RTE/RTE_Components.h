@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'led' 
- * Target:  'led_flexspi' 
+ * Target:  'led_debug' 
  */
 
 #ifndef RTE_COMPONENTS_H
