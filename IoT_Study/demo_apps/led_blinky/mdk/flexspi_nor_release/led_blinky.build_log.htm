@@ -26,6 +26,27 @@ Project File Date:  05/27/2019
 
 <h2>Output:</h2>
 Build target 'led_blinky flexspi_nor_release'
+compiling led_blinky.c...
+compiling board.c...
+compiling clock_config.c...
+compiling peripherals.c...
+compiling pin_mux.c...
+compiling fsl_clock.c...
+compiling fsl_common.c...
+compiling fsl_gpio.c...
+compiling fsl_lpuart.c...
+compiling fsl_assert.c...
+compiling fsl_debug_console.c...
+compiling fsl_io.c...
+compiling fsl_log.c...
+compiling fsl_str.c...
+compiling evkmimxrt1064_flexspi_nor_config.c...
+compiling evkmimxrt1064_sdram_ini_dcd.c...
+compiling fsl_flexspi_nor_boot.c...
+assembling startup_MIMXRT1064.s...
+compiling system_MIMXRT1064.c...
+linking...
+Program Size: Code=5180 RO-data=1788 RW-data=32 ZI-data=2084  
 "flexspi_nor_release\led_blinky.out" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -45,17 +66,17 @@ Package Vendor: NXP
 
 Package Vendor: NXP
                 http://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.MIMXRT1064_DFP.10.0.0.pack
-                NXP::Device:Startup:1.0.0
+                NXP::Device:SDK Drivers:common:2.0.0
                 Device Family Pack for MIMXRT1064
-   * Component: Startup Version: 1.0.0
-   * Component: clock Version: 2.1.0
    * Component: common Version: 2.0.0
-   * Component: gpio Version: 2.0.1
-   * Component: lpuart Version: 2.2.5
+   * Component: clock Version: 2.1.0
+   * Component: Startup Version: 1.0.0
    * Component: iomuxc Version: 2.0.0
-   * Component: xip Version: 2.0.0
-   * Component: assert Version: 1.0.0
+   * Component: lpuart Version: 2.2.5
+   * Component: gpio Version: 2.0.1
    * Component: debug_console Version: 1.0.0
+   * Component: assert Version: 1.0.0
+   * Component: xip Version: 2.0.0
 
 <h2>Collection of Component include folders:</h2>
   D:\code\c_language\data-struct\IoT_Study\demo_apps\led_blinky\mdk\RTE
@@ -75,18 +96,26 @@ Package Vendor: NXP
       Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
 
    * Component: ARM::CMSIS:DSP:1.4.2
-      Library file:  CMSIS\Lib\ARM\arm_cortexM7lfdp_math.lib
       Include file:  CMSIS\Include\arm_math.h
+      Library file:  CMSIS\Lib\ARM\arm_cortexM7lfdp_math.lib
 
    * Component: NXP::Board Support:SDK Project Template:project_template:evkmimxrt1064:1.0.0
-      Source file:   project_template\peripherals.c
-      Include file:  project_template\peripherals.h
       Source file:   project_template\pin_mux.c
       Include file:  project_template\pin_mux.h
+      Include file:  project_template\peripherals.h
+      Source file:   project_template\peripherals.c
+      Source file:   project_template\board.c
+      Include file:  project_template\board.h
       Source file:   project_template\clock_config.c
       Include file:  project_template\clock_config.h
-      Include file:  project_template\board.h
-      Source file:   project_template\board.c
+
+   * Component: NXP::Device:SDK Drivers:common:2.0.0
+      Source file:   drivers\fsl_common.c
+      Include file:  drivers\fsl_common.h
+
+   * Component: NXP::Device:SDK Drivers:clock:2.1.0
+      Source file:   drivers\fsl_clock.c
+      Include file:  drivers\fsl_clock.h
 
    * Component: NXP::Device:Startup:1.0.0
       Source file:   arm\startup_MIMXRT1064.s
@@ -96,46 +125,38 @@ Package Vendor: NXP
       Source file:   system_MIMXRT1064.c
       Include file:  system_MIMXRT1064.h
 
-   * Component: NXP::Device:SDK Drivers:clock:2.1.0
-      Include file:  drivers\fsl_clock.h
-      Source file:   drivers\fsl_clock.c
-
-   * Component: NXP::Device:SDK Drivers:common:2.0.0
-      Source file:   drivers\fsl_common.c
-      Include file:  drivers\fsl_common.h
-
-   * Component: NXP::Device:SDK Drivers:gpio:2.0.1
-      Source file:   drivers\fsl_gpio.c
-      Include file:  drivers\fsl_gpio.h
-
-   * Component: NXP::Device:SDK Drivers:lpuart:2.2.5
-      Include file:  drivers\fsl_lpuart.h
-      Source file:   drivers\fsl_lpuart.c
-
    * Component: NXP::Device:SDK Drivers:iomuxc:2.0.0
       Include file:  drivers\fsl_iomuxc.h
 
-   * Component: NXP::Device:SDK Drivers:xip:2.0.0
-      Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
-      Source file:   xip\fsl_flexspi_nor_boot.c
-      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
-      Include file:  xip\fsl_flexspi_nor_boot.h
-      Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
-      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
+   * Component: NXP::Device:SDK Drivers:lpuart:2.2.5
+      Source file:   drivers\fsl_lpuart.c
+      Include file:  drivers\fsl_lpuart.h
+
+   * Component: NXP::Device:SDK Drivers:gpio:2.0.1
+      Include file:  drivers\fsl_gpio.h
+      Source file:   drivers\fsl_gpio.c
+
+   * Component: NXP::Device:SDK Utilities:debug_console:1.0.0
+      Include file:  utilities\fsl_debug_console.h
+      Include file:  utilities\fsl_debug_console_conf.h
+      Source file:   utilities\io\fsl_io.c
+      Source file:   utilities\fsl_debug_console.c
+      Include file:  utilities\io\fsl_io.h
+      Source file:   utilities\log\fsl_log.c
+      Include file:  utilities\log\fsl_log.h
+      Source file:   utilities\str\fsl_str.c
+      Include file:  utilities\str\fsl_str.h
 
    * Component: NXP::Device:SDK Utilities:assert:1.0.0
       Source file:   utilities\fsl_assert.c
 
-   * Component: NXP::Device:SDK Utilities:debug_console:1.0.0
-      Source file:   utilities\log\fsl_log.c
-      Include file:  utilities\log\fsl_log.h
-      Source file:   utilities\str\fsl_str.c
-      Include file:  utilities\fsl_debug_console_conf.h
-      Include file:  utilities\str\fsl_str.h
-      Source file:   utilities\io\fsl_io.c
-      Include file:  utilities\io\fsl_io.h
-      Source file:   utilities\fsl_debug_console.c
-      Include file:  utilities\fsl_debug_console.h
+   * Component: NXP::Device:SDK Drivers:xip:2.0.0
+      Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
+      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
+      Include file:  xip\fsl_flexspi_nor_boot.h
+      Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
+      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
+      Source file:   xip\fsl_flexspi_nor_boot.c
 </pre>
 </body>
 </html>
