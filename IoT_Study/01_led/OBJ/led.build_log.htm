@@ -28,6 +28,23 @@ Project File Date:  06/03/2019
 Build target 'led_debug'
 compiling led.c...
 compiling delay.c...
+compiling board.c...
+compiling clock_config.c...
+compiling peripherals.c...
+compiling pin_mux.c...
+compiling fsl_clock.c...
+compiling fsl_common.c...
+compiling fsl_gpio.c...
+compiling fsl_lpuart.c...
+compiling fsl_debug_console.c...
+compiling fsl_io.c...
+compiling fsl_log.c...
+compiling fsl_str.c...
+compiling evkmimxrt1064_flexspi_nor_config.c...
+compiling evkmimxrt1064_sdram_ini_dcd.c...
+compiling fsl_flexspi_nor_boot.c...
+assembling startup_MIMXRT1064.s...
+compiling system_MIMXRT1064.c...
 linking...
 .\scatter\MIMXRT1064xxxxx_ram.scf(61): warning: L6314W: No section matches pattern *(NonCacheable.init).
 .\scatter\MIMXRT1064xxxxx_ram.scf(62): warning: L6314W: No section matches pattern *(NonCacheable).
@@ -52,14 +69,14 @@ Package Vendor: NXP
 
 Package Vendor: NXP
                 http://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.MIMXRT1064_DFP.10.0.0.pack
-                NXP::Device:SDK Drivers:common:2.0.0
+                NXP::Device:SDK Drivers:clock:2.1.0
                 Device Family Pack for MIMXRT1064
+   * Component: clock Version: 2.1.0
    * Component: common Version: 2.0.0
    * Component: Startup Version: 1.0.0
-   * Component: clock Version: 2.1.0
    * Component: lpuart Version: 2.2.5
-   * Component: gpio Version: 2.0.1
    * Component: iomuxc Version: 2.0.0
+   * Component: gpio Version: 2.0.1
    * Component: debug_console Version: 1.0.0
    * Component: xip Version: 2.0.0
 
@@ -81,60 +98,60 @@ Package Vendor: NXP
       Source file:   CMSIS\UserCodeTemplates\ARM\ITM_Retarget.c
 
    * Component: NXP::Board Support:SDK Project Template:project_template:evkmimxrt1064:1.0.0
-      Source file:   project_template\board.c
-      Include file:  project_template\pin_mux.h
-      Source file:   project_template\pin_mux.c
       Include file:  project_template\clock_config.h
-      Source file:   project_template\peripherals.c
       Source file:   project_template\clock_config.c
       Include file:  project_template\peripherals.h
+      Source file:   project_template\peripherals.c
       Include file:  project_template\board.h
+      Include file:  project_template\pin_mux.h
+      Source file:   project_template\board.c
+      Source file:   project_template\pin_mux.c
+
+   * Component: NXP::Device:SDK Drivers:clock:2.1.0
+      Source file:   drivers\fsl_clock.c
+      Include file:  drivers\fsl_clock.h
 
    * Component: NXP::Device:SDK Drivers:common:2.0.0
       Source file:   drivers\fsl_common.c
       Include file:  drivers\fsl_common.h
 
    * Component: NXP::Device:Startup:1.0.0
-      Source file:   arm\startup_MIMXRT1064.s
       Include file:  MIMXRT1064.h
       Include file:  MIMXRT1064_features.h
       Include file:  fsl_device_registers.h
+      Source file:   arm\startup_MIMXRT1064.s
       Source file:   system_MIMXRT1064.c
       Include file:  system_MIMXRT1064.h
-
-   * Component: NXP::Device:SDK Drivers:clock:2.1.0
-      Include file:  drivers\fsl_clock.h
-      Source file:   drivers\fsl_clock.c
 
    * Component: NXP::Device:SDK Drivers:lpuart:2.2.5
       Include file:  drivers\fsl_lpuart.h
       Source file:   drivers\fsl_lpuart.c
 
-   * Component: NXP::Device:SDK Drivers:gpio:2.0.1
-      Source file:   drivers\fsl_gpio.c
-      Include file:  drivers\fsl_gpio.h
-
    * Component: NXP::Device:SDK Drivers:iomuxc:2.0.0
       Include file:  drivers\fsl_iomuxc.h
 
+   * Component: NXP::Device:SDK Drivers:gpio:2.0.1
+      Include file:  drivers\fsl_gpio.h
+      Source file:   drivers\fsl_gpio.c
+
    * Component: NXP::Device:SDK Utilities:debug_console:1.0.0
-      Source file:   utilities\fsl_debug_console.c
-      Include file:  utilities\fsl_debug_console.h
       Source file:   utilities\io\fsl_io.c
-      Include file:  utilities\io\fsl_io.h
-      Include file:  utilities\fsl_debug_console_conf.h
-      Source file:   utilities\log\fsl_log.c
       Include file:  utilities\log\fsl_log.h
+      Include file:  utilities\fsl_debug_console_conf.h
+      Source file:   utilities\fsl_debug_console.c
+      Source file:   utilities\log\fsl_log.c
+      Include file:  utilities\io\fsl_io.h
       Source file:   utilities\str\fsl_str.c
       Include file:  utilities\str\fsl_str.h
+      Include file:  utilities\fsl_debug_console.h
 
    * Component: NXP::Device:SDK Drivers:xip:2.0.0
+      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
+      Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
       Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
+      Include file:  xip\fsl_flexspi_nor_boot.h
       Source file:   xip\fsl_flexspi_nor_boot.c
       Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
-      Include file:  xip\fsl_flexspi_nor_boot.h
-      Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
-      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
 </pre>
 </body>
 </html>
