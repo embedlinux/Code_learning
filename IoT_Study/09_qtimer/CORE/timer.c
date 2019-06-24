@@ -93,7 +93,7 @@ void PIT_IRQHandler(void)
 void TMR1_IRQHandler(void)
 {
 	//0.04秒产生一次中断。1s/0.04 = 25 
-	static int counter = 25 ;
+	static uint8_t counter = 25 ;
 	if(QTMR_GetStatus(TMR1,kQTMR_Channel_0)&kQTMR_CompareFlag)
 	{
 		counter--;
@@ -102,8 +102,7 @@ void TMR1_IRQHandler(void)
 			printf("TMR chn1_0 interrupt 1s...\r\n");
 			counter = 25;
 		}
-		
+		QTMR_ClearStatusFlags(TMR1,kQTMR_Channel_0, kQTMR_CompareFlag);
 	}
-	QTMR_ClearStatusFlags(TMR1,kQTMR_Channel_0, kQTMR_CompareFlag);
 	__DSB();
 }
