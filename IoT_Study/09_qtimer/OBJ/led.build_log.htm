@@ -27,7 +27,6 @@ Project File Date:  06/19/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'F:\Program Filesx86\MDK\ARM\ARMCC\Bin'
 Build target 'led_debug'
-compiling main.c...
 compiling timer.c...
 linking...
 Program Size: Code=11684 RO-data=1852 RW-data=32 ZI-data=2332  
@@ -82,38 +81,38 @@ Package Vendor: NXP
 
    * Component: NXP::Device:Startup:1.0.0
       Source file:   arm\startup_MIMXRT1064.s
+      Include file:  MIMXRT1064.h
+      Include file:  MIMXRT1064_features.h
       Include file:  fsl_device_registers.h
       Source file:   system_MIMXRT1064.c
       Include file:  system_MIMXRT1064.h
-      Include file:  MIMXRT1064.h
-      Include file:  MIMXRT1064_features.h
 
    * Component: NXP::Device:SDK Utilities:debug_console:1.0.0
-      Source file:   utilities\fsl_debug_console.c
       Include file:  utilities\fsl_debug_console.h
-      Include file:  utilities\fsl_debug_console_conf.h
-      Source file:   utilities\io\fsl_io.c
-      Include file:  utilities\io\fsl_io.h
-      Source file:   utilities\log\fsl_log.c
+      Source file:   utilities\fsl_debug_console.c
+      Include file:  utilities\log\fsl_log.h
       Source file:   utilities\str\fsl_str.c
       Include file:  utilities\str\fsl_str.h
-      Include file:  utilities\log\fsl_log.h
+      Include file:  utilities\fsl_debug_console_conf.h
+      Source file:   utilities\log\fsl_log.c
+      Source file:   utilities\io\fsl_io.c
+      Include file:  utilities\io\fsl_io.h
 
    * Component: NXP::Device:SDK Drivers:xip:2.0.0
-      Include file:  xip\fsl_flexspi_nor_boot.h
       Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
-      Source file:   xip\fsl_flexspi_nor_boot.c
-      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
-      Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
       Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
+      Source file:   xip\fsl_flexspi_nor_boot.c
+      Include file:  xip\fsl_flexspi_nor_boot.h
+      Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
+      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
 
    * Component: NXP::Device:SDK Drivers:wdog:2.0.1
       Source file:   drivers\fsl_wdog.c
       Include file:  drivers\fsl_wdog.h
 
    * Component: NXP::Device:SDK Drivers:rtwdog:2.0.0
-      Source file:   drivers\fsl_rtwdog.c
       Include file:  drivers\fsl_rtwdog.h
+      Source file:   drivers\fsl_rtwdog.c
 
    * Component: NXP::Device:SDK Drivers:qtmr:2.0.0
       Include file:  drivers\fsl_qtmr.h
@@ -131,12 +130,12 @@ Package Vendor: NXP
       Include file:  drivers\fsl_iomuxc.h
 
    * Component: NXP::Device:SDK Drivers:gpt:2.0.0
-      Include file:  drivers\fsl_gpt.h
       Source file:   drivers\fsl_gpt.c
+      Include file:  drivers\fsl_gpt.h
 
    * Component: NXP::Device:SDK Drivers:gpio:2.0.1
-      Include file:  drivers\fsl_gpio.h
       Source file:   drivers\fsl_gpio.c
+      Include file:  drivers\fsl_gpio.h
 
    * Component: NXP::Device:SDK Drivers:common:2.0.0
       Source file:   drivers\fsl_common.c
@@ -147,17 +146,17 @@ Package Vendor: NXP
       Include file:  drivers\fsl_clock.h
 
    * Component: NXP::Board Support:SDK Project Template:project_template:evkmimxrt1064:1.0.0
-      Include file:  project_template\clock_config.h
-      Include file:  project_template\board.h
-      Include file:  project_template\pin_mux.h
-      Source file:   project_template\pin_mux.c
-      Source file:   project_template\clock_config.c
-      Include file:  project_template\peripherals.h
-      Source file:   project_template\peripherals.c
       Source file:   project_template\board.c
+      Source file:   project_template\clock_config.c
+      Include file:  project_template\board.h
+      Source file:   project_template\pin_mux.c
+      Source file:   project_template\peripherals.c
+      Include file:  project_template\clock_config.h
+      Include file:  project_template\peripherals.h
+      Include file:  project_template\pin_mux.h
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:39
+Build Time Elapsed:  00:00:09
 </pre>
 </body>
 </html>
