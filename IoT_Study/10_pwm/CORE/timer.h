@@ -15,7 +15,10 @@
 void GPT1_Init(uint16_t divi,uint32_t value);
 void PIT1_Init(uint32_t count);
 void Qtimer1_Init(uint16_t ticks);
-void QTMER4CH3_PWM_DutySet(uint8_t prisrc,uint32_t clk, uint8_t duty);
-void QTMR4_CH3_PWM_Init(uint8_t prisrc,uint32_t clk,uint8_t duty);
+void QTMR3_CH3_PWM_DutySet(uint8_t prisrc,uint32_t clk, uint8_t duty);
+void QTMR3_CH3_PWM_Init(uint8_t prisrc,uint32_t clk,uint8_t duty);
 uint8_t Calcu_2invo(uint8_t time);
+
+void QTMR3_CH0_PWM_Init(uint8_t prisrc,uint32_t clk,uint8_t duty);
+void QTMR3_CH0_PWM_DutySet(uint8_t prisrc,uint32_t clk, uint8_t duty);
 #endif

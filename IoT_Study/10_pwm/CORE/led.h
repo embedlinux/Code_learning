@@ -8,5 +8,7 @@
 
 
 void Led_Init(void);
+void Pin_B1_03_Init(void); 
+void Pin_B1_00_Init(void);
 
 #endif

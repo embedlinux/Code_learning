@@ -94,34 +94,37 @@ uint8_t Calcu_2invo(uint8_t time)
 //第一时钟源选择 ,prisrc
 //clk: PWM频率
 //duty: 占空比，百分比
-
-void QTMR4_CH3_PWM_Init(uint8_t prisrc,uint32_t clk,uint8_t duty)
+void QTMR3_CH3_PWM_Init(uint8_t prisrc,uint32_t clk,uint8_t duty)
 {
 	uint8_t fredivi=1;
 	
 	qtmr_primary_count_source_t qtimer_source;
-	qtmr_config_t qtimer4pwm_config;
 	qtimer_source = (qtmr_primary_count_source_t)prisrc;
 	
-	//设置USER_LED为输出引脚
-	IOMUXC_SetPinMux(IOMUXC_GPIO_AD_B0_09_GPIO1_IO09,0);
-	IOMUXC_SetPinConfig(IOMUXC_GPIO_AD_B0_09_GPIO1_IO09,0x10B0u);
+	//初始化 QTMR3定时器CH3外部引脚
+	Pin_B1_03_Init();
 	
 	fredivi=Calcu_2invo(prisrc-8);
 	
-	QTMR_GetDefaultConfig(&qtimer4pwm_config); 				//先设置为默认配置
-	qtimer4pwm_config.primarySource= qtimer_source; 		//设置第一时钟源, 150MHz/64=2.34375MHz
-	QTMR_Init(TMR4,kQTMR_Channel_3,&qtimer4pwm_config); 	//初始化 TIM4 通道 3
+	qtmr_config_t qtimer3pwm_config;
+	QTMR_GetDefaultConfig(&qtimer3pwm_config); 				//先设置为默认配置
+	qtimer3pwm_config.primarySource= qtimer_source; 		//设置第一时钟源, 150MHz/64=2.34375MHz
+	QTMR_Init(TMR3,kQTMR_Channel_3,&qtimer3pwm_config); 	//初始化 TIM3 通道 3
 	
-	//参数6为 QTMR 的时钟源频率
-	QTMR_SetupPwm(TMR4,kQTMR_Channel_3,clk,duty,false,CLOCK_GetFreq(kCLOCK_IpgClk)/fredivi);
+	//创建 CH3 的 PWM 输出，并且指定 PWM 的频率与占空比
+	QTMR_SetupPwm(	TMR3, 			\
+					kQTMR_Channel_3, \
+					clk, 			\
+					duty, 			\
+					false, 			\
+					CLOCK_GetFreq(kCLOCK_IpgClk)/fredivi);
 	
 	//通道3在第一时钟源的上升沿计数
 	QTMR_StartTimer(TMR4,kQTMR_Channel_3,kQTMR_PriSrcRiseEdge);
 }
 
 //是用来改变 PWM 占空比
-void QTMER4CH3_PWM_DutySet(uint8_t prisrc,uint32_t clk, uint8_t duty)
+void QTMR3_CH3_PWM_DutySet(uint8_t prisrc,uint32_t clk, uint8_t duty)
 {
     uint8_t fredivi=1;
     uint32_t srcclk,period,hightime,lowtime;
@@ -133,8 +136,54 @@ void QTMER4CH3_PWM_DutySet(uint8_t prisrc,uint32_t clk, uint8_t duty)
     hightime=(period*duty)/100;         		//一个PWM周期中高电平时间(计数值)
     lowtime=period-hightime;            		//一个PWM周期中低电平时间(计数值)
     
-    TMR4->CHANNEL[kQTMR_Channel_3].CMPLD1=lowtime;
-    TMR4->CHANNEL[kQTMR_Channel_3].CMPLD2=hightime;
+    TMR3->CHANNEL[kQTMR_Channel_3].CMPLD1=lowtime;
+    TMR3->CHANNEL[kQTMR_Channel_3].CMPLD2=hightime;
+}
+
+void QTMR3_CH0_PWM_Init(uint8_t prisrc,uint32_t clk,uint8_t duty)
+{
+	uint8_t fredivi=1;
+	
+	qtmr_primary_count_source_t qtimer_source;
+	qtimer_source = (qtmr_primary_count_source_t)prisrc;
+	
+	//初始化 QTMR3定时器CH0外部引脚
+	Pin_B1_00_Init();
+	
+	fredivi=Calcu_2invo(prisrc-8);
+	
+	qtmr_config_t qtimer3pwm_config;
+	QTMR_GetDefaultConfig(&qtimer3pwm_config); 				//先设置为默认配置
+	qtimer3pwm_config.primarySource= qtimer_source; 		//设置第一时钟源, 150MHz/64=2.34375MHz
+	QTMR_Init(TMR3,kQTMR_Channel_0,&qtimer3pwm_config); 	//初始化 TIM4 通道 1
+	
+	//创建 CH1 的 PWM 输出，并且指定 PWM 的频率与占空比
+	QTMR_SetupPwm(	TMR3, 			\
+					kQTMR_Channel_0, \
+					clk, 			\
+					duty, 			\
+					false, 			\
+					CLOCK_GetFreq(kCLOCK_IpgClk)/fredivi);
+	
+	//通道3在第一时钟源的上升沿计数
+	QTMR_StartTimer(TMR3,kQTMR_Channel_0,kQTMR_PriSrcRiseEdge);
+}
+
+//是用来改变 PWM 占空比
+void QTMR3_CH0_PWM_DutySet(uint8_t prisrc,uint32_t clk, uint8_t duty)
+{
+    uint8_t fredivi=1;
+    uint32_t srcclk,period,hightime,lowtime;
+    
+    fredivi=Calcu_2invo(prisrc-8);
+    srcclk=CLOCK_GetFreq(kCLOCK_IpgClk)/fredivi;
+    
+    period=(srcclk/clk);                		//一个PWM周期需要的计数值
+    hightime=(period*duty)/100;         		//一个PWM周期中高电平时间(计数值)
+    lowtime=period-hightime;            		//一个PWM周期中低电平时间(计数值)
+    
+    TMR3->CHANNEL[kQTMR_Channel_0].CMPLD1=lowtime;
+    TMR3->CHANNEL[kQTMR_Channel_0].CMPLD2=hightime;
 }
 
 void GPT1_IRQHandler(void)
