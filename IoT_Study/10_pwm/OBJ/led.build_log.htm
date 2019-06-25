@@ -28,9 +28,8 @@ Project File Date:  06/19/2019
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'F:\Program Filesx86\MDK\ARM\ARMCC\Bin'
 Build target 'led_debug'
 compiling timer.c...
-compiling main.c...
 linking...
-Program Size: Code=13056 RO-data=1852 RW-data=28 ZI-data=2332  
+Program Size: Code=13416 RO-data=1860 RW-data=28 ZI-data=2332  
 FromELF: creating hex file...
 ".\OBJ\led.axf" - 0 Error(s), 0 Warning(s).
 
@@ -84,27 +83,27 @@ Package Vendor: NXP
       Source file:   arm\startup_MIMXRT1064.s
       Include file:  fsl_device_registers.h
       Include file:  MIMXRT1064.h
+      Include file:  MIMXRT1064_features.h
       Include file:  system_MIMXRT1064.h
       Source file:   system_MIMXRT1064.c
-      Include file:  MIMXRT1064_features.h
 
    * Component: NXP::Device:SDK Utilities:debug_console:1.0.0
+      Source file:   utilities\str\fsl_str.c
+      Include file:  utilities\str\fsl_str.h
       Include file:  utilities\fsl_debug_console.h
       Include file:  utilities\fsl_debug_console_conf.h
-      Source file:   utilities\log\fsl_log.c
-      Include file:  utilities\log\fsl_log.h
-      Source file:   utilities\str\fsl_str.c
       Include file:  utilities\io\fsl_io.h
       Source file:   utilities\io\fsl_io.c
-      Include file:  utilities\str\fsl_str.h
       Source file:   utilities\fsl_debug_console.c
+      Source file:   utilities\log\fsl_log.c
+      Include file:  utilities\log\fsl_log.h
 
    * Component: NXP::Device:SDK Drivers:xip:2.0.0
-      Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
-      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
-      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
       Source file:   xip\fsl_flexspi_nor_boot.c
+      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
       Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
+      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
+      Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
       Include file:  xip\fsl_flexspi_nor_boot.h
 
    * Component: NXP::Device:SDK Drivers:wdog:2.0.1
@@ -112,8 +111,8 @@ Package Vendor: NXP
       Include file:  drivers\fsl_wdog.h
 
    * Component: NXP::Device:SDK Drivers:rtwdog:2.0.0
-      Include file:  drivers\fsl_rtwdog.h
       Source file:   drivers\fsl_rtwdog.c
+      Include file:  drivers\fsl_rtwdog.h
 
    * Component: NXP::Device:SDK Drivers:qtmr:2.0.0
       Include file:  drivers\fsl_qtmr.h
@@ -131,8 +130,8 @@ Package Vendor: NXP
       Include file:  drivers\fsl_iomuxc.h
 
    * Component: NXP::Device:SDK Drivers:gpt:2.0.0
-      Source file:   drivers\fsl_gpt.c
       Include file:  drivers\fsl_gpt.h
+      Source file:   drivers\fsl_gpt.c
 
    * Component: NXP::Device:SDK Drivers:gpio:2.0.1
       Source file:   drivers\fsl_gpio.c
@@ -143,21 +142,21 @@ Package Vendor: NXP
       Include file:  drivers\fsl_common.h
 
    * Component: NXP::Device:SDK Drivers:clock:2.1.0
-      Include file:  drivers\fsl_clock.h
       Source file:   drivers\fsl_clock.c
+      Include file:  drivers\fsl_clock.h
 
    * Component: NXP::Board Support:SDK Project Template:project_template:evkmimxrt1064:1.0.0
-      Source file:   project_template\peripherals.c
+      Include file:  project_template\pin_mux.h
+      Include file:  project_template\peripherals.h
+      Include file:  project_template\board.h
       Source file:   project_template\board.c
       Source file:   project_template\clock_config.c
-      Include file:  project_template\clock_config.h
-      Include file:  project_template\board.h
       Source file:   project_template\pin_mux.c
-      Include file:  project_template\peripherals.h
-      Include file:  project_template\pin_mux.h
+      Include file:  project_template\clock_config.h
+      Source file:   project_template\peripherals.c
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:47
+Build Time Elapsed:  00:00:30
 </pre>
 </body>
 </html>

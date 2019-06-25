@@ -1261,6 +1261,7 @@ extern "C" {
  * @param configRegister  The config register.
  * @param inputOnfield   Software input on field.
  */
+ //0x401F8164U, 0x1U, 0, 0, 0x401F8354U
 static inline void IOMUXC_SetPinMux(uint32_t muxRegister,
                                     uint32_t muxMode,
                                     uint32_t inputRegister,
@@ -1293,6 +1294,7 @@ static inline void IOMUXC_SetPinMux(uint32_t muxRegister,
  * @param configRegister  The config register.
  * @param configValue   The pin config value.
  */
+ //0x401F8164U, 0x1U, 0, 0, 0x401F8354U
 static inline void IOMUXC_SetPinConfig(uint32_t muxRegister,
                                        uint32_t muxMode,
                                        uint32_t inputRegister,
