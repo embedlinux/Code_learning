@@ -91,7 +91,7 @@ uint8_t Calcu_2invo(uint8_t time)
     return value;
 }
 
-//第一时钟源选择 ,prisrc
+//第一时钟源选择,prisrc
 //clk: PWM频率
 //duty: 占空比，百分比
 void QTMR3_CH3_PWM_Init(uint8_t prisrc,uint32_t clk,uint8_t duty)
