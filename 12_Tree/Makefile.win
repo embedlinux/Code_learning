@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o tree.o
-LINKOBJ  = main.o tree.o
+OBJ      = main.o tree.o LinkList.o
+LINKOBJ  = main.o tree.o LinkList.o
 LIBS     = -L"F:/Program Filesx86/Dev-Cpp/MinGW64/lib" -L"F:/Program Filesx86/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"F:/Program Filesx86/Dev-Cpp/MinGW64/include" -I"F:/Program Filesx86/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"F:/Program Filesx86/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"F:/Program Filesx86/Dev-Cpp/MinGW64/include" -I"F:/Program Filesx86/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"F:/Program Filesx86/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"F:/Program Filesx86/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -29,3 +29,6 @@ main.o: main.c
 
 tree.o: tree.c
 	$(CC) -c tree.c -o tree.o $(CFLAGS)
+
+LinkList.o: LinkList.c
+	$(CC) -c LinkList.c -o LinkList.o $(CFLAGS)
