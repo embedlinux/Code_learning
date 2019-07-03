@@ -8,7 +8,7 @@ struct Node
 {
 	BTreeNode header;
 	char v;
-};
+};			//构造节点 
 
 void printf_data(BTreeNode* node)
 {
@@ -37,6 +37,21 @@ int main(int argc, char *argv[]) {
 	BTree_Insert(btree, (BTreeNode*)&n5, 0x02,2,0);
 	BTree_Insert(btree, (BTreeNode*)&n6, 0x02,3,0);
 	BTree_Display(btree,printf_data,4,'*');
+	
+	printf("BTree count is: %d\n",BTree_Count(btree));
+	printf("BTree heigh is: %d\n",BTree_Height(btree));
+	printf("BTree Degree is: %d\n",BTree_Degree(btree));
+	
+	printf("Position At (0x02): %c\n",((struct Node*)BTree_Get(btree,0x02,3))->v); 
+	
+	
+	BTree_Delete(btree, 0x00, 1);	
+	BTree_Display(btree,printf_data,4,'*');
+	printf("After delete B, BTree count is: %d\n",BTree_Count(btree));
+	BTree_Clear(btree);
+	printf("BTree count is: %d\n",BTree_Count(btree));
+	printf("BTree heigh is: %d\n",BTree_Height(btree));
+	printf("BTree Degree is: %d\n",BTree_Degree(btree));
 	
 	BTree_Destroy(btree);
 	return 0;

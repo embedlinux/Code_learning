@@ -104,12 +104,182 @@ int BTree_Insert(BTree* tree, BTreeNode* node, BTPos pos,int count,int flag)		//
 	return ret;
 } 
 
-BTreeNode* BTree_Delete(BTree* tree, BTPos pos);							//删除节点 
-BTreeNode* BTree_Get(BTree* tree, BTPos pos);								//获取节点 
-BTreeNode* BTree_Root(BTree* tree);											//获取根 
-int BTree_Height(BTree* tree);												//树的高度 
-int BTree_Count(BTree* tree);												//树的节点数 
-int BTree_Degree(BTree* tree);												//树的度 
+static int recursive_count( BTreeNode* root)
+{
+	int ret = 0;
+	if(root != NULL)
+	{
+		ret = recursive_count(root->left) + recursive_count(root->right) + 1;
+	}
+	return ret;
+}
+
+BTreeNode* BTree_Delete(BTree* tree, BTPos pos, int count)							//删除节点 
+{
+    TBTree* btree = (TBTree*)tree;
+    BTreeNode* ret = NULL;
+    int bit = 0;
+    if(btree != NULL)
+    {
+    	BTreeNode* parent = NULL;
+    	BTreeNode* current = btree->root;
+    	
+		while((count > 0) && (current != NULL))
+ 		{
+ 		 	bit = pos & 1;				//最低位与 
+			pos = pos >> 1;				//位置向前移动  
+			
+			parent = current;
+			
+			if(bit == BT_LEFT)
+			{
+				current = current->left;
+			}
+			else if(bit == BT_RIGHT)
+			{
+				current = current->right;
+			}
+			count--;
+ 		}
+ 		
+		if(parent != NULL)				//parent不为空	
+		{
+			if( bit == BT_LEFT)
+			{
+				parent->left = NULL;
+			}
+			else if(bit == BT_RIGHT)
+			{
+				parent->right = NULL;
+			}
+		}
+		else
+		{
+			btree->root = NULL;
+		}
+ 		
+ 		ret = current;
+ 		btree->count = btree->count - recursive_count(ret);
+	}
+    return ret;
+} 
+
+BTreeNode* BTree_Get(BTree* tree, BTPos pos,int count)								//获取节点
+{
+    TBTree* btree = (TBTree*)tree;
+    BTreeNode* ret = NULL;
+    int bit = 0;
+    if(btree != NULL)
+    {
+    	BTreeNode* current = btree->root;
+    	
+		while((count > 0) && (current != NULL))
+ 		{
+ 		 	bit = pos & 1;				//最低位与 
+			pos = pos >> 1;				//位置向前移动  
+						
+			if(bit == BT_LEFT)
+			{
+				current = current->left;
+			}
+			else if(bit == BT_RIGHT)
+			{
+				current = current->right;
+			}
+			count--;
+ 		}
+ 		ret = current;
+	}
+    return ret;
+} 
+
+BTreeNode* BTree_Root(BTree* tree)										//获取根 
+{
+   TBTree* btree = (TBTree*)tree;
+   BTreeNode* ret = NULL;
+   if(btree != NULL)
+   {
+         ret = btree->root;
+   }
+   return ret;
+}
+
+static int recursive_heigh(BTreeNode* root)
+{
+	int ret = 0;
+	if(root != NULL)
+	{
+		int lh = recursive_heigh(root->left);
+		int rh = recursive_heigh(root->right);
+		
+		ret = ((lh > rh)?lh:rh) + 1;
+	}
+	return ret;
+}
+
+int BTree_Height(BTree* tree)												//树的高度
+{
+ 	TBTree* btree = (TBTree*)tree;
+	int ret = 0;
+ 	if(btree != NULL)
+ 	{
+  	    ret = recursive_heigh(btree->root);
+    }
+    return ret;
+} 
+
+int BTree_Count(BTree* tree)												//树的节点数
+{
+ 	 TBTree* btree = (TBTree*)tree;
+ 	 int ret =0;
+ 	 if(btree != NULL)
+ 	 {
+         ret = btree->count;
+     }
+     return ret;
+} 
+
+static int recursive_degree(BTreeNode* root)
+{
+	int ret = 0;
+	if(root != NULL)
+	{
+	    if(root->left != NULL)
+	    {
+	    	ret++;
+		}
+		if(root->right != NULL)
+		{
+			ret++;
+		}
+		if(ret == 1)
+		{
+			int ld = recursive_degree(root->left);
+			int rd = recursive_degree(root->right);
+			
+			if(ret < ld)
+			{
+				ret = ld;
+			}
+			if(ret < rd)
+			{
+				ret = rd;
+			}
+		}
+	}
+	return ret;
+}
+
+int BTree_Degree(BTree* tree)												//树的度 
+{
+ 	TBTree* btree = (TBTree*)tree;
+	int ret = 0;
+ 	if(btree != NULL)
+ 	{
+  	    ret = recursive_degree(btree->root);
+    }
+    return ret;
+}
 
 static void recursive_display(BTreeNode* node,BTree_printf* pFunc,int format,int gap,char div)
 {
