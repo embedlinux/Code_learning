@@ -2,9 +2,12 @@
 #include <stdlib.h>
 #include <malloc.h> 
 #include "binarytree.h"
+#include "ListQue.h" 
+
 
 //头结点定义
 typedef struct _tag_BTree TBTree;
+
 struct  _tag_BTree
 {
 	int count;
@@ -12,8 +15,11 @@ struct  _tag_BTree
 };
 
 //
-
-
+struct Node
+{
+	BTreeNode header;
+	char v;
+};			//构造节点 
 
 
 BTree* BTree_Create()													//创建树 
@@ -103,7 +109,7 @@ int BTree_Insert(BTree* tree, BTreeNode* node, BTPos pos,int count,int flag)		//
 	}
 	return ret;
 } 
-
+//------------------------------------------------------------------------------ 
 static int recursive_count( BTreeNode* root)
 {
 	int ret = 0;
@@ -203,7 +209,7 @@ BTreeNode* BTree_Root(BTree* tree)										//获取根
    }
    return ret;
 }
-
+//--------------------------------------------------------------------
 static int recursive_heigh(BTreeNode* root)
 {
 	int ret = 0;
@@ -217,7 +223,7 @@ static int recursive_heigh(BTreeNode* root)
 	return ret;
 }
 
-int BTree_Height(BTree* tree)												//树的高度
+int BTree_Height(BTree* tree)											//树的高度
 {
  	TBTree* btree = (TBTree*)tree;
 	int ret = 0;
@@ -228,7 +234,7 @@ int BTree_Height(BTree* tree)												//树的高度
     return ret;
 } 
 
-int BTree_Count(BTree* tree)												//树的节点数
+int BTree_Count(BTree* tree)										   //树的节点数
 {
  	 TBTree* btree = (TBTree*)tree;
  	 int ret =0;
@@ -239,6 +245,7 @@ int BTree_Count(BTree* tree)												//树的节点数
      return ret;
 } 
 
+//--------------------------------------------------------------------
 static int recursive_degree(BTreeNode* root)
 {
 	int ret = 0;
@@ -281,6 +288,7 @@ int BTree_Degree(BTree* tree)												//树的度
     return ret;
 }
 
+//-----------------------------------------------------------------
 static void recursive_display(BTreeNode* node,BTree_printf* pFunc,int format,int gap,char div)
 {
 	int i = 0;
@@ -316,3 +324,67 @@ void BTree_Display(BTree* tree,BTree_printf* pFunc,int gap,char div)
 		recursive_display(btree->root,pFunc,0,gap,div);
 	}
 }
+
+//--------------------------------------------------------------遍历
+
+void Pre_Order(BTreeNode* root)
+{
+ 	 if(root != NULL)
+	 {
+	  	printf("%c ",((struct Node*)root)->v);
+	  	
+	  	Pre_Order(root->left);
+	  	Pre_Order(root->right);
+	 }
+	 //printf("\n");	
+} 
+
+void Mid_Order(BTreeNode* root)
+{
+ 	 if(root != NULL)
+	 {
+	  	Mid_Order(root->left);
+	  	printf("%c ",((struct Node*)root)->v);
+	  	Mid_Order(root->right);
+	 }
+	 //printf("\n");	
+} 
+
+void Post_Order(BTreeNode* root)
+{
+ 	 if(root != NULL)
+	 {
+	  	Post_Order(root->left);
+	  	Post_Order(root->right);
+	  	printf("%c ",((struct Node*)root)->v);
+	 }
+	 //printf("\n");	
+} 
+
+void Level_Order(BTreeNode* root)
+{
+	if(root != NULL)
+	{
+		LinkQueue* queue = LinkQueue_Create();
+		if(queue != NULL)
+		{
+		 	LinkQueue_Append(queue,root);
+			
+			while(LinkQueue_Length(queue) > 0)
+			{
+			   struct Node* node = (struct Node*)LinkQueue_Retrieve(queue);	
+			   printf("%c ",node->v);
+			   LinkQueue_Append(queue,node->header.left);
+			   LinkQueue_Append(queue,node->header.right);
+			}	
+		}		
+		LinkQueue_Destroy(queue);
+	}
+}
+
+
+ 
+
+
+
+

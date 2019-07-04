@@ -42,6 +42,23 @@ int main(int argc, char *argv[]) {
 	printf("BTree heigh is: %d\n",BTree_Height(btree));
 	printf("BTree Degree is: %d\n",BTree_Degree(btree));
 	
+	printf("Pre order the binary tree:\n");
+	Pre_Order(BTree_Root(btree));
+	printf("\n");
+	
+	printf("Mid order the binary tree:\n");
+	Mid_Order(BTree_Root(btree));
+	printf("\n");
+	
+	printf("Post order the binary tree:\n");
+	Post_Order(BTree_Root(btree));
+	printf("\n");
+	
+	printf("Level order the binary tree:\n");
+	Level_Order(BTree_Root(btree));
+	printf("\n");
+	
+	
 	printf("Position At (0x02): %c\n",((struct Node*)BTree_Get(btree,0x02,3))->v); 
 	
 	

@@ -31,5 +31,10 @@ int BTree_Degree(BTree* tree);												//树的度
 
 void BTree_Display(BTree* tree,BTree_printf* pFunc,int gap,char div);
 
+void Pre_Order(BTreeNode* root);			//前序遍历 
+void Mid_Order(BTreeNode* root);
+void Post_Order(BTreeNode* root);
+void Level_Order(BTreeNode* root);
+
 
 #endif
