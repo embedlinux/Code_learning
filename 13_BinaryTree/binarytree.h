@@ -36,5 +36,7 @@ void Mid_Order(BTreeNode* root);
 void Post_Order(BTreeNode* root);
 void Level_Order(BTreeNode* root);
 
+void Display_Order(char* ordername, void (*order)(BTreeNode*),BTreeNode* root);
+
 
 #endif

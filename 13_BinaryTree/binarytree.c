@@ -382,6 +382,12 @@ void Level_Order(BTreeNode* root)
 	}
 }
 
+void Display_Order(char* ordername, void (*order)(BTreeNode*),BTreeNode* root)
+{
+	printf("%s the binary tree:\n",ordername);
+	order(root);
+	printf("\n");
+} 
 
  
 
