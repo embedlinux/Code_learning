@@ -11,5 +11,5 @@
 #
 
 
-reptile_file
-venv
+reptile_file/*
+venv/*
