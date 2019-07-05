@@ -38,5 +38,8 @@ void Level_Order(BTreeNode* root);
 
 void Display_Order(char* ordername, void (*order)(BTreeNode*),BTreeNode* root);
 
+void thread_via_left(BTreeNode* root,BTreeNode** pp);
+void thread_via_list(BTreeNode* root,SeqList* list);
+
 
 #endif

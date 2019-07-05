@@ -3,7 +3,7 @@
 #include <malloc.h> 
 #include "binarytree.h"
 #include "ListQue.h" 
-
+#include "SeqList.h"
 
 //头结点定义
 typedef struct _tag_BTree TBTree;
@@ -387,6 +387,42 @@ void Display_Order(char* ordername, void (*order)(BTreeNode*),BTreeNode* root)
 	printf("%s the binary tree:\n",ordername);
 	order(root);
 	printf("\n");
+} 
+
+void thread_via_left(BTreeNode* root,BTreeNode** pp)
+{
+	 BTreeNode* p = NULL;
+	 if( (root != NULL) && ( pp != NULL))
+	 {
+	  	 if( *pp != NULL)
+	 	 {
+ 	  	  	 (*pp)->left = root;
+ 	  	  	 *pp = NULL;
+ 	  	  	 
+ 		 }
+ 		 if(root->left == NULL)
+ 		 {
+ 		 	*pp = root;
+		 }
+		 thread_via_left(root->left,pp);
+		 thread_via_left(root->right,pp);	
+	 }
+} 
+
+void thread_via_list(BTreeNode* root,SeqList* list)
+{
+	if((root != NULL) &&(list != NULL))
+	{
+		SeqList_Insert(list,(SeqListNode*)root,SeqList_Length(list));
+		
+		thread_via_list(root->left,list);
+		thread_via_list(root->right,list);
+	}
+}
+
+void Thread_Tree()
+{
+	
 } 
 
  

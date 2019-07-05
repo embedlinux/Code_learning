@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "binarytree.h"
+#include "SeqList.h"
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
@@ -43,6 +44,8 @@ int main(int argc, char *argv[])
 	printf("BTree heigh is: %d\n",BTree_Height(btree));
 	printf("BTree Degree is: %d\n",BTree_Degree(btree));
 	
+	
+
 	/*
 	printf("Pre order the binary tree:\n");
 	Pre_Order(BTree_Root(btree));
@@ -65,6 +68,31 @@ int main(int argc, char *argv[])
 	Display_Order("Mid_Order",Mid_Order,BTree_Root(btree));
 	Display_Order("Post_Order",Post_Order,BTree_Root(btree));
 	Display_Order("Level_Order",Level_Order,BTree_Root(btree));
+	
+//	BTreeNode* cur = BTree_Root(btree);
+//	BTreeNode* p = NULL;
+//	printf("Thread via left:",BTree_Root(btree));
+//	thread_via_left(cur,&p);
+//	
+//	while(cur != NULL)
+//	{
+//		printf("%c ",((struct Node*)cur)->v);
+//		cur = cur->left;
+//	}
+//	printf("\n");
+
+	SeqList* list = SeqList_Create(BTree_Count(btree));
+	BTreeNode* cur = BTree_Root(btree);
+	int i =0;
+	printf("Thread via List:",BTree_Root(btree));
+	thread_via_list(cur,list);
+	for(i = 0;i<SeqList_Length(list);i++)
+	{
+	 	  printf("%c ",((struct Node*)SeqList_Get(list, i))->v);
+	}
+	printf("\n");
+
+
 	
 	printf("Position At (0x02): %c\n",((struct Node*)BTree_Get(btree,0x02,3))->v); 
 	
