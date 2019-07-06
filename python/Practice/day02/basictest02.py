@@ -4,8 +4,6 @@
 # Author:
 # @Time    :2019/7/6  9:31
 
-
-
 import re
 
 
@@ -143,6 +141,7 @@ def func():
     #     print("%-10s %-10s %-10s" % ("name", "password", "email"))
     #     print("%-10s %-10s %-10s" % (inp_n, inp_p, inp_e))
     # print("------end question8-----------------")
+    pass
 
 
 if __name__ == "__main__":
