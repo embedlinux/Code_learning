@@ -7,7 +7,7 @@
 # 集合, 赋值操作, 深浅拷贝
 '''
 
-1.判断一个数是否是水仙花数,水仙花数是一个三位数,三位数的每一位的三次方的和还等于这个数，邢这个数就是-一个水仙花数,
+1.判断一个数是否是水仙花数,水仙花数是一个三位数,三位数的每一位的三次方的和还等于这个数，邢这个数就是一个水仙花数,
 例如: 153= 1**3+5**3+3**3。
 
 2.给出一个纯数字列表请对列表进行排序(升级题)。
@@ -21,9 +21,9 @@
 from random import randinte
 randint(0, 20)#0-20的随机数。
 
-4.税务部门征收所得税规定如下:  ”
+4.税务部门征收所得税规定如下: 
     1).收入在2000以下的.免征。
-    2). 收入在2000-4000的，超过2000部分要征收3%的税。
+    2).收入在2000-4000的，超过2000部分要征收3%的税。
     3).收入在4000-6000的，超过4000部分要征收5%的税。
     4).收入在6000-10000的，超过6000部分要征收8%的税
     4).收入在10000以上的，超过部分征收20%的税。
@@ -33,12 +33,52 @@ randint(0, 20)#0-20的随机数。
 
 
 def func():
-    dic = dict.fromkeys("abc", ["周杰伦", "麻花藤", "haha"])
-    print(dic)
-    a = [1, 2]
-    a[1] = a
-    print(a[1])
-    pass
+    # inp_num = int(input("输入数字：").strip())
+    # th = inp_num//100
+    # hu = inp_num%100//10
+    # un = inp_num%10
+    # if inp_num == th**3+hu**3+un**3:
+    #     print(True)
+    # else:
+    #     print(False)
+    # print("----------------end question1----------------")
+
+    from random import randint
+    li2 = []
+    for i in range(0, 10):
+        li2.append(randint(0, 20))
+    print(li2)
+    tmp = 0
+    for i in range(0, len(li2)-1):
+        tmp = li2[i]
+        for j in range(i+1, len(li2)):
+            if tmp > li2[j]:
+                tmp, li2[j] = li2[j], tmp
+        li2[i] = tmp
+    print(li2)
+    print("----------------end question2----------------")
+
+    se3 = set()
+    while True:
+        se3.add(randint(1, 36))
+        if len(se3) == 7:
+            break
+    print(se3)
+    print("----------------end question3----------------")
+    num_4 = int(input("月收入：").strip())
+    rev = 0
+    if num_4 <=2000:
+        rev = 0
+    elif 2000 < num_4 <= 4000:
+        rev = (num_4-2000) * 0.03
+    elif 4000 < num_4 <= 6000:
+        rev = 2000 * 0.03 + (num_4 - 4000) * 0.05
+    elif 6000 < num_4 <= 10000:
+        rev = 2000 * 0.03 + 2000 * 0.05 + (num_4 - 6000) * 0.08
+    elif num_4 > 10000:
+        rev = 2000 * 0.03 + 2000 * 0.05 + 4000 * 0.08 + (num_4 - 10000) * 0.2
+    print(rev)
+    print("----------------end question4----------------")
 
 
 if __name__ == "__main__":
