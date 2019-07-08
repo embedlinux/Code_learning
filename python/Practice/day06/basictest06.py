@@ -123,12 +123,12 @@ def func():
         all_m += zhubo[i]
     avg_m = all_m // len(zhubo)
     print("all_m is {},all nums is {}, avg_m is {}".format(all_m, len(zhubo), avg_m))
-    del zhubo["卢本伟"]
     for i in zhubo:
         if zhubo[i] < avg_m:
             dic6[i] = zhubo[i]
     for i in dic6:
         del zhubo[i]
+    del zhubo["卢本伟"]
     print(zhubo)
     print("-----------------end question6--------------")
 
