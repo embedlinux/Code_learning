@@ -1,0 +1,1 @@
+name:Jone sex:male age:28 education:master 
