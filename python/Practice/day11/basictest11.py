@@ -12,6 +12,8 @@
 # 查看函数说明...
 # print(str.__doc__)
 
+import random
+
 '''
 1,继续整理函数相关知识点，写博客。
 2,写函数，接收n个数字，求这些参数数字的和。（动态传参）
@@ -19,18 +21,20 @@
     a=10
     b=20
     def test5(a,b):
-             print(a,b)
-    c = test5(b,a)
-    print(c)
+        print(a,b)
+    c = test5(b,a)    # 20, 10
+    print(c)          # None
+    
 4,读代码，回答：代码中,打印出来的值a,b,c分别是什么？为什么？
     a=10
     b=20
     def test5(a,b):
         a=3
         b=5
-         print(a,b)
-    c = test5(b,a)
+         print(a,b)     # 3 5
+    c = test5(b,a)      # None
     print(c)
+    
 5,写函数,传入函数中多个实参(均为可迭代对象如字符串,列表,元祖,集合等),将每个实参的每个元素依次添加到函数的动态参数args里面.
 例如 传入函数两个参数[1,2,3] (22,33)最终args为(1,2,3,22,33)
 
@@ -40,28 +44,28 @@
 7.1
     a = 2
     def wrapper():
-            print(a)
+        print(a)   # 2
     wrapper()
 
 7.2
     a = 2
     def wrapper():
-            a += 1
+            a += 1 # 报错，local variable 'a' referenced before assignment
         print(a)
     wrapper()
 7.3
-def wrapper():
+    def wrapper():
         a = 1
         def inner():
-            print(a)
+            print(a)   # 1
         inner()
     wrapper()
 7.4
-def wrapper():
+    def wrapper():
         a = 1
         def inner():
             a += 1
-            print(a)
+            print(a)  #报错，local variable 'a' referenced before assignment
         inner()
     wrapper()
 
@@ -84,5 +88,115 @@ def wrapper():
 '''
 
 
+def func2(*li):
+    sum_li = 0
+    print(li)
+    for i in li:
+        sum_li += i
+    print(sum_li)
+
+
+def func5(*args):
+    print(args)
+
+
+def func6(**kwargs):
+    print(kwargs)
+
+
+def func8(*args):
+    min_n = args[0]
+    # print(args)
+    for i in args:
+        if min_n > i:
+            min_n = i
+    return min_n
+
+
+def func9(*args):
+    str_n = ""
+    if len(args) <= 1:
+        return False
+    for i in args:
+        str_n += str(i) + "_"
+    return str_n[:-1]
+
+
+def func10(*args):
+    dic = {}
+    dic["min"] = min(args)
+    dic["max"] = max(args)
+    return dic
+
+
+def func11(arg):
+    if arg == 1:
+        return 1
+    else:
+        return func11(arg - 1) * arg
+
+
+def poker12(*args):
+    return args
+
+
+def func12():
+    poker = []
+    poker_color = ["红心", "黑桃", "草花", "方块"]
+    poker_size = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    for i in poker_size:
+        for j in poker_color:
+            poker.append(poker12(j, i))
+    return poker
+
+
+def wrapper():
+    def inner():
+        print(666)
+    # inner()
+    return inner()
+
+
 if __name__ == "__main__":
-    pass
+    li2 = []
+    for i in range(10):
+        li2.append(random.randint(0, 30))
+    func2(*li2)
+    print("----------------end question2----------------")
+
+    li5 = [1, 2, 3]
+    tu5 = (22, 33)
+    func5(*li5, *tu5)
+    print("----------------end question5----------------")
+
+    dic61 = {"name":"alex"}
+    dic62 = {"age":1000}
+    func6(**dic61, **dic62)
+    print("----------------end question6----------------")
+
+    min_n = func8(*li2)
+    print(min_n)
+    print("----------------end question8----------------")
+
+    li9 = [1, '老男孩', '武sir']
+    str_9 = func9(*li9)
+    print(str_9)
+    print("----------------end question9----------------")
+
+    li10 = [2, 5, 7, 8, 4]
+    dic_10 = func10(*li10)
+    print(dic_10)
+    print("----------------end question10----------------")
+
+    n_11 = func11(5)
+    print(n_11)
+    print("----------------end question11----------------")
+
+    poker_12 = func12()
+    print(poker_12)
+    print("----------------end question12----------------")
+
+    wrapper()
+    # wrapper.inner()
+    print("----------------end question13----------------")
+
