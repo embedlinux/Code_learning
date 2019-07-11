@@ -35,17 +35,24 @@ import os
 
 user_dic = {}                           # 用户信息，全局变量
 
+
 # 用户登录
 def login():
     user_info = []
-    f = open("name/login_name.txt", "r+", encoding="utf-8")
+    f = open("name/login_name.txt", "r+", encoding="UTF-8-sig")
     while True:
         user_name = input("请输入用户名:").strip()
         user_pass = input("请输入密码:").strip()
         for i in f.readlines():
+            # print(i.strip().split("|"))
             u_name = i.strip().split("|")[0]
+            # print(user_name == i.strip().split("|")[0])
+            # print(u_name, user_name)
+            # print(type(u_name), type(user_name))
             if u_name == user_name:
+                print(user_pass == i.strip().split("|")[1])
                 if user_pass == i.strip().split("|")[1]:
+                    print("user_pass = {}".format(user_pass))
                     user_info = i.strip().split("|")             # 用户信息列表
                     f.close()
                     return user_info
@@ -78,10 +85,16 @@ def list_product():
 
 
 # 解析购物车和已购买商品
-
 def parse_goods(args):
     dic = {}
-    list_args = args.strip("{").("}").split(",")
+    list_args = args.strip("{").strip("}").split(",")
+    # print(list_args)
+    for i in list_args:
+        if i is not None:
+            dic[i.split(":")[0].strip().strip("'")] = i.split(":")[1].strip().strip("'")
+    print(dic)
+    return dic
+
 
 # 解析用户信息
 def parse_user_info(*args):
@@ -89,8 +102,8 @@ def parse_user_info(*args):
         user_dic["Pur_goods"] = {}
         user_dic["Cart_goods"] = {}
     else:
-        user_dic["Pur_goods"] = args[3]
-        user_dic["Cart_goods"] = args[4]
+        user_dic["Pur_goods"] = parse_goods(args[3])
+        user_dic["Cart_goods"] = parse_goods(args[4])
     user_dic["Name"] = args[0]
     user_dic["Passwd"] = args[1]
     user_dic["Balance"] = args[2]
