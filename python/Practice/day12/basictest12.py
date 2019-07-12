@@ -59,8 +59,11 @@ def ques2():
     print("(2):{}".format(li2))
 
     M = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-    li3 = [[x, y, z] for x in M[0] if x==3 for y in M[1] if y==6 for z in M[2] if z==9]
+    # li3 = [[x, y, z] for x in M[0] if x==3 for y in M[1] if y==6 for z in M[2] if z==9]
+    li3 = [i[2] for i in M]
+    li3_1 = [[i-2, i-1, i-0] for i in li3]
     print("(3):{}".format(li3))
+    print("(3):{}".format(li3_1))
 
     li4 = [x*x for x in range(50) if x%3 == 0]
     print("(4):{}".format(li4))
@@ -68,7 +71,8 @@ def ques2():
     li5 = ["python" + str(i) + "期" for i in range(1, 11)]
     print("(5):{}".format(li5))
 
-    li6 = [(x, y) for x in range(6) for y in range(7) if y==x+1]
+    # li6 = [(x, y) for x in range(6) for y in range(7) if y==x+1]
+    li6 = [(x, x+1) for x in range(6)]
     print("(6):{}".format(li6))
 
     li7 = [x for x in range(20) if x%2 == 0]
