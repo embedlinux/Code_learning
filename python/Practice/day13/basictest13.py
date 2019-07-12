@@ -22,3 +22,25 @@ import random
 if __name__ == "__main__":
     se = {random.randint(0, 20) for i in range(0, 10)}
     print(se)
+
+    def add(a, b):
+        return a + b
+
+    def test():
+        for r_i in range(4):
+            yield r_i
+
+    g = test()                      # 获取生成器
+    for n in [2, 10]:
+        g = (add(n, i) for i in g)
+    # g = (add(10, i) for i in (add(10, i) for i in g))
+    #  --> g = (add(10, i) for i in (10, 11, 12, 13))
+
+    for n in [2, 10, 5]:
+        g = (add(n, i) for i in g)
+    # g = (add(5, i) for i in add(5, i) for i in add(5, i) for i in g)
+    # g = (add(5, i) for i in add(5, i) for i in (5,6,7,8))
+    # g = (add(5, i) for i in (10,11,12,13))
+    # g = (15,16,17,18)
+
+    print(list(g))
