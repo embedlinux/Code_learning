@@ -84,7 +84,7 @@ def list_product():
     return product
 
 
-# 解析购物车和已购买商品
+# 解析购物车和已购买商品,可以使用 eval()函数解析字符串
 def parse_goods(args):
     dic = {}
     list_args = args.strip("{").strip("}").split(",")
