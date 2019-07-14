@@ -10,7 +10,7 @@ import re
 # 2.做原子乘除运算
 # 3.筛选出原子公式，计算替换结果
 # 4.格式化多余+-符号，匹配：+1 -2这样的数(做累加)
-# 5.创建一个调用1 2 3的函数
+# 5.创建一个调用2 3 4的函数
 
 
 # 去除所有的空白字符
@@ -59,6 +59,7 @@ def atom_mul_div(args):
         return str(float(a) / float(b))
 
 
+# 解析加法和减法
 def parse_add_sub(args):
     exp = re.findall("[+-]?\d+(?:\.\d+)?", args)
     exp_sum = 0
@@ -81,7 +82,7 @@ def parse_mul_div(args):
 
 if __name__ == "__main__":
     s = '1 - 2 * ( (60-30 +(-40/5) * (9-2*5/3 + 7 /3*99/4*2998 +10 * 568/14 )) - (-4*3)/ (16-3*2) )'
-    print(eval(s))
+    # print(eval(s))
     s = remove_blank_space(s)
     ret = parse_barcket(s)
     print(ret)
