@@ -52,8 +52,8 @@ def exe_file(f):
 def copy_file(source, des):
     source_abs = os.path.abspath(source)
     des_abs = os.path.abspath(des)
-    with open(source_abs, "r", encoding="utf-8") as f1, \
-            open(des_abs, "w+", encoding="utf-8") as f2:
+    with open(source_abs, "rb") as f1, \
+            open(des_abs, "wb") as f2:
         for i in f1.readlines():
             f2.write(i)
 
