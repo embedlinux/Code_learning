@@ -100,5 +100,46 @@ class Foo:
 # 嵌套, 组合
 
 
+# 学校
+class School:
+    def __init__(self, address):
+        self.address = address
+        self.subject = None
+
+
+# 课程
+class Subject:
+    def __init__(self, name, time, price):
+        self.name = name
+        self.time = time
+        self.price = price
+        self.school = None
+
+
+# 班级
+class Classes:
+    def __init__(self, s_time, e_time, s_nums, brief):
+        self.s_time = s_time
+        self.e_time = e_time
+        self.s_nums = s_nums
+        self.brief = brief
+        self.subject = None
+
+
 if __name__ == "__main__":
-    pass
+    school1 = School("北京")
+    school2 = School("上海")
+    school3 = School("深圳")
+
+    s_python = Subject("python", "100", 12000)
+    s_linux = Subject("Linux", "80", 11000)
+    s_go = Subject("Go", "60", 10000)
+
+    school1.subject = [s_python, s_linux, s_go]
+    school2.subject = [s_python, s_linux]
+    school1.subject = [s_go]
+
+
+
+
+
