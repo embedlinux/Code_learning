@@ -135,9 +135,6 @@ if __name__ == "__main__":
     s_linux = Subject("Linux", "80", 11000)
     s_go = Subject("Go", "60", 10000)
 
-    school1.subject = [s_python, s_linux, s_go]
-    school2.subject = [s_python, s_linux]
-    school1.subject = [s_go]
 
 
 
