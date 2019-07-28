@@ -13,6 +13,8 @@
 #   struct模块可以把一个类型，如数字，转成固定长度的bytes
 # 3 文件上传 FTP
 
-
+# 1 基于socketserver实现一个多用户上传下载功能
+# 2 整理socketserver的流程图。
 if __name__ == "__main__":
     pass
+
