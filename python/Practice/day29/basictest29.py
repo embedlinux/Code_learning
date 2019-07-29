@@ -27,5 +27,8 @@
 
 # socketserver
 # cnblogs.com/yuanchenqi/articles/9534816.html
+
+# 基于socketserver 实现一个多用户上传下载功能
+
 if __name__ == "__main__":
     pass
