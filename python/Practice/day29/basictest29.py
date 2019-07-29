@@ -24,5 +24,8 @@
 # file_info_json = conn.recv(file_info_length).decode("utf8")
 # file_info = json.loads(file_info_json)
 # 3.接收数据
+
+# socketserver
+# cnblogs.com/yuanchenqi/articles/9534816.html
 if __name__ == "__main__":
     pass
