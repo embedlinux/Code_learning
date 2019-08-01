@@ -17,7 +17,12 @@
 
 # FTP
 #   进度条
+# print('\r80%',end='')             覆盖当前行输出
+# tpl = "进度条目前是%s%%" %(90,)    %号输出
+
 #   计算文件大小
+# size = os.stat(r'filepath').st_size
+
 #   断点续传
 
 
