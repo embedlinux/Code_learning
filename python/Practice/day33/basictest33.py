@@ -4,7 +4,7 @@
 # Author:
 # @Time    :2019/8/5  21:43
 
-# 锁
+# 锁:https://www.cnblogs.com/Eva-J/p/5110160.html
 #     线程锁:由于线程之间是进行随机调度，并且每个线程可能只执行n条执行之后，当多个线程同时修改同一条数据时
 #     可能会出现脏数据，所以，出现了线程锁 - 同一时刻允许一个线程执行操作。
 #       Lock (1次放1个)
@@ -18,7 +18,15 @@
 #       如果“Flag”值为True，那么event.wait方法时便不再阻塞
 
 # threading.local
+#     Python提供了threading.local 类，将这个类实例化得到一个全局对象，但是不同的线程使用
+# 这个对象存储的数据其它线程不可见(本质上就是不同的线程使用这个对象时为其创建一个独立的字典)。
+
+# 线程池
+#   https://www.cnblogs.com/xibuhaohao/p/10345362.html
 # 生产者消费者模型
+#     队列实现 q = queue.Queue()
+#     生产者   q.put()
+#     消费者   q.get()
 
 
 if __name__ == "__main__":
