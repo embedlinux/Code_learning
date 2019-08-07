@@ -5,6 +5,7 @@
 # @Time    :2019/8/5  21:43
 
 # 锁:https://www.cnblogs.com/Eva-J/p/5110160.html
+#     import threading
 #     线程锁:由于线程之间是进行随机调度，并且每个线程可能只执行n条执行之后，当多个线程同时修改同一条数据时
 #     可能会出现脏数据，所以，出现了线程锁 - 同一时刻允许一个线程执行操作。
 #       Lock (1次放1个)
@@ -23,6 +24,7 @@
 
 # 线程池
 #   https://www.cnblogs.com/xibuhaohao/p/10345362.html
+#   from concurrent.futures import ThreadPoolExecutor
 # 生产者消费者模型
 #     队列实现 q = queue.Queue()
 #     生产者   q.put()
