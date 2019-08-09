@@ -4,7 +4,7 @@
 # Author:
 # @Time    :2019/5/19  19:50
 
-#使用ip代理池和用户代理池爬取糗事百科
+# 使用ip代理池和用户代理池爬取糗事百科
 
 import re
 import random
@@ -54,14 +54,14 @@ def get_html(urlweb):
             try:
                 page = urlweb + str(i)
                 thisua = random.choice(uapools)
-                header = ("User-Agent", thisua)             #构建用户代理
+                header = ("User-Agent", thisua)             # 构建用户代理
                 ip = random.choice(ipools)
                 print("当前使用的ip为" + ip)
-                proxy = urlreq.ProxyHandler({"http": ip})   #构建IP代理
-                url_opener = urlreq.build_opener(proxy, urlreq.HTTPHandler)   #添加IP代理头
-                url_opener.addheaders = [header]                              #添加用户代理头
+                proxy = urlreq.ProxyHandler({"http": ip})   # 构建IP代理
+                url_opener = urlreq.build_opener(proxy, urlreq.HTTPHandler)   # 添加IP代理头
+                url_opener.addheaders = [header]                              # 添加用户代理头
                 # get_ua(uapools)
-                urlreq.install_opener(url_opener)                             #设为全局变量
+                urlreq.install_opener(url_opener)                             # 设为全局变量
                 data = urlreq.urlopen(page).read().decode("utf-8","ignore")
             except Exception as e:
                 print(e)

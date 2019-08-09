@@ -13,7 +13,7 @@
 #     parse_qs           解码,可以对编码后的url进行解码
 #     urlparse/urlsplit  想要对这个url中的各个组成部分进行分割，那么这时候就可以使用urlparse或者是urlsplit来进行分割
 # from urllib import request
-#     Request
+#     Request            如果想要在请求的时候增加一些请求头，那么就必须使用request.Request类来实现。比如要增加一个User-Agent，
 
 
 
