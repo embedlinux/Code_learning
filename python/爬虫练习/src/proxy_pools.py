@@ -10,6 +10,9 @@ import random
 import re
 
 
+# 获取IP代理池模块
+
+
 useragent = [
     "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) \
     Gecko/20100101 Firefox/52.0",
