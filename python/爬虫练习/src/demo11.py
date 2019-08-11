@@ -41,6 +41,7 @@ def get_url(url):
     opener = request.build_opener()
     headers = ("User-Agent", random.choice(useragent))
     opener.addheaders = [headers]
+    request.install_opener(opener)          # 将opener安装为全局
 
     try:
         data = opener.open(url).read().decode("utf-8")
