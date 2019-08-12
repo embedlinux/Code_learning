@@ -20,3 +20,4 @@ class DdItem(scrapy.Item):
     title = scrapy.Field()
     link = scrapy.Field()
     comment = scrapy.Field()
+    img_url = scrapy.Field()

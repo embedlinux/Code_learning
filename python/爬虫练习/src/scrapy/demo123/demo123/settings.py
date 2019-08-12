@@ -69,6 +69,12 @@ ITEM_PIPELINES = {
      'demo123.pipelines.DdPipeline': 300,
 }
 
+# 配置图片的保存目录
+IMAGES_STORE = 'Image'
+# 在ImagesPipeline进行下载图片时，配置图片对应的Item字段
+IMAGES_URLS_FIELD = 'img_url'
+IMAGES_RESULT_FIELD = 'images'
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True

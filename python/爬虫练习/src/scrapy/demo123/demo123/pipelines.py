@@ -17,6 +17,11 @@ class DdPipeline(object):
             title = item["title"][i]
             link = item["link"][i]
             comment = item["comment"][i]
+            # img_url = item["img_url"][i]
+            # print(img_url)
             print("title:{},line:{},comment:{}".format(title, link, comment))
+        for i in item["img_url"]:
+            pass
+
         return item
 
