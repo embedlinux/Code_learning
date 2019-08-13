@@ -21,3 +21,9 @@ class DdItem(scrapy.Item):
     link = scrapy.Field()
     comment = scrapy.Field()
     img_url = scrapy.Field()
+
+
+class BaiduItem(scrapy.Item):
+    title = scrapy.Field()
+    link = scrapy.Field()
+    content = scrapy.Field()

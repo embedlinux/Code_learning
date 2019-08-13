@@ -22,6 +22,11 @@ class DdPipeline(object):
             print("title:{},line:{},comment:{}".format(title, link, comment))
         for i in item["img_url"]:
             pass
+        return item
 
+
+class BaiduPipeline(object):
+    def process_item(self, item, spider):
+        # print(item["title"], item["link"])
         return item
 

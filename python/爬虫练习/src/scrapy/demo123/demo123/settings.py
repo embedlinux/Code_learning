@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'demo123.spiders'
 #USER_AGENT = 'demo123 (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -66,7 +66,8 @@ ROBOTSTXT_OBEY = True
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    # 'demo123.pipelines.Demo123Pipeline': 300,
-     'demo123.pipelines.DdPipeline': 300,
+   #   'demo123.pipelines.DdPipeline': 300,
+     'demo123.pipelines.BaiduPipeline': 400,
 }
 
 # 配置图片的保存目录
