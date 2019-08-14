@@ -19,7 +19,7 @@ class DemoIqySpider(scrapy.Spider):
                 }
         print("登录中...")
         return [scrapy.http.FormRequest.from_response(response,
-                                                      meta={"cookiejar":response.meta["cookiejar"]},
+                                                      meta={"cookiejar": response.meta["cookiejar"]},
                                                       headers=self.headers,
                                                       formdata=data,
                                                       callback=self.next)
