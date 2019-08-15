@@ -67,7 +67,7 @@ ROBOTSTXT_OBEY = False
 ITEM_PIPELINES = {
    # 'demo123.pipelines.Demo123Pipeline': 300,
    #   'demo123.pipelines.DdPipeline': 300,
-     'demo123.pipelines.BaiduPipeline': 400,
+   #   'demo123.pipelines.BaiduPipeline': 400,
 }
 
 # 配置图片的保存目录

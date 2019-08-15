@@ -6,6 +6,7 @@
 # Urllib中使用XPath表达式
 
 import urllib.request
+import urllib.parse
 from lxml import etree
 
 if __name__ == "__main__":
