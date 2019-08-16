@@ -30,17 +30,23 @@ class DemoJdSpider(scrapy.Spider):
         url = "https://book.jd.com/"
         req = urllib.request.Request(url=url)
         req.add_header("User-Agent", random.choice(useragent))
-        alldata = urllib.request.urlopen(req).read().decode("utf-8", "ignore")
-        print(len(alldata))
+        alldata = urllib.request.urlopen(req)
+        print(alldata.getcode())
+        print(alldata.info())
         # print(alldata)
+        urlset = set()
         pat = '{"NAME":".*?","URL":"(.*?)","YFLAG":"1"},'
-        allurl = re.compile(pat).findall(alldata)
+        allurl = re.compile(pat).findall(alldata.read().decode("gbk", "ignore"))
         print("allurl", len(allurl))
         for i in allurl:
             thislink = re.sub("\\\/", "/", i)
-            if "{" in thislink or "-" in thislink:
+            if "{" in thislink or not thislink.endswith(".html"):
                 continue
+            if not thislink.startswith("https"):
+                thislink = "https:" + thislink
             print(thislink)
+            urlset.add(thislink)
+        print(urlset)
         #     req2 = urllib.request.Request(url=thislink)
         #     req2.add_header("User-Agent", random.choice(useragent))
         #     pdres = urllib.request.urlopen(req).read().decode("utf-8", "ignore")
