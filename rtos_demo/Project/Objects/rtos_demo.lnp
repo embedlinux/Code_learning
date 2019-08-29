@@ -1,0 +1,9 @@
+--cpu Cortex-M7 --fpu=SoftVFP
+".\objects\main.o"
+".\objects\list.o"
+".\objects\startup_armcm7.o"
+".\objects\system_armcm7.o"
+--strict --scatter ".\Objects\rtos_demo.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\rtos_demo.map" -o .\Objects\rtos_demo.axf
