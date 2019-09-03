@@ -1,26 +1,50 @@
 Dependencies for Project 'rtos_demo', Target 'Target 1': (DO NOT MODIFY !)
-F (..\User\main.c)(0x5D6D1905)(--c99 -c --cpu Cortex-M7 --fpu=SoftVFP --li -g -O0 --apcs=interwork --split_sections -I ..\freertos\include -I ..\freertos\portable\RVDS\ARM_CM7 -I ..\User-I.\RTE\_Target_1-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\Device\ARM\ARMCM7\Include"-D__UVISION_VERSION="524" -D_RTE_ -DARMCM7-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (..\freertos\include\list.h)(0x5D6D17F0)
-I (..\freertos\include\FreeRTOS.h)(0x5D6D02B0)
-I (..\freertos\include\FreeRTOSConfig.h)(0x5D6D02B0)
+F (..\User\main.c)(0x5D6E7CC1)(--c99 -c --cpu Cortex-M7 --fpu=SoftVFP --li -g -O0 --apcs=interwork --split_sections -I ..\freertos\include -I ..\freertos\portable\RVDS\ARM_CM7 -I ..\User-I.\RTE\_Target_1-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\Device\ARM\ARMCM7\Include"-D__UVISION_VERSION="524" -D_RTE_ -DARMCM7-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (..\freertos\include\FreeRTOS.h)(0x5D6E770E)
+I (..\freertos\include\FreeRTOSConfig.h)(0x5D6E6DB3)
 I (..\freertos\include\portable.h)(0x5D6D02B0)
-I (..\freertos\include\portmacro.h)(0x5D6D02B0)
+I (..\freertos\include\portmacro.h)(0x5D6E6F61)
 I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x588B8344)
 I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stddef.h)(0x588B8344)
+I (..\freertos\include\list.h)(0x5D6D1A21)
+I (..\freertos\include\projdefs.h)(0x5D6E6E78)
+I (..\freertos\include\task.h)(0x5D6E7DF4)
+F (..\freertos\portable\RVDS\ARM_CM7\port.c)(0x5D6E77D4)(--c99 -c --cpu Cortex-M7 --fpu=SoftVFP --li -g -O0 --apcs=interwork --split_sections -I ..\freertos\include -I ..\freertos\portable\RVDS\ARM_CM7 -I ..\User-I.\RTE\_Target_1-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\Device\ARM\ARMCM7\Include"-D__UVISION_VERSION="524" -D_RTE_ -DARMCM7-o .\objects\port.o --omf_browse .\objects\port.crf --depend .\objects\port.d)
+I (..\freertos\include\FreeRTOS.h)(0x5D6E770E)
+I (..\freertos\include\FreeRTOSConfig.h)(0x5D6E6DB3)
+I (..\freertos\include\portable.h)(0x5D6D02B0)
+I (..\freertos\include\portmacro.h)(0x5D6E6F61)
+I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stddef.h)(0x588B8344)
+I (..\freertos\include\list.h)(0x5D6D1A21)
+I (..\freertos\include\projdefs.h)(0x5D6E6E78)
 F (..\freertos\list.c)(0x5D6D17F2)(--c99 -c --cpu Cortex-M7 --fpu=SoftVFP --li -g -O0 --apcs=interwork --split_sections -I ..\freertos\include -I ..\freertos\portable\RVDS\ARM_CM7 -I ..\User-I.\RTE\_Target_1-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\Device\ARM\ARMCM7\Include"-D__UVISION_VERSION="524" -D_RTE_ -DARMCM7-o .\objects\list.o --omf_browse .\objects\list.crf --depend .\objects\list.d)
-I (..\freertos\include\FreeRTOS.h)(0x5D6D02B0)
-I (..\freertos\include\FreeRTOSConfig.h)(0x5D6D02B0)
+I (..\freertos\include\FreeRTOS.h)(0x5D6E770E)
+I (..\freertos\include\FreeRTOSConfig.h)(0x5D6E6DB3)
 I (..\freertos\include\portable.h)(0x5D6D02B0)
-I (..\freertos\include\portmacro.h)(0x5D6D02B0)
+I (..\freertos\include\portmacro.h)(0x5D6E6F61)
 I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x588B8344)
 I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stddef.h)(0x588B8344)
+I (..\freertos\include\list.h)(0x5D6D1A21)
+I (..\freertos\include\projdefs.h)(0x5D6E6E78)
 I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (..\freertos\include\list.h)(0x5D6D17F0)
-F (..\freertos\include\list.h)(0x5D6D17F0)()
-F (..\freertos\include\FreeRTOSConfig.h)(0x5D6D02B0)()
-F (..\freertos\include\portmacro.h)(0x5D6D02B0)()
-F (..\freertos\include\FreeRTOS.h)(0x5D6D02B0)()
+F (..\freertos\include\list.h)(0x5D6D1A21)()
+F (..\freertos\include\FreeRTOSConfig.h)(0x5D6E6DB3)()
+F (..\freertos\include\portmacro.h)(0x5D6E6F61)()
+F (..\freertos\include\FreeRTOS.h)(0x5D6E770E)()
 F (..\freertos\include\portable.h)(0x5D6D02B0)()
+F (..\freertos\include\task.h)(0x5D6E7DF4)()
+F (..\freertos\include\projdefs.h)(0x5D6E6E78)()
+F (..\freertos\task.c)(0x5D6E71DB)(--c99 -c --cpu Cortex-M7 --fpu=SoftVFP --li -g -O0 --apcs=interwork --split_sections -I ..\freertos\include -I ..\freertos\portable\RVDS\ARM_CM7 -I ..\User-I.\RTE\_Target_1-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\Device\ARM\ARMCM7\Include"-D__UVISION_VERSION="524" -D_RTE_ -DARMCM7-o .\objects\task.o --omf_browse .\objects\task.crf --depend .\objects\task.d)
+I (..\freertos\include\FreeRTOS.h)(0x5D6E770E)
+I (..\freertos\include\FreeRTOSConfig.h)(0x5D6E6DB3)
+I (..\freertos\include\portable.h)(0x5D6D02B0)
+I (..\freertos\include\portmacro.h)(0x5D6E6F61)
+I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (F:\Program Filesx86\MDK\ARM\ARMCC\include\stddef.h)(0x588B8344)
+I (..\freertos\include\list.h)(0x5D6D1A21)
+I (..\freertos\include\projdefs.h)(0x5D6E6E78)
+I (..\freertos\include\task.h)(0x5D6E7DF4)
 F (..\Doc\readme.txt)(0x5D6D02AF)()
 F (RTE\Device\ARMCM7\startup_ARMCM7.s)(0x5D6D02AF)(--cpu Cortex-M7 --fpu=SoftVFP --li -g --apcs=interwork -I.\RTE\_Target_1-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\Device\ARM\ARMCM7\Include"--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "ARMCM7 SETA 1"--list .\listings\startup_armcm7.lst --xref -o .\objects\startup_armcm7.o --depend .\objects\startup_armcm7.d)
 F (RTE\Device\ARMCM7\system_ARMCM7.c)(0x5D6D02AF)(--c99 -c --cpu Cortex-M7 --fpu=SoftVFP --li -g -O0 --apcs=interwork --split_sections -I ..\freertos\include -I ..\freertos\portable\RVDS\ARM_CM7 -I ..\User-I.\RTE\_Target_1-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\Device\ARM\ARMCM7\Include"-D__UVISION_VERSION="524" -D_RTE_ -DARMCM7-o .\objects\system_armcm7.o --omf_browse .\objects\system_armcm7.crf --depend .\objects\system_armcm7.d)

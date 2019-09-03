@@ -1,5 +1,6 @@
 --cpu Cortex-M7 --fpu=SoftVFP
 ".\objects\main.o"
+".\objects\port.o"
 ".\objects\list.o"
 ".\objects\startup_armcm7.o"
 ".\objects\system_armcm7.o"

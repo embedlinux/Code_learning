@@ -22,15 +22,20 @@ Dialog DLL:      TCM.DLL V1.32.0.0
  
 <h2>Project:</h2>
 D:\code\c_language\data-struct\rtos_demo\Project\rtos_demo.uvprojx
-Project File Date:  09/02/2019
+Project File Date:  09/03/2019
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 5 (build 528)', folder: 'F:\Program Filesx86\MDK\ARM\ARMCC\Bin'
 Build target 'Target 1'
-compiling main.c...
-linking...
-Program Size: Code=532 RO-data=224 RW-data=4 ZI-data=4276  
-".\Objects\rtos_demo.axf" - 0 Error(s), 0 Warning(s).
+compiling task.c...
+..\freertos\task.c(121): warning:  #223-D: function "pxPortInitialiseStack" declared implicitly
+  	pxNewTCB->pxTopOfStack = pxPortInitialiseStack( pxTopOfStack, pxTaskCode, pvParameters );   
+..\freertos\task.c(121): error:  #513: a value of type "int" cannot be assigned to an entity of type "volatile StackType_t *"
+  	pxNewTCB->pxTopOfStack = pxPortInitialiseStack( pxTopOfStack, pxTaskCode, pvParameters );   
+..\freertos\task.c(151): warning:  #223-D: function "xPortStartScheduler" declared implicitly
+      if( xPortStartScheduler() != pdFALSE )
+..\freertos\task.c: 2 warnings, 1 error
+".\Objects\rtos_demo.axf" - 1 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -49,10 +54,11 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::Device:Startup:1.0.1
-      Source file:   Device\ARM\ARMCM7\Source\ARM\startup_ARMCM7.s
       Source file:   Device\ARM\ARMCM7\Source\system_ARMCM7.c
+      Source file:   Device\ARM\ARMCM7\Source\ARM\startup_ARMCM7.s
 
    * Component: ARM::CMSIS:CORE:5.0.1
+Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
