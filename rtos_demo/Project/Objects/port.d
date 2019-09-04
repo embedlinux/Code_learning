@@ -8,3 +8,4 @@
 .\objects\port.o: ..\freertos\include\list.h
 .\objects\port.o: ..\freertos\include\FreeRTOS.h
 .\objects\port.o: ..\freertos\include\projdefs.h
+.\objects\port.o: ..\freertos\include\port.h

@@ -8,4 +8,5 @@
 .\objects\main.o: ..\freertos\include\list.h
 .\objects\main.o: ..\freertos\include\FreeRTOS.h
 .\objects\main.o: ..\freertos\include\projdefs.h
+.\objects\main.o: ..\freertos\include\port.h
 .\objects\main.o: ..\freertos\include\task.h

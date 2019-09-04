@@ -118,7 +118,7 @@ static void prvInitialiseNewTask( 	TaskFunction_t pxTaskCode,              /* 任
     
     
     /* 初始化任务栈 */
-	pxNewTCB->pxTopOfStack = pxPortInitialiseStack( pxTopOfStack, pxTaskCode, pvParameters );   
+	pxNewTCB->pxTopOfStack = pxPortInitialiseStack(pxTopOfStack, pxTaskCode, pvParameters);   
 
 
 	/* 让任务句柄指向任务控制块 */

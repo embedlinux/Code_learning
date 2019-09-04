@@ -1,5 +1,6 @@
 #include "FreeRTOS.h"
 #include "list.h"
+#include "port.h"
 
 
 /*
@@ -30,6 +31,89 @@
 *                              任务栈初始化函数
 *************************************************************************
 */
+__asm void vPortSVCHandler( void )
+{
+	PRESERVE8
+	extern pxCurrentTCB
+
+	/* Get the location of the current TCB. */
+	ldr	r3, =pxCurrentTCB
+	ldr r1, [r3]
+	ldr r0, [r1]
+	/* Pop the core registers. */
+	ldmia r0!, {r4-r11}
+	msr psp, r0
+	isb
+	mov r0, #0
+	msr	basepri, r0
+	orr r14, #0xd   
+	bx r14
+}
+
+__asm void xPortPendSVHandler( void )
+{
+	extern pxCurrentTCB
+	extern vTaskSwitchContext
+
+	PRESERVE8
+
+	mrs r0, psp
+	isb
+	/* Get the location of the current TCB. */
+	ldr	r3, =pxCurrentTCB
+	ldr	r2, [r3]
+
+	/* Save the core registers. */
+	stmdb r0!, {r4-r11}
+
+	/* Save the new top of stack into the first member of the TCB. */
+	str r0, [r2]
+
+	stmdb sp!, {r3, r14}
+	
+	mov r0, #configMAX_SYSCALL_INTERRUPT_PRIORITY
+	msr basepri, r0
+	dsb
+	isb
+	bl vTaskSwitchContext
+	mov r0, #0
+	msr basepri, r0
+	ldmia sp!, {r3, r14}
+
+	/* The first item in pxCurrentTCB is the task top of stack. */
+	ldr r1, [r3]
+	ldr r0, [r1]
+
+	/* Pop the core registers. */
+	ldmia r0!, {r4-r11}
+	msr psp, r0
+	isb
+	bx r14
+	
+	nop
+}
+
+__asm void prvStartFirstTask( void )
+{
+	PRESERVE8
+
+	/* Use the NVIC offset register to locate the stack. */
+	ldr r0, =0xE000ED08
+	ldr r0, [r0]
+	ldr r0, [r0]
+	/* Set the msp back to the start of the stack. */
+	msr msp, r0
+	/* Globally enable interrupts. */
+	cpsie i
+	cpsie f
+	dsb
+	isb
+	/* Call SVC to start the first task. */
+	svc 0
+	nop
+	nop
+}
+
 
 static void prvTaskExitError( void )
 {
@@ -66,6 +150,34 @@ StackType_t *pxPortInitialiseStack( StackType_t *pxTopOfStack, TaskFunction_t px
 
 // 返回栈顶指针
 	return pxTopOfStack;
+}
+
+//启动调度器
+BaseType_t xPortStartScheduler( void )
+{
+
+	/* Make PendSV and SysTick the lowest priority interrupts. */
+	portNVIC_SYSPRI2_REG |= portNVIC_PENDSV_PRI;
+	portNVIC_SYSPRI2_REG |= portNVIC_SYSTICK_PRI;
+
+	/* Start the timer that generates the tick ISR.  Interrupts are disabled
+	here already. */
+	// vPortSetupTimerInterrupt();
+
+	/* Initialise the critical nesting count ready for the first task. */
+	// uxCriticalNesting = 0;
+
+	/* Ensure the VFP is enabled - it should be anyway. */
+	// prvEnableVFP();
+
+	/* Lazy save always. */
+	// *( portFPCCR ) |= portASPEN_AND_LSPEN_BITS;
+
+	/* Start the first task. */
+	prvStartFirstTask();
+
+	/* Should not get here! */
+	return 0;
 }
 
 
