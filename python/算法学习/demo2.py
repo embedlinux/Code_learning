@@ -51,11 +51,11 @@ def find_maximum_subarray(array, low, high):
 
 if __name__ == "__main__":
     # array = [23, -57, 95, 87, -91, 57, 32, 94, 47, -324]
-    # array = [1, -2, 3, 5, -2, 6, -1]
-    num = int(input().split()[0])
-    array_input = input().split()
-    array = list(map(lambda x: int(x), array_input))
-    mid = len(array) // 2
+    array = [1, -2, 3, 5, -2, 6, -1]
+    num = len(array)
+    # num = int(input().split()[0])
+    # array_input = input().split()
+    # array = list(map(lambda x: int(x), array_input))
     ret = find_maximum_subarray(array, 0, num - 1)
     print(ret[2])
 
