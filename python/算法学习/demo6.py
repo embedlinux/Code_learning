@@ -76,4 +76,4 @@ if __name__ == "__main__":
     myqueue.add_value(4)
     myqueue.add_value(5)
     myqueue.show_value()
-    
+
