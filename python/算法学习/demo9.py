@@ -45,6 +45,29 @@ class DoubleLinkList(object):
         self.size += 1
         return node.value
 
+# 指定位置添加节点
+    def add_node_pos(self, pos, value):
+        node = Node(value)
+        temp = self.head
+        if pos > self.size:
+            self.append_node(value)
+            self.size += 1
+            return node.value
+        elif pos <= 0:
+            print("插入位置错误...")
+            return
+        for i in range(0, pos-1):
+            temp = temp.next
+        node.next = temp
+        if temp.pre:
+            temp.pre.next = node
+            node.pre = temp.pre
+        else:
+            self.head = node
+        temp.pre = node
+        self.size += 1
+        return node.value
+
 # 删除指定数值节点
     def del_node(self, value):
         temp = self.head
@@ -115,4 +138,15 @@ if __name__ == "__main__":
     mylink.show_node()
 
     mylink.del_node(0)
+    mylink.show_node()
+
+    mylink.add_node_pos(0, 2)
+    print(mylink.size)
+    mylink.add_node_pos(7, 7)
+    mylink.show_node()
+    mylink.add_node_pos(1, "first")
+    mylink.show_node()
+    mylink.add_node_pos(3, "third")
+    mylink.show_node()
+    mylink.add_node_pos(9, 'nine')
     mylink.show_node()
