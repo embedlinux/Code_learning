@@ -16,6 +16,7 @@ class CycleLinkList(object):
         self.size = 0
         self.head = None
 
+# 末尾添加节点
     def append_node(self, value):
         node = Node(value)
         temp = self.head
@@ -32,17 +33,33 @@ class CycleLinkList(object):
         self.size += 1
         return node.value
 
+# 显示节点
     def show_node(self):
         len = self.size
         temp = self.head
         for i in range(len):
             print(temp.value, end=' ')
             temp = temp.next
+        print("\n")
 
-    
+# 约瑟夫问题
+    def jusephu(self, step):
+        size = self.size
+        temp = self.head
+        while self.size > 1:
+            for i in range(1, step-1):
+                temp = temp.next
+            print(temp.next.value, end=' ')
+            temp.next = temp.next.next
+            temp = temp.next
+            self.size -= 1
+        print(temp.value)
+
+
 if __name__ == "__main__":
     mylink = CycleLinkList()
-    for i in range(7):
+    for i in range(1, 25):
         mylink.append_node(i)
     mylink.show_node()
+    mylink.jusephu(3)
 
