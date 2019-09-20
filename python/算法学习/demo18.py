@@ -67,10 +67,24 @@ def insert_sort(array):
         # print(array)
 
 
-# 希尔排序
+def shell_sub_sort(gap, array):
+    for i in range(gap, len(array), gap):
+        k = i
+        temp = array[k]
+        for j in range(i-gap, -1, -gap):
+            if temp < array[j]:
+                array[j+gap] = array[j]
+                k = j
+        array[k] = temp
+
+
+# 希尔排序, 插入排序的一种特殊形式
 @running_timer
 def shell_sort(array):
-    pass
+    gap = len(array)
+    while gap > 1:
+        gap = gap // 3 + 1
+        shell_sub_sort(gap, array)
 
 
 if __name__ == "__main__":
@@ -78,4 +92,5 @@ if __name__ == "__main__":
     # array = [i for i in range(10)]
     # bubble_sort(array)
     # select_sort(array)
-    insert_sort(array)
+    # insert_sort(array)
+    shell_sort(array)
