@@ -85,12 +85,49 @@ def shell_sort(array):
     while gap > 1:
         gap = gap // 3 + 1
         shell_sub_sort(gap, array)
+        # print(gap)
+        # break
+
+
+def sub_quick_sort(left, right, array):
+    l = left
+    r = right
+    while l < r:
+        pv = array[l]
+        while l < r and pv < array[r]:
+            r -= 1
+        array[l], array[r] = array[r], array[l]
+
+        while l < r and pv > array[l]:
+            l += 1
+        array[l], array[r] = array[r], array[l]
+
+    piv = l
+    if left < piv:
+        sub_quick_sort(left, piv - 1, array)
+    if right > piv:
+        sub_quick_sort(piv + 1, right, array)
+
+
+# 快速排序:冒泡排序的改进
+@running_timer
+def quick_sort(array):
+    left = 0
+    right = len(array) - 1
+    sub_quick_sort(left, right, array)
+
+
+# 归并排序
+@running_timer
+def merge_sort(array):
+    pass
 
 
 if __name__ == "__main__":
-    array = [random.randint(0, 100) for i in range(10)]
+    array = [random.randint(0, 200) for i in range(10)]
     # array = [i for i in range(10)]
     # bubble_sort(array)
     # select_sort(array)
     # insert_sort(array)
-    shell_sort(array)
+    # shell_sort(array)
+    quick_sort(array)
