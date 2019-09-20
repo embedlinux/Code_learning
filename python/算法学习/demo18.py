@@ -52,9 +52,24 @@ def bubble_sort(array):
             flag = False
     # print("排序后:", array)
 
+
 # 插入排序
 @running_timer
 def insert_sort(array):
+    for i in range(1, len(array)):
+        k = i
+        temp = array[k]
+        for j in range(i-1, -1, -1):
+            if temp < array[j]:
+                array[j+1] = array[j]
+                k = j
+        array[k] = temp
+        # print(array)
+
+
+# 希尔排序
+@running_timer
+def shell_sort(array):
     pass
 
 
@@ -62,4 +77,5 @@ if __name__ == "__main__":
     array = [random.randint(0, 100) for i in range(10)]
     # array = [i for i in range(10)]
     # bubble_sort(array)
-    select_sort(array)
+    # select_sort(array)
+    insert_sort(array)
