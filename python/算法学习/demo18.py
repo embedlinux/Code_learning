@@ -117,10 +117,51 @@ def quick_sort(array):
     sub_quick_sort(left, right, array)
 
 
+def merge_sort_partion(left, mid, right, array):
+    ret = []
+    l = left                    # 左边序列索引
+    r = mid + 1                 # 右边序列索引
+    # print(l, mid, r)
+
+    while l <= mid and r <= right:
+        if array[l] < array[r]:
+            ret.append(array[l])
+            l += 1
+        else:
+            ret.append(array[r])
+            r += 1
+    if l <= mid:
+        for i in range(l, mid+1):
+            ret.append(array[i])
+
+    if r <= right:
+        for i in range(r, right+1):
+            ret.append(array[i])
+
+    # 将ret数组中的元素拷贝到array中
+    templeft = left
+    t = 0
+    while templeft <= right:
+        array[templeft] = ret[t]
+        templeft += 1
+        t += 1
+
+
+def sub_merge_sort(left, right, array):
+    # print(left, right)
+    if left < right:
+        mid = (right + left) // 2
+        sub_merge_sort(left, mid, array)        # 左递归分解
+        sub_merge_sort(mid+1, right, array)     # 右递归分解
+        merge_sort_partion(left, mid, right, array)  # 合并
+
+
 # 归并排序
 @running_timer
 def merge_sort(array):
-    pass
+    left = 0
+    right = len(array) - 1
+    sub_merge_sort(left, right, array)
 
 
 if __name__ == "__main__":
@@ -130,4 +171,5 @@ if __name__ == "__main__":
     # select_sort(array)
     # insert_sort(array)
     # shell_sort(array)
-    quick_sort(array)
+    # quick_sort(array)
+    merge_sort(array)
