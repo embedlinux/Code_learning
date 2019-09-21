@@ -164,12 +164,42 @@ def merge_sort(array):
     sub_merge_sort(left, right, array)
 
 
+'''
+将所有待比较数值统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排序。
+这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列。
+'''
+# 基数排序, 分配式排序, 空间换时间
+@running_timer
+def radix_sort(array):
+    # 数字都是五位数,因此比较5轮
+    for t in range(5):
+        n = pow(10, t)
+        # print(n)
+        bucket = [[] for i in range(10)]            # 桶
+        bucket_count = [0 for i in range(10)]       # 桶计数
+        for item in array:
+            temp = item // n % 10                   # 取出每一位数据
+            bucket[temp].append(item)
+            bucket_count[temp] += 1
+        k = 0
+        for i in range(len(bucket)):
+            if bucket_count[i] != 0:
+                for j in range(bucket_count[i]):
+                    array[k] = bucket[i][j]
+                    k += 1
+        # 桶计数清零
+        # for i in range(len(bucket_count)):
+        #     bucket_count[i] = 0
+    # print(bucket)
+
+
 if __name__ == "__main__":
-    array = [random.randint(0, 200) for i in range(10)]
+    array = [random.randint(0, 20000) for i in range(10)]
     # array = [i for i in range(10)]
     # bubble_sort(array)
     # select_sort(array)
     # insert_sort(array)
     # shell_sort(array)
     # quick_sort(array)
-    merge_sort(array)
+    # merge_sort(array)
+    radix_sort(array)
