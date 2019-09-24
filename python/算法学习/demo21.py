@@ -110,13 +110,38 @@ class Node(object):
         return res
 
     # 删除节点, 包含其子结点
-    def del_node(self, no):
+    def del_nodes(self, no):
         if self.left and self.left.no == no:
             self.left = None
             return
         if self.right and self.right.no == no:
             self.right = None
             return
+        if self.left:
+            self.left.del_node(no)
+        if self.right:
+            self.right.del_node(no)
+
+    # 删除节点
+    def del_no(self, temp):
+        temp_left = temp.left
+        temp_right = temp.right
+        if temp_left:
+            while temp_left.right:
+                temp_left = temp_left.right
+            temp_left.right = temp_right
+            return temp_left
+        else:
+            return temp_right
+
+    # 删除节点但不包含其子节点
+    def del_node(self, no):
+        if self.left and self.left.no == no:
+            node = self.left
+            self.left = self.del_no(node)
+        if self.right and self.right.no == no:
+            node = self.right
+            self.right = self.del_no(node)
         if self.left:
             self.left.del_node(no)
         if self.right:
@@ -173,15 +198,36 @@ class BinaryTree(object):
         else:
             pass
 
-    def del_node(self, no):
+    # 删除节点包含子节点
+    def del_nodes(self, no):
         if self.root:
             if self.root.no == no:
                 self.root = None
                 return
             else:
-                self.root.del_node(no)
+                self.root.del_nodes(no)
         else:
             print("空树，没有结点删除...")
+
+    # 删除节点，不包含子节点
+    def del_node(self, no):
+        if self.root:
+            if self.root.no == no:
+                if self.root.left:
+                    temp_left = self.root.left
+                    temp_right = self.root.right
+                    self.root = temp_left
+                    while temp_left.right:
+                        temp_left = temp_left.right
+                    temp_left.right = temp_right
+                elif self.root.right:
+                    self.root = self.root.right
+                else:
+                    self.root = None
+            else:
+                self.root.del_node(no)
+        else:
+            print("空树，没有结点可被删除...")
 
 
 if __name__ == "__main__":
@@ -192,10 +238,14 @@ if __name__ == "__main__":
     node3 = Node(3, "Amy")
     node4 = Node(4, "Hung")
     node5 = Node(5, "Tony")
+    node6 = Node(6, "Hung")
+    node7 = Node(7, "Tony")
     node1.set_left(node2)
     node1.set_right(node3)
-    node3.set_right(node4)
-    node3.set_left(node5)
+    node2.set_left(node4)
+    node2.set_right(node5)
+    node3.set_left(node6)
+    node3.set_right(node7)
 
     binary_tree.set_root(node1)
 
@@ -215,6 +265,10 @@ if __name__ == "__main__":
     else:
         print("没有找到编号%d的英雄" % no)
 
-    binary_tree.del_node(1)
-    binary_tree.post_order()
-    binary_tree.del_node(1)
+    # binary_tree.del_nodes(1)
+    # binary_tree.post_order()
+    # binary_tree.del_nodes(1)
+
+    binary_tree.del_node(6)
+    binary_tree.pre_order()
+    # binary_tree.del_nodes(1)
