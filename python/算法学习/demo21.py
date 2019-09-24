@@ -45,12 +45,15 @@ class Node(object):
         return "HeroNode [no:%d, name=%s]" % (self.no, self.name)
 
     # 前序遍历
-    def pre_order(self):
+    def pre_order(self, array=None):
         print(self.no, self.name)
+        if type(array) == list:
+            array.append(self.no)
+            # print(array)
         if self.left:
-            self.left.pre_order()
+            self.left.pre_order(array)
         if self.right:
-            self.right.pre_order()
+            self.right.pre_order(array)
 
     # 中序遍历
     def mid_order(self):
@@ -147,6 +150,46 @@ class Node(object):
         if self.right:
             self.right.del_node(no)
 
+    # 顺出存储二叉树时通常只考虑完全二叉树
+    # 第n个元素的左子树节点为2*n + 1
+    # 第n个元素的左子树节点为2 * n + 2
+    # 第n个元素的父节点为(n-1)/2
+    def to_line_pre(self, index, array):
+        if array is None or len(array) == 0:
+            print("数组为空, 不能按照二叉树前序遍历")
+        else:
+            print(array[index], end=' ')
+            # 向左递归遍历
+            if index*2 + 1 < len(array):
+                self.to_line_pre(index*2 + 1, array)
+            # 向右递归遍历
+            if index*2 + 2 < len(array):
+                self.to_line_pre(index*2 + 2, array)
+
+    def to_line_mid(self, index, array):
+        if array is None or len(array) == 0:
+            print("数组为空, 不能按照二叉树前序遍历")
+        else:
+            # 向左递归遍历
+            if index*2 + 1 < len(array):
+                self.to_line_mid(index*2 + 1, array)
+            print(array[index], end=' ')
+            # 向右递归遍历
+            if index*2 + 2 < len(array):
+                self.to_line_mid(index*2 + 2, array)
+
+    def to_line_post(self, index, array):
+        if array is None or len(array) == 0:
+            print("数组为空, 不能按照二叉树前序遍历")
+        else:
+            # 向左递归遍历
+            if index*2 + 1 < len(array):
+                self.to_line_post(index*2 + 1, array)
+            # 向右递归遍历
+            if index*2 + 2 < len(array):
+                self.to_line_post(index*2 + 2, array)
+            print(array[index], end=' ')
+
 
 class BinaryTree(object):
     def __init__(self, root=None):
@@ -155,9 +198,9 @@ class BinaryTree(object):
     def set_root(self, node):
         self.root = node
 
-    def pre_order(self):
+    def pre_order(self, array=None):
         if self.root:
-            self.root.pre_order()
+            self.root.pre_order(array)
         else:
             print("当前二叉树为空,无法遍历")
 
@@ -229,9 +272,24 @@ class BinaryTree(object):
         else:
             print("空树，没有结点可被删除...")
 
+    def to_line_pre(self, array):
+        print("前序遍历列表:")
+        self.root.to_line_pre(0, array)
+        print('\n')
+
+    def to_line_mid(self, array):
+        print("中序遍历列表:")
+        self.root.to_line_mid(0, array)
+        print('\n')
+
+    def to_line_post(self, array):
+        print("后序遍历列表:")
+        self.root.to_line_post(0, array)
+        print('\n')
+
 
 if __name__ == "__main__":
-
+    array = [1, 2, 3, 4, 5, 6, 7]
     binary_tree = BinaryTree()
     node1 = Node(1, "Alex")
     node2 = Node(2, "Hello")
@@ -272,3 +330,7 @@ if __name__ == "__main__":
     binary_tree.del_node(6)
     binary_tree.pre_order()
     # binary_tree.del_nodes(1)
+    # print(array)
+    binary_tree.to_line_pre(array)
+    binary_tree.to_line_mid(array)
+    binary_tree.to_line_post(array)
