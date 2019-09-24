@@ -42,7 +42,7 @@ class Node(object):
         self.right = right
 
     def __str__(self):
-        return "Node [no:%d, name=%s]" % (self.no, self.name)
+        return "HeroNode [no:%d, name=%s]" % (self.no, self.name)
 
     # 前序遍历
     def pre_order(self):
@@ -68,9 +68,47 @@ class Node(object):
             self.right.post_order()
         print(self.no, self.name)
 
+    def pre_find(self, no):
+        if self.no == no:
+            return self
+        res = None
+        if self.left:
+            res = self.left.pre_find(no)
+        if res:
+            return res
+        if self.right:
+            res = self.right.pre_find(no)
+        return res
+
+    def mid_find(self, no):
+        res = None
+        if self.left:
+            res = self.left.mid_find(no)
+        if res:
+            return res
+        if self.no == no:
+            return self
+        if self.right:
+            res = self.right.mid_find(no)
+        return res
+
+    def post_find(self, no):
+        res = None
+        if self.left:
+            res = self.left.post_find(no)
+        if res:
+            return res
+        if self.right:
+            res = self.right.post_find(no)
+        if res:
+            return res
+        if self.no == no:
+            return self
+        return res
+
 
 class BinaryTree(object):
-    def __init__(self, root = None):
+    def __init__(self, root=None):
         self.root = root
 
     def set_root(self, node):
@@ -93,6 +131,24 @@ class BinaryTree(object):
             self.root.post_order()
         else:
             print("当前二叉树为空,无法遍历")
+
+    def pre_find(self, no):
+        if self.root:
+            return self.root.pre_find(no)
+        else:
+            return None
+
+    def mid_find(self, no):
+        if self.root:
+            return self.root.mid_find(no)
+        else:
+            return None
+
+    def post_find(self, no):
+        if self.root:
+            return self.root.post_find(no)
+        else:
+            return None
 
     def add_node(self, node):
         temp = self.root
@@ -122,11 +178,17 @@ if __name__ == "__main__":
 
     print("-----前序遍历-----")
     binary_tree.pre_order()
-    node1.pre_order()
+    # node1.pre_order()
     print("-----中序遍历-----")
     binary_tree.mid_order()
-    node1.mid_order()
+    # node1.mid_order()
     print("-----后序遍历-----")
     binary_tree.post_order()
-    node1.post_order()
+    # node1.post_order()
+    no = 4
+    res = binary_tree.pre_find(no)
+    if res:
+        print(res)
+    else:
+        print("没有找到编号%d的英雄" % no)
 
