@@ -68,6 +68,7 @@ class Node(object):
             self.right.post_order()
         print(self.no, self.name)
 
+    # 前序查找
     def pre_find(self, no):
         if self.no == no:
             return self
@@ -80,6 +81,7 @@ class Node(object):
             res = self.right.pre_find(no)
         return res
 
+    # 中序查找
     def mid_find(self, no):
         res = None
         if self.left:
@@ -92,6 +94,7 @@ class Node(object):
             res = self.right.mid_find(no)
         return res
 
+    # 后续查找
     def post_find(self, no):
         res = None
         if self.left:
@@ -105,6 +108,19 @@ class Node(object):
         if self.no == no:
             return self
         return res
+
+    # 删除节点, 包含其子结点
+    def del_node(self, no):
+        if self.left and self.left.no == no:
+            self.left = None
+            return
+        if self.right and self.right.no == no:
+            self.right = None
+            return
+        if self.left:
+            self.left.del_node(no)
+        if self.right:
+            self.right.del_node(no)
 
 
 class BinaryTree(object):
@@ -157,8 +173,15 @@ class BinaryTree(object):
         else:
             pass
 
-    def del_node(self, node):
-        pass
+    def del_node(self, no):
+        if self.root:
+            if self.root.no == no:
+                self.root = None
+                return
+            else:
+                self.root.del_node(no)
+        else:
+            print("空树，没有结点删除...")
 
 
 if __name__ == "__main__":
@@ -192,3 +215,6 @@ if __name__ == "__main__":
     else:
         print("没有找到编号%d的英雄" % no)
 
+    binary_tree.del_node(1)
+    binary_tree.post_order()
+    binary_tree.del_node(1)
