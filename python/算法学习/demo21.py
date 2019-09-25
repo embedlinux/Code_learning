@@ -71,6 +71,48 @@ class Node(object):
             self.right.post_order()
         print(self.no, self.name)
 
+    # 按层遍历
+    def level_order(self):
+        lis = []
+        lis.append(self)
+        while len(lis) > 0:
+            item = lis.pop(0)
+            print(item.no, end=' ')
+            if item.left:
+                lis.append(item.left)
+            if item.right:
+                lis.append(item.right)
+        print('\n')
+
+    # 按层遍历,并换行
+    def level_order_line(self):
+        lis = []
+        last = self         # 当前层的最右边一个元素
+        nlast = None        # 下一层最右边的元素
+        if self.right:
+            nlast = self.right
+        else:
+            nlast = self.left
+        lis.append(self)
+        while len(lis) > 0:
+            item = lis.pop(0)
+            print(item.no, end=' ')
+            if item.left:
+                lis.append(item.left)
+            if item.right:
+                lis.append(item.right)
+            if item == last:
+                print('\n')
+                last = nlast
+                if nlast:
+                    if nlast.right:
+                        nlast = nlast.right
+                    elif nlast.left:
+                        nlast = nlast.left
+                    else:
+                        nlast = None
+        print('\n')
+
     # 前序查找
     def pre_find(self, no):
         if self.no == no:
@@ -216,6 +258,20 @@ class BinaryTree(object):
         else:
             print("当前二叉树为空,无法遍历")
 
+    # 按层遍历
+    def level_order(self):
+        if self.root:
+            self.root.level_order()
+        else:
+            print("当前二叉树为空,无法遍历")
+
+    # 按层遍历并换行
+    def level_order_line(self):
+        if self.root:
+            self.root.level_order_line()
+        else:
+            print("当前二叉树为空,无法遍历")
+
     def pre_find(self, no):
         if self.root:
             return self.root.pre_find(no)
@@ -298,12 +354,16 @@ if __name__ == "__main__":
     node5 = Node(5, "Tony")
     node6 = Node(6, "Hung")
     node7 = Node(7, "Tony")
+    node8 = Node(8, "Hung")
+    node9 = Node(9, "Tony")
     node1.set_left(node2)
     node1.set_right(node3)
     node2.set_left(node4)
     node2.set_right(node5)
     node3.set_left(node6)
     node3.set_right(node7)
+    node5.set_left(node8)
+    node5.set_right(node9)
 
     binary_tree.set_root(node1)
 
@@ -322,6 +382,10 @@ if __name__ == "__main__":
         print(res)
     else:
         print("没有找到编号%d的英雄" % no)
+
+    print("-----按层遍历-----")
+    binary_tree.level_order()
+    binary_tree.level_order_line()
 
     # binary_tree.del_nodes(1)
     # binary_tree.post_order()
