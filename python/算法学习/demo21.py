@@ -17,11 +17,14 @@
 
 
 class Node(object):
-    def __init__(self, no, name):
+    def __init__(self, no, name='xxx', left_type=0, right_type=0):
         self.no = no
         self.name = name
         self.left = None
         self.right = None
+        # type = 0,表示左/右子树, 1 表示前驱/后驱结点
+        self.left_type = left_type
+        self.right_type = right_type
 
     def set_no(self, no):
         self.no = no
@@ -32,14 +35,26 @@ class Node(object):
     def get_left(self):
         return self.left
 
-    def set_left(self, left):
-        self.left = left
-
     def get_right(self):
         return self.right
 
+    def set_left(self, left):
+        self.left = left
+
     def set_right(self, right):
         self.right = right
+
+    def set_left_type(self, type=0):
+        self.left_type = type
+
+    def set_right_type(self, type=0):
+        self.right_type = type
+
+    def get_left_type(self):
+        return self.left_type
+
+    def get_right_type(self):
+        return self.right_type
 
     def __str__(self):
         return "HeroNode [no:%d, name=%s]" % (self.no, self.name)
@@ -236,6 +251,7 @@ class Node(object):
 class BinaryTree(object):
     def __init__(self, root=None):
         self.root = root
+        self.pre = None    # 总是保留前一个结点
 
     def set_root(self, node):
         self.root = node
@@ -343,6 +359,99 @@ class BinaryTree(object):
         self.root.to_line_post(0, array)
         print('\n')
 
+    # 前序线索化二叉树
+    def pre_thread_tree(self, node=None):
+        if node is None:
+            return
+        # 左指针为空,将左指针指向前驱节点
+        if node.get_left() is None:
+            node.set_left(self.pre)
+            node.set_left_type(1)
+        # 处理当前节点的后继结点
+        if self.pre is not None and self.pre.get_right() is None:
+            # 前驱结点的右指针指向当前结点
+            self.pre.set_right(node)
+            self.pre.set_right_type(1)
+        self.pre = node
+
+        if node.left_type == 0:
+            self.pre_thread_tree(node.get_left())
+        if node.right_type == 0:
+            self.pre_thread_tree(node.get_right())
+
+    # 中序线索化二叉树, 当前需要线索化的结点
+    def mid_thread_tree(self, node=None):
+        if node is None:
+            return
+        # 线索化左子树
+        self.mid_thread_tree(node.get_left())
+        # 线索化当前结点
+        # 1.处理当前结点的前驱结点
+        if node.get_left() is None:
+            node.set_left(self.pre)
+            node.set_left_type(1)
+        # self.pre = node
+        # 2.处理当前结点的后继结点
+        if self.pre is not None and self.pre.get_right() is None:
+            # 前驱结点的右指针指向当前结点
+            self.pre.set_right(node)
+            self.pre.set_right_type(1)
+        self.pre = node
+
+        # 线索化右子树
+        self.mid_thread_tree(node.get_right())
+
+    # 后序线索化二叉树
+    def post_thread_tree(self, node=None):
+        if node is None:
+            return
+        if node.left_type == 0:
+            self.post_thread_tree(node.get_left())
+        if node.right_type == 0:
+            self.post_thread_tree(node.get_right())
+
+        # 左指针为空,将左指针指向前驱节点
+        if node.get_left() is None:
+            node.set_left(self.pre)
+            node.set_left_type(1)
+        # 处理当前节点的后继结点
+        if self.pre is not None and self.pre.get_right() is None:
+            # 前驱结点的右指针指向当前结点
+            self.pre.set_right(node)
+            self.pre.set_right_type(1)
+        self.pre = node
+
+    # 遍历中序线索化的二叉树
+    def mid_thread_order(self):
+        print("线索化中序遍历二叉树:")
+        node = self.root
+        while node is not None:
+            while node.get_left_type() == 0:
+                node = node.get_left()
+            print(node.no, end=' ')
+            while node.get_right_type() == 1:
+                node = node.get_right()
+                print(node.no, end=' ')
+            node = node.get_right()
+        print('\n')
+
+    def pre_thread_order(self):
+        node = self.root
+        while node is not None:
+            while node.get_left_type() == 0:
+                print(node.no, end=' ')
+                node = node.get_left()
+            print(node.no, end=' ')
+            node = node.get_right()
+        print('\n')
+
+    # 后序遍历开始节点是最左节点
+    # 左右根，先找到最左子节点，沿着right后继指针处理，当right不是后继指针时，并且上一个处理节点是当前节点的右节点，
+    # 则处理当前节点的右子树，遍历终止条件是：当前节点是root节点，并且上一个处理的节点是root的right节点。
+    def post_thread_order(self):
+        pass
+        # 1. 找到后序遍历开始的结点
+
 
 if __name__ == "__main__":
     array = [1, 2, 3, 4, 5, 6, 7]
@@ -398,3 +507,20 @@ if __name__ == "__main__":
     binary_tree.to_line_pre(array)
     binary_tree.to_line_mid(array)
     binary_tree.to_line_post(array)
+
+    # 中序线索化二叉树
+    # print(node8.left, node8.right)
+    # binary_tree.mid_thread_tree(node1)
+    # print(node8.left, node8.right)
+    # binary_tree.mid_thread_order()
+
+    # 前序线索化二叉树
+    # binary_tree.pre_thread_tree(node1)
+    # print(node8.left, node8.right)
+    # binary_tree.pre_thread_order()
+
+    # 后序线索化二叉树
+    binary_tree.post_thread_tree(node1)
+    print(node8.left, node8.right)
+    binary_tree.post_thread_order()
+
