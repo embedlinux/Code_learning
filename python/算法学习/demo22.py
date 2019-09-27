@@ -6,6 +6,7 @@
 import random
 
 # 将给定无序序列构造成一个大顶堆（一般升序采用大顶堆，降序采用小顶堆)
+# 最后一个非叶子结点(arr.length//2-1)开始, 叶结点自然不用调整，从左至右，从下至上进行调整。
 # 将堆顶元素与末尾元素进行交换，使末尾元素最大。然后继续调整堆，再将堆顶元素与末尾元素交换，得到第二大元素。
 # 如此反复进行交换、重建、交换。
 # 堆排序
@@ -16,7 +17,7 @@ def heap_sort(array):
     for index in range(len(array)//2 - 1, -1, -1):
         adjust_heap(array, index, len(array))
 
-    # 对接下来n-2个元素重新调整
+    # 对接下来n-1个元素重新调整
     for j in range(len(array)-1, -1, -1):
         array[0], array[j] = array[j], array[0]
         adjust_heap(array, 0, j)
@@ -31,7 +32,7 @@ def adjust_heap(array, index, len):
     """
     temp = array[index]
     k = 2 * index + 1
-    # k 是 i的左子结点点
+    # k 是 i的左子结点
     while k < len:
         if k+1 < len and array[k] < array[k+1]:
             # 左子结点小于右子结点
