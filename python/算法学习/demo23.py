@@ -49,6 +49,30 @@ class Node(object):
             bytes_code += code_dic[item]
         return bytes_code
 
+    # 将binary转换成字节
+    def bin_to_bytes(self, bins):
+        str_bytes = ''
+        # len_bytes = len(bins) // 7 + 1
+        # if len(bins) % 8 == 0:
+        #     len_bytes = len(bins) // 8
+        # else:
+        #     len_bytes = len(bins) // 8 + 1
+        # print(len(bins))
+        # print(bins)
+        for i in range(0, len(bins), 8):
+            # print(bins[i:i+4])
+            if i+8 > len(bins):
+                temp = int(bins[i:], 2)
+            else:
+                temp = int(bins[i:i+8], 2)
+            # print(hex(temp).replace('0x', ''))
+            # str_bytes += hex(temp).replace('0x', '')
+            # print(temp, end=' ')
+            str_bytes += chr(temp)
+        # print(str_bytes)
+        return str_bytes
+        # print(a)
+
 
 def huffman_tree(array):
     while len(array) >= 2:
@@ -98,8 +122,14 @@ if __name__ == "__main__":
     print("哈夫曼树编码:")
     print(code_dic)
     print("编码后的字节码:")
-    bytes_code = node.get_str_code(str, code_dic)
-    print(bytes_code)
-    print('\n')
+    bin_code = node.get_str_code(str, code_dic)
+    # print(bin_code)
     print("编码后的长度:")
-    print(len(bytes_code))
+    print(len(bin_code))
+    # 转换为字符码存储
+    bytes_code = node.bin_to_bytes(bin_code)
+
+    # 转换为10进制编码
+    for i in bytes_code:
+        print(ord(i), end=' ')
+    # print(len(bytes_code))
