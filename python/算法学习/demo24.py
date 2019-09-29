@@ -130,16 +130,34 @@ class BinarySortTree(object):
             print("该二叉树为空，没有结点可被删除~~~")
             return
         else:
-            parent_target, target = self.head.find_both_node(value)
-            if target is None:
-                print("没有找到该节点")
-                return
-            else:
-                # 删除的结点为根节点
-                if parent_target is None:
-                    pass
-                # 删除的结点不是根结点
+            # 删除的节点为根结点
+            if self.head.value == value:
+                # 至少有一个子节点
+                if self.head.left or self.head.right:
+                    target = self.head
+                    if target.left and target.right is None:
+                        self.head = target.left
+                    elif target.right and target.left is None:
+                        self.head = target.right
+                    # 有两个子节点
+                    else:
+                        pre = target
+                        temp = target.right
+                        while temp and temp.left:
+                            pre = temp
+                            temp = temp.left
+                        target.del_node(pre, temp)
+                        target.value = temp.value
+                # 根结点没有子节点
                 else:
+                    self.head = None
+            else:
+                parent_target, target = self.head.find_both_node(value)
+                if target is None:
+                    print("没有找到该节点")
+                    return
+                else:
+                    # 删除该节点(不会是根基节点)
                     self.head.del_node(parent_target, target)
 
     def find_node(self, node):
@@ -196,7 +214,8 @@ if __name__ == "__main__":
     #     print(target.value)
     # else:
     #     print(target)
-    my_tree.del_node(10)
+    my_tree.del_node(7)
+    my_tree.del_node(9)
     my_tree.mid_order()
 
 
