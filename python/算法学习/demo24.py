@@ -151,6 +151,7 @@ class BinarySortTree(object):
                 # 根结点没有子节点
                 else:
                     self.head = None
+            # 删除的节点不是根节点
             else:
                 parent_target, target = self.head.find_both_node(value)
                 if target is None:
@@ -214,8 +215,15 @@ if __name__ == "__main__":
     #     print(target.value)
     # else:
     #     print(target)
-    my_tree.del_node(7)
+    my_tree.del_node(13)
+    my_tree.del_node(10)
     my_tree.del_node(9)
+    my_tree.del_node(5)
+    my_tree.del_node(2)
+    my_tree.del_node(1)
+    my_tree.del_node(12)
+    my_tree.del_node(3)
+    my_tree.del_node(7)
     my_tree.mid_order()
 
 
