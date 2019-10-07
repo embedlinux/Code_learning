@@ -98,7 +98,6 @@ class Graph(object):
         lis.append(i)
 
         while lis:
-            # 取出队列头结点下标
             u = lis.pop()                       # 队列头结点对应的下标
             w = self.get_first_neighbor(u)      # 邻接节点
             while w != -1:
