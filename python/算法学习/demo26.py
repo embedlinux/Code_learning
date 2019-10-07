@@ -7,10 +7,10 @@
 
 class Graph(object):
     def __init__(self, size):
-        self.size = size                                            # 顶点最大数目
-        self.vertex_list = []                                       # 存储顶点
-        self.edges = [[0 for i in range(size)] for i in range(size)]   # 储存边
-        self.num_of_edge = 0                                        # 边的数量
+        self.size = size                                                # 顶点最大数目
+        self.vertex_list = []                                           # 存储顶点
+        self.edges = [[0 for i in range(size)] for i in range(size)]    # 储存边
+        self.num_of_edge = 0                                            # 边的数量
         self.is_visited = [False for i in range(size)]
 
     # 添加顶点
@@ -74,11 +74,10 @@ class Graph(object):
     def order_dfs(self, i):
         print(self.get_value_by_index(i), '-->', end='')
         self.is_visited[i] = True
-
         w = self.get_first_neighbor(i)
 
         while w != -1:
-            if not self.is_visited[i]:
+            if not self.is_visited[w]:
                 self.order_dfs(w)
             w = self.get_next_neighbor(i, w)
 
@@ -86,9 +85,11 @@ class Graph(object):
     def dfs(self):
         # 遍历所有节点进行dfs(回溯)
         print('深度优先遍历:', end='')
-        for i in range(self.num_of_edge):
+        for i in range(self.get_vertex_size()):
             if not self.is_visited[i]:
                 self.order_dfs(i)
+        print('\n')
+        self.clear_is_visit()
 
     # 对单个节点广度优先遍历
     def order_bfs(self, i):
@@ -98,8 +99,8 @@ class Graph(object):
         lis.append(i)
 
         while lis:
-            u = lis.pop()                       # 队列头结点对应的下标
-            w = self.get_first_neighbor(u)      # 邻接节点
+            u = lis.pop(0)                       # 队列头结点对应的下标
+            w = self.get_first_neighbor(u)       # 邻接节点
             while w != -1:
                 if not self.is_visited[w]:
                     print(self.get_value_by_index(w), '-->', end='')
@@ -111,22 +112,33 @@ class Graph(object):
     # 对所有节点广度优先遍历
     def bfs(self):
         print('广度优先遍历:', end='')
-        for i in range(self.num_of_edge):
+        for i in range(self.size):
             if not self.is_visited[i]:
                 self.order_bfs(i)
+        print('\n')
+        self.clear_is_visit()
+
+    # 清除遍历标记
+    def clear_is_visit(self):
+        for index in range(len(self.is_visited)):
+            self.is_visited[index] = False
 
 
 if __name__ == "__main__":
-    lis = ['A', 'B', 'C', 'D', 'E']
-    my_graph = Graph(5)
+    lis = ['1', '2', '3', '4', '5', '6', '7', '8']
+    my_graph = Graph(8)
     my_graph.vertex_list = lis
 
     my_graph.insert_edge(0, 1, 1)
     my_graph.insert_edge(0, 2, 1)
-    my_graph.insert_edge(1, 2, 1)
     my_graph.insert_edge(1, 3, 1)
     my_graph.insert_edge(1, 4, 1)
+    my_graph.insert_edge(3, 7, 1)
+    my_graph.insert_edge(4, 7, 1)
+    my_graph.insert_edge(2, 5, 1)
+    my_graph.insert_edge(2, 6, 1)
+    my_graph.insert_edge(5, 6, 1)
     my_graph.show_graph()
-    # my_graph.dfs()
-    my_graph.bfs()
+    my_graph.dfs()          # [1->2->4->8->5->3->6->7]
+    my_graph.bfs()          # [1->2->3->4->5->6->7->8]
 
