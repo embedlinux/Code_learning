@@ -1,0 +1,17 @@
+"F:\Program Filesx86\IAR\arm\bin\armproc.dll" 
+
+"F:\Program Filesx86\IAR\arm\bin\armJET.dll" 
+
+"D:\code\c_language\data-struct\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar\release\freertos_hello.out" 
+
+--plugin="F:\Program Filesx86\IAR\arm\bin\armbat.dll" 
+
+--device_macro="F:\Program Filesx86\IAR\arm\config\debugger\NXP\iMXRT.dmac" 
+
+--device_macro="F:\Program Filesx86\IAR\arm\config\debugger\NXP\iMXRT_Trace.dmac" 
+
+--macro="D:\code\c_language\data-struct\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar/evkmimxrt1064.mac" 
+
+
+
+

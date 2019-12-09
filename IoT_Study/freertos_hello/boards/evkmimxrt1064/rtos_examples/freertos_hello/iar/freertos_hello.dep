@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <fileVersion>4</fileVersion>
+    <fileChecksum>969990062</fileChecksum>
+    <configuration>
+        <name>debug</name>
+        <outputs>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\MemMang\heap_4.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\event_groups.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\projdefs.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\tasks.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\queue.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\stack_macros.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\event_groups.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\stream_buffer.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\task.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\freertos_tasks_c_additions.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\port.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\deprecated_definitions.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\list.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\portasm.s</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\portmacro.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\stream_buffer.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\list.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\semphr.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\queue.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\FreeRTOS.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\mpu_wrappers.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\portable.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\timers.c</file>
+            <file>$PROJ_DIR$\debug\obj\board.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_lpuart.o</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_debug_console.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_assert.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\lpuart_adapter.o</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_flexspi_nor_boot.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\generic_list.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_clock.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_debug_console.o</file>
+            <file>$PROJ_DIR$\debug\obj\pin_mux.o</file>
+            <file>$PROJ_DIR$\debug\obj\evkmimxrt1064_flexspi_nor_config.o</file>
+            <file>$PROJ_DIR$\debug\obj\stream_buffer.o</file>
+            <file>$PROJ_DIR$\debug\obj\tasks.o</file>
+            <file>$PROJ_DIR$\debug\obj\tasks.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_float_setup.h</file>
+            <file>$PROJ_DIR$\debug\obj\evkmimxrt1064_flexspi_nor_config.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\timers.pbi</file>
+            <file>$PROJ_DIR$\debug\freertos_hello.out</file>
+            <file>$PROJ_DIR$\debug\obj\evkmimxrt1064_sdram_ini_dcd.o</file>
+            <file>$PROJ_DIR$\debug\obj\serial_manager.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+            <file>$PROJ_DIR$\debug\obj\heap_4.o</file>
+            <file>$PROJ_DIR$\debug\obj\evkmimxrt1064_sdram_ini_dcd.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_str.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\port.o</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_str.o</file>
+            <file>$PROJ_DIR$\debug\obj\queue.o</file>
+            <file>$PROJ_DIR$\debug\obj\list.o</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_common.o</file>
+            <file>$PROJ_DIR$\debug\obj\system_MIMXRT1064.o</file>
+            <file>$PROJ_DIR$\debug\obj\heap_4.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\event_groups.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_gpio.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\event_groups.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_lpuart.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\debug\obj\list.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$PROJ_DIR$\debug\obj\pin_mux.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\queue.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\debug\obj\stream_buffer.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\freertos_hello.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$PROJ_DIR$\debug\obj\clock_config.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\serial_manager.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_common.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\startup_MIMXRT1064.o</file>
+            <file>$PROJ_DIR$\debug\obj\port.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdarg.h</file>
+            <file>$PROJ_DIR$\debug\obj\serial_port_uart.pbi</file>
+            <file>$PROJ_DIR$\debug\obj\lpuart_adapter.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\debug\obj\portasm.o</file>
+            <file>$PROJ_DIR$\debug\obj\board.o</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_flexspi_nor_boot.o</file>
+            <file>$PROJ_DIR$\debug\obj\freertos_hello.o</file>
+            <file>$PROJ_DIR$\debug\obj\generic_list.o</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_gpio.o</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_clock.o</file>
+            <file>$PROJ_DIR$\debug\obj\clock_config.o</file>
+            <file>$PROJ_DIR$\debug\obj\timers.o</file>
+            <file>$PROJ_DIR$\debug\obj\fsl_assert.o</file>
+            <file>$PROJ_DIR$\debug\obj\serial_port_uart.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\uart\uart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_port_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\core_cm7.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_port_uart.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\fsl_device_registers.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\MIMXRT1064.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_manager.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\uart\lpuart_adapter.c</file>
+            <file>$PROJ_DIR$\..\clock_config.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\lists\generic_list.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\timers.h</file>
+            <file>$PROJ_DIR$\..\board.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\cmsis_version.h</file>
+            <file>$PROJ_DIR$\..\pin_mux.h</file>
+            <file>$PROJ_DIR$\..\board.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\mpu_armv7.h</file>
+            <file>$PROJ_DIR$\..\pin_mux.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\lists\generic_list.h</file>
+            <file>$PROJ_DIR$\..\clock_config.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_manager.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_port_uart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_gpio.h</file>
+            <file>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_flexspi_nor_config.c</file>
+            <file>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_sdram_ini_dcd.h</file>
+            <file>$PROJ_DIR$\debug\obj\system_MIMXRT1064.pbi</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\iar_intrinsics_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_gpio.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\iar\startup_MIMXRT1064.s</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_iomuxc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_clock.h</file>
+            <file>$PROJ_DIR$\..\FreeRTOSConfig.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\debug_console\fsl_debug_console.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\debug_console\fsl_debug_console_conf.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\system_MIMXRT1064.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\str\fsl_str.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_clock.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_common.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\MIMXRT1064_features.h</file>
+            <file>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_sdram_ini_dcd.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_lpuart.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\xip\fsl_flexspi_nor_boot.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\xip\fsl_flexspi_nor_boot.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_lpuart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\debug_console\fsl_debug_console.c</file>
+            <file>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_flexspi_nor_config.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\fsl_assert.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\system_MIMXRT1064.h</file>
+            <file>$PROJ_DIR$\..\freertos_hello.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\str\fsl_str.h</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 40</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\MemMang\heap_4.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 44</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 53</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 63 64 14 72 19 60 20 8 84 80 55 68 2 125 124 71 130 21 11 56 61 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\tasks.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 35</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 36</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 2 84 8 80 72 61 5 55 79 60 85 19 107 64 63 68 71 130 21 11 56 16 124 14 20 125 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\event_groups.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 54</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 58</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 80 130 55 84 72 107 19 71 21 11 125 8 1 64 63 68 60 2 14 20 56 61 16 124</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\port.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 47</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 77</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 125 63 72 8 55 2 19 61 68 60 84 11 56 71 130 21 80 14 20 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\list.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 50</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 62</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 84 130 14 72 16 80 55 71 21 20 19 64 63 68 60 2 125 124 11 56 61</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\portasm.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 86</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\stream_buffer.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 34</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 69</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 80 20 21 8 84 55 71 14 56 72 130 61 85 19 7 63 68 79 60 2 11 125 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\queue.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 49</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 66</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 84 2 125 8 80 72 55 79 60 14 20 85 19 4 64 63 68 71 130 21 11 56 61 16 124</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\timers.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 94</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 39</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 64 60 4 20 19 63 14 72 8 107 68 84 2 125 124 80 55 71 130 21 11 56 61 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_port_uart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 96</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 82</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14 72 78 80 84 99 60 109 130 56 98 119 85 101 55 137 110 61 20 103 97 67 124 71 129 63 68 79 64 102 147 111 114 21 140 19 2 11 125</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\components\uart\lpuart_adapter.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 27</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 83</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14 137 61 101 55 84 110 72 85 130 56 97 78 80 99 60 109 20 143 67 124 71 129 63 68 79 64 102 147 111 114 140 19 21 2 11 125</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\components\lists\generic_list.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 90</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 29</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 129 64 80 60 63 114 71 72 102 147 111 67 124 84 68 79 116 78 85 101 55 137 99 109 110 61 140</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\board.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 87</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 23</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 71 72 102 147 111 60 129 63 80 64 114 140 113 67 124 84 68 79 131 128 78 85 101 55 137 99 109 110 61 103 119 105 120</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\pin_mux.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 65</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 101 85 55 84 137 110 61 72 112 78 80 99 60 109 128 67 124 71 129 63 68 79 64 102 147 111 114 140</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\clock_config.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 93</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 73</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 67 84 72 140 124 68 79 60 71 129 63 80 64 102 147 111 114 128 78 85 101 55 137 99 109 110 61 105</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_manager.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 42</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 74</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 84 67 79 68 124 72 103 60 71 129 63 80 64 102 147 111 114 119 85 98 78 101 55 137 99 109 110 61 140</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_flexspi_nor_config.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 38</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 72 78 84 55 137 110 61 140 85 101 80 99 60 109 63 68 67 124 71 129 79 64 102 147 111 114 145</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 91</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 57</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 72 60 99 84 109 78 80 85 101 55 137 110 61 140 67 124 71 129 63 68 79 64 102 147 111 114 120</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\iar\startup_MIMXRT1064.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 76</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\system_MIMXRT1064.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 52</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 123</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 68 84 111 63 102 147 114 101 72 55 137 99 60 109 110 61</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\str\fsl_str.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 48</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 46</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 84 72 60 129 132 63 71 79 102 147 111 124 68 64 67 80 110 61 140 81 149 37 55 78 85 101 137 99 109 43 114</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_clock.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 92</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 30</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 80 129 64 60 63 114 71 72 102 147 111 67 124 84 68 79 140 78 85 101 55 137 99 109 110 61</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_common.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 51</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 75</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 68 78 84 79 85 101 72 67 60 124 71 129 63 80 64 102 147 111 114 140 55 137 99 109 110 61</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_sdram_ini_dcd.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 41</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 45</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 55 84 60 72 122 63 68</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_lpuart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 24</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 59</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 137 101 55 84 60 85 78 72 80 99 109 140 67 124 71 129 63 68 79 64 102 147 111 110 61 143 114</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\xip\fsl_flexspi_nor_boot.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 28</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 140 85 79 129 113 84 55 101 72 78 80 64 102 147 111 114 60 63 68 105 120 67 124 71 137 99 109 110 61 142</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\debug_console\fsl_debug_console.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 31</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 25</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 72 125 60 71 11 102 140 63 80 129 147 111 17 21 132 131 68 84 130 16 67 124 19 8 149 103 55 64 2 14 20 56 61 4 78 85 101 79 137 99 109 110 119 81 114</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\fsl_assert.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 95</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 26</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 80 64 78 63 114 85 101 129 72 102 147 111 103 131 67 60 124 71 84 68 79 140 55 137 99 109 110 61 119</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\freertos_hello.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 89</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 70</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 105 78 80 101 60 63 84 61 16 8 99 109 4 113 2 72 68 14 20 56 137 140 64 107 131 112 71 130 21 55 11 125 102 147 111 114 85 79 120 19 110 103 67 124 129 119</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>flexspi_nor_debug</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>flexspi_nor_release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>release</name>
+        <outputs>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\MemMang\heap_4.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\event_groups.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\projdefs.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\tasks.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\queue.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\stack_macros.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\event_groups.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\stream_buffer.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\task.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\freertos_tasks_c_additions.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\port.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\deprecated_definitions.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\list.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\portasm.s</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\portmacro.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\stream_buffer.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\list.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\semphr.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\queue.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\FreeRTOS.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\mpu_wrappers.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\private\portable.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\timers.c</file>
+            <file>$PROJ_DIR$\release\obj\list.o</file>
+            <file>$PROJ_DIR$\release\obj\event_groups.o</file>
+            <file>$PROJ_DIR$\release\obj\port.o</file>
+            <file>$PROJ_DIR$\release\obj\queue.o</file>
+            <file>$PROJ_DIR$\release\obj\heap_4.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_float_setup.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\math.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_stdlib.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stddef.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+            <file>$PROJ_DIR$\release\obj\stream_buffer.o</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\uart\uart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_port_internal.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\core_cm7.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_port_uart.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\fsl_device_registers.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\MIMXRT1064.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_manager.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\uart\lpuart_adapter.c</file>
+            <file>$PROJ_DIR$\..\clock_config.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\lists\generic_list.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\include\timers.h</file>
+            <file>$PROJ_DIR$\..\board.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\cmsis_version.h</file>
+            <file>$PROJ_DIR$\..\pin_mux.h</file>
+            <file>$PROJ_DIR$\..\board.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\CMSIS\Include\mpu_armv7.h</file>
+            <file>$PROJ_DIR$\..\pin_mux.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\lists\generic_list.h</file>
+            <file>$PROJ_DIR$\..\clock_config.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_manager.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_port_uart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_gpio.h</file>
+            <file>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_flexspi_nor_config.c</file>
+            <file>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_sdram_ini_dcd.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\iar_intrinsics_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_gpio.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\iar\startup_MIMXRT1064.s</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_iomuxc.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_clock.h</file>
+            <file>$PROJ_DIR$\..\FreeRTOSConfig.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\debug_console\fsl_debug_console.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\debug_console\fsl_debug_console_conf.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\system_MIMXRT1064.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\str\fsl_str.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_clock.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_common.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\MIMXRT1064_features.h</file>
+            <file>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_sdram_ini_dcd.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_lpuart.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_common.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\xip\fsl_flexspi_nor_boot.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\xip\fsl_flexspi_nor_boot.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_lpuart.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\debug_console\fsl_debug_console.c</file>
+            <file>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_flexspi_nor_config.h</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\fsl_assert.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\system_MIMXRT1064.h</file>
+            <file>$PROJ_DIR$\..\freertos_hello.c</file>
+            <file>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\str\fsl_str.h</file>
+            <file>$PROJ_DIR$\release\obj\port.pbi</file>
+            <file>$PROJ_DIR$\release\obj\pin_mux.o</file>
+            <file>$PROJ_DIR$\release\obj\startup_MIMXRT1064.o</file>
+            <file>$PROJ_DIR$\release\obj\tasks.o</file>
+            <file>$PROJ_DIR$\release\obj\fsl_gpio.o</file>
+            <file>$PROJ_DIR$\release\obj\generic_list.o</file>
+            <file>$PROJ_DIR$\release\obj\list.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_lpuart.o</file>
+            <file>$PROJ_DIR$\release\obj\queue.pbi</file>
+            <file>$PROJ_DIR$\release\obj\clock_config.o</file>
+            <file>$PROJ_DIR$\release\obj\tasks.pbi</file>
+            <file>$PROJ_DIR$\release\obj\board.pbi</file>
+            <file>$PROJ_DIR$\release\obj\freertos_hello.o</file>
+            <file>$PROJ_DIR$\release\obj\fsl_str.o</file>
+            <file>$PROJ_DIR$\release\obj\evkmimxrt1064_sdram_ini_dcd.o</file>
+            <file>$PROJ_DIR$\release\obj\lpuart_adapter.o</file>
+            <file>$PROJ_DIR$\release\obj\timers.o</file>
+            <file>$PROJ_DIR$\release\obj\fsl_clock.o</file>
+            <file>$PROJ_DIR$\release\obj\fsl_assert.o</file>
+            <file>$PROJ_DIR$\release\obj\portasm.o</file>
+            <file>$PROJ_DIR$\release\obj\stream_buffer.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_common.o</file>
+            <file>$PROJ_DIR$\release\obj\serial_port_uart.o</file>
+            <file>$PROJ_DIR$\release\obj\fsl_flexspi_nor_boot.o</file>
+            <file>$PROJ_DIR$\release\obj\fsl_debug_console.o</file>
+            <file>$PROJ_DIR$\release\obj\serial_manager.o</file>
+            <file>$PROJ_DIR$\release\obj\system_MIMXRT1064.o</file>
+            <file>$PROJ_DIR$\release\obj\evkmimxrt1064_flexspi_nor_config.o</file>
+            <file>$PROJ_DIR$\release\obj\event_groups.pbi</file>
+            <file>$PROJ_DIR$\release\obj\timers.pbi</file>
+            <file>$PROJ_DIR$\release\obj\board.o</file>
+            <file>$PROJ_DIR$\release\obj\heap_4.pbi</file>
+            <file>$PROJ_DIR$\release\obj\serial_manager.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_gpio.pbi</file>
+            <file>$PROJ_DIR$\release\obj\evkmimxrt1064_sdram_ini_dcd.pbi</file>
+            <file>$PROJ_DIR$\release\obj\pin_mux.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_str.pbi</file>
+            <file>$PROJ_DIR$\release\obj\generic_list.pbi</file>
+            <file>$PROJ_DIR$\release\obj\freertos_hello.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_clock.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_lpuart.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_common.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_assert.pbi</file>
+            <file>$PROJ_DIR$\release\freertos_hello.out</file>
+            <file>$PROJ_DIR$\release\obj\evkmimxrt1064_flexspi_nor_config.pbi</file>
+            <file>$PROJ_DIR$\release\obj\serial_port_uart.pbi</file>
+            <file>$PROJ_DIR$\release\obj\clock_config.pbi</file>
+            <file>$PROJ_DIR$\release\obj\system_MIMXRT1064.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_flexspi_nor_boot.pbi</file>
+            <file>$PROJ_DIR$\release\obj\fsl_debug_console.pbi</file>
+            <file>$PROJ_DIR$\release\obj\lpuart_adapter.pbi</file>
+            <file>$PROJ_DIR$\release\obj\freertos_hello.pbd</file>
+        </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 141</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\MemMang\heap_4.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 129</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72 43 39 30 34 37 42 35 19 38 32 78 2 21 11 14 31 33 73 20 8 16</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 34 35 14 39 19 32 20 8 43 42 30 37 2 73 72 38 78 21 11 31 33 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\tasks.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 108</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72 43 39 30 34 37 42 35 44 41 19 38 32 78 2 21 11 14 31 33 73 20 8 16 56 5</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 2 43 8 42 39 33 5 30 41 32 44 19 56 35 34 37 38 78 21 11 31 16 72 14 20 73 9</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\event_groups.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 126</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72 43 39 30 34 37 42 35 19 38 32 78 2 21 11 14 31 33 73 20 8 16 56 1</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 42 78 30 43 39 56 19 38 21 11 73 8 1 35 34 37 32 2 14 20 31 33 16 72</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\port.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 98</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 31 33 39 30 34 37 73 19 38 43 42 32 78 2 21 11 14 20 8 16</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 73 34 39 8 30 2 19 33 37 32 43 11 31 38 78 21 42 14 20 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\list.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 23</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 104</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72 43 39 30 34 37 42 35 19 38 32 78 2 21 11 14 31 33 73 20 16</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 43 78 14 39 16 42 30 38 21 20 19 35 34 37 32 2 73 72 11 31 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\portable\IAR\ARM_CM4F\portasm.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 117</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 78</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\stream_buffer.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 118</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32 43 39 30 34 37 44 42 41 19 38 78 2 21 11 14 31 33 73 20 8 16 7</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 42 20 21 8 43 30 38 14 31 39 78 33 44 19 7 34 37 41 32 2 11 73 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\queue.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 106</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72 43 39 30 34 37 42 35 44 41 19 38 32 78 2 21 11 14 31 33 73 20 8 16 4</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 43 2 73 8 42 39 30 41 32 14 20 44 19 4 35 34 37 38 78 21 11 31 33 16 72</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\rtos\amazon-freertos\lib\FreeRTOS\timers.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 127</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72 43 39 30 34 37 42 35 19 38 32 78 2 21 11 14 31 33 73 20 8 16 4 56</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 35 32 4 20 19 34 14 39 8 56 37 43 2 73 72 42 30 38 78 21 11 31 33 16</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_port_uart.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 143</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 60 14 95 88 40 39 51 34 42 35 63 78 31 47 68 44 50 37 43 41 20 52 46 36 32 72 38 77 30 85 48 58 59 33 21 19 2 11 73</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\components\uart\lpuart_adapter.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 148</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 14 50 41 37 44 43 39 78 31 46 40 34 42 35 51 95 60 63 88 20 91 36 32 72 38 77 30 85 48 58 59 33 19 21 2 11 73</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\components\lists\generic_list.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 135</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 77 59 39 43 32 30 85 33 88 38 36 72 42 48 58 65 40 44 50 34 37 41 35 51 95 60 63</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\board.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 109</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 38 32 77 30 43 85 59 33 39 52 88 62 36 72 42 48 58 68 79 76 40 44 50 34 37 41 35 51 95 60 63 54 69</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\pin_mux.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 133</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 43 50 39 44 37 41 61 40 34 42 35 51 95 60 63 76 36 32 72 38 77 30 85 48 58 59 33 88</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\clock_config.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 144</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 54 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 43 36 58 48 32 72 39 42 88 38 77 30 85 59 33 76 40 44 50 34 37 41 35 51 95 60 63 54</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\components\serial_manager\serial_manager.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 130</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 32 77 38 30 43 85 59 33 39 88 52 36 72 42 48 58 68 44 47 40 50 34 37 41 35 51 95 60 63</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_flexspi_nor_config.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 142</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 93 32 43 39 30 34 37 40 88 36 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_gpio.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 131</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 69 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 44 43 39 50 37 41 40 34 42 35 51 95 60 63 88 36 32 72 38 77 30 85 48 58 59 33 69</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\iar\startup_MIMXRT1064.s</name>
+            <outputs>
+                <tool>
+                    <name>AARM</name>
+                    <file> 100</file>
+                </tool>
+            </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\system_MIMXRT1064.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 145</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 32 43 39 30 34 37 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 37 43 60 34 51 95 63 50 39 30 85 48 32 58 59 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\str\fsl_str.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 134</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 29 43 39 30 34 37 28 72 42 35 97 88 36 40 32 44 41 38 50 51 48 60 58 59</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_clock.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 137</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 77 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 44 43 39 50 37 41 40 34 42 35 51 95 60 63 88 36 32 72 38 77 30 85 48 58 59 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_common.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 139</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 39 63 34 40 42 35 44 50 51 95 60 36 32 72 38 37 43 41 88 77 30 85 48 58 59 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\xip\evkmimxrt1064_sdram_ini_dcd.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 112</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 132</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 71 32 43 39 30 34 37</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\drivers\fsl_lpuart.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 138</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 91 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 43 77 32 30 85 38 88 36 72 39 42 48 58 40 44 50 34 37 41 35 51 95 60 63 91 59 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\xip\fsl_flexspi_nor_boot.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 146</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 90 32 43 39 30 34 37 62 54 88 36 40 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\debug_console\fsl_debug_console.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 147</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 72 43 39 30 34 37 42 35 19 38 32 78 2 21 11 14 31 33 73 20 17 4 8 16 80 97 88 36 40 44 41 50 51 48 60 58 59</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\..\..\..\devices\MIMXRT1064\utilities\fsl_assert.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 140</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 88 36 43 39 30 34 37 40 32 44 42 41 72 35 38 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 43 44 50 39 40 37 41 52 79 36 32 72 38 34 42 35 51 95 60 63 88 77 30 85 48 58 59 33 68</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\freertos_hello.c</name>
+            <outputs>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 136</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 19 38 43 39 30 34 37 42 32 78 2 21 11 14 31 33 73 20 8 16 4 56 50 51 48 60 58 59</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 54 40 50 32 34 43 33 16 8 48 58 42 4 62 2 39 37 14 20 31 85 88 69 56 79 61 38 78 21 30 11 73 51 95 60 63 44 19 59 52 36 72 77 41 35 68</file>
+                </tool>
+            </inputs>
+        </file>
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+        <forcedrebuild>
+            <name>[REBUILD_ALL]</name>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>sdram_debug</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+    <configuration>
+        <name>sdram_release</name>
+        <outputs />
+        <forcedrebuild>
+            <name>[MULTI_TOOL]</name>
+            <tool>ILINK</tool>
+        </forcedrebuild>
+    </configuration>
+</project>
