@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\OBJ\led.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\OBJ\led.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Tue Jun 11 08:51:44 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Dec 10 14:44:16 2019
 <BR><P>
-<H3>Maximum Stack Usage =        120 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        128 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; GPIO_PinInit &rArr; GPIO_GetInstance &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 <P>
@@ -331,42 +331,44 @@ Global Symbols
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
 </UL>
 
-<P><STRONG><a name="[132]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000006))
+<P><STRONG><a name="[132]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
 
-<P><STRONG><a name="[133]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E))
+<P><STRONG><a name="[133]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
 
-<P><STRONG><a name="[134]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
+<P><STRONG><a name="[134]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
 
-<P><STRONG><a name="[135]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000009))
+<P><STRONG><a name="[135]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
 
-<P><STRONG><a name="[136]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000003))
+<P><STRONG><a name="[136]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
 
-<P><STRONG><a name="[137]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000B))
+<P><STRONG><a name="[137]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
+
+<P><STRONG><a name="[138]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[e9]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 </UL>
 
-<P><STRONG><a name="[138]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
+<P><STRONG><a name="[139]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
-<P><STRONG><a name="[139]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry7.o(.ARM.Collect$$rtentry$$00000007))
+<P><STRONG><a name="[13a]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry7.o(.ARM.Collect$$rtentry$$00000007))
 
 <P><STRONG><a name="[ee]"></a>__rt_entry_li</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000A))
 <BR><BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
-<P><STRONG><a name="[13a]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
+<P><STRONG><a name="[13b]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[f0]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; GPIO_PinInit &rArr; GPIO_GetInstance &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
-<P><STRONG><a name="[13b]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
+<P><STRONG><a name="[13c]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
 <P><STRONG><a name="[fe]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -376,7 +378,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
-<P><STRONG><a name="[13c]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
+<P><STRONG><a name="[13d]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
 <P><STRONG><a name="[f5]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
@@ -1057,10 +1059,10 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
 </UL>
 
-<P><STRONG><a name="[13d]"></a>_ll_udiv</STRONG> (Thumb, 238 bytes, Stack size 48 bytes, lludivv7m.o(.text), UNUSED)
+<P><STRONG><a name="[13e]"></a>_ll_udiv</STRONG> (Thumb, 238 bytes, Stack size 48 bytes, lludivv7m.o(.text), UNUSED)
 
 <P><STRONG><a name="[f7]"></a>__aeabi_assert</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, assert.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
 <LI>Call Chain = __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__assert_puts
@@ -1075,10 +1077,10 @@ Global Symbols
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinInit
 </UL>
 
-<P><STRONG><a name="[13e]"></a>__assert</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, assert.o(.text), UNUSED)
+<P><STRONG><a name="[13f]"></a>__assert</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, assert.o(.text), UNUSED)
 
-<P><STRONG><a name="[f9]"></a>abort</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, abort.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
+<P><STRONG><a name="[f9]"></a>abort</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, abort.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48 + Unknown Stack Size
 <LI>Call Chain = abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
@@ -1118,14 +1120,17 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;abort
 </UL>
 
-<P><STRONG><a name="[13f]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[140]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[140]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[141]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[141]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, indicate_semi.o(.text), UNUSED)
+<P><STRONG><a name="[142]"></a>__semihosting_library_function</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, indicate_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[f2]"></a>exit</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, exit.o(.text))
-<BR><BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
+<P><STRONG><a name="[f2]"></a>exit</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, exit.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
+<LI>Call Chain = exit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
@@ -1153,7 +1158,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[100]"></a>BOARD_BootClockRUN</STRONG> (Thumb, 1502 bytes, Stack size 8 bytes, clock_config.o(i.BOARD_BootClockRUN))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 104 + Unknown Stack Size
 <LI>Call Chain = BOARD_BootClockRUN &rArr; CLOCK_DisableClock &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CLOCK_SwitchOsc
@@ -1197,7 +1202,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[101]"></a>CLOCK_InitExternalClk</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, fsl_clock.o(i.CLOCK_InitExternalClk))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
 <LI>Call Chain = CLOCK_InitExternalClk &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
@@ -1234,7 +1239,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[112]"></a>GPIO_PinInit</STRONG> (Thumb, 154 bytes, Stack size 40 bytes, fsl_gpio.o(i.GPIO_PinInit))
-<BR><BR>[Stack]<UL><LI>Max Depth = 112 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
 <LI>Call Chain = GPIO_PinInit &rArr; GPIO_GetInstance &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_PinSetInterruptConfig
@@ -1252,7 +1257,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[113]"></a>GPIO_PinWrite</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, fsl_gpio.o(i.GPIO_PinWrite))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = GPIO_PinWrite &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
@@ -1330,7 +1335,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[f1]"></a>main</STRONG> (Thumb, 190 bytes, Stack size 8 bytes, led.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 128 + Unknown Stack Size
 <LI>Call Chain = main &rArr; GPIO_PinInit &rArr; GPIO_GetInstance &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemCoreClockUpdate
@@ -1346,15 +1351,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init_fp_1
 </UL>
 
-<P><STRONG><a name="[142]"></a>__fplib_config_fpu_vfp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
+<P><STRONG><a name="[143]"></a>__fplib_config_fpu_vfp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
 
-<P><STRONG><a name="[143]"></a>__fplib_config_pureend_doubles</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
+<P><STRONG><a name="[144]"></a>__fplib_config_pureend_doubles</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fpinit.o(x$fpl$fpinit), UNUSED)
 <P>
 <H3>
 Local Symbols
 </H3>
 <P><STRONG><a name="[110]"></a>CLOCK_DisableClock</STRONG> (Thumb, 68 bytes, Stack size 32 bytes, clock_config.o(i.CLOCK_DisableClock))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 96 + Unknown Stack Size
 <LI>Call Chain = CLOCK_DisableClock &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
@@ -1363,7 +1368,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[10f]"></a>CLOCK_SetDiv</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, clock_config.o(i.CLOCK_SetDiv))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = CLOCK_SetDiv &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
@@ -1372,7 +1377,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[104]"></a>CLOCK_SetMux</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, clock_config.o(i.CLOCK_SetMux))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = CLOCK_SetMux &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert
@@ -1387,7 +1392,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[111]"></a>GPIO_GetInstance</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, fsl_gpio.o(i.GPIO_GetInstance))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 80 + Unknown Stack Size
 <LI>Call Chain = GPIO_GetInstance &rArr; __aeabi_assert &rArr; abort &rArr; __rt_SIGABRT &rArr; __rt_SIGABRT_inner &rArr; __default_signal_display &rArr; _ttywrch
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_assert

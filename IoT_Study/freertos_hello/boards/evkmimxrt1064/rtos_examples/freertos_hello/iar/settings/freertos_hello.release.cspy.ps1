@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "F:\Program Filesx86\IAR\common\bin\cspybat" -f "D:\code\c_language\data-struct\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar\settings\freertos_hello.release.general.xcl" --backend -f "D:\code\c_language\data-struct\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar\settings\freertos_hello.release.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "D:\git_learning\Code_learning\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar\settings\freertos_hello.release.general.xcl" --backend -f "D:\git_learning\Code_learning\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar\settings\freertos_hello.release.driver.xcl" 
 }
 else
 {
-& "F:\Program Filesx86\IAR\common\bin\cspybat" -f "D:\code\c_language\data-struct\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar\settings\freertos_hello.release.general.xcl" --debug_file=$debugfile --backend -f "D:\code\c_language\data-struct\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar\settings\freertos_hello.release.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "D:\git_learning\Code_learning\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar\settings\freertos_hello.release.general.xcl" --debug_file=$debugfile --backend -f "D:\git_learning\Code_learning\IoT_Study\freertos_hello\boards\evkmimxrt1064\rtos_examples\freertos_hello\iar\settings\freertos_hello.release.driver.xcl" 
 }

@@ -101,7 +101,9 @@
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
         <bEvRecOn>1</bEvRecOn>
-        <nTsel>12</nTsel>
+        <bSchkAxf>0</bSchkAxf>
+        <bTchkAxf>0</bTchkAxf>
+        <nTsel>2</nTsel>
         <sDll></sDll>
         <sDllPa></sDllPa>
         <sDlgDll></sDlgDll>
@@ -123,7 +125,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>CMSIS_AGDI</Key>
-          <Name>-X"CMSIS-DAP" -U0232000005d94fd40000000000000000 -O974 -S9 -C0 -P00 -N00("ARM CoreSight SW-DP") -D00(0BD11477) -L00(0) -FO7 -FD0 -FC800 -FN0</Name>
+          <Name>-X"DAPLink CMSIS-DAP" -U0229000005d92a490000000000000000 -O974 -S9 -C0 -P00 -N00("ARM CoreSight SW-DP") -D00(0BD11477) -L00(0) -TO18 -TC10000000 -TP20 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO7 -FD0 -FC800 -FN0</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -133,7 +135,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGTARM</Key>
-          <Name>(1010=-1,-1,-1,-1,0)(1007=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(1009=-1,-1,-1,-1,0)</Name>
+          <Name>(1010=-1,-1,-1,-1,0)(6017=-1,-1,-1,-1,0)(1008=-1,-1,-1,-1,0)(6016=-1,-1,-1,-1,0)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -148,7 +150,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>0</aLwin>
+        <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -267,6 +269,8 @@
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
         <bEvRecOn>1</bEvRecOn>
+        <bSchkAxf>0</bSchkAxf>
+        <bTchkAxf>0</bTchkAxf>
         <nTsel>12</nTsel>
         <sDll></sDll>
         <sDllPa></sDllPa>
