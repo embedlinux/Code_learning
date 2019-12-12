@@ -36,6 +36,7 @@ static void hello_task(void *pvParameters);
 /*!
  * @brief Application entry point.
  */
+
 int main(void)
 {
     /* Init board hardware. */
@@ -43,6 +44,12 @@ int main(void)
     BOARD_InitPins();
     BOARD_BootClockRUN();
     BOARD_InitDebugConsole();
+
+    while(1)
+    {
+      DbgConsole_Printf("hello...\n\r");
+    }
+    
     if (xTaskCreate(hello_task, "Hello_task", configMINIMAL_STACK_SIZE + 10, NULL, hello_task_PRIORITY, NULL) != pdPASS)
     {
         PRINTF("Task creation failed!.\r\n");

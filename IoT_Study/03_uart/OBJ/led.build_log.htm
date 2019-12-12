@@ -3,47 +3,64 @@
 <pre>
 <h1>µVision Build Log</h1>
 <h2>Tool Versions:</h2>
-IDE-Version: ¦ÌVision V5.24.2.0
-Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Jone Wu, nxp, LIC=FQQBS-LYBVS-TJZ6H-WIA6W-FH8EV-D881Y
+IDE-Version: ¦ÌVision V5.26.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Jone nxf42573 nxp Flex license: MDK-ARM Professional: 50 user(s) (mdk_pro) Operation stops: 28 Dec 2019
  
 Tool Versions:
-Toolchain:       MDK-ARM Professional  Version: 5.24.1
-Toolchain Path:  F:\Program Filesx86\MDK\ARM\ARMCC\Bin
-C Compiler:      Armcc.exe V5.06 update 5 (build 528)
-Assembler:       Armasm.exe V5.06 update 5 (build 528)
-Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
-Library Manager: ArmAr.exe V5.06 update 5 (build 528)
-Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
-CPU DLL:         SARMCM3.DLL V5.24.1
-Dialog DLL:      DCM.DLL V1.16.0.0
-Target DLL:      CMSIS_AGDI.dll V1.28.3.0
-Dialog DLL:      TCM.DLL V1.32.0.0
+Toolchain:       MDK-ARM Professional: 50 user(s)  Version: 5.26.2.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.26.2.0
+Dialog DLL:      DCM.DLL V1.17.2.0
+Target DLL:      CMSIS_AGDI.dll V1.30.6.0
+Dialog DLL:      TCM.DLL V1.36.1.0
  
 <h2>Project:</h2>
-D:\code\c_language\data-struct\IoT_Study\03_uart\led.uvprojx
-Project File Date:  06/11/2019
+D:\git_learning\Code_learning\IoT_Study\03_uart\led.uvprojx
+Project File Date:  12/10/2019
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'F:\Program Filesx86\MDK\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'led_debug'
 compiling delay.c...
 compiling key.c...
 compiling main.c...
 compiling led.c...
 compiling uart.c...
+compiling peripherals.c...
+compiling board.c...
+compiling clock_config.c...
+compiling fsl_clock.c...
+compiling pin_mux.c...
+compiling fsl_common.c...
+compiling fsl_gpio.c...
+compiling fsl_lpuart.c...
+compiling fsl_debug_console.c...
+compiling fsl_io.c...
+compiling fsl_log.c...
+compiling evkmimxrt1064_sdram_ini_dcd.c...
+compiling evkmimxrt1064_flexspi_nor_config.c...
+compiling fsl_flexspi_nor_boot.c...
+compiling fsl_str.c...
+assembling startup_MIMXRT1064.s...
+compiling system_MIMXRT1064.c...
 linking...
-Program Size: Code=8476 RO-data=1412 RW-data=28 ZI-data=2304  
+Program Size: Code=8476 RO-data=1376 RW-data=28 ZI-data=2304  
 FromELF: creating hex file...
 ".\OBJ\led.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.5.0.1.pack
-                ARM.CMSIS.5.0.1
+                http://www.keil.com/pack/ARM.CMSIS.5.4.0.pack
+                ARM.CMSIS.5.4.0
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 5.0.1
+   * Component: CORE Version: 5.1.2
 
 Package Vendor: NXP
                 http://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.EVK-MIMXRT1064_BSP.10.0.0.pack
@@ -55,87 +72,87 @@ Package Vendor: NXP
                 http://mcuxpresso.nxp.com/cmsis_pack/repo/NXP.MIMXRT1064_DFP.10.0.0.pack
                 NXP.MIMXRT1064_DFP.10.0.0
                 Device Family Pack for MIMXRT1064
-   * Component: Startup Version: 1.0.0
-   * Component: debug_console Version: 1.0.0
-   * Component: xip Version: 2.0.0
-   * Component: lpuart Version: 2.2.5
-   * Component: iomuxc Version: 2.0.0
-   * Component: gpio Version: 2.0.1
-   * Component: common Version: 2.0.0
    * Component: clock Version: 2.1.0
+   * Component: common Version: 2.0.0
+   * Component: gpio Version: 2.0.1
+   * Component: iomuxc Version: 2.0.0
+   * Component: lpuart Version: 2.2.5
+   * Component: xip Version: 2.0.0
+   * Component: debug_console Version: 1.0.0
+   * Component: Startup Version: 1.0.0
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\Board_Support\MIMXRT1064DVL6A
   .\RTE\Device\MIMXRT1064DVL6A
   .\RTE\_led_debug
-  F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include
-  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers
-  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities
-  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io
-  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log
-  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str
-  F:\Program Filesx86\MDK\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include
+  C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers
+  C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities
+  C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io
+  C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log
+  C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str
+  C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: NXP::Device:Startup:1.0.0
-      Source file:   arm\startup_MIMXRT1064.s
-      Include file:  MIMXRT1064_features.h
-      Source file:   system_MIMXRT1064.c
-      Include file:  system_MIMXRT1064.h
-      Include file:  MIMXRT1064.h
-      Include file:  fsl_device_registers.h
+   * Component: ARM::CMSIS:CORE:5.1.2
 
-   * Component: NXP::Device:SDK Utilities:debug_console:1.0.0
-      Source file:   utilities\io\fsl_io.c
-      Source file:   utilities\log\fsl_log.c
-      Include file:  utilities\fsl_debug_console.h
-      Include file:  utilities\log\fsl_log.h
-      Source file:   utilities\str\fsl_str.c
-      Include file:  utilities\fsl_debug_console_conf.h
-      Source file:   utilities\fsl_debug_console.c
-      Include file:  utilities\io\fsl_io.h
-      Include file:  utilities\str\fsl_str.h
-
-   * Component: NXP::Device:SDK Drivers:xip:2.0.0
-      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
-      Include file:  xip\fsl_flexspi_nor_boot.h
-      Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
-      Source file:   xip\fsl_flexspi_nor_boot.c
-      Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
-      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
-
-   * Component: NXP::Device:SDK Drivers:lpuart:2.2.5
-      Source file:   drivers\fsl_lpuart.c
-      Include file:  drivers\fsl_lpuart.h
-
-   * Component: NXP::Device:SDK Drivers:iomuxc:2.0.0
-      Include file:  drivers\fsl_iomuxc.h
-
-   * Component: NXP::Device:SDK Drivers:gpio:2.0.1
-      Source file:   drivers\fsl_gpio.c
-      Include file:  drivers\fsl_gpio.h
-
-   * Component: NXP::Device:SDK Drivers:common:2.0.0
-      Include file:  drivers\fsl_common.h
-      Source file:   drivers\fsl_common.c
+   * Component: NXP::Board Support:SDK Project Template:project_template:evkmimxrt1064:1.0.0
+      Source file:   project_template\board.c
+      Include file:  project_template\board.h
+      Source file:   project_template\clock_config.c
+      Include file:  project_template\clock_config.h
+      Include file:  project_template\pin_mux.h
+      Include file:  project_template\peripherals.h
+      Source file:   project_template\peripherals.c
+      Source file:   project_template\pin_mux.c
 
    * Component: NXP::Device:SDK Drivers:clock:2.1.0
       Include file:  drivers\fsl_clock.h
       Source file:   drivers\fsl_clock.c
 
-   * Component: NXP::Board Support:SDK Project Template:project_template:evkmimxrt1064:1.0.0
-      Include file:  project_template\clock_config.h
-      Include file:  project_template\peripherals.h
-      Source file:   project_template\clock_config.c
-      Source file:   project_template\pin_mux.c
-      Include file:  project_template\pin_mux.h
-      Source file:   project_template\board.c
-      Include file:  project_template\board.h
-      Source file:   project_template\peripherals.c
+   * Component: NXP::Device:SDK Drivers:common:2.0.0
+      Source file:   drivers\fsl_common.c
+      Include file:  drivers\fsl_common.h
 
-   * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:01:12
+   * Component: NXP::Device:SDK Drivers:gpio:2.0.1
+      Source file:   drivers\fsl_gpio.c
+      Include file:  drivers\fsl_gpio.h
+
+   * Component: NXP::Device:SDK Drivers:iomuxc:2.0.0
+      Include file:  drivers\fsl_iomuxc.h
+
+   * Component: NXP::Device:SDK Drivers:lpuart:2.2.5
+      Source file:   drivers\fsl_lpuart.c
+      Include file:  drivers\fsl_lpuart.h
+
+   * Component: NXP::Device:SDK Drivers:xip:2.0.0
+      Source file:   xip\fsl_flexspi_nor_boot.c
+      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
+      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
+      Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
+      Include file:  xip\fsl_flexspi_nor_boot.h
+      Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
+
+   * Component: NXP::Device:SDK Utilities:debug_console:1.0.0
+      Include file:  utilities\str\fsl_str.h
+      Include file:  utilities\io\fsl_io.h
+      Include file:  utilities\fsl_debug_console_conf.h
+      Source file:   utilities\io\fsl_io.c
+      Source file:   utilities\fsl_debug_console.c
+      Include file:  utilities\fsl_debug_console.h
+      Source file:   utilities\log\fsl_log.c
+      Source file:   utilities\str\fsl_str.c
+      Include file:  utilities\log\fsl_log.h
+
+   * Component: NXP::Device:Startup:1.0.0
+      Source file:   arm\startup_MIMXRT1064.s
+      Include file:  MIMXRT1064_features.h
+      Include file:  MIMXRT1064.h
+      Source file:   system_MIMXRT1064.c
+      Include file:  system_MIMXRT1064.h
+      Include file:  fsl_device_registers.h
+Build Time Elapsed:  00:01:42
 </pre>
 </body>
 </html>
