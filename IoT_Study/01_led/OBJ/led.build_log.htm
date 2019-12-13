@@ -22,37 +22,12 @@ Dialog DLL:      TCM.DLL V1.36.1.0
  
 <h2>Project:</h2>
 D:\git_learning\Code_learning\IoT_Study\01_led\led.uvprojx
-Project File Date:  12/10/2019
+Project File Date:  12/13/2019
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'led_debug'
-compiling delay.c...
-compiling led.c...
-compiling peripherals.c...
-compiling board.c...
-compiling clock_config.c...
-compiling fsl_clock.c...
-compiling pin_mux.c...
-compiling fsl_common.c...
-compiling fsl_gpio.c...
-compiling fsl_lpuart.c...
-compiling fsl_io.c...
-compiling fsl_debug_console.c...
-compiling fsl_log.c...
-compiling evkmimxrt1064_sdram_ini_dcd.c...
-compiling fsl_str.c...
-assembling startup_MIMXRT1064.s...
-compiling evkmimxrt1064_flexspi_nor_config.c...
-compiling fsl_flexspi_nor_boot.c...
-compiling system_MIMXRT1064.c...
-linking...
-.\scatter\MIMXRT1064xxxxx_ram.scf(61): warning: L6314W: No section matches pattern *(NonCacheable.init).
-.\scatter\MIMXRT1064xxxxx_ram.scf(62): warning: L6314W: No section matches pattern *(NonCacheable).
-Program Size: Code=5720 RO-data=1344 RW-data=20 ZI-data=2084  
-Finished: 0 information, 2 warning and 0 error messages.
-FromELF: creating hex file...
-".\OBJ\led.axf" - 0 Error(s), 2 Warning(s).
+".\OBJ\led.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -98,14 +73,14 @@ Package Vendor: NXP
    * Component: ARM::CMSIS:CORE:5.1.2
 
    * Component: NXP::Board Support:SDK Project Template:project_template:evkmimxrt1064:1.0.0
-      Source file:   project_template\clock_config.c
-      Include file:  project_template\peripherals.h
-      Source file:   project_template\peripherals.c
+      Include file:  project_template\board.h
+      Source file:   project_template\pin_mux.c
+      Include file:  project_template\clock_config.h
       Include file:  project_template\pin_mux.h
       Source file:   project_template\board.c
-      Include file:  project_template\board.h
-      Include file:  project_template\clock_config.h
-      Source file:   project_template\pin_mux.c
+      Source file:   project_template\clock_config.c
+      Source file:   project_template\peripherals.c
+      Include file:  project_template\peripherals.h
 
    * Component: NXP::Device:SDK Drivers:clock:2.1.0
       Source file:   drivers\fsl_clock.c
@@ -127,32 +102,32 @@ Package Vendor: NXP
       Include file:  drivers\fsl_lpuart.h
 
    * Component: NXP::Device:SDK Drivers:xip:2.0.0
-      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
       Source file:   xip\evkmimxrt1064_flexspi_nor_config.c
-      Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
-      Source file:   xip\fsl_flexspi_nor_boot.c
-      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
       Include file:  xip\fsl_flexspi_nor_boot.h
+      Source file:   xip\evkmimxrt1064_sdram_ini_dcd.c
+      Include file:  xip\evkmimxrt1064_sdram_ini_dcd.h
+      Source file:   xip\fsl_flexspi_nor_boot.c
+      Include file:  xip\evkmimxrt1064_flexspi_nor_config.h
 
    * Component: NXP::Device:SDK Utilities:debug_console:1.0.0
       Source file:   utilities\fsl_debug_console.c
       Include file:  utilities\fsl_debug_console.h
       Include file:  utilities\io\fsl_io.h
+      Include file:  utilities\log\fsl_log.h
+      Source file:   utilities\log\fsl_log.c
+      Include file:  utilities\str\fsl_str.h
       Source file:   utilities\str\fsl_str.c
       Source file:   utilities\io\fsl_io.c
-      Source file:   utilities\log\fsl_log.c
-      Include file:  utilities\log\fsl_log.h
-      Include file:  utilities\str\fsl_str.h
       Include file:  utilities\fsl_debug_console_conf.h
 
    * Component: NXP::Device:Startup:1.0.0
-      Include file:  MIMXRT1064_features.h
       Include file:  fsl_device_registers.h
       Source file:   arm\startup_MIMXRT1064.s
       Include file:  MIMXRT1064.h
+      Include file:  MIMXRT1064_features.h
       Include file:  system_MIMXRT1064.h
       Source file:   system_MIMXRT1064.c
-Build Time Elapsed:  00:01:32
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>
