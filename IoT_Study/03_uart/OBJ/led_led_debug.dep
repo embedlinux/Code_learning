@@ -1,406 +1,0 @@
-Dependencies for Project 'led', Target 'led_debug': (DO NOT MODIFY !)
-F (.\source\main.c)(0x5DEF3CEA)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
-I (.\CORE\led.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_gpio.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_iomuxc.h)(0x5DEF3CE9)
-I (.\RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5DEF3CE9)
-I (.\CORE\delay.h)(0x5DEF3CE9)
-I (.\CORE\key.h)(0x5DEF3CE9)
-I (.\CORE\uart.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_lpuart.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
-F (.\CORE\delay.c)(0x5DEF3CE9)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\delay.o --omf_browse .\obj\delay.crf --depend .\obj\delay.d)
-I (CORE\delay.h)(0x5DEF3CE9)
-I (.\RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-F (.\CORE\delay.h)(0x5DEF3CE9)()
-F (.\CORE\key.c)(0x5DEF3CE9)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\key.o --omf_browse .\obj\key.crf --depend .\obj\key.d)
-I (CORE\key.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_gpio.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_iomuxc.h)(0x5DEF3CE9)
-I (.\RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5DEF3CE9)
-I (CORE\delay.h)(0x5DEF3CE9)
-F (.\CORE\led.c)(0x5DEF3CE9)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\led.o --omf_browse .\obj\led.crf --depend .\obj\led.d)
-I (CORE\led.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_gpio.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_iomuxc.h)(0x5DEF3CE9)
-I (.\RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5DEF3CE9)
-I (CORE\delay.h)(0x5DEF3CE9)
-F (.\CORE\led.h)(0x5DEF3CE9)()
-F (.\CORE\key.h)(0x5DEF3CE9)()
-F (.\CORE\uart.c)(0x5DEF3CE9)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\uart.o --omf_browse .\obj\uart.crf --depend .\obj\uart.d)
-I (CORE\uart.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_iomuxc.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_lpuart.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
-I (.\RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5DEF3CE9)
-F (.\CORE\uart.h)(0x5DEF3CE9)()
-F (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)()
-F (.\cmsis\cmsis_armclang.h)(0x5DEF3CEA)()
-F (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)()
-F (.\cmsis\cmsis_gcc.h)(0x5DEF3CEA)()
-F (.\cmsis\cmsis_iccarm.h)(0x5DEF3CEA)()
-F (.\cmsis\cmsis_version.h)(0x5DEF3CEA)()
-F (.\cmsis\core_cm7.h)(0x5DEF3CEA)()
-F (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)()
-F (RTE\Board_Support\MIMXRT1064DVL6A\board.c)(0x5DEF3CE9)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\board.o --omf_browse .\obj\board.crf --depend .\obj\board.d)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_debug_console.h)(0x5DEF3CEA)
-I (RTE\Board_Support\MIMXRT1064DVL6A\board.h)(0x5DEF3CE9)
-I (RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_gpio.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_iomuxc.h)(0x5DEF3CE9)
-F (RTE\Board_Support\MIMXRT1064DVL6A\board.h)(0x5DEF3CE9)()
-F (RTE\Board_Support\MIMXRT1064DVL6A\clock_config.c)(0x5DEF3CE9)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\clock_config.o --omf_browse .\obj\clock_config.crf --depend .\obj\clock_config.d)
-I (RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-F (RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5DEF3CE9)()
-F (RTE\Board_Support\MIMXRT1064DVL6A\peripherals.c)(0x5DEF3CE9)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\peripherals.o --omf_browse .\obj\peripherals.crf --depend .\obj\peripherals.d)
-I (RTE\Board_Support\MIMXRT1064DVL6A\peripherals.h)(0x5DEF3CE9)
-F (RTE\Board_Support\MIMXRT1064DVL6A\peripherals.h)(0x5DEF3CE9)()
-F (RTE\Board_Support\MIMXRT1064DVL6A\pin_mux.c)(0x5DEF3CE9)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\pin_mux.o --omf_browse .\obj\pin_mux.crf --depend .\obj\pin_mux.d)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_iomuxc.h)(0x5DEF3CE9)
-I (RTE\Board_Support\MIMXRT1064DVL6A\pin_mux.h)(0x5DEF3CE9)
-F (RTE\Board_Support\MIMXRT1064DVL6A\pin_mux.h)(0x5DEF3CE9)()
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\fsl_clock.o --omf_browse .\obj\fsl_clock.crf --depend .\obj\fsl_clock.d)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\fsl_common.o --omf_browse .\obj\fsl_common.crf --depend .\obj\fsl_common.d)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_gpio.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\fsl_gpio.o --omf_browse .\obj\fsl_gpio.crf --depend .\obj\fsl_gpio.d)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_gpio.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_lpuart.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\fsl_lpuart.o --omf_browse .\obj\fsl_lpuart.crf --depend .\obj\fsl_lpuart.d)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_lpuart.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_common.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers\fsl_clock.h)(0x5BC5859A)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\fsl_debug_console.o --omf_browse .\obj\fsl_debug_console.crf --depend .\obj\fsl_debug_console.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console.h)(0x5BC5859A)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console_conf.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log\fsl_log.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str\fsl_str.h)(0x5BC5859A)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io\fsl_io.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\fsl_io.o --omf_browse .\obj\fsl_io.crf --depend .\obj\fsl_io.d)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io\fsl_io.h)(0x5BC5859A)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console_conf.h)(0x5BC5859A)
-I (.\FSLLIB\fsl_lpuart.h)(0x5DEF3CE9)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log\fsl_log.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\fsl_log.o --omf_browse .\obj\fsl_log.crf --depend .\obj\fsl_log.d)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log\fsl_log.h)(0x5BC5859A)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console_conf.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io\fsl_io.h)(0x5BC5859A)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str\fsl_str.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\fsl_str.o --omf_browse .\obj\fsl_str.crf --depend .\obj\fsl_str.d)
-I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str\fsl_str.h)(0x5BC5859A)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\fsl_debug_console_conf.h)(0x5BC5859A)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\evkmimxrt1064_flexspi_nor_config.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\evkmimxrt1064_flexspi_nor_config.o --omf_browse .\obj\evkmimxrt1064_flexspi_nor_config.crf --depend .\obj\evkmimxrt1064_flexspi_nor_config.d)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\evkmimxrt1064_flexspi_nor_config.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\evkmimxrt1064_sdram_ini_dcd.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\evkmimxrt1064_sdram_ini_dcd.o --omf_browse .\obj\evkmimxrt1064_sdram_ini_dcd.crf --depend .\obj\evkmimxrt1064_sdram_ini_dcd.d)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\evkmimxrt1064_sdram_ini_dcd.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-F (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\fsl_flexspi_nor_boot.c)(0x5BC5859A)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\fsl_flexspi_nor_boot.o --omf_browse .\obj\fsl_flexspi_nor_boot.crf --depend .\obj\fsl_flexspi_nor_boot.d)
-I (C:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip\fsl_flexspi_nor_boot.h)(0x5BC5859A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (.\RTE\Board_Support\MIMXRT1064DVL6A\board.h)(0x5DEF3CE9)
-I (.\RTE\Board_Support\MIMXRT1064DVL6A\clock_config.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_common.h)(0x5DEF3CE9)
-I (C:\Keil_v5\ARM\ARMCC\include\assert.h)(0x599EDB3A)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x599EDB3E)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x599EDB3C)
-I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x599EDB3C)
-I (.\RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (.\RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_clock.h)(0x5DEF3CE9)
-I (.\FSLLIB\fsl_gpio.h)(0x5DEF3CE9)
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_flexspi_nor.scf)(0x5DEF3CE9)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_flexspi_nor_sdram.scf)(0x5DEF3CE9)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_ram.scf)(0x5DEF3CE9)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_sdram.scf)(0x5DEF3CE9)()
-F (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064xxxxx_sdram_txt.scf)(0x5DEF3CE9)()
-F (RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)()
-F (RTE\Device\MIMXRT1064DVL6A\startup_MIMXRT1064.s)(0x5DEF3CEA)(--cpu Cortex-M7.fp.dp -g --apcs=interwork -I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "CPU_MIMXRT1064DVL6A SETA 1" --pd "__STARTUP_INITIALIZE_NONCACHEDATA SETA 1"--list .\startup_mimxrt1064.lst --xref -o .\obj\startup_mimxrt1064.o --depend .\obj\startup_mimxrt1064.d)
-F (RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.c)(0x5DEF3CEA)(--c99 -c --cpu Cortex-M7.fp.dp -g -O0 --apcs=interwork --split_sections -I .\FSLLIB -I .\CORE -I .\cmsis --library_interface=armcc --library_type=standardlib --diag_suppress=66,1296,186-I.\RTE\Board_Support\MIMXRT1064DVL6A-I.\RTE\Device\MIMXRT1064DVL6A-I.\RTE\_led_debug-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\drivers-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\io-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\log-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\utilities\str-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0\xip-IC:\Keil_v5\ARM\PACK\NXP\MIMXRT1064_DFP\10.0.0-D__UVISION_VERSION="526" -D_RTE_ -DCPU_MIMXRT1064DVL6A -DCPU_MIMXRT1064DVL6A-o .\obj\system_mimxrt1064.o --omf_browse .\obj\system_mimxrt1064.crf --depend .\obj\system_mimxrt1064.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-I (RTE\Device\MIMXRT1064DVL6A\fsl_device_registers.h)(0x5DEF3CEA)
-I (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064.h)(0x5DEF3CE9)
-I (.\cmsis\core_cm7.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_version.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_compiler.h)(0x5DEF3CEA)
-I (.\cmsis\cmsis_armcc.h)(0x5DEF3CEA)
-I (.\cmsis\mpu_armv7.h)(0x5DEF3CEA)
-I (RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)
-I (RTE\Device\MIMXRT1064DVL6A\MIMXRT1064_features.h)(0x5DEF3CE9)
-F (RTE\Device\MIMXRT1064DVL6A\system_MIMXRT1064.h)(0x5DEF3CEA)()
