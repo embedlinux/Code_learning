@@ -20,7 +20,6 @@ int main(void)
 	
 	GPIO_PinInit(GPIO1,9, &led_config);
 	
-	
 	/* Set systick reload value to generate 1ms interrupt */
 	if(SysTick_Config(SystemCoreClock / 1000U))
     {
