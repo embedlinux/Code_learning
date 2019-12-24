@@ -52,5 +52,6 @@ class Trie(object):
 if __name__ == "__main__":
     my_trie = Trie()
     my_trie.insert('hello')
-    ret = my_trie.find('hell')
+    my_trie.insert('her')
+    ret = my_trie.find('her')
     print(ret)

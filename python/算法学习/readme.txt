@@ -92,3 +92,8 @@ demo36:
     字符匹配：KPM算法
 demo37:
     练习题
+demo38:
+    Trie树：多模式串匹配
+demo39:
+    AC自动机：对多模式串Trie树进行改进
+
