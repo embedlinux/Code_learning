@@ -71,6 +71,31 @@ class UnsortedVector(object):
         pass
 
     def sort(self):
+        case = random.randint(0, 5)
+        if case == 0:
+            self.bubble_sort()
+        elif case == 1:
+            self.selection_sort()
+        elif case == 2:
+            self.merge_sort()
+        elif case == 3:
+            self.heap_sort()
+        else:
+            self.quick_sort()
+
+    def bubble_sort(self):
+        pass
+
+    def selection_sort(self):
+        pass
+
+    def heap_sort(self):
+        pass
+
+    def quick_sort(self):
+        pass
+
+    def merge_sort(self):
         pass
 
     def find(self, e, low, high):
