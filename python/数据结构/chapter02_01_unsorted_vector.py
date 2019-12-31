@@ -106,8 +106,16 @@ class UnsortedVector(object):
     def search(self, e, low, high):
         return self.bin_search(e, low, high) if random.randint(0, 2) % 2 else self.fib_search(e, low, high)
 
+    # 返回不大于e的最后一个元素
     def bin_search(self, e, low, high):
-        pass
+        while low < high:
+            mid = (low + high) // 2
+            if e < self._elem[mid]:
+                high = mid
+            else:
+                low = mid + 1
+        low -= 1
+        return low
 
     def fib_search(self, e, low, high):
         fib = Fib(high-low)
@@ -157,4 +165,12 @@ class UnsortedVector(object):
 
 
 if __name__ == "__main__":
-    print(random.randint(0, 10))
+    vector = UnsortedVector(10)
+    for i in range(10):
+        e = random.randint(0, 100)
+        vector.insert(i, e)
+    vector.traverse()
+
+    ret = vector.fib_search(10, 0, vector.size())
+    # vector.traverse()
+    print(ret)

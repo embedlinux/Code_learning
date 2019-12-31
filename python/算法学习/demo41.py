@@ -50,22 +50,96 @@ def is_ok(row, col):                # 判断row行column列放置是否合适
     return True
 
 
-max_w = 100       # 存储背包中物品总重量的最大值
-# cw表示当前已经装进去的物品的重量和；i表示考察到哪个物品了
-# w背包重量；items表示每个物品的重量；n表示物品个数
-# 假设背包可承受重量100，物品个数10，物品重量存储在数组a中，那可以这样调用函数：
-# f(0, 0, a, 10, 100)
+max_w = -1                                          # 存储背包中物品总重量的最大值
+max_v = -1
+weight = [2, 2, 4, 6, 3]                            # 物品重量
+values = [3, 4, 8, 9, 6]                            # 物品的价值
+n = len(weight)                                     # 物品个数
+w = 9                                               # 背包承受的最大重量
+mem = [[False for i in range(10)] for j in range(5)]      # 备忘录，默认值false
 
 
-def f(i, cw, items, n, w):
+# cw表示当前已经装进去的物品的重量总和；i表示考察到哪个物品了
+def f(i, cw):
     global max_w
     if cw == w or i == n:   # w表示装满了;i==n表示已经考察完所有的物品
         if cw > max_w:
             max_w = cw
             return
-    f(i+1, cw, items, n, w)
-    if cw + items[i] <= w:  # 已经超过可以背包承受的重量的时候，就不要再装了
-        f(i + 1, cw+items[i], items, n, w)
+    if mem[i][cw] is True:
+        return
+    mem[i][cw] = True           # 重复状态
+    f(i+1, cw)                  # 选择不装第i个物品
+    if cw + weight[i] <= w:     # 已经超过可以背包承受的重量的时候，就不要再装了
+        f(i + 1, cw+weight[i])  # 选择装第i个物品
+
+
+# weight:物品重量，n:物品个数，w:背包可承载重量
+def knapsack(weight, n, w):
+    states = [[False for i in range(w+1)] for j in range(n)]
+    states[0][0] = True             # 不放第一个物品
+    states[0][weight[0]] = True     # 放入第一个物品
+    for i in range(1, n):           # 动态规划状态转移
+        for j in range(0, w+1):     # 不把第i个物品放入背包
+            if states[i-1][j] is True:
+                states[i][j] = states[i-1][j]
+        for j in range(0, w-weight[i]+1):   # 把第i个物品放入背包
+            if states[i-1][j] is True:
+                states[i][j+weight[i]] = True
+    # print(states)
+    for i in range(w, -1, -1):                  # 输出结果
+        if states[n-1][i] is True:
+            return i
+    return 0
+
+
+# weight:物品重量，n:物品个数，w:背包可承载重量
+def knapsack2(weight, n, w):
+    states = [False for i in range(w+1)]
+    states[0] = True
+    states[weight[0]] = True
+    for i in range(n):
+        for j in range(w-weight[i], -1, -1):    # 把第i个物品放入背包
+            if states[j] is True:
+                states[j + weight[i]] = True
+    # print(states)
+    for i in range(w, -1, -1):
+        if states[i] is True:
+            return i
+    return 0
+
+
+# i表示即将要决策第i个物品是否装入背包，cw表示当前背包中物品的总重量，cv表示当前背包中物品的总价值
+# 回溯算法
+def knapsack3(i, cw, cv):
+    global max_v
+    if cw == w or i == n:                   # cw==w表示装满了，i==n表示物品都考察完了
+        if cv > max_v:
+            max_v = cv
+        return
+    knapsack3(i+1, cw, cv)                  # 选择不装第i个物品
+    if cw + weight[i] <= w:
+        knapsack3(i+1, cw+weight[i], cv+values[i])  # 选择装第i个物品
+
+
+# 动态规划
+def knapsack4(weight, value, n, w):
+    states = [[-1 for j in range(w+1)] for i in range(n)]
+    states[0][0] = 0
+    states[0][weight[0]] = value[0]
+    for i in range(1, n):
+        for j in range(0, w+1):
+            if states[i-1][j] >= 0:         # 不选择第i个物品
+                states[i][j] = states[i-1][j]
+        for j in range(0, w-weight[i]):     # 选择第i个物品
+            v = states[i-1][j] + value[i]
+            if v > states[i][j+weight[i]]:
+                states[i][j+weight[i]] = v
+    max_value = -1
+    for j in range(w+1):
+        if states[n-1][j] > max_value:
+            max_value = states[n-1][j]
+    return max_value
 
 
 class Patten(object):
@@ -97,5 +171,11 @@ class Patten(object):
 
 
 if __name__ == "__main__":
-    cal8queens(0)
+    # cal8queens(0)
+    # print(mem)
+    print(knapsack(weight, n, w))
+    print(knapsack2(weight, n, w))
+    knapsack3(0, 0, 0)
+    print(max_v)
+    print(knapsack4(weight, values, n, w))
 
