@@ -41,9 +41,6 @@ def bubble_sort(array):
         # temp = -1
         for j in range(len(array) - i - 1):
             if array[j] > array[j+1]:
-                # temp = array[j]
-                # array[j] = array[j+1]
-                # array[j+1] = temp
                 array[j], array[j+1] = array[j+1], array[j]
                 flag = True
         if flag is False:

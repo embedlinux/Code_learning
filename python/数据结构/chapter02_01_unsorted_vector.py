@@ -70,10 +70,10 @@ class UnsortedVector(object):
     def disordered(self):
         pass
 
-    def sort(self):
+    def sort(self, low, high):
         case = random.randint(0, 5)
         if case == 0:
-            self.bubble_sort()
+            self.bubble_sort(low, high)
         elif case == 1:
             self.selection_sort()
         elif case == 2:
@@ -83,8 +83,17 @@ class UnsortedVector(object):
         else:
             self.quick_sort()
 
-    def bubble_sort(self):
-        pass
+    def bubble_sort(self, low, high):
+        flag = True                     # 可以改进,更换flag为last,自动更新乱序位置
+        for i in range(low, high):
+            for j in range(low, high-i-1):
+                if self._elem[j] > self._elem[j+1]:
+                    self._elem[j], self._elem[j+1] = self._elem[j+1], self._elem[j]
+                    flag = False
+                if flag is True:
+                    break
+                else:
+                    flag = True
 
     def selection_sort(self):
         pass
