@@ -117,3 +117,7 @@ if __name__ == "__main__":
     # print(reverse(1534236469))
     # print(9646324351 >= 2**31 - 1)
     print(romanToInt('MCMXCIV'))
+    d = {'mike': 10, 'lucy': 2, 'ben': 30}
+    dd = sorted(d.items(), key=lambda x:x[1], reverse=True)
+    print(dd)
+    print(d.items())
