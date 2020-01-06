@@ -83,8 +83,55 @@ class List(object):
     def disordered(self):
         pass
 
-    def sort(self):
-        pass
+    def selection_sort(self, p=self.head, n=self._size):
+        head = p
+        tail = p
+        for i in range(n):
+            tail = tail.next
+            while 1 < n:
+                ret = self.remove(self.select_max(head.next, n))
+                self.insert_before(tail, ret)
+                tail = tail.pred
+                n -= 1
+
+    def insert_sort(self, p=self.head, n=self._size):
+        for r in range(n):
+            self.insert_after(self.search(p.data, r, p), p.data)
+            p = p.next
+            self.remove(p.pred)
+
+    def select_max(self, p, n):
+        max_node = p
+        cur = p.next
+        for i in range(n, 0, -1):
+            if cur.data >= max_node.data:
+                max_node = cur
+            cur = cur.next
+        return max_node
+
+    def merge_sort(self, p=self.head, n=self._size):
+        if n < 2:
+            return
+        q = p
+        m = n // 2
+        for i in range(m):
+            q = q.next
+        self.merge_sort(p, m)
+        self.merge_sort(q, n-m)
+        self.merge(p, m, self, q, n-m)
+
+    def merge(self, p, n, l, q, m):
+        while 0 < m:
+            if 0 < n and p.data <= q.data:
+                p = p.next
+                if q == p:
+                    break
+                n -= 1
+            else:
+                q = q.next
+                self.insert_before(p, l.remove(q.pred))
+                m -= 1
+
 
     def find(self, e, n=self._size, p=self.trailer):
         # n = self._size
@@ -96,8 +143,14 @@ class List(object):
             n -= 1
         return None
 
-    def search(self):
-        pass
+    def search(self, e, n=self._size, p=self.trailer):       # 在有序列表内节点p的n个前驱中,找到不大于e的最后者
+        p = p.pred
+        while 0 < n:
+            if p.data <= e:
+                break
+            p = p.pred
+            n -= 1
+        return p
 
     def deduplicate(self):
         if self._size < 2:
@@ -111,7 +164,17 @@ class List(object):
         return old_size - self._size
 
     def uniquify(self):
-        pass
+        if self._size < 2:
+            return 0
+        old_size = self._size
+        p = self.first()            # p 为各区段起点
+        q = p.next                  # q 为其后继
+        while self.trailer != q:
+            if p.data != q.data:
+                p = q
+            else:
+                self.remove(q)
+        return old_size - self._size
 
     def traverse(self):
         p = self.header.next
