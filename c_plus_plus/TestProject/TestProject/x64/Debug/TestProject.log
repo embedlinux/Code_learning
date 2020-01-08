@@ -1,0 +1,15 @@
+﻿生成启动时间为 2020/1/8 21:36:15。
+     1>项目“D:\code\c_language\data-struct\c_plus_plus\TestProject\TestProject\TestProject.vcxproj”在节点 2 上(Build 个目标)。
+       项目文件包含 ToolsVersion="15.0"。此工具集可能未知或缺失。在这种情况下，通过安装 MSBuild 的正确版本，或许可以解决此问题。否则，该 build 可能已因策略原因而被强制为某个特定 ToolsVersion。将该项目视为其已具有 ToolsVersion="4.0"。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=291333。
+     1>ClCompile:
+         F:\Program Filesx86\Visual Studio\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"pch.h" /Fp"x64\Debug\TestProject.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc110.pdb" /Gd /TP /errorReport:prompt 3_4.cpp
+         3_4.cpp
+       Link:
+         F:\Program Filesx86\Visual Studio\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\code\c_language\data-struct\c_plus_plus\TestProject\x64\Debug\TestProject.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\code\c_language\data-struct\c_plus_plus\TestProject\x64\Debug\TestProject.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\code\c_language\data-struct\c_plus_plus\TestProject\x64\Debug\TestProject.lib" /MACHINE:X64 x64\Debug\3_4.obj
+         x64\Debug\pch.obj
+         TestProject.vcxproj -> D:\code\c_language\data-struct\c_plus_plus\TestProject\x64\Debug\TestProject.exe
+     1>已完成生成项目“D:\code\c_language\data-struct\c_plus_plus\TestProject\TestProject\TestProject.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.67
