@@ -19,6 +19,9 @@
     <Filter Include="chapter03">
       <UniqueIdentifier>{ac6260dd-5757-439b-8091-33b90d236aeb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="chapter04">
+      <UniqueIdentifier>{70c3bd88-4ec3-441f-b2b5-2e1575548e6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -49,6 +52,12 @@
     </ClCompile>
     <ClCompile Include="3_4.cpp">
       <Filter>chapter03</Filter>
+    </ClCompile>
+    <ClCompile Include="3_5.cpp">
+      <Filter>chapter03</Filter>
+    </ClCompile>
+    <ClCompile Include="4_1.cpp">
+      <Filter>chapter04</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
