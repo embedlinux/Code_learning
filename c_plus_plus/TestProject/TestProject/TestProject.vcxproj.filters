@@ -62,11 +62,9 @@
     <ClCompile Include="4_1.cpp">
       <Filter>chapter04</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="4_2.cpp">
       <Filter>chapter04</Filter>
     </ClCompile>
-=======
     <ClCompile Include="5_1.cpp">
       <Filter>chapter04</Filter>
     </ClCompile>
@@ -78,6 +76,5 @@
     <ResourceCompile Include="TestProject.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
->>>>>>> f93691d128d4b09f579298084230a479cd9d6994
   </ItemGroup>
 </Project>
