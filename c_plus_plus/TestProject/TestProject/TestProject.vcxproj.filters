@@ -27,6 +27,9 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -59,8 +62,22 @@
     <ClCompile Include="4_1.cpp">
       <Filter>chapter04</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="4_2.cpp">
       <Filter>chapter04</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="5_1.cpp">
+      <Filter>chapter04</Filter>
+    </ClCompile>
+    <ClCompile Include="5_2.cpp">
+      <Filter>chapter04</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TestProject.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+>>>>>>> f93691d128d4b09f579298084230a479cd9d6994
   </ItemGroup>
 </Project>
