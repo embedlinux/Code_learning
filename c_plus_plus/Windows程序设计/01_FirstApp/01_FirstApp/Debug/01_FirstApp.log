@@ -1,0 +1,10 @@
+﻿生成启动时间为 2020/1/13 9:13:08。
+     1>项目“D:\code\c_language\data-struct\c_plus_plus\Windows程序设计\01_FirstApp\01_FirstApp\01_FirstApp.vcxproj”在节点 2 上(ClCompile 个目标)。
+     1>ClCompile:
+         F:\Program Filesx86\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt FirstApp.cpp
+         FirstApp.cpp
+     1>已完成生成项目“D:\code\c_language\data-struct\c_plus_plus\Windows程序设计\01_FirstApp\01_FirstApp\01_FirstApp.vcxproj”(ClCompile 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:04.33
