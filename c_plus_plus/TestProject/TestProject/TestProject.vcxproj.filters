@@ -71,6 +71,9 @@
     <ClCompile Include="5_2.cpp">
       <Filter>chapter04</Filter>
     </ClCompile>
+    <ClCompile Include="6_1.cpp">
+      <Filter>chapter04</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="TestProject.rc">
