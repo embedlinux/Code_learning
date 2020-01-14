@@ -18,5 +18,8 @@
     <ClCompile Include="02_UsefulFunc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Homework.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
