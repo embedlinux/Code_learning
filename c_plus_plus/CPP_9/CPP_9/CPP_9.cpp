@@ -176,6 +176,8 @@ void isMatchString()
 
 
 
+
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//int array[] = {8, 5, 2, 4, 3 };

@@ -32,5 +32,17 @@
     <ClCompile Include="CPP_9.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="模板.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="demo_01_stl入门.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="综合项目.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="练习题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
