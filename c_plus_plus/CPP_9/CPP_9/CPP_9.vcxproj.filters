@@ -44,5 +44,8 @@
     <ClCompile Include="练习题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="capter11.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

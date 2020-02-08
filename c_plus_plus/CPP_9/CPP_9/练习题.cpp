@@ -82,7 +82,7 @@ int string_num()
 }
 
 
-int main()
+int main4()
 {
 	// test_map();
 	// unique_sort();
