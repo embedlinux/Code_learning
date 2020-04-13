@@ -272,6 +272,41 @@ module clock_generator (output bit clk);
 	always #5 clk = ~clk; // Use blocking assignment
 endmodule
 
+// Example 5-26 Top-level scope for arbiter design
+// root.sv
+`timescale 1ns/1ns
+parameter int TIMEOUT = 1_000_000;
+const string time_out_msg = "ERROR: Time out";
+module top;
+	test t1(.*);
+endmodule
+program automatic test;
+	...;
+	initial begin
+		#TIMEOUT;
+		$display("%s", time_out_msg);
+		$finish;
+	end
+endprogram
+
+// Example 5-27 Cross-module references with $root
+// root.sv
+`timescale 1ns/1ns
+parameter TIMEOUT = 1_000_000;
+top t1(); // Explicitly instantiate top-level module
+module top;
+	bit clk;
+	test t1(.*);
+endmodule
+program automatic test;
+	...;
+	initial begin
+	// Absolute reference
+	$display("clk=%b", $root.t1.clk)
+	// Relative reference
+	$display("clk=%b", t1.clk)
+endprogram
+
 
 
 
