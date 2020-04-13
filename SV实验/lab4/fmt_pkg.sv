@@ -157,7 +157,7 @@ package fmt_pkg;
     task do_consume();
       bit[31:0] data;
       forever begin
-        void'(this.fifo.try_get(data));
+        void' (this.fifo.try_get(data));
         repeat($urandom_range(1, this.data_consum_peroid)) @(posedge intf.clk);
       end
     endtask
