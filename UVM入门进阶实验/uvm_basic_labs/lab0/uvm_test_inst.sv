@@ -23,8 +23,7 @@ module uvm_test_inst;
   import uvm_pkg::*;
   `include "uvm_macros.svh"
   import test_pkg::*;
-
-
+  
   initial begin
     `uvm_info("UVM_TOP", "test started", UVM_LOW)
     run_test("top");
