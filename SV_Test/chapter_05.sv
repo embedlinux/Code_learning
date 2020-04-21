@@ -307,6 +307,49 @@ program automatic test;
 	$display("clk=%b", t1.clk)
 endprogram
 
+// Example 5-28 Checking a signal with an if-statement
+bus.cb.request <= 1;
+repeat (2) @bus.cb;
+if (bus.cb.grant != 2’b01)
+	$display("Error, grant != 1");
+// rest of the test
+
+// Example 5-29 Simple procedural assertion
+bus.cb.request <= 1;
+repeat (2) @bus.cb;
+a1: assert (bus.cb.grant == 2’b01);
+// rest of the test
+
+// Example 5-30 Error from failed procedural assertion
+"test.sv", 7: top.t1.a1: started at 55ns failed at 55ns
+Offending '(bus.cb.grant == 2’b1)'
+
+// Example 5-31 Creating a custom error message in a procedural assertion
+a1: assert (bus.cb.grant == 2’b01)
+else $error("Grant not asserted");
+
+// Example 5-32 Error from failed procedural assertion
+"test.sv", 7: top.t1.a1: started at 55ns failed at 55ns
+Offending '(bus.cb.grant == 2’b1)'
+Error: "test.sv", 7: top.t1.a1: at time 55 ns
+Grant not asserted
+
+// Example 5-33 Creating a custom error message
+a1: assert (bus.cb.grant == 2’b01)
+	grants_received++; // Another succesful result
+else
+	$error("Grant not asserted");
+	
+// Example 5-34 Concurrent assertion to check for X/Z
+interface arb_if(input bit clk);
+	logic [1:0] grant, request;
+	logic reset;
+	property request_2state;
+		@(posedge clk) disable iff (reset);
+		$isunknown(request) == 0;       // 确保没有z或者x值存在
+	endproperty
+	assert_request_2state: assert property request_2state
+endinterface
 
 
 
