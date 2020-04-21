@@ -351,5 +351,78 @@ interface arb_if(input bit clk);
 	assert_request_2state: assert property request_2state
 endinterface
 
+// Example 5-38 Rx interface
+// Rx interface with modports and clocking block
+interface Rx_if (input logic clk);
+	logic [7:0] data;
+	logic soc, en, clav, rclk;
+	clocking cb @(posedge clk);
+		output data, soc, clav; // Directions are relative
+		input en; // to the testbench
+	endclocking : cb
+	modport DUT (output en, rclk, input data, soc, clav);
+	modport TB (clocking cb);
+endinterface : Rx_if
+
+// Example 5-39 Tx interface
+// Tx interface with modports and clocking block
+interface Tx_if (input logic clk);
+	logic [7:0] data;
+	logic soc, en, clav, tclk;
+	clocking cb @(posedge clk);
+		input data, soc, en;
+		output clav;
+	endclocking : cb
+	modport DUT (output data, soc, en, tclk, input clk, clav);
+	modport TB (clocking cb);
+endinterface : Tx_if
+
+// Example 5-40 ATM router model with interface using modports
+module atm_router(	Rx_if.DUT Rx0, Rx1, Rx2, Rx3,
+					Tx_if.DUT Tx0, Tx1, Tx2, Tx3,
+					input logic clk, rst);
+	...;
+endmodule
+
+// Example 5-41 Top-level netlist with interface
+module top;
+	bit clk, rst;
+	always #5 clk = !clk;
+	
+	Rx_if Rx0 (clk), Rx1 (clk), Rx2 (clk), Rx3 (clk);
+	Tx_if Tx0 (clk), Tx1 (clk), Tx2 (clk), Tx3 (clk);
+	atm_router a1(	Rx0, Rx1, Rx2, Rx3,
+					Tx0, Tx1, Tx2, Tx3, clk, rst);   // 或者仅使用(.*)
+	test t1(Rx0, Rx1, Rx2, Rx3,
+			Tx0, Tx1, Tx2, Tx3, clk, rst);			 // 或者仅使用(.*)
+endmodule : top
+
+// Example 5-42 Testbench using interface with clocking block
+program test(	Rx_if.TB Rx0, Rx1, Rx2, Rx3,
+				Tx_if.TB Tx0, Tx1, Tx2, Tx3,
+				input logic clk, output logic rst);
+	bit [7:0] bytes[ATM_CELL_SIZE];
+	initial begin
+		// Reset the device
+		rst <= 1;
+		Rx0.cb.data <= 0;
+		...;
+		receive_cell0();
+		...;
+	end
+	task receive_cell0();
+		@(Tx0.cb);
+		Tx0.cb.clav <= 1; 			// Assert ready to receive
+		wait (Tx0.cb.soc == 1); 	// Wait for Start of Cell
+		for (int i=0; i<ATM_CELL_SIZE; i++) begin
+			wait (Tx0.cb.en == 0); // Wait for enable
+			@(Tx0.cb);
+			bytes[i] = Tx0.cb.data;
+			@(Tx0.cb);
+			Tx0.cb.clav <= 0; 		// Deassert flow control
+		end
+	endtask : receive_cell0
+endprogram : test
+
 
 
