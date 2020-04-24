@@ -1,0 +1,9 @@
+QuestaSim vlog 10.1b Compiler 2012.04 Apr 26 2012
+vlog -l dut_compile.log ../../rtl/router.v 
+-- Compiling module router
+-- Compiling module rtslice
+-- Compiling module rtslicef
+
+Top level modules:
+	router
+	rtslicef
