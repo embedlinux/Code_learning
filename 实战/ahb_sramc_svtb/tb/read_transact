@@ -1,0 +1,23 @@
+#!/usr/bin/perl -w
+# It is used to dispose the read data and read address,
+# put them into one file.
+
+open RADDR, "raddr.tmp";
+open RDATA, "rdata.tmp";
+open RADDR_RDATA, ">raddr_rdata.tab";
+
+while(<RADDR>) {
+  chomp($_);
+  push(@rd_addr, $_);
+}
+
+while(<RDATA>) {
+  chomp($_);
+  push(@rd_data, $_);
+}
+
+foreach(@rd_addr) {
+  $temp = shift @rd_data;
+  print RADDR_RDATA "$_ : ";
+  print RADDR_RDATA "$temp\n";
+}  
