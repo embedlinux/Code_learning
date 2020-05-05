@@ -1,0 +1,11 @@
+../rtl/DW_ahb/DW_ahb_wrapper.sv
+../rtl/DW_ahb/DW_ahb.v
+../rtl/sramc/sramc_wrapper.sv
+../rtl/sramc/sramc_top.v
+../rtl/sramc/sramc.v
+../rtl/sramc/sramc_cs.v
+../rtl/sramc/sramc_fsm.v
+../rtl/sramc/sram_bank_top.v
+../rtl/sramc/sram_bank.v
+../rtl/sramc/SRAM_DP_4KX8.v
+../uvm_tb/tb.sv

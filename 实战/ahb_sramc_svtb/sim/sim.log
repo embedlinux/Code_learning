@@ -1,0 +1,35 @@
+Command: vcs ../tb/tb.sv ../if/AHB_if.sv ../rtl/DW_ahb/DW_ahb_wrapper.sv ../rtl/DW_ahb/DW_ahb.v \
+../rtl/sramc/sramc_wrapper.sv ../rtl/sramc/sramc_top.v ../rtl/sramc/sramc.v ../rtl/sramc/sram_bank_top.v \
+../rtl/sramc/sram_bank.v ../rtl/sramc/sramc_cs.v ../rtl/sramc/sramc_fsm.v ../rtl/sramc/SRAM_DP_4KX8.v \
+reg_cfg_00 -y /home/klin/synopsys/syn/2012.06/packages/gtech/src_ver +libext+.v -sverilog \
+-debug_all -R -M -l sim.log
+                         Chronologic VCS (TM)
+            Version G-2012.09 -- Sat Nov  1 12:06:19 2014
+               Copyright (c) 1991-2012 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file '../tb/tb.sv'
+Parsing design file '../if/AHB_if.sv'
+Parsing design file '../rtl/DW_ahb/DW_ahb_wrapper.sv'
+Parsing design file '../rtl/DW_ahb/DW_ahb.v'
+Parsing design file '../rtl/sramc/sramc_wrapper.sv'
+Parsing design file '../rtl/sramc/sramc_top.v'
+Parsing design file '../rtl/sramc/sramc.v'
+Parsing design file '../rtl/sramc/sram_bank_top.v'
+Parsing design file '../rtl/sramc/sram_bank.v'
+Parsing design file '../rtl/sramc/sramc_cs.v'
+Parsing design file '../rtl/sramc/sramc_fsm.v'
+Parsing design file '../rtl/sramc/SRAM_DP_4KX8.v'
+
+Error-[SFCOR] Source file cannot be opened
+  Source file "reg_cfg_00" cannot be opened for reading due to 'No such file 
+  or directory'.
+  Please fix above issue and compile again.
+  "../rtl/sramc/SRAM_DP_4KX8.v", 2095
+
+1 error
+CPU time: 2.000 seconds to compile
