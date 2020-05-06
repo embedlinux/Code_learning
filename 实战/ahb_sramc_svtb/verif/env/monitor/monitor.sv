@@ -39,12 +39,12 @@ task monitor::run();                       //实时采集slv_if的数据，并�
     hwrite_ld <= slv_if.mon_cb.hwrite;
     hsize_ld  <= slv_if.mon_cb.hsize;
     hsel_ld   <= slv_if.mon_cb.hsel;
-    @slv_if.mon_cb;                //等待一个时钟周期，即将monitor采集的接口地址阶段信号寄存一拍
+    @slv_if.mon_cb;                			//等待一个时钟周期，即将monitor采集的接口地址阶段信号寄存一拍
     tr.haddr  = haddr_ld;         
-    tr.htrans = htrans_ld;         //由于tr对象里的数据都为随机化数据，故只能使用阻塞赋值
+    tr.htrans = htrans_ld;         			//由于tr对象里的数据都为随机化数据，故只能使用阻塞赋值
     tr.hwrite = hwrite_ld;
     tr.hsize  = hsize_ld;
-    tr.hsel   = hsel_ld;           //地址和控制信号，slave选择信号寄存一拍，到来需等待数据信号
+    tr.hsel   = hsel_ld;           			//地址和控制信号，slave选择信号寄存一拍，到来需等待数据信号
     tr.hwdata = slv_if.mon_cb.hwdata;
     tr.hrdata = slv_if.mon_cb.hrdata;
     mon2scb_mbx.put(tr);          //将采集的接口信号放入邮箱中，以便scb从邮箱中获取数据
