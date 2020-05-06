@@ -6,6 +6,7 @@ class generator;
   transaction    tr;                //产生对象tr（tr的产生由顶层testcase告知）
   mailbox        mbx=new();         //将tr对象放入邮箱mbx中，负责数据的传递
   event          gen_data;          //定义时间，以便于内部通信
+  // typedef mailbox #(ahb_slv_pkt) generator_mailbox;
   
   extern function new(mailbox mbx,int tr_num);
   extern function build();
@@ -28,8 +29,8 @@ class generator;
 endclass
 
 function generator::new(mailbox mbx,int tr_num);
-  this.mbx = mbx;       //将外部邮箱赋给内部邮箱，使两者相连接，generator的mbx会放在公共邮箱里，等待下一级组件去取
-  this.tr_num = tr_num; //不通testcase发送的tr_num激励数量不一样
+  this.mbx = mbx;       		//将外部邮箱赋给内部邮箱，使两者相连接，generator的mbx会放在公共邮箱里，等待下一级组件去取
+  this.tr_num = tr_num; 		//不同testcase发送的tr_num激励数量不一样
 endfunction
 
 function generator::build();         //在运行testcase之前的准备工作
@@ -48,7 +49,7 @@ task generator::write_data32(logic [31:0] addr, logic [31:0] wdata);
   tr.hsize  = 2'b10;        //2'b10：表示有效数据传输位为32bit
   tr.hburst = 2'b00;        //single操作，非连续传输（可省略），burst传输第一个传输类型为NONSEQ，其后为SEQ
   tr.hwdata = wdata;        //写入数据
-  ->gen_data;     //触发事件，在后边run（）;的时刻，等待事件在收到触发时，就会把tr放入邮箱
+  ->gen_data;     			//触发事件，在后边run（）的时刻，等待事件在收到触发时，就会把tr放入邮箱
 endtask
 
 task generator::write_data16(logic [31:0] addr, logic [31:0] wdata);
@@ -190,11 +191,11 @@ endtask
 
 task generator::no_op();            //无操作命令
   tr = new;
-  if(!tr.randomize())begin  //随机化transaction包中的数据
+  if(!tr.randomize())begin          //随机化transaction包中的数据
     $display("@%0t ERROR::generator::read_addr_random.randomize failed",$time);
   end
-  tr.hsel   = 'h0;         //未选中slave
-  tr.htrans = 'h0;        //无效命令指示，  无效操作
+  tr.hsel   = 'h0;                  //未选中slave
+  tr.htrans = 'h0;                  //无效命令指示，  无效操作
   ->gen_data;
 endtask
 

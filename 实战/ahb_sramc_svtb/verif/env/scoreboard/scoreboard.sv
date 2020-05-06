@@ -38,7 +38,7 @@ task scoreboard::check();
   repeat(tr_num)begin
     mon2scb_mbx.get(tr);            //从monitor到scoreboard的邮箱中取出一个数据包，用于做数据比对
     $display("**@%0t:SCB::tr.haddr(%0h),tr.hwdata(%0h)",$time,tr.haddr,tr.hwdata);  //打印，用于检查错误
-    if(tr.hsel  && tr.htrans[1]) begin           //检查数据是否为有效传输
+    if(tr.hsel && tr.htrans[1]) begin            //检查数据是否为有效传输
       if(tr.hwrite) begin                        //如果为写数据命令
         case({tr.hsize[1:0],tr.haddr[1:0]})begin //根据地址低两位来判断传输带宽8/16/32bit
           4'b00_00: sram_gld[tr.haddr[ADDR_WIDTH-1:2]][7:0]   = tr.hwdata[7:0]; //sram_gld地址位宽14bit，写8bit
@@ -100,7 +100,7 @@ endtask
 
 task scoreboard::run();
   check();                                                      //检查错误
-  if(err_cnt)begin
+  if(!err_cnt)begin
      $display("**********************************************");
      $display("**********************************************");
      $display("******************TEST  PASS******************");

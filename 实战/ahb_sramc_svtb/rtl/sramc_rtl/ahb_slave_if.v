@@ -31,16 +31,16 @@ module ahb_slave_if(
   input			   hsel,
   input			   hwrite,
   input			   hready,
-  input	[2:0]	 hsize,
-  input [1:0]	 htrans,
-  input [2:0]  hburst,   // hard code -> parameter
-  input [31:0] hwdata,
-  input [31:0] haddr,
+  input	[2:0]	   hsize,
+  input [1:0]	   htrans,
+  input [2:0]      hburst,   // hard code -> parameter
+  input [31:0]     hwdata,
+  input [31:0]     haddr,
   
   //output signals
   output		  	hready_resp,
-  output [1:0]	hresp,
-  output [31:0]	hrdata,
+  output [1:0]	    hresp,
+  output [31:0]	    hrdata,
   
   //sram output
   input [7:0]	 sram_q0, // 8bits
@@ -53,11 +53,11 @@ module ahb_slave_if(
   input [7:0]	 sram_q7,
   
   
-  output		   	sram_w_en,      // 0:write, 1:read
-  output [12:0]	sram_addr_out,
-  output [31:0] sram_wdata,     //写sram数据
-  output [3:0]	bank0_csn,      //四字节可以单独写入
-  output [3:0]	bank1_csn
+  output		 sram_w_en,      // 0:write, 1:read
+  output [12:0]	 sram_addr_out,
+  output [31:0]  sram_wdata,     //写sram数据
+  output [3:0]	 bank0_csn,      //四字节可以单独写入
+  output [3:0]	 bank1_csn
   );
 
   //-------------------------------------------------------
@@ -100,6 +100,7 @@ module ahb_slave_if(
   //assign the response and read data of the ahb slave 
   //In order to implement the sram function-writing or reading
   //in one cycle, the value of hready_resp is always "1". 
+  // 选用单周期读写SRAM且SRAM一直处于“OK”状态
   assign hready_resp = 1'b1; // Singal Cycle
   assign hresp  = 2'b00;     // OK
   
@@ -115,9 +116,13 @@ module ahb_slave_if(
                           {sram_q3, sram_q2, sram_q1, sram_q0} :
                           {sram_q7, sram_q6, sram_q5, sram_q4} ;
 
-  //Generate sram write and read enable signals.
+  // Generate sram write and read enable signals.
+  // 只有当TRANS信号为NONSEQ或者SEQ时，数据读写才有效，因此，需要保证SRAM读写时，TRANS信号有效。
+  // SRAM进行写操时，hwrite信号为高；SRAM进行读操作时，hwrite信号为低
   assign sram_write = ((htrans_r == NONSEQ) || (htrans_r == SEQ)) && hwrite_r;
   assign sram_read =  ((htrans_r == NONSEQ) || (htrans_r == SEQ)) && (!hwrite_r);
+  
+  // 写使能信号低有效
   assign sram_w_en = !sram_write;
 
   //generate sram address
@@ -130,6 +135,7 @@ module ahb_slave_if(
   //the width of the address of the bank is 15 bits(14~0), so 
   //the sram_addr[15] is the minimun of the next bank. If its 
   //value is "1", it means the next bank is selcted. 
+  // 只有当SRAM进行读写操作时，片选使能信号才为高电平，主要是节省功耗
   assign sram_csn_en = (sram_write || sram_read);
   //低32K bank0 高32K bank1
   assign bank_sel  = (sram_csn_en && (sram_addr[15] == 1'b0)) ? 1'b1 : 1'b0;
@@ -143,6 +149,7 @@ module ahb_slave_if(
   //-------------------------------------------------------
   //data from ahb writing into sram
   //-------------------------------------------------------
+  // 数据从AHB总线写入SRAM
   assign sram_wdata = hwdata;
   
   //-------------------------------------------------------

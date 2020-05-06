@@ -11,12 +11,12 @@
 
 module sramc_top(
   //input signals
-  input wire			    hclk,
-  input wire			    sram_clk,
-  input wire    		  hresetn,
-  input wire    		  hsel,
+  input wire			hclk,
+  input wire			sram_clk,
+  input wire    		hresetn,
+  input wire    		hsel,
   input wire   	 	    hwrite,
-  input wire			    hready,
+  input wire			hready,
   input wire [2:0]  	hsize ,    
   input wire [2:0]  	hburst,
   input wire [1:0]  	htrans,

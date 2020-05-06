@@ -1,10 +1,10 @@
 `ifndef AHB_SRAM_TEST_SV
 `define AHB_SRAM_TEST_SV
 
-program automatic ahb_sram_test(ahb_slave_if slv_if);        //创建接口对象
-  int    tr_num=20;         //创建数据包变量，默认值为20
-  int    rnd_seed;          //该随机种子变量在此作用不大，可以省略
-  int    tc_num=0;          //定义测试用例号，运行测试用例时对用例进行指定
+program automatic ahb_sram_test(ahb_slave_if slv_if);       //创建接口对象
+  int    tr_num=20;         								//创建数据包变量，默认值为20
+  int    rnd_seed;          								//该随机种子变量在此作用不大，可以省略
+  int    tc_num=0;          								//定义测试用例号，运行测试用例时对用例进行指定
    
   covergroup ahb_slv_cg();     //定义覆盖组，用于功能覆盖率
      coverpoint  slv_if.hsel{ bins hsel = {0,1};}
@@ -33,10 +33,10 @@ program automatic ahb_sram_test(ahb_slave_if slv_if);        //创建接口对�
                                }
   endgroup
 
-  class tc_base;              //定义基础测试用例testcase，其他用例可在此基础上进行扩展
-      int           tr_num;       //设置发包数量
-      environment   ahb_env;          //声明环境句柄
-      virtual  ahb_slave_if  slv_if;  //例化接口
+  class tc_base;              			//定义基础测试用例testcase，其他用例可在此基础上进行扩展
+      int           tr_num;       		//设置发包数量
+      environment   ahb_env;          	//声明环境句柄
+      virtual  ahb_slave_if  slv_if;  	//例化接口
        
       ahb_slv_cg    slv_cg = new();    //实例化覆盖组，创建对象
        
@@ -60,11 +60,11 @@ program automatic ahb_sram_test(ahb_slave_if slv_if);        //创建接口对�
        ahb_env.run();       //运行env中的run（），生产数据，并将其发送到scb,进行数据比对
          begin
            @(posedge slv_if.hclk);
-           @(posedge slv_if.hresetn);      //等待复位撤销
+           @(posedge slv_if.hresetn);      	//等待复位撤销
            @(posedge slv_if.hclk);
            repeat(tr_num)begin
              @(posedge slv_if.hclk);
-             slv_cg.sample();            //核心代码：每一次发包，都对其功能覆盖率进行收集
+             slv_cg.sample();            	//核心代码：每一次发包，都对其功能覆盖率进行收集
            end
          end
     join
