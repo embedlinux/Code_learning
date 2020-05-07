@@ -28,14 +28,14 @@ class Packet;
   rand logic [AMBA_AHB_ADDR_WIDTH-1:0] haddr;
        logic [AMBA_AHB_ADDR_WIDTH-1:0] haddr_q[$];
   rand logic [2:0]                     hburst;
-  rand logic 			                     hlock;
+  rand logic 			               hlock;
   rand logic [3:0]                     hprot;
   rand logic [2:0]                     hsize;
        logic [1:0]                     htrans_q[$];	
   rand logic [AMBA_AHB_DATA_WIDTH-1:0] hwdata_q[$];
-  rand logic 			                     hwrite;
+  rand logic 			               hwrite;
        logic [AMBA_AHB_DATA_WIDTH-1:0] hrdata_q[$];
-       string			                     name;
+       string			               name;
 
   constraint trans_valid { 
     // only for test
