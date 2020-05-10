@@ -2,8 +2,8 @@
 `define MY_SCOREBOARD__SV
 class my_scoreboard extends uvm_scoreboard;
    my_transaction  expect_queue[$];
-   uvm_blocking_get_port #(my_transaction)  exp_port;
-   uvm_blocking_get_port #(my_transaction)  act_port;
+   uvm_blocking_get_port #(my_transaction)  exp_port;   // reference model
+   uvm_blocking_get_port #(my_transaction)  act_port;   // o_agt的monitor
    `uvm_component_utils(my_scoreboard)
 
    extern function new(string name, uvm_component parent = null);
