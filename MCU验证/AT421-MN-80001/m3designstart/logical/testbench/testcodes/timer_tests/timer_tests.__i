@@ -1,0 +1,6 @@
+-c --cpu Cortex-M3 --li -g -O3 --apcs=interwork -I ..\..\..\..\software\cmsis\CMSIS\Include -I ..\..\..\..\software\cmsis\Device\ARM\CM3DS\Include -I ..\..\..\..\software\common\retarget -I ..\..\testcodes\generic
+-I.\RTE\_Debug
+-I"F:\Program Filesx86\MDK\ARM\PACK\ARM\CMSIS\5.0.1\Device\ARM\ARMCM3\Include"
+-I"F:\Program Filesx86\MDK\ARM\CMSIS\Include"
+-D__UVISION_VERSION="524" -DARMCM3 -DCORTEX_M3
+-o .\timer_tests.o --omf_browse .\timer_tests.crf --depend .\timer_tests.d "..\..\..\..\software\common\validation\timer_tests.c"
