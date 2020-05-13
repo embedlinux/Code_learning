@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<!-- Memory Controller Register Definition File -->
+<spirit:component
+ xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1.4"
+ xmlns:vendorExtensions="$IREG_GEN/XMLSchema/SPIRIT"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="$IREG_GEN/XMLSchema/SPIRIT/vendorExtensions.xsd
+                     $IREG_GEN/XMLSchema/SPIRIT/1.4
+                     $IREG_GEN/XMLSchema/SPIRIT/1.4/index.xsd">
+<!-- REQUIRED HEADER INFO - DOES NOT END UP IN ANY GENERATED SV FILES -->
+	<spirit:vendor>Cadence_Design_Systems</spirit:vendor>
+	<spirit:library>Memory_Controller</spirit:library>
+	<spirit:name>memctl_rdb</spirit:name>
+	<spirit:version>1.0</spirit:version>
+        <!-- START OF ADDRESS MAP DEFINITION -->
+	<spirit:memoryMaps>
+		<spirit:memoryMap>
+			<spirit:name>memctl_reg_model</spirit:name>
+			<spirit:addressBlock>
+                                <!-- REGISTER FILE -->
+				<spirit:name>memctl_rf</spirit:name>
+				<spirit:description>Memory Controller Register File</spirit:description>
+				<spirit:baseAddress>0x1000</spirit:baseAddress>
+				<spirit:range>32</spirit:range>
+				<spirit:width>8</spirit:width>
+                                <!-- MODE 0 REGISTER -->
+				<spirit:register>
+					<spirit:name>mode0_reg</spirit:name>
+					<spirit:description>Mode 0 Register</spirit:description>
+					<spirit:addressOffset>0x0</spirit:addressOffset>
+					<spirit:size>8</spirit:size>
+					<spirit:access>read-write</spirit:access>
+					<spirit:reset>
+						<spirit:value>0x00</spirit:value>
+						<spirit:mask>0xff</spirit:mask>
+					</spirit:reset>
+                                <!-- REGISTER VENDOR EXTENSIONS -->
+					<spirit:vendorExtensions>
+						<vendorExtensions:type>mode0_reg_c</vendorExtensions:type>
+						<vendorExtensions:collect_coverage>cov_none</vendorExtensions:collect_coverage>
+						<vendorExtensions:hdl_path>mode0_reg</vendorExtensions:hdl_path>
+					</spirit:vendorExtensions>
+				</spirit:register>
+                                <!-- MODE 1 REGISTER -->
+				<spirit:register>
+					<spirit:name>mode1_reg</spirit:name>
+					<spirit:description>Mode 1 Register</spirit:description>
+					<spirit:addressOffset>0x1</spirit:addressOffset>
+					<spirit:size>8</spirit:size>
+					<spirit:access>read-write</spirit:access>
+					<spirit:reset>
+						<spirit:value>0x22</spirit:value>
+						<spirit:mask>0xff</spirit:mask>
+					</spirit:reset>
+                                <!-- REGISTER VENDOR EXTENSIONS -->
+					<spirit:vendorExtensions>
+						<vendorExtensions:type>mode1_reg_c</vendorExtensions:type>
+						<vendorExtensions:collect_coverage>cov_none</vendorExtensions:collect_coverage>
+						<vendorExtensions:hdl_path>mode1_reg</vendorExtensions:hdl_path>
+					</spirit:vendorExtensions>
+				</spirit:register>
+                                <!-- MODE 2 REGISTER -->
+				<spirit:register>
+					<spirit:name>mode2_reg</spirit:name>
+					<spirit:description>Mode 2 Register</spirit:description>
+					<spirit:addressOffset>0x2</spirit:addressOffset>
+					<spirit:size>8</spirit:size>
+					<spirit:access>read-write</spirit:access>
+					<spirit:reset>
+						<spirit:value>0x55</spirit:value>
+						<spirit:mask>0xff</spirit:mask>
+					</spirit:reset>
+                                <!-- REGISTER VENDOR EXTENSIONS -->
+					<spirit:vendorExtensions>
+						<vendorExtensions:type>mode2_reg_c</vendorExtensions:type>
+						<vendorExtensions:collect_coverage>cov_none</vendorExtensions:collect_coverage>
+						<vendorExtensions:hdl_path>mode2_reg</vendorExtensions:hdl_path>
+					</spirit:vendorExtensions>
+				</spirit:register>
+                                <!-- MODE 3 REGISTER -->
+				<spirit:register>
+					<spirit:name>mode3_reg</spirit:name>
+					<spirit:description>Mode 3 Register</spirit:description>
+					<spirit:addressOffset>0x3</spirit:addressOffset>
+					<spirit:size>8</spirit:size>
+					<spirit:access>read-write</spirit:access>
+					<spirit:reset>
+						<spirit:value>0xAA</spirit:value>
+						<spirit:mask>0xff</spirit:mask>
+					</spirit:reset>
+                                <!-- REGISTER VENDOR EXTENSIONS -->
+					<spirit:vendorExtensions>
+						<vendorExtensions:type>mode3_reg_c</vendorExtensions:type>
+						<vendorExtensions:collect_coverage>cov_none</vendorExtensions:collect_coverage>
+						<vendorExtensions:hdl_path>mode3_reg</vendorExtensions:hdl_path>
+					</spirit:vendorExtensions>
+				</spirit:register>
+                                <!-- STATUS REGISTER -->
+				<spirit:register>
+					<spirit:name>status_reg</spirit:name>
+					<spirit:description>Read Status Register</spirit:description>
+					<spirit:addressOffset>0x10</spirit:addressOffset>
+					<spirit:size>8</spirit:size>
+					<spirit:access>read-only</spirit:access>
+					<spirit:reset>
+						<spirit:value>0x00</spirit:value>
+						<spirit:mask>0xff</spirit:mask>
+					</spirit:reset>
+                                        <!-- FIELD -->
+					<spirit:field>
+						<spirit:name>m0_rd</spirit:name>
+						<spirit:bitOffset>0</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+					        <spirit:vendorExtensions> <vendorExtensions:collect_coverage>cov_compare_and_update</vendorExtensions:collect_coverage> </spirit:vendorExtensions>
+					</spirit:field>
+					<spirit:field>
+						<spirit:name>m1_rd</spirit:name>
+						<spirit:bitOffset>1</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+					        <spirit:vendorExtensions> <vendorExtensions:collect_coverage>cov_compare_and_update</vendorExtensions:collect_coverage> </spirit:vendorExtensions>
+					</spirit:field>
+					<spirit:field>
+						<spirit:name>m2_rd</spirit:name>
+						<spirit:bitOffset>2</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+					        <spirit:vendorExtensions> <vendorExtensions:collect_coverage>cov_compare_and_update</vendorExtensions:collect_coverage> </spirit:vendorExtensions>
+					</spirit:field>
+					<spirit:field>
+						<spirit:name>m3_rd</spirit:name>
+						<spirit:bitOffset>3</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+					        <spirit:vendorExtensions> <vendorExtensions:collect_coverage>cov_compare_and_update</vendorExtensions:collect_coverage> </spirit:vendorExtensions>
+					</spirit:field>
+					<spirit:field>
+						<spirit:name>m0_wr</spirit:name>
+						<spirit:bitOffset>4</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+					        <spirit:vendorExtensions> <vendorExtensions:collect_coverage>cov_compare_and_update</vendorExtensions:collect_coverage> </spirit:vendorExtensions>
+					</spirit:field>
+					<spirit:field>
+						<spirit:name>m1_wr</spirit:name>
+						<spirit:bitOffset>5</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+					        <spirit:vendorExtensions> <vendorExtensions:collect_coverage>cov_compare_and_update</vendorExtensions:collect_coverage> </spirit:vendorExtensions>
+					</spirit:field>
+					<spirit:field>
+						<spirit:name>m2_wr</spirit:name>
+						<spirit:bitOffset>6</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+					        <spirit:vendorExtensions> <vendorExtensions:collect_coverage>cov_compare_and_update</vendorExtensions:collect_coverage> </spirit:vendorExtensions>
+					</spirit:field>
+					<spirit:field>
+						<spirit:name>m3_wr</spirit:name>
+						<spirit:bitOffset>7</spirit:bitOffset>
+						<spirit:bitWidth>1</spirit:bitWidth>
+					        <spirit:vendorExtensions> <vendorExtensions:collect_coverage>cov_compare_and_update</vendorExtensions:collect_coverage> </spirit:vendorExtensions>
+					</spirit:field>
+                                <!-- REGISTER VENDOR EXTENSIONS -->
+					<spirit:vendorExtensions>
+						<vendorExtensions:type>status_reg_c</vendorExtensions:type>
+						<vendorExtensions:collect_coverage>cov_none</vendorExtensions:collect_coverage>
+						<vendorExtensions:hdl_path>status_reg</vendorExtensions:hdl_path>
+						<vendorExtensions:compare_mask>0x00</vendorExtensions:compare_mask>
+					</spirit:vendorExtensions>
+				</spirit:register>
+                                <!-- READ COUNT REGISTER -->
+				<spirit:register>
+					<spirit:name>rd_cnt_reg</spirit:name>
+					<spirit:description>Read Count Register</spirit:description>
+					<spirit:addressOffset>0x11</spirit:addressOffset>
+					<spirit:size>8</spirit:size>
+					<spirit:access>read-only</spirit:access>
+					<spirit:reset>
+						<spirit:value>0x00</spirit:value>
+						<spirit:mask>0xff</spirit:mask>
+					</spirit:reset>
+                                <!-- REGISTER VENDOR EXTENSIONS -->
+					<spirit:vendorExtensions>
+						<vendorExtensions:type>ro_reg_c</vendorExtensions:type>
+						<vendorExtensions:collect_coverage>cov_none</vendorExtensions:collect_coverage>
+						<vendorExtensions:hdl_path>rd_cnt_reg</vendorExtensions:hdl_path>
+						<vendorExtensions:compare_mask>0x00</vendorExtensions:compare_mask>
+					</spirit:vendorExtensions>
+				</spirit:register>
+                                <!-- WRITE COUNT REGISTER -->
+				<spirit:register>
+					<spirit:name>wr_cnt_reg</spirit:name>
+					<spirit:description>Write Count Register</spirit:description>
+					<spirit:addressOffset>0x12</spirit:addressOffset>
+					<spirit:size>8</spirit:size>
+					<spirit:access>read-only</spirit:access>
+					<spirit:reset>
+						<spirit:value>0x00</spirit:value>
+						<spirit:mask>0xff</spirit:mask>
+					</spirit:reset>
+                                <!-- REGISTER VENDOR EXTENSIONS -->
+					<spirit:vendorExtensions>
+                                                <!-- NOTE: shares the same type as rd_cnt_reg -->
+						<vendorExtensions:type>ro_reg_c</vendorExtensions:type>
+						<vendorExtensions:collect_coverage>cov_none</vendorExtensions:collect_coverage>
+						<vendorExtensions:hdl_path>wr_cnt_reg</vendorExtensions:hdl_path>
+					</spirit:vendorExtensions>
+				</spirit:register>
+                                <!-- REGISTER FILE VENDOR EXTENSIONS -->
+				<spirit:vendorExtensions>
+					<vendorExtensions:type>memctl_rf_c</vendorExtensions:type>
+					<vendorExtensions:hdl_path>dut.memctl</vendorExtensions:hdl_path>
+				</spirit:vendorExtensions>
+			</spirit:addressBlock>
+			<spirit:addressBlock>
+                                <!-- 8x4096 MEMORY FILE -->
+				<spirit:name>memory4096</spirit:name>
+				<spirit:baseAddress>0x000</spirit:baseAddress>
+				<spirit:range>4096</spirit:range>
+				<spirit:width>8</spirit:width>
+				<spirit:usage>memory</spirit:usage>
+				<spirit:volatile>false</spirit:volatile>
+				<spirit:access>read-write</spirit:access>
+                                <!-- MEMORY VENDOR EXTENSIONS -->
+				<spirit:vendorExtensions>
+					<vendorExtensions:type>memory4096_c</vendorExtensions:type>
+					<vendorExtensions:hdl_path>dut.memctl.memory</vendorExtensions:hdl_path>
+				</spirit:vendorExtensions>
+			</spirit:addressBlock>
+		</spirit:memoryMap>
+	</spirit:memoryMaps>
+        <!-- ADDRESS MAP VENDOR EXTENSIONS -->
+	<spirit:vendorExtensions>
+		<vendorExtensions:type>memctl_reg_model_c</vendorExtensions:type>
+		<vendorExtensions:hdl_path>top</vendorExtensions:hdl_path>
+		<vendorExtensions:size>0x1020</vendorExtensions:size>
+	</spirit:vendorExtensions>
+</spirit:component>
