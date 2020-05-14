@@ -1,0 +1,56 @@
+#pragma vip(5f2aa3bb, a08689a4, 00000000, 0000070d, "Sep  1 2010", "18:56:17")
+// -------------------------------------------------------------------
+//
+//
+//                   (C) COPYRIGHT 2004-2010 SYNOPSYS INC.
+//                           ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this software
+//  is subject to the terms and conditions of a written license agreement
+//  between you, or your company, and Synopsys, Inc.
+//
+// File    : Reporter.vrh
+// Author  : Joe Mc Cann
+// Created : Wed Jul 31 14:10:03 IST 2002
+// Abstract: Object to handle simulation reporting for the
+//           Macrocell
+//
+// -------------------------------------------------------------------
+// Revision: $Id: //dwh/DW_ocb/DW_apb_timers/amba_dev/sim/testbench/Reporter.vrh#2 $ $Author: jduarte $ $DateTime: 2010/07/20 09:40:49 $
+// -------------------------------------------------------------------
+
+#ifndef REPORTER_VRH
+#define REPORTER_VRH
+
+#include <vera_defines.vrh>
+
+#ifndef REPORTER_VR
+#define REPORTER_EXTERN extern
+#else
+#define REPORTER_EXTERN
+#endif
+
+enum ReportLevel = REP_INFO, REP_ERROR, REP_DEBUG, REP_UNMASKED;
+
+// ---------------------------------------
+// : Logger Class
+// ---------------------------------------
+REPORTER_EXTERN class Reporter
+{
+#ifdef REPORTER_VR
+  local string          Header;
+  local integer         Id;
+  local string          ObjName;
+  local integer         FileHandle;
+  local ReportLevel     rep_level;
+#endif /* REPORTER_VR */
+  
+  public task new( integer Id, string ObjName, integer FileHandle);
+
+  public task configure( ReportLevel SetLevel );
+
+  public task report( ReportLevel level, string msg, (integer sim_time = -1) );
+}
+
+#endif /* REPORTER_VRH */

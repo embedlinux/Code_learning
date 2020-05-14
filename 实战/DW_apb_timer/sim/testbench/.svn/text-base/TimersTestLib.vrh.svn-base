@@ -1,0 +1,94 @@
+#pragma vip(4bd1b398, ab96d44a, 00000004, 00000e70, "Sep  1 2010", "18:56:19")
+// -------------------------------------------------------------------------
+//
+//                   (C) COPYRIGHT 2004-2010 SYNOPSYS INC.
+//                           ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this software
+//  is subject to the terms and conditions of a written license agreement
+//  between you, or your company, and Synopsys, Inc.
+//
+// File    : TimersTestLib.vrh
+// Author  : Joe Mc Cann
+// Created : Thu Jan 10 14:51:29 GMT 2002
+// Abstract: Header file DW_apb_timers test library
+//
+// -------------------------------------------------------------------------
+// Revision: $Id: //dwh/DW_ocb/DW_apb_timers/amba_dev/sim/testbench/TimersTestLib.vrh#2 $ $Author: jduarte $ $DateTime: 2010/07/20 09:40:49 $
+// -------------------------------------------------------------------------
+
+#ifndef TIMERSTESTLIB_VRH
+#define TIMERSTESTLIB_VRH
+
+#include "AhbApbTimersTestHarness.vrh"
+#include "Logger.vrh"
+
+#ifndef TIMERSTESTLIB_VR
+#define TIMERSTESTLIB_EXTERN extern
+#else
+#define TIMERSTESTLIB_EXTERN
+#endif /* TIMERSTESTLIB_VR */
+
+TIMERSTESTLIB_EXTERN class TimersTestLib
+{
+   
+#ifdef TIMERSTESTLIB_VR
+
+   local AhbApbTimersTestHarness      m_th;
+   local Logger                       m_log;
+   
+   local integer		      m_apb_dbw;
+   local integer		      m_ahb_dbw;
+   local integer		      m_xfer_attr;
+   local integer 		      m_handle;
+   local integer 		      tim_intr_io;
+   local integer 		      m_hresp;
+   local integer 		      tim_individual;
+   local integer                      m_addr_inc;
+   local integer		      m_res_handle;
+   local integer                      num_timers;
+   local integer		      apb_slv_num;
+   local integer		      ahb_slv_num;
+   local integer                      tim_intrpt_plrity;
+   local integer                      tim_rdata_width;
+   local integer                      tim_combined;
+   local integer                      tim_coherency;
+   local integer                      tim_newmode;
+   local integer                      rb_num_transfers;
+   local bit [2:0]                    m_size;
+   local bit [31:0]                   tim_version_id;
+   local bit                          m_hready;
+   local integer 		      m_status;
+   local AhbDataType                  m_hrdata;
+   local AhbAddrType                  m_addr;
+   local AhbDataType                  m_hwdata;
+   local string			      msg;
+#endif /* TIMERSTESTLIB_VR */
+
+   task new(AhbApbTimersTestHarness th);
+   task test_reset();
+   task test_readwrite_regs();
+   task test_timer();
+
+#ifdef TIMERSTESTLIB_VR
+
+   local task read_timer_reg (bit[31:0] address,  bit [31:0] expected_data);
+   local task test_rw_regs(integer num_xfers, integer ahb_slv_num, (integer apb_slv_num = 0),(integer reg_num = 0) );
+   local task configure_timer (integer apb_slv_num, integer timer_number, bit [31:0] load_count, bit timer_en, bit timer_mode);
+   local task check_interrupt( integer apb_slv_num,bit [7:0] mode, integer eoi);
+   local task check_interrupt_mask();
+   local task write_timer_reg (bit[31:0] address,  bit [31:0] write_data, integer apb_dbwidth);
+   local task coverage_test();
+   local task mstcmd(string cmd);
+   local task sm_mismatch(bit[1023:0] read_data = 1024'b0, bit[1023:0] exp_data = 1024'b0, (integer success=1));
+   local task test_toggle(integer timer_num = 1); 
+   local task check_toggle(integer timer_num = 1, bit expected_value = 1'b0);
+   local task wait_for_interrupt();
+   local task check_vid();
+
+#endif /* TIMERSTESTLIB_VR */
+
+}
+
+#endif /* TIMERSTESTLIB_VRH */

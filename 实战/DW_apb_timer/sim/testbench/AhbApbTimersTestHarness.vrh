@@ -1,0 +1,124 @@
+#pragma vip(d3d665ee, 056158df, 00000000, 00000c57, "Sep  1 2010", "18:56:08")
+// -------------------------------------------------------------------------
+//
+//                   (C) COPYRIGHT 2004-2010 SYNOPSYS INC.
+//                           ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this software
+//  is subject to the terms and conditions of a written license agreement
+//  between you, or your company, and Synopsys, Inc.
+//
+// File    : AhbApbTimersTestHarness.vrh
+// Author  : Joe Mc Cann
+// Created : Mon Nov 26 10:38:59 GMT 2001
+// Abstract:
+//
+// -------------------------------------------------------------------------
+// Revision: $Id: //dwh/DW_ocb/DW_apb_timers/amba_dev/sim/testbench/AhbApbTimersTestHarness.vrh#2 $ $Author: jduarte $ $DateTime: 2010/07/20 09:40:49 $
+// -------------------------------------------------------------------------
+
+#ifndef AHBAPBTIMERSTESTHARNESS_VRH
+#define AHBAPBTIMERSTESTHARNESS_VRH
+
+#include "AhbApbTestHarness.vrh"
+
+#ifndef AHBAPBTIMERSTESTHARNESS_VR
+#define AHBAPBTIMERSTESTHARNESS_EXTERN   extern
+#else
+#define AHBAPBTIMERSTESTHARNESS_EXTERN
+#endif
+
+// port for the APB peripheral
+port ApbTimerPort
+{
+   pclk;
+   presetn;
+   timer_1_clk;
+   timer_2_clk;
+   timer_3_clk;
+   timer_4_clk;
+   timer_5_clk;
+   timer_6_clk;
+   timer_7_clk;
+   timer_8_clk;
+   timer_1_resetn;
+   timer_2_resetn;
+   timer_3_resetn;
+   timer_4_resetn;
+   timer_5_resetn;
+   timer_6_resetn;
+   timer_7_resetn;
+   timer_8_resetn;
+   timer_1_toggle;
+   timer_2_toggle;
+   timer_3_toggle;
+   timer_4_toggle;
+   timer_5_toggle;
+   timer_6_toggle;
+   timer_7_toggle;
+   timer_8_toggle;
+   stop_pclk;
+   timer_1_pause;
+   timer_2_pause;
+   timer_3_pause;
+   timer_4_pause;
+   timer_5_pause;
+   timer_6_pause;
+   timer_7_pause;
+   timer_8_pause;
+   scan_mode;
+   timer_en;
+   timer_intr;
+   timer_intr_flag;
+
+   
+} // port
+
+port TiClkPort
+{
+   timer_clk;
+}
+AHBAPBTIMERSTESTHARNESS_EXTERN class DutTimersConnector extends AhbApbTestHarness
+{
+   public ApbTimerPort        periph_port;
+   public ParseDefines        periph_cc;
+
+#ifdef AHBAPBTIMERSTESTHARNESS_VR
+   local TiClkPort        t_clk_port[9];
+#endif
+
+   public task new(
+      var ParseDefines ahb_cc,
+      var ParseDefines apb_cc,
+      var ParseDefines periph_cc,
+      bit[15:0]    ahb_mst_bfm,
+      bit[15:0]    ahb_slv_bfm,
+      bit[15:0]    apb_slv_bfm,
+      bit          ahb_mon_present,
+      bit          apb_mon_present
+      );
+   
+#ifdef AHBAPBTIMERSTESTHARNESS_VR
+   local task connect_periph_port();
+#endif /* AHBAPBTIMERSTESTHARNESS_VR */
+}
+
+
+AHBAPBTIMERSTESTHARNESS_EXTERN class AhbApbTimersTestHarness extends DutTimersConnector
+{
+
+   public task new(
+      var ParseDefines ahb_cc,
+      var ParseDefines apb_cc,
+      var ParseDefines periph_cc,
+      (bit[15:0]    ahb_mst_bfm      = 16'hffff),
+      (bit[15:0]    ahb_slv_bfm      = 16'hfffd),
+      (bit[15:0]    apb_slv_bfm      = 16'hfffe),
+      (bit          ahb_mon_present  = 1'h1),
+      (bit          apb_mon_present  = 1'h1)
+      );
+}
+
+#endif /* AHBAPBTIMERSTESTHARNESS_VRH */
+

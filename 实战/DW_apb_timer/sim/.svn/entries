@@ -1,0 +1,40 @@
+10
+
+dir
+1401
+svn://server01/HX_BDGPS1_SoC/trunk/soc/design/IP/DW_apb_timer/sim
+svn://server01/HX_BDGPS1_SoC
+
+
+
+2013-12-03T02:50:28.320733Z
+3
+chip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fe023aeb-7e6e-46f0-b225-3ffd2fa085cf
+
+test_timer
+dir
+
+testbench
+dir
+
+test_reset
+dir
+
+test_readwrite_regs
+dir
+
