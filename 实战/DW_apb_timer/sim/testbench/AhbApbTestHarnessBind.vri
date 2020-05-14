@@ -1,0 +1,86 @@
+#pragma vip(f9033cce, ab34ae5d, 00000000, 00000897, "Sep  1 2010", "18:56:20")
+// -------------------------------------------------------------------
+//
+//                   (C) COPYRIGHT 2004-2010 SYNOPSYS INC.
+//                           ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this software
+//  is subject to the terms and conditions of a written license agreement
+//  between you, or your company, and Synopsys, Inc.
+//
+// -------------------------------------------------------------------
+#ifndef AHBAPBTESTHARNESSBIND_VRI
+#define AHBAPBTESTHARNESSBIND_VRI
+bind ApbMonitorPort ApbMonitorVoidBind
+{
+   pclk         void;
+   presetn      void;
+   paddr        void;
+   penable      void;
+   pwrite       void;
+   pwdata       void;
+   pready_s0    void;
+   pready_s1    void;
+   pready_s2    void;
+   pready_s3    void;
+   pready_s4    void;
+   pready_s5    void;
+   pready_s6    void;
+   pready_s7    void;
+   pready_s8    void;
+   pready_s9    void;
+   pready_s10   void;
+   pready_s11   void;
+   pready_s12   void;
+   pready_s13   void;
+   pready_s14   void;
+   pready_s15   void;
+   pslverr_s0   void;
+   pslverr_s1   void;
+   pslverr_s2   void;
+   pslverr_s3   void;
+   pslverr_s4   void;
+   pslverr_s5   void;
+   pslverr_s6   void;
+   pslverr_s7   void;
+   pslverr_s8   void;
+   pslverr_s9   void;
+   pslverr_s10  void;
+   pslverr_s11  void;
+   pslverr_s12  void;
+   pslverr_s13  void;
+   pslverr_s14  void;
+   pslverr_s15  void;
+   prdata_s0    void;
+   prdata_s1    void;
+   prdata_s2    void;
+   prdata_s3    void;
+   prdata_s4    void;
+   prdata_s5    void;
+   prdata_s6    void;
+   prdata_s7    void;
+   prdata_s8    void;
+   prdata_s9    void;
+   prdata_s10   void;
+   prdata_s11   void;
+   prdata_s12   void;
+   prdata_s13   void;
+   prdata_s14   void;
+   prdata_s15   void;
+   psel         void;
+}
+bind ApbSlavePort ApbSlaveVoidBind
+{
+   pclk         void;
+   psel         void;
+   penable      void;
+   paddr        void;
+   pwrite       void;
+   presetn      void;
+   pwdata       void;
+   pready       void;
+   pslverr      void;
+   prdata       void;
+}
+#endif

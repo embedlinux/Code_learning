@@ -1,0 +1,20 @@
+#pragma vip(e5adb11d, b9056662, 00000000, 000002eb, "Sep  1 2010", "18:56:23")
+// -------------------------------------------------------------------
+//
+//                   (C) COPYRIGHT 2004-2010 SYNOPSYS INC.
+//                           ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this software
+//  is subject to the terms and conditions of a written license agreement
+//  between you, or your company, and Synopsys, Inc.
+//
+// -------------------------------------------------------------------
+#define int integer
+#define UNKNOWN_INT -2147483647 - 1 
+#define _CD_
+#define _CI_
+#define _CW_
+#define _CE_
+#define _CF_
+#define _CN_

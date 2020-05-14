@@ -1,0 +1,28 @@
+#pragma vip(700a7143, ab95eafd, 00000004, 00000512, "Sep  1 2010", "18:55:52")
+// -------------------------------------------------------------------------
+//
+//                   (C) COPYRIGHT 2004-2010 SYNOPSYS INC.
+//                           ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this software
+//  is subject to the terms and conditions of a written license agreement
+//  between you, or your company, and Synopsys, Inc.
+//
+// File    : test.vrh
+// Authors : Joe Mc Cann/Ray Beechinor
+// Created : Fri Nov 09 11:52:46 BST 2001
+// Abstract: This file includes header files required by each test
+//           delivered with a coreKit
+//
+// Methods : 
+//
+// -------------------------------------------------------------------------
+// Revision: $Id: //dwh/DW_ocb/DW_apb_timers/amba_dev/sim/test_readwrite_regs/test.vrh#2 $ $Author: jduarte $ $DateTime: 2010/07/20 09:40:49 $
+// -------------------------------------------------------------------------
+
+
+// -------------------------------------------------------------------------
+// Include top-level VERA program header
+// -------------------------------------------------------------------------
+#include "TimersTestLib.vrh"

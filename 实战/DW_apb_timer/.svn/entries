@@ -1,0 +1,40 @@
+10
+
+dir
+1401
+svn://server01/HX_BDGPS1_SoC/trunk/soc/design/IP/DW_apb_timer
+svn://server01/HX_BDGPS1_SoC
+
+
+
+2014-01-27T08:03:20.669714Z
+322
+chip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fe023aeb-7e6e-46f0-b225-3ffd2fa085cf
+
+verilog_headers
+dir
+
+doc
+dir
+
+src
+dir
+
+sim
+dir
+

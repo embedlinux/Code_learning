@@ -1,0 +1,54 @@
+#pragma vip(ee34e19c, 523d3152, 00000000, 000006fd, "Sep  1 2010", "18:56:15")
+// -------------------------------------------------------------------
+//
+//                   (C) COPYRIGHT 2004-2010 SYNOPSYS INC.
+//                           ALL RIGHTS RESERVED
+//
+//  This software and the associated documentation are confidential and
+//  proprietary to Synopsys, Inc.  Your use or disclosure of this software
+//  is subject to the terms and conditions of a written license agreement
+//  between you, or your company, and Synopsys, Inc.
+//
+// File    : Logger.vrh
+// Author  : Peter Gillen
+// Created : Fri Jun 28 14:24:09 BST 2002
+// Abstract: Logger Class
+//
+// -------------------------------------------------------------------
+// Revision: $Id: //dwh/DW_ocb/DW_apb_timers/amba_dev/sim/testbench/Logger.vrh#2 $ $Author: jduarte $ $DateTime: 2010/07/20 09:40:49 $
+// -------------------------------------------------------------------
+#ifndef AHBICMBASE_VRH
+#define AHBICMBASE_VRH
+
+#include <vera_defines.vrh>
+
+#ifndef AHBICMBASE_VR
+#define AHBICMBASE_EXTERN extern
+#else
+#define AHBICMBASE_EXTERN
+#endif /* AHBICMBASE_VR */
+
+enum ReportLevel = REP_INFO, REP_ERROR, REP_DEBUG, REP_UNMASKED;
+
+// ---------------------------------------
+// : AHB ICM - Logger Class
+// ---------------------------------------
+AHBICMBASE_EXTERN class Logger
+{
+#ifdef AHBICMBASE_VR
+  local string          Header;
+  local integer         Id;
+  local string          ObjName;
+  local integer         FileHandle;
+  local ReportLevel     rep_level;
+#endif /* AHBICMBASE_VR */
+  
+  public task new( integer Id, string ObjName, integer FileHandle);
+
+  public task configure( ReportLevel SetLevel );
+
+  public task report( ReportLevel level, string msg, (integer sim_time = -1) );
+}
+#endif /* AHBICMBASE_VRH */
+
+
