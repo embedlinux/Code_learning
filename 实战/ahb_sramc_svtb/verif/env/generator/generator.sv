@@ -20,10 +20,10 @@ class generator;
   extern task read_data32(logic [31:0] addr);
   extern task read_data16(logic [31:0] addr);
   extern task read_data8(logic [31:0] addr);
-  extern task read_addr_random();          //读地址随机
-  extern task read_write_random();         //读/写都随机，即地址、数据和类型hwrite都随机
-  extern task all_random();          //所有的tr数据都随机，包括hsel、hwrite等信号
-  extern task no_op();            //无操作，空命令
+  extern task read_addr_random();          	//读地址随机
+  extern task read_write_random();         	//读/写都随机，即地址、数据和类型hwrite都随机
+  extern task all_random();          		//所有的tr数据都随机，包括hsel、hwrite等信号
+  extern task no_op();            			//无操作，空命令
   extern task run();
 
 endclass

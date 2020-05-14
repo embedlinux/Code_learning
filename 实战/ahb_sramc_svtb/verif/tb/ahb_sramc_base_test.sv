@@ -16,8 +16,4 @@ program automatic ahb_sramc_base_test(ahb_slv_if.driver drv_if);        //创建
 		dri.start();
 		repeat(number_packets*2+1) @(dri.drv_cb);
 	end
-	
-	
-
-
 endprogram
