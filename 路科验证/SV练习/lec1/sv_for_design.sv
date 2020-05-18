@@ -59,7 +59,7 @@ initial begin: inside_operator
     $display("v1: %0b meets onehot vector requirement!", v1);
   else
     $display("v1: %0b does not meet onehot vector requirement!", v1);
-
+vim
   if($onehot(v1) == 1)
     $display("v1: %0b meets onehot vector requirement!", v1);
   else

@@ -111,7 +111,6 @@ initial begin: associate_array
 
   // associate array copy
   id_score2 = id_score1;
-  id_score2[101] = 101;
   id_score2[102] = 102;
   id_score2[103] = 103;
   id_score2[104] = 104;
