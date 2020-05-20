@@ -22,7 +22,7 @@ endfunction: new
 task Generator::gen();
   static int pkts_generated = 0;
   if (TRACE_ON) $display("[TRACE]%t %s:%m", $realtime, this.name);
-  this.pkt2send.name = $psprintf("Packet[%0d]", pkts_generated++);
+  this.pkt2send.name = $sprintf("Packet[%0d]", pkts_generated++);
   if (!this.pkt2send.randomize()) begin
     $display("\n%m\n[ERROR]%t Randomization Failed!\n", $realtime);
     $finish;
