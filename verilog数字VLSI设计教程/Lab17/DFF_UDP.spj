@@ -1,0 +1,60 @@
+[Settings]
+Version=2001.1
+EnableLibCc=No
+DisableCache=No
+SimFile=
+TabStop=4
+Mode=Debug
+[Files]
+0="dff_udp.v"
+[Position]
+Width=1254
+Height=749
+X=16
+Y=69
+[WindowPos]
+Output=0,1,0,-1,0,-1,0,0,750,440
+Explorer=0,1,0,-1,0,-1,106,415,1162,639
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,10,54,1242,250
+[Options]
+CCEnable=Yes
+NoFloatWarn=No
+XlEvalOrder=No
+AutoFileSave=No
+SimFileSize=Size
+DebugEnable=Yes
+CcOpEnable=No
+[Define]
+0=SILOS=1
+[DebugMode]
+Delay=Typ
+SaveAll=Yes
+SaveCell=No
+SilosExt=No
+LogFile=No
+FunctionalSim=No
+RetainSimData=No
+DiskSize=1000M
+RecirculateTime=
+CommandLine=
+[Explorer]
+P1Width=100
+P2Width=937
+View=Icon
+Scope=DFF_UDPTst
+[Group0]
+Name=Default
+0="DFF_UDPTst : QnWatch" default
+1="DFF_UDPTst : QWatch" default
+2="DFF_UDPTst : DStim" default
+3="DFF_UDPTst : ClkStim" default
+4="DFF_UDPTst : RstStim" default
+[Analyzer]
+P1Width=100
+P2Width=1113
+C1Width=86
+C2Width=60
+C3Width=60
+[GroupList]
+0=Default

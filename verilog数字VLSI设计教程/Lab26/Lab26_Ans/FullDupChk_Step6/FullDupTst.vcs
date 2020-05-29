@@ -1,0 +1,17 @@
+FullDupTst.v
+FullDup.v
+ SerDes/SerDes.v
+  SerDes/Serializer/Serializer.v
+  SerDes/Serializer/SerEncoder/SerEncoder.v
+  SerDes/Serializer/SerialTx/SerialTx.v
+  SerDes/Deserializer/Deserializer.v
+  SerDes/Deserializer/DesDecoder/DesDecoder.v
+  SerDes/Deserializer/SerialRx/SerialRx.v
+      SerDes/FIFO/FIFOTop.v
+      SerDes/FIFO/FIFOStateM.v
+      SerDes/FIFO/DPMem1kx32.v
+      SerDes/PLL/PLLTop.v
+      SerDes/PLL/ClockComparator.v
+      SerDes/PLL/MultiCounter.v
+      SerDes/PLL/VFO.v
+-v tcbn90ghp_v2001.v

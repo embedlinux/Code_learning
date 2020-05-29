@@ -1,0 +1,44 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="sershiftregister.v"
+1="shiftflop.v"
+[DebugMode]
+RetainSimData=Yes
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,512,260,1174,584
+Output=0,1,0,-1,0,-1,28,2,622,442
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,6,43,1214,245
+[Group0]
+Name=Default
+0="ShiftTester : S_Clr" default
+1="ShiftTester : S_Ena" default
+2="ShiftTester : S_Clk" default
+3="ShiftTester : S_D" default
+4="ShiftTester : S_QOut" default
+[Analyzer]
+P1Width=104
+P2Width=1085
+C1Width=96
+C2Width=60
+C3Width=60
+[Explorer]
+P1Width=261
+P2Width=382
+View=Details
+C1Width=178
+C2Width=122
+Scope=ShiftTester.SerShifter
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1244
+Height=749
+X=30
+Y=92
+[GroupList]
+0=Default

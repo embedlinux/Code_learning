@@ -1,0 +1,46 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="parshiftregister.v"
+1="shiftflop.v"
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,136,336,1164,508
+Output=0,1,0,-1,0,-1,0,0,560,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,12,46,1216,328
+[Position]
+X=26
+Y=64
+Width=1238
+Height=631
+[DebugMode]
+RetainSimData=Yes
+[Explorer]
+P1Width=100
+P2Width=909
+View=Icon
+Scope=ParShiftTester.ParShifter
+[Group0]
+Name=Default
+0="ParShiftTester.ParShifter : Qs" default Binary
+1="ParShiftTester.ParShifter : Ds" default Binary
+2="ParShiftTester.ParShifter : ShiftEna" default
+3="ParShiftTester.ParShifter : ClrIn" default
+4="ParShiftTester.ParShifter : ClkIn" default
+5="ParShiftTester.ParShifter : ParLoad" default TraceColor/red/
+6="ParShiftTester.ParShifter : ParDIn" default Binary
+7="ParShiftTester.ParShifter : SerDIn" default
+8="ParShiftTester.ParShifter : QOut" default
+[Analyzer]
+P1Width=121
+P2Width=1064
+C1Width=116
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[GroupList]
+0=Default

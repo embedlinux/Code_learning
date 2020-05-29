@@ -1,0 +1,129 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+# Our TSMC core library does not include pads, so we
+# introduce here a modified version of the corresponding 1.8V 
+# TSMC pad library.  The pads are multipurpose, and DC can not
+# synthesize them.  So, a modified version is provided for
+# the lab exercise.  I/O pin names and timing are from the
+# original TSMC library:
+#
+set search_path ". \
+ [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN \
+ [getenv SYNOPSYS]/../TSMCLibes/tpdn90g18SYN \
+ [getenv SYNOPSYS]/libraries/syn"
+#
+set target_library "tcbn90ghptc.db tpdn90g18tc_3PAD.db"
+#
+# Design-Ware Foundation required for BSD:
+set link_library "tpdn90g18tc_3PAD.db tcbn90ghptc.db dw_foundation.sldb"
+#
+set symbol_library "tcbn90ghp.sdb"
+#
+# Prevent use of power-rail ties (makes schematic
+# neater):
+set_dont_use "tcbn90ghptc/TIEL tcbn90ghptc/TIEH"; 
+# ---------------------------------
+#
+define_design_lib BScan -path ./DC_BScanSynth
+#
+analyze   -work BScan -format verilog AndOr.v 
+analyze   -work BScan -format verilog SR.v 
+analyze   -work BScan -format verilog XorNor.v 
+analyze   -work BScan -format verilog Intro_Top.v 
+analyze   -work BScan -format verilog tpdn90g18_3PAD.v 
+#
+elaborate -work BScan  Intro_Top
+#
+# ---------------------------------
+# Suppress some warnings to prevent loss of real errors off-screen:
+suppress_message "LINT-28"; # = (tap) port ... is not connected to any nets. 
+suppress_message "LINT-60"; # = input pin ... is not connected to any nets. 
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC64K_Lowk_Conservative"  [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+set_drive      10.0 [all_inputs]
+set_load       10.0 [all_outputs]
+set_max_fanout 30   [all_inputs]
+set_max_fanout 20   [all_designs]
+#
+# module-specific constraints:
+#
+set_max_area  0 
+#
+compile -area_effort high
+#
+# Select boundary scan:
+set_dft_configuration -boundary enable
+#
+# Define a clock for the scan cells:
+create_clock -period 100 [get_ports ScanClk]
+set_propagated_clock [all_clocks]
+#
+set_dft_signal -type tms  -port [get_ports ScanMode]
+set_dft_signal -type tdi  -port [get_ports ScanIn]
+set_dft_signal -type tdo  -port [get_ports ScanOut]
+set_dft_signal -type tck  -port [get_ports ScanClk]
+set_dft_signal -type trst -port [get_ports ScanRst]
+#
+set_dft_signal -view existing_dft \
+        -type ScanEnable -port [get_ports ScanMode]
+set_dft_signal -view existing_dft \
+        -type ScanDataIn -port [get_ports ScanIn]
+set_dft_signal -view existing_dft \
+        -type ScanDataOut -port [get_ports ScanOut]
+set_dft_signal -view existing_dft -timing [list 45 55] \
+        -type ScanMasterClock -port [get_ports ScanClk]
+#
+#No need for this (inferred):
+#  set_dft_signal -view existing_dft \
+#       -type Reset -port [get_ports ScanRst]
+#
+create_test_protocol -infer_asynch -infer_clock
+#
+insert_dft
+#
+write -hierarchy -format verilog -output Intro_TopNetlistBSD.v 
+#
+# Drop into interactive mode:
+#
+report_area > /dev/null
+report_area
+echo "Report area:"             > Intro_TopNetlistBSD.log
+report_area                    >> Intro_TopNetlistBSD.log
+report_timing
+echo "Report timing:"          >> Intro_TopNetlistBSD.log
+report_timing
+check_design -multiple_designs
+echo "Check design:"           >> Intro_TopNetlistBSD.log
+check_design -multiple_designs >> Intro_TopNetlistBSD.log
+#
+# Test Reports:
+echo "Report test:"      >> Intro_TopNetlistBSD.log
+report_dft_configuration
+report_dft_configuration >> Intro_TopNetlistBSD.log
+report_dft_signal
+report_dft_signal        >> Intro_TopNetlistBSD.log
+#
+# Drop into interactive mode:
+#
+

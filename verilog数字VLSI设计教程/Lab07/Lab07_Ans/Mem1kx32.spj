@@ -1,0 +1,50 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,84,561,1128,717
+Output=0,1,0,-1,0,-1,26,13,578,453
+Watch=0,1,0,-1,0,-1,110,115,1078,628
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,16,68,1194,381
+[Position]
+X=66
+Y=69
+Width=1200
+Height=845
+[DebugMode]
+RetainSimData=Yes
+[Analyzer]
+P1Width=147
+P2Width=1012
+C1Width=148
+C2Width=60
+C3Width=60
+FaceName=Lucida Sans Unicode
+PtSize=8
+FontWeight=700
+[Explorer]
+P1Width=100
+P2Width=925
+View=Icon
+Scope=Mem1kTest
+[Options]
+DebugEnable=Yes
+CCEnable=No
+CcOpEnable=No
+[Group0]
+Name=Default
+0="Blank" default
+1="Mem1kTest : DreadyWatch" default
+2="Mem1kTest : ParityErrWatch" default
+3="Mem1kTest : DataOWatch" default
+4="Mem1kTest : AddrStim" default
+5="Mem1kTest : WriteStim" default
+6="Mem1kTest : ReadStim" default
+7="Mem1kTest : ChipEnaStim" default
+8="Mem1kTest : ClockInStim" default
+9="Mem1kTest : DataStim" default
+[Files]
+0="mem1kx32.v"
+[GroupList]
+0=Default

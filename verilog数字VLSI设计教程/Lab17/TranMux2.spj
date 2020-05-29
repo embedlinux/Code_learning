@@ -1,0 +1,37 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="tranmux2.v"
+[Position]
+Width=1242
+Height=667
+X=10
+Y=74
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,44,418,1054,545
+Output=0,1,0,-1,0,-1,0,0,628,499
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,24,127,1212,346
+[Explorer]
+P1Width=100
+P2Width=891
+View=Icon
+Scope=TranMux2Tst.U1
+[Group0]
+Name=Default
+0="TranMux2Tst.U1 : InBus" default Binary
+1="TranMux2Tst : ChosenWatch" default
+2="TranMux2Tst : SelStim" default
+[Analyzer]
+P1Width=112
+P2Width=1057
+C1Width=122
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[GroupList]
+0=Default

@@ -1,0 +1,43 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+X=14
+Y=82
+Width=1256
+Height=749
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,166,418,1204,632
+Output=0,1,0,-1,0,-1,14,3,575,473
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,-4,51,1232,321
+[Analyzer]
+P1Width=149
+P2Width=1068
+C1Width=152
+C2Width=60
+C3Width=60
+[Explorer]
+P1Width=100
+P2Width=919
+View=Icon
+Scope=GenericSyncDesTst.U1
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Files]
+0="genericsyncdes.v"
+[Group0]
+Name=Default
+0="GenericSyncDesTst : ParValidWatch" default
+1="GenericSyncDesTst : ParRstStim" default
+2="GenericSyncDesTst : ClkCnt" default Decimal
+3="GenericSyncDesTst.U1 : N" default Decimal
+4="GenericSyncDesTst.U1 : ParSR" default Binary TraceColor/red/
+5="GenericSyncDesTst : ParBusWatch" default Binary
+6="GenericSyncDesTst : ClkStim" default
+7="GenericSyncDesTst : SerValidStim" default
+8="GenericSyncDesTst : SerInStim" default
+[GroupList]
+0=Default

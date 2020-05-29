@@ -1,0 +1,7 @@
+TestBench.v
+Intro_Top.v
+AndOr.v
+SR.v
+XorNor.v
+-v tpdn90g18_3PAD.v
+-v $SYNOPSYS/../TSMCLibes/tpdn90g18SYN/tpdn90g18_v2001.v

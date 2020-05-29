@@ -1,0 +1,59 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+EnableLibCc=No
+DisableCache=No
+SimFile=
+TabStop=4
+[Files]
+0="behshift.v"
+[Position]
+Width=1256
+Height=565
+X=18
+Y=132
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,114,269,1142,377
+Output=0,1,0,-1,0,-1,0,0,602,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,22,23,1220,236
+[Explorer]
+P1Width=100
+P2Width=909
+View=Icon
+Scope=ShiftTester
+[DebugMode]
+RetainSimData=Yes
+Delay=Typ
+SaveAll=Yes
+SaveCell=No
+SilosExt=No
+LogFile=No
+FunctionalSim=No
+DiskSize=1000M
+RecirculateTime=
+CommandLine=
+[Group0]
+Name=Default
+0="ShiftTester.SerShifter : QReg" default Binary TraceColor/red/
+1="ShiftTester.SerShifter : ClrIn" default
+2="ShiftTester.SerShifter : ShiftEna" default
+3="ShiftTester.SerShifter : ClkIn" default
+4="ShiftTester.SerShifter : DIn" default
+5="ShiftTester.SerShifter : QOut" default
+[Analyzer]
+P1Width=101
+P2Width=1078
+C1Width=96
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+NoFloatWarn=No
+XlEvalOrder=No
+AutoFileSave=No
+SimFileSize=Size
+[GroupList]
+0=Default

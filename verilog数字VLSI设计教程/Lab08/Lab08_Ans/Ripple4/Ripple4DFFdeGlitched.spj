@@ -1,0 +1,40 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+X=22
+Y=230
+Width=1258
+Height=749
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,118,454,1166,620
+Output=0,1,0,-1,0,-1,0,0,750,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,16,181,1232,397
+[Explorer]
+P1Width=185
+P2Width=844
+View=Icon
+Scope=RippleTst.Rippler
+[Analyzer]
+P1Width=133
+P2Width=1064
+C1Width=128
+C2Width=60
+C3Width=60
+[DebugMode]
+RetainSimData=Yes
+[Group0]
+Name=Default
+0="RippleTst : ClearStim" default
+1="RippleTst : CountWatch" default
+2="RippleTst : ClockStim" default
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Files]
+0="ripple4dffdeglitched.v"
+1="dffc.v"
+[GroupList]
+0=Default

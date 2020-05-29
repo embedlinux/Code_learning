@@ -1,0 +1,16 @@
+SerializerTst.v
+Serializer.v
+
+SerialTx/SerialTx.v
+
+SerEncoder/SerEncoder.v
+
+../FIFO/FIFOTop.v
+../FIFO/DPMem1kx32.v
+../FIFO/FIFOStateM.v
+
+../PLL/PLLTop.v
+../PLL/ClockComparator.v
+../PLL/MultiCounter.v
+../PLL/VFO.v
+-v ../tcbn90ghp_v2001.v

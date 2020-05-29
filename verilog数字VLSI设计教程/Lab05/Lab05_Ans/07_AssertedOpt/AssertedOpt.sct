@@ -1,0 +1,94 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+define_design_lib AssertedOpt -path ./AssertedOptSynth
+#
+analyze   -work AssertedOpt -format verilog AndOr.v
+analyze   -work AssertedOpt -format verilog FFC.v
+analyze   -work AssertedOpt -format verilog SR.v
+analyze   -work AssertedOpt -format verilog XorNor.v
+analyze   -work AssertedOpt -format verilog Intro_Top.v
+elaborate -work AssertedOpt  Intro_Top
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC8K_Lowk_Conservative" [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+set_drive     10.0 [all_inputs]
+set_load      30.0 [all_outputs]
+set_max_fanout 5   [all_inputs]
+#
+# module-specific constraints:
+#
+set_max_area 0
+#
+##########################################################
+# Hierarchical area optimized:
+#
+compile -area_effort high
+#
+report_area > /dev/null
+report_area   >  Intro_TopNetlistAssertedOptHier.log
+report_timing
+report_timing >> Intro_TopNetlistAssertedOptHier.log
+check_design
+check_design  >> Intro_TopNetlistAssertedOptHier.log
+write -hierarchy -format verilog -output Intro_TopNetlistAssertedOptHier.v
+#
+##########################################################
+# Ungrouped area reoptimized incrementally:
+#
+ungroup -all -flatten
+compile -incremental_mapping
+report_area > /dev/null
+report_area   >  Intro_TopNetlistAssertedOptFlatInc.log
+report_timing
+report_timing >> Intro_TopNetlistAssertedOptFlatInc.log
+check_design
+check_design  >> Intro_TopNetlistAssertedOptFlatInc.log
+write -hierarchy -format verilog -output Intro_TopNetlistAssertedOptFlatInc.v
+#
+##########################################################
+# Ungrouped area reoptimized completely:
+#
+compile -area_effort high
+report_area > /dev/null
+report_area   >  Intro_TopNetlistAssertedOptFlatMap.log
+report_timing
+report_timing >> Intro_TopNetlistAssertedOptFlatMap.log
+check_design
+check_design  >> Intro_TopNetlistAssertedOptFlatMap.log
+write -hierarchy -format verilog -output Intro_TopNetlistAssertedOptFlatMap.v
+#
+##########################################################
+#
+# Drop into interactive mode:
+#

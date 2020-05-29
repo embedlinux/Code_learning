@@ -1,0 +1,48 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+Width=1255
+Height=699
+X=8
+Y=44
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,94,410,1052,586
+Output=0,1,0,-1,0,-1,22,23,584,575
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,22,23,1227,310
+[Analyzer]
+P1Width=178
+P2Width=1008
+C1Width=190
+C2Width=150
+C3Width=112
+[Explorer]
+P1Width=164
+P2Width=775
+View=Icon
+Scope=PLLsyncTst.Beh_U1.PLLClocker.PLLVFO1
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[DebugMode]
+RetainSimData=Yes
+[Files]
+0="pllsync.v"
+1="counter4.v"
+2="./pll/clockcomparator.v"
+3="./pll/multicounter.v"
+4="./pll/plltop.v"
+5="./pll/vfo.v"
+[Group0]
+Name=Default
+0="PLLsyncTst : BehavioralWatch" default
+1="PLLsyncTst.Beh_U1.PLLClocker.PLLVFO1 : SampleCmd" default
+2="PLLsyncTst.Beh_U1.PLLClocker.PLLVFO1 : VFO_Delay" default Decimal
+3="PLLsyncTst.Beh_U1.PLLClocker : AdjFreq" default
+4="PLLsyncTst.Beh_U1 : PLLClockOut" default
+5="PLLsyncTst : ClockStimIn" default
+6="PLLsyncTst : ClearStim" default
+[GroupList]
+0=Default

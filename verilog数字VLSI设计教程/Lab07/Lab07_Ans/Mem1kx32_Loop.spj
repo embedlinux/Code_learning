@@ -1,0 +1,41 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,14,397,1058,553
+Output=0,1,0,-1,0,-1,32,9,614,729
+OpenWindows=1
+Analyzer=0,1,0,-1,0,-1,6,46,1184,327
+[Position]
+X=66
+Y=69
+Width=1200
+Height=845
+[DebugMode]
+RetainSimData=Yes
+[Analyzer]
+P1Width=147
+P2Width=1012
+C1Width=148
+C2Width=60
+C3Width=60
+[Explorer]
+P1Width=202
+P2Width=823
+View=Icon
+Scope=Mem1kx32_LoopTst
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Files]
+0="mem1kx32_loop.v"
+[Group0]
+Name=Default
+0="Blank" default
+1="Mem1kx32_LoopTst : AddrStim" default
+2="Mem1kx32_LoopTst : WriteStim" default
+3="Mem1kx32_LoopTst : ClockInStim" default
+4="Mem1kx32_LoopTst : DataStim" default
+[GroupList]
+0=Default

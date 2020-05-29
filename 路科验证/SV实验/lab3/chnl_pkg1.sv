@@ -185,7 +185,7 @@ package chnl_pkg1;
       $display($sformatf("*****************%s finished********************", this.name));
       // USER TODO 1.3
       // Please move the $finish statement from the test run task to generator
-      // You woudl put it anywhere you like inside generator to stop test when
+      // You would put it anywhere you like inside generator to stop test when
       // all transactions have been transfered
       $finish();
       // USER TODO 1.4

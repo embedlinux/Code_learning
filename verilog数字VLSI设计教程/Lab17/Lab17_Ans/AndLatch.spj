@@ -1,0 +1,38 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="andlatch.v"
+[Position]
+X=32
+Y=138
+Width=1234
+Height=749
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,110,404,1117,624
+Output=0,1,0,-1,0,-1,0,0,1007,440
+OpenWindows=
+[Analyzer]
+P1Width=93
+P2Width=1063
+C1Width=92
+C2Width=60
+C3Width=60
+[Explorer]
+P1Width=100
+P2Width=888
+View=Icon
+Scope=AndLatchTst
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Group0]
+Name=Default
+0="AndLatchTst : ClkDiv2" default
+1="AndLatchTst : QnWatch" default
+2="AndLatchTst : QWatch" default
+3="AndLatchTst : DStim" default Binary
+4="AndLatchTst : ClkStim" default
+[GroupList]
+0=Default

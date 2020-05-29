@@ -1,0 +1,44 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="condgenerate.v"
+[WindowPos]
+Output=0,1,0,-1,0,-1,0,0,546,378
+Explorer=0,1,0,-1,0,-1,52,335,1228,481
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,22,23,1266,249
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1282
+Height=589
+X=-2
+Y=115
+[Explorer]
+P1Width=268
+P2Width=889
+View=Icon
+Scope=Mux32Bit
+[Analyzer]
+P1Width=121
+P2Width=1104
+C1Width=144
+C2Width=60
+C3Width=60
+FaceName=Lucida Sans Unicode
+PtSize=8
+FontWeight=400
+[Group0]
+Name=Default
+0="CondGenerateTst : EnaStim" default
+1="CondGenerateTst : ResultWatch[31:0]" default
+2="CondGenerateTst : ArgBStim" default
+3="CondGenerateTst : ArgAStim" default
+4="CondGenerateTst : SelStim" default
+[DebugMode]
+RetainSimData=Yes
+[GroupList]
+0=Default

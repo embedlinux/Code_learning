@@ -1,0 +1,51 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="desdecoder.v"
+[Position]
+X=8
+Y=88
+Width=1242
+Height=831
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,20,529,1204,693
+Output=0,1,0,-1,0,-1,0,0,560,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,8,115,1220,502
+[Explorer]
+P1Width=234
+P2Width=931
+View=Icon
+Scope=DesDecoderTst.U1
+[Analyzer]
+P1Width=133
+P2Width=1060
+C1Width=154
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[DebugMode]
+RetainSimData=Yes
+[Group0]
+Name=Default
+0="DesDecoderTst.U1 : UnLoad" default
+1="DesDecoderTst.U1 : SyncOK" default
+2="DesDecoderTst.U1 : doParSync" default
+3="DesDecoderTst.U1 : SerValid" default
+4="DesDecoderTst.U1 : ParRst" default
+5="DesDecoderTst.U1 : SerClock" default
+6="DesDecoderTst : ParClkWatch" default
+7="DesDecoderTst : ShiftOut64" default TraceColor/red/
+8="DesDecoderTst.U1 : FrameSR" default Binary TraceColor/violet/
+9="DesDecoderTst : ParValidWatch" default
+10="DesDecoderTst : ParBusWatch" default
+11="DesDecoderTst : SerInStim" default
+12="DesDecoderTst : SerValidStim" default
+13="DesDecoderTst : ParRstStim" default
+14="DesDecoderTst : SerClkStim" default
+[GroupList]
+0=Default

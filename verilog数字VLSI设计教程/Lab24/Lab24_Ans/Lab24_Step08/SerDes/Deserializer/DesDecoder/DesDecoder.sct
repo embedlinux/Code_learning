@@ -1,0 +1,107 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+suppress_message "OPT-1205"; # = Warning: The register ... may not be optimally implemented because of a lack of ... correct clock/enable phase.
+#
+# ---------------------------------
+#
+define_design_lib DesDecoder -path ./DesDecoderSynth
+#
+analyze   -work DesDecoder -format verilog DesDecoder.v
+elaborate -work DesDecoder  DesDecoder
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC8K_Lowk_Conservative" [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+# This is for DC speedup:
+set_drive      10.0 [all_inputs]
+set_load       10.0 [all_outputs]
+set_max_fanout 30   [all_inputs]
+set_max_fanout 20   [all_designs]
+#
+# module-specific constraints:
+#
+set_max_area  0
+#
+create_clock -period 30 [get_ports SerClk]
+create_generated_clock  [get_ports ParClk] -source [get_clock SerClk] -divide_by 32
+#
+set_clock_uncertainty 1 [all_clocks]
+#
+set_propagated_clock [all_clocks]
+#
+# The next makes the netlist valid, but
+# it increases synthesis time on a 1 GHz machine
+# from about 1 minute to more than 5 hours:
+set_fix_hold         [get_clock SerClk]
+#
+set_max_delay 15 -to [all_outputs]
+#
+# ###############################################################
+# ###############################################################
+# ###############################################################
+#   
+# NOTE:  On a 1 GHz Intel machine, the synthesis to a
+#        working netlist will take about 2 minutes.
+# ##
+# ##     To obtain this netlist, press control-C ONCE in the
+# ##     DC window as soon as the second "Design Rule Fixing"
+# ##     message appears.  After a while, a menu will appear.
+# ##     Pick 'Abort optimization' to write out the current
+# ##     netlist.   If VCS does not validate your netlist,
+# ##     try again, but give DC another 2 minutes or so.
+# ##
+# ##     Allowing the synthesis to continue will make for a
+# ##     better final netlist, but the synthesis will take
+# ##     at least 5 hours.
+# ##
+# ###############################################################
+# ###############################################################
+# ###############################################################
+#
+compile
+#
+write -hierarchy -format verilog -output DesDecoderNetlist.v
+write_sdf        DesDecoderNetlist.sdf
+#
+report_area > /dev/null
+report_area
+echo "Report area:"    > DesDecoderNetlist.log
+report_area           >> DesDecoderNetlist.log
+report_timing
+echo "Report timing:" >> DesDecoderNetlist.log
+report_timing         >> DesDecoderNetlist.log
+check_design
+echo "Check design:"  >> DesDecoderNetlist.log
+check_design          >> DesDecoderNetlist.log
+#
+# Drop into interactive mode:
+#

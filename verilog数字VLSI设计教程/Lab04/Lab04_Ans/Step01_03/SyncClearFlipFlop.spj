@@ -1,0 +1,40 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="syncclearflipflop.v"
+[Position]
+X=10
+Y=161
+Width=1256
+Height=557
+[Explorer]
+P1Width=154
+P2Width=845
+View=Icon
+Scope=SyncClearTst
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,88,276,1106,380
+Output=0,1,0,-1,0,-1,0,0,574,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,44,46,1224,236
+[DebugMode]
+RetainSimData=Yes
+[Analyzer]
+P1Width=100
+P2Width=1061
+C1Width=74
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Group0]
+Name=Default
+0="SyncClearTst : QWire" default
+1="SyncClearTst : D" default
+2="SyncClearTst : clk" default
+3="SyncClearTst : clr" default
+[GroupList]
+0=Default

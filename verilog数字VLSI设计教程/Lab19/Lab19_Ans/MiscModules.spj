@@ -1,0 +1,39 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="miscmodules.v"
+[Position]
+Width=1162
+Height=749
+X=26
+Y=92
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,148,400,898,592
+Output=0,1,0,-1,0,-1,0,0,668,320
+OpenWindows=
+[Explorer]
+P1Width=140
+P2Width=591
+View=Details
+C1Width=152
+C2Width=158
+Scope=Wide
+[Analyzer]
+P1Width=288
+P2Width=799
+C1Width=120
+C2Width=10
+C3Width=818
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Group0]
+Name=Default
+0="Wide : InWide" default
+1="Wide : OutWide" default
+2="Narrow : InNarrow" default Binary
+3="Narrow : OutNarrow" default Binary
+[GroupList]
+0=Default

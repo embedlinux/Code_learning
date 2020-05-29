@@ -1,0 +1,125 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+suppress_message "TIM-175"; # = Warning: Breaking the timing path through pin 'FIFO_Mem1/Storage_reg...'
+suppress_message "TIM-177"; # = Warning: 'set_max_delay' constraint made a reference to ... which no longer exists
+suppress_message "TIM-179"; # = Warning: 'set_max_delay' constraint made a reference to ... which no longer exists
+suppress_message "OPT-1205"; # = Warning: The register ... may not be optimally implemented because of a lack of ... correct clock/enable phase.
+#
+# ---------------------------------
+#
+define_design_lib Deserializer -path ./DeserializerSynth
+#
+analyze -work Deserializer -format verilog PLL/ClockComparator.v
+analyze -work Deserializer -format verilog PLL/MultiCounter.v
+analyze -work Deserializer -format verilog PLL/VFO.v
+analyze -work Deserializer -format verilog PLL/PLLTop.v
+analyze -work Deserializer -format verilog FIFO/FIFOStateM.v
+analyze -work Deserializer -format verilog FIFO/DPMem1kx32.v
+analyze -work Deserializer -format verilog FIFO/FIFOTop.v
+analyze -work Deserializer -format verilog DesDecoder/DesDecoder.v
+analyze -work Deserializer -format verilog SerialRx/SerialRx.v
+analyze -work Deserializer -format verilog Deserializer.v
+#
+# NOTE:  The delay cell already is compiled into the
+#        technology (core) library .db above, so there
+#        is no reason to compile its verilog here.
+#
+elaborate -work Deserializer  Deserializer
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC32K_Lowk_Conservative" [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+set_drive      10.0 [all_inputs]
+set_load       20.0 [all_outputs]
+set_max_fanout 30   [all_inputs]
+#set_max_fanout 20   [all_designs]
+#
+# module-specific constraints:
+#
+set_max_area  0
+#
+# Squeeze for speed (scales uncertainty down):
+# Actual requirement = 1000.
+set ParPeriod 400
+#
+set Delta [expr $ParPeriod/1000.0];
+set RDelta [expr $Delta*8.0]
+set WDelta [expr $Delta*5.0]
+set PLLDelta $Delta
+#
+set VFOClockIn  [get_pins DesDecoder_U1/ParClk]
+set VFOClockOut [get_pins SerialRx_U1/PLL_RxU1/VFO1/ClockOut]
+set ParOutClock [get_ports ParOutClk]
+set DecodeClockIn [get_pins DesDecoder_U1/SerClk]
+#
+create_clock -period $ParPeriod $ParOutClock
+create_clock -period $ParPeriod $VFOClockIn
+create_generated_clock $VFOClockOut -source $VFOClockIn -multiply_by 32
+create_generated_clock $DecodeClockIn -source $VFOClockOut -multiply_by 1
+#
+set_clock_uncertainty $RDelta   [get_clock $ParOutClock]
+set_clock_uncertainty $WDelta   [get_clock $VFOClockIn]
+set_clock_uncertainty $PLLDelta [get_clock $VFOClockOut]
+set_clock_uncertainty $PLLDelta [get_clock $DecodeClockIn]
+#
+set_propagated_clock [all_clocks]
+set_fix_hold [all_clocks]
+#
+# Problem-signal constraints:
+set_max_delay 15 -from [all_inputs] -to [all_outputs]
+set_max_delay 10 -from [all_inputs] -to FIFO_U1/FIFO_Mem1/ParityErr
+set_max_delay 10 -from [all_inputs] -to FIFO_U1/FIFO_Mem1/Storage*/*
+set_max_delay  2 -from $DecodeClockIn -to DesDecoder_U1/*FrameSR*/Q
+#
+# To force fix of hold violations:
+set_cost_priority {min_delay max_transition max_delay max_capacitance max_fanout}
+#
+#
+compile
+#
+write -hierarchy -format verilog -output DeserializerNetlist.v
+write_sdf DeserializerNetlist.sdf
+#
+report_area > /dev/null
+report_area
+echo "Report area:"         > DeserializerNetlist.log
+report_area                >> DeserializerNetlist.log
+report_timing -max_paths 4
+echo "Report timing:"      >> DeserializerNetlist.log
+report_timing -max_paths 4 >> DeserializerNetlist.log
+check_design
+echo "Check design:"       >> DeserializerNetlist.log
+check_design               >> DeserializerNetlist.log
+#
+# Drop into interactive mode:
+#

@@ -1,0 +1,68 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+EnableLibCc=No
+DisableCache=Yes
+SimFile=
+TabStop=3
+[Position]
+Width=1179
+Height=668
+X=56
+Y=312
+[WindowPos]
+Output=0,1,0,-1,-4,-24,4,16,705,391
+Explorer=0,1,0,-1,0,-1,78,287,1091,420
+Watch=0,1,0,-1,0,-1,110,115,1100,716
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,10,281,1145,527
+[Options]
+DebugEnable=Yes
+CCEnable=No
+CcOpEnable=No
+NoFloatWarn=No
+XlEvalOrder=No
+AutoFileSave=No
+SimFileSize=Size
+[DebugMode]
+Delay=Typ
+SaveAll=Yes
+SaveCell=No
+SilosExt=No
+LogFile=No
+FunctionalSim=No
+RetainSimData=Yes
+DiskSize=1000M
+RecirculateTime=
+CommandLine=
+[Explorer]
+P1Width=246
+P2Width=748
+View=Icon
+Scope=TestBench
+[Analyzer]
+P1Width=98
+P2Width=1018
+C1Width=100
+C2Width=106
+C3Width=60
+FaceName=Courier New
+PtSize=9
+FontWeight=700
+[Files]
+0="testbench.v"
+1="intro_top.v"
+2="andor.v"
+3="sr.v"
+4="xornor.v"
+[Group0]
+Name=Default
+0="TestBench : Zwatch" default
+1="TestBench : Ywatch" default
+2="TestBench : Xwatch" default
+3="TestBench : Dstim" default
+4="TestBench : Cstim" default
+5="TestBench : Bstim" default
+6="TestBench : Astim" default
+[GroupList]
+0=Default

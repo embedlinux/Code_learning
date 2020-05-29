@@ -1,0 +1,38 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[WindowPos]
+Output=0,1,0,-1,0,-1,0,0,1188,440
+Explorer=0,1,0,-1,0,-1,100,336,1150,456
+OpenWindows=
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1260
+Height=593
+X=14
+Y=218
+[Explorer]
+P1Width=100
+P2Width=931
+View=Icon
+Scope=DFFC_Tst
+[Analyzer]
+P1Width=100
+P2Width=1109
+C1Width=94
+C2Width=60
+C3Width=60
+[Group0]
+Name=Default
+0="DFFC_Tst : QWatch" default
+1="DFFC_Tst : Qn_to_D" default
+2="DFFC_Tst : ClkStim" default
+3="DFFC_Tst : ClrStim" default
+[Files]
+0="dffc_tst.v"
+1="dffc.v"
+[GroupList]
+0=Default

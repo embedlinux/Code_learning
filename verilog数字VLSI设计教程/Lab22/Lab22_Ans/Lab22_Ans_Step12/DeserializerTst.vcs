@@ -1,0 +1,16 @@
+DeserializerTst.v
+Deserializer.v
+
+./DesDecoder/DesDecoder.v
+
+./FIFO/FIFO_Top.v
+./FIFO/FIFOStateM.v
+./FIFO/Mem1kx32.v
+
+./PLL/PLLTop.v
+./PLL/ClockComparator.v
+./PLL/MultiCounter.v
+./PLL/VFO.v
+
+./SerialRx/SerialRx.v
+-v tcbn90ghp_v2001.v

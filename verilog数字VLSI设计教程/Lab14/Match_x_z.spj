@@ -1,0 +1,39 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+X=12
+Y=348
+Width=1242
+Height=551
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,186,323,846,417
+Output=0,1,0,-1,0,-1,8,-2,558,366
+OpenWindows=
+[DebugMode]
+RetainSimData=Yes
+[Explorer]
+P1Width=184
+P2Width=457
+View=Icon
+Scope=Match_x_z
+[Analyzer]
+P1Width=134
+P2Width=1017
+C1Width=80
+C2Width=10
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Group0]
+Name=Default
+0="Match_x_z : t" default
+1="Match_x_z : Z" default Binary
+2="Match_x_z : Y" default Binary
+3="Match_x_z : X" default Binary
+[GroupList]
+0=Default
+[Files]
+0="../../week05_1/lab11/lab11_ans/eventctl.v"

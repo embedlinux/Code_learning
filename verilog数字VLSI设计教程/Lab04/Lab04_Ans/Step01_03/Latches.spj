@@ -1,0 +1,44 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="latches.v"
+[DebugMode]
+RetainSimData=Yes
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,100,324,1146,460
+Output=0,1,0,-1,0,-1,0,0,446,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,18,50,1220,296
+[Explorer]
+P1Width=100
+P2Width=927
+View=Icon
+Scope=LatchesTst
+[Analyzer]
+P1Width=100
+P2Width=1083
+C1Width=100
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1254
+Height=587
+X=16
+Y=99
+[Group0]
+Name=Default
+0="LatchesTst : QpreClearW" default
+1="LatchesTst : QclearW" default
+2="LatchesTst : QsimpleW" default
+3="LatchesTst : D" default
+4="LatchesTst : clr" default
+5="LatchesTst : pre" default
+6="LatchesTst : ena2" default
+7="LatchesTst : ena1" default
+[GroupList]
+0=Default

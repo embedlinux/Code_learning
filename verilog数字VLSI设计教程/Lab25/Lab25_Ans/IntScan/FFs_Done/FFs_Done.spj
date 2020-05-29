@@ -1,0 +1,48 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="testbench.v"
+1="intro_topff.v"
+2="ffc.v"
+3="andor.v"
+4="sr.v"
+5="xornor.v"
+[Position]
+Width=1272
+Height=629
+X=4
+Y=92
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,122,364,1184,518
+Output=0,1,0,-1,0,-1,0,0,560,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,22,23,1240,293
+[Group0]
+Name=Default
+0="TestBench.Top1 : Z" default
+1="TestBench.Top1 : Y" default
+2="TestBench.Top1 : X" default
+3="TestBench.Top1 : D" default
+4="TestBench.Top1 : C" default
+5="TestBench.Top1 : B" default
+6="TestBench.Top1 : A" default
+7="TestBench.Top1 : Clk" default
+8="TestBench.Top1 : Clr" default
+[Analyzer]
+P1Width=100
+P2Width=1099
+C1Width=94
+C2Width=60
+C3Width=60
+[Explorer]
+P1Width=100
+P2Width=943
+View=Icon
+Scope=TestBench.Top1
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[GroupList]
+0=Default

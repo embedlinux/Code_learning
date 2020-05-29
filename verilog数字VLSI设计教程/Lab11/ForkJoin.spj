@@ -1,0 +1,41 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="forkjoin.v"
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,82,416,1134,580
+Output=0,1,0,-1,0,-1,0,0,564,584
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,12,69,1238,269
+[Explorer]
+P1Width=100
+P2Width=933
+View=Icon
+Scope=ForkJoinTst
+[Analyzer]
+P1Width=146
+P2Width=1061
+C1Width=144
+C2Width=60
+C3Width=60
+[DebugMode]
+RetainSimData=Yes
+[Group0]
+Name=Default
+0="ForkJoinTst.ForkJoinInst1 : temp" default
+1="ForkJoinTst.ForkJoinInst1 : DataBus" default
+2="ForkJoinTst : OutBusWatch" default
+3="ForkJoinTst : Ena2Stim" default
+4="ForkJoinTst : Ena1Stim" default
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1148
+Height=749
+X=32
+Y=230
+[GroupList]
+0=Default
