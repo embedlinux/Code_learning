@@ -1,0 +1,111 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+define_design_lib DC_Scanned -path ./DC_ScannedSynth
+#
+analyze   -work DC_Scanned -format verilog AndOr.v
+analyze   -work DC_Scanned -format verilog FFC.v
+analyze   -work DC_Scanned -format verilog SR.v
+analyze   -work DC_Scanned -format verilog XorNor.v
+analyze   -work DC_Scanned -format verilog Intro_TopFF.v
+elaborate -work DC_Scanned  Intro_TopFF
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC8K_Lowk_Conservative" [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+set_drive     10.0 [all_inputs]
+set_load      30.0 [all_outputs]
+set_max_fanout 5   [all_inputs]
+#
+# module-specific constraints:
+#
+set_max_area 0
+create_clock -period 50 Clk
+set_max_delay        25 -to [get_pins -of_objects FF*/D]
+set_max_delay         7 -to [all_outputs]
+set_clock_uncertainty 1 [all_clocks]
+#
+##########################################################
+# Automatic scan insertion requires a compile with -scan,
+# to prepare the netlist for scan insertion.
+# After specification of the ports to be used, the
+# The design is flattened to put the sequential elements
+# in the module to be scan-inserted.
+# Then, the scan-chain is specified and the chain is
+# created by insert_dft:
+#
+set_dft_configuration -scan enable -control_points enable
+#
+# The three new JTAG ports must have been added manually:
+#
+set_dft_signal -view existing  -type ScanEnable   -port tms -active_state 1
+set_dft_signal -view existing  -type ScanClock    -port Clk -timing {20 30}
+set_dft_signal -view existing  -type Reset        -port Clr -active_state 1
+set_dft_signal -view existing  -type ScanDataIn   -port tdi
+set_dft_signal -view existing  -type ScanDataOut  -port tdo
+#
+report_dft_configuration
+report_dft_configuration        > Intro_TopNetlistDC_Scanned.log
+check_design -multiple_designs
+check_design -multiple_designs >> Intro_TopNetlistDC_Scanned.log
+#
+ungroup -all -flatten
+#
+compile -scan
+#
+set_scan_path ScanChain0  -class scan \
+   -view existing -infer_dft_signals \
+   -scan_enable   [get_ports tms] \
+   -scan_data_in  [get_ports tdi] \
+   -scan_data_out [get_ports tdo]
+#
+create_test_protocol -infer_asynch -infer_clock
+#
+insert_dft
+#
+##########################################################
+#
+dft_drc
+dft_drc >> Intro_TopNetlistDC_Scanned.log
+report_area > /dev/null
+report_area
+report_area   >> Intro_TopNetlistDC_Scanned.log
+report_timing
+report_timing >> Intro_TopNetlistDC_Scanned.log
+check_design
+check_design  >> Intro_TopNetlistDC_Scanned.log
+write -hierarchy -format verilog -output Intro_TopNetlistDC_Scanned.v
+#
+##########################################################
+#
+# Drop into interactive mode:
+#

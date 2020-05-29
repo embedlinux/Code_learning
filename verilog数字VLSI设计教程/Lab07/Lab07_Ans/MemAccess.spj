@@ -1,0 +1,42 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="memaccess.v"
+[DebugMode]
+RetainSimData=Yes
+[WindowPos]
+Output=0,1,0,-1,0,-1,0,0,560,330
+Explorer=0,1,0,-1,0,-1,68,457,814,627
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,10,130,1042,406
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1060
+Height=749
+X=170
+Y=124
+[Explorer]
+P1Width=100
+P2Width=627
+View=Icon
+Scope=MemAccess
+[Analyzer]
+P1Width=158
+P2Width=855
+C1Width=172
+C2Width=60
+C3Width=60
+[Group0]
+Name=Default
+0="MemAccess : \LilMem[100] " default
+1="MemAccess : \BigMem[31] " default
+2="MemAccess : \BigMem[200] " default
+3="MemAccess : ByteReg" default
+4="MemAccess : DByteReg" default
+5="MemAccess : WordRegister" default
+[GroupList]
+0=Default

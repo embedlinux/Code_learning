@@ -1,0 +1,48 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+X=4
+Y=249
+Width=1267
+Height=749
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,126,469,1161,627
+Output=0,1,0,-1,0,-1,0,0,548,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,-2,101,1251,377
+[Explorer]
+P1Width=140
+P2Width=876
+View=Icon
+Scope=FindPatternTaskTst
+[Analyzer]
+P1Width=131
+P2Width=1103
+C1Width=138
+C2Width=60
+C3Width=60
+FaceName=Arial Narrow
+PtSize=10
+FontWeight=400
+[DebugMode]
+RetainSimData=Yes
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Files]
+0="findpatterntask.v"
+[Group0]
+Name=Default
+0="FindPatternTaskTst.FindPatternTask1 : CountOK" default
+1="FindPatternTaskTst.FindPatternTask1 : nNow" default
+2="FindPatternTaskTst.FindPatternTask1 : nPrev" default
+3="FindPatternTaskTst.FindPatternTask1 : Nkeeper" default
+4="FindPatternTaskTst.FindPatternTask1 : j" default
+5="FindPatternTaskTst.FindPatternTask1 : i" default
+6="FindPatternTaskTst : FoundWatch" default
+7="FindPatternTaskTst : StartSearchStim" default
+8="FindPatternTaskTst : StartIStim" default
+[GroupList]
+0=Default

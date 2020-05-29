@@ -1,0 +1,42 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="genericdes.v"
+[Position]
+X=14
+Y=82
+Width=1256
+Height=749
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,104,470,1142,624
+Output=0,1,0,-1,0,-1,14,3,600,443
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,14,166,1226,452
+[Analyzer]
+P1Width=149
+P2Width=1044
+C1Width=152
+C2Width=60
+C3Width=60
+[Explorer]
+P1Width=100
+P2Width=919
+View=Icon
+Scope=GenericDesTst
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Group0]
+Name=Default
+0="GenericDesTst : ParValidWatch" default
+1="GenericDesTst : ParRstStim" default
+2="GenericDesTst : ClkCnt[6:0]" default Decimal
+3="GenericDesTst.U1 : ParSR" default Binary TraceColor/red/
+4="GenericDesTst : ParBusWatch" default Binary
+5="GenericDesTst : ClkStim" default
+6="GenericDesTst : SerValidStim" default
+7="GenericDesTst : SerInStim" default
+[GroupList]
+0=Default

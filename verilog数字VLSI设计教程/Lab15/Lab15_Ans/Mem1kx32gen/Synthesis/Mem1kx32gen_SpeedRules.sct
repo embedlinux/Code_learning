@@ -1,0 +1,69 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+define_design_lib Mem1kx32gen -path ./Mem1kx32genSynth
+#
+analyze   -work Mem1kx32gen -format verilog Bit.v
+analyze   -work Mem1kx32gen -format verilog Mem1kx32gen.v
+elaborate -work Mem1kx32gen  Mem1kx32gen
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC8K_Lowk_Conservative"  [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+set_drive      10.0 [all_inputs]
+set_load       30.0 [all_outputs]
+set_max_fanout 30   [all_inputs]
+#
+# module-specific constraints:
+#
+set_max_area  0
+#
+create_clock -period 500 ClockIn 
+#
+set_max_delay        50 -to [all_outputs]
+set_output_delay      1     [all_outputs] -clock ClockIn
+set_input_delay       1     [all_inputs]  -clock ClockIn
+#
+compile
+#
+write -hierarchy -format verilog -output Mem1kx32genNetlist_SpeedRules.v
+#
+report_area > /dev/null
+report_area
+report_area    > Mem1kx32genNetlist_SpeedRules.log
+report_timing
+report_timing >> Mem1kx32genNetlist_SpeedRules.log
+check_design
+check_design  >> Mem1kx32genNetlist_SpeedRules.log
+#
+# Drop into interactive mode:
+#

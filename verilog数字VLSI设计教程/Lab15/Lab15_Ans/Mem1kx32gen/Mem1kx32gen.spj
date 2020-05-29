@@ -1,0 +1,77 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+EnableLibCc=No
+DisableCache=No
+SimFile=
+TabStop=4
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,272,422,1206,686
+Output=0,1,0,-1,0,-1,0,0,528,432
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,22,23,1251,440
+[Explorer]
+P1Width=242
+P2Width=673
+View=Details
+C1Width=230
+C2Width=136
+Scope=Mem1kTest.U1
+[Analyzer]
+P1Width=250
+P2Width=960
+C1Width=118
+C2Width=126
+C3Width=60
+FaceName=Arial Narrow
+PtSize=9
+FontWeight=400
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+NoFloatWarn=No
+XlEvalOrder=No
+AutoFileSave=No
+SimFileSize=Size
+[Position]
+Width=1273
+Height=811
+X=4
+Y=98
+[Files]
+0="mem1kx32gen.v"
+1="bit.v"
+[DebugMode]
+RetainSimData=Yes
+Delay=Typ
+SaveAll=Yes
+SaveCell=No
+SilosExt=No
+LogFile=No
+FunctionalSim=No
+DiskSize=1000M
+RecirculateTime=
+CommandLine= -"!control .ext=psize"
+[Group0]
+Name=Default
+0="Mem1kTest.U1.WordArray[3] : CoreOut" default TraceColor/violet/
+1="Mem1kTest.U1.WordArray[3] : CoreIn" default
+2="Mem1kTest.U1.WordArray[2] : CoreOut" default TraceColor/violet/
+3="Mem1kTest.U1.WordArray[2] : CoreIn" default
+4="Mem1kTest.U1.WordArray[1] : CoreOut" default TraceColor/violet/
+5="Mem1kTest.U1.WordArray[1] : CoreIn" default
+6="Mem1kTest.U1.WordArray[0] : CoreOut" default TraceColor/violet/
+7="Mem1kTest.U1.WordArray[0] : CoreIn" default
+8="Mem1kTest : ParityErrWatch" default
+9="Mem1kTest : WriteStim" default
+10="Mem1kTest : ReadStim" default
+11="Mem1kTest : DreadyWatch" default TraceColor/red/
+12="Mem1kTest : DataOWatch" default
+13="Mem1kTest : DataStim" default
+14="Mem1kTest : AddrStim" default
+15="Mem1kTest.U1 : ChipClock" default
+16="Mem1kTest : ClockInStim" default
+17="Mem1kTest : ChipEnaStim" default
+[GroupList]
+0=Default

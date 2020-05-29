@@ -1,0 +1,60 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+EnableLibCc=No
+DisableCache=No
+SimFile=
+TabStop=4
+[Files]
+0="genbuffedbus.v"
+[Position]
+X=8
+Y=60
+Width=1268
+Height=749
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,102,399,1150,581
+Output=0,1,0,-1,0,-1,0,0,568,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,10,156,1252,386
+[Group0]
+Name=Default
+0="GenBuffedBusTst : DBusBufWatch" default Binary TraceColor/red/
+1="GenBuffedBusTst : QEnaStim" default Binary
+2="GenBuffedBusTst : DBusStim" default Binary
+3="GenBuffedBusTst : ClkStim" default
+4="GenBuffedBusTst : RstStim" default
+[Analyzer]
+P1Width=152
+P2Width=1071
+C1Width=154
+C2Width=60
+C3Width=60
+[Explorer]
+P1Width=280
+P2Width=749
+View=Details
+C1Width=152
+C2Width=118
+Scope=GenBuffedBusTst
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+NoFloatWarn=No
+XlEvalOrder=No
+AutoFileSave=No
+SimFileSize=Size
+[DebugMode]
+Delay=Typ
+SaveAll=Yes
+SaveCell=No
+SilosExt=No
+LogFile=No
+FunctionalSim=No
+RetainSimData=Yes
+DiskSize=1000M
+RecirculateTime=
+CommandLine=
+[GroupList]
+0=Default

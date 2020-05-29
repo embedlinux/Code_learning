@@ -1,0 +1,44 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="mem1kx32bidir.v"
+[Position]
+X=36
+Y=139
+Width=1234
+Height=695
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,138,364,1106,551
+Output=0,1,0,-1,0,-1,66,69,638,582
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,8,35,1210,328
+[DebugMode]
+RetainSimData=Yes
+[Explorer]
+P1Width=100
+P2Width=849
+View=Icon
+Scope=Mem1kTest
+[Group0]
+Name=Default
+0="Mem1kTest : ParityErrWatch" default
+1="Mem1kTest : WriteStim" default
+2="Mem1kTest : ReadStim" default
+3="Mem1kTest : AddrStim" default
+4="Mem1kTest : DreadyWatch" default
+5="Mem1kTest : DataIStim" default
+6="Mem1kTest : ChipEnaStim" default
+7="Mem1kTest : ClockInStim" default
+[Analyzer]
+P1Width=122
+P2Width=1061
+C1Width=124
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=Yes
+CCEnable=No
+CcOpEnable=No
+[GroupList]
+0=Default

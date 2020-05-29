@@ -1,0 +1,51 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="fifo_top.v"
+1="mem1kx32.v"
+2="fifostatem.v"
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,104,342,1164,514
+Output=0,1,0,-1,0,-1,0,0,750,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,22,23,1258,319
+[Position]
+X=-8
+Y=222
+Width=1288
+Height=633
+[Analyzer]
+FaceName=Arial Narrow
+PtSize=9
+FontWeight=400
+P1Width=124
+P2Width=1093
+C1Width=138
+C2Width=296
+C3Width=60
+[Explorer]
+P1Width=236
+P2Width=805
+View=Icon
+Scope=FIFO_TopTst.FIFO_Top1.FIFO_SM1
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[DebugMode]
+RetainSimData=Yes
+[Group0]
+Name=Default
+0="FIFO_TopTst.FIFO_Top1.RegFile1 : ParityErr" default
+1="FIFO_TopTst : WriteReqStim" default
+2="FIFO_TopTst : ReadReqStim" default TraceColor/blue/
+3="FIFO_TopTst.FIFO_Top1 : Mem_Enable" default
+4="FIFO_TopTst.FIFO_Top1 : SM_MemAddr" default
+5="FIFO_TopTst.FIFO_Top1 : F_FIFO" default
+6="FIFO_TopTst.FIFO_Top1 : E_FIFO" default
+7="FIFO_TopTst.FIFO_Top1.FIFO_SM1 : CurState" default Binary TraceColor/red/
+8="FIFO_TopTst : DoutWatch" default TraceColor/green2/
+9="FIFO_TopTst : DinStim" default
+[GroupList]
+0=Default

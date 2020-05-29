@@ -1,0 +1,103 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+# Messages should be suppressed VERY CAREFULLY,
+# and with foreknowledge of their meanings in
+# previous DC invocations.   These now are
+# understood just to clutter the screen:
+#
+# The list suppressed will be presented below,
+# just before compile.
+#
+set MessageList "VER-311";               # Parameter range specification is new.
+set MessageList "$MessageList VER-314";  # Integers now are signed.
+set MessageList "$MessageList OPT-314";  # Disabling timing to break a loop.
+set MessageList "$MessageList OPT-461";  # A dont_touch may be overridden:  logic connected.
+set MessageList "$MessageList OPT-1205"; # Register may not be optimal...library clock/enable phase.
+set MessageList "$MessageList OPT-1206"; # Register is constant & will be removed.
+set MessageList "$MessageList OPT-1307"; # Setting dont_use on a dont_touch'ed libe cell.
+suppress_message $MessageList > /dev/null
+set MessageList " 
+SUPPRESSED MESSAGES: $MessageList.
+"
+#
+# ---------------------------------
+#
+define_design_lib FullDup -path ./FullDupSynth
+#
+analyze -work FullDup -format verilog FullDup.v
+analyze -work FullDup -format verilog SerDes/SerDes.v
+analyze -work FullDup -format verilog SerDes/Deserializer/DesDecoder/DesDecoder.v
+analyze -work FullDup -format verilog SerDes/Deserializer/Deserializer.v
+analyze -work FullDup -format verilog SerDes/Deserializer/SerialRx/SerialRx.v
+analyze -work FullDup -format verilog SerDes/FIFO/DPMem1kx32.v
+analyze -work FullDup -format verilog SerDes/FIFO/FIFOStateM.v
+analyze -work FullDup -format verilog SerDes/FIFO/FIFOTop.v
+analyze -work FullDup -format verilog SerDes/PLL/ClockComparator.v
+analyze -work FullDup -format verilog SerDes/PLL/MultiCounter.v
+analyze -work FullDup -format verilog SerDes/PLL/PLLTop.v
+analyze -work FullDup -format verilog SerDes/PLL/VFO.v
+analyze -work FullDup -format verilog SerDes/Serializer/SerEncoder/SerEncoder.v
+analyze -work FullDup -format verilog SerDes/Serializer/Serializer.v
+analyze -work FullDup -format verilog SerDes/Serializer/SerialTx/SerialTx.v
+#
+elaborate -work FullDup FullDup
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC64K_Lowk_Conservative" [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+set_drive      10.0 [all_inputs]
+set_load       10.0 [all_outputs]
+set_max_fanout 30.0 [all_inputs]
+#
+# module-specific constraints:
+set_max_area 0
+#
+set_max_delay 3 -to [all_outputs]
+#
+ungroup -all -flatten
+#
+echo "$MessageList"
+#
+compile
+#
+write -hierarchy -format verilog -output FullDupNetlist_Simple.v
+#
+report_area > /dev/null
+report_area
+report_area    > FullDupNetlist_Simple.log
+report_timing
+report_timing >> FullDupNetlist_Simple.log
+check_design
+check_design  >> FullDupNetlist_Simple.log
+#
+# Drop into interactive mode:
+#

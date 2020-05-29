@@ -1,0 +1,37 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="nottingham.v"
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,72,399,1096,641
+Output=0,1,0,-1,0,-1,0,0,508,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,8,72,1236,254
+[Explorer]
+P1Width=100
+P2Width=905
+View=Icon
+Scope=NottinghamTst
+[Analyzer]
+P1Width=100
+P2Width=1109
+C1Width=104
+C2Width=60
+C3Width=60
+[Position]
+X=4
+Y=138
+Width=1262
+Height=749
+[Group0]
+Name=Default
+0="NottinghamTst : TranWatch" default
+1="NottinghamTst : NotterWatch" default
+2="NottinghamTst : InStim" default
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[GroupList]
+0=Default

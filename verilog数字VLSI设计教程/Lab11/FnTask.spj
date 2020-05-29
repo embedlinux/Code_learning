@@ -1,0 +1,38 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="fntask.v"
+[WindowPos]
+Output=0,1,0,-1,0,-1,0,0,547,440
+Explorer=0,1,0,-1,0,-1,128,461,1156,629
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,14,93,1240,285
+[Position]
+X=8
+Y=184
+Width=1262
+Height=749
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Explorer]
+P1Width=100
+P2Width=909
+View=Icon
+Scope=FnTaskTst
+[Group0]
+Name=Default
+0="FnTaskTst : FunctionWatch" default
+1="FnTaskTst : TaskWatch" default Binary
+2="FnTaskTst : InBusReg" default Binary
+3="FnTaskTst : ClockStim" default
+[Analyzer]
+P1Width=149
+P2Width=1058
+C1Width=148
+C2Width=60
+C3Width=60
+[GroupList]
+0=Default

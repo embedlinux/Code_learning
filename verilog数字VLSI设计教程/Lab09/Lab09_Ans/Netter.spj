@@ -1,0 +1,42 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="netter.v"
+[DebugMode]
+RetainSimData=Yes
+[WindowPos]
+Output=0,1,0,-1,0,-1,0,0,575,440
+Explorer=0,1,0,-1,0,-1,74,461,938,613
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,8,114,1228,406
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1266
+Height=749
+X=6
+Y=207
+[Explorer]
+P1Width=181
+P2Width=664
+View=Icon
+Scope=NetterTst.NetterInst1
+[Analyzer]
+P1Width=139
+P2Width=1062
+C1Width=140
+C2Width=60
+C3Width=60
+[Group0]
+Name=Default
+0="NetterTst.NetterInst1 : XYout" default
+1="NetterTst.NetterInst1 : yChoice" default Binary
+2="NetterTst.NetterInst1 : xChoice" default Binary
+3="NetterTst : CountStim" default
+4="NetterTst : ContendWatch" default
+5="NetterTst : ClockStim" default
+[GroupList]
+0=Default

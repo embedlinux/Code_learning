@@ -1,0 +1,45 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="flipflops.v"
+[DebugMode]
+RetainSimData=Yes
+[WindowPos]
+Output=0,1,0,-1,0,-1,14,1,552,441
+Explorer=0,1,0,-1,0,-1,180,425,1114,581
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,130,15,1116,283
+[Options]
+DebugEnable=Yes
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1144
+Height=749
+X=62
+Y=142
+[Explorer]
+P1Width=100
+P2Width=815
+View=Icon
+Scope=FlipFlopsTst.FFs_U1
+[Analyzer]
+P1Width=103
+P2Width=864
+C1Width=96
+C2Width=60
+C3Width=60
+[Group0]
+Name=Default
+0="FlipFlopsTst.FFs_U1 : QsimpleReg" default
+1="FlipFlopsTst.FFs_U1 : QpreClear" default
+2="FlipFlopsTst.FFs_U1 : Qclear" default
+3="FlipFlopsTst.FFs_U1 : Qsimple" default
+4="FlipFlopsTst : D" default
+5="FlipFlopsTst : clr" default
+6="FlipFlopsTst : pre" default
+7="FlipFlopsTst : clk2" default
+8="FlipFlopsTst : clk1" default
+[GroupList]
+0=Default

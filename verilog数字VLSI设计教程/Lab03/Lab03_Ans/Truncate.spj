@@ -1,0 +1,41 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="truncate.v"
+[Explorer]
+P1Width=100
+P2Width=943
+View=Icon
+Scope=Truncate
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,68,381,1130,587
+Output=0,1,0,-1,0,-1,0,0,582,342
+OpenWindows=1
+Analyzer=0,1,0,-1,0,-1,12,46,1200,276
+[Analyzer]
+P1Width=113
+P2Width=1056
+C1Width=110
+C2Width=60
+C3Width=60
+[DebugMode]
+RetainSimData=Yes
+[Group0]
+Name=Default
+0="Truncate : Dlong" default Decimal
+1="Truncate : Long" default Decimal
+2="Truncate : Word" default Decimal
+3="Truncate : Int" default Decimal
+4="Truncate : Byte" default Decimal
+[Options]
+DebugEnable=Yes
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1228
+Height=467
+X=40
+Y=86
+[GroupList]
+0=Default

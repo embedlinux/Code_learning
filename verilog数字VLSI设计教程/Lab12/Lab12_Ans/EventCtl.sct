@@ -1,0 +1,66 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+define_design_lib EventCtl -path ./EventCtlSynth
+#
+analyze   -work EventCtl -format verilog EventCtl.v
+elaborate -work EventCtl  EventCtl
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC8K_Lowk_Conservative"  [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+set_drive     20.0 [all_inputs]
+set_load      50.0 [all_outputs]
+set_max_fanout 20  [all_inputs]
+set_max_fanout 20  [all_designs]
+#
+# module-specific constraints:
+set_max_area   0
+set_max_delay  6 -to [all_outputs]
+#
+# Don't use the optimized clock buffers:
+set_dont_use [get_lib_cells tcbn90ghptc/CK*]
+#
+compile
+#
+# To get the complete netlist:
+report_area 
+report_area   >  EventCtlNetlist.log
+report_timing
+report_timing >> EventCtlNetlist.log
+check_design
+check_design  >> EventCtlNetlist.log
+#
+write -hierarchy -format verilog -output EventCtlNetlist.v
+#
+# Drop into interactive mode:
+#

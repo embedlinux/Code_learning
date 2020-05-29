@@ -1,0 +1,74 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+EnableLibCc=No
+DisableCache=Yes
+SimFile=
+TabStop=3
+[Position]
+Width=1179
+Height=668
+X=82
+Y=50
+[WindowPos]
+Output=0,1,0,-1,-4,-24,10,-2,539,373
+Explorer=0,1,0,-1,0,-1,64,327,1077,562
+Watch=0,1,0,-1,0,-1,110,115,1100,716
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,2,8,1155,316
+[Options]
+DebugEnable=Yes
+CCEnable=No
+CcOpEnable=No
+NoFloatWarn=No
+XlEvalOrder=No
+AutoFileSave=No
+SimFileSize=Size
+[DebugMode]
+Delay=Typ
+SaveAll=Yes
+SaveCell=No
+SilosExt=No
+LogFile=No
+FunctionalSim=No
+RetainSimData=Yes
+DiskSize=1000M
+RecirculateTime=
+CommandLine=
+[Explorer]
+P1Width=246
+P2Width=748
+View=Icon
+Scope=TestBench.Top1
+[Analyzer]
+P1Width=95
+P2Width=1039
+C1Width=100
+C2Width=106
+C3Width=60
+FaceName=Courier New
+PtSize=9
+FontWeight=700
+[Files]
+0="testbench.v"
+1="intro_top.v"
+2="andor.v"
+3="sr.v"
+4="xornor.v"
+5="ffc.v"
+[Group0]
+Name=Default
+0="TestBench.Top1 : ScanOut" default
+1="TestBench.Top1 : ScanMode" default
+2="TestBench.Top1 : ScanIn" default
+3="TestBench.Top1 : ScanClr" default
+4="TestBench.Top1 : ScanClk" default
+5="TestBench.Top1 : Z" default
+6="TestBench.Top1 : Y" default
+7="TestBench.Top1 : X" default
+8="TestBench.Top1 : D" default
+9="TestBench.Top1 : C" default
+10="TestBench.Top1 : B" default
+11="TestBench.Top1 : A" default
+[GroupList]
+0=Default

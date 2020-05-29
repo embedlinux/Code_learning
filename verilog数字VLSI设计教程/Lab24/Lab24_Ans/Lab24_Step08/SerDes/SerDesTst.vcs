@@ -1,0 +1,20 @@
+./SerDesTst.v
+./SerDes.v
+
+./Serializer/Serializer.v
+./Serializer/SerEncoder/SerEncoder.v
+./Serializer/SerialTx/SerialTx.v
+
+./Deserializer/Deserializer.v
+./Deserializer/DesDecoder/DesDecoder.v
+./Deserializer/SerialRx/SerialRx.v
+
+./FIFO/FIFOTop.v
+./FIFO/FIFOStateM.v
+./FIFO/DPMem1kx32.v
+
+./PLL/PLLTop.v
+./PLL/ClockComparator.v
+./PLL/MultiCounter.v
+./PLL/VFO.v
+-v tcbn90ghp_v2001.v

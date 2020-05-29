@@ -1,0 +1,64 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+EnableLibCc=No
+DisableCache=Yes
+SimFile=
+TabStop=3
+[Position]
+Width=1229
+Height=562
+X=34
+Y=150
+[WindowPos]
+Output=0,1,0,-1,-4,-24,6,8,589,383
+Explorer=0,1,0,-1,0,-1,140,279,1153,422
+Watch=0,1,0,-1,0,-1,110,115,1100,716
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,12,46,1205,256
+[Options]
+DebugEnable=Yes
+CCEnable=No
+CcOpEnable=No
+NoFloatWarn=No
+XlEvalOrder=No
+AutoFileSave=No
+SimFileSize=Size
+[DebugMode]
+Delay=Typ
+SaveAll=Yes
+SaveCell=No
+SilosExt=No
+LogFile=No
+FunctionalSim=No
+RetainSimData=Yes
+DiskSize=1000M
+RecirculateTime=
+CommandLine=
+[Explorer]
+P1Width=246
+P2Width=748
+View=Icon
+Scope=TestBench.Top
+[Analyzer]
+P1Width=116
+P2Width=1058
+C1Width=150
+C2Width=12
+C3Width=60
+FaceName=Courier New
+PtSize=9
+FontWeight=700
+[Files]
+0="paramcountertop.v"
+1="counter.v"
+2="converter.v"
+[Group0]
+Name=Default
+0="TestBench.Top : Count" default
+1="TestBench.Top : OutEnable" default
+2="TestBench.Top : CountReset" default
+3="TestBench.Top : CountEnable" default
+4="TestBench.Top : Clock" default
+[GroupList]
+0=Default

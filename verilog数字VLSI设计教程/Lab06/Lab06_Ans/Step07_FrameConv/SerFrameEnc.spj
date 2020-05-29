@@ -1,0 +1,43 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+Width=1230
+Height=749
+X=28
+Y=184
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,66,353,1204,509
+Output=0,1,0,-1,0,-1,0,0,916,592
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,14,23,1214,243
+[Explorer]
+P1Width=179
+P2Width=940
+View=Icon
+Scope=SerFrameEncTst
+[Analyzer]
+P1Width=94
+P2Width=1087
+C1Width=176
+C2Width=20
+C3Width=634
+FaceName=Arial Narrow
+PtSize=9
+FontWeight=400
+[DebugMode]
+RetainSimData=Yes
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Files]
+0="serframeenc.v"
+[Group0]
+Name=Default
+0="SerFrameEncTst : FrameOutwatch" default
+1="SerFrameEncTst : DoFramestim" default
+2="SerFrameEncTst : BusInstim" default
+3="Blank" default
+[GroupList]
+0=Default

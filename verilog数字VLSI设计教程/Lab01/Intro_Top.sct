@@ -1,0 +1,72 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+# Set up a work library for this design in a subdirectory:
+define_design_lib Intro_Top -path ./Intro_TopSynth
+#
+# Precompile and check all modules:
+analyze   -work Intro_Top -format verilog AndOr.v
+analyze   -work Intro_Top -format verilog SR.v
+analyze   -work Intro_Top -format verilog XorNor.v
+analyze   -work Intro_Top -format verilog Intro_Top.v
+#
+# Prelink the complete design (top module):
+elaborate -work Intro_Top Intro_Top
+#
+# ---------------------------------
+#
+set_operating_conditions   NCCOM
+# Must specify every module ("design"):
+set_wire_load_model -name "TSMC8K_Lowk_Conservative" [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+# Some netlist-level design rules:
+set_drive      5.0 [all_inputs]
+set_load       1.0 [all_outputs]
+set_max_fanout 5   [all_inputs]
+#
+# Design-specific constraints:
+set_max_area   200
+set_max_delay  0.5 -to [all_outputs]
+#
+# Drop into interactive mode for compile & optimize:
+#
+# compile
+#
+# Save the netlist in Synopsys (ddc) format:
+# write -hierarchy -format ddc
+#
+# Save the netlist in verilog netlist format:
+# write -hierarchy -format verilog -output Intro_TopNetlist.v
+#
+# Write a Standard Delay Format (SDF) back-annotation
+# file for future simulation, using DC library delays:
+# write_sdf Intro_Top.SDF
+#
+# Quit DC:
+# exit
+#

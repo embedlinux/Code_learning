@@ -1,0 +1,38 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="synch4dff.v"
+1="dffc.v"
+[WindowPos]
+Output=0,1,0,-1,0,-1,22,23,586,463
+Explorer=0,1,0,-1,0,-1,142,450,1158,632
+OpenWindows=3
+Analyzer=0,1,0,-1,-4,-24,12,84,1174,300
+[Analyzer]
+P1Width=134
+P2Width=1009
+C1Width=132
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1226
+Height=749
+X=30
+Y=184
+[Group0]
+Name=Default
+0="SynchTst : CountWatch" default
+1="SynchTst : ClockStim" default
+2="SynchTst : ClearStim" default
+[Explorer]
+P1Width=100
+P2Width=897
+View=Icon
+Scope=SynchTst
+[GroupList]
+0=Default

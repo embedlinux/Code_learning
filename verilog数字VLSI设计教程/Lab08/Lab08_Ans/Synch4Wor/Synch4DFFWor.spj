@@ -1,0 +1,40 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+X=22
+Y=230
+Width=1258
+Height=749
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,118,454,1166,620
+Output=0,1,0,-1,0,-1,0,0,750,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,16,181,1232,397
+[Explorer]
+P1Width=185
+P2Width=844
+View=Icon
+Scope=SynchWorTst
+[Analyzer]
+P1Width=133
+P2Width=1064
+C1Width=128
+C2Width=60
+C3Width=60
+[DebugMode]
+RetainSimData=Yes
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Files]
+0="synch4dffwor.v"
+1="dffc.v"
+[Group0]
+Name=Default
+0="SynchWorTst : ClearStim" default
+1="SynchWorTst : CountWatch" default
+2="SynchWorTst : ClockStim" default
+[GroupList]
+0=Default

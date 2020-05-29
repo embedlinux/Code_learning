@@ -1,0 +1,69 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+define_design_lib MemBIST -path ./DC_MemBISTSynth
+#
+analyze   -work MemBIST -format verilog Mem.v
+analyze   -work MemBIST -format verilog BIST.v
+analyze   -work MemBIST -format verilog MemBIST_Top.v
+elaborate -work MemBIST  MemBIST_Top
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC32K_Lowk_Conservative"  [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set_drive      10.0 [all_inputs]
+set_load       10.0 [all_outputs]
+set_max_fanout 30   [all_inputs]
+#
+# module-specific constraints:
+#
+set_max_area  0
+#
+create_clock -period 10 [get_ports ClkR]
+create_clock -period 10 [get_ports ClkW]
+set_max_delay 4 -to [all_outputs]
+#
+# Very slow:
+set_fix_hold [all_clocks]
+#
+compile
+#
+write -hierarchy -format verilog -output MemBIST_ClocksNetlist.v
+#
+report_area > /dev/null
+report_area
+report_area   >  MemBIST_ClocksReport.log
+report_timing
+report_timing >> MemBIST_ClocksReport.log
+check_design
+check_design  >> MemBIST_ClocksReport.log
+#
+# Drop into interactive mode:
+#

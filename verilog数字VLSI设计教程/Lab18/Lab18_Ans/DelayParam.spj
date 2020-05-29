@@ -1,0 +1,35 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="delayparam.v"
+[Position]
+Width=1216
+Height=611
+X=30
+Y=56
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,128,305,1108,457
+Output=0,1,0,-1,0,-1,0,0,676,452
+OpenWindows=
+[Analyzer]
+P1Width=91
+P2Width=1076
+C1Width=82
+C2Width=102
+C3Width=60
+[Explorer]
+P1Width=100
+P2Width=861
+View=Icon
+Scope=DelayParamTst.DP_Inst1.U1
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Group0]
+Name=Default
+0="DelayParamTst : OutWatch" default
+1="DelayParamTst : InReg" default
+[GroupList]
+0=Default

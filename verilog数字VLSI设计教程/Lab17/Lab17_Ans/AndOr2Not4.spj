@@ -1,0 +1,37 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Files]
+0="andor2not4.v"
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,64,406,1100,554
+Output=0,1,0,-1,0,-1,0,0,706,454
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,16,99,1191,331
+[Explorer]
+P1Width=139
+P2Width=878
+View=Icon
+Scope=AndOr2Not4Tst
+[Analyzer]
+P1Width=102
+P2Width=1054
+C1Width=130
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Position]
+Width=1217
+Height=749
+X=64
+Y=194
+[Group0]
+Name=Default
+0="AndOr2Not4Tst : abcd" default Binary
+1="AndOr2Not4Tst : XWatch" default
+2="AndOr2Not4Tst : ClkStim" default
+[GroupList]
+0=Default

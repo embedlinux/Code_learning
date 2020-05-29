@@ -1,0 +1,90 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+define_design_lib Deserializer -path ./DeserializerSynth
+#
+analyze -work Deserializer -format verilog PLL/ClockComparator.v
+analyze -work Deserializer -format verilog PLL/MultiCounter.v
+analyze -work Deserializer -format verilog PLL/VFO.v
+analyze -work Deserializer -format verilog PLL/PLLTop.v
+analyze -work Deserializer -format verilog FIFO/FIFOStateM.v
+analyze -work Deserializer -format verilog FIFO/Mem1kx32.v
+analyze -work Deserializer -format verilog FIFO/FIFO_Top.v
+analyze -work Deserializer -format verilog DesDecoder/DesDecoder.v
+analyze -work Deserializer -format verilog SerialRx/SerialRx.v
+analyze -work Deserializer -format verilog Deserializer.v
+#
+# NOTE:  The delay cell already is compiled into the
+#        technology (core) library .db above, so there
+#        is no reason to compile its verilog here.
+#
+elaborate -work Deserializer  Deserializer
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC32K_Lowk_Conservative" [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+# End Lab22 set_drive      10.0 [all_inputs]
+# End Lab22 set_load       20.0 [all_outputs]
+# End Lab22 set_max_fanout 30   [all_inputs]
+# End Lab22 set_max_fanout 20   [all_designs]
+#
+# module-specific constraints:
+set_max_area  0
+#
+# These next are more stringent than necessary:
+# End Lab22 set_max_delay          10 -to [all_outputs]
+# End Lab22 create_clock -period 2000 ParOutClk
+#
+# End Lab22 set VFOClock  [get_pins SerialRx_U1/PLL_RxU1/VFO1/ClockOut]
+# End Lab22 set VFOSample [get_pins SerialRx_U1/PLL_RxU1/VFO1/Sample]
+#
+# End Lab22 create_generated_clock $VFOClock -source $VFOSample -multiply_by 32
+#
+# End Lab22 unset VFOClock VFOSample
+#
+compile
+#
+write -hierarchy -format verilog -output DeserializerNetlist.v
+#
+report_area > /dev/null
+report_area
+echo "Report area:"    > DeserializerNetlist.log
+report_area           >> DeserializerNetlist.log
+report_timing
+echo "Report timing:" >> DeserializerNetlist.log
+report_timing         >> DeserializerNetlist.log
+check_design
+echo "Check design:"  >> DeserializerNetlist.log
+check_design          >> DeserializerNetlist.log
+#
+# Drop into interactive mode:
+#

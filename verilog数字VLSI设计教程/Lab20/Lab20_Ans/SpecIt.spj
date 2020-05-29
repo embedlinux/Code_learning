@@ -1,0 +1,49 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+X=10
+Y=115
+Width=1250
+Height=749
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,96,444,1116,620
+Output=0,1,0,-1,0,-1,10,0,552,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,44,46,1222,340
+[Explorer]
+P1Width=100
+P2Width=901
+View=Icon
+Scope=SpecIt_tb.U1
+[Analyzer]
+P1Width=155
+P2Width=1004
+C1Width=156
+C2Width=60
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[Group0]
+Name=Default
+0="SpecIt_tb.U1 : FFQ" default
+1="SpecIt_tb.U1 : Nufo_iD" default
+2="SpecIt_tb.U1 : And" default TraceColor/violet/
+3="SpecIt_tb.U1 : Nor" default TraceColor/blue/
+4="SpecIt_tb.U1 : Ena" default TraceColor/blue/
+5="SpecIt_tb : CountStimWire" default
+6="SpecIt_tb : BufQnWatch" default
+7="SpecIt_tb : FFQWatch" default
+8="SpecIt_tb : TstClk" default
+9="SpecIt_tb.U1 : Reset" default
+[Files]
+0="specit.v"
+1="combo.v"
+2="specit_tb.v"
+3="flipper.v"
+[DebugMode]
+RetainSimData=Yes
+[GroupList]
+0=Default

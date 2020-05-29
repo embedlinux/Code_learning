@@ -1,0 +1,59 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+EnableLibCc=No
+DisableCache=No
+SimFile=
+TabStop=4
+[Files]
+0="decoder1024.v"
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,246,312,996,566
+Output=0,1,0,-1,0,-1,0,0,572,440
+Watch=0,1,0,-1,0,-1,66,69,1238,210
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,16,108,1236,319
+[Position]
+Width=1260
+Height=685
+X=8
+Y=111
+[Analyzer]
+P1Width=192
+P2Width=1009
+C1Width=150
+C2Width=20
+C3Width=356
+[Explorer]
+P1Width=231
+P2Width=500
+View=Icon
+Scope=Decoder1024Tst
+[Options]
+DebugEnable=Yes
+CCEnable=No
+CcOpEnable=No
+NoFloatWarn=No
+XlEvalOrder=No
+AutoFileSave=No
+SimFileSize=Size
+[DebugMode]
+RetainSimData=Yes
+Delay=Typ
+SaveAll=Yes
+SaveCell=No
+SilosExt=Yes
+LogFile=No
+FunctionalSim=No
+DiskSize=1000M
+RecirculateTime=
+CommandLine=
+[Group0]
+Name=Default
+0="Decoder1024Tst.UTop : AdrEna" default
+1="Decoder1024Tst.UTop : DecodedL2" default
+2="Decoder1024Tst.UTop : DecodedL1" default
+3="Decoder1024Tst : AddrStim" default Decimal TraceColor/violet/
+4="Decoder1024Tst : AdrEnaWatch" default
+[GroupList]
+0=Default

@@ -1,0 +1,64 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+define_design_lib FIFO_Top -path ./FIFOSynth
+#
+analyze   -work FIFO_Top -format verilog FIFO_Top.v
+analyze   -work FIFO_Top -format verilog Mem1kx32.v
+analyze   -work FIFO_Top -format verilog FIFOStateM.v
+elaborate -work FIFO_Top  FIFO_Top
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC8K_Lowk_Conservative"  [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+#
+set_drive      10.0 [all_inputs]
+set_load       30.0 [all_outputs]
+set_max_fanout 20   [all_inputs]
+set_max_fanout 15   [all_designs]
+#
+# module-specific constraints:
+set_max_area  0
+#
+compile -area_effort high
+#
+report_area
+report_area    > FIFO_Top_AreaNetlist.log
+report_timing
+report_timing >> FIFO_Top_AreaNetlist.log
+check_design
+check_design  >> FIFO_Top_AreaNetlist.log
+#
+write -hierarchy -format verilog -output FIFO_Top_AreaNetlist.v
+#
+# Drop into interactive mode:
+#

@@ -1,0 +1,72 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+define_design_lib FFsInserted -path ./FFsInsertedSynth
+#
+analyze   -work FFsInserted -format verilog AndOr.v
+analyze   -work FFsInserted -format verilog FFC.v
+analyze   -work FFsInserted -format verilog SR.v
+analyze   -work FFsInserted -format verilog XorNor.v
+analyze   -work FFsInserted -format verilog Intro_Top.v
+elaborate -work FFsInserted  Intro_Top
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC8K_Lowk_Conservative" [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+set_drive     10.0 [all_inputs]
+set_load      30.0 [all_outputs]
+set_max_fanout 5   [all_inputs]
+#
+# module-specific constraints:
+# We shall use the scan clock as a plain clock
+# in this intermediate step, so we constrain
+# it as though it were a design clock:
+#
+set_max_area 0
+create_clock -period 10 ScanClk
+set_max_delay         8 -to [all_outputs]
+set_input_delay       1 [all_inputs]  -clock ScanClk
+set_output_delay      1 [all_outputs] -clock ScanClk
+#
+compile
+#
+write -hierarchy -format verilog -output Intro_TopNetlistFFsInserted.v
+#
+report_area > /dev/null
+report_area   >  Intro_TopNetlistFFsInserted.log
+report_timing
+report_timing >> Intro_TopNetlistFFsInserted.log
+check_design
+check_design  >> Intro_TopNetlistFFsInserted.log
+#
+# Drop into interactive mode:
+#

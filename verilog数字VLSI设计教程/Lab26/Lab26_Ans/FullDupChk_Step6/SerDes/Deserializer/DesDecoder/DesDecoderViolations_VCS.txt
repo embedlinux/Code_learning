@@ -1,0 +1,999 @@
+Chronologic VCS simulator copyright 1991-2005
+Contains Synopsys proprietary information.
+Compiler version Y-2006.06; Runtime version Y-2006.06;  Oct 26 15:30 2006
+
+$stop at time 0
+cli_0VCD+ Writer Y-2006.06 Copyright 2005 Synopsys Inc.
+cli_1 > scope FullDupTst
+Current scope is FullDupTst
+cli_2 > .
+VFO FastClock delay chain: 5 cells @0.0850 ns; f divider=[5] bits.
+
+VFO divide factor=19; so, initial SYNTH 1 MHz in => 31.2 MHz out.
+
+`VFO_MaxDelta=[2] => Divider limits: Low Lim=17 and High Lim=21.
+
+VFO FastClock delay chain: 5 cells @0.0850 ns; f divider=[5] bits.
+
+VFO divide factor=19; so, initial SYNTH 1 MHz in => 31.2 MHz out.
+
+`VFO_MaxDelta=[2] => Divider limits: Low Lim=17 and High Lim=21.
+
+VFO FastClock delay chain: 5 cells @0.0850 ns; f divider=[5] bits.
+
+VFO divide factor=19; so, initial SYNTH 1 MHz in => 31.2 MHz out.
+
+`VFO_MaxDelta=[2] => Divider limits: Low Lim=17 and High Lim=21.
+
+VFO FastClock delay chain: 5 cells @0.0850 ns; f divider=[5] bits.
+
+VFO divide factor=19; so, initial SYNTH 1 MHz in => 31.2 MHz out.
+
+`VFO_MaxDelta=[2] => Divider limits: Low Lim=17 and High Lim=21.
+
+500000: Ser FIFO Empty FullDupTst.FD_U1.SerDes_U1.Ser_U1
+502000: Ser FIFO Empty FullDupTst.FD_U1.SerDes_U2.Ser_U1
+10522000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 286: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge ParClk:10522000,  : 10547150, limit: 26000 );
+
+10649000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0014233. N=   1 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:14232750,  : 14263350, limit: 31000 );
+
+DesDecoder: Packet at t=0016191. N=   2 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:16191150,  : 16221750, limit: 31000 );
+
+17306000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0018150. N=   3 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:18149550,  : 18180150, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:18180150,  : 18210750, limit: 31000 );
+
+20288000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0022046. N=   4 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0024004. N=   5 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0025448. N=   1 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0025963. N=   6 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:25932150,  : 25962750, limit: 31000 );
+
+DesDecoder: Packet at t=0027624. N=   2 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0027921. N=   7 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:27890550,  : 27921150, limit: 31000 );
+
+28262000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0029800. N=   3 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+29885000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+30262000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0031836. N=   8 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:31836250,  : 31866850, limit: 31000 );
+
+32027000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 285: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge ParValid:31866850,  : 32142250, limit: 276000 );
+
+DesDecoder: Packet at t=0033795. N=   9 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:33794650,  : 33825250, limit: 31000 );
+
+DesDecoder: Packet at t=0035753. N=  10 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:35753050,  : 35783650, limit: 31000 );
+
+38276000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+38606000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0039677. N=  11 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:39646050,  : 39676650, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:39676650,  : 39707250, limit: 31000 );
+
+41594000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0041635. N=  12 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:41635050,  : 41665650, limit: 31000 );
+
+DesDecoder: Packet at t=0043593. N=  13 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:43593450,  : 43624050, limit: 31000 );
+
+43731000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+45568000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+45637000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0047519. N=  14 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:47518750,  : 47549350, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:47549350,  : 47579950, limit: 31000 );
+
+DesDecoder: Packet at t=0049477. N=  15 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:49477150,  : 49507750, limit: 31000 );
+
+49536000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:49507750,  : 49538350, limit: 31000 );
+
+49554000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0051436. N=  16 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+53514000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+56380000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+57498000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+61492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+65492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+69502000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+70376000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+73364000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+73518000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+77338000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+77544000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0078863. N=  17 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:78863350,  : 78893950, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:78893950,  : 78924550, limit: 31000 );
+
+DesDecoder: Packet at t=0080822. N=  18 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+81306000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+81576000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0082780. N=  19 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:82749550,  : 82780150, limit: 31000 );
+
+83292000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+85284000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+85284000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+85598000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0086678. N=  20 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0088637. N=  21 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+88683000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+89268000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+89614000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0090595. N=  22 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+90641000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0092553. N=  23 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+93262000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+93262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+93620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+95262000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0096482. N=  24 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+97262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+97620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0098441. N=  25 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:98409950,  : 98440550, limit: 31000 );
+
+98456000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:98440550,  : 98471150, limit: 31000 );
+
+DesDecoder: Packet at t=0100399. N=  26 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:100368350,  : 100398950, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:100398950,  : 100429550, limit: 31000 );
+
+100598000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+101272000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+101610000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0102357. N=  27 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:102357350,  : 102387950, limit: 31000 );
+
+DesDecoder: Packet at t=0104316. N=  28 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:104315750,  : 104346350, limit: 31000 );
+
+105288000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+105594000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0106274. N=  29 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+109314000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+109568000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0110198. N=  30 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0112156. N=  31 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+112338000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+113346000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+113536000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0114115. N=  32 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+116364000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+117368000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+117514000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0118018. N=  33 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0119976. N=  34 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+121384000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+121498000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0121935. N=  35 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:121903950,  : 121934550, limit: 31000 );
+
+DesDecoder: Packet at t=0123893. N=  36 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:123862350,  : 123892950, limit: 31000 );
+
+124390000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+125390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+125492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0127823. N=  37 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+127869000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+129390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+129492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0129782. N=  38 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:129751150,  : 129781750, limit: 31000 );
+
+129797000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:129781750,  : 129812350, limit: 31000 );
+
+DesDecoder: Packet at t=0131740. N=  39 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:131709550,  : 131740150, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:131740150,  : 131770750, limit: 31000 );
+
+133380000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+133502000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0133699. N=  40 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+133714000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0135657. N=  41 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+136368000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0136997. N=   4 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+137364000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+137518000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0137615. N=  42 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:137584750,  : 137615350, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:137615350,  : 137645950, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:137645950,  : 137676550, limit: 31000 );
+
+138360000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0139203. N=   5 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0139574. N=  43 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:139543150,  : 139573750, limit: 31000 );
+
+141338000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+141544000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+142646000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+145306000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+145502000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+145576000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0147902. N=   6 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+149284000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+149598000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+149942000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+153268000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+153614000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+157262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+157620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+161262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+161620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0163052. N=   7 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0163731. N=  44 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+165272000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+165610000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0165907. N=  45 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+167602000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0168083. N=  46 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+168284000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+169288000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+169594000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+170408000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0172330. N=  47 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+173314000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+DesDecoder: Packet at t=0173376. N=   8 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+173568000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+174414000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0175443. N=   9 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:175474350,  : 175504950, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:176116950,  : 176147550, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:176851350,  : 176881950, limit: 31000 );
+
+176897000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+177346000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+177536000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0178174. N=  48 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:178173950,  : 178204550, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:178204550,  : 178235150, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:178656750,  : 178687350, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:178932150,  : 178962750, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:179574750,  : 179605350, limit: 31000 );
+
+DesDecoder: Packet at t=0180132. N=  49 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:180132350,  : 180162950, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:180162950,  : 180193550, limit: 31000 );
+
+181368000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+181514000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0182091. N=  50 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+184380000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+185384000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+185498000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+189390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+189492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+193390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+193492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0193845. N=  51 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0195803. N=  52 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+196384000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+197380000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+197502000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0197761. N=  53 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+198376000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+201364000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+201518000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+205338000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+205544000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0207555. N=  54 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+209306000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+DesDecoder: Packet at t=0209513. N=  55 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+209529000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:209513450,  : 209544050, limit: 31000 );
+
+209576000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0211472. N=  56 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+211681000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+213284000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+213598000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+217268000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+217495000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+217614000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+221262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+221620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+225262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+225620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+229272000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+229610000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+233288000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+233594000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+237314000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+237568000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+241346000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+241536000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0245081. N=  57 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+245368000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+245514000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+249384000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+249384000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+249498000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0252219. N=  10 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:252188550,  : 252219150, limit: 31000 );
+
+253390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+253492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0254178. N=  11 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0256136. N=  12 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+256492000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+257390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+257492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+258492000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0260053. N=  13 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:260052750,  : 260083350, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:260083350,  : 260113950, limit: 31000 );
+
+261380000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+261502000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0262011. N=  14 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+264514000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+265364000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+265518000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0265942. N=  15 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:265910950,  : 265941550, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:265941550,  : 265972150, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:265972150,  : 266002750, limit: 31000 );
+
+269338000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+269544000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+270552000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0272378. N=  16 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+273306000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+273576000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0274554. N=  17 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+274673000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0276730. N=  18 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+276747000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+277284000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+277598000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+279606000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+281268000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+281614000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+285262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+285620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+289262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+289620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+293272000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+293610000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:296577250,  : 296607850, limit: 31000 );
+
+297288000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+297594000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0299426. N=  19 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+301314000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+301568000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0301602. N=  20 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0303778. N=  21 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+304544000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+305346000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+305536000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+308885000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+309368000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+309514000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:311011950,  : 311042550, limit: 31000 );
+
+DesDecoder: Packet at t=0313249. N=  58 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+313384000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+313498000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+316390000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+317390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+317492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0317605. N=  59 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0319031. N=  22 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0319781. N=  60 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+320390000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+321390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+321492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+322492000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+324384000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+325380000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+325502000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+329364000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+329518000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+333338000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+333544000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+337306000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+337576000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0339985. N=  61 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+341284000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+341598000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0341943. N=  62 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:341912850,  : 341943450, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:341943450,  : 341974050, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:341974050,  : 342004650, limit: 31000 );
+
+345268000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+345614000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+348262000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0348575. N=  23 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+349262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+349620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0350534. N=  24 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+351620000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+353262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+353620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0354459. N=  25 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:354458850,  : 354489450, limit: 31000 );
+
+354620000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0356417. N=  26 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+357272000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+357610000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0358376. N=  27 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:358345050,  : 358375650, limit: 31000 );
+
+358606000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+361288000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+361594000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0362306. N=  28 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+362590000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0364264. N=  29 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+365314000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+365568000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+365568000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0366223. N=  30 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:366192250,  : 366222850, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:366222850,  : 366253450, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:366253450,  : 366284050, limit: 31000 );
+
+DesDecoder: Packet at t=0368181. N=  31 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:368150650,  : 368181250, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:368181250,  : 368211850, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:368211850,  : 368242450, limit: 31000 );
+
+369346000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+369536000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0370140. N=  32 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+370528000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0372098. N=  33 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+373368000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+373514000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:375669750,  : 375700350, limit: 31000 );
+
+DesDecoder: Packet at t=0376006. N=  34 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:375975750,  : 376006350, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:376006350,  : 376036950, limit: 31000 );
+
+377384000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+377498000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0377965. N=  35 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:377964750,  : 377995350, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:377995350,  : 378025950, limit: 31000 );
+
+378494000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0379923. N=  36 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:379923150,  : 379953750, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:379953750,  : 379984350, limit: 31000 );
+
+381390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+381492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0381882. N=  37 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:381850950,  : 381881550, limit: 31000 );
+
+381897000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0383840. N=  38 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:383809350,  : 383839950, limit: 31000 );
+
+385390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+385492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+385858000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0386988. N=  63 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0387740. N=  39 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0388947. N=  64 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:388916150,  : 388946750, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:388946750,  : 388977350, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:388977350,  : 389007950, limit: 31000 );
+
+389380000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+389502000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0389698. N=  40 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:389667550,  : 389698150, limit: 31000 );
+
+389714000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:389698150,  : 389728750, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:389728750,  : 389759350, limit: 31000 );
+
+DesDecoder: Packet at t=0390905. N=  65 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:390874550,  : 390905150, limit: 31000 );
+
+391372000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0391657. N=  41 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:391625950,  : 391656550, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:391656550,  : 391687150, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:391687150,  : 391717750, limit: 31000 );
+
+391733000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+393364000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+393518000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0393615. N=  42 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:393614950,  : 393645550, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:393645550,  : 393676150, limit: 31000 );
+
+395354000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0395573. N=  43 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:395573350,  : 395603950, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:395603950,  : 395634550, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:397195150,  : 397225750, limit: 31000 );
+
+397338000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+DesDecoder: Packet at t=0397532. N=  44 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:397501150,  : 397531750, limit: 31000 );
+
+397544000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:397531750,  : 397562350, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:399153550,  : 399184150, limit: 31000 );
+
+DesDecoder: Packet at t=0399490. N=  45 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:399459550,  : 399490150, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:399490150,  : 399520750, limit: 31000 );
+
+401306000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+DesDecoder: Packet at t=0401449. N=  46 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:401448550,  : 401479150, limit: 31000 );
+
+401576000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+402584000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0403407. N=  47 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 288: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge SyncOK:403406950,  : 403437550, limit: 31000 );
+
+405284000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+DesDecoder: Packet at t=0405365. N=  48 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:405334750,  : 405365350, limit: 31000 );
+
+405598000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+405598000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+407606000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+409268000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+409614000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+413262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+413620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+417262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+417620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+421272000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+421610000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+425288000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+425594000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+429314000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+429568000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:430878950,  : 430909550, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:433051550,  : 433082150, limit: 31000 );
+
+433346000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+433536000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:434183750,  : 434214350, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:435224150,  : 435254750, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:436356350,  : 436386950, limit: 31000 );
+
+437368000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+437514000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0437629. N=  49 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0439869. N=  50 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+441384000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+441498000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:442874150,  : 442904750, limit: 31000 );
+
+443492000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:443547350,  : 443577950, limit: 31000 );
+
+DesDecoder: Packet at t=0444323. N=  51 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+445390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+445492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0446499. N=  52 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+446516000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0448675. N=  53 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+449390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+449492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+449492000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+DesDecoder: Packet at t=0450851. N=  54 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+451494000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+453380000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+453502000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0455209. N=  55 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+455510000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+457364000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+DesDecoder: Packet at t=0457385. N=  56 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+457518000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0459561. N=  57 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+459578000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+461338000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+461544000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+461782000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+465306000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+465576000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+469284000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+469598000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+473268000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+473614000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+477262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+477620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+481262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+481620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+485272000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+485610000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+489288000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+489594000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+493314000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+493568000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+497346000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+497536000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+501368000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+501514000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+505384000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+505498000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+509390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+509492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+513390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+513492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+517380000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+517502000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+521364000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+521518000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+525338000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+525544000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+529306000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+529576000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+533284000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+533598000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+537268000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+537614000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+541262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+541620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+545262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+545620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+549272000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+549610000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+553288000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+553594000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+557314000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+557568000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+561346000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+561536000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+565368000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+565514000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+569384000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+569498000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+573390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+573492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:573665350,  : 573695950, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:575837950,  : 575868550, limit: 31000 );
+
+DesDecoder: Packet at t=0576707. N=  58 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:576817150,  : 576847750, limit: 31000 );
+
+577390000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+577492000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0581173. N=  66 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+581380000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+581502000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+581502000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:581966450,  : 581997050, limit: 31000 );
+
+DesDecoder: Packet at t=0583278. N=  67 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+584368000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0585345. N=  68 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+585364000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+585518000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+586360000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0587275. N=  59 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+DesDecoder: Packet at t=0587412. N=  69 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+588546000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+589338000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+589544000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+591560000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+593306000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+593576000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0595676. N=  70 --> FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+597284000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+597598000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0597629. N=  60 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+598280000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U1.Des_U1
+DesDecoder: Packet at t=0599697. N=  61 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+599713000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+601268000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+601614000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0601764. N=  62 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:601858150,  : 601888750, limit: 31000 );
+
+DesDecoder: Packet at t=0603831. N=  63 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+603847000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:603938950,  : 603969550, limit: 31000 );
+
+
+"SerDes/Deserializer/DesDecoder/DesDecoder.v", 287: Timing violation in FullDupTst.FD_U1.SerDes_U1.Des_U1.DesDec_Rx1
+    $width( posedge doParSync:605101750,  : 605132350, limit: 31000 );
+
+605262000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U2.Ser_U1
+605620000: Ser FIFO Full  FullDupTst.FD_U1.SerDes_U1.Ser_U1
+DesDecoder: Packet at t=0605898. N=  64 --> FullDupTst.FD_U1.SerDes_U2.Des_U1.DesDec_Rx1.Decode4.PacketFind.FoundPAD0
+605979000: Des FIFO Empty FullDupTst.FD_U1.SerDes_U2.Des_U1
+$finish at simulation time            608031000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 608031000 ps
+CPU Time:     22.330 seconds;       Data structure size:   0.2Mb
+Thu Oct 26 15:31:08 2006
+<######## Simulator is Terminated ########>

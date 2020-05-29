@@ -1,0 +1,47 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+X=10
+Y=115
+Width=1250
+Height=749
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,96,444,1116,620
+Output=0,1,0,-1,0,-1,10,0,552,440
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,20,46,1222,380
+[Explorer]
+P1Width=100
+P2Width=901
+View=Icon
+Scope=SpecIt_tb.U1.Flipper
+[Analyzer]
+P1Width=126
+P2Width=1057
+C1Width=96
+C2Width=0
+C3Width=60
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[DebugMode]
+RetainSimData=Yes
+[Files]
+0="specit.v"
+1="combo.v"
+2="flipperspec.v"
+3="specit_tb.v"
+[Group0]
+Name=Default
+0="SpecIt_tb.U1.Flipper : iClr" default
+1="SpecIt_tb.U1.Flipper : iClk" default TraceColor/violet/
+2="SpecIt_tb.U1.Flipper : iD" default
+3="SpecIt_tb.U1.Flipper : Bufo" default
+4="SpecIt_tb.U1.Flipper : Flipo" default
+5="SpecIt_tb.U1 : Nor" default
+6="SpecIt_tb.U1 : Ena" default
+7="SpecIt_tb : CountStimWire" default
+[GroupList]
+0=Default

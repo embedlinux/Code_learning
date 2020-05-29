@@ -1,0 +1,51 @@
+[Settings]
+Version=2001.1
+Mode=Debug
+[Position]
+Width=1255
+Height=647
+X=14
+Y=292
+[WindowPos]
+Explorer=0,1,0,-1,0,-1,248,354,1206,530
+Output=0,1,0,-1,0,-1,20,7,588,469
+OpenWindows=3
+Analyzer=0,1,0,-1,0,-1,22,23,1221,407
+VFO.v=0,1,0,-1,0,-1,22,23,1111,407
+[Analyzer]
+P1Width=126
+P2Width=1054
+C1Width=146
+C2Width=20
+C3Width=20
+[Explorer]
+P1Width=164
+P2Width=775
+View=Icon
+Scope=PLLsimTst.PLL_Top1.PLLVFO1
+[Options]
+DebugEnable=No
+CCEnable=No
+CcOpEnable=No
+[DebugMode]
+RetainSimData=Yes
+[Files]
+0="pllsim.v"
+1="vfo.v"
+2="clockcomparator.v"
+3="multicounter.v"
+[Group0]
+Name=Default
+0="PLLsimTst.PLL_Top1.PLLVFO1 : VFO_MaxDelta" default Decimal
+1="PLLsimTst.PLL_Top1 : Reset" default
+2="PLLsimTst.PLL_Top1.PLLComp1 : ClockIn" default
+3="PLLsimTst.PLL_Top1.PLLComp1 : CounterClock" default
+4="PLLsimTst.PLL_Top1.PLLVFO1 : VFO_Delay" default Decimal
+5="PLLsimTst.PLL_Top1.PLLComp1 : AdjustFreq" default
+6="PLLsimTst : SampleStim" default
+7="PLLsimTst : PLLClockStim" default
+8="PLLsimTst : PLLClockwatch" default
+[GroupList]
+0=Default
+[OpenFile]
+0="VFO.v"

@@ -1,0 +1,71 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ".  [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN/Typical [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+define_design_lib FlipFlops -path ./FlipFlopsSynth
+#
+analyze   -work FlipFlops -format verilog FlipFlops.v
+elaborate -work FlipFlops FlipFlops
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC8K_Lowk_Conservative"
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set_drive     10.0 [all_inputs]
+set_load      30.0 [all_outputs]
+set_max_fanout 5   [all_inputs]
+#
+#
+create_clock -period 10 clk1
+create_clock -period 10 clk2
+set_max_area   250
+set_max_delay   10 -to [all_outputs]
+#
+# These cause warnings:
+# set_input_delay  1   [all_inputs] -clock clk1
+# set_input_delay  1   [all_inputs] -clock clk2
+#
+set_input_delay  1     [remove_from_collection [all_inputs] clk2] -clock clk1
+set_input_delay  1     [remove_from_collection [all_inputs] clk1] -clock clk2
+#
+set_output_delay 1     [all_outputs] -clock clk1
+set_output_delay 1     [all_outputs] -clock clk2
+#
+# Note:  Our simple class.db library has no FF with asynchronous
+# preset and clear, so synthesis will fail, but only with a WARNING!
+# The TSMC library does have such a flip-flop, so synthesis will
+# succeed.
+#
+# Drop into interactive mode for compile & optimize:
+#
+# compile -area_effort high
+# compile -map_effort high
+# write -hierarchy -format verilog -output TopModuleNameNetlist.v
+# write -hierarchy -format edif -output TopModuleNameNetlist.edif
+# write_sdf TopModuleName.sdf
+#

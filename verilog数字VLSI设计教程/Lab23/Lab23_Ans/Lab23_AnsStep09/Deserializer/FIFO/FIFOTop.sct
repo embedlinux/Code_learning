@@ -1,0 +1,99 @@
+#
+#######################################################
+set hdlin_translate_off_skip_text "true"
+set verilogout_no_tri             "true"
+set default_schematic_options     "-size infinite"
+set write_name_nets_same_as_ports "true"
+#######################################################
+#
+# dc_shell TcL startup script:
+#
+set designer "veriloguserN"
+set company  "SVTI"
+#
+# Some design environment variables:
+#
+set search_path ". [getenv SYNOPSYS]/../TSMCLibes/tcbn90ghpSYN"
+#
+# tc = Typical; bc = Best; wc = Worst:
+set target_library tcbn90ghptc.db
+set link_library   tcbn90ghptc.db
+#
+set symbol_library tcbn90ghp.sdb
+#
+# ---------------------------------
+#
+suppress_message "TIM-175"; # = Warning: Breaking the timing path through pin 'FIFO_Mem1/Storage_reg...'
+suppress_message "TIM-177"; # = Warning: 'set_max_delay' constraint made a reference to ... which no longer exists
+suppress_message "TIM-179"; # = Warning: 'set_max_delay' constraint made a reference to ... which no longer exists
+#
+# ---------------------------------
+#
+define_design_lib FIFOTop -path ./FIFOTopSynth
+#
+analyze -work FIFOTop -format verilog FIFOStateM.v
+analyze -work FIFOTop -format verilog DPMem1kx32.v
+analyze -work FIFOTop -format verilog FIFOTop.v
+#
+# NOTE:  The delay cell already is compiled into the
+#        technology (core) library .db above, so there
+#        is no reason to compile its verilog here.
+#
+elaborate -work FIFOTop  FIFOTop
+#
+# ---------------------------------
+#
+set_operating_conditions NCCOM
+set_wire_load_model -name "TSMC32K_Lowk_Conservative" [all_designs]
+#
+# For XG mode portability to back-end tools:
+set_fix_multiple_port_nets -all
+#
+set verilogout_higher_designs_first "true"
+#
+set_drive      10.0 [all_inputs]
+set_load       20.0 [all_outputs]
+set_max_fanout 30   [all_inputs]
+set_max_fanout 20   [all_designs]
+#
+# module-specific constraints:
+#
+set_max_area  0
+#
+set ParPeriod 1000
+#
+set Delta [expr $ParPeriod/1000];
+set RDelta [expr $Delta*8]
+set WDelta [expr $Delta*8]
+#
+create_clock -period $ParPeriod [get_ports ClkR]
+create_generated_clock -source ClkR [get_ports ClkW] -divide_by 1
+set_propagated_clock [all_clocks]
+set_clock_uncertainty $RDelta [get_clock ClkR]
+set_clock_uncertainty $WDelta [get_clock ClkW]
+#
+# Problem-signal constraints:
+set_max_delay 25 -from [all_inputs] -to [all_outputs]
+set_max_delay 20 -from [all_inputs] -to FIFO_Mem1/ParityErr
+set_max_delay 20 -from [all_inputs] -to FIFO_Mem1/Storage*/*
+set_fix_hold [all_clocks]
+#
+#  Takes too long: compile
+compile -no_design_rule
+#
+write -hierarchy -format verilog -output FIFOTopNetlist.v
+write_sdf FIFOTopNetlist.sdf
+#
+report_area > /dev/null
+report_area
+echo "Report area:"         > FIFOTopNetlist.log
+report_area                >> FIFOTopNetlist.log
+report_timing -max_paths 4
+echo "Report timing:"      >> FIFOTopNetlist.log
+report_timing -max_paths 4 >> FIFOTopNetlist.log
+check_design
+echo "Check design:"       >> FIFOTopNetlist.log
+check_design               >> FIFOTopNetlist.log
+#
+# Drop into interactive mode:
+#
