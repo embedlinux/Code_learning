@@ -1,0 +1,153 @@
+$date
+	Wed Oct 11 17:40:03 2000
+$end
+
+$version
+	Synopsys VCS version 5.2
+$end
+
+$timescale
+	1ns
+$end
+
+$comment Csum: 1 377e58971c7d4108 $end
+
+
+$scope module addertb $end
+$var reg 8 ! a_test [7:0] $end
+$var reg 8 " b_test [7:0] $end
+$var reg 1 # cin_test $end
+$var wire 8 $ sum_test [7:0] $end
+$var wire 1 % cout_test $end
+$var integer 32 & error_count $end
+$var reg 18 ' test [17:0] $end
+
+$scope module u1 $end
+$var wire 8 ( a [7:0] $end
+$var wire 8 ) b [7:0] $end
+$var wire 1 * cin $end
+$var reg 8 + sum [7:0] $end
+$var reg 1 , cout $end
+$var wire 1 - c4 $end
+$var wire 9 . sum_temp [8:0] $end
+$var wire 5 / sum_1 [8:4] $end
+$var wire 5 0 sum_0 [8:4] $end
+$var reg 1 1 c8_0 $end
+$var reg 1 2 c8_1 $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+#0
+$dumpvars
+0*
+0#
+0%
+0,
+0-
+01
+02
+b00000000 (
+b00000000 !
+b00000000 )
+b00000000 "
+b00000000 $
+b00000000 +
+b000000000 .
+b00001 /
+b00000 0
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx &
+b000000000000000000 '
+$end
+#100
+b000000000000000001 '
+b00000001 "
+b00000001 )
+b000000001 .
+b00000001 +
+b00000001 $
+#200
+b000000000000000010 '
+b00000010 "
+b00000010 )
+b000000010 .
+b00000010 +
+b00000010 $
+#300
+b000000000000000011 '
+b00000011 "
+b00000011 )
+b000000011 .
+b00000011 +
+b00000011 $
+#400
+b000000000000000100 '
+b00000100 "
+b00000100 )
+b000000100 .
+b00000100 +
+b00000100 $
+#500
+b000000000000000101 '
+b00000101 "
+b00000101 )
+b000000101 .
+b00000101 +
+b00000101 $
+#600
+b000000000000000110 '
+b00000110 "
+b00000110 )
+b000000110 .
+b00000110 +
+b00000110 $
+#700
+b000000000000000111 '
+b00000111 "
+b00000111 )
+b000000111 .
+b00000111 +
+b00000111 $
+#800
+b000000000000001000 '
+b00001000 "
+b00001000 )
+b000001000 .
+b00001000 +
+b00001000 $
+#900
+b000000000000001001 '
+b00001001 "
+b00001001 )
+b000001001 .
+b00001001 +
+b00001001 $
+#1000
+b00000000000000000000000000000000 &
+b000000000000001010 '
+b00001010 "
+b00001010 )
+b000001010 .
+b00001010 +
+b00001010 $
+$dumpoff
+x*
+x#
+x%
+x,
+x-
+x1
+x2
+bxxxxxxxx (
+bxxxxxxxx !
+bxxxxxxxx )
+bxxxxxxxx "
+bxxxxxxxx $
+bxxxxxxxx +
+bxxxxxxxxx .
+bxxxxx /
+bxxxxx 0
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx &
+bxxxxxxxxxxxxxxxxxx '
+$end

@@ -1,0 +1,21 @@
+#!/bin/csh -f
+
+vcs -cm line+tgl+fsm+cond -f files
+cp CODE/data1 data_segment
+cp CODE/text1 text_segment
+simv -cm line+tgl+fsm+cond -cm_dir test1 -cm_name test1
+cp CODE/data2 data_segment
+cp CODE/text2 text_segment
+simv -cm line+tgl+fsm+cond -cm_dir test2 -cm_name test2
+cp CODE/data3 data_segment
+cp CODE/text3 text_segment
+simv -cm line+tgl+fsm+cond -cm_dir test3 -cm_name test3
+cp CODE/data4 data_segment
+cp CODE/text4 text_segment
+simv -cm line+tgl+fsm+cond -cm_dir test4 -cm_name test4
+cp CODE/data5 data_segment
+cp CODE/text5 text_segment
+simv -cm line+tgl+fsm+cond -cm_dir test5 -cm_name test5
+
+
+vcs -cm_pp -cm_name merged -cm_dir test1 -cm_dir test2 -cm_dir test3 -cm_dir test4 -cm_dir test5

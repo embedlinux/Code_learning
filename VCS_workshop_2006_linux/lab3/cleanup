@@ -1,0 +1,11 @@
+rm -r ag*
+rm -r csrc
+rm *.vpd
+rm session*
+rm -r simv.daidir
+rm -r simv.cm
+rm -r simv.vdb
+rm simv
+rm *.log
+rm ucli.key
+cp ./start_over/*.v .

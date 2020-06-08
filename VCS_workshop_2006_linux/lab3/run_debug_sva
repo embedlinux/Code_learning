@@ -1,0 +1,3 @@
+cp -f start_over/fifo_fix1 fifo.v
+vcs -sverilog -cm assert -debug -assert dve -f run1sva.f
+

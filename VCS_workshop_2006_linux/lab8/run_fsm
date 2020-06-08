@@ -1,0 +1,10 @@
+#!/bin/csh -f
+
+vcs -cm fsm -f files -cm_fsmopt sequence
+cp CODE/data3 data_segment
+cp CODE/text3 text_segment
+simv -cm fsm -l fsm.log
+
+vcs -cm_pp gui -cm fsm
+
+
