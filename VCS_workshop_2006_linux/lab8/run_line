@@ -1,0 +1,8 @@
+#!/bin/csh -f
+
+vcs +CM+LINE -f files
+cp CODE/data3 data_segment
+cp CODE/text3 text_segment
+simv +CM +output -l line.log
+
+

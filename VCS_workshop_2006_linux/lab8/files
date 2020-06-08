@@ -1,0 +1,10 @@
+//         ./design/testbench.v          Independent testbench to work with User-expressions file
+	   ./design/globals.v		// Global text macro definitions
+	   ./design/system.v		// Assembles a complete system simulation
+	   ./design/cpu.v		// Central Processing Unit chip
+	   ./design/alu.v		// Integer ALU
+	   ./design/quick_compare.v	// Quick Compare Logic
+	   ./design/regfile.v		// Register File
+	   ./design/decode.v		// Decode and control logic
+	   ./design/alu_control.v	// ALU control logic
+	   ./design/wb_control.v		// Write Back control logic

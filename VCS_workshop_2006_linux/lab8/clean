@@ -1,0 +1,7 @@
+#!/bin/csh -f
+
+rm -fr simv* cm.*
+rm -rf csrc
+rm -rf test1 test2 test3 test4 test5
+
+
