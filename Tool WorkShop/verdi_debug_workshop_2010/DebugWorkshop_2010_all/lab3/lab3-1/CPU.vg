@@ -1,0 +1,956 @@
+// ************************************************************************
+// *  NOVAS SOFTWARE CONFIDENTIAL PROPRIETARY NOTE                        *
+// *                                                                      *
+// *  This software contains information confidential and proprietary     *
+// *  to Novas Software Inc. It shall not be reproduced in whole          *
+// *  or in part or transferred to other documents, or disclosed          *
+// *  to third parties, or used for any purpose other than that           *
+// *  for which it was obtained, without the prior written consent        *
+// *  of Novas Software Inc.                                              *
+// *  (c) 1996, 1997, 1998 Novas Software Inc.                            *
+// *  All rights reserved                                                 *
+// *                                                                      *
+// ************************************************************************
+
+module PCU ( mux_sel, C6, C5, C1, ALU, S1, IXR, reset, data, PC, IDB, TDB, 
+    error_in );
+input  [2:0] mux_sel;
+input  [7:0] ALU;
+input  [7:0] IXR;
+output [7:0] PC;
+output [7:0] TDB;
+inout  [7:0] data;
+output [7:0] IDB;
+input  C6, C5, C1, S1, reset, error_in;
+    wire \TDB374[1] , \IDR126[2] , \TR[1] , \TDB374[5] , \IDR[7] , \TR[5] , 
+        \IDR126[6] , \TR[7] , \IDR126[4] , \IDR[5] , \TDB374[7] , \IDR[1] , 
+        \IDR126[0] , \TR[3] , \TDB374[3] , \IDR[0] , \IDR126[1] , \TR[2] , 
+        \TDB374[2] , \TR[6] , \IDR126[5] , \IDR[4] , \TDB374[6] , \TDB374[4] , 
+        \IDR[6] , \TR[4] , \IDR126[7] , \TDB374[0] , \IDR126[3] , \TR[0] , 
+        \IDR[2] , \IDR_Q130[3] , n501, n502, n503, n504, n505, n506, n507, 
+        n508, n509, n510, n511, n512, n513, n514, n515, n516, n517, n518, n519, 
+        n520, n521, n522, n523, n524, n525, n526, n527, n528, n529, n530, n531, 
+        n532, n533, n534, n535, n536, n537, n538, n539, n540, n541, n542, n543, 
+        n544, n545, n546;
+    AN3P U168 ( .A(n522), .B(mux_sel[1]), .C(mux_sel[0]), .Z(n525) );
+    AN3P U169 ( .A(n522), .B(n519), .C(mux_sel[0]), .Z(n523) );
+    AN3P U170 ( .A(n522), .B(n520), .C(mux_sel[1]), .Z(n521) );
+    ND2 U171 ( .A(n501), .B(n502), .Z(IDB[7]) );
+    ND2 U172 ( .A(n503), .B(n504), .Z(IDB[6]) );
+    ND2 U173 ( .A(n505), .B(n506), .Z(IDB[5]) );
+    ND2 U174 ( .A(n507), .B(n508), .Z(IDB[4]) );
+    ND2 U175 ( .A(n509), .B(n510), .Z(IDB[3]) );
+    ND2 U176 ( .A(n511), .B(n512), .Z(IDB[2]) );
+    ND2 U177 ( .A(n513), .B(n514), .Z(IDB[1]) );
+    ND2 U178 ( .A(n515), .B(n516), .Z(IDB[0]) );
+    AN2 U179 ( .A(data[7]), .B(n517), .Z(\TDB374[7] ) );
+    AN2 U180 ( .A(data[6]), .B(n517), .Z(\TDB374[6] ) );
+    AN2 U181 ( .A(data[5]), .B(n517), .Z(\TDB374[5] ) );
+    AN2 U182 ( .A(data[4]), .B(n517), .Z(\TDB374[4] ) );
+    AN2 U183 ( .A(data[3]), .B(n517), .Z(\TDB374[3] ) );
+    AN2 U184 ( .A(data[2]), .B(n517), .Z(\TDB374[2] ) );
+    AN2 U185 ( .A(data[1]), .B(n517), .Z(\TDB374[1] ) );
+    AN2 U186 ( .A(data[0]), .B(n517), .Z(\TDB374[0] ) );
+    AN2 U187 ( .A(n517), .B(n542), .Z(n546) );
+    IV U188 ( .A(C6), .Z(n545) );
+    IV U189 ( .A(S1), .Z(n544) );
+    IV U190 ( .A(C5), .Z(n543) );
+    IV U191 ( .A(C1), .Z(n542) );
+    AN3 U192 ( .A(n519), .B(n520), .C(mux_sel[2]), .Z(n518) );
+    AN3 U193 ( .A(n522), .B(n519), .C(n520), .Z(n524) );
+    MUX21H U194 ( .S(C1), .A(IDB[7]), .B(TDB[7]), .Z(\IDR126[7] ) );
+    MUX21H U195 ( .S(C1), .A(IDB[6]), .B(TDB[6]), .Z(\IDR126[6] ) );
+    MUX21H U196 ( .S(C1), .A(IDB[5]), .B(TDB[5]), .Z(\IDR126[5] ) );
+    MUX21H U197 ( .S(C1), .A(IDB[4]), .B(TDB[4]), .Z(\IDR126[4] ) );
+    MUX21H U198 ( .S(C1), .A(IDB[3]), .B(TDB[3]), .Z(\IDR126[3] ) );
+    MUX21H U199 ( .S(C1), .A(IDB[2]), .B(TDB[2]), .Z(\IDR126[2] ) );
+    MUX21H U200 ( .S(C1), .A(IDB[1]), .B(TDB[1]), .Z(\IDR126[1] ) );
+    MUX21H U201 ( .S(C1), .A(IDB[0]), .B(TDB[0]), .Z(\IDR126[0] ) );
+    AO2 U202 ( .A(n518), .B(IXR[7]), .C(n521), .D(\TR[7] ), .Z(n526) );
+    AN2 U203 ( .A(n526), .B(n527), .Z(n502) );
+    AO2 U204 ( .A(n524), .B(\IDR[7] ), .C(n525), .D(ALU[7]), .Z(n501) );
+    AO2 U205 ( .A(IXR[6]), .B(n518), .C(\TR[6] ), .D(n521), .Z(n528) );
+    AN2 U206 ( .A(n528), .B(n529), .Z(n504) );
+    AO2 U207 ( .A(\IDR[6] ), .B(n524), .C(ALU[6]), .D(n525), .Z(n503) );
+    AO2 U208 ( .A(IXR[5]), .B(n518), .C(\TR[5] ), .D(n521), .Z(n530) );
+    AN2 U209 ( .A(n530), .B(n531), .Z(n506) );
+    AO2 U210 ( .A(\IDR[5] ), .B(n524), .C(ALU[5]), .D(n525), .Z(n505) );
+    AO2 U211 ( .A(IXR[4]), .B(n518), .C(\TR[4] ), .D(n521), .Z(n532) );
+    AN2 U212 ( .A(n532), .B(n533), .Z(n508) );
+    AO2 U213 ( .A(\IDR[4] ), .B(n524), .C(ALU[4]), .D(n525), .Z(n507) );
+    AO2 U214 ( .A(IXR[3]), .B(n518), .C(\TR[3] ), .D(n521), .Z(n534) );
+    AN2 U215 ( .A(n534), .B(n535), .Z(n510) );
+    AO2 U216 ( .A(\IDR_Q130[3] ), .B(n524), .C(ALU[3]), .D(n525), .Z(n509) );
+    AO2 U217 ( .A(IXR[2]), .B(n518), .C(\TR[2] ), .D(n521), .Z(n536) );
+    AN2 U218 ( .A(n536), .B(n537), .Z(n512) );
+    AO2 U219 ( .A(\IDR[2] ), .B(n524), .C(ALU[2]), .D(n525), .Z(n511) );
+    AO2 U220 ( .A(IXR[1]), .B(n518), .C(\TR[1] ), .D(n521), .Z(n538) );
+    AN2 U221 ( .A(n538), .B(n539), .Z(n514) );
+    AO2 U222 ( .A(\IDR[1] ), .B(n524), .C(ALU[1]), .D(n525), .Z(n513) );
+    AO2 U223 ( .A(IXR[0]), .B(n518), .C(\TR[0] ), .D(n521), .Z(n540) );
+    AN2 U224 ( .A(n540), .B(n541), .Z(n516) );
+    AO2 U225 ( .A(\IDR[0] ), .B(n524), .C(ALU[0]), .D(n525), .Z(n515) );
+    ND2 U226 ( .A(reset), .B(error_in), .Z(n517) );
+    ND2 U227 ( .A(n523), .B(PC[7]), .Z(n527) );
+    ND2 U228 ( .A(PC[6]), .B(n523), .Z(n529) );
+    ND2 U229 ( .A(PC[5]), .B(n523), .Z(n531) );
+    ND2 U230 ( .A(PC[4]), .B(n523), .Z(n533) );
+    ND2 U231 ( .A(PC[3]), .B(n523), .Z(n535) );
+    ND2 U232 ( .A(PC[2]), .B(n523), .Z(n537) );
+    ND2 U233 ( .A(PC[1]), .B(n523), .Z(n539) );
+    ND2 U234 ( .A(PC[0]), .B(n523), .Z(n541) );
+    IV U235 ( .A(mux_sel[2]), .Z(n522) );
+    IV U236 ( .A(mux_sel[1]), .Z(n519) );
+    IV U237 ( .A(mux_sel[0]), .Z(n520) );
+    BTS4 U238 ( .A(\IDR[7] ), .E(n542), .Z(data[7]) );
+    BTS4 U239 ( .A(\IDR_Q130[3] ), .E(n542), .Z(data[3]) );
+    BTS4 U240 ( .A(\IDR[1] ), .E(n542), .Z(data[1]) );
+    BTS4 U241 ( .A(\IDR[5] ), .E(n542), .Z(data[5]) );
+    BTS4 U242 ( .A(\IDR[4] ), .E(n542), .Z(data[4]) );
+    BTS4 U243 ( .A(\IDR[0] ), .E(n542), .Z(data[0]) );
+    BTS4 U244 ( .A(\IDR[2] ), .E(n542), .Z(data[2]) );
+    BTS4 U245 ( .A(\IDR[6] ), .E(n542), .Z(data[6]) );
+    FD2 \IDR_reg[7]  ( .D(\IDR126[7] ), .CP(n543), .CD(reset), .Q(\IDR[7] ) );
+    FD2 \IDR_reg[6]  ( .D(\IDR126[6] ), .CP(n543), .CD(reset), .Q(\IDR[6] ) );
+    FD2 \IDR_reg[5]  ( .D(\IDR126[5] ), .CP(n543), .CD(reset), .Q(\IDR[5] ) );
+    FD2 \IDR_reg[4]  ( .D(\IDR126[4] ), .CP(n543), .CD(reset), .Q(\IDR[4] ) );
+    FD2 \IDR_reg[3]  ( .D(\IDR126[3] ), .CP(n543), .CD(reset), .Q(
+        \IDR_Q130[3] ) );
+    FD2 \IDR_reg[2]  ( .D(\IDR126[2] ), .CP(n543), .CD(reset), .Q(\IDR[2] ) );
+    FD2 \IDR_reg[1]  ( .D(\IDR126[1] ), .CP(n543), .CD(reset), .Q(\IDR[1] ) );
+    FD2 \IDR_reg[0]  ( .D(\IDR126[0] ), .CP(n543), .CD(reset), .Q(\IDR[0] ) );
+    FD2 \PC_reg[7]  ( .D(ALU[7]), .CP(n544), .CD(reset), .Q(PC[7]) );
+    FD2 \PC_reg[6]  ( .D(ALU[6]), .CP(n544), .CD(reset), .Q(PC[6]) );
+    FD2 \PC_reg[5]  ( .D(ALU[5]), .CP(n544), .CD(reset), .Q(PC[5]) );
+    FD2 \PC_reg[4]  ( .D(ALU[4]), .CP(n544), .CD(reset), .Q(PC[4]) );
+    FD2 \PC_reg[3]  ( .D(ALU[3]), .CP(n544), .CD(reset), .Q(PC[3]) );
+    FD2 \PC_reg[2]  ( .D(ALU[2]), .CP(n544), .CD(reset), .Q(PC[2]) );
+    FD2 \PC_reg[1]  ( .D(ALU[1]), .CP(n544), .CD(reset), .Q(PC[1]) );
+    FD2 \PC_reg[0]  ( .D(ALU[0]), .CP(n544), .CD(reset), .Q(PC[0]) );
+    FD2 \TR_reg[7]  ( .D(ALU[7]), .CP(n545), .CD(reset), .Q(\TR[7] ) );
+    FD2 \TR_reg[6]  ( .D(ALU[6]), .CP(n545), .CD(reset), .Q(\TR[6] ) );
+    FD2 \TR_reg[5]  ( .D(ALU[5]), .CP(n545), .CD(reset), .Q(\TR[5] ) );
+    FD2 \TR_reg[4]  ( .D(ALU[4]), .CP(n545), .CD(reset), .Q(\TR[4] ) );
+    FD2 \TR_reg[3]  ( .D(ALU[3]), .CP(n545), .CD(reset), .Q(\TR[3] ) );
+    FD2 \TR_reg[2]  ( .D(ALU[2]), .CP(n545), .CD(reset), .Q(\TR[2] ) );
+    FD2 \TR_reg[1]  ( .D(ALU[1]), .CP(n545), .CD(reset), .Q(\TR[1] ) );
+    FD2 \TR_reg[0]  ( .D(ALU[0]), .CP(n545), .CD(reset), .Q(\TR[0] ) );
+    LD2 \TDB_reg[7]  ( .D(\TDB374[7] ), .GN(n546), .Q(TDB[7]) );
+    LD2 \TDB_reg[6]  ( .D(\TDB374[6] ), .GN(n546), .Q(TDB[6]) );
+    LD2 \TDB_reg[5]  ( .D(\TDB374[5] ), .GN(n546), .Q(TDB[5]) );
+    LD2 \TDB_reg[4]  ( .D(\TDB374[4] ), .GN(n546), .Q(TDB[4]) );
+    LD2 \TDB_reg[3]  ( .D(\TDB374[3] ), .GN(n546), .Q(TDB[3]) );
+    LD2 \TDB_reg[2]  ( .D(\TDB374[2] ), .GN(n546), .Q(TDB[2]) );
+    LD2 \TDB_reg[1]  ( .D(\TDB374[1] ), .GN(n546), .Q(TDB[1]) );
+    LD2 \TDB_reg[0]  ( .D(\TDB374[0] ), .GN(n546), .Q(TDB[0]) );
+endmodule
+
+
+module alu_DW01_sub_9_1 ( A, B, CI, DIFF, CO );
+input  [8:0] A;
+input  [8:0] B;
+output [8:0] DIFF;
+input  CI;
+output CO;
+    wire \carry[4] , \B_not[3] , \carry[6] , \carry[2] , \B_not[7] , 
+        \B_not[5] , \B_not[1] , \carry[8] , \carry[7] , \B_not[0] , \carry[3] , 
+        \B_not[4] , \carry[5] , \carry[1] , \B_not[6] , \B_not[2] ;
+    IV U3 ( .A(\carry[8] ), .Z(DIFF[8]) );
+    IV U4 ( .A(B[4]), .Z(\B_not[4] ) );
+    IV U5 ( .A(B[3]), .Z(\B_not[3] ) );
+    IV U6 ( .A(B[5]), .Z(\B_not[5] ) );
+    IV U7 ( .A(B[2]), .Z(\B_not[2] ) );
+    IV U8 ( .A(B[7]), .Z(\B_not[7] ) );
+    IV U9 ( .A(B[6]), .Z(\B_not[6] ) );
+    IV U10 ( .A(B[0]), .Z(\B_not[0] ) );
+    IV U11 ( .A(B[1]), .Z(\B_not[1] ) );
+    FA1 U2_4 ( .A(A[4]), .B(\B_not[4] ), .CI(\carry[4] ), .S(DIFF[4]), .CO(
+        \carry[5] ) );
+    FA1 U2_2 ( .A(A[2]), .B(\B_not[2] ), .CI(\carry[2] ), .S(DIFF[2]), .CO(
+        \carry[3] ) );
+    FA1 U2_3 ( .A(A[3]), .B(\B_not[3] ), .CI(\carry[3] ), .S(DIFF[3]), .CO(
+        \carry[4] ) );
+    FA1 U2_0 ( .A(A[0]), .B(\B_not[0] ), .CI(1'b1), .S(DIFF[0]), .CO(
+        \carry[1] ) );
+    FA1 U2_5 ( .A(A[5]), .B(\B_not[5] ), .CI(\carry[5] ), .S(DIFF[5]), .CO(
+        \carry[6] ) );
+    FA1 U2_7 ( .A(A[7]), .B(\B_not[7] ), .CI(\carry[7] ), .S(DIFF[7]), .CO(
+        \carry[8] ) );
+    FA1 U2_1 ( .A(A[1]), .B(\B_not[1] ), .CI(\carry[1] ), .S(DIFF[1]), .CO(
+        \carry[2] ) );
+    FA1 U2_6 ( .A(A[6]), .B(\B_not[6] ), .CI(\carry[6] ), .S(DIFF[6]), .CO(
+        \carry[7] ) );
+endmodule
+
+
+module alu_DW01_dec_9_1 ( A, SUM );
+input  [8:0] A;
+output [8:0] SUM;
+    wire n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, 
+        n21, n22, n23, n24, n25, n26;
+    ND2 U3 ( .A(n6), .B(n7), .Z(SUM[2]) );
+    IV U4 ( .A(A[0]), .Z(SUM[0]) );
+    ND2 U5 ( .A(n8), .B(n9), .Z(SUM[6]) );
+    ND2 U6 ( .A(n10), .B(n11), .Z(SUM[3]) );
+    ND2 U7 ( .A(n12), .B(n13), .Z(SUM[4]) );
+    ND2 U8 ( .A(n14), .B(n15), .Z(SUM[5]) );
+    ND2 U9 ( .A(n16), .B(n17), .Z(SUM[1]) );
+    NR2 U10 ( .A(A[7]), .B(n8), .Z(n18) );
+    NR2 U11 ( .A(A[0]), .B(A[1]), .Z(n19) );
+    NR2 U12 ( .A(n16), .B(A[2]), .Z(n20) );
+    NR2 U13 ( .A(n6), .B(A[3]), .Z(n21) );
+    NR2 U14 ( .A(n10), .B(A[4]), .Z(n22) );
+    NR2 U15 ( .A(n12), .B(A[5]), .Z(n23) );
+    NR2 U16 ( .A(n14), .B(A[6]), .Z(n24) );
+    MUX21H U17 ( .S(n18), .A(A[8]), .B(n25), .Z(SUM[8]) );
+    MUX21H U18 ( .S(n24), .A(A[7]), .B(n26), .Z(SUM[7]) );
+    ND2 U19 ( .A(A[6]), .B(n14), .Z(n9) );
+    ND2 U20 ( .A(A[5]), .B(n12), .Z(n15) );
+    ND2 U21 ( .A(A[4]), .B(n10), .Z(n13) );
+    ND2 U22 ( .A(A[3]), .B(n6), .Z(n11) );
+    ND2 U23 ( .A(A[2]), .B(n16), .Z(n7) );
+    ND2 U24 ( .A(A[1]), .B(A[0]), .Z(n17) );
+    IV U25 ( .A(A[8]), .Z(n25) );
+    IV U26 ( .A(A[7]), .Z(n26) );
+    IV U27 ( .A(n19), .Z(n16) );
+    IV U28 ( .A(n21), .Z(n10) );
+    IV U29 ( .A(n20), .Z(n6) );
+    IV U30 ( .A(n23), .Z(n14) );
+    IV U31 ( .A(n22), .Z(n12) );
+    IV U32 ( .A(n24), .Z(n8) );
+endmodule
+
+
+module alu_DW01_add_9_3 ( A, B, CI, SUM, CO );
+input  [8:0] A;
+input  [8:0] B;
+output [8:0] SUM;
+input  CI;
+output CO;
+    wire \carry[4] , \carry[6] , \carry[2] , \carry[8] , \carry[7] , 
+        \carry[3] , \carry[5] , \carry[1] , n1, n2, n3, n4, n27, n28, n29, n30, 
+        n31;
+    AN2 U1 ( .A(\carry[7] ), .B(A[7]), .Z(\carry[8] ) );
+    MUX21H U2 ( .S(\carry[7] ), .A(A[7]), .B(n1), .Z(SUM[7]) );
+    IV U3 ( .A(A[7]), .Z(n1) );
+    AN2 U4 ( .A(\carry[1] ), .B(A[1]), .Z(\carry[2] ) );
+    MUX21H U5 ( .S(\carry[1] ), .A(A[1]), .B(n2), .Z(SUM[1]) );
+    IV U6 ( .A(A[1]), .Z(n2) );
+    MUX21H U7 ( .S(\carry[8] ), .A(A[8]), .B(n3), .Z(SUM[8]) );
+    IV U8 ( .A(A[8]), .Z(n3) );
+    AN2 U9 ( .A(\carry[6] ), .B(A[6]), .Z(\carry[7] ) );
+    MUX21H U10 ( .S(\carry[6] ), .A(A[6]), .B(n4), .Z(SUM[6]) );
+    IV U11 ( .A(A[6]), .Z(n4) );
+    AN2 U12 ( .A(\carry[5] ), .B(A[5]), .Z(\carry[6] ) );
+    MUX21H U13 ( .S(\carry[5] ), .A(A[5]), .B(n27), .Z(SUM[5]) );
+    IV U14 ( .A(A[5]), .Z(n27) );
+    AN2 U15 ( .A(\carry[4] ), .B(A[4]), .Z(\carry[5] ) );
+    MUX21H U16 ( .S(\carry[4] ), .A(A[4]), .B(n28), .Z(SUM[4]) );
+    IV U17 ( .A(A[4]), .Z(n28) );
+    AN2 U18 ( .A(\carry[3] ), .B(A[3]), .Z(\carry[4] ) );
+    MUX21H U19 ( .S(\carry[3] ), .A(A[3]), .B(n29), .Z(SUM[3]) );
+    IV U20 ( .A(A[3]), .Z(n29) );
+    AN2 U21 ( .A(\carry[2] ), .B(A[2]), .Z(\carry[3] ) );
+    MUX21H U22 ( .S(\carry[2] ), .A(A[2]), .B(n30), .Z(SUM[2]) );
+    IV U23 ( .A(A[2]), .Z(n30) );
+    AN2 U24 ( .A(A[0]), .B(B[0]), .Z(\carry[1] ) );
+    MUX21H U25 ( .S(A[0]), .A(B[0]), .B(n31), .Z(SUM[0]) );
+    IV U26 ( .A(B[0]), .Z(n31) );
+endmodule
+
+
+module alu_DW01_add_9_2 ( A, B, CI, SUM, CO );
+input  [8:0] A;
+input  [8:0] B;
+output [8:0] SUM;
+input  CI;
+output CO;
+    wire \carry[4] , \carry[6] , \carry[2] , \carry[8] , \carry[7] , 
+        \carry[3] , \carry[5] , \carry[1] , n32, n33, n34, n35, n36, n37, n38, 
+        n39, n40;
+    MUX21H U1 ( .S(\carry[8] ), .A(A[8]), .B(n32), .Z(SUM[8]) );
+    IV U2 ( .A(A[8]), .Z(n32) );
+    AN2 U3 ( .A(\carry[7] ), .B(A[7]), .Z(\carry[8] ) );
+    MUX21H U4 ( .S(\carry[7] ), .A(A[7]), .B(n33), .Z(SUM[7]) );
+    IV U5 ( .A(A[7]), .Z(n33) );
+    AN2 U6 ( .A(\carry[6] ), .B(A[6]), .Z(\carry[7] ) );
+    MUX21H U7 ( .S(\carry[6] ), .A(A[6]), .B(n34), .Z(SUM[6]) );
+    IV U8 ( .A(A[6]), .Z(n34) );
+    AN2 U9 ( .A(\carry[5] ), .B(A[5]), .Z(\carry[6] ) );
+    MUX21H U10 ( .S(\carry[5] ), .A(A[5]), .B(n35), .Z(SUM[5]) );
+    IV U11 ( .A(A[5]), .Z(n35) );
+    AN2 U12 ( .A(\carry[4] ), .B(A[4]), .Z(\carry[5] ) );
+    MUX21H U13 ( .S(\carry[4] ), .A(A[4]), .B(n36), .Z(SUM[4]) );
+    IV U14 ( .A(A[4]), .Z(n36) );
+    AN2 U15 ( .A(\carry[3] ), .B(A[3]), .Z(\carry[4] ) );
+    MUX21H U16 ( .S(\carry[3] ), .A(A[3]), .B(n37), .Z(SUM[3]) );
+    IV U17 ( .A(A[3]), .Z(n37) );
+    AN2 U18 ( .A(\carry[2] ), .B(A[2]), .Z(\carry[3] ) );
+    MUX21H U19 ( .S(\carry[2] ), .A(A[2]), .B(n38), .Z(SUM[2]) );
+    IV U20 ( .A(A[2]), .Z(n38) );
+    AN2 U21 ( .A(\carry[1] ), .B(A[1]), .Z(\carry[2] ) );
+    MUX21H U22 ( .S(\carry[1] ), .A(A[1]), .B(n39), .Z(SUM[1]) );
+    IV U23 ( .A(A[1]), .Z(n39) );
+    AN2 U24 ( .A(A[0]), .B(B[0]), .Z(\carry[1] ) );
+    MUX21H U25 ( .S(A[0]), .A(B[0]), .B(n40), .Z(SUM[0]) );
+    IV U26 ( .A(B[0]), .Z(n40) );
+endmodule
+
+
+module alu_DW01_add_9_1 ( A, B, CI, SUM, CO );
+input  [8:0] A;
+input  [8:0] B;
+output [8:0] SUM;
+input  CI;
+output CO;
+    wire \carry[4] , \carry[6] , \carry[2] , \carry[7] , \carry[3] , 
+        \carry[5] , \carry[1] ;
+    FA1 U1_0 ( .A(A[0]), .B(B[0]), .CI(1'b0), .S(SUM[0]), .CO(\carry[1] ) );
+    FA1 U1_1 ( .A(A[1]), .B(B[1]), .CI(\carry[1] ), .S(SUM[1]), .CO(\carry[2] 
+        ) );
+    FA1 U1_6 ( .A(A[6]), .B(B[6]), .CI(\carry[6] ), .S(SUM[6]), .CO(\carry[7] 
+        ) );
+    FA1 U1_7 ( .A(A[7]), .B(B[7]), .CI(\carry[7] ), .S(SUM[7]), .CO(SUM[8]) );
+    FA1 U1_2 ( .A(A[2]), .B(B[2]), .CI(\carry[2] ), .S(SUM[2]), .CO(\carry[3] 
+        ) );
+    FA1 U1_3 ( .A(A[3]), .B(B[3]), .CI(\carry[3] ), .S(SUM[3]), .CO(\carry[4] 
+        ) );
+    FA1 U1_4 ( .A(A[4]), .B(B[4]), .CI(\carry[4] ), .S(SUM[4]), .CO(\carry[5] 
+        ) );
+    FA1 U1_5 ( .A(A[5]), .B(B[5]), .CI(\carry[5] ), .S(SUM[5]), .CO(\carry[6] 
+        ) );
+endmodule
+
+
+module alu_DW01_sub_9_0 ( A, B, CI, DIFF, CO );
+input  [8:0] A;
+input  [8:0] B;
+output [8:0] DIFF;
+input  CI;
+output CO;
+    wire \carry[4] , \B_not[3] , \carry[6] , \carry[2] , \B_not[7] , 
+        \B_not[5] , \B_not[1] , \carry[8] , \carry[7] , \B_not[0] , \carry[3] , 
+        \B_not[4] , \carry[5] , \carry[1] , \B_not[6] , \B_not[2] ;
+    IV U3 ( .A(\carry[8] ), .Z(DIFF[8]) );
+    IV U4 ( .A(B[4]), .Z(\B_not[4] ) );
+    IV U5 ( .A(B[3]), .Z(\B_not[3] ) );
+    IV U6 ( .A(B[5]), .Z(\B_not[5] ) );
+    IV U7 ( .A(B[2]), .Z(\B_not[2] ) );
+    IV U8 ( .A(B[7]), .Z(\B_not[7] ) );
+    IV U9 ( .A(B[6]), .Z(\B_not[6] ) );
+    IV U10 ( .A(B[0]), .Z(\B_not[0] ) );
+    IV U11 ( .A(B[1]), .Z(\B_not[1] ) );
+    FA1 U2_4 ( .A(A[4]), .B(\B_not[4] ), .CI(\carry[4] ), .S(DIFF[4]), .CO(
+        \carry[5] ) );
+    FA1 U2_2 ( .A(A[2]), .B(\B_not[2] ), .CI(\carry[2] ), .S(DIFF[2]), .CO(
+        \carry[3] ) );
+    FA1 U2_3 ( .A(A[3]), .B(\B_not[3] ), .CI(\carry[3] ), .S(DIFF[3]), .CO(
+        \carry[4] ) );
+    FA1 U2_0 ( .A(A[0]), .B(\B_not[0] ), .CI(1'b1), .S(DIFF[0]), .CO(
+        \carry[1] ) );
+    FA1 U2_5 ( .A(A[5]), .B(\B_not[5] ), .CI(\carry[5] ), .S(DIFF[5]), .CO(
+        \carry[6] ) );
+    FA1 U2_7 ( .A(A[7]), .B(\B_not[7] ), .CI(\carry[7] ), .S(DIFF[7]), .CO(
+        \carry[8] ) );
+    FA1 U2_1 ( .A(A[1]), .B(\B_not[1] ), .CI(\carry[1] ), .S(DIFF[1]), .CO(
+        \carry[2] ) );
+    FA1 U2_6 ( .A(A[6]), .B(\B_not[6] ), .CI(\carry[6] ), .S(DIFF[6]), .CO(
+        \carry[7] ) );
+endmodule
+
+
+module alu_DW01_add_9_0 ( A, B, CI, SUM, CO );
+input  [8:0] A;
+input  [8:0] B;
+output [8:0] SUM;
+input  CI;
+output CO;
+    wire \carry[4] , \carry[6] , \carry[2] , \carry[8] , \carry[7] , 
+        \carry[3] , \carry[5] , \carry[1] , n43, n44, n45, n46, n47, n48, n49, 
+        n50, n51;
+    MUX21H U1 ( .S(\carry[8] ), .A(A[8]), .B(n43), .Z(SUM[8]) );
+    IV U2 ( .A(A[8]), .Z(n43) );
+    AN2 U3 ( .A(\carry[7] ), .B(A[7]), .Z(\carry[8] ) );
+    MUX21H U4 ( .S(\carry[7] ), .A(A[7]), .B(n44), .Z(SUM[7]) );
+    IV U5 ( .A(A[7]), .Z(n44) );
+    AN2 U6 ( .A(\carry[6] ), .B(A[6]), .Z(\carry[7] ) );
+    MUX21H U7 ( .S(\carry[6] ), .A(A[6]), .B(n45), .Z(SUM[6]) );
+    IV U8 ( .A(A[6]), .Z(n45) );
+    AN2 U9 ( .A(\carry[5] ), .B(A[5]), .Z(\carry[6] ) );
+    MUX21H U10 ( .S(\carry[5] ), .A(A[5]), .B(n46), .Z(SUM[5]) );
+    IV U11 ( .A(A[5]), .Z(n46) );
+    AN2 U12 ( .A(\carry[4] ), .B(A[4]), .Z(\carry[5] ) );
+    MUX21H U13 ( .S(\carry[4] ), .A(A[4]), .B(n47), .Z(SUM[4]) );
+    IV U14 ( .A(A[4]), .Z(n47) );
+    AN2 U15 ( .A(\carry[3] ), .B(A[3]), .Z(\carry[4] ) );
+    MUX21H U16 ( .S(\carry[3] ), .A(A[3]), .B(n48), .Z(SUM[3]) );
+    IV U17 ( .A(A[3]), .Z(n48) );
+    AN2 U18 ( .A(\carry[2] ), .B(A[2]), .Z(\carry[3] ) );
+    MUX21H U19 ( .S(\carry[2] ), .A(A[2]), .B(n49), .Z(SUM[2]) );
+    IV U20 ( .A(A[2]), .Z(n49) );
+    AN2 U21 ( .A(\carry[1] ), .B(A[1]), .Z(\carry[2] ) );
+    MUX21H U22 ( .S(\carry[1] ), .A(A[1]), .B(n50), .Z(SUM[1]) );
+    IV U23 ( .A(A[1]), .Z(n50) );
+    AN2 U24 ( .A(A[0]), .B(B[0]), .Z(\carry[1] ) );
+    MUX21H U25 ( .S(A[0]), .A(B[0]), .B(n51), .Z(SUM[0]) );
+    IV U26 ( .A(B[0]), .Z(n51) );
+endmodule
+
+
+module alu_DW01_dec_9_0 ( A, SUM );
+input  [8:0] A;
+output [8:0] SUM;
+    wire n52, n53, n54, n55, n56, n57, n58, n59, n60, n61, n62, n63, n64, n65, 
+        n66, n67, n68, n69, n70, n71, n72;
+    ND2 U3 ( .A(n52), .B(n53), .Z(SUM[2]) );
+    IV U4 ( .A(A[0]), .Z(SUM[0]) );
+    ND2 U5 ( .A(n54), .B(n55), .Z(SUM[6]) );
+    ND2 U6 ( .A(n56), .B(n57), .Z(SUM[3]) );
+    ND2 U7 ( .A(n58), .B(n59), .Z(SUM[4]) );
+    ND2 U8 ( .A(n60), .B(n61), .Z(SUM[5]) );
+    ND2 U9 ( .A(n62), .B(n63), .Z(SUM[1]) );
+    NR2 U10 ( .A(A[7]), .B(n54), .Z(n64) );
+    NR2 U11 ( .A(A[0]), .B(A[1]), .Z(n65) );
+    NR2 U12 ( .A(n62), .B(A[2]), .Z(n66) );
+    NR2 U13 ( .A(n52), .B(A[3]), .Z(n67) );
+    NR2 U14 ( .A(n56), .B(A[4]), .Z(n68) );
+    NR2 U15 ( .A(n58), .B(A[5]), .Z(n69) );
+    NR2 U16 ( .A(n60), .B(A[6]), .Z(n70) );
+    MUX21H U17 ( .S(n64), .A(A[8]), .B(n71), .Z(SUM[8]) );
+    MUX21H U18 ( .S(n70), .A(A[7]), .B(n72), .Z(SUM[7]) );
+    ND2 U19 ( .A(A[6]), .B(n60), .Z(n55) );
+    ND2 U20 ( .A(A[5]), .B(n58), .Z(n61) );
+    ND2 U21 ( .A(A[4]), .B(n56), .Z(n59) );
+    ND2 U22 ( .A(A[3]), .B(n52), .Z(n57) );
+    ND2 U23 ( .A(A[2]), .B(n62), .Z(n53) );
+    ND2 U24 ( .A(A[1]), .B(A[0]), .Z(n63) );
+    IV U25 ( .A(A[8]), .Z(n71) );
+    IV U26 ( .A(A[7]), .Z(n72) );
+    IV U27 ( .A(n65), .Z(n62) );
+    IV U28 ( .A(n67), .Z(n56) );
+    IV U29 ( .A(n66), .Z(n52) );
+    IV U30 ( .A(n69), .Z(n60) );
+    IV U31 ( .A(n68), .Z(n58) );
+    IV U32 ( .A(n70), .Z(n54) );
+endmodule
+
+
+module alu ( a, b, cin, select, out, carry, zero );
+input  [7:0] a;
+input  [2:0] select;
+input  [7:0] b;
+output [7:0] out;
+input  cin;
+output carry, zero;
+    wire \b320[9] , \n130[27] , \b320[4] , \b320[6] , \n130[25] , \b320[2] , 
+        \n130[28] , \n130[31] , \b337[2] , \n142[25] , \n133[24] , \b303[7] , 
+        \n139[32] , \n136[25] , \n136[28] , \n136[31] , \n139[26] , \b337[6] , 
+        \n133[29] , \n133[30] , \b303[3] , \n142[28] , \n142[31] , \n133[32] , 
+        \b303[1] , \n139[24] , \b337[4] , \b303[8] , \n139[29] , \n139[30] , 
+        \b337[9] , \n136[27] , \b303[5] , \n133[26] , \n142[27] , \b337[8] , 
+        \n139[28] , \n139[31] , \n136[26] , \b303[4] , \n142[26] , \n133[27] , 
+        \b337[1] , \n142[32] , \n136[32] , \b337[5] , \n139[25] , \b303[9] , 
+        \n136[29] , \n136[30] , \n139[27] , \b337[7] , \n133[28] , \n133[31] , 
+        \n142[30] , \n142[29] , \b303[2] , \b337[3] , \n142[24] , \n133[25] , 
+        \b303[6] , \n136[24] , \b320[3] , \n130[29] , \n130[30] , \b320[7] , 
+        \n130[24] , \n130[26] , \b320[5] , \n130[32] , \b320[8] , \b320[1] , 
+        n475, n476, n477, n478, n479, n480, n481, n482, n483, n484, n485, n486, 
+        n487, n488, n489, n490, n491, n492, n493, n494, n495, n496, n497, n498, 
+        n499, n500, n547, n548, n549, n550, n551, n552, n553, n554, n555, n556, 
+        n557, n558, n559, n560, n561, n562, n563, n564, n565, n566, n567, n568, 
+        n569, n570, n571, n572, n573, n574, n575, n576, n577, n578, n579, n580, 
+        n581, n582, n583, n584, n585, n586, n587, n588, n589, n590, n591, n592, 
+        n593, n594, n595, n596, n597, n598, n599, n600, n601, n602;
+    OR3P U98 ( .A(select[1]), .B(select[0]), .C(n562), .Z(n564) );
+    AN3P U99 ( .A(n562), .B(n565), .C(select[1]), .Z(n558) );
+    NR2 U100 ( .A(n475), .B(n476), .Z(zero) );
+    OR4 U101 ( .A(n477), .B(n478), .C(n479), .D(n480), .Z(out[7]) );
+    OR4 U102 ( .A(n481), .B(n482), .C(n483), .D(n484), .Z(out[6]) );
+    OR4 U103 ( .A(n485), .B(n486), .C(n487), .D(n488), .Z(out[5]) );
+    OR4 U104 ( .A(n489), .B(n490), .C(n491), .D(n492), .Z(out[4]) );
+    OR4 U105 ( .A(n493), .B(n494), .C(n495), .D(n496), .Z(out[3]) );
+    OR4 U106 ( .A(n497), .B(n498), .C(n499), .D(n500), .Z(out[2]) );
+    OR4 U107 ( .A(n547), .B(n548), .C(n549), .D(n550), .Z(out[1]) );
+    OR4 U108 ( .A(n551), .B(n552), .C(n553), .D(n554), .Z(out[0]) );
+    AN2 U109 ( .A(\b320[8] ), .B(n555), .Z(n479) );
+    AN2 U110 ( .A(\b337[8] ), .B(n556), .Z(n477) );
+    AN2 U111 ( .A(\b320[7] ), .B(n555), .Z(n483) );
+    AN2 U112 ( .A(\b337[7] ), .B(n556), .Z(n481) );
+    AN2 U113 ( .A(\b320[6] ), .B(n555), .Z(n487) );
+    AN2 U114 ( .A(\b337[6] ), .B(n556), .Z(n485) );
+    AN2 U115 ( .A(\b320[5] ), .B(n555), .Z(n491) );
+    AN2 U116 ( .A(\b337[5] ), .B(n556), .Z(n489) );
+    AN2 U117 ( .A(\b320[4] ), .B(n555), .Z(n495) );
+    AN2 U118 ( .A(\b337[4] ), .B(n556), .Z(n493) );
+    AN2 U119 ( .A(\b320[3] ), .B(n555), .Z(n499) );
+    AN2 U120 ( .A(\b337[3] ), .B(n556), .Z(n497) );
+    AN2 U121 ( .A(\b320[2] ), .B(n555), .Z(n549) );
+    AN2 U122 ( .A(\b337[2] ), .B(n556), .Z(n547) );
+    AN2 U123 ( .A(\b320[1] ), .B(n555), .Z(n553) );
+    AN2 U124 ( .A(\b337[1] ), .B(n556), .Z(n551) );
+    AN2 U125 ( .A(\b303[9] ), .B(n558), .Z(n557) );
+    OR4 U126 ( .A(n559), .B(n560), .C(n561), .D(n557), .Z(carry) );
+    AN2 U127 ( .A(\b320[9] ), .B(n555), .Z(n559) );
+    AN2 U128 ( .A(\b337[9] ), .B(n556), .Z(n560) );
+    AN3 U129 ( .A(n562), .B(n563), .C(select[0]), .Z(n555) );
+    AN3 U130 ( .A(n562), .B(n563), .C(n565), .Z(n556) );
+    MUX21H U131 ( .S(b[7]), .A(n561), .B(n567), .Z(n566) );
+    NR2 U132 ( .A(n569), .B(n561), .Z(n568) );
+    ND2 U133 ( .A(n571), .B(n564), .Z(n570) );
+    MUX21H U134 ( .S(a[7]), .A(n566), .B(n570), .Z(n478) );
+    MUX21H U135 ( .S(b[6]), .A(n561), .B(n567), .Z(n572) );
+    ND2 U136 ( .A(n574), .B(n564), .Z(n573) );
+    MUX21H U137 ( .S(a[6]), .A(n572), .B(n573), .Z(n482) );
+    MUX21H U138 ( .S(b[5]), .A(n561), .B(n567), .Z(n575) );
+    ND2 U139 ( .A(n577), .B(n564), .Z(n576) );
+    MUX21H U140 ( .S(a[5]), .A(n575), .B(n576), .Z(n486) );
+    MUX21H U141 ( .S(b[4]), .A(n561), .B(n567), .Z(n578) );
+    ND2 U142 ( .A(n580), .B(n564), .Z(n579) );
+    MUX21H U143 ( .S(a[4]), .A(n578), .B(n579), .Z(n490) );
+    MUX21H U144 ( .S(b[3]), .A(n561), .B(n567), .Z(n581) );
+    ND2 U145 ( .A(n583), .B(n564), .Z(n582) );
+    MUX21H U146 ( .S(a[3]), .A(n581), .B(n582), .Z(n494) );
+    MUX21H U147 ( .S(b[2]), .A(n561), .B(n567), .Z(n584) );
+    ND2 U148 ( .A(n586), .B(n564), .Z(n585) );
+    MUX21H U149 ( .S(a[2]), .A(n584), .B(n585), .Z(n498) );
+    MUX21H U150 ( .S(b[1]), .A(n561), .B(n567), .Z(n587) );
+    ND2 U151 ( .A(n589), .B(n564), .Z(n588) );
+    MUX21H U152 ( .S(a[1]), .A(n587), .B(n588), .Z(n548) );
+    MUX21H U153 ( .S(b[0]), .A(n561), .B(n567), .Z(n590) );
+    ND2 U154 ( .A(n592), .B(n564), .Z(n591) );
+    MUX21H U155 ( .S(a[0]), .A(n590), .B(n591), .Z(n552) );
+    AO2 U156 ( .A(b[7]), .B(n594), .C(\b303[8] ), .D(n558), .Z(n593) );
+    AO2 U157 ( .A(b[6]), .B(n594), .C(\b303[7] ), .D(n558), .Z(n595) );
+    AO2 U158 ( .A(b[5]), .B(n594), .C(\b303[6] ), .D(n558), .Z(n596) );
+    AO2 U159 ( .A(b[4]), .B(n594), .C(\b303[5] ), .D(n558), .Z(n597) );
+    AO2 U160 ( .A(b[3]), .B(n594), .C(\b303[4] ), .D(n558), .Z(n598) );
+    AO2 U161 ( .A(b[2]), .B(n594), .C(\b303[3] ), .D(n558), .Z(n599) );
+    AO2 U162 ( .A(b[1]), .B(n594), .C(\b303[2] ), .D(n558), .Z(n600) );
+    AO2 U163 ( .A(b[0]), .B(n594), .C(\b303[1] ), .D(n558), .Z(n601) );
+    OR4 U164 ( .A(out[5]), .B(out[4]), .C(out[7]), .D(out[6]), .Z(n475) );
+    OR4 U165 ( .A(out[1]), .B(out[0]), .C(out[3]), .D(out[2]), .Z(n476) );
+    AN3 U166 ( .A(n565), .B(select[2]), .C(select[1]), .Z(n561) );
+    AN3 U167 ( .A(n562), .B(select[0]), .C(select[1]), .Z(n569) );
+    OR3 U168 ( .A(select[1]), .B(n565), .C(n562), .Z(n602) );
+    MUX21H U169 ( .S(b[7]), .A(n602), .B(n568), .Z(n571) );
+    MUX21H U170 ( .S(b[6]), .A(n602), .B(n568), .Z(n574) );
+    MUX21H U171 ( .S(b[5]), .A(n602), .B(n568), .Z(n577) );
+    MUX21H U172 ( .S(b[4]), .A(n602), .B(n568), .Z(n580) );
+    MUX21H U173 ( .S(b[3]), .A(n602), .B(n568), .Z(n583) );
+    MUX21H U174 ( .S(b[2]), .A(n602), .B(n568), .Z(n586) );
+    MUX21H U175 ( .S(b[1]), .A(n602), .B(n568), .Z(n589) );
+    MUX21H U176 ( .S(b[0]), .A(n602), .B(n568), .Z(n592) );
+    IV U177 ( .A(select[2]), .Z(n562) );
+    IV U178 ( .A(select[1]), .Z(n563) );
+    IV U179 ( .A(select[0]), .Z(n565) );
+    IV U180 ( .A(n564), .Z(n594) );
+    IV U181 ( .A(n593), .Z(n480) );
+    IV U182 ( .A(n595), .Z(n484) );
+    IV U183 ( .A(n596), .Z(n488) );
+    IV U184 ( .A(n597), .Z(n492) );
+    IV U185 ( .A(n598), .Z(n496) );
+    IV U186 ( .A(n599), .Z(n500) );
+    IV U187 ( .A(n600), .Z(n550) );
+    IV U188 ( .A(n601), .Z(n554) );
+    IV U189 ( .A(n602), .Z(n567) );
+    alu_DW01_sub_9_1 sub_24_1 ( .A({1'b0, a[7], a[6], a[5], a[4], a[3], a[2], 
+        a[1], a[0]}), .B({1'b0, b[7], b[6], b[5], b[4], b[3], b[2], b[1], b[0]
+        }), .CI(1'b0), .DIFF({\n136[24] , \n136[25] , \n136[26] , \n136[27] , 
+        \n136[28] , \n136[29] , \n136[30] , \n136[31] , \n136[32] }) );
+    alu_DW01_dec_9_1 sub_25 ( .A({\n142[24] , \n142[25] , \n142[26] , 
+        \n142[27] , \n142[28] , \n142[29] , \n142[30] , \n142[31] , \n142[32] 
+        }), .SUM({\n139[24] , \n139[25] , \n139[26] , \n139[27] , \n139[28] , 
+        \n139[29] , \n139[30] , \n139[31] , \n139[32] }) );
+    alu_DW01_add_9_3 add_23 ( .A({\n130[24] , \n130[25] , \n130[26] , 
+        \n130[27] , \n130[28] , \n130[29] , \n130[30] , \n130[31] , \n130[32] 
+        }), .B({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, cin}), .CI(
+        1'b0), .SUM({\b337[9] , \b337[8] , \b337[7] , \b337[6] , \b337[5] , 
+        \b337[4] , \b337[3] , \b337[2] , \b337[1] }) );
+    alu_DW01_add_9_2 add_25 ( .A({\n139[24] , \n139[25] , \n139[26] , 
+        \n139[27] , \n139[28] , \n139[29] , \n139[30] , \n139[31] , \n139[32] 
+        }), .B({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, cin}), .CI(
+        1'b0), .SUM({\b303[9] , \b303[8] , \b303[7] , \b303[6] , \b303[5] , 
+        \b303[4] , \b303[3] , \b303[2] , \b303[1] }) );
+    alu_DW01_add_9_1 add_23_1 ( .A({1'b0, a[7], a[6], a[5], a[4], a[3], a[2], 
+        a[1], a[0]}), .B({1'b0, b[7], b[6], b[5], b[4], b[3], b[2], b[1], b[0]
+        }), .CI(1'b0), .SUM({\n130[24] , \n130[25] , \n130[26] , \n130[27] , 
+        \n130[28] , \n130[29] , \n130[30] , \n130[31] , \n130[32] }) );
+    alu_DW01_sub_9_0 sub_25_1 ( .A({1'b0, b[7], b[6], b[5], b[4], b[3], b[2], 
+        b[1], b[0]}), .B({1'b0, a[7], a[6], a[5], a[4], a[3], a[2], a[1], a[0]
+        }), .CI(1'b0), .DIFF({\n142[24] , \n142[25] , \n142[26] , \n142[27] , 
+        \n142[28] , \n142[29] , \n142[30] , \n142[31] , \n142[32] }) );
+    alu_DW01_add_9_0 add_24 ( .A({\n133[24] , \n133[25] , \n133[26] , 
+        \n133[27] , \n133[28] , \n133[29] , \n133[30] , \n133[31] , \n133[32] 
+        }), .B({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, cin}), .CI(
+        1'b0), .SUM({\b320[9] , \b320[8] , \b320[7] , \b320[6] , \b320[5] , 
+        \b320[4] , \b320[3] , \b320[2] , \b320[1] }) );
+    alu_DW01_dec_9_0 sub_24 ( .A({\n136[24] , \n136[25] , \n136[26] , 
+        \n136[27] , \n136[28] , \n136[29] , \n136[30] , \n136[31] , \n136[32] 
+        }), .SUM({\n133[24] , \n133[25] , \n133[26] , \n133[27] , \n133[28] , 
+        \n133[29] , \n133[30] , \n133[31] , \n133[32] }) );
+endmodule
+
+
+module ALUB ( IR, IDB, PC, CH, alu_mode, bus_mode, carry_mode, clock, reset, 
+    S1, ALU, IXR, error_out );
+input  [1:0] IR;
+input  [7:0] PC;
+input  [2:0] bus_mode;
+output [7:0] ALU;
+output [7:0] IXR;
+input  [7:0] IDB;
+input  [4:0] CH;
+input  [2:0] alu_mode;
+input  carry_mode, clock, reset;
+output S1, error_out;
+    wire \X0[7] , \X0[6] , \X0[4] , carry, T4, \ACC_tmp463[2] , zero, 
+        \ACC_tmp463[6] , \ACC_tmp463[4] , T3, \ACC_tmp463[0] , \IXR_tmp[3] , 
+        \X0[2] , \X0[0] , \Y0[7] , \ACC_tmp[1] , \IXR_tmp[7] , \Y0[3] , T2, 
+        \Y0[1] , \ACC_tmp[5] , \ACC_tmp[7] , \Y0[5] , \IXR_tmp[5] , 
+        \ACC_tmp[3] , \Y0[4] , \IXR_tmp[1] , \ACC_tmp[2] , \X0[5] , \X0[3] , 
+        \Y0[0] , \IXR_tmp[0] , carry_flag, \ACC_tmp[6] , \X0[1] , \IXR_tmp[4] , 
+        \IXR_tmp[6] , \Y0[2] , \ACC_tmp[4] , \IXR_tmp[2] , \Y0[6] , 
+        \ACC_tmp[0] , zero_flag, \ACC_tmp463[1] , \ACC_tmp463[5] , 
+        \ACC_tmp463[7] , \ACC_tmp463[3] , n735, n736, n737, n738, n739, n740, 
+        n741, n742, n743, n744, n745, n746, n747, n748, n749, n750, n751, n752, 
+        n753, n754, n755, n756, n757, n758, n759, n760, n761, n762, n763, n764, 
+        n765, n766, n767, n768, n769, n770, n771, n772, n773, n774, n775, n776, 
+        n777, n778, n779, n780, n781, n782, n783, n784, n785, n786, n787, n788, 
+        n789, n790, n791, n792;
+    alu i_alu ( .a({\X0[7] , \X0[6] , \X0[5] , \X0[4] , \X0[3] , \X0[2] , 
+        \X0[1] , \X0[0] }), .b({\Y0[7] , \Y0[6] , \Y0[5] , \Y0[4] , \Y0[3] , 
+        \Y0[2] , \Y0[1] , \Y0[0] }), .cin(carry_mode), .select(alu_mode), 
+        .out(ALU), .carry(carry), .zero(zero) );
+    ND2P U235 ( .A(n758), .B(n759), .Z(\Y0[6] ) );
+    ND2P U236 ( .A(n766), .B(n767), .Z(\Y0[2] ) );
+    ND2P U237 ( .A(n770), .B(n771), .Z(\Y0[0] ) );
+    ND2P U238 ( .A(n762), .B(n763), .Z(\Y0[4] ) );
+    ND2P U239 ( .A(n760), .B(n761), .Z(\Y0[5] ) );
+    ND2P U240 ( .A(n768), .B(n769), .Z(\Y0[1] ) );
+    ND2P U241 ( .A(n764), .B(n765), .Z(\Y0[3] ) );
+    ND2P U242 ( .A(n756), .B(n757), .Z(\Y0[7] ) );
+    IVP U243 ( .A(n735), .Z(n736) );
+    IV U244 ( .A(bus_mode[2]), .Z(n735) );
+    AN3P U245 ( .A(n780), .B(n775), .C(n777), .Z(n782) );
+    AN3P U246 ( .A(n780), .B(n777), .C(bus_mode[1]), .Z(n779) );
+    AN3P U247 ( .A(n775), .B(n736), .C(bus_mode[0]), .Z(n778) );
+    AN3P U248 ( .A(n777), .B(n736), .C(bus_mode[1]), .Z(n776) );
+    IVP U249 ( .A(clock), .Z(n792) );
+    ND2 U250 ( .A(CH[0]), .B(n737), .Z(S1) );
+    NR2 U251 ( .A(n738), .B(n739), .Z(error_out) );
+    ND2 U252 ( .A(n740), .B(n741), .Z(\X0[7] ) );
+    ND2 U253 ( .A(n742), .B(n743), .Z(\X0[6] ) );
+    ND2 U254 ( .A(n744), .B(n745), .Z(\X0[5] ) );
+    ND2 U255 ( .A(n746), .B(n747), .Z(\X0[4] ) );
+    ND2 U256 ( .A(n748), .B(n749), .Z(\X0[3] ) );
+    ND2 U257 ( .A(n750), .B(n751), .Z(\X0[2] ) );
+    ND2 U258 ( .A(n752), .B(n753), .Z(\X0[1] ) );
+    ND2 U259 ( .A(n754), .B(n755), .Z(\X0[0] ) );
+    AN2 U260 ( .A(CH[2]), .B(clock), .Z(T2) );
+    AN2 U261 ( .A(CH[4]), .B(clock), .Z(T4) );
+    AN2 U262 ( .A(CH[3]), .B(clock), .Z(T3) );
+    MUX21H U263 ( .S(IR[0]), .A(zero_flag), .B(carry_flag), .Z(n772) );
+    AN2 U264 ( .A(n774), .B(n775), .Z(n773) );
+    AN2 U265 ( .A(bus_mode[0]), .B(n780), .Z(n781) );
+    MUX21H U266 ( .S(n772), .A(IR[1]), .B(n784), .Z(n783) );
+    OR3 U267 ( .A(CH[1]), .B(ALU[2]), .C(ALU[6]), .Z(n785) );
+    OR4 U268 ( .A(ALU[3]), .B(ALU[7]), .C(ALU[1]), .D(n785), .Z(n786) );
+    AN3 U269 ( .A(n772), .B(ALU[4]), .C(ALU[5]), .Z(n787) );
+    OR4 U270 ( .A(ALU[0]), .B(carry_flag), .C(n786), .D(n788), .Z(n739) );
+    AO2 U271 ( .A(n773), .B(PC[7]), .C(n776), .D(\ACC_tmp[7] ), .Z(n756) );
+    AO2 U272 ( .A(PC[6]), .B(n773), .C(\ACC_tmp[6] ), .D(n776), .Z(n758) );
+    AO2 U273 ( .A(PC[5]), .B(n773), .C(\ACC_tmp[5] ), .D(n776), .Z(n760) );
+    AO2 U274 ( .A(PC[4]), .B(n773), .C(\ACC_tmp[4] ), .D(n776), .Z(n762) );
+    AO2 U275 ( .A(PC[3]), .B(n773), .C(\ACC_tmp[3] ), .D(n776), .Z(n764) );
+    AO2 U276 ( .A(PC[2]), .B(n773), .C(\ACC_tmp[2] ), .D(n776), .Z(n766) );
+    AO2 U277 ( .A(PC[1]), .B(n773), .C(\ACC_tmp[1] ), .D(n776), .Z(n768) );
+    AO2 U278 ( .A(PC[0]), .B(n773), .C(\ACC_tmp[0] ), .D(n776), .Z(n770) );
+    AO2 U279 ( .A(IDB[7]), .B(n736), .C(n779), .D(PC[7]), .Z(n741) );
+    AO2 U280 ( .A(n781), .B(\ACC_tmp[7] ), .C(n782), .D(\IXR_tmp[7] ), .Z(n740
+        ) );
+    AO2 U281 ( .A(IDB[6]), .B(n736), .C(n779), .D(PC[6]), .Z(n743) );
+    AO2 U282 ( .A(n781), .B(\ACC_tmp[6] ), .C(n782), .D(\IXR_tmp[6] ), .Z(n742
+        ) );
+    AO2 U283 ( .A(IDB[5]), .B(n736), .C(n779), .D(PC[5]), .Z(n745) );
+    AO2 U284 ( .A(n781), .B(\ACC_tmp[5] ), .C(n782), .D(\IXR_tmp[5] ), .Z(n744
+        ) );
+    AO2 U285 ( .A(IDB[4]), .B(n736), .C(n779), .D(PC[4]), .Z(n747) );
+    AO2 U286 ( .A(n781), .B(\ACC_tmp[4] ), .C(n782), .D(\IXR_tmp[4] ), .Z(n746
+        ) );
+    AO2 U287 ( .A(IDB[3]), .B(n736), .C(n779), .D(PC[3]), .Z(n749) );
+    AO2 U288 ( .A(n781), .B(\ACC_tmp[3] ), .C(n782), .D(\IXR_tmp[3] ), .Z(n748
+        ) );
+    AO2 U289 ( .A(IDB[2]), .B(n736), .C(n779), .D(PC[2]), .Z(n751) );
+    AO2 U290 ( .A(n781), .B(\ACC_tmp[2] ), .C(n782), .D(\IXR_tmp[2] ), .Z(n750
+        ) );
+    AO2 U291 ( .A(IDB[1]), .B(n736), .C(n779), .D(PC[1]), .Z(n753) );
+    AO2 U292 ( .A(n781), .B(\ACC_tmp[1] ), .C(n782), .D(\IXR_tmp[1] ), .Z(n752
+        ) );
+    AO2 U293 ( .A(IDB[0]), .B(n736), .C(n779), .D(PC[0]), .Z(n755) );
+    AO2 U294 ( .A(n781), .B(\ACC_tmp[0] ), .C(n782), .D(\IXR_tmp[0] ), .Z(n754
+        ) );
+    ND2 U295 ( .A(n783), .B(n789), .Z(n737) );
+    ND2 U296 ( .A(bus_mode[2]), .B(n777), .Z(n790) );
+    ND2 U297 ( .A(n791), .B(n790), .Z(n774) );
+    ND2 U298 ( .A(n778), .B(\IXR_tmp[7] ), .Z(n757) );
+    ND2 U299 ( .A(\IXR_tmp[6] ), .B(n778), .Z(n759) );
+    ND2 U300 ( .A(\IXR_tmp[5] ), .B(n778), .Z(n761) );
+    ND2 U301 ( .A(\IXR_tmp[4] ), .B(n778), .Z(n763) );
+    ND2 U302 ( .A(\IXR_tmp[3] ), .B(n778), .Z(n765) );
+    ND2 U303 ( .A(\IXR_tmp[2] ), .B(n778), .Z(n767) );
+    ND2 U304 ( .A(\IXR_tmp[1] ), .B(n778), .Z(n769) );
+    ND2 U305 ( .A(\IXR_tmp[0] ), .B(n778), .Z(n771) );
+    IV U306 ( .A(IR[1]), .Z(n784) );
+    IV U307 ( .A(CH[1]), .Z(n789) );
+    IV U308 ( .A(n736), .Z(n780) );
+    IV U309 ( .A(bus_mode[1]), .Z(n775) );
+    IV U310 ( .A(bus_mode[0]), .Z(n777) );
+    IV U311 ( .A(n781), .Z(n791) );
+    IV U312 ( .A(n787), .Z(n788) );
+    IV U313 ( .A(S1), .Z(n738) );
+    FD2 \IXR_tmp_reg[7]  ( .D(IXR[7]), .CP(n792), .CD(reset), .Q(\IXR_tmp[7] )
+         );
+    FD2 \IXR_tmp_reg[6]  ( .D(IXR[6]), .CP(n792), .CD(reset), .Q(\IXR_tmp[6] )
+         );
+    FD2 \IXR_tmp_reg[5]  ( .D(IXR[5]), .CP(n792), .CD(reset), .Q(\IXR_tmp[5] )
+         );
+    FD2 \IXR_tmp_reg[4]  ( .D(IXR[4]), .CP(n792), .CD(reset), .Q(\IXR_tmp[4] )
+         );
+    FD2 \IXR_tmp_reg[3]  ( .D(IXR[3]), .CP(n792), .CD(reset), .Q(\IXR_tmp[3] )
+         );
+    FD2 \IXR_tmp_reg[2]  ( .D(IXR[2]), .CP(n792), .CD(reset), .Q(\IXR_tmp[2] )
+         );
+    FD2 \IXR_tmp_reg[1]  ( .D(IXR[1]), .CP(n792), .CD(reset), .Q(\IXR_tmp[1] )
+         );
+    FD2 \IXR_tmp_reg[0]  ( .D(IXR[0]), .CP(n792), .CD(reset), .Q(\IXR_tmp[0] )
+         );
+    FD2 \ACC_tmp_reg[7]  ( .D(\ACC_tmp463[7] ), .CP(n792), .CD(reset), .Q(
+        \ACC_tmp[7] ) );
+    FD2 \ACC_tmp_reg[6]  ( .D(\ACC_tmp463[6] ), .CP(n792), .CD(reset), .Q(
+        \ACC_tmp[6] ) );
+    FD2 \ACC_tmp_reg[5]  ( .D(\ACC_tmp463[5] ), .CP(n792), .CD(reset), .Q(
+        \ACC_tmp[5] ) );
+    FD2 \ACC_tmp_reg[4]  ( .D(\ACC_tmp463[4] ), .CP(n792), .CD(reset), .Q(
+        \ACC_tmp[4] ) );
+    FD2 \ACC_tmp_reg[3]  ( .D(\ACC_tmp463[3] ), .CP(n792), .CD(reset), .Q(
+        \ACC_tmp[3] ) );
+    FD2 \ACC_tmp_reg[2]  ( .D(\ACC_tmp463[2] ), .CP(n792), .CD(reset), .Q(
+        \ACC_tmp[2] ) );
+    FD2 \ACC_tmp_reg[1]  ( .D(\ACC_tmp463[1] ), .CP(n792), .CD(reset), .Q(
+        \ACC_tmp[1] ) );
+    FD2 \ACC_tmp_reg[0]  ( .D(\ACC_tmp463[0] ), .CP(n792), .CD(reset), .Q(
+        \ACC_tmp[0] ) );
+    FD2 \IXR_reg[7]  ( .D(ALU[7]), .CP(T3), .CD(reset), .Q(IXR[7]) );
+    FD2 \IXR_reg[6]  ( .D(ALU[6]), .CP(T3), .CD(reset), .Q(IXR[6]) );
+    FD2 \IXR_reg[5]  ( .D(ALU[5]), .CP(T3), .CD(reset), .Q(IXR[5]) );
+    FD2 \IXR_reg[4]  ( .D(ALU[4]), .CP(T3), .CD(reset), .Q(IXR[4]) );
+    FD2 \IXR_reg[3]  ( .D(ALU[3]), .CP(T3), .CD(reset), .Q(IXR[3]) );
+    FD2 \IXR_reg[2]  ( .D(ALU[2]), .CP(T3), .CD(reset), .Q(IXR[2]) );
+    FD2 \IXR_reg[1]  ( .D(ALU[1]), .CP(T3), .CD(reset), .Q(IXR[1]) );
+    FD2 \IXR_reg[0]  ( .D(ALU[0]), .CP(T3), .CD(reset), .Q(IXR[0]) );
+    FD2 \ACC_reg[7]  ( .D(ALU[7]), .CP(T4), .CD(reset), .Q(\ACC_tmp463[7] ) );
+    FD2 \ACC_reg[6]  ( .D(ALU[6]), .CP(T4), .CD(reset), .Q(\ACC_tmp463[6] ) );
+    FD2 \ACC_reg[5]  ( .D(ALU[5]), .CP(T4), .CD(reset), .Q(\ACC_tmp463[5] ) );
+    FD2 \ACC_reg[4]  ( .D(ALU[4]), .CP(T4), .CD(reset), .Q(\ACC_tmp463[4] ) );
+    FD2 \ACC_reg[3]  ( .D(ALU[3]), .CP(T4), .CD(reset), .Q(\ACC_tmp463[3] ) );
+    FD2 \ACC_reg[2]  ( .D(ALU[2]), .CP(T4), .CD(reset), .Q(\ACC_tmp463[2] ) );
+    FD2 \ACC_reg[1]  ( .D(ALU[1]), .CP(T4), .CD(reset), .Q(\ACC_tmp463[1] ) );
+    FD2 \ACC_reg[0]  ( .D(ALU[0]), .CP(T4), .CD(reset), .Q(\ACC_tmp463[0] ) );
+    FD2 zero_flag_reg ( .D(zero), .CP(T2), .CD(reset), .Q(zero_flag) );
+    FD2 carry_flag_reg ( .D(carry), .CP(T2), .CD(reset), .Q(carry_flag) );
+endmodule
+
+
+module CCU_DW01_inc_8_0 ( A, SUM );
+input  [7:0] A;
+output [7:0] SUM;
+    wire \carry[4] , \carry[6] , \carry[2] , \carry[7] , \carry[3] , 
+        \carry[5] ;
+    IV U3 ( .A(A[0]), .Z(SUM[0]) );
+    HA1 U1_1 ( .A(A[1]), .B(A[0]), .S(SUM[1]), .CO(\carry[2] ) );
+    HA1 U1_6 ( .A(A[6]), .B(\carry[6] ), .S(SUM[6]), .CO(\carry[7] ) );
+    HA1 U1_2 ( .A(A[2]), .B(\carry[2] ), .S(SUM[2]), .CO(\carry[3] ) );
+    HA1 U1_7 ( .A(A[7]), .B(\carry[7] ), .S(SUM[7]) );
+    HA1 U1_3 ( .A(A[3]), .B(\carry[3] ), .S(SUM[3]), .CO(\carry[4] ) );
+    HA1 U1_4 ( .A(A[4]), .B(\carry[4] ), .S(SUM[4]), .CO(\carry[5] ) );
+    HA1 U1_5 ( .A(A[5]), .B(\carry[5] ), .S(SUM[5]), .CO(\carry[6] ) );
+endmodule
+
+
+module CCU ( TDB, clock, reset, CH, alu_mode, bus_mode, carry_mode, mux_sel, 
+    C6, C5, C1, C0, IR );
+input  [7:0] TDB;
+output [4:0] CH;
+output [2:0] alu_mode;
+output [2:0] bus_mode;
+output [2:0] mux_sel;
+output [1:0] IR;
+input  clock, reset;
+output carry_mode, C6, C5, C1, C0;
+    wire \next_MA[3] , \CH391[2] , \MA182[0] , \MA[5] , \next_MA[7] , 
+        \next_MA[5] , C21, \MA[7] , \CH391[4] , \CH391[0] , \MA[3] , 
+        \next_MA[1] , \MAP[6] , \next_MA232[5] , \mprom_out[12] , \IR7_IR2[4] , 
+        \mprom_out[21] , C20, \mprom_out[4] , \next_MA232[1] , \mprom_out[16] , 
+        \IR7_IR2[0] , \MAP[2] , \mprom_out[9] , \mprom_out[0] , \mprom_out[2] , 
+        \MAP[0] , \IR7_IR2[2] , \next_MA232[3] , \mprom_out[14] , 
+        \mprom_out[6] , \mprom_out[19] , \next_MA232[7] , \mprom_out[10] , 
+        \MAP[4] , \mprom_out[7] , \next_MA232[6] , \mprom_out[18] , 
+        \mprom_out[11] , \MAP[5] , C19, \mprom_out[3] , \MAP[1] , 
+        \next_MA232[2] , \mprom_out[15] , \IR7_IR2[3] , \IR7_IR2[1] , 
+        \next_MA232[0] , \mprom_out[17] , \MAP[3] , \mprom_out[8] , 
+        \mprom_out[1] , \MAP[7] , \mprom_out[13] , \next_MA232[4] , 
+        \IR7_IR2[5] , \mprom_out[20] , \mprom_out[5] , \CH391[1] , \MA[2] , 
+        \next_MA[0] , \next_MA[4] , \MA[6] , \MA182[1] , \MA[4] , \next_MA[6] , 
+        \next_MA[2] , \CH391[3] , n649, n650, n651, n652, n653, n654, n655, 
+        n656, n657, n658, n659, n660, n661, n662;
+    maprom i_maprom ( .addr({\IR7_IR2[5] , \IR7_IR2[4] , \IR7_IR2[3] , 
+        \IR7_IR2[2] , \IR7_IR2[1] , \IR7_IR2[0] }), .dout({\MAP[7] , \MAP[6] , 
+        \MAP[5] , \MAP[4] , \MAP[3] , \MAP[2] , \MAP[1] , \MAP[0] }) );
+    mprom i_mprom ( .addr({\MA[7] , \MA[6] , \MA[5] , \MA[4] , \MA[3] , 
+        \MA[2] , \MA182[1] , \MA182[0] }), .dout({\mprom_out[21] , 
+        \mprom_out[20] , \mprom_out[19] , \mprom_out[18] , \mprom_out[17] , 
+        \mprom_out[16] , \mprom_out[15] , \mprom_out[14] , \mprom_out[13] , 
+        \mprom_out[12] , \mprom_out[11] , \mprom_out[10] , \mprom_out[9] , 
+        \mprom_out[8] , \mprom_out[7] , \mprom_out[6] , \mprom_out[5] , 
+        \mprom_out[4] , \mprom_out[3] , \mprom_out[2] , \mprom_out[1] , 
+        \mprom_out[0] }) );
+    AN3P U233 ( .A(n660), .B(C20), .C(reset), .Z(n659) );
+    IVP U234 ( .A(clock), .Z(n662) );
+    IVP U235 ( .A(clock), .Z(n649) );
+    IV U236 ( .A(n650), .Z(\MA[7] ) );
+    IV U237 ( .A(n651), .Z(\MA[6] ) );
+    IV U238 ( .A(n652), .Z(\MA[5] ) );
+    IV U239 ( .A(n653), .Z(\MA[4] ) );
+    IV U240 ( .A(n654), .Z(\MA[3] ) );
+    IV U241 ( .A(n655), .Z(\MA[2] ) );
+    IV U242 ( .A(n656), .Z(\MA182[1] ) );
+    IV U243 ( .A(n657), .Z(\MA182[0] ) );
+    IV U244 ( .A(\mprom_out[11] ), .Z(\CH391[4] ) );
+    IV U245 ( .A(\mprom_out[10] ), .Z(\CH391[3] ) );
+    IV U246 ( .A(\mprom_out[9] ), .Z(\CH391[2] ) );
+    IV U247 ( .A(\mprom_out[8] ), .Z(\CH391[1] ) );
+    IV U248 ( .A(\mprom_out[7] ), .Z(\CH391[0] ) );
+    IV U249 ( .A(C19), .Z(n661) );
+    AO2 U250 ( .A(n658), .B(\next_MA[7] ), .C(n659), .D(\MAP[7] ), .Z(n650) );
+    AO2 U251 ( .A(\next_MA[6] ), .B(n658), .C(\MAP[6] ), .D(n659), .Z(n651) );
+    AO2 U252 ( .A(\next_MA[5] ), .B(n658), .C(\MAP[5] ), .D(n659), .Z(n652) );
+    AO2 U253 ( .A(\next_MA[4] ), .B(n658), .C(\MAP[4] ), .D(n659), .Z(n653) );
+    AO2 U254 ( .A(\next_MA[3] ), .B(n658), .C(\MAP[3] ), .D(n659), .Z(n654) );
+    AO2 U255 ( .A(\next_MA[2] ), .B(n658), .C(\MAP[2] ), .D(n659), .Z(n655) );
+    AO2 U256 ( .A(\next_MA[1] ), .B(n658), .C(\MAP[1] ), .D(n659), .Z(n656) );
+    AO2 U257 ( .A(\next_MA[0] ), .B(n658), .C(\MAP[0] ), .D(n659), .Z(n657) );
+    AN3 U258 ( .A(C20), .B(C21), .C(reset), .Z(n658) );
+    IV U259 ( .A(C21), .Z(n660) );
+    FD2 \IR_reg[1]  ( .D(TDB[1]), .CP(n661), .CD(reset), .Q(IR[1]) );
+    FD2 \IR_reg[0]  ( .D(TDB[0]), .CP(n661), .CD(reset), .Q(IR[0]) );
+    FD2 \IR7_IR2_reg[5]  ( .D(TDB[7]), .CP(n661), .CD(reset), .Q(\IR7_IR2[5] )
+         );
+    FD2 \IR7_IR2_reg[4]  ( .D(TDB[6]), .CP(n661), .CD(reset), .Q(\IR7_IR2[4] )
+         );
+    FD2 \IR7_IR2_reg[3]  ( .D(TDB[5]), .CP(n661), .CD(reset), .Q(\IR7_IR2[3] )
+         );
+    FD2 \IR7_IR2_reg[2]  ( .D(TDB[4]), .CP(n661), .CD(reset), .Q(\IR7_IR2[2] )
+         );
+    FD2 \IR7_IR2_reg[1]  ( .D(TDB[3]), .CP(n661), .CD(reset), .Q(\IR7_IR2[1] )
+         );
+    FD2 \IR7_IR2_reg[0]  ( .D(TDB[2]), .CP(n661), .CD(reset), .Q(\IR7_IR2[0] )
+         );
+    FD2 \next_MA_reg[7]  ( .D(\next_MA232[7] ), .CP(n649), .CD(reset), .Q(
+        \next_MA[7] ) );
+    FD2 \next_MA_reg[6]  ( .D(\next_MA232[6] ), .CP(n649), .CD(reset), .Q(
+        \next_MA[6] ) );
+    FD2 \next_MA_reg[5]  ( .D(\next_MA232[5] ), .CP(n649), .CD(reset), .Q(
+        \next_MA[5] ) );
+    FD2 \next_MA_reg[4]  ( .D(\next_MA232[4] ), .CP(n649), .CD(reset), .Q(
+        \next_MA[4] ) );
+    FD2 \next_MA_reg[3]  ( .D(\next_MA232[3] ), .CP(n649), .CD(reset), .Q(
+        \next_MA[3] ) );
+    FD2 \next_MA_reg[2]  ( .D(\next_MA232[2] ), .CP(n649), .CD(reset), .Q(
+        \next_MA[2] ) );
+    FD2 \next_MA_reg[1]  ( .D(\next_MA232[1] ), .CP(n649), .CD(reset), .Q(
+        \next_MA[1] ) );
+    FD2 \next_MA_reg[0]  ( .D(\next_MA232[0] ), .CP(n649), .CD(reset), .Q(
+        \next_MA[0] ) );
+    FD2 \mux_sel_reg[2]  ( .D(\mprom_out[4] ), .CP(n649), .CD(reset), .Q(
+        mux_sel[2]) );
+    FD2 \mux_sel_reg[1]  ( .D(\mprom_out[3] ), .CP(n649), .CD(reset), .Q(
+        mux_sel[1]) );
+    FD2 \mux_sel_reg[0]  ( .D(\mprom_out[2] ), .CP(n649), .CD(reset), .Q(
+        mux_sel[0]) );
+    FD2 \CH_reg[4]  ( .D(\CH391[4] ), .CP(n649), .CD(reset), .Q(CH[4]) );
+    FD2 \CH_reg[3]  ( .D(\CH391[3] ), .CP(n649), .CD(reset), .Q(CH[3]) );
+    FD2 \CH_reg[2]  ( .D(\CH391[2] ), .CP(n649), .CD(reset), .Q(CH[2]) );
+    FD2 \CH_reg[1]  ( .D(\CH391[1] ), .CP(n649), .CD(reset), .Q(CH[1]) );
+    FD2 \CH_reg[0]  ( .D(\CH391[0] ), .CP(n662), .CD(reset), .Q(CH[0]) );
+    FD2 \alu_mode_reg[2]  ( .D(\mprom_out[14] ), .CP(n662), .CD(reset), .Q(
+        alu_mode[2]) );
+    FD2 \alu_mode_reg[1]  ( .D(\mprom_out[13] ), .CP(n662), .CD(reset), .Q(
+        alu_mode[1]) );
+    FD2 \alu_mode_reg[0]  ( .D(\mprom_out[12] ), .CP(n662), .CD(reset), .Q(
+        alu_mode[0]) );
+    FD2 \bus_mode_reg[2]  ( .D(\mprom_out[17] ), .CP(n662), .CD(reset), .Q(
+        bus_mode[2]) );
+    FD2 \bus_mode_reg[1]  ( .D(\mprom_out[16] ), .CP(n662), .CD(reset), .Q(
+        bus_mode[1]) );
+    FD2 \bus_mode_reg[0]  ( .D(\mprom_out[15] ), .CP(n662), .CD(reset), .Q(
+        bus_mode[0]) );
+    FD2 C21_reg ( .D(\mprom_out[21] ), .CP(n662), .CD(reset), .Q(C21) );
+    FD2 C5_reg ( .D(\mprom_out[5] ), .CP(n662), .CD(reset), .Q(C5) );
+    FD2 C1_reg ( .D(\mprom_out[1] ), .CP(n662), .CD(reset), .Q(C1) );
+    FD2 carry_mode_reg ( .D(\mprom_out[18] ), .CP(n662), .CD(reset), .Q(
+        carry_mode) );
+    FD2 C20_reg ( .D(\mprom_out[20] ), .CP(n662), .CD(reset), .Q(C20) );
+    FD2 C0_reg ( .D(\mprom_out[0] ), .CP(n662), .CD(reset), .Q(C0) );
+    FD2 C6_reg ( .D(\mprom_out[6] ), .CP(n662), .CD(reset), .Q(C6) );
+    FD2 C19_reg ( .D(\mprom_out[19] ), .CP(n662), .CD(reset), .Q(C19) );
+    CCU_DW01_inc_8_0 add_84 ( .A({\MA[7] , \MA[6] , \MA[5] , \MA[4] , \MA[3] , 
+        \MA[2] , \MA182[1] , \MA182[0] }), .SUM({\next_MA232[7] , 
+        \next_MA232[6] , \next_MA232[5] , \next_MA232[4] , \next_MA232[3] , 
+        \next_MA232[2] , \next_MA232[1] , \next_MA232[0] }) );
+endmodule
+
+
+module CPU ( clock, reset, VMA, R_W, data, addr );
+inout  [7:0] data;
+output [7:0] addr;
+input  clock, reset;
+output VMA, R_W;
+    wire S1, \IR[0] , \CH[2] , \alu_mode[1] , \mux_sel[1] , \ALU[6] , \PC[2] , 
+        \TDB[2] , \IXR[6] , \ALU[2] , \IXR[2] , \bus_mode[1] , \ALU[0] , 
+        \IXR[0] , \PC[6] , \PC[4] , \TDB[6] , \TDB[4] , \CH[4] , \IR[1] , 
+        \PC[1] , \PC[0] , \ALU[4] , \IXR[4] , C6, \TDB[0] , \CH[0] , 
+        carry_mode, \ALU[5] , \IXR[5] , error, \TDB[1] , \CH[1] , \ALU[1] , 
+        \mux_sel[2] , \PC[5] , \alu_mode[2] , \TDB[5] , \bus_mode[2] , 
+        \IXR[1] , \ALU[3] , \bus_mode[0] , \IXR[3] , \PC[7] , \TDB[7] , 
+        \alu_mode[0] , \ALU[7] , \IXR[7] , \mux_sel[0] , \PC[3] , \TDB[3] , 
+        \CH[3] , C5;
+    ALUB i_ALUB ( .IR({\IR[1] , \IR[0] }), .IDB(addr), .PC({\PC[7] , \PC[6] , 
+        \PC[5] , \PC[4] , \PC[3] , \PC[2] , \PC[1] , \PC[0] }), .CH({\CH[4] , 
+        \CH[3] , \CH[2] , \CH[1] , \CH[0] }), .alu_mode({\alu_mode[2] , 
+        \alu_mode[1] , \alu_mode[0] }), .bus_mode({\bus_mode[2] , 
+        \bus_mode[1] , \bus_mode[0] }), .carry_mode(carry_mode), .clock(clock), 
+        .reset(reset), .S1(S1), .ALU({\ALU[7] , \ALU[6] , \ALU[5] , \ALU[4] , 
+        \ALU[3] , \ALU[2] , \ALU[1] , \ALU[0] }), .IXR({\IXR[7] , \IXR[6] , 
+        \IXR[5] , \IXR[4] , \IXR[3] , \IXR[2] , \IXR[1] , \IXR[0] }), 
+        .error_out(error) );
+    PCU i_PCU ( .mux_sel({\mux_sel[2] , \mux_sel[1] , \mux_sel[0] }), .C6(C6), 
+        .C5(C5), .C1(R_W), .ALU({\ALU[7] , \ALU[6] , \ALU[5] , \ALU[4] , 
+        \ALU[3] , \ALU[2] , \ALU[1] , \ALU[0] }), .S1(S1), .IXR({\IXR[7] , 
+        \IXR[6] , \IXR[5] , \IXR[4] , \IXR[3] , \IXR[2] , \IXR[1] , \IXR[0] }), 
+        .reset(reset), .data(data), .PC({\PC[7] , \PC[6] , \PC[5] , \PC[4] , 
+        \PC[3] , \PC[2] , \PC[1] , \PC[0] }), .IDB(addr), .TDB({\TDB[7] , 
+        \TDB[6] , \TDB[5] , \TDB[4] , \TDB[3] , \TDB[2] , \TDB[1] , \TDB[0] }), 
+        .error_in(error) );
+    CCU i_CCU ( .TDB({\TDB[7] , \TDB[6] , \TDB[5] , \TDB[4] , \TDB[3] , 
+        \TDB[2] , \TDB[1] , \TDB[0] }), .clock(clock), .reset(reset), .CH({
+        \CH[4] , \CH[3] , \CH[2] , \CH[1] , \CH[0] }), .alu_mode({
+        \alu_mode[2] , \alu_mode[1] , \alu_mode[0] }), .bus_mode({
+        \bus_mode[2] , \bus_mode[1] , \bus_mode[0] }), .carry_mode(carry_mode), 
+        .mux_sel({\mux_sel[2] , \mux_sel[1] , \mux_sel[0] }), .C6(C6), .C5(C5), 
+        .C1(R_W), .C0(VMA), .IR({\IR[1] , \IR[0] }) );
+
+`include "./chain.v"
+
+
+endmodule
+

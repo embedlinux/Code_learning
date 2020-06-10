@@ -1,0 +1,11 @@
+#!/bin/csh -f
+##################################################
+#  Environment Setup
+##################################################
+source ./SETUP
+
+# Load design into Siloti with SimVE enabled 
+#siloti -simVE -f run.f -ssf ess.fsdb -nologo
+
+# Load design, perform BA, enable DE, enable Verdi
+siloti -simve -f run.f -ssf ess.fsdb -ba -de -verdi -sigexp -nologo

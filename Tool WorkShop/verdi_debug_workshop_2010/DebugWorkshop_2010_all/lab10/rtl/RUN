@@ -1,0 +1,4 @@
+#!/bin/csh -xf
+
+setenv SPECMAN_PATH ${NOVAS_HOME}/share/PLI/specman
+verdi -top system ../e/test_cpu.e -sswr lib.rc &

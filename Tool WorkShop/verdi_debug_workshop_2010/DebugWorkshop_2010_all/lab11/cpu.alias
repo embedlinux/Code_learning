@@ -1,0 +1,15 @@
+CLRA		 8'h04
+LDA		 8'h14
+LDA-		 8'h18
+STA		 8'h28
+STA-		 8'h2C
+ADDA		 8'h34
+ADDA-		 8'h38
+SUBA		 8'h48
+INCA		 8'h08
+LDX		 8'h54
+TAX		 8'h0C
+JMP		 8'h8C
+BNZ		 8'h64
+DATA		 8'h20
+

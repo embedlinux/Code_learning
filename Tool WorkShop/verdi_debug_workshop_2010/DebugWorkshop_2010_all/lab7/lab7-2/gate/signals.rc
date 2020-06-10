@@ -1,0 +1,67 @@
+Magic 271485
+Revision 6.0
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 104 431 960 407 100 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / -i 1 "" "/home/asun/debug/newtransition/gate/gate_fail.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+windowTimeUnit 1ns
+
+; waveform viewport range
+zoom 4479.301423 5045.278137 1n
+cursor 4677.000000
+marker 0.000000
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 7
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/asun/debug/newtransition/gate/gate_fail.fsdb"
+addSignal -h 15 /system/i_cpu/i_ALUB/carry
+addSignal -h 15 -holdScope T2
+addSignal -h 15 -holdScope reset
+addSignal -h 15 -holdScope carry_flag
+addGroup "G2"
+addSignal -h 15 /system/i_cpu/i_PCU/\IDR[6] 
+addSignal -h 15 -holdScope n543
+addGroup "G3"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

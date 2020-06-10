@@ -1,0 +1,36 @@
+#!/bin/csh -f 
+# --test: File name containing a test program block; default='../sv/test_random.sv'
+
+set test=../sv/test_random.sv
+while ($#argv > 0)
+    switch($argv[1])
+        case --test:
+            shift
+            if ($#argv > 0) then
+                if (!(-e $argv[1])) then
+                    echo "Error: Test program '$argv[1]': File not found"
+                    exit 1
+                endif
+                set test=$argv[1]
+            else
+                echo "Error: --test: No test file name given"
+                exit 1
+            endif
+        breaksw
+        default
+            echo "Error: '$argv[1]': Unrecognized switch"
+            exit 1
+        breaksw
+    endsw
+    shift
+end
+echo "Debug: test=$test"
+
+setenv VERDI_SVTB_BETA 1
+setenv VERDI_SVTB_ALPHA 1
+
+cp novas_svtb.fsdb novas.fsdb 
+cp novas.rc.bak novas.rc
+verdi -macrodebug -nologo -sv display.svh -f run_sv.f -ssf novas.fsdb +define+SVA_ENABLE +incdir+../sv -ntb_opts vmm $test
+
+

@@ -1,0 +1,14 @@
+*design* DebussyLib (btIdent 2007.10)
+Command arguments:
+    +define+verilog
+    -f run.f
+        system.v
+        pram.v
+        -v mem.v
+        CPU.vg
+        -v lib.v
+
+Highest level modules:
+system
+
+Total	0 error(s),   0 warning(s)

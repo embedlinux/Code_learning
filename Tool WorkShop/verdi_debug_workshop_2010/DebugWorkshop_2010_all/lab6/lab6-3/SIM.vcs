@@ -1,0 +1,14 @@
+#!/bin/csh -f
+#
+##################################################
+#  Environment Setup
+##################################################
+source ./SETUP
+
+##################################################
+# Run simulation and generate FSDB files 
+##################################################
+#vcs +cli+2 -line -P $NOVAS_INST_DIR/share/PLI/vcsd2005.06/SOL2/vcsd.tab $NOVAS_INST_DIR/share/PLI/vcsd2005.06/SOL2/pli.a +vcsd -f ./run.f 
+vcs +cli+2 -line -P $NOVAS_INST_DIR/share/PLI/vcsd2005.06/SOL2/vcsd.tab \
+$NOVAS_INST_DIR/share/PLI/vcsd2005.06/SOL2/pli.a +vcsd +define+ESA -f ./run.f
+simv +vcs+lic+wait

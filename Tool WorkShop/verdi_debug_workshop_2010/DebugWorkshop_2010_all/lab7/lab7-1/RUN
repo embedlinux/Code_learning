@@ -1,0 +1,5 @@
+#!/bin/csh -f
+
+source sourceMe
+
+Verdi -f run.f &

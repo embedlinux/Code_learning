@@ -1,0 +1,10 @@
+tb_CPUsystem.i_CPUsystem.i_CPU.IDR
+tb_CPUsystem.i_CPUsystem.i_CPU.IXR
+tb_CPUsystem.i_CPUsystem.i_CPU.PC
+tb_CPUsystem.i_CPUsystem.i_CPU.TR
+tb_CPUsystem.i_CPUsystem.i_CPU.i_CCU.CWR
+tb_CPUsystem.i_CPUsystem.i_pram.dataout
+tb_CPUsystem.CLOCK1
+tb_CPUsystem.CLOCK2
+tb_CPUsystem.CLOCK3
+tb_CPUsystem.CLOCK4

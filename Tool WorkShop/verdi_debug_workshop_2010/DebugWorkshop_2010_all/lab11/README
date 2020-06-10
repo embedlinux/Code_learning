@@ -1,0 +1,21 @@
+Design in the example:
+----------------------
+This is a pure verilog design.
+
+The directory contains:
+----------------------
+o *.v              - The directory which contains the source RTL files.
+o SETUP            - The file to set up NOVAS, Cadence and Synopsys environments.
+o COMPILE          - Script to use vericom to compile pure Verilog design.
+o RUN*             - Script to run Verdi for demonstration.
+o run_ncsim*       - Script to dump FSDB with IUS or VCS.
+o CLEAN            - Script to clean the old log files and work library
+
+How to run the example:
+----------------------
+o Dump FSDB files 
+  *NOTE : Remember to modify SETUP file according to your environments.
+  %> ./SIM.rtl     - Dump pure Verilog signals to rtl.fsdb
+
+o Run Verdi Demonstration
+  %> ./RUN         - Verdi import pure verilog design with rtl.fsdb loaded.

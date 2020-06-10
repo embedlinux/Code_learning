@@ -1,0 +1,26 @@
+BJkernel.state
+"Bust"		3'b111
+"Compare16"		3'b011
+"Compare21"		3'b100
+"Evaluate"		3'b010
+"Hold"		3'b101
+"Minus10"		3'b110
+"MoreCard"		3'b001
+"Start"		3'b000
+system.i_BJkernel.next_state
+"Bust"		3'b111
+"Compare16"		3'b011
+"Compare21"		3'b100
+"Evaluate"		3'b010
+"Hold"		3'b101
+"Minus10"		3'b110
+"MoreCard"		3'b001
+"Start"		3'b000
+alu.select
+"ADD"		3'b000
+"AND_OP"		3'b011
+"OR_OP"		3'b100
+"SUB"		3'b001
+"SUB1"		3'b010
+"XOR1_OP"		3'b110
+"XOR_OP"		3'b101

@@ -1,0 +1,120 @@
+Magic 271485
+Revision 1.0
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 1 264 1021 483 139 67
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] path_name file_name
+openDirFile -d / "" "C:\Novas\Debussy_info\training_50\debussy_training\verilog\labs\nwave\verilog_rtl.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 5108.130673 5965.517205
+cursor 5350.000000
+marker 5550.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 6
+activeDirFile "" "C:\Novas\Debussy_info\training_50\debussy_training\verilog\labs\nwave\verilog_rtl.fsdb"
+
+addExprSig -b 1 test "/system/i_cpu/i_ALUB/clock" & "/system/i_cpu/i_ALUB/reset"
+
+addExprSig -b 1 test "/system/i_cpu/i_ALUB/clock" & "/system/i_cpu/i_ALUB/reset"
+
+; Run Time Signal and Member
+; addRunTimeSig 
+
+; digital to analog list
+; allDtoA sig_name vv0 vv1 vvz vvx org_signal_name
+
+; analog to digital list
+; allAtoD sig_name low_threshold high_threshold member_sig_name
+
+; logical expression list
+; addExprSig expr_name expression_string
+
+; variable signals list
+; addVariable signal 
+
+; analog expression list
+; addAnaExprSig expr_name expression_string
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+SEQUENCE_BEGIN
+
+
+SEQUENCE_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+aliasmapname system.i_BJkernel.next_state	 aliasfilename system.i_BJkernel.next_state
+nalias "Evaluate"		3'b010
+nalias "Minus10"		3'b110
+nalias "Compare16"		3'b011
+nalias "Bust"		3'b111
+nalias "Start"		3'b000
+nalias "Compare21"		3'b100
+nalias "MoreCard"		3'b001
+nalias "Hold"		3'b101
+aliasmapname alu.select	 aliasfilename alu.select
+nalias "SUB1"		3'b010
+nalias "XOR1_OP"		3'b110
+nalias "AND_OP"		3'b011
+nalias "ADD"		3'b000
+nalias "OR_OP"		3'b100
+nalias "SUB"		3'b001
+nalias "XOR_OP"		3'b101
+
+addGroup "G1"
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_cpu/clock
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_cpu/reset
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/VMA
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/R_W
+addSignal -c ID_BLUE5 -ls solid -lw 1 -h 14 -I /system/i_cpu/data[7:0]
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/addr[7:0]
+addGroup "G2"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "C:\Novas\Debussy_info\training_50\debussy_training\verilog\labs\nwave\verilog_rtl.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/system"
+"/system/i_cpu"
+"/system/i_cpu/i_ALUB"
+
+SCOPE_LIST_BEGIN
+"/system/i_cpu/i_ALUB/i_alu"
+"/system/i_cpu"
+"/system/i_cpu/i_ALUB"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

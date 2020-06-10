@@ -1,0 +1,14 @@
+
+   DELIMITER .
+   LANGUAGE  Verilog
+
+   BUS SignalGroup_Rule1
+       SCOPE  system.i_cpu.i_ALUB
+       SIGNAL T2 T3 T4
+   ENDBUS
+
+   BUS SignalGroup_Rule2
+       SCOPE  system.i_cpu.i_CCU
+       SIGNAL C0 C1 C5 C6 C19 C20 C21
+   ENDBUS
+

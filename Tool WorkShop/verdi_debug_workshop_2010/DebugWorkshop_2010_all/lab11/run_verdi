@@ -1,0 +1,4 @@
+#!/bin/csh -f 
+
+verdi -f run.f -ssf rtl.fsdb
+

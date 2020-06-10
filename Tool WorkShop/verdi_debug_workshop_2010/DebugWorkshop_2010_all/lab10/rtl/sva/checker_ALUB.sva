@@ -1,0 +1,49 @@
+bind ALUB checker_ALUB ck_ALUB(clock, reset, T2, ALU, X0, Y0, carry_flag, alu_mode);
+
+module checker_ALUB(
+            input  logic       clock,
+            input  logic       reset,
+            input  logic T2,
+            input logic [7:0] ALU,
+            input logic [7:0] X0,
+            input logic [7:0] Y0,
+            input logic       carry_flag,
+            input logic [2:0] alu_mode2);
+
+a1: assert property(@(posedge clock) (X0 == 8'h55) & (Y0 == 8'h56));
+
+//SVA: Example of vacuous success
+parameter SUB1 = 2;
+sequence e_SUB;
+   @(posedge clock) alu_mode2 == SUB1;
+endsequence
+property CHECK_SUB;
+   @(posedge clock) e_SUB |-> (ALU==Y0-X0-1+carry_flag);
+endproperty
+ALU_SUB: assert property (CHECK_SUB);
+
+property CHECK_ALU_ZERO;
+   @(posedge T2) (ALU!=0);
+endproperty
+
+ALU_ZERO: assert property (CHECK_ALU_ZERO);
+
+// SVA generate
+
+genvar i;
+generate
+  for (i = 0; i < 8; i = i + 1)
+  begin : genblk
+      cv: cover property(@(posedge T2) (ALU[i] == 1) );
+  end
+endgenerate
+
+//SVA: Example of cover 
+
+property add_overflow;
+   @(posedge clock) ((X0 == 8'h55) & (Y0 == 8'h56));
+endproperty
+   
+OF_COVER: cover property (add_overflow);
+
+endmodule

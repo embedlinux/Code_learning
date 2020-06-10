@@ -1,0 +1,12 @@
+#!/bin/csh -f
+
+# Compile design on the fly
+    verdi -f run.f +systemverilogext+.sv+.SV+ -ssf sv.fsdb -nologo
+
+# Compile the design with COMPILE first
+# Then load pre-compiled design 
+#    verdi -lib work -ssf sv.fsdb -nologo 
+#
+# Alternatively, you can use
+#    verdi -top '$root system' -ssf sv.fsdb -nologo
+

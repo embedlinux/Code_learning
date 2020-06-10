@@ -1,0 +1,4 @@
+#!/bin/csh -f 
+source SETUP
+verdi -play example.cmd &
+

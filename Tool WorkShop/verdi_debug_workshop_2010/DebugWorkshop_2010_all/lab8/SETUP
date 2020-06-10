@@ -1,0 +1,32 @@
+#!/bin/csh
+
+#==============================================================================
+# Modify settings below according to your environment.
+# NOVAS_INST_DIR      : NOVAS Package Path and PLI Library.
+# VCS_HOME            : Synopsys vcs Simulator Path.
+#==============================================================================
+
+#### Set up NOVAS Install Directory ####
+  setenv NOVAS_INST_DIR /qa/mfg/prod/verdi2007/verdi2007.07
+
+##### Set up Synopsys VCS  Install Directory environment ####
+  setenv VCS_HOME /qatools/simulator/Synopsys/VCS_vY-2006.06-13/vcs_vY-2006.06-13
+
+#### Set up License File ####
+  setenv LICENSEFILE 5219@sps100:27005@sps403
+
+#### Enable glitch and event sequence dumping.
+  setenv NOVAS_FSDB_ENV_MAX_GLITCH_NUM 0
+  setenv NOVAS_FSDB_ENV_DUMP_SEQ_NUM on
+
+#==============================================================================
+#  No need to update settings unless you want to change PLI version.
+#===============================================================================
+set path = ($NOVAS_INST_DIR/bin $path); rehash
+set path=($VCS_HOME/bin $path );rehash
+
+if ($?LM_LICENSE_FILE) then
+        setenv LM_LICENSE_FILE $LICENSEFILE\:$LM_LICENSE_FILE
+else
+        setenv LM_LICENSE_FILE $LICENSEFILE
+endif

@@ -1,0 +1,73 @@
+@verdi rc file Version 1.0
+[KeyNote]
+Line1 = invoke directory: /home/becky/dac/transition/gate
+Line2 = command line: -f run.f
+Line3 = current trace scope: system.i_cpu.i_ALUB
+Line4 = memo:
+[hb]
+viewport = 146 12 804 500 182 299 148 804
+activeNode = "system.i_cpu.i_ALUB"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+postSimFile = /home/becky/dac/transition/gate/gate.fsdb
+sourceBeginLine = 958
+baMode = False
+srcLineNum = True
+syncSignal = False
+syncTime = 470082
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+traceCrossHier = True
+traceIncTopPort = False
+leadingZero = False
+showSubprog = True
+Scope1 = "system.i_cpu.i_ALUB"
+Scope2 = "system"
+sdfCheckUndef = FALSE
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/becky/dac/transition/gate
+design = DebussyLib
+hostCommand = hostCommand -f run.f
+[mdaWindow]
+count = 0
+[memoryWindow]
+count = 0
+[wave.0]
+viewPort = 89 432 875 245 100 65
+SessionFile = /home/becky/dac/transition/rtl/setup.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = TRUE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE
+[wave.1]
+viewPort = 89 186 876 224 100 65
+SessionFile = /home/becky/dac/transition/rtl/setup.ses.wave.1
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = TRUE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

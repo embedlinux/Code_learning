@@ -1,0 +1,22 @@
+alias alias_1
+  0-5        4'h0~4'h5
+  6-10       4'h6~4'hA
+endalias
+
+alias alias_2
+  ONE        4'h01
+  THREE      4'h03
+  DEFAULT    others
+endalias
+
+alias ranged_alias
+  "SIX to FIFTEEN"    8'h06~8'h0F
+  ZERO to FIVE        8'h05~8'h00
+  Greater_than_15     others
+endalias
+
+slice slice_1
+  15:8       ranged_allias
+  7:4        alias_2
+  3:0        alias_1
+endslice

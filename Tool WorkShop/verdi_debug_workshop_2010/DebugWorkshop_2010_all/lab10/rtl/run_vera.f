@@ -1,0 +1,14 @@
++define+ASSERT_ON
++define+SVA_ENABLE
++libext+.sv
+system_vera.v
+TopModule.v
+ALUB.v 
+CCU.v 
+PCU.v
+child1.v
+child2.v
+child3.v
+master.v
+pram.v
+mem.v

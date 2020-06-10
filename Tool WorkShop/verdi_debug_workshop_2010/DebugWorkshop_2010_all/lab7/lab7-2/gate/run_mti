@@ -1,0 +1,3 @@
+#! /bin/csh -f
+#
+vsim -c -do mti.do -sdfmax system/i_cpu=CPU.sdf +nosdferror -t 10ps system

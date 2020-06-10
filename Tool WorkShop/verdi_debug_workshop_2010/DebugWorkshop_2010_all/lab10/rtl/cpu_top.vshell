@@ -1,0 +1,126 @@
+module vera_shell(
+        SystemClock
+);
+input SystemClock;
+
+// Nets which VMC will reference
+
+// System clock: SystemClock
+wire SystemClock;
+
+// Interface: system_intf Signal: clock
+wire system_intf_clock;
+assign system_intf_clock = system.clock;
+
+// Interface: system_intf Signal: reset
+reg vmc_system_intf_reset_reg;
+//assign system.reset_cpu = vmc_system_intf_reset_reg;
+
+// Interface: system_intf Signal: VMA
+wire system_intf_VMA;
+assign system_intf_VMA = system.VMA;
+
+// Interface: system_intf Signal: R_W
+wire system_intf_R_W;
+assign system_intf_R_W = system.R_W;
+
+// Interface: system_intf Signal: addr
+wire [7:0] system_intf_addr;
+assign system_intf_addr = system.addr;
+
+// Interface: CCU_intf Signal: MA
+wire [7:0] CCU_intf_MA;
+assign CCU_intf_MA = system.i_cpu.i_CCU.MA;
+
+// Interface: ALUB_intf Signal: PC
+wire [7:0] ALUB_intf_PC;
+assign ALUB_intf_PC = system.i_cpu.i_ALUB.PC;
+
+// Interface: ALUB_intf Signal: IXR
+wire [7:0] ALUB_intf_IXR;
+assign ALUB_intf_IXR = system.i_cpu.i_ALUB.IXR;
+
+// Interface: ALUB_intf Signal: ACC
+wire [7:0] ALUB_intf_ACC;
+assign ALUB_intf_ACC = system.i_cpu.i_ALUB.ACC;
+
+// Interface: ALUB_intf Signal: zero_flag
+wire [7:0] ALUB_intf_zero_flag;
+assign ALUB_intf_zero_flag = system.i_cpu.i_ALUB.zero_flag;
+
+// Interface: ALUB_intf Signal: carry_flag
+wire [7:0] ALUB_intf_carry_flag;
+assign ALUB_intf_carry_flag = system.i_cpu.i_ALUB.carry_flag;
+
+// Interface: pram_intf Signal: clock
+wire pram_intf_clock;
+assign pram_intf_clock = system.i_pram.clock;
+
+// Interface: pram_intf Signal: VMA
+wire pram_intf_VMA;
+assign pram_intf_VMA = system.VMA;
+
+// Interface: pram_intf Signal: R_W
+wire pram_intf_R_W;
+assign pram_intf_R_W = system.R_W;
+
+// Interface: pram_intf Signal: addr
+wire [7:0] pram_intf_addr;
+assign pram_intf_addr = system.addr;
+
+// Interface: pram_intf Signal: data
+wire [7:0] pram_intf_data;
+assign pram_intf_data = system.data;
+
+// Interface: pram_intf Signal: dataout
+reg [7:0] vmc_pram_intf_dataout_reg;
+//assign system.i_pram.dataout = vmc_pram_intf_dataout_reg;
+
+
+// Misc variables
+integer vmcint_prog_id;
+
+// Global Variables at top block
+
+
+// Initial driver state
+initial
+begin
+  vmc_system_intf_reset_reg = 1'bz;
+  vmc_pram_intf_dataout_reg = 8'bz;
+end
+
+initial
+begin
+
+    $vmc_init();
+    vmcint_prog_id = $vmc_setup_start("cpu_top");
+    $vera_add_parameter("vera_shell_version", "1.0", 2);
+
+// Interface definition for VMC
+
+    $vmc_system_clock(SystemClock);
+    $vmc_add_interface_signal(1, 1, system_intf_clock, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(1, 2, 0, vmc_system_intf_reset_reg, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(1, 3, system_intf_VMA, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(1, 4, system_intf_R_W, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(1, 5, system_intf_addr, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(2, 1, CCU_intf_MA, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(3, 1, ALUB_intf_PC, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(3, 2, ALUB_intf_IXR, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(3, 3, ALUB_intf_ACC, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(3, 4, ALUB_intf_zero_flag, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(3, 5, ALUB_intf_carry_flag, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(4, 1, pram_intf_clock, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(4, 2, pram_intf_VMA, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(4, 3, pram_intf_R_W, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(4, 4, pram_intf_addr, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(4, 5, pram_intf_data, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+    $vmc_add_interface_signal(4, 6, 0, vmc_pram_intf_dataout_reg, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+
+
+    $vmc_start_program() ;
+
+
+end
+endmodule

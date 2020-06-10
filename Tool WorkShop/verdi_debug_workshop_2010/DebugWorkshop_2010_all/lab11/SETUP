@@ -1,0 +1,9 @@
+#!/bin/csh
+
+setenv NOVAS_HOME /home/tools/novas/<version>
+
+set path = ($NOVAS_HOME/bin $path)
+
+
+
+

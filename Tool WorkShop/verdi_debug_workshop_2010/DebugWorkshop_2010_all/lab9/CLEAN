@@ -1,0 +1,1 @@
+\rm -rf *Log* *.lib++ INCA_libs *.log simv* csrc *.chain *.lock *.slist *.tlist *transcript *.sim *VERILOG vcs.key 

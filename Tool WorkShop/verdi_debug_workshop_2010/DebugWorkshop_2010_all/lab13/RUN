@@ -1,0 +1,3 @@
+#!/bin/csh -f 
+source sourceMe
+verdi -f run.f -nologo &

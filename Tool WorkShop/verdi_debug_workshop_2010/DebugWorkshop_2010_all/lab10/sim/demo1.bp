@@ -1,0 +1,5 @@
+Simulation Mode: VCS
+stop -line 118 -file ../sv/cpu_duv.sv -disable
+stop -line 64 -file ../sv/cpu_env.sv -disable
+stop -absolute 1000
+stop -relative 1200

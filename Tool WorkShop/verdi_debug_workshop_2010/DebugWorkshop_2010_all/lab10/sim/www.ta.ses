@@ -1,0 +1,40 @@
+#viewport x,y,width,height
+viewport 120 5 834 650
+
+# opened fsdb file
+openFsdbFile /verdi/home/rich_chang/DAC/core_demo_2008/sim/novas.fsdb
+
+addRuleTables
+filterCriteria	Filter_Table_0
+y	"Label"=="ADDA"	OR
+y	"Label"=="TXA"	AND
+endfilterCriteria
+colorCriteria	Colorize_Table_0
+y	"Const_Msg0">="50"	ID_GREEN5
+endcolorCriteria
+ruleTablesEnd
+
+#mergedStream mergedStreamName  sourceStreamName1 sourceStream Name2 ...
+
+#addStream streamName
+#addAttribute attriName width leading_zero display_prefix radix
+#...
+#applyFilter filterTableName case_sensitive/case_insensitive
+#applyColor colorTableName case_sensitive/case_insensitive
+#cusor row_count 
+#marker row_count 
+#freezeColumn index 
+#sortOrder columnName desend? 
+addStream msg_root/\$root .\cpu_instr::print_instr
+addAttribute BeginTime 124 0 1 default 
+addAttribute Label 124 0 1 default 
+addAttribute Msg 124 0 1 Hexadecimal 
+addStreamEnd
+cusor 0
+marker -1
+sortOrder BeginTime 0
+
+
+#activeStream activeStreamName
+activeStream msg_root/\$root .\cpu_instr::print_instr
+

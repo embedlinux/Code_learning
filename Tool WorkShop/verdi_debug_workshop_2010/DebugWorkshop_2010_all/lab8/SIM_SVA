@@ -1,0 +1,46 @@
+#! /bin/csh -f
+
+##################################################
+# Environment Setup
+##################################################
+source ./SETUP
+
+##################################################
+# Run simulation and generate FSDB files
+##################################################
+if(-e simv) then
+    \rm -rf simv
+endif
+
+set OS=`uname -s`
+
+switch ($OS)
+   case SunOS:
+           setenv OS_NAME SOL2
+   breaksw
+   case Linux:
+           setenv OS_NAME LINUX
+   breaksw
+endsw
+
+##################################################
+$VCS_HOME/bin/vcs \
+        -P  $NOVAS_INST_DIR/share/PLI/vcsd2005.06/$OS_NAME/vcsd.tab \
+            $NOVAS_INST_DIR/share/PLI/vcsd2005.06/$OS_NAME/pli.a \
+        +vcsd \
+	+vpi \
+	-sverilog \
+	-Mupdat \
+	-assert enable_diag \
+	-assert vpiSeqBeginTime \
+	-assert vpiSeqFail \
+ 	+cli+3 \
+	+notimingcheck \
+        +systemverilogext+.sv+.SV+ \
+	-l vcs.log \
+        -f run.f
+
+##################################################
+./simv +vcs+lic+wait -assert success -s -i ./sim_sva_fsdb.do -l ./simv.log 
+
+

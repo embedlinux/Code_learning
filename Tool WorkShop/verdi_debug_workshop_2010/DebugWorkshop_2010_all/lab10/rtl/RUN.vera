@@ -1,0 +1,3 @@
+#!/bin/csh -xf
+
+verdi -sv -f run_vera.f cpu_top.vshell -vr_file ../vera/cpu_top.vr -vr_i ../vera -sswr vera.rc

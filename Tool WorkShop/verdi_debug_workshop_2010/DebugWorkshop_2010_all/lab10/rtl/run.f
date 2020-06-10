@@ -1,0 +1,13 @@
++define+ASSERT_ON
++libext+.sv
+system.v
+TopModule.v
+ALUB.v 
+CCU.v 
+child1.v
+child2.v
+child3.v
+master.v
+pram.v
+mem.v
+PCU.v

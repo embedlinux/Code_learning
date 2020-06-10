@@ -1,0 +1,95 @@
+// ************************************************************************
+// *  NOVAS SOFTWARE CONFIDENTIAL PROPRIETARY NOTE                        *
+// *                                                                      *
+// *  This software contains information confidential and proprietary     *
+// *  to Novas Software Inc. It shall not be reproduced in whole          *
+// *  or in part or transferred to other documents, or disclosed          *
+// *  to third parties, or used for any purpose other than that           *
+// *  for which it was obtained, without the prior written consent        *
+// *  of Novas Software Inc.                                              *
+// *  (c) 1996, 1997, 1998 Novas Software Inc.                            *
+// *  All rights reserved                                                 *
+// *                                                                      *
+// ************************************************************************
+ 
+/* Verdi tutorial case: A simplified microprogramming-based CPU
+   File name: maprom.dat
+   Descriptions: The mapping rom is used to map the OpCode of a 
+		macroprogram instruction to the starting address of the 
+		corresponding microprogram.
+		e.g. OpCode == 01 
+			-> look up the data of memory location (address) 1
+			-> result: the microprogram of CLRA is stored from 
+		 	   the address of 03 in the microrom.
+*/
+// data	// address	// microprogram
+00	// 00		OpCode fetch
+03	// 01		CLRA (i)
+23	// 02		INCA (i)
+28	// 03		TAX (i)
+00	// 04
+30	// 05		LDA (#)
+05	// 06		LDA_ (a)
+33	// 07		LDA@ (a,x)
+00	// 08
+00	// 09
+0a	// 0a		STA_ (a)
+10	// 0b		STA@ (a,x)
+00	// 0c
+16	// 0d		ADDA (#)
+19	// 0e		ADDA_ (a)
+00	// 0f		
+00	// 10
+00	// 11
+1e	// 12		SUBA_ (a)
+00	// 13
+00	// 14
+25	// 15		LDX (#)
+39	// 16		LDX_ (a)
+00	// 17
+00	// 18
+2a	// 19		BNZ (r)
+00	// 1a
+00	// 1b
+00	// 1c
+00	// 1d
+00	// 1e
+00	// 1f
+00	// 20
+00	// 21
+00	// 22
+2d	// 23		JMP (#)
+00	// 24
+00	// 25
+00	// 26
+00	// 27
+00	// 28
+00	// 29
+00	// 2a
+00	// 2b
+00	// 2c
+00	// 2d
+00	// 2e
+00	// 2f
+00	// 30
+00	// 31
+00	// 32
+00	// 33
+00	// 34
+00	// 35
+00	// 36
+00	// 37
+00	// 38
+00	// 39
+00	// 3a
+00	// 3b
+00	// 3c
+00	// 3d
+00	// 3e
+00	// 3f
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+filterCriteria	Filter_Table_0
+endfilterCriteria
+colorCriteria	Colorize_Table_0
+y	"Label"=="LDX"	ID_GREEN5
+y	"Label"=="TXA"	ID_ORANGE5
+y	"Label"=="CLRA"	ID_YELLOW5
+y	"Label"=="ADDA"	ID_RED5
+y	"Label"=="LDA_"	ID_BLUE5
+y	"Label"=="STA_"	ID_PURPLE5
+endcolorCriteria
+ruleTablesEnd

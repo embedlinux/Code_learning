@@ -1,0 +1,3 @@
+Simulation Mode: VCS
+stop -line 118 -file ../sv/cpu_duv.sv
+stop -line 64 -file ../sv/cpu_env.sv

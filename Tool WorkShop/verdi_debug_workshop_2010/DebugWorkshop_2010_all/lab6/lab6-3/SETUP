@@ -1,0 +1,57 @@
+#!/bin/csh
+#
+##################################################
+# Please modify the following settings according 
+# to your environment
+#
+##################################################
+# Setup VCS 2005.06 environment
+##################################################
+setenv VCS_HOME /novas/tools/Synopsys/VCS/vcs2005.06-12 
+
+set path=($VCS_HOME/bin $VCS_HOME/sparcOS5/bin $VCS_HOME/sparcOS5/flexlm $path );rehash
+
+#if ($?LM_LICENSE_FILE) then
+#        setenv LM_LICENSE_FILE /dq3/license/third/synopsys/license.reg:$LM_LICENSE_FILE
+#else
+#        setenv LM_LICENSE_FILE /dq3/license/third/synopsys/license.reg
+#endif
+
+##################################################
+# Setup IUS 5.5 environment
+##################################################
+setenv CDS_INST_DIR /novas/tools/Cadence/Cadence5.7/linux 
+
+if($?LD_LIBRARY_PATH) then
+	setenv LD_LIBRARY_PATH .:$CDS_INST_DIR/tools/lib:$LD_LIBRARY_PATH
+else
+        setenv LD_LIBRARY_PATH .:$CDS_INST_DIR/tools/lib
+endif
+
+set path =(. $CDS_INST_DIR/tools/bin $CDS_INST_DIR/tools/verilog/bin $path)
+
+if ($?LM_LICENSE_FILE) then
+        setenv LM_LICENSE_FILE /dq3/license/third/xl_nc/license.reg:$LM_LICENSE_FILE
+else
+        setenv LM_LICENSE_FILE /dq3/license/third/xl_nc/license.reg
+endif
+
+##################################################
+# Setup NOVAS environment
+##################################################
+setenv NOVAS_INST_DIR /novas/tools/Novas/Siloti/latest 
+
+setenv LD_LIBRARY_PATH $NOVAS_INST_DIR/share/PLI/vcs2005.06/SOL2:$NOVAS_INST_DIR/share/PLI/ius5.5_vhpi/LINUX:$LD_LIBRARY_PATH
+set path = ($NOVAS_INST_DIR/bin $path); rehash
+
+if ($?LM_LICENSE_FILE) then
+        setenv LM_LICENSE_FILE 5219@sps100:$LM_LICENSE_FILE
+else
+        setenv LM_LICENSE_FILE 5219@sps100
+endif
+
+# FSDB set up
+# Enable glitch and event sequence dumping
+setenv NOVAS_FSDB_ENV_MAX_GLTICH_NUM 0
+setenv NOVAS_FSDB_ENV_DUMP_SEQ_NUM on
+

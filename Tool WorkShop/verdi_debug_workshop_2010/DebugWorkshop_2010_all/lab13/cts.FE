@@ -1,0 +1,13 @@
+## ****************************************************
+## * Program : Verdi to First Encounter Constraint
+## * Circuit : top
+## * Date : Fri Nov 16 17:22:06 2007
+## ****************************************************
+##
+##
+## Constraint
+##
+AutoCTSRootPin RX/rx_clk
+ExcludedPin
++ SYNC/u_ck1/Z
+END

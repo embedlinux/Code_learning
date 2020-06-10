@@ -1,0 +1,126 @@
+Magic 271485
+Revision 2009.04
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 21 225 989 486 197 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/amanda/power_demo/cpf_demo_amanda/rtl.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 1250.000000
+cursor 0.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 4
+; marker line index
+markerPos 23
+
+; power state signal
+; addPowerSig pwSig_full_name
+activeDirFile "" "/home/amanda/power_demo/cpf_demo_amanda/rtl.fsdb"
+addPowerSig "/$power_root/@{\system.PD_TOP }"
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/$power_root/@{\system.PD_FSM }"
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/$power_root/@{\system.PD_CCU }"
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/$power_root/@{\system.PD_ALUB }"
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/$power_root/@{\system.PD_PCU }"
+
+; power state signal
+; addPowerSig pwSig_full_name
+addPowerSig "/$power_root/@{\system.PD_MEM }"
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+aliasmapname Power_Alias_Table
+nalias off		0		ID_GRAY1
+nalias on		1		ID_GREEN2
+nalias unknown		2		ID_GRAY4
+
+addGroup "G1"
+activeDirFile "" "/home/amanda/power_demo/cpf_demo_amanda/rtl.fsdb"
+addSignal -c ID_RED5 -ls solid -lw 1 -h 15 /system/i_cpu/i_CCU/C0
+addSignal -c ID_RED5 -ls solid -lw 1 -h 15 -holdScope C1
+addSignal -c ID_RED5 -ls solid -lw 1 -h 15 -holdScope C5
+addGroup "G2"
+addSignal -c ID_YELLOW5 -ls solid -lw 1 -h 15 /system/i_pram/clock
+addSignal -c ID_YELLOW5 -ls solid -lw 1 -h 15 -holdScope VMA
+addSignal -c ID_YELLOW5 -ls solid -lw 1 -h 15 -holdScope R_W
+addSignal -c ID_YELLOW5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope addr[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope data[7:0]
+addGroup "G3"
+addSignal -h 15 -UNSIGNED -HEX /system/i_cpu/i_ALUB/IR[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope IDB[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope PC[7:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope CH[4:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope alu_mode[2:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope bus_mode[2:0]
+addSignal -h 15 -holdScope carry_mode
+addSignal -h 15 -holdScope clock
+addSignal -h 15 -holdScope reset
+addSignal -h 15 -holdScope S1
+addSignal -h 15 -UNSIGNED -HEX -holdScope ALU[7:0]
+addSignal -c ID_RED5 -ls solid -lw 1 -h 15 -UNSIGNED -HEX -holdScope IXR[7:0]
+addSignal -h 15 -holdScope error_out
+addGroup "G4"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/amanda/power_demo/cpf_demo_amanda/rtl.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/$power_root"
+"/system"
+"/system/i_cpu"
+"/system/i_cpu/i_CCU"
+
+SCOPE_LIST_BEGIN
+"/$power_root"
+"/system"
+"/system/i_cpu"
+"/system/i_cpu/i_CCU"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

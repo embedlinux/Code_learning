@@ -1,0 +1,459 @@
+Command: vcs -sverilog -R +cli+4 -debug_all -noIncrComp -line +vcsd -Xvlite=0x400 \
+-ntb_opts dtm+vmm+rvm +vpi -P /qa/mfg/prod/verdi2009/verdiv200904p2_0512/share/PLI/.vcsd2009.06/LINUX/vcsd.tab \
+/qa/mfg/prod/verdi2009/verdiv200904p2_0512/share/PLI/.vcsd2009.06/LINUX/pli.a -assert \
+dve -assert api +memcbk +vcs+lic+wait display.svh -f run_sv.f -cm line -cm cond -cm \
+fsm -cm tgl -cm path -cm branch -lca ../sv/test_random.sv +incdir+../sv -l vcs.log \
+
+                         Chronologic VCS (TM)
+           Version B-2008.12-5 -- Mon Aug 17 02:37:22 2009
+               Copyright (c) 1991-2008 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS/VCS-MX Release Notes
+
+Parsing design file '/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/etc/rvm/vmm.sv'
+Parsing design file '/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/etc/rvm/vmm.sv'
+Parsing design file 'display.svh'
+Parsing design file '../rtl/system.v'
+Parsing design file '../rtl/TopModule.v'
+Parsing design file '../rtl/ALUB.v'
+Parsing design file '../rtl/CCU.v'
+Parsing design file '../rtl/child1.v'
+Parsing design file '../rtl/child2.v'
+Parsing design file '../rtl/child3.v'
+Parsing design file '../rtl/master.v'
+Parsing design file '../rtl/pram.v'
+Parsing design file '../rtl/mem.v'
+Parsing design file '../rtl/PCU.v'
+Parsing design file '../sv/cpu.svh'
+Parsing included file '/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/etc/rvm/vmm.sv'.
+Back to file '../sv/cpu.svh'.
+Parsing included file '../sv/pram_ref.sv'.
+Back to file '../sv/cpu.svh'.
+Parsing included file '../sv/cpu_ref.sv'.
+Back to file '../sv/cpu.svh'.
+Parsing included file '../sv/cpu_instr.sv'.
+Back to file '../sv/cpu.svh'.
+Parsing included file '../sv/pram_duv.sv'.
+Back to file '../sv/cpu.svh'.
+Parsing included file '../sv/cpu_duv.sv'.
+Back to file '../sv/cpu.svh'.
+Parsing included file '../sv/cpu_program.sv'.
+Back to file '../sv/cpu.svh'.
+Parsing included file '../sv/cpu_env.sv'.
+Parsing included file '/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/etc/rvm/vmm.sv'.
+Back to file '../sv/cpu_env.sv'.
+Back to file '../sv/cpu.svh'.
+Parsing included file '../sv/cpu_cover.sv'.
+Back to file '../sv/cpu.svh'.
+Parsing design file '../sv/pram_if.sv'
+Parsing design file '../sv/cpu_if.sv'
+Parsing design file '../sv/cpu_tb_top.sv'
+Parsing included file '../sv/cpu.svh'.
+Back to file '../sv/cpu_tb_top.sv'.
+Parsing design file '../sv/test_random.sv'
+Top Level Modules:
+       fsdb
+       cpu_tb_top
+       test
+TimeScale is 1 ns / 1 ns
+VCS Coverage Metrics Release B-2008.12-5 Copyright (c) 2003 by Synopsys, Inc.
+***** Warning: +memcbk/-debug* will not enable toggle coverage on MDA please use -cm_tgl mda to enable it
+Starting vcs inline pass...
+Incremental Compile has been disabled.
+12 unique modules to generate
+recompiling package _vcs_vmm
+recompiling module fsdb
+recompiling module fsm_child2
+recompiling module fsm_child3
+recompiling module pram
+recompiling module pram_if
+recompiling module cpu_if
+recompiling module cpu_tb_top
+recompiling module test
+gcc  -pipe -m32 -O -I/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/include \
+-c -o rmapats.o rmapats.c
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv -melf_i386 -m32 -m32  5NrI_d.o 5NrIB_d.o vdz8_1_d.o jAci_1_d.o Yrj5_1_d.o \
+aiN9_1_d.o DWfc_1_d.o YnH1_1_d.o RSop_1_d.o 7Vv6_1_d.o q5fC_1_d.o XMup_1_d.o YL6d_1_d.o \
+gzYz_1_d.o rmapats_mop.o rmapats.o SIM_l.o   /qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/linux/lib/libvirsim.a \
+/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/linux/lib/librterrorinf.so \
+/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/linux/lib/libsnpsmalloc.so \
+/qa/mfg/prod/verdi2009/verdiv200904p2_0512/share/PLI/.vcsd2009.06/LINUX/pli.a /qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/linux/lib/libreader_common.so \
+-L/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/linux/lib -lBA     /qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/linux/lib/libvcsnew.so \
+/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/linux/lib/vcs_save_restore.o \
+/qa/simulator/Synopsys/VCS_vB-2008.12-5/vcs_vB-2008.12-5/linux/lib/ctype-stubs_32.a \
+-ldl -lm -lm  -lc -ldl    
+../simv up to date
+Command: ovasim -ova_RPPI -Xstrict=0x1 +noinline -assert vpiSeqBeginTime+vpiSeqFail \
++warn=none -sverilog -R +cli+4 -debug_all -noIncrComp -line +vcsd -Xvlite=0x400 -ntb_opts \
+dtm+vmm+rvm +vpi -P /qa/mfg/prod/verdi2009/verdiv200904p2_0512/share/PLI/.vcsd2009.06/LINUX/vcsd.tab \
+-assert dve -assert api +memcbk +vcs+lic+wait display.svh -f run_sv.f -cm line -cm \
+cond -cm fsm -cm tgl -cm path -cm branch -lca ../sv/test_random.sv +incdir+../sv \
+-l vcs.log
+Incremental Compile has been disabled.
+23 unique modules to generate
+recompiling package _vcs_vmm
+recompiling module fsdb
+recompiling module pram_interface
+recompiling module system
+recompiling module CPU
+recompiling module ALUB
+recompiling module alu
+recompiling module CCU
+recompiling module fsm_child1
+recompiling module fsm_child2
+recompiling module fsm_child3
+recompiling module fsm_master
+recompiling module pram
+recompiling module maprom
+recompiling module mprom
+recompiling module PCU
+recompiling module pram_if
+recompiling module cpu_if
+recompiling module cpu_tb_top
+recompiling module test
+/sales/home/jb_chen/demo/DAC2009/novas/core_demo_2009_0612/sim/simv.vdb/snps/debug/linux7/lib/libassertdebug.so \
+up to date
+Command: ./simv +memcbk +vcs+lic+wait -cm_runsilent -cm line -cm_runsilent -cm cond -cm_runsilent -cm fsm -cm_runsilent -cm tgl -cm_runsilent -cm path -cm_runsilent -cm branch -lca -a vcs.log
+Chronologic VCS simulator copyright 1991-2008
+Contains Synopsys proprietary information.
+Compiler version B-2008.12-5; Runtime version B-2008.12-5;  Aug 17 02:37 2009
+
+Novas FSDB Dumper for VCS2008.12-DKI, Release 2009.04p1 (Linux) 04/23/2009
+Copyright (C) 1996 - 2007 by Novas Software, Inc.
+*Novas* Create FSDB file 'novas.fsdb'
+*Novas* Enable the struct and array variables dumping.
+*Novas* Begin traversing the top modules, layer(0).
+*Novas* End traversing the top modules.
+*Novas* PLI Enable class dumping
+*Novas* Begin traversing the top modules, layer(0).
+*Novas* End traversing the top modules.
+VCD+ Writer B-2008.12-5 Copyright 2005 Synopsys Inc.
+Warning: assertion \$unit .\pram_ref::set_program .unnamed$$_4 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_ref::build .unnamed$$_2 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_ref::execute_inst .unnamed$$_2 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_ref::execute_inst .unnamed$$_5 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_program::pack .unnamed$$_2 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_program::gen_program .unnamed$$_5 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_program::gen_program .unnamed$$_9 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_program::gen_program .unnamed$$_13 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_program::gen_program .unnamed$$_16.unnamed$$_17 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_program::gen_program .unnamed$$_16.unnamed$$_19 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_program::gen_program .unnamed$$_16.unnamed$$_21 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_program::gen_program .unnamed$$_27.unnamed$$_29.unnamed$$_33 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_program::gen_program .unnamed$$_27.unnamed$$_29.unnamed$$_36 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+Warning: assertion \$unit .\cpu_env::start .unnamed$$_2 will not be dumped for OVA debug
+	Possible reasons:
+		Assertion resides in protected hierarchy
+		Assertion scope is inaccesible for OVA debug
+????????????????????????
+0 Verif Env [Normal:NOTE] | Starting the run task for the cpu_env.
+<<< The test program >>>
+
+Addr	Instruction	Operand
+
+====	============	======
+
+0x00	CLRA
+0x01	TXA
+0x02	LDX		$20
+0x04	STA_		#$fe
+0x06	LDX		$63
+0x08	LDA_		#$fc
+0x0a	TXA
+0x0b	ADDA		$55
+0x0d	CLRA
+0x0e	ADDA_		#$a3
+0x10	TXA
+0x11	TXA
+0x12	LDX		$6c
+0x14	CLRA
+0x15	TXA
+0x16	ADDA_		#$97
+0x18	CLRA
+0x19	TXA
+0x1a	CLRA
+0x1b	INCA
+0x1c	TXA
+0x1d	INCA
+0x1e	TXA
+0x1f	ADDA_		#$54
+0x21	LDA		$72
+0x23	LDX		$67
+0x25	STA		#($8f+x)
+0x27	CLRA
+0x28	ADDA_		#$c6
+0x2a	ADDA		$ac
+0x2c	INCA
+0x2d	INCA
+0x2e	CLRA
+0x2f	TXA
+0x30	SUBA		#$9f
+0x32	LDA		$1c
+0x34	ADDA		$dd
+0x36	LDA		$67
+0x38	SUBA		#$12
+0x3a	TXA
+0x3b	ADDA_		#$05
+0x3d	INCA
+0x3e	TXA
+0x3f	INCA
+0x40	SUBA		#$d4
+0x42	CLRA
+0x43	CLRA
+0x44	INCA
+0x45	SUBA		#$75
+0x47	CLRA
+0x48	LDA		$8a
+0x4a	LDA		$a7
+0x4c	ADDA_		#$8a
+0x4e	INCA
+0x4f	ADDA_		#$fd
+0x51	CLRA
+0x52	TXA
+0x53	TXA
+0x54	CLRA
+0x55	TXA
+0x56	INCA
+0x57	INCA
+0x58	LDX		$d0
+0x5a	TXA
+0x5b	SUBA		#$70
+0x5d	TXA
+0x5e	INCA
+0x5f	CLRA
+0x60	LDA		$c6
+0x62	SUBA		#$65
+0x64	LDA_		#$3f
+0x66	CLRA
+0x67	ADDA		$d4
+0x69	TXA
+0x6a	INCA
+0x6b	INCA
+0x6c	INCA
+0x6d	LDX		$bd
+0x6f	STA		#($3b+x)
+0x71	ADDA		$90
+0x73	CLRA
+0x74	TXA
+0x75	INCA
+0x76	CLRA
+0x77	CLRA
+0x78	ADDA_		#$21
+0x7a	TXA
+0x7b	LDX		$98
+0x7d	INCA
+0x7e	INCA
+0x7f	CLRA
+0x80	ADDA_		#$91
+0x82	TXA
+0x83	ADDA_		#$59
+0x85	INCA
+0x86	LDA_		#$60
+0x88	INCA
+0x89	STA_		#$f6
+0x8b	INCA
+0x8c	INCA
+0x8d	LDA_		#$a6
+0x8f	SUBA		#$8d
+0x91	CLRA
+0x92	SUBA		#$47
+0x94	INCA
+0x95	ADDA		$66
+0x97	TXA
+0x98	TXA
+0x99	TXA
+0x9a	JMP		$0d
+0x9c	LDA_		#$21
+0x9e	LDX		$ed
+0xa0	LDX		$1b
+0xa2	INCA
+0xa3	SUBA		#$58
+0xa5	INCA
+0xa6	CLRA
+0xa7	INCA
+0xa8	ADDA		$fa
+0xaa	STA_		#$f1
+0xac	LDA_		#$04
+0xae	LDX		$65
+0xb0	INCA
+0xb1	LDA_		#$7b
+0xb3	CLRA
+0xb4	INCA
+0xb5	CLRA
+0xb6	LDA		$cd
+0xb8	INCA
+0xb9	INCA
+0xba	TXA
+0xbb	ADDA		$51
+0xbd	ADDA_		#$e6
+0xbf	ADDA_		#$12
+0xc1	TXA
+0xc2	TXA
+0xc3	SUBA		#$50
+0xc5	INCA
+0xc6	CLRA
+0xc7	CLRA
+0xc8	CLRA
+0xc9	TXA
+0xca	LDX		$f8
+0xcc	CLRA
+0xcd	ADDA_		#$fc
+0xcf	TXA
+0xd0	TXA
+0xd1	CLRA
+0xd2	LDX		$78
+0xd4	ADDA		$c1
+0xd6	TXA
+0xd7	CLRA
+0xd8	TXA
+0xd9	ADDA_		#$27
+0xdb	SUBA		#$b5
+0xdd	STA_		#$ff
+0xdf	TXA
+0xe0	INCA
+0xe1	CLRA
+0xe2	LDA		$ea
+0xe4	TXA
+0xe5	ADDA_		#$85
+0xe7	CLRA
+0xe8	ADDA_		#$d9
+0xea	INCA
+0xeb	INCA
+0xec	TXA
+0xed	LDX		$f9
+==============================
+
+<<< The program memory >>>
+==============================
+00:   04 0c 54 20 28 fe 54 63 
+08:   18 fc 0c 34 55 04 38 a3 
+10:   0c 0c 54 6c 04 0c 38 97 
+18:   04 0c 04 08 0c 08 0c 38 
+20:   54 14 72 54 67 2c 8f 04 
+28:   38 c6 34 ac 08 08 04 0c 
+30:   48 9f 14 1c 34 dd 14 67 
+38:   48 12 0c 38 05 08 0c 08 
+40:   48 d4 04 04 08 48 75 04 
+48:   14 8a 14 a7 38 8a 08 38 
+50:   fd 04 0c 0c 04 0c 08 08 
+58:   54 d0 0c 48 70 0c 08 04 
+60:   14 c6 48 65 18 3f 04 34 
+68:   d4 0c 08 08 08 54 bd 2c 
+70:   3b 34 90 04 0c 08 04 04 
+78:   38 21 0c 54 98 08 08 04 
+80:   38 91 0c 38 59 08 18 60 
+88:   08 28 f6 08 08 18 a6 48 
+90:   8d 04 48 47 08 34 66 0c 
+98:   0c 0c 8c 0d 18 21 54 ed 
+a0:   54 1b 08 48 58 08 04 08 
+a8:   34 fa 28 f1 18 04 54 65 
+b0:   08 18 7b 04 08 04 14 cd 
+b8:   08 08 0c 34 51 38 e6 38 
+c0:   12 0c 0c 48 50 08 04 04 
+c8:   04 0c 54 f8 04 38 fc 0c 
+d0:   0c 04 54 78 34 c1 0c 04 
+d8:   0c 38 27 48 b5 28 ff 0c 
+e0:   08 04 14 ea 0c 38 85 04 
+e8:   38 d9 08 08 0c 54 f9 00 
+f0:   00 00 00 00 00 00 00 00 
+f8:   00 00 00 00 00 00 00 00 
+==============================
+0 cpu_ref [Normal:NOTE] | Waiting for DUV reset before resetting cpu_ref.
+350 cpu_ref [Normal:NOTE] | Starting reset.
+<<< Reset the CPU reference model. >>>
+850 cpu_duv [Normal:NOTE] | DUV signaling end of reset.
+850 cpu_ref [Normal:NOTE] | <<< Check the initial value after CPU reset >>>
+
+#850	0x00	CLRA
+#1150	0x01	TXA
+#1450	0x02	LDX		$20
+#1850	0x04	STA_		#$fe
+#2450	0x06	LDX		$63
+#2850	0x08	LDA_		#$fc
+#3350	0x0a	TXA
+#3650	0x0b	ADDA		$55
+#4050	0x0d	CLRA
+#4350	0x0e	ADDA_		#$a3
+#4850	0x10	TXA
+#5150	0x11	TXA
+#5450	0x12	LDX		$6c
+#5850	0x14	CLRA
+#6150	0x15	TXA
+#6450	0x16	ADDA_		#$97
+#6950	0x18	CLRA
+#7250	0x19	TXA
+#7550	0x1a	CLRA
+#7850	0x1b	INCA
+#8150	0x1c	TXA
+#8450	0x1d	INCA
+#8750	0x1e	TXA
+#9050	0x1f	ADDA_		#$54
+#9550	0x21	LDA		$72
+#9950	0x23	LDX		$67
+#10350	0x25	STA		#($8f+x)
+#10950	0x27	CLRA
+#11250	0x28	ADDA_		#$c6
+#11750	0x2a	ADDA		$ac
+#12150	0x2c	INCA
+#12450	0x2d	INCA
+$finish called from file "../rtl/system.v", line 131.
+$finish at simulation time                12500
+**** Following assertions did not fire at all during simulation. *****
+"../sv/cpu_program.sv", 32: \$unit ::\cpu_program::pack .unnamed$$_2: No attempt started
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, path, tgl was monitored
+---------------------------------------------------------------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 12500 ns
+CPU Time:      0.400 seconds;       Data structure size:   0.1Mb
+Mon Aug 17 02:37:39 2009

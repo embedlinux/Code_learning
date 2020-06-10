@@ -1,0 +1,153 @@
+Magic 271485
+Revision 2007.10
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 1 16 1021 581 127 67
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / -i 0 "" "/sales/home/jb_chen/on_board/verdi_basic/verdi_basic_lab_2007/nwave_lab/verilog_rtl.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 5169.099379 6675.310559
+cursor 6600.000000
+marker 0.000000
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 11
+
+; Run Time Signal and Member
+; userBusMem member ...
+; saveRunSig name
+activeDirFile "" "/sales/home/jb_chen/on_board/verdi_basic/verdi_basic_lab_2007/nwave_lab/verilog_rtl.fsdb"
+userBusMem /system/i_cpu/i_ALUB/T4
+userBusMem /system/i_cpu/i_ALUB/T3
+userBusMem /system/i_cpu/i_ALUB/T2
+userBusMem /LOGIC_LOW
+saveRunSig "t_bus[3:0]"
+
+; logical expression list
+; addExprSig expr_name expression_string
+
+addExprSig -b 1 new_clock "/system/i_cpu/clock" |  ~ "/system/i_cpu/reset"
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+EVENT event0 "/system/i_cpu/clock" === 'b1 && "/system/i_cpu/R_W" === 'b0 
+       curEvent event0
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByRising
+
+
+aliasmapname cpu.alias
+nalias DATA		8'h20		NULL
+nalias INCA		8'h08		NULL
+nalias TAX		8'h0C		NULL
+nalias SUBA		8'h48		NULL
+nalias LDA-		8'h18		NULL
+nalias BNZ		8'h64		NULL
+nalias ADDA		8'h34		NULL
+nalias CLRA		8'h04		NULL
+nalias STA		8'h28		NULL
+nalias LDA		8'h14		NULL
+nalias JMP		8'h8C		NULL
+nalias LDX		8'h54		NULL
+nalias ADDA-		8'h38		NULL
+nalias STA-		8'h2C		NULL
+
+aliasmapname system.i_BJkernel.next_state
+nalias Evaluate		3'b010		NULL
+nalias Minus10		3'b110		NULL
+nalias Compare16		3'b011		NULL
+nalias Bust		3'b111		NULL
+nalias Start		3'b000		NULL
+nalias Compare21		3'b100		NULL
+nalias MoreCard		3'b001		NULL
+nalias Hold		3'b101		NULL
+
+aliasmapname alu.select
+nalias SUB1		3'b010		NULL
+nalias XOR1_OP		3'b110		NULL
+nalias AND_OP		3'b011		NULL
+nalias ADD		3'b000		NULL
+nalias OR_OP		3'b100		NULL
+nalias SUB		3'b001		NULL
+nalias XOR_OP		3'b101		NULL
+
+addGroup "G2"
+activeDirFile "" "/sales/home/jb_chen/on_board/verdi_basic/verdi_basic_lab_2007/nwave_lab/verilog_rtl.fsdb"
+addSignal -c ID_RED6 -ls solid -lw 1 -h 14 -UNSIGNED -HEX -I /system/i_cpu/i_ALUB/i_alu/a[7:0]
+addSignal -c ID_RED6 -ls solid -lw 1 -h 14 -UNSIGNED -HEX -I -holdScope b[7:0]
+aliasname alu.select
+addSignal -lF -c ID_RED6 -ls solid -lw 1 -h 14 -UNSIGNED -HEX -I -holdScope select[2:0]
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I -holdScope zero
+addGroup "CPU"
+addSignal -c ID_RED6 -ls solid -lw 1 -h 14 -I /system/i_cpu/clock
+addSignal -c ID_RED6 -ls solid -lw 1 -h 14 -I -holdScope reset
+addSignal -h 14 /new_clock
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/VMA
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I -holdScope R_W
+addEventSignal -b 0.000000 -e 0.000000 -m 1 -h 14  /event0
+aliasname cpu.alias
+addSignal -lF -c ID_BLUE5 -ls solid -lw 1 -h 14 -UNSIGNED -HEX -I /system/i_cpu/data[7:0]
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -UNSIGNED -HEX -I -holdScope addr[7:0]
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I -holdScope R_W
+addGroup "G3" -e FALSE
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/i_ALUB/S1
+addSignal -h 14 -holdScope T2
+addSignal -h 14 -holdScope T3
+addSignal -h 14 -holdScope T4
+addSignal -h 14 -UNSIGNED -HEX /t_bus[3:0]
+addGroup "G4"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1 | 2
+; gridCount
+; gridCycleTime from to cycleTime
+; gridStartNum num
+; gridLockCount
+gridSignal /system/i_cpu/clock
+gridEdge 1
+gridStartNum 1
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/sales/home/jb_chen/on_board/verdi_basic/verdi_basic_lab_2007/nwave_lab/verilog_rtl.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/system"
+"/system/i_cpu"
+"/system/i_cpu/i_ALUB"
+
+SCOPE_LIST_BEGIN
+"/system"
+"/system/i_cpu/i_ALUB"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

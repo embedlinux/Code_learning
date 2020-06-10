@@ -1,0 +1,79 @@
+Host command: /qa/simulator/Cadence/IUS62/IUS62_lnx86_base/tools/verilog/bin/verilog.exe
+Command arguments:
+    -f run_rtl.f
+        system.v
+        TopModule.v
+        ALUB.v
+        CCU.v
+        PCU.v
+        alu.v
+        maprom.v
+        pram.v
+        microrom.v
+        BJkernel.v
+        BJsource.v
+
+Tool:	VERILOG-XL	06.20.001-p log file created Feb 29, 2008  14:29:47
+Tool:	VERILOG-XL	06.20.001-p   Feb 29, 2008  14:29:47
+
+Copyright (c) 1995-2004 Cadence Design Systems, Inc.  All Rights Reserved.
+Unpublished -- rights reserved under the copyright laws of the United States.
+
+Copyright (c) 1995-2004 UNIX Systems Laboratories, Inc.  Reproduced with Permission.
+
+THIS SOFTWARE AND ON-LINE DOCUMENTATION CONTAIN CONFIDENTIAL INFORMATION
+AND TRADE SECRETS OF CADENCE DESIGN SYSTEMS, INC.  USE, DISCLOSURE, OR
+REPRODUCTION IS PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF
+CADENCE DESIGN SYSTEMS, INC.
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c)(1)(ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c)(1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+                Cadence Design Systems, Inc.
+                555 River Oaks Parkway
+                San Jose, California  95134
+
+For technical assistance please contact the Cadence Response Center at
+1-877-CDS-4911 or send email to support@cadence.com
+
+For more information on Cadence's Verilog-XL product line send email to
+talkv@cadence.com
+
+Compiling source file "system.v"
+Compiling source file "TopModule.v"
+Compiling source file "ALUB.v"
+Compiling source file "CCU.v"
+Compiling source file "PCU.v"
+Compiling source file "alu.v"
+Compiling source file "maprom.v"
+Compiling source file "pram.v"
+Compiling source file "microrom.v"
+Compiling source file "BJkernel.v"
+Compiling source file "BJsource.v"
+Highest level modules:
+system
+
+
+Warning!  Words read from "microrom.dat" less than that                        
+          given by address bounds                           [Verilog-WRFAB]    
+          "microrom.v", 38: $readmemh("microrom.dat",                          
+          microrom, 0, 255);
+
+Warning!  The contents of memory (microrom) have been                          
+          altered                                           [Verilog-TCMHA]    
+          "microrom.v", 38: $readmemh("microrom.dat",                          
+          microrom, 0, 255);
+Novas FSDB Dumper for NC-Verilog, Release 2007.10 (Linux) 10/02/2007
+Copyright (C) 1996 - 2007 by Novas Software, Inc.
+*Novas* Create FSDB file 'verilog.fsdb'
+*Novas* Begin traversing the scope(system.i_cpu), layer(0).
+*Novas* End of traversing the scope(system.i_cpu)
+L74 "system.v": $finish at simulation time 10000
+2 warnings
+0 simulation events (use +profile or +listcounts option to count) + 572 accelerated events
+CPU time: 0.0 secs to compile + 0.0 secs to link + 0.0 secs in simulation
+End of Tool:	VERILOG-XL	06.20.001-p   Feb 29, 2008  14:29:47

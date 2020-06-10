@@ -1,0 +1,10 @@
+#!/bin/csh -f
+##################################################
+#  Environment Setup
+##################################################
+source ./SETUP
+
+# Compile design on the fly
+ verdi -f run.f -ssf demo.fsdb &
+
+

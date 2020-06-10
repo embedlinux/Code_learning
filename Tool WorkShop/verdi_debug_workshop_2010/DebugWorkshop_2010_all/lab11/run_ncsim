@@ -1,0 +1,17 @@
+#!/bin/csh -f
+
+setenv FSDB_ENV_DUMP_SEQ_NUM on
+setenv FSDB_ENV_MAX_GLITCH_NUM 0
+setenv NOVAS_HOME     ~/power_demo/demo_releases/novas/<verdi_version>
+
+setenv CDS_HOME       /novas/tools/Cadence/<cadence_version>
+setenv PATH           $CDS_HOME/tools/bin:$PATH
+
+set dumper=ius<version>_vhpi
+setenv LD_LIBRARY_PATH $NOVAS_HOME/share/PLI/$dumper/LINUX:$LD_LIBRARY_PATH
+
+rm INCA* -rf
+
+ncvlog -f run.f
+ncelab -mess -access +rwc -timescale 1ns/1ps -lps_cpf demo.cpf -lps_simctrl_on worklib.system
+ncsim -messages -lps_stime 1ns -lps_verbose 1 -lps_logfile lps.log worklib.system

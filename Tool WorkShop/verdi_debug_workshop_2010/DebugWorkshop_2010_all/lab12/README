@@ -1,0 +1,7 @@
+Please set the environment properly before import gate level design
+in this directory.
+
+setenv TURBO_LIBS lsi10k_u
+
+The library is located at <install-path>/share/symlib/32
+or <install-path>/share/symlib/64

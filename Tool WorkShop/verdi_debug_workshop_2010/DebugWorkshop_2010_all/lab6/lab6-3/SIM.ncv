@@ -1,0 +1,12 @@
+#!/bin/csh -f
+#
+##################################################
+# Environment Setup
+##################################################
+source ./SETUP
+
+##################################################
+# Run simulation and generate FSDB files 
+##################################################
+ncverilog -f ./run.f +define+ESA +access+rwc 
+#ncverilog -f ./run.f +access+rwc
