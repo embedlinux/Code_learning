@@ -1,0 +1,135 @@
+Magic 271485
+Revision 2009.04
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 80 181 1119 635 216 56
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/verdi/home/rich_chang/DAC/core_demo_2009/sim/novas.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+windowTimeUnit 1ns
+
+; waveform viewport range
+zoom 3484.848485 8060.606061 1n
+cursor 4900.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name
+; signals with red triangles from assertion analyzer
+; aaRedTriangle [signal name] [group name] [delimiter]
+aaRedTriangle /cpu_tb_top/system/i_cpu/INCPC/e_INC/e_r/(ALU == (ALU_prev + 1))
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 4
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+
+; transaction attribute information
+transAttrFile "" "/verdi/home/rich_chang/DAC/core_demo_2009/sim/novas.fsdb"
+transAttrInfo stream_id sv_int Radix SDecimal
+transAttrInfo notify sv_reference Radix default
+transAttrInfo n_threads_stopped sv_int Radix SDecimal
+transAttrInfo addr sv_reg Radix Binary
+transAttrInfo start_it sv_bit Radix Binary
+transAttrInfo restore_main_rng_state sv_bit Radix Binary
+transAttrInfo end_vote sv_reference Radix default
+transAttrInfo stop_it sv_bit Radix Binary
+transAttrInfo n_threads_stopped sv_int Radix SDecimal
+transAttrInfo n_threads_stopped sv_int Radix SDecimal
+transAttrInfo reset_it sv_bit Radix Binary
+transAttrInfo restore_main_rng_state sv_bit Radix Binary
+transAttrInfo restore_main_rng_state sv_bit Radix Binary
+transAttrInfo pgm sv_reference Radix default
+transAttrInfo instr_stop_addr sv_reg Radix Binary
+transAttrInfo pram sv_reference Radix default
+transAttrInfo start_write_addr sv_reg Radix Binary
+transAttrInfo end_write_addr sv_reg Radix Binary
+transAttrInfo step sv_int Radix SDecimal
+transAttrInfo reset_rng_state sv_bit Radix Binary
+transAttrInfo n_threads_to_stop sv_int Radix SDecimal
+transAttrInfo soft_restart sv_bit Radix Binary
+transAttrInfo n_threads_stopped sv_int Radix SDecimal
+transAttrInfo soft_restartable sv_bit Radix Binary
+transAttrInfo __vmm_done_user sv_bit Radix Binary
+transAttrInfo is_stopped sv_bit Radix Binary
+transAttrInfo pram_duv_ptr sv_reference Radix default
+transAttrInfo reset_pending sv_int Radix SDecimal
+transAttrInfo out_of_inst sv_bit Radix Binary
+transAttrInfo __vmm_forks sv_int Radix SDecimal
+transAttrInfo main_running sv_bit Radix Binary
+transAttrInfo cpu_duv_ptr sv_reference Radix default
+transAttrInfo cpu_duv sv_reference Radix default
+transAttrInfo Const_Msg0 string Radix default
+transAttrInfo save_main_rng_state sv_bit Radix Binary
+transAttrInfo inst sv_reference Radix default
+transAttrInfo pram_duv sv_reference Radix default
+transAttrInfo current_coverage sv_real Radix default
+transAttrInfo instr_index sv_reg Radix Binary
+transAttrInfo restore_main_rng_state sv_bit Radix Binary
+transAttrInfo cpu_ref sv_reference Radix default
+transAttrInfo \pram_duv::main::data_compare  sv_reg Radix Binary
+transAttrInfo memory_notify sv_reference Radix default
+transAttrInfo memory_modify sv_bit Radix Binary
+transAttrInfo i sv_reference Radix default
+transAttrInfo stop_run sv_bit Radix Binary
+transAttrInfo \pram_duv::main::compare_count  sv_int Radix SDecimal
+transAttrInfo Msg string Radix default
+transAttrInfo regs sv_reference Radix default
+transAttrInfo Severity int32 Radix SDecimal
+transAttrInfo Call_Stack string Radix default
+transAttrInfo wrap_cpu_if sv_reference Radix default
+transAttrInfo wrap_pram_if sv_reference Radix default
+transAttrInfo if_wrap_i sv_reference Radix default
+transAttrInfo sample_prop sv_bit Radix Binary
+transAttrInfo n_threads_stopped sv_int Radix SDecimal
+transAttrInfo last_notification_id sv_int Radix SDecimal
+transAttrInfo log sv_reference Radix default
+transAttrInfo restore_main_rng_state sv_bit Radix Binary
+transAttrInfo Var_Name string Radix default
+
+
+addGroup "CPU_stat"
+activeDirFile "" "/verdi/home/rich_chang/DAC/core_demo_2009/sim/novas.fsdb"
+addSignal -h 140 -multiLayer /msg_root/\$unit ::\cpu_ref::do_execute_inst .do_execute_inst_loop
+addSignal -h 98 -holdScope compare_map
+addSignal -h 119 -multiLayer -holdScope \$unit ::\cpu_ref_instr_cover_callback::exec_instr
+addGroup "CPU_data" -e FALSE
+addSignal -h 98 /msg_root/status
+addSignal -h 15 -UNSIGNED -HEX /cpu_tb_top/i_pram_if/dataout[7:0]
+addSignal -h 287 -multiLayer /msg_root/\$unit ::\cpu_instr::print_instr
+addGroup "G3"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/verdi/home/rich_chang/DAC/core_demo_2009/sim/novas.fsdb"
+
+
+

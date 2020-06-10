@@ -1,0 +1,12 @@
+#!/bin/csh -f
+#
+##################################################
+# Environment Setup
+##################################################
+source ./SETUP
+
+##################################################
+# Run simulation and generate FSDB files 
+##################################################
+ncverilog -f ./run.f +linedebug +access+rwc +tcl+./sim_rtl.do
+

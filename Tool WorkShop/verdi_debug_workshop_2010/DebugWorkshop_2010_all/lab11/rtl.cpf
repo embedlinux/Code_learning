@@ -1,0 +1,88 @@
+# Specify the CPF version.
+set_cpf_version 1.0
+
+# Specify the hierarchy delimiter character to be used in object names.
+set_hierarchy_separator /
+
+# Specify the name of the module to which the power information applies.
+set_design system
+
+# Define the power domains.
+# Specify the instances that belong to the domain (-instances).
+# Specify the condition when the domain is shut off (-shutoff_condition).
+
+create_power_domain -name PD_TOP -default
+
+create_power_domain -name PD_FSM \
+                    -instances {MASTER CHILD1 CHILD2 CHILD3} \
+	            -shutoff_condition {!FSM_ctrl}
+
+#create_power_domain -name PDcpu \
+#                    -instances i_cpu \
+#                    -shutoff_condition {CPU_ctrl}
+
+create_power_domain -name PD_CCU \
+                    -instances {i_cpu/i_CCU} \
+                    -shutoff_condition {!CPU_ctrl}
+
+create_power_domain -name PD_ALUB \
+                    -instances {i_cpu/i_ALUB} \
+                    -shutoff_condition {!CPU_ctrl}
+
+create_power_domain -name PD_PCU \
+                    -instances {i_cpu/i_PCU} \
+                    -shutoff_condition {!CPU_ctrl}
+
+	
+create_power_domain -name PD_MEM \
+                    -instances i_pram 
+
+#Define Power Modes
+create_nominal_condition -name high -voltage 1.08
+create_nominal_condition -name low -voltage 0.8
+create_nominal_condition -name off -voltage 0
+
+create_power_mode -name high -default -domain_conditions {PD_TOP@high PD_FSM@high PD_CCU@high PD_ALUB@high PD_PCU@high PD_MEM@high}
+
+create_power_mode -name low -domain_conditions {PD_TOP@high PD_FSM@high PD_CCU@off PD_ALUB@off PD_PCU@off PD_MEM@high}
+
+create_power_mode -name standby -domain_conditions {PD_TOP@high PD_FSM@off PD_CCU@off PD_ALUB@off PD_PCU@off PD_MEM@high}
+
+
+# Define the rules for replacing registers in a power domain with state retention registers.
+# Specify the instances to be replaced with a state retention register (-instances).
+# Specify the condition when the states of the registers need to be restored (-restore_edge).
+# The condition when the states of the registers need to be saved is the inversion
+# of the restore_edge expression.  
+
+create_level_shifter_rule -name ls_CPU_to_MEM \
+                          -to PD_MEM
+
+create_state_retention_rule -name ret_ALUB \
+                            -domain PD_ALUB \
+                            -restore_edge CPU_restore \
+                            -save_edge CPU_save
+
+create_state_retention_rule -name ret_CCU \
+                            -domain PD_CCU \
+                            -restore_edge CPU_restore \
+                            -save_edge CPU_save
+
+create_state_retention_rule -name ret_PCU \
+                            -domain PD_PCU \
+                            -restore_edge CPU_restore \
+                            -save_edge CPU_save
+
+
+# Define the rules for adding isolation cells.
+# Specify the pins that must be isolated in a power domain (-pins).
+# Limit the pins to be isolated to output pins in the power domain (-from).
+# Specify the condition when the pins should be isolated (-isolation_condition).
+# Specify the isolation type (-isolation_output).
+
+create_isolation_rule -name iso_MEM \
+                      -to PD_MEM \
+                      -isolation_condition {!MEM_iso} \
+                      -isolation_output low
+ 
+end_design

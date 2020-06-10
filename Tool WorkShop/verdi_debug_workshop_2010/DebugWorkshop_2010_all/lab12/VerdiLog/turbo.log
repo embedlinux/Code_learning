@@ -1,0 +1,3 @@
+Command Line: /qa/mfg/prod/verdi2007/verdi2007.10/platform/LINUX/bin/Verdi -f run.f
+uname(Linux spx502 2.6.9-42.ELsmp #1 SMP Wed Jul 12 23:27:17 EDT 2006 i686)
+au time 189 2.509618 1.946704 delta 53708320 53194752 total 55894016 55623680

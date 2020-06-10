@@ -1,0 +1,10 @@
+setenv VCS_HOME /qatools/simulator/Synopsys/VCS_vY-2006.06-SP2-6/vcs_vY-2006.06-SP2-6
+setenv VCSD vcsd2006.06
+setenv vcsd_tab vcsd.tab
+setenv pli /rcc2/RCC/GCC3_22/LINUX/deb6.1/share/PLI/vcsd2006.06/LINUX/pli.a
+setenv tab /rcc2/RCC/GCC3_22/LINUX/deb6.1/share/PLI/vcsd2006.06/LINUX/vcsd.tab
+setenv LM_LICENSE_FILE /dq4/license/third/synopsys/license.reg:$LM_LICENSE_FILE
+set path = (/qa/mfg/prod/verdi2008/verdiv200807_0516/bin $path)
+set path = ($VCS_HOME/bin $path)
+
+

@@ -1,0 +1,89 @@
+Magic 271485
+Revision 2008.01
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 126 586 960 332 245 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / -i 0 "" "/home/asun/debug/dac2008/rtl/svm0527.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 11109.549977 11559.156571
+cursor 11400.000000
+marker 0.000000
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 2
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+
+; transaction attribute information
+transAttrFile "" "/home/asun/debug/dac2008/rtl/svm0527.fsdb"
+transAttrInfo id uint32 Radix UDecimal
+transAttrInfo value logic Radix Binary
+transAttrInfo state uint32 Radix UDecimal
+transAttrInfo from_id uint32 Radix UDecimal
+
+
+addGroup "SVA" -e FALSE
+activeDirFile "" "/home/asun/debug/dac2008/rtl/svm0527.fsdb"
+addSignal -h 15 /system/i_cpu/i_ALUB/ALU_SUB
+addGroup "Testbench" -e FALSE
+addSignal -h 15 /sys/cpu_ref/check_regs
+addGroup "G3"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/home/asun/debug/dac2008/rtl/svm0527.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/$root"
+"/sys"
+"/sys/cpu_ref"
+"/sys/cpu_ref/regs"
+"/system"
+"/system/i_cpu"
+"/system/i_cpu/i_ALUB"
+
+SCOPE_LIST_BEGIN
+"/$root"
+"/system"
+"/system/i_cpu"
+"/sys"
+"/sys/cpu_ref/regs"
+"/sys/cpu_ref"
+"/system/i_cpu/i_ALUB"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

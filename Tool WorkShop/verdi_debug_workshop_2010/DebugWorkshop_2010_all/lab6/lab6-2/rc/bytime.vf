@@ -1,0 +1,8 @@
+@FSDB rc file Version 1.0
+[VRTL_FILE_HEADER]
+# !! DON'T EDIT [VRTL_FILE_HEADER] SESSION !!
+Version = 1
+[VRTL_FILE_SOURCE]
+FileType = stitch
+File1 = /sales/home/jb_chen/00_Workshop/workshop_lab/lab4/lab4-1/time1.fsdb
+File2 = /sales/home/jb_chen/00_Workshop/workshop_lab/lab4/lab4-1/time2.fsdb

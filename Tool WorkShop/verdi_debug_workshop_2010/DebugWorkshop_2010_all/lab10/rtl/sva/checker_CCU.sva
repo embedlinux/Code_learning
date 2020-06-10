@@ -1,0 +1,14 @@
+bind CCU checker_CCU ck_CCU(clock,n_C20,n_C21);
+
+module checker_CCU(
+  input clock,
+  input logic n_C20, n_C21);
+
+property fetch_opcode;
+   @(posedge clock) (~n_C21 && ~n_C20);
+endproperty
+
+fetch: assert property (fetch_opcode);
+
+check_n1: assert property(@(posedge clock) n_C20 != n_C21 [*2:4] |=>  n_C20 == n_C21  ); 
+endmodule

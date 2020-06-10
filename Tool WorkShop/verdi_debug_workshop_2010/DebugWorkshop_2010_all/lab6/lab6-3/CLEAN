@@ -1,0 +1,5 @@
+#!/bin/csh -f
+\rm -rf *Log* INCA_libs *.log simv* csrc *.chain *.lock *.slist *.tlist *transcript \
+ccu_essential.* *.sim *VERILOG vcs.key ncverilog.key *.crdb *.lst  
+
+

@@ -1,0 +1,60 @@
+Magic 271485
+Revision 6.0
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/home/becky/dac/transition/rtl/rtl.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+cursor 4700.820000
+marker 4703.940000
+
+; user define markers
+; userMarker time_pos marker_name
+; visible top row signal index
+top 0
+; marker line index
+markerPos 3
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/home/becky/dac/transition/rtl/rtl.fsdb"
+addSignal -h 15 /system/i_cpu/i_ALUB/carry
+addSignal -h 15 -holdScope T2
+addSignal -h 15 -holdScope carry_flag
+addGroup "G2"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+; gridCount
+; gridCycleTime from to cycleTime
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

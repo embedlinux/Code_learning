@@ -1,0 +1,171 @@
+Magic 271485
+Revision 1.0
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort -4 263 1021 506 196 67
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] path_name file_name
+openDirFile -d / "" "C:\Novas\Debussy_info\training_50\debussy_training\verilog\labs\nwave\verilog_rtl.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 3
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 246.756940 1311.618147
+cursor 300.000000
+marker 750.000000
+
+; user define markers
+; userMarker time_pos marker_name
+userMarker 225.000000 hello
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 12
+activeDirFile "" "C:\Novas\Debussy_info\training_50\debussy_training\verilog\labs\nwave\verilog_rtl.fsdb"
+userBusMem /system/i_cpu/reset
+userBusMem /system/i_cpu/VMA
+userBusMem /system/i_cpu/R_W
+userBusMem /LOGIC_LOW
+saveRunSig "junk[3:0]"
+
+addExprSig -b 1 test "/system/i_cpu/clock"  |  "/system/i_cpu/reset"
+
+; Run Time Signal and Member
+; addRunTimeSig 
+
+; digital to analog list
+; allDtoA sig_name vv0 vv1 vvz vvx org_signal_name
+
+; analog to digital list
+; allAtoD sig_name low_threshold high_threshold member_sig_name
+
+; logical expression list
+; addExprSig expr_name expression_string
+
+; variable signals list
+; addVariable signal 
+
+; analog expression list
+; addAnaExprSig expr_name expression_string
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+SEQUENCE_BEGIN
+
+
+SEQUENCE_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByRising
+
+aliasmapname cpu.alias	 aliasfilename C:\Novas\Debussy_info\training_50\debussy_training\verilog\labs\nwave\cpu.alias
+nalias "DATA"		8'h20
+nalias "INCA"		8'h08
+nalias "TAX"		8'h0C
+nalias "SUBA"		8'h48
+nalias "LDA-"		8'h18
+nalias "BNZ"		8'h64
+nalias "ADDA"		8'h34
+nalias "CLRA"		8'h04
+nalias "STA"		8'h28
+nalias "LDA"		8'h14
+nalias "JMP"		8'h8C
+nalias "LDX"		8'h54
+nalias "ADDA-"		8'h38
+nalias "STA-"		8'h2C
+aliasmapname system.i_BJkernel.next_state	 aliasfilename system.i_BJkernel.next_state
+nalias "Evaluate"		3'b010
+nalias "Minus10"		3'b110
+nalias "Compare16"		3'b011
+nalias "Bust"		3'b111
+nalias "Start"		3'b000
+nalias "Compare21"		3'b100
+nalias "MoreCard"		3'b001
+nalias "Hold"		3'b101
+aliasmapname alu.select	 aliasfilename alu.select
+nalias "SUB1"		3'b010
+nalias "XOR1_OP"		3'b110
+nalias "AND_OP"		3'b011
+nalias "ADD"		3'b000
+nalias "OR_OP"		3'b100
+nalias "SUB"		3'b001
+nalias "XOR_OP"		3'b101
+
+addGroup "G2" -e FALSE
+aliasname alu.select
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -UNSIGNED -I /system/i_cpu/i_ALUB/i_alu/select[2:0]
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/i_ALUB/i_alu/carry
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/i_ALUB/i_alu/out[7:0]
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_cpu/i_ALUB/i_alu/a[7:0]
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_cpu/i_ALUB/i_alu/b[7:0]
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_cpu/i_ALUB/i_alu/cin
+addGroup "G3"
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/Ace
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/Total[4:0]
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/Fail
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/OK
+
+CMT_NODE_BEGIN
+-legendcmt  "this is a comment"  -color ID_RED5 -h 50
+CMT_NODE_END
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/NextCard
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/reset
+
+CMT_NODE_BEGIN
+-legendcmt  "Comment"  -color ID_RED5 -h 98
+CMT_BOX  -txt  "this is a comment"  -t SQUARE  -l 4.62122127666e+002 -r 7.77691951814e+002 -dy 84 -h 70
+CMT_NODE_END
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/NewCard
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/NewGame
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/BJ_clock
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_BJkernel/Card[3:0]
+aliasname system.i_BJkernel.next_state
+addSignal -h 14 -UNSIGNED /system/i_BJkernel/state[2:0]
+addGroup "G4"
+addGroup "CPU"
+addUserBus -c ID_RED5 -ls solid -lw 1 -h 14 -I junk[3:0]
+addSignal -h 14 /test
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_cpu/clock
+addSignal -c ID_RED5 -ls solid -lw 1 -h 14 -I /system/i_cpu/reset
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/VMA
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/R_W
+aliasname cpu.alias
+addSignal -c ID_BLUE5 -ls solid -lw 1 -h 14 -UNSIGNED -I /system/i_cpu/data[7:0]
+addSignal -c ID_GREEN5 -ls solid -lw 1 -h 14 -I /system/i_cpu/addr[7:0]
+addGroup "G5"
+
+; grid status
+; gridSignal signal_name
+; gridEdge 0 | 1
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "C:\Novas\Debussy_info\training_50\debussy_training\verilog\labs\nwave\verilog_rtl.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/system"
+"/system/i_cpu"
+
+SCOPE_LIST_BEGIN
+"/system/i_cpu/i_ALUB"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

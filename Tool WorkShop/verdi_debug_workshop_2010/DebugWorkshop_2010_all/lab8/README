@@ -1,0 +1,22 @@
+Design in the example:
+----------------------
+This is a systemverilog design with assertion.
+
+The directory contains:
+----------------------
+o *.sv              - The directory which contains the source RTL files.
+o SETUP            - The file to set up NOVAS and Synopsys environments.
+o COMPILE          - Script to use vericom to compile SystemVerilog design.
+o RUN*             - Script to run Verdi for demonstration.
+o SIM*             - Script to dump FSDB with VCS.
+o CLEAN            - Script to clean the old log files,libraries and simulation executable file.
+
+How to run the example:
+----------------------
+o Dump FSDB files 
+  *NOTE : Remember to modify SETUP file according to your environments.
+  %> ./SIM_RTL     - Dump SystemVerilog signals to rtl.fsdb
+  %> ./SIM_SVA     - Dump SystemVerilog signals include SVA assertions to sv.fsdb
+
+o Run Verdi Demonstration
+  %> ./RUN         - Verdi import SystemVerilog design with sv.fsdb loaded.

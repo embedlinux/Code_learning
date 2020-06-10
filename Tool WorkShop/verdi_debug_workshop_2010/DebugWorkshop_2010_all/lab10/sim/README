@@ -1,0 +1,49 @@
+SVTB Author: Verilab, Inc.
+Contact: JL Gray (jl.gray@verilab.com)
+
+
+Running Simulations
+-------------------
+
+NOTE: To run within the Verilab environment, prefix all 
+commands with ./run_vlab
+
+NOTE: To run the commands within Novas, uncomment the 
+appropriate environment variables in the run_sv and 
+run_verdi_sv scripts (untested).
+
+To run the SystemVerilog version of the test environment:
+
+    run_sv [--test file] [--seed value]
+    run_verdi_sv (to load Verdi)
+
+Use --test to run a different test: The default test program is
+'../sv/test_random.sv'; the only other test currently existing is
+'../sv/test_direct.sv'.
+
+Use --seed to pass a specific random seed value into vcs via
+'+ntb_random_seed=value'.
+
+Coverage
+--------
+
+To view the SystemVerilog coverage using URG:
+
+    urg -dir simv.vdb
+
+Then, point your browser to:
+
+    <cwd>/urgReport/dashboard.html
+
+NOTE: Each time a test is run a new coverage database is dumped
+(even if you've rerun with the same seed). URG merges the results
+from all previous runs when generating a report.
+
+Running the e Testbench
+-----------------------
+
+To run the e version of this environment:
+
+    run_vcs
+    run_verdi
+

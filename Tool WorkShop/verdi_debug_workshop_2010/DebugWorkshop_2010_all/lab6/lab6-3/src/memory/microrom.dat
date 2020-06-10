@@ -1,0 +1,89 @@
+// ************************************************************************
+// *  NOVAS SOFTWARE CONFIDENTIAL PROPRIETARY NOTE                        *
+// *                                                                      *
+// *  This software contains information confidential and proprietary     *
+// *  to Novas Software Inc. It shall not be reproduced in whole          *
+// *  or in part or transferred to other documents, or disclosed          *
+// *  to third parties, or used for any purpose other than that           *
+// *  for which it was obtained, without the prior written consent        *
+// *  of Novas Software Inc.                                              *
+// *  (c) 1996, 1997, 1998 Novas Software Inc.                            *
+// *  All rights reserved                                                 *
+// *                                                                      *
+// ************************************************************************
+ 
+/* Verdi tutorial case: A simplified microprogramming-based CPU
+   File name: microrom.dat
+   Descriptions: The microrom is used to store the microprogram of the 
+		 microprogramming-based controller. Each micropprogram
+		 consists of the sequence of control words needed by the
+		 corresponding macroprogram instruction. 
+*/
+// data	// address	// microprogram
+3d0ee7	// 00		OpCode fetch
+150e67
+000000
+09b4e2	// 03		CLRA (i)
+000000
+3d0ec2	// 05		LDA_ (a)
+3b8e63
+3b8ec2  
+// correct microcode
+0b86e2
+// buggy microcode
+//0b06e2
+000000
+3b8ec2	// 0a		STA_ (a)
+398eac
+3d0ecc
+398e69
+298ee9  // waiting for WRITE complete
+000000
+3a8ec2	// 10		STA@ (a,x)
+398eac
+3d0ecc
+398e69
+298ee9  // waiting for WRITE complete
+000000
+3d0ec2	// 16		ADDA (#)
+0b0462
+000000
+3d0ec2	// 19		ADDA_ (a)
+3b8e63
+3b0ec2
+0b04e2
+000000
+3d0ec2	// 1e		SUBA_ (a)
+3b8e63
+3f2ec2  
+0f24e2 
+000000
+0d84e2	// 23		INCA (i)
+000000
+3d0ec2	// 25		LDX (#)
+0b8a62
+000000
+098ae2	// 28		TAX (i)
+000000
+3b8e42	// 2a		BNZ (r)
+0b8f62
+000000
+3b8ec2	// 2d		JMP (#)
+0b8e62
+000000
+3d0ec2	// 30		LDA (a)
+0b8642
+000000
+3a8ec2	// 33		LDA@ (a,x)
+3d0eac
+398e6b
+3b8ec2
+0b86e2
+000000
+3d0ec2	// 39		LDX_ (a)
+3b8e63
+3b8ec2  
+0b8ae2
+000000
+000000
+000000

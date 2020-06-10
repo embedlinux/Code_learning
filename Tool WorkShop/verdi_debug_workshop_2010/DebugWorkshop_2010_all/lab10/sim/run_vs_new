@@ -1,0 +1,97 @@
+#!/bin/csh -f
+#################################################################
+###                                                           ###
+###   Shell script to run FSDB dumping SystemVerilog and VCS  ###
+###                                                           ###
+###                 Author : JL Gray (jl.gray@verilab.com)    ###
+###                  Date   : 4/13/2008                       ###
+###                                                           ###
+#################################################################
+
+################################################
+#  step1 setup environment
+################################################
+# Uncomment to enable this code to work in the 
+# Novas environment (untested)
+#setenv NOVAS_HOME   /novas/tools/Novas/verdi/latest
+#setenv VCS_HOME     /novas/tools/Synopsys/VCS/vcs_vY-2006.06-SP1-18
+
+switch(`uname`)
+    case SunOS*:
+        set novas_platform=SOL2
+        set sn_platform=solaris
+    breaksw
+    case Linux*:
+        set novas_platform=LINUX
+        set sn_platform=linux
+    breaksw
+endsw
+
+################################################
+#  step2 process cmdline opts
+################################################
+# --test: File name containing a test program block; default='../sv/test_random.sv'
+# --seed: Randomization seed; default=none
+
+set test=../sv/test_random.sv
+set seed
+while ($#argv > 0)
+    switch($argv[1])
+        case --test:
+            shift
+            if ($#argv > 0) then
+                if (!(-e $argv[1])) then
+                    echo "Error: Test program '$argv[1]': File not found"
+                    exit 1
+                endif
+                set test=$argv[1]
+            else
+                echo "Error: --test: No test file name given"
+                exit 1
+            endif
+        breaksw
+        case --seed:
+            shift
+            if ($#argv > 0) then
+                set seed="+ntb_random_seed=$argv[1]"
+            else
+                echo "Error: --seed: No seed value given"
+                exit 1
+            endif
+        breaksw
+        default
+            echo "Error: '$argv[1]': Unrecognized switch"
+            exit 1
+        breaksw
+    endsw
+    shift
+end
+echo "Debug: test=$test"
+echo "Debug: seed=$seed"
+            
+
+####################################
+# Step 3 compile the design
+####################################
+# -R -> Run the simulation immediately after compilation.
+# -ntb_opts rvm -> Make it possible to include VMM libs.
+# -ntb_opts dtm -> Make it possible to declare classes 
+#                  outside of a program block.
+
+vcs -sverilog \
+     -R +cli+4 -debug_all -noIncrComp -line +vcsd  -Xvlite=0x400 -ntb_opts dtm+vmm+rvm +vpi \
+     -P /qa/mfg/prod/verdi2008/verdiv200810_1001/share/PLI/.vcsd2008.03/LINUX/vcsd.tab \
+     /qa/mfg/prod/verdi2008/verdiv200810_1001/share/PLI/.vcsd2008.03/LINUX/pli.a \
+      -assert dve -assert  api +memcbk +vcs+lic+wait \
+     display.svh \
+     -f run_sv.f \
+     $test \
+     +incdir+../sv \
+     -l vcs.log
+
+####################################
+# Step 4 run the simulation
+####################################
+
+#./simv +rvm_log_default=VERBOSE -i ./vcs_sv.do -l simv.log $seed -cm+line+cond+fsm+tgl+path+branch
+

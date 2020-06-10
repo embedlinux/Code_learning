@@ -1,0 +1,2 @@
+setenv NOVAS_LIBS lsi_10k
+setenv NOVAS_LIBPATHS `pwd`

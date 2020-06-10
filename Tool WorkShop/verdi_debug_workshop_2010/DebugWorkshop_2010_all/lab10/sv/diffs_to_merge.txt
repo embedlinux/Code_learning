@@ -1,0 +1,130 @@
+Index: top.e
+===================================================================
+--- top.e	(revision 0)
++++ top.e	(revision 43)
+@@ -0,0 +1,7 @@
++<'
++import cpu_top; 
++import cpu_no_bnz;
++import cpu_cover;
++
++'>
++
+
+Index: cpu_top.e
+===================================================================
+--- cpu_top.e	(revision 3)
++++ cpu_top.e	(revision 43)
+@@ -13,13 +13,13 @@
+ ************************************************************************
+ <'
+ 
+-import cpu_ref, cpu_duv, pram_duv;
++import cpu_ref, cpu_duv, pram_duv, list_unit;
+ 
+@@ -50,12 +53,11 @@
+     do_end_reset() @sys.cpu_duv.end_reset is {
+         outf("<<< Check the initial value after CPU reset >>>\n");
+     
+-        var diff: list of string;                        
+-        diff=deep_compare(regs, sys.cpu_duv.regs, 100);
++	reg_cmp_str = reg_compare(regs, sys.cpu_duv.regs);
++	if ( reg_cmp_str == "mismatch" ) {
++		emit check_regs;
++	};
+         
+-        check that diff.is_empty() else 
+-        dut_error("Inconsist regs: ", diff);
+-        
+         if(memory_modify) {
+             pram.diff_memory(sys.pram_duv.mem);
+             memory_modify=FALSE;
+@@ -77,12 +79,12 @@
+             if(first_inst==FALSE) {     
+                 // check the result of the previous instruction
+ 
+-                var diff: list of string;                
+-                diff=deep_compare(regs, sys.cpu_duv.regs, 100);
++		reg_cmp_str = reg_compare(regs, sys.cpu_duv.regs);
++		if ( reg_cmp_str == "mismatch" ) {
++			emit check_regs;
++		};
++		
+                 
+-                check that diff.is_empty() else 
+-                dut_error("Inconsist regs: ", diff);
+-                
+                 if(memory_modify) {
+                     pram.diff_memory(sys.pram_duv.mem);
+                     memory_modify=FALSE;                    
+@@ -119,7 +121,8 @@
+             };            
+         };
+         if(diff) {
+-            dut_error("Inconsist memory value");
++            // dut_error("Inconsist memory value");
++            // Added by asun 4/2/2008 3:45PM
+         };            
+     };    
+ };
+
+
+Index: cpu_ref.e
+===================================================================
+--- cpu_ref.e	(revision 3)
++++ cpu_ref.e	(revision 43)
+@@ -175,12 +177,18 @@
+         };
+      };         
+ };
+-    
++
++
+ struct cpu_ref {
+     regs: cpu_regs;
+     program: cpu_program;
+     pram: pram_ref;
+     !out_of_inst: bool;
++    !inst: cpu_instr;
++    event exec_inst_done;
++    !inst_index: int;
++    !diff: list of string;
++    !reg_cmp_str : string;
+     
+     post_generate() is also {
+         pram.set_program(program);
+@@ -247,5 +258,19 @@
+         outf("\n==============================\n");
+     };
+ };
++extend cpu_ref {
++   list_is_not_empty(diff :list of string) : bool is {
++      if(diff.is_empty()) then { result = FALSE; }
++      else { result = TRUE; }
++   };
++};
++extend cpu_ref {
++   reg_compare(regs : cpu_regs , sample_regs : cpu_regs ) : string is {
++      diff=deep_compare(regs, sample_regs, 1);
++      if (list_is_not_empty(diff)) then { result = "mismatch"; }
++      else { result = "matched"; }
++   };
++};
+ 
++
+ '>
+Index: test_cpu.e
+===================================================================
+--- test_cpu.e	(revision 3)
++++ test_cpu.e	(revision 43)
+@@ -1,5 +1,9 @@
+ <'
+-import cpu_top, dump_fsdb;
++import novas_sn/e/novas_sn_top;
++import cpu_top; // , dump_fsdb;
++import dump_fsdb;
++import cpu_no_bnz;
++import cpu_cover;
+ 
+ '>
+ 

@@ -1,0 +1,3 @@
+setenv TURBO_LIBPATHS .
+setenv TURBO_LIBS lsi10k_u
+

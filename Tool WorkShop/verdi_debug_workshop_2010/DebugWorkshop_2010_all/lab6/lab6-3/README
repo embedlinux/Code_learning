@@ -1,0 +1,33 @@
+
+1. The demo package is composed of the following files:
+   
+   README               This file
+   SETUP                Sets the tool paths. This file is not needed if you already
+                        have your simulation and siloti environments set up. However,
+                        if you don't modify the paths in the SETUP file and you do use
+                        any of the RUN.* or SIM.* files, you'll want to remove the
+                        source ./SETUP statements from these files.
+   CLEAN                Remove extraneous log files.
+   fullchip.list        ESD hierarchical list generated with scope tb_CPUsytem and using
+                        symbol library first.
+   fullchip.list.plst   ESD plain list corresponding to above.
+                        NOTE: The simulation uses the plain list format for consistency
+                        between simulators. You can change the format used by modifying
+                        the file name input for fsdbDumpvarsToFile in the 
+                        src/tb_CPUsystem.v file.
+   src                  Directory containing design files.
+   *.fsdb               Sample FSDB files.
+   run.f                Original run file.
+   RUN.siloti           Script to run siloti and load essential signal FSDB.
+   RUN.esa              Script to run essential signal analysis from the command line.
+   SIM.vcs              Sample script to run VCS simulation.
+   SIM.ncv              Sample script to run NCV simulation.
+   pcu_observable*      Sample hierarchical and plain format essential signal lists to
+                        show different DE coverage. Not used.
+
+2. To re-generate the essential signal FSDB file, do the following:
+  
+   a. Generate the fullchip.* essential signal list files using the RUN.esa script.
+   b. Simulate using the SIM.* script or create a simulation script for your preferred
+      simulator.
+

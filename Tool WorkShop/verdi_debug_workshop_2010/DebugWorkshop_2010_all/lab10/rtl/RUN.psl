@@ -1,0 +1,3 @@
+#!/bin/csh -xf
+
+verdi -lib checker -top system ../e/test_cpu.e ../psl/DAC_i_cpu.psl ../psl/DAC_ALUB.psl -sswr psl.rc

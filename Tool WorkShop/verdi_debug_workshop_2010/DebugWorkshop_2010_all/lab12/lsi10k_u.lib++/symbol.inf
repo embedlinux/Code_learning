@@ -1,0 +1,4 @@
+Date   : Wed Jan 30 06:52:38 2008
+Command: ../../../access/bin/syn2SymDB -newLib -U -u -o lsi10k_u ../LSI10K.lib 
+Version: 2008.01
+

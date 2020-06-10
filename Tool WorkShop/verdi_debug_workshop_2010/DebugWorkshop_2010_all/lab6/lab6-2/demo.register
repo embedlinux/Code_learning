@@ -1,0 +1,8 @@
+"       TOP LEVEL MODULE",
+"       ================",
+"    clock=%b    reset=%b",
+"    VMA=%h      R_W=%b",
+"    data=%h     addr=%h",
+system.clock, system.reset,
+system.VMA, system.R_W,
+system.data, system.addr,

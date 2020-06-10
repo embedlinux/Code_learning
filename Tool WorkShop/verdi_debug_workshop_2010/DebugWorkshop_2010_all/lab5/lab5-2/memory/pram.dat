@@ -1,0 +1,166 @@
+// ************************************************************************
+// *  NOVAS SOFTWARE CONFIDENTIAL PROPRIETARY NOTE                        *
+// *                                                                      *
+// *  This software contains information confidential and proprietary     *
+// *  to Novas Software Inc. It shall not be reproduced in whole          *
+// *  or in part or transferred to other documents, or disclosed          *
+// *  to third parties, or used for any purpose other than that           *
+// *  for which it was obtained, without the prior written consent        *
+// *  of Novas Software Inc.                                              *
+// *  (c) 1996, 1997, 1998 Novas Software Inc.                            *
+// *  All rights reserved                                                 *
+// *                                                                      *
+// ************************************************************************
+ 
+/* Verdi tutorial case: A simplified microprogramming-based CPU
+   File name: pram.dat
+   Descriptions: The program ram stores the (macro) program to be executed
+		 by CPU. 
+*/
+//opcode_operand  // hex   addr    assembly code
+    000000_10      // 02    00     N/A
+    001101_00      // 34    01     ADDA  #55	;Ra=55
+    010101_01      // 55    02
+    001010_00      // 28    03     STA_  $20	;($20)=Ra (55)
+    001000_00      // 20    04
+    000011_00      // 0c    05     TAX		;Rx=Ra (55)
+    010101_00      // 54    06     LDX   #2x	;Rx=2x
+    001000_xx      // 2x    07
+    000010_00      // 08    08     INCA		;Ra=Ra+1 (56)
+    001011_00      // 2c    09     STA@   $01,Rx	;($(01+Rx))=Ra -> ($21)=(56)
+    000000_01      // 01    0A
+    010010_00      // 48    0B     SUBA_ $20    ;Ra=Ra-($20) (56-55=1)
+    001000_00      // 20    0C
+//    000101_00      // 14    0D     LDA  #56    ;Ra=56
+//    010101_10      // 56    0E
+    000110_00      // 18    0D     LDA_  $21    ;Ra=$(21) (56)
+    001000_01      // 21    0E
+    001110_00      // 38    0F     ADDA_ $20	;Ra=Ra+($20) (AB)
+    001000_00      // 20    10
+    001010_00      // 28    11     STA_  $22	;($22)=Ra (AB)
+    001000_10      // 22    12
+    000001_00      // 04    13     CLRA		;Ra=0
+    001101_00      // 34    14     ADDA  #2	;Ra=Ra+2 (2)
+    000000_10      // 02    15
+    001010_00      // 28    16     STA_  $23	;($23)=Ra (2)
+    001000_11      // 22    17
+    000101_00      // 14    18     LDA   #0A	;Ra=A
+    000010_10      // 10    19
+    100011_00      // 8c    1a     JMP   #30    
+    001100_00      // 30    1b
+@30
+    010010_00      // 48    30     SUBA_ $23    ;Ra=Ra-($23) (Ra=Ra-2)
+    001000_11      // 23    31
+    011001_00	   // 64    32	   BNZ   #30
+    001100_00	   // 30    33	
+@34
+    100011_00      // 8c    34     JMP   #46    
+    010001_10      // 46    35
+
+@36 // check_data
+    000110_00 // 18	36	LDA_ $b0 ;Ra=M[b0] 
+    101100_00 // b0	37
+    000110_00 // 18	38	LDA_ $b1 ;Ra=M[b1] 
+    101100_01 // b1	39
+    000110_00 // 18	3a	LDA_ $b2 ;Ra=M[b2] 
+    101100_10 // b2	3b
+    000110_00 // 18	3c	LDA_ $b3 ;Ra=M[b3] 
+    101100_11 // b3	3d
+@3e // end_program
+    100011_00 // 8c	3e 	JMP #end_program
+    001111_10 // 3e	3f
+@46 // load_data
+    000101_00 // 14	46	LDA   #7 ;Ra=7
+    000001_11 // 07	47
+    001010_00 // 28	48	STA_ $b0 ;M[b0]=7 
+    101100_00 // b0	49
+    000101_00 // 14	4a	LDA   #a ;Ra=a
+    000010_10 // 0a	4b
+    001010_00 // 28	4c	STA_ $b1 ;M[b1]=a
+    101100_01 // b1	4d
+    000101_00 // 14	4e	LDA   #5 ;Ra=5
+    000001_01 // 05	4f
+    001010_00 // 28	50	STA_ $b2 ;M[b2]=5
+    101100_10 // b2	51
+    000101_00 // 14	52	LDA   #8 ;Ra=8
+    000010_00 // 08	53
+    001010_00 // 28	54	STA_ $b3 ;M[b3]=8
+    101100_11 // b3	55
+
+@56 // start_sorting
+    000001_00 // 04	56	CLRA ;Ra=0 
+    001010_00 // 28	57	STA_ $a0 ;M[a0]=Ra (M[a0]:i=0)
+    101000_00 // a0	58
+@59 // cmp_loop1
+    000101_00 // 14	59	LDA #4 ;Ra=4 
+    000001_00 // 04	5a
+    001010_00 // 28	5b	STA_ $a1 ;M[a1]=Ra (M[a1]:MAX=4)
+    101000_01 // a1	5c
+    010010_00 // 48	5d	SUBA_ $a0 ;Ra=Ra-M[a0] (4-i)
+    101000_00 // a0	5e
+    011001_00 // 64	5f	BNZ #begin_loop2 
+    011000_11 // 63	60	
+@61 // end_sorting
+    100011_00 // 8c	61 	JMP #check_data
+    001101_10 // 36	62
+@63 // begin_loop2 
+    000110_00 // 18	63	LDA_ $a0 ;Ra=M[a0] 
+    101000_00 // a0	64
+    000010_00 // 08	65	INCA ;Ra=Ra+1
+    001010_00 // 28	66	STA_ $a2 ;M[a2]=Ra (M[a2]:j=i+1)
+    101000_10 // a2	67
+@68 // cmp_loop2
+    000110_00 // 18	68	LDA_ $a1 ;Ra=M[a1]
+    101000_01 // a1	69
+    010010_00 // 48	6a	SUBA_ $a2 ;Ra=Ra-M[a2] (4-j)
+    101000_10 // a2	6b
+    011001_00 // 64	6c	BNZ #cmp_if
+    011101_01 // 75	6d	
+    000110_00 // 18	6e	LDA_ $a0 ;Ra=M[a0]
+    101000_00 // a0	6f
+    000010_00 // 08     70      INCA ;Ra=Ra+1
+    001010_00 // 28	71	STA_ $a0 ;M[a0]=Ra (i=i+1)
+    101000_00 // a0	72
+    100011_00 // 8c	73	JMP #cmp_loop1
+    010110_01 // 59	74
+@75 // cmp_if
+    010110_00 // 58	75	LDX_ $a2 ;Rx=M[a2] 
+    101000_10 // a2	76
+    000111_00 // 1c	77	LDA@ $b0,Rx ;Ra=R[b0+Rx] (Ra=A[j])
+    101100_00 // b0	78
+    001010_00 // 28	79	STA_ $a3 ;M[a3]=Ra (M[a3]:t=A[j])
+    101000_11 // a3	7a
+    010110_00 // 58	7b	LDX_ $a0 ;Rx=M[a0] 
+    101000_00 // a0	7c
+    000111_00 // 1c	7d	LDA@ $b0,Rx ;Ra=R[b0+Rx] (Ra=A[i])
+    101100_00 // b0	7e
+    010010_00 // 48	7f	SUBA_ $a3 ;Ra=Ra-M[a3] (A[i]-A[j])
+    101000_11 // a3	80
+    011001_01 // 65	81	BGEZ #swap
+    100010_10 // 8a	82	
+@83 // inc_loop2
+    000110_00 // 18	83	LDA_ $a2 ;Ra=M[a2]
+    101000_10 // a2	84
+    000010_00 // 08     85      INCA ;Ra=Ra+1
+    001010_00 // 28	86	STA_ $a2 ;M[a2]=Ra (j=j+1)
+    101000_10 // a2	87
+    100011_00 // 8c	88	JMP #cmp_loop2
+    011010_00 // 68	89	
+@8a // swap
+    010110_00 // 58	8a	LDX_ $a0 ;Rx=M[a0] 
+    101000_00 // a0	8b	
+    000111_00 // 1c	8c	LDA@ $b0,Rx ;Ra=R[b0+Rx] (Ra=A[i])
+    101100_00 // b0	8d
+    010110_00 // 58	8e	LDX_ $a2 ;Rx=M[a2] 
+    101000_10 // a2	8f
+    001011_00 // 2c	90	STA@ $b0,Rx ;M[b0+Rx]=Ra (A[j]=A[i])
+    101100_00 // b0	91
+    000110_00 // 18     92	LDA_ $a3 
+    101000_11 // a3	93
+    010110_00 // 58	94	LDX_ $a0 ;Rx=M[a0] 
+    101000_00 // a0	95	
+    001011_00 // 2c	96	STA@ $b0,Rx ;M[b0+Rx]=Ra (A[i]=t)
+    101100_00 // b0	97
+    100011_00 // 8c	98	JMP #inc_loop2
+    100000_11 // 83	99
+

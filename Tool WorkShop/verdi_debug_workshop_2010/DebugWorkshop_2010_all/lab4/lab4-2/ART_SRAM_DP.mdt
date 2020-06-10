@@ -1,0 +1,41 @@
+# always@(posedge CLKA)
+#    begin
+#       if (!CENA) 
+#          begin
+#             if (WENA)   
+#                _QA<=mem[AA];
+#             else
+#                begin
+#                   mem[AA]<= DA;
+#                   _QA<=DA;
+#                end
+#          end
+#   end
+# 
+#  assign QA = OENA? 16'hzzzz :_QA;
+
+#always@(posedge CLKB)
+#    begin
+#       if (!CENB)
+#          begin
+#             if (WENB)
+#                _QB<=mem[AB];
+#             else
+#                begin
+#                   mem[AB]<= DB;
+#                   _QB<=DB;
+#                end
+#          end
+#   end
+#
+#  assign QB = OENB? 16'hzzzz :_QB;
+
+
+
+#tfgUndefineMem -module dpm16bx4096 -array_name mem
+tfgDefineMem -module ART_SRAM_DP -array_name mem
+#tfgDefineMemInit -module ART_SRAM_DP -array_name mem -time 0 -useValue 16'h0000 
+tfgDefineMemWrite -module ART_SRAM_DP -array_name mem -clk "@(posedge CLKA)" -cond "!CENA && !WENA" -addr AA -data DA
+tfgDefineMemRead -module ART_SRAM_DP -array_name mem -clk "@(posedge CLKA)" -cond "!CENA && (WENA || !WENA) " -noe "!OENA" -addr AA -out QA 
+tfgDefineMemWrite -module ART_SRAM_DP -array_name mem -clk "@(posedge CLKB)" -cond "!CENB && !WENB" -addr AB -data DB
+tfgDefineMemRead -module ART_SRAM_DP -array_name mem -clk "@(posedge CLKB)" -cond "!CENB && (WENB || !WENB) " -noe "!OENB" -addr AB -out QB 
