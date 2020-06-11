@@ -1,0 +1,49 @@
+Command: vcs bus_arbiter.v glue.v master_bfm.v target_bfm.v tb.v ss.sva -sverilog \
++define+tb_sva +define+slv_fc +define+slv_doc +define+master_debug -PP -assert enable_diag \
+-cm assert -l compile.log
+                         Chronologic VCS (TM)
+           Version X-2005.06-B -- Thu Apr 14 08:38:52 2005
+               Copyright (c) 1991-2005 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+***** Warning: ACC/CLI capabilities have been enabled for the entire design.
+      For faster performance enable module specific capability in pli.tab file
+Parsing design file 'bus_arbiter.v'
+Parsing design file 'glue.v'
+Parsing design file 'master_bfm.v'
+Parsing design file 'target_bfm.v'
+Parsing design file 'tb.v'
+Parsing design file 'ss.sva'
+Top Level Modules:
+       $root
+       tb
+No TimeScale specified
+VCS Coverage Metrics Release X-2005.06-B Copyright (c) 2003 by Synopsys, Inc.
+Starting vcs inline pass...
+5 modules and 0 UDP read.
+recompiling module $root
+recompiling module master_bfm
+recompiling module target_bfm
+recompiling module tb
+recompiling module ss_chk
+All of 5 modules done
+if [ -x ../simv ]; then chmod -x ../simv; fi
+gcc   -o ../simv  5NrI_d.o 5NrIB_d.o E1gK_1_d.o vnDO_1_d.o E0VK_1_d.o jUh1_1_d.o \
+KqT2_1_d.o SIM_l.o   /build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/gui/virsim/linux/vcdplus/vcs7_2/libvirsim.a \
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/libcm_vcsd.a \
+-L/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib -lBA \
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/libvcsnew.so \
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/ctype-stubs_32.a \
+-ldl -lm  -lc -ldl    
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/libcm_vcsd.a(cm-vcsd.o)(.text+0x76062): \
+In function `TJ3n_1':
+: `sys_errlist' is deprecated; use `strerror' or `strerror_r' instead
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/libcm_vcsd.a(cm-vcsd.o)(.text+0x76052): \
+In function `TJ3n_1':
+: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
+../simv up to date
+CPU time: 1.880 seconds to compile + .390 seconds to link

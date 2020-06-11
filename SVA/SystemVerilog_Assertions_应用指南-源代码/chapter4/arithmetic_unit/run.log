@@ -1,0 +1,61 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 14 07:14 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"au.v", 45: tb.i1.sel_low: started at 50s succeeded at 50s
+"au.v", 43: tb.i1.sel_high: started at 100s succeeded at 100s
+"au.v", 45: tb.i1.sel_low: started at 150s succeeded at 150s
+"au.v", 43: tb.i1.sel_high: started at 200s succeeded at 200s
+"au.v", 43: tb.i1.sel_high: started at 250s succeeded at 250s
+"au.v", 43: tb.i1.sel_high: started at 300s succeeded at 300s
+"au.v", 45: tb.i1.sel_low: started at 350s succeeded at 350s
+"au.v", 45: tb.i1.sel_low: started at 400s succeeded at 400s
+"au.v", 43: tb.i1.sel_high: started at 450s succeeded at 450s
+"au.v", 45: tb.i1.sel_low: started at 500s succeeded at 500s
+"au.v", 43: tb.i1.sel_high: started at 550s succeeded at 550s
+"au.v", 43: tb.i1.sel_high: started at 600s succeeded at 600s
+"au.v", 43: tb.i1.sel_high: started at 650s succeeded at 650s
+"au.v", 45: tb.i1.sel_low: started at 700s succeeded at 700s
+"au.v", 45: tb.i1.sel_low: started at 750s succeeded at 750s
+"au.v", 45: tb.i1.sel_low: started at 800s succeeded at 800s
+"au.v", 45: tb.i1.sel_low: started at 850s succeeded at 850s
+"au.v", 45: tb.i1.sel_low: started at 900s succeeded at 900s
+"au.v", 43: tb.i1.sel_high: started at 950s succeeded at 950s
+"au.v", 43: tb.i1.sel_high: started at 1000s succeeded at 1000s
+"au.v", 43: tb.i1.sel_high: started at 1050s succeeded at 1050s
+"au.v", 45: tb.i1.sel_low: started at 1100s succeeded at 1100s
+"au.v", 45: tb.i1.sel_low: started at 1150s succeeded at 1150s
+"au.v", 45: tb.i1.sel_low: started at 1200s succeeded at 1200s
+"au.v", 43: tb.i1.sel_high: started at 1250s succeeded at 1250s
+"au.v", 45: tb.i1.sel_low: started at 1300s succeeded at 1300s
+"au.v", 43: tb.i1.sel_high: started at 1350s succeeded at 1350s
+"au.v", 45: tb.i1.sel_low: started at 1400s succeeded at 1400s
+"au.v", 43: tb.i1.sel_high: started at 1450s succeeded at 1450s
+"au.v", 43: tb.i1.sel_high: started at 1500s succeeded at 1500s
+"au.v", 43: tb.i1.sel_high: started at 1550s succeeded at 1550s
+"au.v", 45: tb.i1.sel_low: started at 1600s succeeded at 1600s
+"au.v", 45: tb.i1.sel_low: started at 1650s succeeded at 1650s
+"au.v", 45: tb.i1.sel_low: started at 1700s succeeded at 1700s
+"au.v", 43: tb.i1.sel_high: started at 1750s succeeded at 1750s
+"au.v", 43: tb.i1.sel_high: started at 1800s succeeded at 1800s
+"au.v", 45: tb.i1.sel_low: started at 1850s succeeded at 1850s
+"au.v", 43: tb.i1.sel_high: started at 1900s succeeded at 1900s
+"au.v", 45: tb.i1.sel_low: started at 1950s succeeded at 1950s
+"au.v", 45: tb.i1.sel_low: started at 2000s succeeded at 2000s
+"au.v", 43: tb.i1.sel_high: started at 2050s succeeded at 2050s
+"au.v", 45: tb.i1.sel_low: started at 2100s succeeded at 2100s
+"au.v", 43: tb.i1.sel_high: started at 2150s succeeded at 2150s
+"au.v", 43: tb.i1.sel_high: started at 2200s succeeded at 2200s
+"au.v", 43: tb.i1.sel_high: started at 2250s succeeded at 2250s
+"au.v", 43: tb.i1.sel_high: started at 2300s succeeded at 2300s
+"au.v", 45: tb.i1.sel_low: started at 2350s succeeded at 2350s
+"au.v", 45: tb.i1.sel_low: started at 2400s succeeded at 2400s
+"au.v", 45: tb.i1.sel_low: started at 2450s succeeded at 2450s
+"au.v", 43: tb.i1.sel_high: started at 2500s succeeded at 2500s
+$finish at simulation time                 2650
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 2650
+CPU Time:      0.020 seconds;       Data structure size:   0.0Mb
+Thu Apr 14 07:14:36 2005

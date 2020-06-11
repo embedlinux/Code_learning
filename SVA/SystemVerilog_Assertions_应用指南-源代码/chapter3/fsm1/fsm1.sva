@@ -1,0 +1,122 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *| 
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+
+module fsm_checkers (done_frame, get_data, clk, reset_, rd, rd_addr, sipo_en, latch_en, n_state, c_state);
+
+input logic clk, done_frame, rd, get_data, reset_;
+input logic [17:0] rd_addr;
+input logic sipo_en, latch_en;
+input logic [15:0] n_state, c_state;
+
+logic [15:0]  cnt = 16'd0;
+
+enum bit[15:0] {IDLE = 16'd1,
+                        GEN_BLK_ADDR = 16'd2,
+                        DLY = 16'd4,
+                        NEXT_BLK = 16'd8,
+                        WAIT0 = 16'd16,
+                        CNT1 = 16'd32,
+                        WAIT1 = 16'd64,
+                        CNT2 = 16'd128,
+                        WAIT2 = 16'd256,
+                        CNT3 = 16'd512,
+                        WAIT3 = 16'd1024,
+                        CNT4 = 16'd2048,
+                        WAIT4 = 16'd4096,
+                        CNT5 = 16'd8192,
+                        WAIT5 = 16'd16384,
+                        CNT6 = 16'd32768} n_state, c_state; 
+
+// This corresponds to FSM1_CHK1
+
+property p_onehot;
+	@(posedge clk) (reset_) |-> ($countones(n_state) == 1);
+endproperty
+
+a_onehot: assert property(p_onehot);
+
+// $onehot function can also be used to check the fsm coding
+
+// Writing a sequence for each state transition
+// FSM1_CHK2
+
+sequence s_trans1;
+	(c_state == IDLE) ##1 ((c_state == GEN_BLK_ADDR) [*64]) ##1 (c_state == WAIT0);
+endsequence
+
+// State where the 64bit address get generated
+
+sequence s_trans2;
+	##63 (c_state == GEN_BLK_ADDR) ##1 (c_state == WAIT0);
+endsequence
+
+// after 64 address are generated, 1 cycle later it is latched in, 
+// and all the control signals are enabled in 2 cycle intervals dp1_en, 
+// dp2_en, dp3_en, dp4_en, wr
+
+sequence s_trans3;
+	##1 (c_state == CNT1) ##2 (c_state == CNT2) ##2 (c_state == CNT3) ##2 (c_state == CNT4) ##2 (c_state == CNT5) ##2 (c_state == CNT6);
+endsequence
+
+property p_trans;
+	@(posedge clk) (reset_ && $rose(get_data)) |-> (reset_) throughout (s_trans1);
+endproperty
+
+a_trans: assert property (p_trans);
+c_trans: cover property (p_trans);
+
+// FSM1_CHK3
+
+property p_linear_trans;
+	@(posedge clk) ((reset_) && (c_state == WAIT0) && ($past(c_state)== GEN_BLK_ADDR)) |-> s_trans3; 
+endproperty
+
+a_linear_trans: assert property (p_linear_trans);
+c_linear_trans: cover property (p_linear_trans);
+
+// FSM1_CHK4
+
+property p_frame;
+	@(posedge clk) ((reset_) && (c_state == GEN_BLK_ADDR) && (($past (c_state)== IDLE) || ($past(c_state == NEXT_BLK)))) |-> s_trans2 ##0 s_trans3;
+endproperty
+
+a_frame: assert property(p_frame) cnt++;
+c_frame: cover property(p_frame);
+
+
+property p_frame_path1;
+	@(posedge clk) ((reset_) && (c_state == GEN_BLK_ADDR) && ($past(c_state == NEXT_BLK))) |-> s_trans2 ##0 s_trans3;
+endproperty
+
+c_frame_path1: cover property(p_frame_path1);
+
+property p_frame_path2;
+	@(posedge clk) ((reset_) && (c_state == GEN_BLK_ADDR) && ($past(c_state == IDLE))) |-> s_trans2 ##0 s_trans3;
+endproperty
+c_frame_path2: cover property(p_frame_path2);
+
+// done_frame is asserted when the last 64bytes are being transferred
+// into the system. so we are checking when 4095 packets are transferred 
+// completely and 4096 packet is being written after processing
+
+property p_complete_frame;
+	@(posedge clk) ((cnt == 16'd4095)&&reset_&&(c_state==CNT6)) |->  done_frame;
+endproperty
+
+a_complete_frame: assert property(p_complete_frame) $display ("A complete frame has been transferred \n");
+c_complete_frame: cover property(p_complete_frame);
+
+endmodule 
+
+bind fsm fsm_checkers u1 (.*);

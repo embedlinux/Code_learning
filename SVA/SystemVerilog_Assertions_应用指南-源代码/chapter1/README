@@ -1,0 +1,54 @@
+This directory has all the examples in chapter 1.
+The examples are in different directories. The table below lists the location of hte examples.
+
+
+Most of these examples are created in such a manner that  both the assertion success and failures are captured by the stimulus
+
+Example Name		Description			Directory Name
+============		============			==============	
+
+Example 1.1		verilog/SVA comparison 		ex1.1
+a_cc			concurrent assertion		basic
+a_ia			immediate assertion		basic
+sequence s1		simple sequence			basic
+sequence s2		$rose				basic
+sequence s3		logical relationship		basic
+sequence s4		sequence with timing 		basic_time
+property p6		forbidding a property		basic_time
+property p7		action block			basic_time	
+property p8		overlapped implication		basic
+property p9		non-overlapped implication	basic
+property p10		implication, fixed delay SVA	basic
+property p11		implication, with antecedent	basic
+property p12		timing windows in SVA		basic
+property p13		overlapping, fixed time window	basic
+property p14		indefinite time window		basic
+property p15		ended construct			basic
+property p16		SVA using parameters		basic
+property p17		select operator			basic
+property p18		`true operator			basic
+property p19		$past construct			basic
+property p21		[*] consecutive repeat oper	repeats
+property p22		cons. repeat on a sequece	repeats	 	
+property p23		cons.repeat on seq with delay	repeats
+property p24		cons.repeat and evantuality	repeats
+property p25		[->] go to repetition		repeats
+property p26		[=] non consecutive repeat 	repeats
+property p27		AND construct			andor
+property p28		intersect			andor
+property p29		OR construct			andor
+property p30		first_match construct		first_match
+property p31		throughout construct		cond
+property p32		within				cond
+property p33		built-in system functions	routines
+			($onehot, $countones, $onehot0)	
+property p34		disable iff construct		disable iff
+property p35		length				basic
+property arb		formal arg in a property	pformal (36_2 not getting fired)
+property p_match	matched construct		matched
+property p_local_var1	local variables			lvars/cubed (failing)
+property p_disp_window  sub.routines on seq match	lvars/sub 
+connect SVA to design	connecting SVA to desing(bind)	connect
+property p_a_to_b	SVA for formal prop checking	formal 
+
+

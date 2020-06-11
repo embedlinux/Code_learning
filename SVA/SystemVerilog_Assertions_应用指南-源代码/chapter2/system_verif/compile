@@ -1,0 +1,7 @@
+vcs *.v *.sva -sverilog \
++define+enable_blk_assertions \
++define+tb_sva \
++define+slv_fc \
++define+slv_doc \
+-PP -assert enable_diag -cm assert \
+-l compile.log

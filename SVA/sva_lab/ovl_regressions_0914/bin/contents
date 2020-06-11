@@ -1,0 +1,540 @@
+#!/bin/sh
+
+#----------------------------------------------------------------------------
+# CONTENTS (last updated: Tue Feb  6 09:01:30 GMT 2007)
+# ========
+#  32.  About this script (add/update contents header in file)
+#  40.    - Usage message
+#  98.  Generic Stuff
+# 105.    - Service help request (-h flag etc.)
+# 114.    - Get Operating System
+# 126.  Initial Checks
+# 130.    - Correct number of arguments?
+# 146.    - File exists and writable?
+# 175.    - Set original file
+# 181.    - No indexes?  (1st pre-index file created here)
+# 205.  Main Steps
+# 209.     1) Begin (move original file to /tmp as a backup)
+# 228.     2) Check for Existing Contents
+# 264.     3) Determine Comment Style
+# 346.     4) Split into Top and End Files
+# 390.     5) Display Index Count & Check Top File
+# 404.     6) Warn if any Update Problems (e.g. no delimiter)
+# 414.     7) Create 2nd Pre-Index File (could be shorter!)
+# 428.     8) Create 3rd Pre-Index File (prepare for FS in final index)
+# 448.     9) Create Index File
+# 500.    10) Create Result File (orig + contents)
+# 517.    11) Restore File Permissions
+# 526.    12) Tidy Up
+#----------------------------------------------------------------------------
+
+
+# INDEX: About this script (add/update contents header in file)
+# ~~~~~
+# Script to add/update contents header in a file. Running the script on itself
+# is a good test!
+#
+# Created by Mike Turpin. See usage message below for more information.
+
+
+# INDEX:   - Usage message
+# ~~~~~
+COMMAND=`basename $0`
+DASH76="----------------------------------------------------------------------------"
+#
+usage_message () {
+  echo
+  echo "  Usage: $COMMAND file"
+  echo "  $DASH76"
+  echo "  - This script is used to add a contents header to the start of a file, or"
+  echo "  - update an existing contents header in the file."
+  echo "  -"
+  echo "  - EXAMPLE:  shell> $COMMAND README"
+  echo "  -"
+  echo "  - The script will look for 'INDEX:' section markers in the file, then"
+  echo "  - include their associated text and line numbers in the contents header."
+  echo "  -"
+  echo "  - If the file itself is a script or software/HDL code, the contents header"
+  echo "  - will be inserted as a comment. The appropriate style of comment is found"
+  echo "  - from the first 'INDEX:' section marker in the file. No consistancy check"
+  echo "  - is performed on the comments of subsequent section markers as they could"
+  echo "  - be mixed for some languages, e.g. '/* INDEX:' and '//INDEX:' in the same"
+  echo "  - C++/Java/Verilog file."
+  echo "  -"
+  echo "  - Suitable styles of section markers are given below:"
+  echo "  -"
+  echo "  -  INDEX: A plain-text style."
+  echo "  -"
+  echo "  -  #INDEX: An in-line-comment style (e.g. for script files)."
+  echo "  -"
+  echo "  -  // INDEX: An in-line-comment style (e.g. C++), that's underlined!"
+  echo "  -  // ====="
+  echo "  -"
+  echo "  -  /* INDEX: A block-comment style (e.g. C). */"
+  echo "  -"
+  echo "  -  /*-------------------------------------------------------------"
+  echo "  -   INDEX: Alternative block-comment style (e.g. C)."
+  echo "  -  -------------------------------------------------------------*/"
+  echo "  -"
+  echo "  - A contents line for each marker then appears in the preceeding contents"
+  echo "  - header, e.g. shown below for the last two marker examples above:"
+  echo "  -"
+  echo "  -  /*-------------------------------------------------------------"
+  echo "  -   CONTENTS (last updated: ${DATE})"
+  echo "  -   ========"
+  echo "  -    24. A block-comment style (e.g. C)."
+  echo "  -   176. Alternative block-comment style (e.g. C)."
+  echo "  -  -------------------------------------------------------------*/"
+  echo "  -"
+  echo "  - The above contents header is enclosed in a block comment. However, if the"
+  echo "  - first 'INDEX:' marker was preceeded by an in-line comment, then the"
+  echo "  - contents header would also use in-line comments."
+  echo "  $DASH76"
+  echo
+}
+
+
+#--------------------------------------------------------------------------
+# INDEX: Generic Stuff
+#--------------------------------------------------------------------------
+DATE=`date`
+ANY_WARNINGS="none"
+TMP_FILE_PREFIX=$COMMAND.$USER
+
+
+# INDEX:   - Service help request (-h flag etc.)
+# ~~~~~
+if [ "$1" = "-h" -o "$1" = "-help" -o "$1" = "--help" -o $# -eq 0 ]
+  then
+    usage_message
+    exit
+fi
+
+
+# INDEX:   - Get Operating System
+# ~~~~~
+case `uname -s``uname -r` in
+    SunOS5.*)    SHORT_OS="sun4_u5"
+           ;;
+    Linux*)      SHORT_OS="linux"
+           ;;
+    *)           SHORT_OS="untested"
+esac
+
+
+#--------------------------------------------------------------------------
+# INDEX: Initial Checks
+#--------------------------------------------------------------------------
+
+
+# INDEX:   - Correct number of arguments?
+# ~~~~~
+if [ $# -ne 1 ]
+  then
+    echo
+    echo "  Running '$COMMAND' script ..."
+    echo "  $DASH76"
+    echo "  - ERROR: Expecting 1 argument!" >&2
+    echo "  -"
+    echo "  - For more help run: $COMMAND -h"
+    echo "  $DASH76"
+    echo
+    exit
+fi
+
+
+# INDEX:   - File exists and writable?
+# ~~~~~
+if [ ! -f $1 ]
+  then
+    echo
+    echo "  Running '$COMMAND' script ..."
+    echo "  $DASH76"
+    echo "  - ERROR: Non-existant file '$1'" >&2
+    echo "  -"
+    echo "  - For more help run: $COMMAND -h"
+    echo "  $DASH76"
+    echo
+    exit
+fi
+#
+if [ ! -w $1 ]
+  then
+    echo
+    echo "  Running '$COMMAND' script ..."
+    echo "  $DASH76"
+    echo "  - ERROR: Write-protected file '$1'" >&2
+    echo "  -"
+    echo "  - For more help run: $COMMAND -h"
+    echo "  $DASH76"
+    echo
+    exit
+fi
+
+
+# INDEX:   - Set original file
+# ~~~~~
+ORIG_FILE=$1
+ORIG_FILE_NAME=`basename $ORIG_FILE`
+
+
+# INDEX:   - No indexes?  (1st pre-index file created here)
+# ~~~~~
+P1_INDEX_FILE=/tmp/$TMP_FILE_PREFIX.TMP-pre1.index
+#
+grep -n '^ *[^ ]* *INDEX:.*$' $ORIG_FILE > $P1_INDEX_FILE
+P1_INDEX_COUNT=`grep -c '.*' $P1_INDEX_FILE`
+#
+if [ $P1_INDEX_COUNT -eq 0 ]
+  then
+    echo
+    echo "Running '$COMMAND' script (on file: '$ORIG_FILE_NAME')  ..."
+    echo $DASH76
+    echo "- ERROR: No 'INDEX:' markers found in file, cannot create contents!" >&2
+    echo "-"
+    echo "- For more help run: $COMMAND -h"
+    echo $DASH76
+    echo
+    exit
+fi
+#
+P1_INDEX_1ST_LINE=`head -1 $P1_INDEX_FILE`
+
+
+#--------------------------------------------------------------------------
+# INDEX: Main Steps
+#--------------------------------------------------------------------------
+
+
+# INDEX:    1) Begin (move original file to /tmp as a backup)
+# ~~~~~
+echo
+echo "  Running '$COMMAND' script (on '$ORIG_FILE_NAME' file) ..."
+echo "  $DASH76"
+#
+if [ "$SHORT_OS" = "untested" ]
+  then
+    echo "  - ** WARNING: script not tested on this O/S!" **
+    echo "  -"
+    ANY_WARNINGS="some"
+fi
+#
+BACKUP_FILE=/tmp/$TMP_FILE_PREFIX.BAK-$ORIG_FILE_NAME
+mv $ORIG_FILE $BACKUP_FILE
+#
+echo "  - Backup file:  $BACKUP_FILE"
+
+
+# INDEX:    2) Check for Existing Contents
+# ~~~~~
+PREV_CONTENTS_COUNT=`grep -c "^ *[^ ]* *CONTENTS (last updated: .*)$" $BACKUP_FILE`
+#
+# Style was changed on 06feb2007 to include a date.
+if [ $PREV_CONTENTS_COUNT -eq 0 ]; then
+    OLD_STYLE_CONTENTS_COUNT=`grep -c "^ *[^ ]* *CONTENTS$" $BACKUP_FILE`
+    if [ $OLD_STYLE_CONTENTS_COUNT -gt 0 ]; then
+        PREV_CONTENTS_COUNT=$OLD_STYLE_CONTENTS_COUNT
+    fi
+fi
+#
+case $PREV_CONTENTS_COUNT in
+  0) CONTENTS_EDIT=add_new
+     MAGIC_NUMBER_AT_TOP=`head -1 $BACKUP_FILE | grep "^ *# *!"`
+     if [ "$MAGIC_NUMBER_AT_TOP" = "" ]
+       then
+         CONTENTS_START=2
+         echo "  - Edit Mode:    add_new, (will create CONTENTS at start of file)"
+       else
+         CONTENTS_START=4
+         echo "  - Edit Mode:    add_new, (will create CONTENTS just after the '#!' line)"
+     fi
+     ;;
+  1) CONTENTS_EDIT=update
+     CONTENTS_START=`awk '/^ *[^ ]* * CONTENTS/ {print NR; exit}' $BACKUP_FILE`
+     echo "  - Edit Mode:    update, (of existing CONTENTS at line $CONTENTS_START)"
+     ;;
+  *) CONTENTS_EDIT=update_1st
+     CONTENTS_START=`awk '/^ *[^ ]* * CONTENTS/ {print NR; exit}' $BACKUP_FILE`
+     echo "  - Edit Mode:    update_1st, (of existing CONTENTS at line $CONTENTS_START)"
+     echo "  -               ** WARNING: $PREV_CONTENTS_COUNT possible CONTENTS found **"
+     ANY_WARNINGS="some"
+esac
+
+
+# INDEX:    3) Determine Comment Style
+# ~~~~~
+FIRST_COMMENT_WORD=`echo $P1_INDEX_1ST_LINE | sed 's/^\([1-9][0-9]*\): *\([^ ]*\) *INDEX:..*$/\2/'`
+FIRST_COMMENT_LNUM=`echo $P1_INDEX_1ST_LINE | sed 's/^\([1-9][0-9]*\): *\([^ ]*\) *INDEX:..*$/\1/'`
+FIRST_COMMENT_SIZE=`echo $FIRST_COMMENT_WORD | wc -c`
+#
+COMMENT_RANGE=in_line
+COMMENT_STYLE=known
+#
+# Check if an un-commented index is on the line following an open block comment
+if [ "$FIRST_COMMENT_WORD" = "" ]
+  then
+    LINE_ABOVE_1ST_INDEX=`awk 'NR == (l - 1)' l=$FIRST_COMMENT_LNUM $BACKUP_FILE`
+    COMMENT_ABOVE_1ST_INDEX=`echo $LINE_ABOVE_1ST_INDEX | sed 's/^ *\(.*\)$/\1/'`
+    case $COMMENT_ABOVE_1ST_INDEX in
+      "/*"*) FIRST_COMMENT_WORD="/*"
+             ;;
+      "(*"*) FIRST_COMMENT_WORD="(*"
+             ;;
+      "{"*)  FIRST_COMMENT_WORD="{"
+             ;;
+      *)     FIRST_COMMENT_WORD=$FIRST_COMMENT_WORD
+    esac
+fi
+#
+case $FIRST_COMMENT_WORD in
+  "")    COMMENT=""
+         echo "  - Comment:      none, (assuming plain text)"
+         ;;
+
+  "#"*)  COMMENT="#"
+         echo "  - Comment:      '$COMMENT', in-line script, (from 1st 'INDEX:' marker)"
+	 ;;
+  --*)   COMMENT="--"
+         echo "  - Comment:      '$COMMENT', in-line VHDL/ADA, (from 1st 'INDEX:' marker)"
+         ;;
+  //*)   COMMENT="//"
+         echo "  - Comment:      '$COMMENT', in-line C++/Java/Verilog, (from 1st 'INDEX:' marker)"
+         ;;
+  %*)    COMMENT="%"
+         echo "  - Comment:      '$COMMENT', in-line Prolog, (from 1st 'INDEX:' marker)"
+         ;;
+
+  "/*"*) COMMENT="/*"
+	 COMMENT_CLOSE="*/"
+         COMMENT_RANGE=block
+         echo "  - Comment:      '$COMMENT', block C/C++/Java/Verilog, (from 1st 'INDEX:' marker)"
+         ;;
+  "(*"*) COMMENT="(*"
+	 COMMENT_CLOSE="*)"
+         COMMENT_RANGE=block
+         echo "  - Comment:      '$COMMENT', block Pascal/ML, (from 1st 'INDEX:' marker)"
+         ;;
+  "{"*)  COMMENT="{"
+	 COMMENT_CLOSE="}"
+         COMMENT_RANGE=block
+         echo "  - Comment:      '$COMMENT', block Pascal, (from 1st 'INDEX:' marker)"
+         ;;
+
+  *)     COMMENT=$FIRST_COMMENT_WORD
+         COMMENT_STYLE=unknown
+         echo "  - Comment:      '$COMMENT', (from 1st 'INDEX:' marker)"
+         echo "  -               ** WARNING: unknown comment, assuming in-line **"
+         ANY_WARNINGS="some"
+esac
+#
+if [ $FIRST_COMMENT_SIZE -gt 3 ]
+  then
+    echo "  -               ** WARNING: comment for 1st 'INDEX:' > 2 characters **"
+    ANY_WARNINGS="some"
+fi
+#
+if [ "$COMMENT_RANGE" = "block" ]
+  then
+    CONTENTS_COMMENT=""
+    CONTENTS_DELIM=$DASH76$COMMENT_CLOSE
+  else
+    CONTENTS_COMMENT=$COMMENT
+    CONTENTS_DELIM=$COMMENT$DASH76
+fi
+
+
+# INDEX:    4) Split into Top and End Files
+# ~~~~~
+TOP_FILE=/tmp/$TMP_FILE_PREFIX.TMP-top
+END_FILE=/tmp/$TMP_FILE_PREFIX.TMP-end
+#
+if [ "$CONTENTS_EDIT" = "add_new" ]
+  then
+    # Add new contents to start
+    #--------------------------
+    if [ "$MAGIC_NUMBER_AT_TOP" = "" ]
+      then
+        cp -p $BACKUP_FILE $END_FILE
+      else
+        # Add after !# line for script
+        awk 'NR > 1 {print > end_file; next}                \
+                    {print > top_file; print "" > top_file} \
+            ' top_file="$TOP_FILE" \
+              end_file="$END_FILE" \
+              $BACKUP_FILE
+    fi
+  else
+    # Update existing contents
+    #-------------------------
+    UPDATE_STATUS=`awk                                           \
+      'BEGIN {d_status="OK"}                                     \
+       NR <  (c_start - 1)  {print > top_file;  next}            \
+       NR == (c_start - 1)  {in_contents=1;     next}            \
+       in_contents == 0     {print > end_file;  next}            \
+       / [1-9][0-9]*\. /    {next}                               \
+       / CONTENTS/          {next}                               \
+       / ========$/         {next}                               \
+       $0 == c_delim        {in_contents=0;     next}            \
+                            {d_status="PROBLEM"; in_contents=0}  \
+       END {printf("%s", d_status)}                              \
+      ' top_file="$TOP_FILE"      \
+        c_start="$CONTENTS_START" \
+        c_delim="$CONTENTS_DELIM" \
+        end_file="$END_FILE"      \
+        $BACKUP_FILE`
+fi
+#
+echo $COMMENT$DASH76 >> $TOP_FILE
+
+
+# INDEX:    5) Display Index Count & Check Top File
+# ~~~~~
+echo "  - Index Count:  $P1_INDEX_COUNT, (from 'INDEX:' section markers)"
+#
+TOP_INDEX_COUNT=`grep -c '^ *[^ ]* *INDEX:..*$' $TOP_FILE`
+#
+if [ $TOP_INDEX_COUNT -ne 0 ]
+  then
+    #
+    echo "  -               ** WARNING: Ignored $TOP_INDEX_COUNT 'INDEX:' marker(s) before CONTENTS **"
+    ANY_WARNINGS="some"
+fi
+
+
+# INDEX:    6) Warn if any Update Problems (e.g. no delimiter)
+# ~~~~~
+if [ "$UPDATE_STATUS" = "PROBLEM" ]
+  then
+    echo "  -"
+    echo "  - ** WARNING: Problem delimiting the original contents! **"
+    ANY_WARNINGS="some"
+fi
+
+
+# INDEX:    7) Create 2nd Pre-Index File (could be shorter!)
+# ~~~~~
+P2_INDEX_FILE=/tmp/$TMP_FILE_PREFIX.TMP-pre2.index
+#
+if [ "$CONTENTS_EDIT" = "add_new" ]
+  then
+    grep -n '^ *[^ ]* *INDEX:.*$' $BACKUP_FILE > $P2_INDEX_FILE
+  else
+    grep -n '^ *[^ ]* *INDEX:.*$' $END_FILE    > $P2_INDEX_FILE
+fi
+#
+P2_INDEX_COUNT=`wc -l $P2_INDEX_FILE | awk '{print $1}'`
+
+
+# INDEX:    8) Create 3rd Pre-Index File (prepare for FS in final index)
+# ~~~~~
+P3_INDEX_FILE=/tmp/$TMP_FILE_PREFIX.TMP-pre3.index
+#
+if [ "$SHORT_OS" = "linux" ]
+  then
+    # For linux, write FS=":INDEX:"
+    #
+    sed 's/^\([1-9][0-9]*:\) *[^ ]* *\(INDEX:.*\)$/\1\2/' $P2_INDEX_FILE > $P3_INDEX_FILE
+  else
+    # *HACK*: The solaris awk seems to restrict FS to a single-character!
+    #         I create FS="~" but first strip any existing ~'s.
+    #
+    cat $P2_INDEX_FILE | sed 's/~//' | \
+     sed 's/^\([1-9][0-9]*\): *[^ ]* *INDEX:\(.*\)$/\1~\2/' > $P3_INDEX_FILE
+fi
+#
+P3_INDEX_COUNT=`wc -l $P3_INDEX_FILE | awk '{print $1}'`
+
+
+# INDEX:    9) Create Index File
+# ~~~~~
+INDEX_FILE=/tmp/$TMP_FILE_PREFIX.TMP-index
+#
+# Note: need echo below as BEGIN has no access to parameters A & B!
+#
+if [ "$CONTENTS_EDIT" = "add_new" ]
+  then
+    if [ "$MAGIC_NUMBER_AT_TOP" = "" ]
+      then
+        OFFSET=`echo | awk '{print (A + B + 4)}' A=$CONTENTS_START B=$P3_INDEX_COUNT`
+      else
+        OFFSET=`echo | awk '{print (A + B + 3)}' A=$CONTENTS_START B=$P3_INDEX_COUNT`
+    fi
+  else
+    OFFSET=`echo | awk '{print (A + B + 2)}' A=$CONTENTS_START B=$P3_INDEX_COUNT`
+fi
+#
+if [ "$SHORT_OS" = "linux" ]
+  then
+    # For linux, justify according to largest line number
+    #
+    JUSTIFY_WIDTH=`tail -1 $P3_INDEX_FILE | \
+                   awk 'BEGIN {FS=":INDEX:"} {print length($1 + offset)}' offset=$OFFSET`
+    #
+    awk 'BEGIN {FS=":INDEX:"}                                           \
+         {line_num = $1 + offset;					\
+	  printf("%s %*d. %s\n", comment, justify, line_num, $2)}	\
+        ' comment=$CONTENTS_COMMENT  \
+          offset=$OFFSET             \
+          justify=$JUSTIFY_WIDTH     \
+          $P3_INDEX_FILE > $INDEX_FILE
+  else
+    # *HACK*: The solaris awk doesn't allow dynamic variables (e.g. no %*d),
+    #         so need explicit justification! Also, note the other HACK for FS="~".
+    #
+    JUSTIFY_WIDTH=`tail -1 $P3_INDEX_FILE | \
+                   awk 'BEGIN {FS="~"} {print length($1 + offset)}' offset=$OFFSET`
+    #
+    awk 'BEGIN {FS="~"}					\
+         {line_num = $1 + offset;			\
+	  spaces = justify - length(line_num);		\
+	  printf("%s ", comment);			\
+          for (i=1; i<=spaces; i++) printf("%s", " ");	\
+          printf("%d. %s\n", line_num, $2)}  		\
+        ' comment=$CONTENTS_COMMENT  \
+          offset=$OFFSET             \
+          justify=$JUSTIFY_WIDTH     \
+          $P3_INDEX_FILE > $INDEX_FILE
+fi
+
+
+# INDEX:   10) Create Result File (orig + contents)
+# ~~~~~
+cat  $TOP_FILE                    >  $ORIG_FILE
+echo "$CONTENTS_COMMENT CONTENTS (last updated: ${DATE})" >> $ORIG_FILE
+echo "$CONTENTS_COMMENT ========" >> $ORIG_FILE
+cat  $INDEX_FILE                  >> $ORIG_FILE
+echo $CONTENTS_DELIM              >> $ORIG_FILE
+#
+if [ "$CONTENTS_EDIT" = "add_new" ]
+  then
+    echo "" >> $ORIG_FILE
+    echo "" >> $ORIG_FILE
+fi
+#
+cat  $END_FILE >> $ORIG_FILE
+
+
+# INDEX:   11) Restore File Permissions
+# ~~~~~
+U_PERM=`ls -l $BACKUP_FILE | sed 's/^.\([rwx-]\{3\}\)\([rwx-]\{3\}\)\([rwx-]\{3\}\)..*$/\1/' | sed 's/-//'`
+G_PERM=`ls -l $BACKUP_FILE | sed 's/^.\([rwx-]\{3\}\)\([rwx-]\{3\}\)\([rwx-]\{3\}\)..*$/\2/' | sed 's/-//'`
+O_PERM=`ls -l $BACKUP_FILE | sed 's/^.\([rwx-]\{3\}\)\([rwx-]\{3\}\)\([rwx-]\{3\}\)..*$/\3/' | sed 's/-//'`
+#
+chmod u=$U_PERM,g=$G_PERM,o=$O_PERM $ORIG_FILE
+
+
+# INDEX:   12) Tidy Up
+# ~~~~~
+echo "  -"
+#
+if [ "$ANY_WARNINGS" = "none" ]
+  then
+    echo "  - No Warnings. Check file before: /bin/rm -i /tmp/$TMP_FILE_PREFIX.BAK-*"
+  else
+    echo "  - Warnings issued! Check file carefully (you have a backup in /tmp)."
+fi
+#
+echo "  $DASH76"
+echo
+#
+/bin/rm $INDEX_FILE $P1_INDEX_FILE $P2_INDEX_FILE $P3_INDEX_FILE $TOP_FILE $END_FILE

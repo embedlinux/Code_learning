@@ -1,0 +1,39 @@
+Chapter 2: Simulation Methodology arbiter example
+
+There are three directories in this chapter
+block_verif - enables block level verification with various switches
+system_verif - system level verification with various configuration and switches
+prototype_verif - uses assertions for debugging prototypes
+
+master_bfm.v - BFM for the bus master
+target_bfm.v - BFM for the slave devices
+bus_arbiter.v - arbiter model
+glue.v - glue logic for integrating multiple masters/slave
+tb.v - top level instatiation of the complete system with 3 master, 2 slaves, a arbiter and glue logic.
+
+compile - compile sript for compiling the simulations
+run - run script for running the simulations
+
+Various `define switches used in this chapter.
+
+`defines used in prototype Checks(prototype_verif directory only)
+=================================================================
++define+master_debug - enables protypying checks and can be used only in 
+
+`defines used in System Level Checks(system_verif directory only)
+================================================================
++define+enable_blk_assertions - enables block level verification in system checks
++define+tb_sva - enables system level assertions 
++define+slv_fc - enables functional coverage 
++define+slv_doc - enables using assertions for documentation
+
+`defines for Block Level Assertion(block_verif directory only)
+============================================================== 
++define+master1_blk_chk - enables master1 check
++define+master2_blk_chk - enables master2 check
++define+master3_blk_chk - enables master3 check
++define+target1_blk_chk - enables target1 check
++define+target2_blk_chk - enables target2 check
++define+arb_blk_chk - enables arbiter check
++define+glue_blk_chk - enables check for glue logic
+

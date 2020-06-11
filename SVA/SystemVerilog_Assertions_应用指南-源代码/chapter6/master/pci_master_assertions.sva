@@ -1,0 +1,296 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *|
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+module pci_master_checker (clk, rstn, framen, irdyn, trdyn, devseln, idsel, cxben, stopn, reqn, gntn, perrn, par, serrn, req64n, ack64n, par64, ad);
+
+input logic clk, rstn, framen, irdyn, trdyn, stopn, idsel, devseln;
+input logic [7:0] cxben;
+input logic reqn, gntn;
+input logic perrn, serrn, par;
+input logic req64n, par64, ack64n; 
+input logic [63:0] ad;
+
+// Definitions
+`define s_IO_READ ($fell(framen) && (cxben[3:0] == 4'b0010))
+`define s_IO_WRITE ($fell(framen) && (cxben[3:0] == 4'b0011))
+`define s_MEM_READ ($fell(framen) && (cxben[3:0] == 4'b0110))
+`define s_MEM_WRITE ($fell(framen) && (cxben[3:0] == 4'b0111))
+`define s_CONFIG_READ ($fell(framen) && (cxben[3:0] == 4'b1010))
+`define s_CONFIG_WRITE ($fell(framen) && (cxben[3:0] == 4'b1011))
+`define s_DUAL_ADDR_CYCLE ($fell(framen) && (cxben[3:0] == 4'b1101))
+`define s_MEM_READ_LINE ($fell(framen) && (cxben[3:0] == 4'b1110))
+`define s_MEM_WRITE_INV ($fell(framen) && (cxben[3:0] == 4'b1111))
+`define s_BUS_IDLE (framen && irdyn)
+
+// Latencies:
+// framen -> irdyn 8 cycles
+// framen -> first data transfer s 16 cycles
+// dataphase -> dataphase is 8 clock cycles 
+// framen -> devseln 5 cycles else master abort 
+
+//Master_Chk1: frame cannot be deasserted unless irdy is asserted
+// irdyn can be either asserted when frame is deasserted or it can also be deasserted in the same cycle 
+
+
+property p_mchk1;
+	@(posedge clk) $rose(framen) |-> ((irdyn == 0) || $fell(irdyn));
+endproperty
+
+a_mchk1: assert property(p_mchk1);
+c_mchk1: cover property(p_mchk1);
+
+// Master_Chk2: Once frame is deasserted it cannot be asserted during the same transaction.
+
+property p_mchk2;
+	@(posedge clk) $rose(framen) |->  framen[*1:8] ##0 $rose(irdyn && trdyn);
+endproperty
+
+a_mchk2: assert property(p_mchk2);
+c_mchk2: cover property(p_mchk2);
+
+// Master_Chk3: Once Irdy is asserted it cannot change Irdy or Frame till the current data phase is completed
+
+
+property p_mchk3;
+	@(posedge clk) $fell(irdyn) ##[0:5] !(devseln) ##0 stopn   |-> (!irdyn ) [*0:16] ##0 !trdyn;
+endproperty
+
+a_mchk3: assert property(p_mchk3);
+c_mchk3: cover property(p_mchk3);
+
+
+// Master_Chk4: A master is required to assert its IRDY within 8 cycles from when the FRAME is asserted. Latency Check
+
+property p_mchk4;
+	@(posedge clk) $fell(framen) |-> 1[*1:8] intersect ($fell(framen) ##[1:$] $fell(irdyn)); 
+endproperty
+
+a_mchk4: assert property(p_mchk4);
+c_mchk4: cover property(p_mchk4);
+
+// Master_Chk5: Normal Termination 
+// Frame is deasserted and there is a last data phase and GNT is deasserted  
+// during the last data transfer
+
+property p_mchk5;
+	@(posedge clk) $rose(framen) |-> (##[1:8] ($rose(irdyn && trdyn && devseln))); 
+endproperty
+
+a_mchk5: assert property(p_mchk5);
+c_mchk5: cover property(p_mchk5);
+
+// Master_Chk6: Master Abort
+// Devsel should be asserted within 5 cycles of frame being asserted.
+
+sequence s_mchk6;
+	@(posedge clk) $fell(framen) ##1 (devseln)[*5] ##0 framen;
+endsequence
+
+property p_mchk6;
+	@(posedge clk) s_mchk6.ended |-> ##1 $rose(irdyn); 
+endproperty
+
+a_mchk6: assert property(p_mchk6);
+c_mchk6: cover property(p_mchk6);
+
+// Master_CHk7: When master is aborted by a target either by retry or disconnect, the master must deassert its request before repeating the transaction, one cycle when the bus goes to IDLE and one cycles befroe or after the idle cycle.
+// for retry: stop is asserted and trdyn is deasserted
+
+sequence s_mchk7_before;
+	@(posedge clk) (!devseln && $fell(stopn) && trdyn) ##1 reqn ##1 `s_BUS_IDLE;
+endsequence
+
+sequence s_mchk7_after;
+	@(posedge clk) (!devseln && $fell(stopn) && trdyn) ##1 !reqn ##1 `s_BUS_IDLE;
+endsequence
+
+property p_mchk7_before;
+	@(posedge clk) s_mchk7_before.ended |-> reqn;
+endproperty
+
+property p_mchk7_after;
+	@(posedge clk) s_mchk7_after.ended |-> reqn [*2];
+endproperty
+
+a_mchk7_before: assert property(p_mchk7_before);
+a_mchk7_after: assert property(p_mchk7_after);
+
+c_mchk7_before: cover property(p_mchk7_before);
+c_mchk7_after: cover property(p_mchk7_after);
+
+
+// Master_Chk8: When the master is target termianted with retry, it must repeat teh same transaction until it is completed 
+
+
+sequence s_mchk8a(temp1);
+	@(posedge clk) (((!gntn||$rose(gntn)) && $fell(framen)),temp1=cxben[3:0]) ##[1:2] $fell(irdyn) ##[0:5] ($fell(stopn) && $fell(devseln) && trdyn);
+endsequence
+
+sequence s_mchk8b(temp2);
+	@(posedge clk) $fell(reqn) ##[0:100] !gntn ##[0:5] $fell(framen) ##0 ((cxben[3:0] == temp2));
+endsequence
+
+property p_mchk8;
+int temp;
+	@(posedge clk) s_mchk8a(temp) |-> ##[2:20] s_mchk8b(temp);
+endproperty
+
+a_mchk8: assert property(p_mchk8);
+c_mchk8: cover property(p_mchk8);
+
+// Master_Chk9: Bus parity check errors PERR
+// Parity bus errors can be checked for all the different types of transactions like memeory read, memory write, I/O read, I/O write etc.
+
+// Master_Chk9: Parity error in Address Phase and Special Cycles
+
+property p_mchk9;
+	@(posedge clk) $fell(framen)  ##1 (par ^ $past(^(ad[31:0]^cxben[3:0])) == 1) |-> ##[1:5] $fell(serrn);
+endproperty
+
+a_mchk9: assert property(p_mchk9);
+c_mchk9: cover property(p_mchk9);
+
+// Master_Chk10: parity error in Data Phase test 1.9 and 1.10
+
+property p_mchk10;
+	@(posedge clk) (!irdyn && !trdyn) ##1 (par ^ $past(^(ad[31:0]^cxben[3:0])) == 1) |-> ##[1:5] $fell(perrn);
+endproperty
+
+a_mchk10: assert property(p_mchk10);
+c_mchk10: cover property(p_mchk10);
+
+// Master_Chk11: PERR cannot be asserted for special cycles
+
+property p_mchk11;
+	@(posedge clk) ($fell(framen)&&(cxben[3:0] == (4'b0001))) |-> 
+		(perrn [*1:$] ##0 ($rose(irdyn && trdyn)) ##1 perrn[*2]);
+endproperty
+
+a_mchk11: assert property(p_mchk11);
+c_mchk11: cover property(p_mchk11);
+
+// Master_Chk12: Dual Address Cycle
+// It takes two cycles for irdyn to be asserted 64bit (target) addressing 32 bit initiator 32 bit initiator
+// Here we forbid the the fell(irdyn) after one cycle
+
+property p_mchk12;
+	@(posedge clk) `s_DUAL_ADDR_CYCLE && req64n |=> not $fell(irdyn);
+endproperty
+
+a_mchk12: assert property(p_mchk12);
+c_mchk12: cover property(p_mchk12);
+
+// Master_chk13: Full64bit Transactions
+// req64n timing is the same as framen and ack64n timing is the same as devseln
+
+property p_mchk13;
+	@(posedge clk) $fell(gntn) ##[1:8] ($fell(framen) && $fell(req64n)) |-> ##[1:5] ($fell(ack64n) && $fell(devseln));
+endproperty
+
+a_mchk13: assert property(p_mchk13);
+c_mchk13: cover property(p_mchk13);
+
+// Master_Chk14: Check par64 signal validity 
+// Test: 3.13 
+
+property p_mchk14;
+	@(posedge clk) (!ack64n && !irdyn && !trdyn && !devseln) &&  (^(ad[63:32]^cxben[7:4]) == 1) |-> ##1 par64;
+endproperty
+
+a_mchk14: assert property(p_mchk14);
+c_mchk14: cover property(p_mchk14);
+
+// Master_chk15: Bus Parking
+// When it is bus parking 
+// GNT should be deasserted whien Master goes to the IDLE cycle
+// when bus is parked, master should drive the ad/cxben to stable values within 8 cycles(preferably 2 or 3) and have valid parity bits set.
+// When it is idle req should not be asserted otherwise it is considered to be a back to back transaction
+
+sequence s_mchk15;
+	@(posedge clk) first_match($fell(framen) ##[1:$] (framen && irdyn && !gntn && reqn));
+endsequence
+
+property p_mchk15;
+	@(posedge clk) s_mchk15 |-> ##[1:8] (($stable(ad[31:0])) && ($stable(cxben[3:0]))) ##1 (par ^ $past(^(ad[31:0]^cxben[3:0])) == 0);   
+endproperty
+
+a_mchk15: assert property(p_mchk15);
+c_mchk15: cover property(p_mchk15);
+
+
+// Master_Chk16: Fast Back to Back Transitions
+// Single data phase
+
+property p_mchk16;
+	  @(posedge clk) ($rose(framen) && $fell(irdyn)) ##1 $fell(framen) |->  $rose(irdyn);
+endproperty
+ 
+a_mchk16: assert property(p_mchk16);
+c_mchk16: cover property(p_mchk16);
+
+// Master Chk 17
+// Fast back to back transaction second implementation
+// multiple data phase transactions 
+
+property p_mchk17;
+	 @(posedge clk) (!irdyn && framen) ##1 $fell(framen) |->  $rose(irdyn);
+endproperty
+ 
+a_mchk17: assert property(p_mchk17);
+c_mchk17: cover property(p_mchk17);
+
+
+/************************************************************/
+/*******  scenario  Coverage  			*************/
+/************************************************************/
+
+// Coverage Points (the master abort can happen in the following conditions I/O read, I/O write, config READ, Config Write, Memory Read, Memory Write) 
+// Master Abort Coverage Points
+
+property p_mcov1;
+	@(posedge clk) `s_IO_READ ##1 (devseln)[*5] |-> ##1 $rose(irdyn);
+endproperty
+
+property p_mcov2;
+	@(posedge clk) `s_IO_WRITE ##1 (devseln)[*5] |-> ##1 $rose(irdyn);
+endproperty
+
+property p_mcov3;
+	@(posedge clk) `s_MEM_READ ##1 (devseln)[*5] |-> ##1 $rose(irdyn);
+endproperty
+
+property p_mcov4;
+	@(posedge clk) `s_MEM_WRITE ##1 (devseln)[*5] |-> ##1 $rose(irdyn);
+endproperty
+
+property p_mcov5;
+	@(posedge clk) `s_CONFIG_READ ##1 (devseln)[*5] |-> ##1 $rose(irdyn);
+endproperty
+
+property p_mcov6;
+	@(posedge clk) `s_CONFIG_WRITE  ##1 (devseln)[*5] |-> ##1 $rose(irdyn);
+endproperty
+
+c_mcov1: cover property(p_mcov1);
+c_mcov2: cover property(p_mcov2);
+c_mcov3: cover property(p_mcov3);
+c_mcov4: cover property(p_mcov4);
+c_mcov5: cover property(p_mcov5);
+c_mcov6: cover property(p_mcov6);
+
+
+
+endmodule
+
+bind pci_master pci_master_checker u1 (.clk(PCLK), .rstn(PRSTNN), .framen(PFRAMENN), .irdyn(PIRDYNN), .trdyn(PTRDYNN), .stopn(PSTOPNN), .devseln(PDEVSELNN), .idsel(PIDSEL), .cxben({PBENN,PCXBENN}), .gntn(PGNTNN), .reqn(PREQNN), .perrn(PPERRNN), .ad({PD, PADATA}), .req64n(PREQ64NN), .ack64n(PACK64NN), .par64(PPAR64), .par(PPAR), .serrn(PSERRNN)); 
+

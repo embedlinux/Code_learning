@@ -1,0 +1,242 @@
+Command: vcs fsm.v latch.v pipo.v ram262144x8.v sipo.v tb.v fsm1.sva -sverilog -PP \
+-l compile.log -assert enable_diag
+                         Chronologic VCS (TM)
+           Version X-2005.06-B -- Thu Apr 14 09:03:19 2005
+               Copyright (c) 1991-2005 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+***** Warning: ACC/CLI capabilities have been enabled for the entire design.
+      For faster performance enable module specific capability in pli.tab file
+Parsing design file 'fsm.v'
+Parsing design file 'latch.v'
+Parsing design file 'pipo.v'
+Parsing design file 'ram262144x8.v'
+Parsing design file 'sipo.v'
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd0' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd1' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd2' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd3' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd4' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd5' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd6' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd7' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd8' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd9' ignored
+	"sipo.v", 23
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd10' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd11' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd12' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd13' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd14' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd15' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd16' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd17' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd18' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd19' ignored
+	"sipo.v", 24
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd20' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd21' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd22' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd23' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd24' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd25' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd26' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd27' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd28' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd29' ignored
+	"sipo.v", 25
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd30' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd31' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd32' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd33' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd34' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd35' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd36' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd37' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd38' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd39' ignored
+	"sipo.v", 26
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd40' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd41' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd42' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd43' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd44' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd45' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd46' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd47' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd48' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd49' ignored
+	"sipo.v", 27
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd50' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd51' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd52' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd53' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd54' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd55' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd56' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd57' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd58' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd59' ignored
+	"sipo.v", 28
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd60' ignored
+	"sipo.v", 29
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd61' ignored
+	"sipo.v", 29
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd62' ignored
+	"sipo.v", 29
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'd63' ignored
+	"sipo.v", 29
+Parsing design file 'tb.v'
+Parsing included file 'defines.h'.
+Back to file 'tb.v'.
+Parsing design file 'fsm1.sva'
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'n_state' ignored
+	"fsm1.sva", 39
+Warning-[IPDW] Identifier previously declared
+	Second declaration for identifier 'c_state' ignored
+	"fsm1.sva", 39
+Top Level Modules:
+       $root
+       tb
+No TimeScale specified
+Notice: Ports coerced to inout, use -notice for details
+Starting vcs inline pass...
+6 modules and 0 UDP read.
+recompiling module $root
+recompiling module latch
+recompiling module pipo
+recompiling module ram262144x8
+recompiling module sipo
+recompiling module tb
+All of 6 modules done
+if [ -x ../simv ]; then chmod -x ../simv; fi
+gcc   -o ../simv  5NrI_d.o 5NrIB_d.o E1gK_1_d.o 9J5m_1_d.o rdnI_1_d.o s8TK_1_d.o \
+fGM5_1_d.o jUh1_1_d.o SIM_l.o   /build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/gui/virsim/linux/vcdplus/vcs7_2/libvirsim.a \
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/libvcsnew.so \
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/ctype-stubs_32.a \
+-ldl -lm  -lc -ldl    
+../simv up to date
+CPU time: 1.610 seconds to compile + .290 seconds to link

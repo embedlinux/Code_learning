@@ -1,0 +1,3 @@
+D:/sva/chapter1/routines/routines.sv {1 {vlog -work work -hazard -nodebug -u -quiet -source -O0 -vopt -cover sbcex D:/sva/chapter1/routines/routines.sv
+
+} {} {}}

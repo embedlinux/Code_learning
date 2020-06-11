@@ -1,0 +1,2580 @@
+Command: ./simv -l run.log -assert filter+success -assert maxsuccess=3
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version 7.2R16; Runtime version 7.2R16;  Apr 20 09:56 2005
+
+VCD+ Writer 4.4R17A Copyright 1993-2004 Synopsys Inc.
+"ss.sva", 226: tb.i1.a_target: started at 25s succeeded at 25s
+"ss.sva", 227: tb.i1.a_frame: started at 25s succeeded at 25s
+"ss.sva", 228: tb.i1.a_irdy: started at 25s succeeded at 25s
+"ss.sva", 229: tb.i1.a_rsel: started at 25s succeeded at 25s
+"ss.sva", 230: tb.i1.a_rw: started at 25s succeeded at 25s
+"ss.sva", 231: tb.i1.a_gnt: started at 25s failed at 25s
+	Offending '($countones({gnt1, gnt2, gnt3}) > 1)'
+"ss.sva", 235: tb.i1.a_bus_in_use: started at 25s succeeded at 25s
+"ss.sva", 237: tb.i1.c_target: started at 25s covered at 25s
+"ss.sva", 238: tb.i1.c_frame: started at 25s covered at 25s
+"ss.sva", 239: tb.i1.c_irdy: started at 25s covered at 25s
+"ss.sva", 240: tb.i1.c_rsel: started at 25s covered at 25s
+"ss.sva", 241: tb.i1.c_rw: started at 25s covered at 25s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 25s covered at 25s
+"bus_arbiter.v", 213: tb.u4.a_arb_onehot0: started at 25s succeeded at 25s
+
+Resetting the design at 75
+
+"ss.sva", 226: tb.i1.a_target: started at 75s succeeded at 75s
+"ss.sva", 227: tb.i1.a_frame: started at 75s succeeded at 75s
+"ss.sva", 228: tb.i1.a_irdy: started at 75s succeeded at 75s
+"ss.sva", 229: tb.i1.a_rsel: started at 75s succeeded at 75s
+"ss.sva", 230: tb.i1.a_rw: started at 75s succeeded at 75s
+"ss.sva", 231: tb.i1.a_gnt: started at 75s succeeded at 75s
+"ss.sva", 235: tb.i1.a_bus_in_use: started at 75s succeeded at 75s
+"ss.sva", 237: tb.i1.c_target: started at 75s covered at 75s
+"ss.sva", 238: tb.i1.c_frame: started at 75s covered at 75s
+"ss.sva", 239: tb.i1.c_irdy: started at 75s covered at 75s
+"ss.sva", 240: tb.i1.c_rsel: started at 75s covered at 75s
+"ss.sva", 241: tb.i1.c_rw: started at 75s covered at 75s
+"ss.sva", 242: tb.i1.c_gnt: started at 75s covered at 75s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 75s covered at 75s
+"target_bfm.v", 109: tb.u7.a_sel_trdy_stop: started at 25s succeeded at 75s
+"target_bfm.v", 109: tb.u6.a_sel_trdy_stop: started at 25s succeeded at 75s
+"bus_arbiter.v", 213: tb.u4.a_arb_onehot0: started at 75s succeeded at 75s
+"bus_arbiter.v", 219: tb.u4.a_frame_gnt: started at 25s succeeded at 75s
+"ss.sva", 226: tb.i1.a_target: started at 125s succeeded at 125s
+"ss.sva", 227: tb.i1.a_frame: started at 125s succeeded at 125s
+"ss.sva", 228: tb.i1.a_irdy: started at 125s succeeded at 125s
+"ss.sva", 229: tb.i1.a_rsel: started at 125s succeeded at 125s
+"ss.sva", 230: tb.i1.a_rw: started at 125s succeeded at 125s
+"ss.sva", 231: tb.i1.a_gnt: started at 125s succeeded at 125s
+"ss.sva", 235: tb.i1.a_bus_in_use: started at 125s succeeded at 125s
+"ss.sva", 237: tb.i1.c_target: started at 125s covered at 125s
+"ss.sva", 238: tb.i1.c_frame: started at 125s covered at 125s
+"ss.sva", 239: tb.i1.c_irdy: started at 125s covered at 125s
+"ss.sva", 240: tb.i1.c_rsel: started at 125s covered at 125s
+"ss.sva", 241: tb.i1.c_rw: started at 125s covered at 125s
+"ss.sva", 242: tb.i1.c_gnt: started at 125s covered at 125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 125s covered at 125s
+"ss.sva", 234: tb.i1.a_end_frame: started at 25s failed at 125s
+	Offending '$rose(trdyp)'
+"bus_arbiter.v", 213: tb.u4.a_arb_onehot0: started at 125s succeeded at 125s
+Reset finished at 175
+
+"ss.sva", 231: tb.i1.a_gnt: started at 175s succeeded at 175s
+"ss.sva", 237: tb.i1.c_target: started at 175s covered at 175s
+"ss.sva", 242: tb.i1.c_gnt: started at 175s covered at 175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 175s covered at 175s
+Waiting for Master Requests
+
+Valid request from a master available at 225: 100
+
+"ss.sva", 237: tb.i1.c_target: started at 225s covered at 225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 225s covered at 225s
+"ss.sva", 237: tb.i1.c_target: started at 275s covered at 275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 275s covered at 275s
+"ss.sva", 237: tb.i1.c_target: started at 325s covered at 325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 325s covered at 325s
+"ss.sva", 253: tb.i1.c_req1: started at 325s covered at 325s
+"ss.sva", 237: tb.i1.c_target: started at 375s covered at 375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 375s covered at 375s
+Bus Occupied at 425
+
+"ss.sva", 237: tb.i1.c_target: started at 425s covered at 425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 425s covered at 425s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 475s covered at 475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 475s covered at 475s
+"ss.sva", 232: tb.i1.a_req_gnt_w: started at 325s succeeded at 475s
+"ss.sva", 243: tb.i1.c_req_gnt_w: started at 325s covered at 475s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 475s succeeded at 475s
+"bus_arbiter.v", 215: tb.u4.a_req_gnt: started at 325s succeeded at 475s
+"ss.sva", 237: tb.i1.c_target: started at 525s covered at 525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 525s covered at 525s
+"glue.v", 122: tb.u5.a_sel_1: started at 475s succeeded at 525s
+"ss.sva", 237: tb.i1.c_target: started at 575s covered at 575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 575s covered at 575s
+"glue.v", 122: tb.u5.a_sel_1: started at 525s succeeded at 575s
+"ss.sva", 237: tb.i1.c_target: started at 625s covered at 625s
+"ss.sva", 233: tb.i1.a_start_frame: started at 475s succeeded at 625s
+"ss.sva", 244: tb.i1.c_start_frame: started at 475s covered at 625s
+"target_bfm.v", 107: tb.u6.a_sel_trdy_start: started at 525s succeeded at 625s
+"master_bfm.v", 142: tb.u1.a_master_start1: started at 325s succeeded at 625s
+"master_bfm.v", 158: tb.u1.c_master_start1: started at 325s covered at 625s
+"glue.v", 122: tb.u5.a_sel_1: started at 575s succeeded at 625s
+"ss.sva", 237: tb.i1.c_target: started at 675s covered at 675s
+"ss.sva", 237: tb.i1.c_target: started at 725s covered at 725s
+"ss.sva", 237: tb.i1.c_target: started at 775s covered at 775s
+"ss.sva", 294: tb.i1.c_m1t1w: started at 475s covered at 775s
+"ss.sva", 382: tb.i1.c_m1t1w_doc: started at 475s covered at 775s
+"target_bfm.v", 111: tb.u6.a_write: started at 775s succeeded at 775s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 625s succeeded at 775s
+"ss.sva", 237: tb.i1.c_target: started at 825s covered at 825s
+"target_bfm.v", 111: tb.u6.a_write: started at 825s succeeded at 825s
+"ss.sva", 237: tb.i1.c_target: started at 875s covered at 875s
+"target_bfm.v", 111: tb.u6.a_write: started at 875s succeeded at 875s
+"ss.sva", 237: tb.i1.c_target: started at 925s covered at 925s
+"ss.sva", 237: tb.i1.c_target: started at 975s covered at 975s
+"ss.sva", 237: tb.i1.c_target: started at 1025s covered at 1025s
+"ss.sva", 237: tb.i1.c_target: started at 1075s covered at 1075s
+"glue.v", 126: tb.u5.a_rsel1_write: started at 475s succeeded at 1075s
+Bus is free at 1125
+
+"ss.sva", 237: tb.i1.c_target: started at 1125s covered at 1125s
+Valid request from a master available at 1175: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 1175s covered at 1175s
+"master_bfm.v", 146: tb.u3.a_master_stop1: started at 625s succeeded at 1175s
+"master_bfm.v", 160: tb.u3.c_master_stop1: started at 625s covered at 1175s
+"master_bfm.v", 146: tb.u2.a_master_stop1: started at 625s succeeded at 1175s
+"master_bfm.v", 160: tb.u2.c_master_stop1: started at 625s covered at 1175s
+"master_bfm.v", 146: tb.u1.a_master_stop1: started at 625s succeeded at 1175s
+"master_bfm.v", 160: tb.u1.c_master_stop1: started at 625s covered at 1175s
+"bus_arbiter.v", 219: tb.u4.a_frame_gnt: started at 1125s succeeded at 1175s
+"ss.sva", 237: tb.i1.c_target: started at 1225s covered at 1225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 1225s covered at 1225s
+"ss.sva", 234: tb.i1.a_end_frame: started at 1125s succeeded at 1225s
+"ss.sva", 245: tb.i1.c_end_frame: started at 1125s covered at 1225s
+"target_bfm.v", 109: tb.u6.a_sel_trdy_stop: started at 1175s succeeded at 1225s
+"ss.sva", 237: tb.i1.c_target: started at 1275s covered at 1275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 1275s covered at 1275s
+"ss.sva", 278: tb.i1.c_req31: started at 1275s covered at 1275s
+Bus Occupied at 1325
+
+"ss.sva", 237: tb.i1.c_target: started at 1325s covered at 1325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 1325s covered at 1325s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 1375s covered at 1375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 1375s covered at 1375s
+"ss.sva", 232: tb.i1.a_req_gnt_w: started at 1275s succeeded at 1375s
+"ss.sva", 243: tb.i1.c_req_gnt_w: started at 1275s covered at 1375s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 1375s succeeded at 1375s
+"bus_arbiter.v", 215: tb.u4.a_req_gnt: started at 1275s succeeded at 1375s
+"ss.sva", 237: tb.i1.c_target: started at 1425s covered at 1425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 1425s covered at 1425s
+"ss.sva", 237: tb.i1.c_target: started at 1475s covered at 1475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 1475s covered at 1475s
+"ss.sva", 237: tb.i1.c_target: started at 1525s covered at 1525s
+"ss.sva", 233: tb.i1.a_start_frame: started at 1375s succeeded at 1525s
+"ss.sva", 244: tb.i1.c_start_frame: started at 1375s covered at 1525s
+"target_bfm.v", 107: tb.u6.a_sel_trdy_start: started at 1425s succeeded at 1525s
+"master_bfm.v", 142: tb.u3.a_master_start1: started at 1275s succeeded at 1525s
+"master_bfm.v", 158: tb.u3.c_master_start1: started at 1275s covered at 1525s
+"ss.sva", 237: tb.i1.c_target: started at 1575s covered at 1575s
+"ss.sva", 237: tb.i1.c_target: started at 1625s covered at 1625s
+"ss.sva", 237: tb.i1.c_target: started at 1675s covered at 1675s
+"ss.sva", 331: tb.i1.c_m3t1r: started at 1375s covered at 1675s
+"ss.sva", 395: tb.i1.c_m3t1r_doc: started at 1375s covered at 1675s
+"ss.sva", 237: tb.i1.c_target: started at 1725s covered at 1725s
+"target_bfm.v", 113: tb.u6.a_read: started at 1725s succeeded at 1725s
+"ss.sva", 237: tb.i1.c_target: started at 1775s covered at 1775s
+"target_bfm.v", 113: tb.u6.a_read: started at 1775s succeeded at 1775s
+"ss.sva", 237: tb.i1.c_target: started at 1825s covered at 1825s
+"target_bfm.v", 113: tb.u6.a_read: started at 1825s succeeded at 1825s
+"ss.sva", 237: tb.i1.c_target: started at 1875s covered at 1875s
+"ss.sva", 237: tb.i1.c_target: started at 1925s covered at 1925s
+"ss.sva", 237: tb.i1.c_target: started at 1975s covered at 1975s
+Bus is free at 2025
+
+"ss.sva", 237: tb.i1.c_target: started at 2025s covered at 2025s
+"glue.v", 132: tb.u5.a_read1: started at 1525s succeeded at 2025s
+Valid request from a master available at 2075: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 2075s covered at 2075s
+"master_bfm.v", 146: tb.u3.a_master_stop1: started at 1525s succeeded at 2075s
+"master_bfm.v", 154: tb.u3.a_master_datao1: started at 1525s succeeded at 2075s
+"master_bfm.v", 160: tb.u3.c_master_stop1: started at 1525s covered at 2075s
+"master_bfm.v", 164: tb.u3.c_master_datao1: started at 1525s covered at 2075s
+"master_bfm.v", 146: tb.u2.a_master_stop1: started at 1525s succeeded at 2075s
+"master_bfm.v", 160: tb.u2.c_master_stop1: started at 1525s covered at 2075s
+"master_bfm.v", 146: tb.u1.a_master_stop1: started at 1525s succeeded at 2075s
+"master_bfm.v", 160: tb.u1.c_master_stop1: started at 1525s covered at 2075s
+"bus_arbiter.v", 219: tb.u4.a_frame_gnt: started at 2025s succeeded at 2075s
+"ss.sva", 237: tb.i1.c_target: started at 2125s covered at 2125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 2125s covered at 2125s
+"ss.sva", 234: tb.i1.a_end_frame: started at 2025s succeeded at 2125s
+"ss.sva", 245: tb.i1.c_end_frame: started at 2025s covered at 2125s
+"target_bfm.v", 109: tb.u6.a_sel_trdy_stop: started at 2075s succeeded at 2125s
+"ss.sva", 237: tb.i1.c_target: started at 2175s covered at 2175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 2175s covered at 2175s
+"ss.sva", 278: tb.i1.c_req31: started at 2175s covered at 2175s
+"ss.sva", 237: tb.i1.c_target: started at 2225s covered at 2225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 2225s covered at 2225s
+"ss.sva", 237: tb.i1.c_target: started at 2275s covered at 2275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 2275s covered at 2275s
+Bus Occupied at 2325
+
+"ss.sva", 237: tb.i1.c_target: started at 2325s covered at 2325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 2325s covered at 2325s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 2375s covered at 2375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 2375s covered at 2375s
+"ss.sva", 232: tb.i1.a_req_gnt_w: started at 2175s succeeded at 2375s
+"ss.sva", 243: tb.i1.c_req_gnt_w: started at 2175s covered at 2375s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 2375s succeeded at 2375s
+"bus_arbiter.v", 215: tb.u4.a_req_gnt: started at 2175s succeeded at 2375s
+"ss.sva", 237: tb.i1.c_target: started at 2425s covered at 2425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 2425s covered at 2425s
+"ss.sva", 237: tb.i1.c_target: started at 2475s covered at 2475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 2475s covered at 2475s
+"ss.sva", 237: tb.i1.c_target: started at 2525s covered at 2525s
+"ss.sva", 233: tb.i1.a_start_frame: started at 2375s succeeded at 2525s
+"ss.sva", 244: tb.i1.c_start_frame: started at 2375s covered at 2525s
+"target_bfm.v", 107: tb.u6.a_sel_trdy_start: started at 2425s succeeded at 2525s
+"master_bfm.v", 142: tb.u1.a_master_start1: started at 2175s succeeded at 2525s
+"master_bfm.v", 158: tb.u1.c_master_start1: started at 2175s covered at 2525s
+"ss.sva", 237: tb.i1.c_target: started at 2575s covered at 2575s
+"ss.sva", 237: tb.i1.c_target: started at 2625s covered at 2625s
+"ss.sva", 237: tb.i1.c_target: started at 2675s covered at 2675s
+"ss.sva", 294: tb.i1.c_m1t1w: started at 2375s covered at 2675s
+"ss.sva", 382: tb.i1.c_m1t1w_doc: started at 2375s covered at 2675s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 2525s succeeded at 2675s
+"ss.sva", 237: tb.i1.c_target: started at 2725s covered at 2725s
+"ss.sva", 237: tb.i1.c_target: started at 2775s covered at 2775s
+"ss.sva", 237: tb.i1.c_target: started at 2825s covered at 2825s
+"ss.sva", 237: tb.i1.c_target: started at 2875s covered at 2875s
+"ss.sva", 237: tb.i1.c_target: started at 2925s covered at 2925s
+"ss.sva", 237: tb.i1.c_target: started at 2975s covered at 2975s
+"glue.v", 126: tb.u5.a_rsel1_write: started at 2375s succeeded at 2975s
+Bus is free at 3025
+
+"ss.sva", 237: tb.i1.c_target: started at 3025s covered at 3025s
+Valid request from a master available at 3075: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 3075s covered at 3075s
+"master_bfm.v", 146: tb.u3.a_master_stop1: started at 2525s succeeded at 3075s
+"master_bfm.v", 160: tb.u3.c_master_stop1: started at 2525s covered at 3075s
+"master_bfm.v", 146: tb.u2.a_master_stop1: started at 2525s succeeded at 3075s
+"master_bfm.v", 160: tb.u2.c_master_stop1: started at 2525s covered at 3075s
+"master_bfm.v", 146: tb.u1.a_master_stop1: started at 2525s succeeded at 3075s
+"master_bfm.v", 160: tb.u1.c_master_stop1: started at 2525s covered at 3075s
+"ss.sva", 237: tb.i1.c_target: started at 3125s covered at 3125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 3125s covered at 3125s
+"ss.sva", 234: tb.i1.a_end_frame: started at 3025s succeeded at 3125s
+"ss.sva", 245: tb.i1.c_end_frame: started at 3025s covered at 3125s
+"ss.sva", 237: tb.i1.c_target: started at 3175s covered at 3175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 3175s covered at 3175s
+"ss.sva", 278: tb.i1.c_req31: started at 3175s covered at 3175s
+"ss.sva", 237: tb.i1.c_target: started at 3225s covered at 3225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 3225s covered at 3225s
+Bus Occupied at 3275
+
+"ss.sva", 237: tb.i1.c_target: started at 3275s covered at 3275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 3275s covered at 3275s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 3325s covered at 3325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 3325s covered at 3325s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 3325s succeeded at 3325s
+"ss.sva", 237: tb.i1.c_target: started at 3375s covered at 3375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 3375s covered at 3375s
+"ss.sva", 237: tb.i1.c_target: started at 3425s covered at 3425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 3425s covered at 3425s
+"ss.sva", 237: tb.i1.c_target: started at 3475s covered at 3475s
+"master_bfm.v", 142: tb.u3.a_master_start1: started at 3175s succeeded at 3475s
+"master_bfm.v", 158: tb.u3.c_master_start1: started at 3175s covered at 3475s
+"ss.sva", 237: tb.i1.c_target: started at 3525s covered at 3525s
+"ss.sva", 237: tb.i1.c_target: started at 3575s covered at 3575s
+"ss.sva", 237: tb.i1.c_target: started at 3625s covered at 3625s
+"ss.sva", 331: tb.i1.c_m3t1r: started at 3325s covered at 3625s
+"ss.sva", 395: tb.i1.c_m3t1r_doc: started at 3325s covered at 3625s
+"target_bfm.v", 113: tb.u6.a_read: started at 3625s failed at 3625s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 3675s covered at 3675s
+"ss.sva", 237: tb.i1.c_target: started at 3725s covered at 3725s
+"ss.sva", 237: tb.i1.c_target: started at 3775s covered at 3775s
+"ss.sva", 237: tb.i1.c_target: started at 3825s covered at 3825s
+"ss.sva", 237: tb.i1.c_target: started at 3875s covered at 3875s
+"ss.sva", 237: tb.i1.c_target: started at 3925s covered at 3925s
+Bus is free at 3975
+
+"ss.sva", 237: tb.i1.c_target: started at 3975s covered at 3975s
+"glue.v", 132: tb.u5.a_read1: started at 3475s succeeded at 3975s
+No valid requests from any master at 4025
+
+No valid requests from any master at 4025
+
+Valid request from a master available at 4025: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 4025s covered at 4025s
+"master_bfm.v", 154: tb.u3.a_master_datao1: started at 3475s succeeded at 4025s
+"master_bfm.v", 164: tb.u3.c_master_datao1: started at 3475s covered at 4025s
+"ss.sva", 237: tb.i1.c_target: started at 4075s covered at 4075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 4075s covered at 4075s
+"ss.sva", 237: tb.i1.c_target: started at 4125s covered at 4125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 4125s covered at 4125s
+"ss.sva", 258: tb.i1.c_req2: started at 4125s covered at 4125s
+"ss.sva", 237: tb.i1.c_target: started at 4175s covered at 4175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 4175s covered at 4175s
+Bus Occupied at 4225
+
+"ss.sva", 237: tb.i1.c_target: started at 4225s covered at 4225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 4225s covered at 4225s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 4275s covered at 4275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 4275s covered at 4275s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 4275s succeeded at 4275s
+"ss.sva", 237: tb.i1.c_target: started at 4325s covered at 4325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 4325s covered at 4325s
+"glue.v", 124: tb.u5.a_sel_0: started at 4275s succeeded at 4325s
+"ss.sva", 237: tb.i1.c_target: started at 4375s covered at 4375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 4375s covered at 4375s
+"glue.v", 124: tb.u5.a_sel_0: started at 4325s succeeded at 4375s
+"ss.sva", 237: tb.i1.c_target: started at 4425s covered at 4425s
+"target_bfm.v", 107: tb.u7.a_sel_trdy_start: started at 4325s succeeded at 4425s
+"master_bfm.v", 144: tb.u2.a_master_start2: started at 4125s succeeded at 4425s
+"master_bfm.v", 159: tb.u2.c_master_start2: started at 4125s covered at 4425s
+"glue.v", 124: tb.u5.a_sel_0: started at 4375s succeeded at 4425s
+"ss.sva", 237: tb.i1.c_target: started at 4475s covered at 4475s
+"ss.sva", 237: tb.i1.c_target: started at 4525s covered at 4525s
+"ss.sva", 237: tb.i1.c_target: started at 4575s covered at 4575s
+"ss.sva", 325: tb.i1.c_m2t0w: started at 4275s covered at 4575s
+"ss.sva", 391: tb.i1.c_m2t2w_doc: started at 4275s covered at 4575s
+"target_bfm.v", 111: tb.u7.a_write: started at 4575s succeeded at 4575s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 4425s succeeded at 4575s
+"ss.sva", 237: tb.i1.c_target: started at 4625s covered at 4625s
+"target_bfm.v", 111: tb.u7.a_write: started at 4625s succeeded at 4625s
+"ss.sva", 237: tb.i1.c_target: started at 4675s covered at 4675s
+"target_bfm.v", 111: tb.u7.a_write: started at 4675s succeeded at 4675s
+"ss.sva", 237: tb.i1.c_target: started at 4725s covered at 4725s
+"ss.sva", 237: tb.i1.c_target: started at 4775s covered at 4775s
+"ss.sva", 237: tb.i1.c_target: started at 4825s covered at 4825s
+"ss.sva", 237: tb.i1.c_target: started at 4875s covered at 4875s
+"glue.v", 128: tb.u5.a_rsel2_write: started at 4275s succeeded at 4875s
+Bus is free at 4925
+
+"ss.sva", 237: tb.i1.c_target: started at 4925s covered at 4925s
+Valid request from a master available at 4975: 011
+
+"ss.sva", 237: tb.i1.c_target: started at 4975s covered at 4975s
+"master_bfm.v", 148: tb.u3.a_master_stop2: started at 4425s succeeded at 4975s
+"master_bfm.v", 161: tb.u3.c_master_stop2: started at 4425s covered at 4975s
+"master_bfm.v", 148: tb.u2.a_master_stop2: started at 4425s succeeded at 4975s
+"master_bfm.v", 161: tb.u2.c_master_stop2: started at 4425s covered at 4975s
+"master_bfm.v", 148: tb.u1.a_master_stop2: started at 4425s succeeded at 4975s
+"master_bfm.v", 161: tb.u1.c_master_stop2: started at 4425s covered at 4975s
+"ss.sva", 237: tb.i1.c_target: started at 5025s covered at 5025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 5025s covered at 5025s
+"target_bfm.v", 109: tb.u7.a_sel_trdy_stop: started at 4975s succeeded at 5025s
+"ss.sva", 237: tb.i1.c_target: started at 5075s covered at 5075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 5075s covered at 5075s
+"ss.sva", 273: tb.i1.c_req23: started at 5075s covered at 5075s
+"ss.sva", 237: tb.i1.c_target: started at 5125s covered at 5125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 5125s covered at 5125s
+"ss.sva", 237: tb.i1.c_target: started at 5175s covered at 5175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 5175s covered at 5175s
+Bus Occupied at 5225
+
+"ss.sva", 237: tb.i1.c_target: started at 5225s covered at 5225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 5225s covered at 5225s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 5275s covered at 5275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 5275s covered at 5275s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 5275s succeeded at 5275s
+"ss.sva", 237: tb.i1.c_target: started at 5325s covered at 5325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 5325s covered at 5325s
+"ss.sva", 237: tb.i1.c_target: started at 5375s covered at 5375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 5375s covered at 5375s
+"ss.sva", 237: tb.i1.c_target: started at 5425s covered at 5425s
+"target_bfm.v", 107: tb.u7.a_sel_trdy_start: started at 5325s succeeded at 5425s
+"master_bfm.v", 144: tb.u3.a_master_start2: started at 5075s succeeded at 5425s
+"master_bfm.v", 159: tb.u3.c_master_start2: started at 5075s covered at 5425s
+"ss.sva", 237: tb.i1.c_target: started at 5475s covered at 5475s
+"ss.sva", 237: tb.i1.c_target: started at 5525s covered at 5525s
+"ss.sva", 237: tb.i1.c_target: started at 5575s covered at 5575s
+"ss.sva", 341: tb.i1.c_m3t0r: started at 5275s covered at 5575s
+"ss.sva", 398: tb.i1.c_m3t2r_doc: started at 5275s covered at 5575s
+"ss.sva", 237: tb.i1.c_target: started at 5625s covered at 5625s
+"target_bfm.v", 113: tb.u7.a_read: started at 5625s succeeded at 5625s
+"ss.sva", 237: tb.i1.c_target: started at 5675s covered at 5675s
+"target_bfm.v", 113: tb.u7.a_read: started at 5675s succeeded at 5675s
+"ss.sva", 237: tb.i1.c_target: started at 5725s covered at 5725s
+"target_bfm.v", 113: tb.u7.a_read: started at 5725s succeeded at 5725s
+"ss.sva", 237: tb.i1.c_target: started at 5775s covered at 5775s
+"ss.sva", 237: tb.i1.c_target: started at 5825s covered at 5825s
+"ss.sva", 237: tb.i1.c_target: started at 5875s covered at 5875s
+Bus is free at 5925
+
+"ss.sva", 237: tb.i1.c_target: started at 5925s covered at 5925s
+"glue.v", 134: tb.u5.a_read0: started at 5425s succeeded at 5925s
+Valid request from a master available at 5975: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 5975s covered at 5975s
+"master_bfm.v", 148: tb.u3.a_master_stop2: started at 5425s succeeded at 5975s
+"master_bfm.v", 156: tb.u3.a_master_datao2: started at 5425s succeeded at 5975s
+"master_bfm.v", 161: tb.u3.c_master_stop2: started at 5425s covered at 5975s
+"master_bfm.v", 165: tb.u3.c_master_datao2: started at 5425s covered at 5975s
+"master_bfm.v", 148: tb.u2.a_master_stop2: started at 5425s succeeded at 5975s
+"master_bfm.v", 161: tb.u2.c_master_stop2: started at 5425s covered at 5975s
+"master_bfm.v", 148: tb.u1.a_master_stop2: started at 5425s succeeded at 5975s
+"master_bfm.v", 161: tb.u1.c_master_stop2: started at 5425s covered at 5975s
+"ss.sva", 237: tb.i1.c_target: started at 6025s covered at 6025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 6025s covered at 6025s
+"target_bfm.v", 109: tb.u7.a_sel_trdy_stop: started at 5975s succeeded at 6025s
+"ss.sva", 237: tb.i1.c_target: started at 6075s covered at 6075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 6075s covered at 6075s
+"ss.sva", 258: tb.i1.c_req2: started at 6075s covered at 6075s
+"ss.sva", 237: tb.i1.c_target: started at 6125s covered at 6125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 6125s covered at 6125s
+"ss.sva", 237: tb.i1.c_target: started at 6175s covered at 6175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 6175s covered at 6175s
+Bus Occupied at 6225
+
+"ss.sva", 237: tb.i1.c_target: started at 6225s covered at 6225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 6225s covered at 6225s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 6275s covered at 6275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 6275s covered at 6275s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 6275s succeeded at 6275s
+"ss.sva", 237: tb.i1.c_target: started at 6325s covered at 6325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 6325s covered at 6325s
+"ss.sva", 237: tb.i1.c_target: started at 6375s covered at 6375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 6375s covered at 6375s
+"ss.sva", 237: tb.i1.c_target: started at 6425s covered at 6425s
+"master_bfm.v", 142: tb.u2.a_master_start1: started at 6075s succeeded at 6425s
+"master_bfm.v", 158: tb.u2.c_master_start1: started at 6075s covered at 6425s
+"ss.sva", 237: tb.i1.c_target: started at 6475s covered at 6475s
+"ss.sva", 237: tb.i1.c_target: started at 6525s covered at 6525s
+"ss.sva", 237: tb.i1.c_target: started at 6575s covered at 6575s
+"ss.sva", 310: tb.i1.c_m2t1r: started at 6275s covered at 6575s
+"ss.sva", 389: tb.i1.c_m2t1r_doc: started at 6275s covered at 6575s
+"target_bfm.v", 113: tb.u6.a_read: started at 6575s failed at 6575s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 6625s covered at 6625s
+"master_bfm.v", 154: tb.u2.a_master_datao1: started at 6425s failed at 6625s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 132: tb.u5.a_read1: started at 6425s failed at 6625s
+	Offending '(dataout1 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 6675s covered at 6675s
+"ss.sva", 237: tb.i1.c_target: started at 6725s covered at 6725s
+"ss.sva", 237: tb.i1.c_target: started at 6775s covered at 6775s
+"ss.sva", 237: tb.i1.c_target: started at 6825s covered at 6825s
+"ss.sva", 237: tb.i1.c_target: started at 6875s covered at 6875s
+Bus is free at 6925
+
+"ss.sva", 237: tb.i1.c_target: started at 6925s covered at 6925s
+No valid requests from any master at 6975
+
+Valid request from a master available at 6975: 001
+
+"ss.sva", 237: tb.i1.c_target: started at 6975s covered at 6975s
+"ss.sva", 237: tb.i1.c_target: started at 7025s covered at 7025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 7025s covered at 7025s
+"ss.sva", 237: tb.i1.c_target: started at 7075s covered at 7075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 7075s covered at 7075s
+"ss.sva", 263: tb.i1.c_req3: started at 7075s covered at 7075s
+"ss.sva", 237: tb.i1.c_target: started at 7125s covered at 7125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 7125s covered at 7125s
+"ss.sva", 237: tb.i1.c_target: started at 7175s covered at 7175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 7175s covered at 7175s
+"ss.sva", 237: tb.i1.c_target: started at 7225s covered at 7225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 7225s covered at 7225s
+Bus Occupied at 7275
+
+"ss.sva", 237: tb.i1.c_target: started at 7275s covered at 7275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 7275s covered at 7275s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 7325s covered at 7325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 7325s covered at 7325s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 7325s succeeded at 7325s
+"ss.sva", 237: tb.i1.c_target: started at 7375s covered at 7375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 7375s covered at 7375s
+"ss.sva", 237: tb.i1.c_target: started at 7425s covered at 7425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 7425s covered at 7425s
+"ss.sva", 237: tb.i1.c_target: started at 7475s covered at 7475s
+"target_bfm.v", 107: tb.u7.a_sel_trdy_start: started at 7375s succeeded at 7475s
+"master_bfm.v", 144: tb.u3.a_master_start2: started at 7075s succeeded at 7475s
+"master_bfm.v", 159: tb.u3.c_master_start2: started at 7075s covered at 7475s
+"ss.sva", 237: tb.i1.c_target: started at 7525s covered at 7525s
+"ss.sva", 237: tb.i1.c_target: started at 7575s covered at 7575s
+"ss.sva", 237: tb.i1.c_target: started at 7625s covered at 7625s
+"ss.sva", 341: tb.i1.c_m3t0r: started at 7325s covered at 7625s
+"ss.sva", 398: tb.i1.c_m3t2r_doc: started at 7325s covered at 7625s
+"target_bfm.v", 113: tb.u7.a_read: started at 7625s failed at 7625s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 7675s covered at 7675s
+"master_bfm.v", 156: tb.u3.a_master_datao2: started at 7475s failed at 7675s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 134: tb.u5.a_read0: started at 7475s failed at 7675s
+	Offending '(dataout2 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 7725s covered at 7725s
+"ss.sva", 237: tb.i1.c_target: started at 7775s covered at 7775s
+"ss.sva", 237: tb.i1.c_target: started at 7825s covered at 7825s
+"ss.sva", 237: tb.i1.c_target: started at 7875s covered at 7875s
+"ss.sva", 237: tb.i1.c_target: started at 7925s covered at 7925s
+Bus is free at 7975
+
+"ss.sva", 237: tb.i1.c_target: started at 7975s covered at 7975s
+Valid request from a master available at 8025: 110
+
+"ss.sva", 237: tb.i1.c_target: started at 8025s covered at 8025s
+"master_bfm.v", 148: tb.u3.a_master_stop2: started at 7475s succeeded at 8025s
+"master_bfm.v", 161: tb.u3.c_master_stop2: started at 7475s covered at 8025s
+"master_bfm.v", 148: tb.u2.a_master_stop2: started at 7475s succeeded at 8025s
+"master_bfm.v", 161: tb.u2.c_master_stop2: started at 7475s covered at 8025s
+"master_bfm.v", 148: tb.u1.a_master_stop2: started at 7475s succeeded at 8025s
+"master_bfm.v", 161: tb.u1.c_master_stop2: started at 7475s covered at 8025s
+"ss.sva", 237: tb.i1.c_target: started at 8075s covered at 8075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 8075s covered at 8075s
+"ss.sva", 237: tb.i1.c_target: started at 8125s covered at 8125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 8125s covered at 8125s
+"ss.sva", 268: tb.i1.c_req12: started at 8125s covered at 8125s
+Bus Occupied at 8175
+
+"ss.sva", 237: tb.i1.c_target: started at 8175s covered at 8175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 8175s covered at 8175s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 8225s covered at 8225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 8225s covered at 8225s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 8225s succeeded at 8225s
+"ss.sva", 237: tb.i1.c_target: started at 8275s covered at 8275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 8275s covered at 8275s
+"ss.sva", 237: tb.i1.c_target: started at 8325s covered at 8325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 8325s covered at 8325s
+"ss.sva", 237: tb.i1.c_target: started at 8375s covered at 8375s
+"master_bfm.v", 144: tb.u1.a_master_start2: started at 8125s succeeded at 8375s
+"master_bfm.v", 159: tb.u1.c_master_start2: started at 8125s covered at 8375s
+"ss.sva", 237: tb.i1.c_target: started at 8425s covered at 8425s
+"ss.sva", 237: tb.i1.c_target: started at 8475s covered at 8475s
+"ss.sva", 237: tb.i1.c_target: started at 8525s covered at 8525s
+"ss.sva", 304: tb.i1.c_m1t0w: started at 8225s covered at 8525s
+"ss.sva", 385: tb.i1.c_m1t2w_doc: started at 8225s covered at 8525s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 8375s succeeded at 8525s
+"ss.sva", 237: tb.i1.c_target: started at 8575s covered at 8575s
+"ss.sva", 237: tb.i1.c_target: started at 8625s covered at 8625s
+"ss.sva", 237: tb.i1.c_target: started at 8675s covered at 8675s
+"ss.sva", 237: tb.i1.c_target: started at 8725s covered at 8725s
+"ss.sva", 237: tb.i1.c_target: started at 8775s covered at 8775s
+"ss.sva", 237: tb.i1.c_target: started at 8825s covered at 8825s
+"glue.v", 126: tb.u5.a_rsel1_write: started at 8225s succeeded at 8825s
+Bus is free at 8875
+
+"ss.sva", 237: tb.i1.c_target: started at 8875s covered at 8875s
+Valid request from a master available at 8925: 001
+
+"ss.sva", 237: tb.i1.c_target: started at 8925s covered at 8925s
+"ss.sva", 237: tb.i1.c_target: started at 8975s covered at 8975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 8975s covered at 8975s
+"ss.sva", 237: tb.i1.c_target: started at 9025s covered at 9025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 9025s covered at 9025s
+"ss.sva", 263: tb.i1.c_req3: started at 9025s covered at 9025s
+"ss.sva", 237: tb.i1.c_target: started at 9075s covered at 9075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 9075s covered at 9075s
+"ss.sva", 237: tb.i1.c_target: started at 9125s covered at 9125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 9125s covered at 9125s
+Bus Occupied at 9175
+
+"ss.sva", 237: tb.i1.c_target: started at 9175s covered at 9175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 9175s covered at 9175s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 9225s covered at 9225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 9225s covered at 9225s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 9225s succeeded at 9225s
+"ss.sva", 237: tb.i1.c_target: started at 9275s covered at 9275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 9275s covered at 9275s
+"ss.sva", 237: tb.i1.c_target: started at 9325s covered at 9325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 9325s covered at 9325s
+"ss.sva", 237: tb.i1.c_target: started at 9375s covered at 9375s
+"master_bfm.v", 144: tb.u3.a_master_start2: started at 9025s succeeded at 9375s
+"master_bfm.v", 159: tb.u3.c_master_start2: started at 9025s covered at 9375s
+"ss.sva", 237: tb.i1.c_target: started at 9425s covered at 9425s
+"ss.sva", 237: tb.i1.c_target: started at 9475s covered at 9475s
+"ss.sva", 237: tb.i1.c_target: started at 9525s covered at 9525s
+"ss.sva", 346: tb.i1.c_m3t0w: started at 9225s covered at 9525s
+"ss.sva", 397: tb.i1.c_m3t2w_doc: started at 9225s covered at 9525s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 9375s succeeded at 9525s
+"ss.sva", 237: tb.i1.c_target: started at 9575s covered at 9575s
+"ss.sva", 237: tb.i1.c_target: started at 9625s covered at 9625s
+"ss.sva", 237: tb.i1.c_target: started at 9675s covered at 9675s
+"ss.sva", 237: tb.i1.c_target: started at 9725s covered at 9725s
+"ss.sva", 237: tb.i1.c_target: started at 9775s covered at 9775s
+"ss.sva", 237: tb.i1.c_target: started at 9825s covered at 9825s
+"glue.v", 130: tb.u5.a_rsel3_write: started at 9225s succeeded at 9825s
+Bus is free at 9875
+
+"ss.sva", 237: tb.i1.c_target: started at 9875s covered at 9875s
+No valid requests from any master at 9925
+
+Valid request from a master available at 9925: 111
+
+"ss.sva", 237: tb.i1.c_target: started at 9925s covered at 9925s
+"ss.sva", 237: tb.i1.c_target: started at 9975s covered at 9975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 9975s covered at 9975s
+"ss.sva", 237: tb.i1.c_target: started at 10025s covered at 10025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 10025s covered at 10025s
+"ss.sva", 283: tb.i1.c_req123: started at 10025s covered at 10025s
+"ss.sva", 237: tb.i1.c_target: started at 10075s covered at 10075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 10075s covered at 10075s
+Bus Occupied at 10125
+
+"ss.sva", 237: tb.i1.c_target: started at 10125s covered at 10125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 10125s covered at 10125s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 10175s covered at 10175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 10175s covered at 10175s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 10175s succeeded at 10175s
+"ss.sva", 237: tb.i1.c_target: started at 10225s covered at 10225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 10225s covered at 10225s
+"ss.sva", 237: tb.i1.c_target: started at 10275s covered at 10275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 10275s covered at 10275s
+"ss.sva", 237: tb.i1.c_target: started at 10325s covered at 10325s
+"master_bfm.v", 144: tb.u1.a_master_start2: started at 10025s succeeded at 10325s
+"master_bfm.v", 159: tb.u1.c_master_start2: started at 10025s covered at 10325s
+"ss.sva", 237: tb.i1.c_target: started at 10375s covered at 10375s
+"ss.sva", 237: tb.i1.c_target: started at 10425s covered at 10425s
+"ss.sva", 237: tb.i1.c_target: started at 10475s covered at 10475s
+"ss.sva", 299: tb.i1.c_m1t0r: started at 10175s covered at 10475s
+"ss.sva", 386: tb.i1.c_m1t2r_doc: started at 10175s covered at 10475s
+"target_bfm.v", 113: tb.u7.a_read: started at 10475s failed at 10475s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 10525s covered at 10525s
+"ss.sva", 237: tb.i1.c_target: started at 10575s covered at 10575s
+"ss.sva", 237: tb.i1.c_target: started at 10625s covered at 10625s
+"ss.sva", 237: tb.i1.c_target: started at 10675s covered at 10675s
+"ss.sva", 237: tb.i1.c_target: started at 10725s covered at 10725s
+"ss.sva", 237: tb.i1.c_target: started at 10775s covered at 10775s
+Bus is free at 10825
+
+"ss.sva", 237: tb.i1.c_target: started at 10825s covered at 10825s
+"glue.v", 134: tb.u5.a_read0: started at 10325s succeeded at 10825s
+Valid request from a master available at 10875: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 10875s covered at 10875s
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 10325s succeeded at 10875s
+"master_bfm.v", 165: tb.u1.c_master_datao2: started at 10325s covered at 10875s
+"ss.sva", 237: tb.i1.c_target: started at 10925s covered at 10925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 10925s covered at 10925s
+"ss.sva", 237: tb.i1.c_target: started at 10975s covered at 10975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 10975s covered at 10975s
+"ss.sva", 258: tb.i1.c_req2: started at 10975s covered at 10975s
+Bus Occupied at 11025
+
+"ss.sva", 237: tb.i1.c_target: started at 11025s covered at 11025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 11025s covered at 11025s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 11075s covered at 11075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 11075s covered at 11075s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 11075s succeeded at 11075s
+"ss.sva", 237: tb.i1.c_target: started at 11125s covered at 11125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 11125s covered at 11125s
+"ss.sva", 237: tb.i1.c_target: started at 11175s covered at 11175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 11175s covered at 11175s
+"ss.sva", 237: tb.i1.c_target: started at 11225s covered at 11225s
+"master_bfm.v", 142: tb.u2.a_master_start1: started at 10975s succeeded at 11225s
+"master_bfm.v", 158: tb.u2.c_master_start1: started at 10975s covered at 11225s
+"ss.sva", 237: tb.i1.c_target: started at 11275s covered at 11275s
+"ss.sva", 237: tb.i1.c_target: started at 11325s covered at 11325s
+"ss.sva", 237: tb.i1.c_target: started at 11375s covered at 11375s
+"ss.sva", 315: tb.i1.c_m2t1w: started at 11075s covered at 11375s
+"ss.sva", 388: tb.i1.c_m2t1w_doc: started at 11075s covered at 11375s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 11225s succeeded at 11375s
+"ss.sva", 237: tb.i1.c_target: started at 11425s covered at 11425s
+"ss.sva", 237: tb.i1.c_target: started at 11475s covered at 11475s
+"ss.sva", 237: tb.i1.c_target: started at 11525s covered at 11525s
+"ss.sva", 237: tb.i1.c_target: started at 11575s covered at 11575s
+"ss.sva", 237: tb.i1.c_target: started at 11625s covered at 11625s
+"ss.sva", 237: tb.i1.c_target: started at 11675s covered at 11675s
+"glue.v", 128: tb.u5.a_rsel2_write: started at 11075s succeeded at 11675s
+Bus is free at 11725
+
+"ss.sva", 237: tb.i1.c_target: started at 11725s covered at 11725s
+Valid request from a master available at 11775: 011
+
+"ss.sva", 237: tb.i1.c_target: started at 11775s covered at 11775s
+"ss.sva", 237: tb.i1.c_target: started at 11825s covered at 11825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 11825s covered at 11825s
+"ss.sva", 237: tb.i1.c_target: started at 11875s covered at 11875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 11875s covered at 11875s
+"ss.sva", 273: tb.i1.c_req23: started at 11875s covered at 11875s
+"ss.sva", 237: tb.i1.c_target: started at 11925s covered at 11925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 11925s covered at 11925s
+Bus Occupied at 11975
+
+"ss.sva", 237: tb.i1.c_target: started at 11975s covered at 11975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 11975s covered at 11975s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 12025s covered at 12025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 12025s covered at 12025s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 12025s succeeded at 12025s
+"ss.sva", 237: tb.i1.c_target: started at 12075s covered at 12075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 12075s covered at 12075s
+"ss.sva", 237: tb.i1.c_target: started at 12125s covered at 12125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 12125s covered at 12125s
+"ss.sva", 237: tb.i1.c_target: started at 12175s covered at 12175s
+"master_bfm.v", 142: tb.u3.a_master_start1: started at 11875s succeeded at 12175s
+"master_bfm.v", 158: tb.u3.c_master_start1: started at 11875s covered at 12175s
+"ss.sva", 237: tb.i1.c_target: started at 12225s covered at 12225s
+"ss.sva", 237: tb.i1.c_target: started at 12275s covered at 12275s
+"ss.sva", 237: tb.i1.c_target: started at 12325s covered at 12325s
+"ss.sva", 331: tb.i1.c_m3t1r: started at 12025s covered at 12325s
+"ss.sva", 395: tb.i1.c_m3t1r_doc: started at 12025s covered at 12325s
+"target_bfm.v", 113: tb.u6.a_read: started at 12325s failed at 12325s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 12375s covered at 12375s
+"master_bfm.v", 154: tb.u3.a_master_datao1: started at 12175s failed at 12375s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 132: tb.u5.a_read1: started at 12175s failed at 12375s
+	Offending '(dataout1 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 12425s covered at 12425s
+"ss.sva", 237: tb.i1.c_target: started at 12475s covered at 12475s
+"ss.sva", 237: tb.i1.c_target: started at 12525s covered at 12525s
+"ss.sva", 237: tb.i1.c_target: started at 12575s covered at 12575s
+"ss.sva", 237: tb.i1.c_target: started at 12625s covered at 12625s
+Bus is free at 12675
+
+"ss.sva", 237: tb.i1.c_target: started at 12675s covered at 12675s
+No valid requests from any master at 12725
+
+Valid request from a master available at 12725: 110
+
+"ss.sva", 237: tb.i1.c_target: started at 12725s covered at 12725s
+"ss.sva", 237: tb.i1.c_target: started at 12775s covered at 12775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 12775s covered at 12775s
+"ss.sva", 237: tb.i1.c_target: started at 12825s covered at 12825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 12825s covered at 12825s
+"ss.sva", 268: tb.i1.c_req12: started at 12825s covered at 12825s
+"ss.sva", 237: tb.i1.c_target: started at 12875s covered at 12875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 12875s covered at 12875s
+"ss.sva", 237: tb.i1.c_target: started at 12925s covered at 12925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 12925s covered at 12925s
+Bus Occupied at 12975
+
+"ss.sva", 237: tb.i1.c_target: started at 12975s covered at 12975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 12975s covered at 12975s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 13025s covered at 13025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 13025s covered at 13025s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 13025s succeeded at 13025s
+"ss.sva", 237: tb.i1.c_target: started at 13075s covered at 13075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 13075s covered at 13075s
+"ss.sva", 237: tb.i1.c_target: started at 13125s covered at 13125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 13125s covered at 13125s
+"ss.sva", 237: tb.i1.c_target: started at 13175s covered at 13175s
+"master_bfm.v", 144: tb.u1.a_master_start2: started at 12825s succeeded at 13175s
+"master_bfm.v", 159: tb.u1.c_master_start2: started at 12825s covered at 13175s
+"ss.sva", 237: tb.i1.c_target: started at 13225s covered at 13225s
+"ss.sva", 237: tb.i1.c_target: started at 13275s covered at 13275s
+"ss.sva", 237: tb.i1.c_target: started at 13325s covered at 13325s
+"ss.sva", 299: tb.i1.c_m1t0r: started at 13025s covered at 13325s
+"ss.sva", 386: tb.i1.c_m1t2r_doc: started at 13025s covered at 13325s
+"target_bfm.v", 113: tb.u7.a_read: started at 13325s failed at 13325s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 13375s covered at 13375s
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 13175s failed at 13375s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 134: tb.u5.a_read0: started at 13175s failed at 13375s
+	Offending '(dataout2 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 13425s covered at 13425s
+"ss.sva", 237: tb.i1.c_target: started at 13475s covered at 13475s
+"ss.sva", 237: tb.i1.c_target: started at 13525s covered at 13525s
+"ss.sva", 237: tb.i1.c_target: started at 13575s covered at 13575s
+"ss.sva", 237: tb.i1.c_target: started at 13625s covered at 13625s
+Bus is free at 13675
+
+"ss.sva", 237: tb.i1.c_target: started at 13675s covered at 13675s
+Valid request from a master available at 13725: 110
+
+"ss.sva", 237: tb.i1.c_target: started at 13725s covered at 13725s
+"ss.sva", 237: tb.i1.c_target: started at 13775s covered at 13775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 13775s covered at 13775s
+"ss.sva", 237: tb.i1.c_target: started at 13825s covered at 13825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 13825s covered at 13825s
+"ss.sva", 268: tb.i1.c_req12: started at 13825s covered at 13825s
+"ss.sva", 237: tb.i1.c_target: started at 13875s covered at 13875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 13875s covered at 13875s
+"ss.sva", 237: tb.i1.c_target: started at 13925s covered at 13925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 13925s covered at 13925s
+"ss.sva", 237: tb.i1.c_target: started at 13975s covered at 13975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 13975s covered at 13975s
+Bus Occupied at 14025
+
+"ss.sva", 237: tb.i1.c_target: started at 14025s covered at 14025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 14025s covered at 14025s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 14075s covered at 14075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 14075s covered at 14075s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 14075s succeeded at 14075s
+"ss.sva", 237: tb.i1.c_target: started at 14125s covered at 14125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 14125s covered at 14125s
+"ss.sva", 237: tb.i1.c_target: started at 14175s covered at 14175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 14175s covered at 14175s
+"ss.sva", 237: tb.i1.c_target: started at 14225s covered at 14225s
+"master_bfm.v", 142: tb.u2.a_master_start1: started at 13825s succeeded at 14225s
+"master_bfm.v", 158: tb.u2.c_master_start1: started at 13825s covered at 14225s
+"ss.sva", 237: tb.i1.c_target: started at 14275s covered at 14275s
+"ss.sva", 237: tb.i1.c_target: started at 14325s covered at 14325s
+"ss.sva", 237: tb.i1.c_target: started at 14375s covered at 14375s
+"ss.sva", 315: tb.i1.c_m2t1w: started at 14075s covered at 14375s
+"ss.sva", 388: tb.i1.c_m2t1w_doc: started at 14075s covered at 14375s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 14225s succeeded at 14375s
+"ss.sva", 237: tb.i1.c_target: started at 14425s covered at 14425s
+"ss.sva", 237: tb.i1.c_target: started at 14475s covered at 14475s
+"ss.sva", 237: tb.i1.c_target: started at 14525s covered at 14525s
+"ss.sva", 237: tb.i1.c_target: started at 14575s covered at 14575s
+"ss.sva", 237: tb.i1.c_target: started at 14625s covered at 14625s
+"ss.sva", 237: tb.i1.c_target: started at 14675s covered at 14675s
+"glue.v", 128: tb.u5.a_rsel2_write: started at 14075s succeeded at 14675s
+Bus is free at 14725
+
+"ss.sva", 237: tb.i1.c_target: started at 14725s covered at 14725s
+Valid request from a master available at 14775: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 14775s covered at 14775s
+"ss.sva", 237: tb.i1.c_target: started at 14825s covered at 14825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 14825s covered at 14825s
+"ss.sva", 237: tb.i1.c_target: started at 14875s covered at 14875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 14875s covered at 14875s
+"ss.sva", 237: tb.i1.c_target: started at 14925s covered at 14925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 14925s covered at 14925s
+"ss.sva", 237: tb.i1.c_target: started at 14975s covered at 14975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 14975s covered at 14975s
+Bus Occupied at 15025
+
+"ss.sva", 237: tb.i1.c_target: started at 15025s covered at 15025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 15025s covered at 15025s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 15075s covered at 15075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 15075s covered at 15075s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 15075s succeeded at 15075s
+"ss.sva", 237: tb.i1.c_target: started at 15125s covered at 15125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 15125s covered at 15125s
+"ss.sva", 237: tb.i1.c_target: started at 15175s covered at 15175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 15175s covered at 15175s
+"ss.sva", 237: tb.i1.c_target: started at 15225s covered at 15225s
+"ss.sva", 237: tb.i1.c_target: started at 15275s covered at 15275s
+"ss.sva", 237: tb.i1.c_target: started at 15325s covered at 15325s
+"ss.sva", 237: tb.i1.c_target: started at 15375s covered at 15375s
+"ss.sva", 336: tb.i1.c_m3t1w: started at 15075s covered at 15375s
+"ss.sva", 394: tb.i1.c_m3t1w_doc: started at 15075s covered at 15375s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 15225s succeeded at 15375s
+"ss.sva", 237: tb.i1.c_target: started at 15425s covered at 15425s
+"ss.sva", 237: tb.i1.c_target: started at 15475s covered at 15475s
+"ss.sva", 237: tb.i1.c_target: started at 15525s covered at 15525s
+"ss.sva", 237: tb.i1.c_target: started at 15575s covered at 15575s
+"ss.sva", 237: tb.i1.c_target: started at 15625s covered at 15625s
+"ss.sva", 237: tb.i1.c_target: started at 15675s covered at 15675s
+"glue.v", 130: tb.u5.a_rsel3_write: started at 15075s succeeded at 15675s
+Bus is free at 15725
+
+"ss.sva", 237: tb.i1.c_target: started at 15725s covered at 15725s
+Valid request from a master available at 15775: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 15775s covered at 15775s
+"ss.sva", 237: tb.i1.c_target: started at 15825s covered at 15825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 15825s covered at 15825s
+"ss.sva", 237: tb.i1.c_target: started at 15875s covered at 15875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 15875s covered at 15875s
+"ss.sva", 237: tb.i1.c_target: started at 15925s covered at 15925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 15925s covered at 15925s
+Bus Occupied at 15975
+
+"ss.sva", 237: tb.i1.c_target: started at 15975s covered at 15975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 15975s covered at 15975s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 16025s covered at 16025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 16025s covered at 16025s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 16025s succeeded at 16025s
+"ss.sva", 237: tb.i1.c_target: started at 16075s covered at 16075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 16075s covered at 16075s
+"ss.sva", 237: tb.i1.c_target: started at 16125s covered at 16125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 16125s covered at 16125s
+"ss.sva", 237: tb.i1.c_target: started at 16175s covered at 16175s
+"ss.sva", 237: tb.i1.c_target: started at 16225s covered at 16225s
+"ss.sva", 237: tb.i1.c_target: started at 16275s covered at 16275s
+"ss.sva", 237: tb.i1.c_target: started at 16325s covered at 16325s
+"ss.sva", 310: tb.i1.c_m2t1r: started at 16025s covered at 16325s
+"ss.sva", 389: tb.i1.c_m2t1r_doc: started at 16025s covered at 16325s
+"target_bfm.v", 113: tb.u6.a_read: started at 16325s failed at 16325s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 16375s covered at 16375s
+"ss.sva", 237: tb.i1.c_target: started at 16425s covered at 16425s
+"ss.sva", 237: tb.i1.c_target: started at 16475s covered at 16475s
+"ss.sva", 237: tb.i1.c_target: started at 16525s covered at 16525s
+"ss.sva", 237: tb.i1.c_target: started at 16575s covered at 16575s
+"ss.sva", 237: tb.i1.c_target: started at 16625s covered at 16625s
+Bus is free at 16675
+
+"ss.sva", 237: tb.i1.c_target: started at 16675s covered at 16675s
+"glue.v", 132: tb.u5.a_read1: started at 16175s succeeded at 16675s
+Valid request from a master available at 16725: 110
+
+"ss.sva", 237: tb.i1.c_target: started at 16725s covered at 16725s
+"master_bfm.v", 154: tb.u2.a_master_datao1: started at 16175s succeeded at 16725s
+"master_bfm.v", 164: tb.u2.c_master_datao1: started at 16175s covered at 16725s
+"ss.sva", 237: tb.i1.c_target: started at 16775s covered at 16775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 16775s covered at 16775s
+"ss.sva", 237: tb.i1.c_target: started at 16825s covered at 16825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 16825s covered at 16825s
+"ss.sva", 237: tb.i1.c_target: started at 16875s covered at 16875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 16875s covered at 16875s
+"ss.sva", 237: tb.i1.c_target: started at 16925s covered at 16925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 16925s covered at 16925s
+"ss.sva", 237: tb.i1.c_target: started at 16975s covered at 16975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 16975s covered at 16975s
+Bus Occupied at 17025
+
+"ss.sva", 237: tb.i1.c_target: started at 17025s covered at 17025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 17025s covered at 17025s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 17075s covered at 17075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 17075s covered at 17075s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 17075s succeeded at 17075s
+"ss.sva", 237: tb.i1.c_target: started at 17125s covered at 17125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 17125s covered at 17125s
+"ss.sva", 237: tb.i1.c_target: started at 17175s covered at 17175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 17175s covered at 17175s
+"ss.sva", 237: tb.i1.c_target: started at 17225s covered at 17225s
+"ss.sva", 237: tb.i1.c_target: started at 17275s covered at 17275s
+"ss.sva", 237: tb.i1.c_target: started at 17325s covered at 17325s
+"ss.sva", 237: tb.i1.c_target: started at 17375s covered at 17375s
+"ss.sva", 299: tb.i1.c_m1t0r: started at 17075s covered at 17375s
+"ss.sva", 386: tb.i1.c_m1t2r_doc: started at 17075s covered at 17375s
+"target_bfm.v", 113: tb.u7.a_read: started at 17375s failed at 17375s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 17425s covered at 17425s
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 17225s failed at 17425s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 134: tb.u5.a_read0: started at 17225s failed at 17425s
+	Offending '(dataout2 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 17475s covered at 17475s
+"ss.sva", 237: tb.i1.c_target: started at 17525s covered at 17525s
+"ss.sva", 237: tb.i1.c_target: started at 17575s covered at 17575s
+"ss.sva", 237: tb.i1.c_target: started at 17625s covered at 17625s
+"ss.sva", 237: tb.i1.c_target: started at 17675s covered at 17675s
+Bus is free at 17725
+
+"ss.sva", 237: tb.i1.c_target: started at 17725s covered at 17725s
+No valid requests from any master at 17775
+
+Valid request from a master available at 17775: 001
+
+"ss.sva", 237: tb.i1.c_target: started at 17775s covered at 17775s
+"ss.sva", 237: tb.i1.c_target: started at 17825s covered at 17825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 17825s covered at 17825s
+"ss.sva", 237: tb.i1.c_target: started at 17875s covered at 17875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 17875s covered at 17875s
+"ss.sva", 263: tb.i1.c_req3: started at 17875s covered at 17875s
+Bus Occupied at 17925
+
+"ss.sva", 237: tb.i1.c_target: started at 17925s covered at 17925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 17925s covered at 17925s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 17975s covered at 17975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 17975s covered at 17975s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 17975s succeeded at 17975s
+"ss.sva", 237: tb.i1.c_target: started at 18025s covered at 18025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 18025s covered at 18025s
+"ss.sva", 237: tb.i1.c_target: started at 18075s covered at 18075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 18075s covered at 18075s
+"ss.sva", 237: tb.i1.c_target: started at 18125s covered at 18125s
+"ss.sva", 237: tb.i1.c_target: started at 18175s covered at 18175s
+"ss.sva", 237: tb.i1.c_target: started at 18225s covered at 18225s
+"ss.sva", 237: tb.i1.c_target: started at 18275s covered at 18275s
+"ss.sva", 346: tb.i1.c_m3t0w: started at 17975s covered at 18275s
+"ss.sva", 397: tb.i1.c_m3t2w_doc: started at 17975s covered at 18275s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 18125s succeeded at 18275s
+"ss.sva", 237: tb.i1.c_target: started at 18325s covered at 18325s
+"ss.sva", 237: tb.i1.c_target: started at 18375s covered at 18375s
+"ss.sva", 237: tb.i1.c_target: started at 18425s covered at 18425s
+"ss.sva", 237: tb.i1.c_target: started at 18475s covered at 18475s
+"ss.sva", 237: tb.i1.c_target: started at 18525s covered at 18525s
+"ss.sva", 237: tb.i1.c_target: started at 18575s covered at 18575s
+"glue.v", 130: tb.u5.a_rsel3_write: started at 17975s succeeded at 18575s
+Bus is free at 18625
+
+"ss.sva", 237: tb.i1.c_target: started at 18625s covered at 18625s
+Valid request from a master available at 18675: 110
+
+"ss.sva", 237: tb.i1.c_target: started at 18675s covered at 18675s
+"ss.sva", 237: tb.i1.c_target: started at 18725s covered at 18725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 18725s covered at 18725s
+"ss.sva", 237: tb.i1.c_target: started at 18775s covered at 18775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 18775s covered at 18775s
+"ss.sva", 237: tb.i1.c_target: started at 18825s covered at 18825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 18825s covered at 18825s
+Bus Occupied at 18875
+
+"ss.sva", 237: tb.i1.c_target: started at 18875s covered at 18875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 18875s covered at 18875s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 18925s covered at 18925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 18925s covered at 18925s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 18925s succeeded at 18925s
+"ss.sva", 237: tb.i1.c_target: started at 18975s covered at 18975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 18975s covered at 18975s
+"ss.sva", 237: tb.i1.c_target: started at 19025s covered at 19025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 19025s covered at 19025s
+"ss.sva", 237: tb.i1.c_target: started at 19075s covered at 19075s
+"ss.sva", 237: tb.i1.c_target: started at 19125s covered at 19125s
+"ss.sva", 237: tb.i1.c_target: started at 19175s covered at 19175s
+"ss.sva", 237: tb.i1.c_target: started at 19225s covered at 19225s
+"target_bfm.v", 113: tb.u7.a_read: started at 19225s failed at 19225s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 19275s covered at 19275s
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 19075s failed at 19275s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 134: tb.u5.a_read0: started at 19075s failed at 19275s
+	Offending '(dataout2 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 19325s covered at 19325s
+"ss.sva", 237: tb.i1.c_target: started at 19375s covered at 19375s
+"ss.sva", 237: tb.i1.c_target: started at 19425s covered at 19425s
+"ss.sva", 237: tb.i1.c_target: started at 19475s covered at 19475s
+"ss.sva", 237: tb.i1.c_target: started at 19525s covered at 19525s
+Bus is free at 19575
+
+"ss.sva", 237: tb.i1.c_target: started at 19575s covered at 19575s
+Valid request from a master available at 19625: 111
+
+"ss.sva", 237: tb.i1.c_target: started at 19625s covered at 19625s
+"ss.sva", 237: tb.i1.c_target: started at 19675s covered at 19675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 19675s covered at 19675s
+"ss.sva", 237: tb.i1.c_target: started at 19725s covered at 19725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 19725s covered at 19725s
+"ss.sva", 283: tb.i1.c_req123: started at 19725s covered at 19725s
+"ss.sva", 237: tb.i1.c_target: started at 19775s covered at 19775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 19775s covered at 19775s
+Bus Occupied at 19825
+
+"ss.sva", 237: tb.i1.c_target: started at 19825s covered at 19825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 19825s covered at 19825s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 19875s covered at 19875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 19875s covered at 19875s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 19875s succeeded at 19875s
+"ss.sva", 237: tb.i1.c_target: started at 19925s covered at 19925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 19925s covered at 19925s
+"ss.sva", 237: tb.i1.c_target: started at 19975s covered at 19975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 19975s covered at 19975s
+"ss.sva", 237: tb.i1.c_target: started at 20025s covered at 20025s
+"master_bfm.v", 144: tb.u2.a_master_start2: started at 19725s succeeded at 20025s
+"master_bfm.v", 159: tb.u2.c_master_start2: started at 19725s covered at 20025s
+"ss.sva", 237: tb.i1.c_target: started at 20075s covered at 20075s
+"ss.sva", 237: tb.i1.c_target: started at 20125s covered at 20125s
+"ss.sva", 237: tb.i1.c_target: started at 20175s covered at 20175s
+"ss.sva", 320: tb.i1.c_m2t0r: started at 19875s covered at 20175s
+"ss.sva", 392: tb.i1.c_m2t2r_doc: started at 19875s covered at 20175s
+"target_bfm.v", 113: tb.u7.a_read: started at 20175s failed at 20175s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 20225s covered at 20225s
+"master_bfm.v", 156: tb.u2.a_master_datao2: started at 20025s failed at 20225s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 134: tb.u5.a_read0: started at 20025s failed at 20225s
+	Offending '(dataout2 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 20275s covered at 20275s
+"ss.sva", 237: tb.i1.c_target: started at 20325s covered at 20325s
+"ss.sva", 237: tb.i1.c_target: started at 20375s covered at 20375s
+"ss.sva", 237: tb.i1.c_target: started at 20425s covered at 20425s
+"ss.sva", 237: tb.i1.c_target: started at 20475s covered at 20475s
+Bus is free at 20525
+
+"ss.sva", 237: tb.i1.c_target: started at 20525s covered at 20525s
+No valid requests from any master at 20575
+
+Valid request from a master available at 20575: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 20575s covered at 20575s
+"ss.sva", 237: tb.i1.c_target: started at 20625s covered at 20625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 20625s covered at 20625s
+"ss.sva", 237: tb.i1.c_target: started at 20675s covered at 20675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 20675s covered at 20675s
+"ss.sva", 237: tb.i1.c_target: started at 20725s covered at 20725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 20725s covered at 20725s
+"ss.sva", 237: tb.i1.c_target: started at 20775s covered at 20775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 20775s covered at 20775s
+"ss.sva", 237: tb.i1.c_target: started at 20825s covered at 20825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 20825s covered at 20825s
+Bus Occupied at 20875
+
+"ss.sva", 237: tb.i1.c_target: started at 20875s covered at 20875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 20875s covered at 20875s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 20925s covered at 20925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 20925s covered at 20925s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 20925s succeeded at 20925s
+"ss.sva", 237: tb.i1.c_target: started at 20975s covered at 20975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 20975s covered at 20975s
+"ss.sva", 237: tb.i1.c_target: started at 21025s covered at 21025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 21025s covered at 21025s
+"ss.sva", 237: tb.i1.c_target: started at 21075s covered at 21075s
+"ss.sva", 237: tb.i1.c_target: started at 21125s covered at 21125s
+"ss.sva", 237: tb.i1.c_target: started at 21175s covered at 21175s
+"ss.sva", 237: tb.i1.c_target: started at 21225s covered at 21225s
+"ss.sva", 341: tb.i1.c_m3t0r: started at 20925s covered at 21225s
+"ss.sva", 398: tb.i1.c_m3t2r_doc: started at 20925s covered at 21225s
+"target_bfm.v", 113: tb.u7.a_read: started at 21225s failed at 21225s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 21275s covered at 21275s
+"master_bfm.v", 156: tb.u3.a_master_datao2: started at 21075s failed at 21275s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 134: tb.u5.a_read0: started at 21075s failed at 21275s
+	Offending '(dataout2 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 21325s covered at 21325s
+"ss.sva", 237: tb.i1.c_target: started at 21375s covered at 21375s
+"ss.sva", 237: tb.i1.c_target: started at 21425s covered at 21425s
+"ss.sva", 237: tb.i1.c_target: started at 21475s covered at 21475s
+"ss.sva", 237: tb.i1.c_target: started at 21525s covered at 21525s
+Bus is free at 21575
+
+"ss.sva", 237: tb.i1.c_target: started at 21575s covered at 21575s
+Valid request from a master available at 21625: 100
+
+"ss.sva", 237: tb.i1.c_target: started at 21625s covered at 21625s
+"ss.sva", 237: tb.i1.c_target: started at 21675s covered at 21675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 21675s covered at 21675s
+"ss.sva", 237: tb.i1.c_target: started at 21725s covered at 21725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 21725s covered at 21725s
+"ss.sva", 253: tb.i1.c_req1: started at 21725s covered at 21725s
+"ss.sva", 237: tb.i1.c_target: started at 21775s covered at 21775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 21775s covered at 21775s
+Bus Occupied at 21825
+
+"ss.sva", 237: tb.i1.c_target: started at 21825s covered at 21825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 21825s covered at 21825s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 21875s covered at 21875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 21875s covered at 21875s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 21875s succeeded at 21875s
+"ss.sva", 237: tb.i1.c_target: started at 21925s covered at 21925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 21925s covered at 21925s
+"ss.sva", 237: tb.i1.c_target: started at 21975s covered at 21975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 21975s covered at 21975s
+"ss.sva", 237: tb.i1.c_target: started at 22025s covered at 22025s
+"master_bfm.v", 142: tb.u1.a_master_start1: started at 21725s succeeded at 22025s
+"master_bfm.v", 158: tb.u1.c_master_start1: started at 21725s covered at 22025s
+"ss.sva", 237: tb.i1.c_target: started at 22075s covered at 22075s
+"ss.sva", 237: tb.i1.c_target: started at 22125s covered at 22125s
+"ss.sva", 237: tb.i1.c_target: started at 22175s covered at 22175s
+"ss.sva", 289: tb.i1.c_m1t1r: started at 21875s covered at 22175s
+"ss.sva", 383: tb.i1.c_m1t1r_doc: started at 21875s covered at 22175s
+"target_bfm.v", 113: tb.u6.a_read: started at 22175s failed at 22175s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 22225s covered at 22225s
+"master_bfm.v", 154: tb.u1.a_master_datao1: started at 22025s failed at 22225s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 132: tb.u5.a_read1: started at 22025s failed at 22225s
+	Offending '(dataout1 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 22275s covered at 22275s
+"ss.sva", 237: tb.i1.c_target: started at 22325s covered at 22325s
+"ss.sva", 237: tb.i1.c_target: started at 22375s covered at 22375s
+"ss.sva", 237: tb.i1.c_target: started at 22425s covered at 22425s
+"ss.sva", 237: tb.i1.c_target: started at 22475s covered at 22475s
+Bus is free at 22525
+
+"ss.sva", 237: tb.i1.c_target: started at 22525s covered at 22525s
+Valid request from a master available at 22575: 110
+
+"ss.sva", 237: tb.i1.c_target: started at 22575s covered at 22575s
+"ss.sva", 237: tb.i1.c_target: started at 22625s covered at 22625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 22625s covered at 22625s
+"ss.sva", 237: tb.i1.c_target: started at 22675s covered at 22675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 22675s covered at 22675s
+"ss.sva", 237: tb.i1.c_target: started at 22725s covered at 22725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 22725s covered at 22725s
+"ss.sva", 237: tb.i1.c_target: started at 22775s covered at 22775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 22775s covered at 22775s
+Bus Occupied at 22825
+
+"ss.sva", 237: tb.i1.c_target: started at 22825s covered at 22825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 22825s covered at 22825s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 22875s covered at 22875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 22875s covered at 22875s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 22875s succeeded at 22875s
+"ss.sva", 237: tb.i1.c_target: started at 22925s covered at 22925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 22925s covered at 22925s
+"ss.sva", 237: tb.i1.c_target: started at 22975s covered at 22975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 22975s covered at 22975s
+"ss.sva", 237: tb.i1.c_target: started at 23025s covered at 23025s
+"ss.sva", 237: tb.i1.c_target: started at 23075s covered at 23075s
+"ss.sva", 237: tb.i1.c_target: started at 23125s covered at 23125s
+"ss.sva", 237: tb.i1.c_target: started at 23175s covered at 23175s
+"ss.sva", 310: tb.i1.c_m2t1r: started at 22875s covered at 23175s
+"ss.sva", 389: tb.i1.c_m2t1r_doc: started at 22875s covered at 23175s
+"target_bfm.v", 113: tb.u6.a_read: started at 23175s failed at 23175s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 23225s covered at 23225s
+"master_bfm.v", 154: tb.u2.a_master_datao1: started at 23025s failed at 23225s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 132: tb.u5.a_read1: started at 23025s failed at 23225s
+	Offending '(dataout1 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 23275s covered at 23275s
+"ss.sva", 237: tb.i1.c_target: started at 23325s covered at 23325s
+"ss.sva", 237: tb.i1.c_target: started at 23375s covered at 23375s
+"ss.sva", 237: tb.i1.c_target: started at 23425s covered at 23425s
+"ss.sva", 237: tb.i1.c_target: started at 23475s covered at 23475s
+Bus is free at 23525
+
+"ss.sva", 237: tb.i1.c_target: started at 23525s covered at 23525s
+No valid requests from any master at 23575
+
+Valid request from a master available at 23575: 011
+
+"ss.sva", 237: tb.i1.c_target: started at 23575s covered at 23575s
+"ss.sva", 237: tb.i1.c_target: started at 23625s covered at 23625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 23625s covered at 23625s
+"ss.sva", 237: tb.i1.c_target: started at 23675s covered at 23675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 23675s covered at 23675s
+"ss.sva", 273: tb.i1.c_req23: started at 23675s covered at 23675s
+"ss.sva", 237: tb.i1.c_target: started at 23725s covered at 23725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 23725s covered at 23725s
+"ss.sva", 237: tb.i1.c_target: started at 23775s covered at 23775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 23775s covered at 23775s
+Bus Occupied at 23825
+
+"ss.sva", 237: tb.i1.c_target: started at 23825s covered at 23825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 23825s covered at 23825s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 23875s covered at 23875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 23875s covered at 23875s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 23875s succeeded at 23875s
+"ss.sva", 237: tb.i1.c_target: started at 23925s covered at 23925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 23925s covered at 23925s
+"ss.sva", 237: tb.i1.c_target: started at 23975s covered at 23975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 23975s covered at 23975s
+"ss.sva", 237: tb.i1.c_target: started at 24025s covered at 24025s
+"ss.sva", 237: tb.i1.c_target: started at 24075s covered at 24075s
+"ss.sva", 237: tb.i1.c_target: started at 24125s covered at 24125s
+"ss.sva", 237: tb.i1.c_target: started at 24175s covered at 24175s
+"ss.sva", 237: tb.i1.c_target: started at 24225s covered at 24225s
+"ss.sva", 237: tb.i1.c_target: started at 24275s covered at 24275s
+"ss.sva", 237: tb.i1.c_target: started at 24325s covered at 24325s
+"ss.sva", 237: tb.i1.c_target: started at 24375s covered at 24375s
+"ss.sva", 237: tb.i1.c_target: started at 24425s covered at 24425s
+"ss.sva", 237: tb.i1.c_target: started at 24475s covered at 24475s
+Bus is free at 24525
+
+"ss.sva", 237: tb.i1.c_target: started at 24525s covered at 24525s
+"glue.v", 134: tb.u5.a_read0: started at 24025s succeeded at 24525s
+Valid request from a master available at 24575: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 24575s covered at 24575s
+"master_bfm.v", 156: tb.u3.a_master_datao2: started at 24025s succeeded at 24575s
+"master_bfm.v", 165: tb.u3.c_master_datao2: started at 24025s covered at 24575s
+"ss.sva", 237: tb.i1.c_target: started at 24625s covered at 24625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 24625s covered at 24625s
+"ss.sva", 237: tb.i1.c_target: started at 24675s covered at 24675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 24675s covered at 24675s
+"ss.sva", 237: tb.i1.c_target: started at 24725s covered at 24725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 24725s covered at 24725s
+"ss.sva", 237: tb.i1.c_target: started at 24775s covered at 24775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 24775s covered at 24775s
+Bus Occupied at 24825
+
+"ss.sva", 237: tb.i1.c_target: started at 24825s covered at 24825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 24825s covered at 24825s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 24875s covered at 24875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 24875s covered at 24875s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 24875s succeeded at 24875s
+"ss.sva", 237: tb.i1.c_target: started at 24925s covered at 24925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 24925s covered at 24925s
+"ss.sva", 237: tb.i1.c_target: started at 24975s covered at 24975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 24975s covered at 24975s
+"ss.sva", 237: tb.i1.c_target: started at 25025s covered at 25025s
+"ss.sva", 237: tb.i1.c_target: started at 25075s covered at 25075s
+"ss.sva", 237: tb.i1.c_target: started at 25125s covered at 25125s
+"ss.sva", 237: tb.i1.c_target: started at 25175s covered at 25175s
+"ss.sva", 294: tb.i1.c_m1t1w: started at 24875s covered at 25175s
+"ss.sva", 382: tb.i1.c_m1t1w_doc: started at 24875s covered at 25175s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 25025s succeeded at 25175s
+"ss.sva", 237: tb.i1.c_target: started at 25225s covered at 25225s
+"ss.sva", 237: tb.i1.c_target: started at 25275s covered at 25275s
+"ss.sva", 237: tb.i1.c_target: started at 25325s covered at 25325s
+"ss.sva", 237: tb.i1.c_target: started at 25375s covered at 25375s
+"ss.sva", 237: tb.i1.c_target: started at 25425s covered at 25425s
+"ss.sva", 237: tb.i1.c_target: started at 25475s covered at 25475s
+Bus is free at 25525
+
+"ss.sva", 237: tb.i1.c_target: started at 25525s covered at 25525s
+Valid request from a master available at 25575: 110
+
+"ss.sva", 237: tb.i1.c_target: started at 25575s covered at 25575s
+"ss.sva", 237: tb.i1.c_target: started at 25625s covered at 25625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 25625s covered at 25625s
+"ss.sva", 237: tb.i1.c_target: started at 25675s covered at 25675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 25675s covered at 25675s
+"ss.sva", 237: tb.i1.c_target: started at 25725s covered at 25725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 25725s covered at 25725s
+"ss.sva", 237: tb.i1.c_target: started at 25775s covered at 25775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 25775s covered at 25775s
+"ss.sva", 237: tb.i1.c_target: started at 25825s covered at 25825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 25825s covered at 25825s
+Bus Occupied at 25875
+
+"ss.sva", 237: tb.i1.c_target: started at 25875s covered at 25875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 25875s covered at 25875s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 25925s covered at 25925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 25925s covered at 25925s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 25925s succeeded at 25925s
+"ss.sva", 237: tb.i1.c_target: started at 25975s covered at 25975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 25975s covered at 25975s
+"ss.sva", 237: tb.i1.c_target: started at 26025s covered at 26025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 26025s covered at 26025s
+"ss.sva", 237: tb.i1.c_target: started at 26075s covered at 26075s
+"ss.sva", 237: tb.i1.c_target: started at 26125s covered at 26125s
+"ss.sva", 237: tb.i1.c_target: started at 26175s covered at 26175s
+"ss.sva", 237: tb.i1.c_target: started at 26225s covered at 26225s
+"ss.sva", 315: tb.i1.c_m2t1w: started at 25925s covered at 26225s
+"ss.sva", 388: tb.i1.c_m2t1w_doc: started at 25925s covered at 26225s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 26075s succeeded at 26225s
+"ss.sva", 237: tb.i1.c_target: started at 26275s covered at 26275s
+"ss.sva", 237: tb.i1.c_target: started at 26325s covered at 26325s
+"ss.sva", 237: tb.i1.c_target: started at 26375s covered at 26375s
+"ss.sva", 237: tb.i1.c_target: started at 26425s covered at 26425s
+"ss.sva", 237: tb.i1.c_target: started at 26475s covered at 26475s
+"ss.sva", 237: tb.i1.c_target: started at 26525s covered at 26525s
+Bus is free at 26575
+
+"ss.sva", 237: tb.i1.c_target: started at 26575s covered at 26575s
+Valid request from a master available at 26625: 001
+
+"ss.sva", 237: tb.i1.c_target: started at 26625s covered at 26625s
+"ss.sva", 237: tb.i1.c_target: started at 26675s covered at 26675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 26675s covered at 26675s
+"ss.sva", 237: tb.i1.c_target: started at 26725s covered at 26725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 26725s covered at 26725s
+"ss.sva", 237: tb.i1.c_target: started at 26775s covered at 26775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 26775s covered at 26775s
+Bus Occupied at 26825
+
+"ss.sva", 237: tb.i1.c_target: started at 26825s covered at 26825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 26825s covered at 26825s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 26875s covered at 26875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 26875s covered at 26875s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 26875s succeeded at 26875s
+"ss.sva", 237: tb.i1.c_target: started at 26925s covered at 26925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 26925s covered at 26925s
+"ss.sva", 237: tb.i1.c_target: started at 26975s covered at 26975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 26975s covered at 26975s
+"ss.sva", 237: tb.i1.c_target: started at 27025s covered at 27025s
+"ss.sva", 237: tb.i1.c_target: started at 27075s covered at 27075s
+"ss.sva", 237: tb.i1.c_target: started at 27125s covered at 27125s
+"ss.sva", 237: tb.i1.c_target: started at 27175s covered at 27175s
+"target_bfm.v", 113: tb.u6.a_read: started at 27175s failed at 27175s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 27225s covered at 27225s
+"master_bfm.v", 154: tb.u3.a_master_datao1: started at 27025s failed at 27225s
+	Offending '($isunknown(data_o) == 0)'
+"glue.v", 132: tb.u5.a_read1: started at 27025s failed at 27225s
+	Offending '(dataout1 == datao)'
+"ss.sva", 237: tb.i1.c_target: started at 27275s covered at 27275s
+"ss.sva", 237: tb.i1.c_target: started at 27325s covered at 27325s
+"ss.sva", 237: tb.i1.c_target: started at 27375s covered at 27375s
+"ss.sva", 237: tb.i1.c_target: started at 27425s covered at 27425s
+"ss.sva", 237: tb.i1.c_target: started at 27475s covered at 27475s
+Bus is free at 27525
+
+"ss.sva", 237: tb.i1.c_target: started at 27525s covered at 27525s
+Valid request from a master available at 27575: 011
+
+"ss.sva", 237: tb.i1.c_target: started at 27575s covered at 27575s
+"ss.sva", 237: tb.i1.c_target: started at 27625s covered at 27625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 27625s covered at 27625s
+"ss.sva", 237: tb.i1.c_target: started at 27675s covered at 27675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 27675s covered at 27675s
+"ss.sva", 237: tb.i1.c_target: started at 27725s covered at 27725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 27725s covered at 27725s
+"ss.sva", 237: tb.i1.c_target: started at 27775s covered at 27775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 27775s covered at 27775s
+"ss.sva", 237: tb.i1.c_target: started at 27825s covered at 27825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 27825s covered at 27825s
+Bus Occupied at 27875
+
+"ss.sva", 237: tb.i1.c_target: started at 27875s covered at 27875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 27875s covered at 27875s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 27925s covered at 27925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 27925s covered at 27925s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 27925s succeeded at 27925s
+"ss.sva", 237: tb.i1.c_target: started at 27975s covered at 27975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 27975s covered at 27975s
+"ss.sva", 237: tb.i1.c_target: started at 28025s covered at 28025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 28025s covered at 28025s
+"ss.sva", 237: tb.i1.c_target: started at 28075s covered at 28075s
+"master_bfm.v", 144: tb.u2.a_master_start2: started at 27675s succeeded at 28075s
+"master_bfm.v", 159: tb.u2.c_master_start2: started at 27675s covered at 28075s
+"ss.sva", 237: tb.i1.c_target: started at 28125s covered at 28125s
+"ss.sva", 237: tb.i1.c_target: started at 28175s covered at 28175s
+"ss.sva", 237: tb.i1.c_target: started at 28225s covered at 28225s
+"ss.sva", 320: tb.i1.c_m2t0r: started at 27925s covered at 28225s
+"ss.sva", 392: tb.i1.c_m2t2r_doc: started at 27925s covered at 28225s
+"target_bfm.v", 113: tb.u7.a_read: started at 28225s failed at 28225s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 28275s covered at 28275s
+"ss.sva", 237: tb.i1.c_target: started at 28325s covered at 28325s
+"ss.sva", 237: tb.i1.c_target: started at 28375s covered at 28375s
+"ss.sva", 237: tb.i1.c_target: started at 28425s covered at 28425s
+"ss.sva", 237: tb.i1.c_target: started at 28475s covered at 28475s
+"ss.sva", 237: tb.i1.c_target: started at 28525s covered at 28525s
+Bus is free at 28575
+
+"ss.sva", 237: tb.i1.c_target: started at 28575s covered at 28575s
+Valid request from a master available at 28625: 110
+
+"ss.sva", 237: tb.i1.c_target: started at 28625s covered at 28625s
+"master_bfm.v", 156: tb.u2.a_master_datao2: started at 28075s succeeded at 28625s
+"master_bfm.v", 165: tb.u2.c_master_datao2: started at 28075s covered at 28625s
+"ss.sva", 237: tb.i1.c_target: started at 28675s covered at 28675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 28675s covered at 28675s
+"ss.sva", 237: tb.i1.c_target: started at 28725s covered at 28725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 28725s covered at 28725s
+Bus Occupied at 28775
+
+"ss.sva", 237: tb.i1.c_target: started at 28775s covered at 28775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 28775s covered at 28775s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 28825s covered at 28825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 28825s covered at 28825s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 28825s succeeded at 28825s
+"ss.sva", 237: tb.i1.c_target: started at 28875s covered at 28875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 28875s covered at 28875s
+"ss.sva", 237: tb.i1.c_target: started at 28925s covered at 28925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 28925s covered at 28925s
+"ss.sva", 237: tb.i1.c_target: started at 28975s covered at 28975s
+"ss.sva", 237: tb.i1.c_target: started at 29025s covered at 29025s
+"ss.sva", 237: tb.i1.c_target: started at 29075s covered at 29075s
+"ss.sva", 237: tb.i1.c_target: started at 29125s covered at 29125s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 28975s succeeded at 29125s
+"ss.sva", 237: tb.i1.c_target: started at 29175s covered at 29175s
+"ss.sva", 237: tb.i1.c_target: started at 29225s covered at 29225s
+"ss.sva", 237: tb.i1.c_target: started at 29275s covered at 29275s
+"ss.sva", 237: tb.i1.c_target: started at 29325s covered at 29325s
+"ss.sva", 237: tb.i1.c_target: started at 29375s covered at 29375s
+"ss.sva", 237: tb.i1.c_target: started at 29425s covered at 29425s
+Bus is free at 29475
+
+"ss.sva", 237: tb.i1.c_target: started at 29475s covered at 29475s
+Valid request from a master available at 29525: 001
+
+"ss.sva", 237: tb.i1.c_target: started at 29525s covered at 29525s
+"ss.sva", 237: tb.i1.c_target: started at 29575s covered at 29575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 29575s covered at 29575s
+"ss.sva", 237: tb.i1.c_target: started at 29625s covered at 29625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 29625s covered at 29625s
+Bus Occupied at 29675
+
+"ss.sva", 237: tb.i1.c_target: started at 29675s covered at 29675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 29675s covered at 29675s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 29725s covered at 29725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 29725s covered at 29725s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 29725s succeeded at 29725s
+"ss.sva", 237: tb.i1.c_target: started at 29775s covered at 29775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 29775s covered at 29775s
+"ss.sva", 237: tb.i1.c_target: started at 29825s covered at 29825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 29825s covered at 29825s
+"ss.sva", 237: tb.i1.c_target: started at 29875s covered at 29875s
+"ss.sva", 237: tb.i1.c_target: started at 29925s covered at 29925s
+"ss.sva", 237: tb.i1.c_target: started at 29975s covered at 29975s
+"ss.sva", 237: tb.i1.c_target: started at 30025s covered at 30025s
+"ss.sva", 346: tb.i1.c_m3t0w: started at 29725s covered at 30025s
+"ss.sva", 397: tb.i1.c_m3t2w_doc: started at 29725s covered at 30025s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 29875s succeeded at 30025s
+"ss.sva", 237: tb.i1.c_target: started at 30075s covered at 30075s
+"ss.sva", 237: tb.i1.c_target: started at 30125s covered at 30125s
+"ss.sva", 237: tb.i1.c_target: started at 30175s covered at 30175s
+"ss.sva", 237: tb.i1.c_target: started at 30225s covered at 30225s
+"ss.sva", 237: tb.i1.c_target: started at 30275s covered at 30275s
+"ss.sva", 237: tb.i1.c_target: started at 30325s covered at 30325s
+Bus is free at 30375
+
+"ss.sva", 237: tb.i1.c_target: started at 30375s covered at 30375s
+Valid request from a master available at 30425: 111
+
+"ss.sva", 237: tb.i1.c_target: started at 30425s covered at 30425s
+"ss.sva", 237: tb.i1.c_target: started at 30475s covered at 30475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 30475s covered at 30475s
+"ss.sva", 237: tb.i1.c_target: started at 30525s covered at 30525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 30525s covered at 30525s
+"ss.sva", 283: tb.i1.c_req123: started at 30525s covered at 30525s
+"ss.sva", 237: tb.i1.c_target: started at 30575s covered at 30575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 30575s covered at 30575s
+"ss.sva", 237: tb.i1.c_target: started at 30625s covered at 30625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 30625s covered at 30625s
+Bus Occupied at 30675
+
+"ss.sva", 237: tb.i1.c_target: started at 30675s covered at 30675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 30675s covered at 30675s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 30725s covered at 30725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 30725s covered at 30725s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 30725s succeeded at 30725s
+"ss.sva", 237: tb.i1.c_target: started at 30775s covered at 30775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 30775s covered at 30775s
+"ss.sva", 237: tb.i1.c_target: started at 30825s covered at 30825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 30825s covered at 30825s
+"ss.sva", 237: tb.i1.c_target: started at 30875s covered at 30875s
+"ss.sva", 237: tb.i1.c_target: started at 30925s covered at 30925s
+"ss.sva", 237: tb.i1.c_target: started at 30975s covered at 30975s
+"ss.sva", 237: tb.i1.c_target: started at 31025s covered at 31025s
+"target_bfm.v", 113: tb.u7.a_read: started at 31025s failed at 31025s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 31075s covered at 31075s
+"ss.sva", 237: tb.i1.c_target: started at 31125s covered at 31125s
+"ss.sva", 237: tb.i1.c_target: started at 31175s covered at 31175s
+"ss.sva", 237: tb.i1.c_target: started at 31225s covered at 31225s
+"ss.sva", 237: tb.i1.c_target: started at 31275s covered at 31275s
+"ss.sva", 237: tb.i1.c_target: started at 31325s covered at 31325s
+Bus is free at 31375
+
+"ss.sva", 237: tb.i1.c_target: started at 31375s covered at 31375s
+Valid request from a master available at 31425: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 31425s covered at 31425s
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 30875s succeeded at 31425s
+"master_bfm.v", 165: tb.u1.c_master_datao2: started at 30875s covered at 31425s
+"ss.sva", 237: tb.i1.c_target: started at 31475s covered at 31475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 31475s covered at 31475s
+"ss.sva", 237: tb.i1.c_target: started at 31525s covered at 31525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 31525s covered at 31525s
+"ss.sva", 237: tb.i1.c_target: started at 31575s covered at 31575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 31575s covered at 31575s
+Bus Occupied at 31625
+
+"ss.sva", 237: tb.i1.c_target: started at 31625s covered at 31625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 31625s covered at 31625s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 31675s covered at 31675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 31675s covered at 31675s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 31675s succeeded at 31675s
+"ss.sva", 237: tb.i1.c_target: started at 31725s covered at 31725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 31725s covered at 31725s
+"ss.sva", 237: tb.i1.c_target: started at 31775s covered at 31775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 31775s covered at 31775s
+"ss.sva", 237: tb.i1.c_target: started at 31825s covered at 31825s
+"ss.sva", 237: tb.i1.c_target: started at 31875s covered at 31875s
+"ss.sva", 237: tb.i1.c_target: started at 31925s covered at 31925s
+"ss.sva", 237: tb.i1.c_target: started at 31975s covered at 31975s
+"ss.sva", 320: tb.i1.c_m2t0r: started at 31675s covered at 31975s
+"ss.sva", 392: tb.i1.c_m2t2r_doc: started at 31675s covered at 31975s
+"target_bfm.v", 113: tb.u7.a_read: started at 31975s failed at 31975s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 32025s covered at 32025s
+"ss.sva", 237: tb.i1.c_target: started at 32075s covered at 32075s
+"ss.sva", 237: tb.i1.c_target: started at 32125s covered at 32125s
+"ss.sva", 237: tb.i1.c_target: started at 32175s covered at 32175s
+"ss.sva", 237: tb.i1.c_target: started at 32225s covered at 32225s
+"ss.sva", 237: tb.i1.c_target: started at 32275s covered at 32275s
+Bus is free at 32325
+
+"ss.sva", 237: tb.i1.c_target: started at 32325s covered at 32325s
+Valid request from a master available at 32375: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 32375s covered at 32375s
+"master_bfm.v", 156: tb.u2.a_master_datao2: started at 31825s succeeded at 32375s
+"master_bfm.v", 165: tb.u2.c_master_datao2: started at 31825s covered at 32375s
+"ss.sva", 237: tb.i1.c_target: started at 32425s covered at 32425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 32425s covered at 32425s
+"ss.sva", 237: tb.i1.c_target: started at 32475s covered at 32475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 32475s covered at 32475s
+"ss.sva", 237: tb.i1.c_target: started at 32525s covered at 32525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 32525s covered at 32525s
+Bus Occupied at 32575
+
+"ss.sva", 237: tb.i1.c_target: started at 32575s covered at 32575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 32575s covered at 32575s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 32625s covered at 32625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 32625s covered at 32625s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 32625s succeeded at 32625s
+"ss.sva", 237: tb.i1.c_target: started at 32675s covered at 32675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 32675s covered at 32675s
+"ss.sva", 237: tb.i1.c_target: started at 32725s covered at 32725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 32725s covered at 32725s
+"ss.sva", 237: tb.i1.c_target: started at 32775s covered at 32775s
+"ss.sva", 237: tb.i1.c_target: started at 32825s covered at 32825s
+"ss.sva", 237: tb.i1.c_target: started at 32875s covered at 32875s
+"ss.sva", 237: tb.i1.c_target: started at 32925s covered at 32925s
+"ss.sva", 237: tb.i1.c_target: started at 32975s covered at 32975s
+"ss.sva", 237: tb.i1.c_target: started at 33025s covered at 33025s
+"ss.sva", 237: tb.i1.c_target: started at 33075s covered at 33075s
+"ss.sva", 237: tb.i1.c_target: started at 33125s covered at 33125s
+"ss.sva", 237: tb.i1.c_target: started at 33175s covered at 33175s
+"ss.sva", 237: tb.i1.c_target: started at 33225s covered at 33225s
+Bus is free at 33275
+
+"ss.sva", 237: tb.i1.c_target: started at 33275s covered at 33275s
+Valid request from a master available at 33325: 011
+
+"ss.sva", 237: tb.i1.c_target: started at 33325s covered at 33325s
+"master_bfm.v", 154: tb.u2.a_master_datao1: started at 32775s succeeded at 33325s
+"master_bfm.v", 164: tb.u2.c_master_datao1: started at 32775s covered at 33325s
+"ss.sva", 237: tb.i1.c_target: started at 33375s covered at 33375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 33375s covered at 33375s
+"ss.sva", 237: tb.i1.c_target: started at 33425s covered at 33425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 33425s covered at 33425s
+"ss.sva", 237: tb.i1.c_target: started at 33475s covered at 33475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 33475s covered at 33475s
+"ss.sva", 237: tb.i1.c_target: started at 33525s covered at 33525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 33525s covered at 33525s
+"ss.sva", 237: tb.i1.c_target: started at 33575s covered at 33575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 33575s covered at 33575s
+Bus Occupied at 33625
+
+"ss.sva", 237: tb.i1.c_target: started at 33625s covered at 33625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 33625s covered at 33625s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 33675s covered at 33675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 33675s covered at 33675s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 33675s succeeded at 33675s
+"ss.sva", 237: tb.i1.c_target: started at 33725s covered at 33725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 33725s covered at 33725s
+"ss.sva", 237: tb.i1.c_target: started at 33775s covered at 33775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 33775s covered at 33775s
+"ss.sva", 237: tb.i1.c_target: started at 33825s covered at 33825s
+"ss.sva", 237: tb.i1.c_target: started at 33875s covered at 33875s
+"ss.sva", 237: tb.i1.c_target: started at 33925s covered at 33925s
+"ss.sva", 237: tb.i1.c_target: started at 33975s covered at 33975s
+"ss.sva", 336: tb.i1.c_m3t1w: started at 33675s covered at 33975s
+"ss.sva", 394: tb.i1.c_m3t1w_doc: started at 33675s covered at 33975s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 33825s succeeded at 33975s
+"ss.sva", 237: tb.i1.c_target: started at 34025s covered at 34025s
+"ss.sva", 237: tb.i1.c_target: started at 34075s covered at 34075s
+"ss.sva", 237: tb.i1.c_target: started at 34125s covered at 34125s
+"ss.sva", 237: tb.i1.c_target: started at 34175s covered at 34175s
+"ss.sva", 237: tb.i1.c_target: started at 34225s covered at 34225s
+"ss.sva", 237: tb.i1.c_target: started at 34275s covered at 34275s
+Bus is free at 34325
+
+"ss.sva", 237: tb.i1.c_target: started at 34325s covered at 34325s
+No valid requests from any master at 34375
+
+Valid request from a master available at 34375: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 34375s covered at 34375s
+"ss.sva", 237: tb.i1.c_target: started at 34425s covered at 34425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 34425s covered at 34425s
+"ss.sva", 237: tb.i1.c_target: started at 34475s covered at 34475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 34475s covered at 34475s
+"ss.sva", 237: tb.i1.c_target: started at 34525s covered at 34525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 34525s covered at 34525s
+"ss.sva", 237: tb.i1.c_target: started at 34575s covered at 34575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 34575s covered at 34575s
+"ss.sva", 237: tb.i1.c_target: started at 34625s covered at 34625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 34625s covered at 34625s
+Bus Occupied at 34675
+
+"ss.sva", 237: tb.i1.c_target: started at 34675s covered at 34675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 34675s covered at 34675s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 34725s covered at 34725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 34725s covered at 34725s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 34725s succeeded at 34725s
+"ss.sva", 237: tb.i1.c_target: started at 34775s covered at 34775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 34775s covered at 34775s
+"ss.sva", 237: tb.i1.c_target: started at 34825s covered at 34825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 34825s covered at 34825s
+"ss.sva", 237: tb.i1.c_target: started at 34875s covered at 34875s
+"ss.sva", 237: tb.i1.c_target: started at 34925s covered at 34925s
+"ss.sva", 237: tb.i1.c_target: started at 34975s covered at 34975s
+"ss.sva", 237: tb.i1.c_target: started at 35025s covered at 35025s
+"target_bfm.v", 113: tb.u7.a_read: started at 35025s failed at 35025s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 35075s covered at 35075s
+"ss.sva", 237: tb.i1.c_target: started at 35125s covered at 35125s
+"ss.sva", 237: tb.i1.c_target: started at 35175s covered at 35175s
+"ss.sva", 237: tb.i1.c_target: started at 35225s covered at 35225s
+"ss.sva", 237: tb.i1.c_target: started at 35275s covered at 35275s
+"ss.sva", 237: tb.i1.c_target: started at 35325s covered at 35325s
+Bus is free at 35375
+
+"ss.sva", 237: tb.i1.c_target: started at 35375s covered at 35375s
+Valid request from a master available at 35425: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 35425s covered at 35425s
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 34875s succeeded at 35425s
+"master_bfm.v", 165: tb.u1.c_master_datao2: started at 34875s covered at 35425s
+"ss.sva", 237: tb.i1.c_target: started at 35475s covered at 35475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 35475s covered at 35475s
+"ss.sva", 237: tb.i1.c_target: started at 35525s covered at 35525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 35525s covered at 35525s
+Bus Occupied at 35575
+
+"ss.sva", 237: tb.i1.c_target: started at 35575s covered at 35575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 35575s covered at 35575s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 35625s covered at 35625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 35625s covered at 35625s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 35625s succeeded at 35625s
+"ss.sva", 237: tb.i1.c_target: started at 35675s covered at 35675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 35675s covered at 35675s
+"ss.sva", 237: tb.i1.c_target: started at 35725s covered at 35725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 35725s covered at 35725s
+"ss.sva", 237: tb.i1.c_target: started at 35775s covered at 35775s
+"ss.sva", 237: tb.i1.c_target: started at 35825s covered at 35825s
+"ss.sva", 237: tb.i1.c_target: started at 35875s covered at 35875s
+"ss.sva", 237: tb.i1.c_target: started at 35925s covered at 35925s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 35775s succeeded at 35925s
+"ss.sva", 237: tb.i1.c_target: started at 35975s covered at 35975s
+"ss.sva", 237: tb.i1.c_target: started at 36025s covered at 36025s
+"ss.sva", 237: tb.i1.c_target: started at 36075s covered at 36075s
+"ss.sva", 237: tb.i1.c_target: started at 36125s covered at 36125s
+"ss.sva", 237: tb.i1.c_target: started at 36175s covered at 36175s
+"ss.sva", 237: tb.i1.c_target: started at 36225s covered at 36225s
+Bus is free at 36275
+
+"ss.sva", 237: tb.i1.c_target: started at 36275s covered at 36275s
+Valid request from a master available at 36325: 100
+
+"ss.sva", 237: tb.i1.c_target: started at 36325s covered at 36325s
+"ss.sva", 237: tb.i1.c_target: started at 36375s covered at 36375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 36375s covered at 36375s
+"ss.sva", 237: tb.i1.c_target: started at 36425s covered at 36425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 36425s covered at 36425s
+"ss.sva", 253: tb.i1.c_req1: started at 36425s covered at 36425s
+"ss.sva", 237: tb.i1.c_target: started at 36475s covered at 36475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 36475s covered at 36475s
+"ss.sva", 237: tb.i1.c_target: started at 36525s covered at 36525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 36525s covered at 36525s
+"ss.sva", 237: tb.i1.c_target: started at 36575s covered at 36575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 36575s covered at 36575s
+Bus Occupied at 36625
+
+"ss.sva", 237: tb.i1.c_target: started at 36625s covered at 36625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 36625s covered at 36625s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 36675s covered at 36675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 36675s covered at 36675s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 36675s succeeded at 36675s
+"ss.sva", 237: tb.i1.c_target: started at 36725s covered at 36725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 36725s covered at 36725s
+"ss.sva", 237: tb.i1.c_target: started at 36775s covered at 36775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 36775s covered at 36775s
+"ss.sva", 237: tb.i1.c_target: started at 36825s covered at 36825s
+"ss.sva", 237: tb.i1.c_target: started at 36875s covered at 36875s
+"ss.sva", 237: tb.i1.c_target: started at 36925s covered at 36925s
+"ss.sva", 237: tb.i1.c_target: started at 36975s covered at 36975s
+"target_bfm.v", 113: tb.u7.a_read: started at 36975s failed at 36975s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 37025s covered at 37025s
+"ss.sva", 237: tb.i1.c_target: started at 37075s covered at 37075s
+"ss.sva", 237: tb.i1.c_target: started at 37125s covered at 37125s
+"ss.sva", 237: tb.i1.c_target: started at 37175s covered at 37175s
+"ss.sva", 237: tb.i1.c_target: started at 37225s covered at 37225s
+"ss.sva", 237: tb.i1.c_target: started at 37275s covered at 37275s
+Bus is free at 37325
+
+"ss.sva", 237: tb.i1.c_target: started at 37325s covered at 37325s
+No valid requests from any master at 37375
+
+Valid request from a master available at 37375: 001
+
+"ss.sva", 237: tb.i1.c_target: started at 37375s covered at 37375s
+"ss.sva", 237: tb.i1.c_target: started at 37425s covered at 37425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 37425s covered at 37425s
+"ss.sva", 237: tb.i1.c_target: started at 37475s covered at 37475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 37475s covered at 37475s
+"ss.sva", 237: tb.i1.c_target: started at 37525s covered at 37525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 37525s covered at 37525s
+Bus Occupied at 37575
+
+"ss.sva", 237: tb.i1.c_target: started at 37575s covered at 37575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 37575s covered at 37575s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 37625s covered at 37625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 37625s covered at 37625s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 37625s succeeded at 37625s
+"ss.sva", 237: tb.i1.c_target: started at 37675s covered at 37675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 37675s covered at 37675s
+"ss.sva", 237: tb.i1.c_target: started at 37725s covered at 37725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 37725s covered at 37725s
+"ss.sva", 237: tb.i1.c_target: started at 37775s covered at 37775s
+"ss.sva", 237: tb.i1.c_target: started at 37825s covered at 37825s
+"ss.sva", 237: tb.i1.c_target: started at 37875s covered at 37875s
+"ss.sva", 237: tb.i1.c_target: started at 37925s covered at 37925s
+"ss.sva", 336: tb.i1.c_m3t1w: started at 37625s covered at 37925s
+"ss.sva", 394: tb.i1.c_m3t1w_doc: started at 37625s covered at 37925s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 37775s succeeded at 37925s
+"ss.sva", 237: tb.i1.c_target: started at 37975s covered at 37975s
+"ss.sva", 237: tb.i1.c_target: started at 38025s covered at 38025s
+"ss.sva", 237: tb.i1.c_target: started at 38075s covered at 38075s
+"ss.sva", 237: tb.i1.c_target: started at 38125s covered at 38125s
+"ss.sva", 237: tb.i1.c_target: started at 38175s covered at 38175s
+"ss.sva", 237: tb.i1.c_target: started at 38225s covered at 38225s
+Bus is free at 38275
+
+"ss.sva", 237: tb.i1.c_target: started at 38275s covered at 38275s
+Valid request from a master available at 38325: 100
+
+"ss.sva", 237: tb.i1.c_target: started at 38325s covered at 38325s
+"ss.sva", 237: tb.i1.c_target: started at 38375s covered at 38375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 38375s covered at 38375s
+"ss.sva", 237: tb.i1.c_target: started at 38425s covered at 38425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 38425s covered at 38425s
+"ss.sva", 237: tb.i1.c_target: started at 38475s covered at 38475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 38475s covered at 38475s
+"ss.sva", 237: tb.i1.c_target: started at 38525s covered at 38525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 38525s covered at 38525s
+Bus Occupied at 38575
+
+"ss.sva", 237: tb.i1.c_target: started at 38575s covered at 38575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 38575s covered at 38575s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 38625s covered at 38625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 38625s covered at 38625s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 38625s succeeded at 38625s
+"ss.sva", 237: tb.i1.c_target: started at 38675s covered at 38675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 38675s covered at 38675s
+"ss.sva", 237: tb.i1.c_target: started at 38725s covered at 38725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 38725s covered at 38725s
+"ss.sva", 237: tb.i1.c_target: started at 38775s covered at 38775s
+"ss.sva", 237: tb.i1.c_target: started at 38825s covered at 38825s
+"ss.sva", 237: tb.i1.c_target: started at 38875s covered at 38875s
+"ss.sva", 237: tb.i1.c_target: started at 38925s covered at 38925s
+"ss.sva", 304: tb.i1.c_m1t0w: started at 38625s covered at 38925s
+"ss.sva", 385: tb.i1.c_m1t2w_doc: started at 38625s covered at 38925s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 38775s succeeded at 38925s
+"ss.sva", 237: tb.i1.c_target: started at 38975s covered at 38975s
+"ss.sva", 237: tb.i1.c_target: started at 39025s covered at 39025s
+"ss.sva", 237: tb.i1.c_target: started at 39075s covered at 39075s
+"ss.sva", 237: tb.i1.c_target: started at 39125s covered at 39125s
+"ss.sva", 237: tb.i1.c_target: started at 39175s covered at 39175s
+"ss.sva", 237: tb.i1.c_target: started at 39225s covered at 39225s
+Bus is free at 39275
+
+"ss.sva", 237: tb.i1.c_target: started at 39275s covered at 39275s
+Valid request from a master available at 39325: 111
+
+"ss.sva", 237: tb.i1.c_target: started at 39325s covered at 39325s
+"ss.sva", 237: tb.i1.c_target: started at 39375s covered at 39375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 39375s covered at 39375s
+"ss.sva", 237: tb.i1.c_target: started at 39425s covered at 39425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 39425s covered at 39425s
+"ss.sva", 237: tb.i1.c_target: started at 39475s covered at 39475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 39475s covered at 39475s
+Bus Occupied at 39525
+
+"ss.sva", 237: tb.i1.c_target: started at 39525s covered at 39525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 39525s covered at 39525s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 39575s covered at 39575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 39575s covered at 39575s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 39575s succeeded at 39575s
+"ss.sva", 237: tb.i1.c_target: started at 39625s covered at 39625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 39625s covered at 39625s
+"ss.sva", 237: tb.i1.c_target: started at 39675s covered at 39675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 39675s covered at 39675s
+"ss.sva", 237: tb.i1.c_target: started at 39725s covered at 39725s
+"ss.sva", 237: tb.i1.c_target: started at 39775s covered at 39775s
+"ss.sva", 237: tb.i1.c_target: started at 39825s covered at 39825s
+"ss.sva", 237: tb.i1.c_target: started at 39875s covered at 39875s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 39725s succeeded at 39875s
+"ss.sva", 237: tb.i1.c_target: started at 39925s covered at 39925s
+"ss.sva", 237: tb.i1.c_target: started at 39975s covered at 39975s
+"ss.sva", 237: tb.i1.c_target: started at 40025s covered at 40025s
+"ss.sva", 237: tb.i1.c_target: started at 40075s covered at 40075s
+"ss.sva", 237: tb.i1.c_target: started at 40125s covered at 40125s
+"ss.sva", 237: tb.i1.c_target: started at 40175s covered at 40175s
+Bus is free at 40225
+
+"ss.sva", 237: tb.i1.c_target: started at 40225s covered at 40225s
+Valid request from a master available at 40275: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 40275s covered at 40275s
+"ss.sva", 237: tb.i1.c_target: started at 40325s covered at 40325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 40325s covered at 40325s
+"ss.sva", 237: tb.i1.c_target: started at 40375s covered at 40375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 40375s covered at 40375s
+"ss.sva", 237: tb.i1.c_target: started at 40425s covered at 40425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 40425s covered at 40425s
+"ss.sva", 237: tb.i1.c_target: started at 40475s covered at 40475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 40475s covered at 40475s
+Bus Occupied at 40525
+
+"ss.sva", 237: tb.i1.c_target: started at 40525s covered at 40525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 40525s covered at 40525s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 40575s covered at 40575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 40575s covered at 40575s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 40575s succeeded at 40575s
+"ss.sva", 237: tb.i1.c_target: started at 40625s covered at 40625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 40625s covered at 40625s
+"ss.sva", 237: tb.i1.c_target: started at 40675s covered at 40675s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 40675s covered at 40675s
+"ss.sva", 237: tb.i1.c_target: started at 40725s covered at 40725s
+"ss.sva", 237: tb.i1.c_target: started at 40775s covered at 40775s
+"ss.sva", 237: tb.i1.c_target: started at 40825s covered at 40825s
+"ss.sva", 237: tb.i1.c_target: started at 40875s covered at 40875s
+"ss.sva", 325: tb.i1.c_m2t0w: started at 40575s covered at 40875s
+"ss.sva", 391: tb.i1.c_m2t2w_doc: started at 40575s covered at 40875s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 40725s succeeded at 40875s
+"ss.sva", 237: tb.i1.c_target: started at 40925s covered at 40925s
+"ss.sva", 237: tb.i1.c_target: started at 40975s covered at 40975s
+"ss.sva", 237: tb.i1.c_target: started at 41025s covered at 41025s
+"ss.sva", 237: tb.i1.c_target: started at 41075s covered at 41075s
+"ss.sva", 237: tb.i1.c_target: started at 41125s covered at 41125s
+"ss.sva", 237: tb.i1.c_target: started at 41175s covered at 41175s
+Bus is free at 41225
+
+"ss.sva", 237: tb.i1.c_target: started at 41225s covered at 41225s
+Valid request from a master available at 41275: 100
+
+"ss.sva", 237: tb.i1.c_target: started at 41275s covered at 41275s
+"ss.sva", 237: tb.i1.c_target: started at 41325s covered at 41325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 41325s covered at 41325s
+"ss.sva", 237: tb.i1.c_target: started at 41375s covered at 41375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 41375s covered at 41375s
+"ss.sva", 237: tb.i1.c_target: started at 41425s covered at 41425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 41425s covered at 41425s
+Bus Occupied at 41475
+
+"ss.sva", 237: tb.i1.c_target: started at 41475s covered at 41475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 41475s covered at 41475s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 41525s covered at 41525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 41525s covered at 41525s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 41525s succeeded at 41525s
+"ss.sva", 237: tb.i1.c_target: started at 41575s covered at 41575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 41575s covered at 41575s
+"ss.sva", 237: tb.i1.c_target: started at 41625s covered at 41625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 41625s covered at 41625s
+"ss.sva", 237: tb.i1.c_target: started at 41675s covered at 41675s
+"ss.sva", 237: tb.i1.c_target: started at 41725s covered at 41725s
+"ss.sva", 237: tb.i1.c_target: started at 41775s covered at 41775s
+"ss.sva", 237: tb.i1.c_target: started at 41825s covered at 41825s
+"target_bfm.v", 113: tb.u7.a_read: started at 41825s failed at 41825s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 41875s covered at 41875s
+"ss.sva", 237: tb.i1.c_target: started at 41925s covered at 41925s
+"ss.sva", 237: tb.i1.c_target: started at 41975s covered at 41975s
+"ss.sva", 237: tb.i1.c_target: started at 42025s covered at 42025s
+"ss.sva", 237: tb.i1.c_target: started at 42075s covered at 42075s
+"ss.sva", 237: tb.i1.c_target: started at 42125s covered at 42125s
+Bus is free at 42175
+
+"ss.sva", 237: tb.i1.c_target: started at 42175s covered at 42175s
+Valid request from a master available at 42225: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 42225s covered at 42225s
+"ss.sva", 237: tb.i1.c_target: started at 42275s covered at 42275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 42275s covered at 42275s
+"ss.sva", 237: tb.i1.c_target: started at 42325s covered at 42325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 42325s covered at 42325s
+"ss.sva", 237: tb.i1.c_target: started at 42375s covered at 42375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 42375s covered at 42375s
+"ss.sva", 237: tb.i1.c_target: started at 42425s covered at 42425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 42425s covered at 42425s
+Bus Occupied at 42475
+
+"ss.sva", 237: tb.i1.c_target: started at 42475s covered at 42475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 42475s covered at 42475s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 42525s covered at 42525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 42525s covered at 42525s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 42525s succeeded at 42525s
+"ss.sva", 237: tb.i1.c_target: started at 42575s covered at 42575s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 42575s covered at 42575s
+"ss.sva", 237: tb.i1.c_target: started at 42625s covered at 42625s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 42625s covered at 42625s
+"ss.sva", 237: tb.i1.c_target: started at 42675s covered at 42675s
+"ss.sva", 237: tb.i1.c_target: started at 42725s covered at 42725s
+"ss.sva", 237: tb.i1.c_target: started at 42775s covered at 42775s
+"ss.sva", 237: tb.i1.c_target: started at 42825s covered at 42825s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 42675s succeeded at 42825s
+"ss.sva", 237: tb.i1.c_target: started at 42875s covered at 42875s
+"ss.sva", 237: tb.i1.c_target: started at 42925s covered at 42925s
+"ss.sva", 237: tb.i1.c_target: started at 42975s covered at 42975s
+"ss.sva", 237: tb.i1.c_target: started at 43025s covered at 43025s
+"ss.sva", 237: tb.i1.c_target: started at 43075s covered at 43075s
+"ss.sva", 237: tb.i1.c_target: started at 43125s covered at 43125s
+Bus is free at 43175
+
+"ss.sva", 237: tb.i1.c_target: started at 43175s covered at 43175s
+Valid request from a master available at 43225: 111
+
+"ss.sva", 237: tb.i1.c_target: started at 43225s covered at 43225s
+"ss.sva", 237: tb.i1.c_target: started at 43275s covered at 43275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 43275s covered at 43275s
+"ss.sva", 237: tb.i1.c_target: started at 43325s covered at 43325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 43325s covered at 43325s
+Bus Occupied at 43375
+
+"ss.sva", 237: tb.i1.c_target: started at 43375s covered at 43375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 43375s covered at 43375s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 43425s covered at 43425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 43425s covered at 43425s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 43425s succeeded at 43425s
+"ss.sva", 237: tb.i1.c_target: started at 43475s covered at 43475s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 43475s covered at 43475s
+"ss.sva", 237: tb.i1.c_target: started at 43525s covered at 43525s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 43525s covered at 43525s
+"ss.sva", 237: tb.i1.c_target: started at 43575s covered at 43575s
+"ss.sva", 237: tb.i1.c_target: started at 43625s covered at 43625s
+"ss.sva", 237: tb.i1.c_target: started at 43675s covered at 43675s
+"ss.sva", 237: tb.i1.c_target: started at 43725s covered at 43725s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 43575s succeeded at 43725s
+"ss.sva", 237: tb.i1.c_target: started at 43775s covered at 43775s
+"ss.sva", 237: tb.i1.c_target: started at 43825s covered at 43825s
+"ss.sva", 237: tb.i1.c_target: started at 43875s covered at 43875s
+"ss.sva", 237: tb.i1.c_target: started at 43925s covered at 43925s
+"ss.sva", 237: tb.i1.c_target: started at 43975s covered at 43975s
+"ss.sva", 237: tb.i1.c_target: started at 44025s covered at 44025s
+Bus is free at 44075
+
+"ss.sva", 237: tb.i1.c_target: started at 44075s covered at 44075s
+Valid request from a master available at 44125: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 44125s covered at 44125s
+"ss.sva", 237: tb.i1.c_target: started at 44175s covered at 44175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 44175s covered at 44175s
+"ss.sva", 237: tb.i1.c_target: started at 44225s covered at 44225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 44225s covered at 44225s
+Bus Occupied at 44275
+
+"ss.sva", 237: tb.i1.c_target: started at 44275s covered at 44275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 44275s covered at 44275s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 44325s covered at 44325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 44325s covered at 44325s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 44325s succeeded at 44325s
+"ss.sva", 237: tb.i1.c_target: started at 44375s covered at 44375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 44375s covered at 44375s
+"ss.sva", 237: tb.i1.c_target: started at 44425s covered at 44425s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 44425s covered at 44425s
+"ss.sva", 237: tb.i1.c_target: started at 44475s covered at 44475s
+"ss.sva", 237: tb.i1.c_target: started at 44525s covered at 44525s
+"ss.sva", 237: tb.i1.c_target: started at 44575s covered at 44575s
+"ss.sva", 237: tb.i1.c_target: started at 44625s covered at 44625s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 44475s succeeded at 44625s
+"ss.sva", 237: tb.i1.c_target: started at 44675s covered at 44675s
+"ss.sva", 237: tb.i1.c_target: started at 44725s covered at 44725s
+"ss.sva", 237: tb.i1.c_target: started at 44775s covered at 44775s
+"ss.sva", 237: tb.i1.c_target: started at 44825s covered at 44825s
+"ss.sva", 237: tb.i1.c_target: started at 44875s covered at 44875s
+"ss.sva", 237: tb.i1.c_target: started at 44925s covered at 44925s
+Bus is free at 44975
+
+"ss.sva", 237: tb.i1.c_target: started at 44975s covered at 44975s
+Valid request from a master available at 45025: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 45025s covered at 45025s
+"ss.sva", 237: tb.i1.c_target: started at 45075s covered at 45075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 45075s covered at 45075s
+"ss.sva", 237: tb.i1.c_target: started at 45125s covered at 45125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 45125s covered at 45125s
+"ss.sva", 237: tb.i1.c_target: started at 45175s covered at 45175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 45175s covered at 45175s
+Bus Occupied at 45225
+
+"ss.sva", 237: tb.i1.c_target: started at 45225s covered at 45225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 45225s covered at 45225s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 45275s covered at 45275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 45275s covered at 45275s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 45275s succeeded at 45275s
+"ss.sva", 237: tb.i1.c_target: started at 45325s covered at 45325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 45325s covered at 45325s
+"ss.sva", 237: tb.i1.c_target: started at 45375s covered at 45375s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 45375s covered at 45375s
+"ss.sva", 237: tb.i1.c_target: started at 45425s covered at 45425s
+"ss.sva", 237: tb.i1.c_target: started at 45475s covered at 45475s
+"ss.sva", 237: tb.i1.c_target: started at 45525s covered at 45525s
+"ss.sva", 237: tb.i1.c_target: started at 45575s covered at 45575s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 45425s succeeded at 45575s
+"ss.sva", 237: tb.i1.c_target: started at 45625s covered at 45625s
+"ss.sva", 237: tb.i1.c_target: started at 45675s covered at 45675s
+"ss.sva", 237: tb.i1.c_target: started at 45725s covered at 45725s
+"ss.sva", 237: tb.i1.c_target: started at 45775s covered at 45775s
+"ss.sva", 237: tb.i1.c_target: started at 45825s covered at 45825s
+"ss.sva", 237: tb.i1.c_target: started at 45875s covered at 45875s
+Bus is free at 45925
+
+"ss.sva", 237: tb.i1.c_target: started at 45925s covered at 45925s
+Valid request from a master available at 45975: 100
+
+"ss.sva", 237: tb.i1.c_target: started at 45975s covered at 45975s
+"ss.sva", 237: tb.i1.c_target: started at 46025s covered at 46025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 46025s covered at 46025s
+"ss.sva", 237: tb.i1.c_target: started at 46075s covered at 46075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 46075s covered at 46075s
+Bus Occupied at 46125
+
+"ss.sva", 237: tb.i1.c_target: started at 46125s covered at 46125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 46125s covered at 46125s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 46175s covered at 46175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 46175s covered at 46175s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 46175s succeeded at 46175s
+"ss.sva", 237: tb.i1.c_target: started at 46225s covered at 46225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 46225s covered at 46225s
+"ss.sva", 237: tb.i1.c_target: started at 46275s covered at 46275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 46275s covered at 46275s
+"ss.sva", 237: tb.i1.c_target: started at 46325s covered at 46325s
+"ss.sva", 237: tb.i1.c_target: started at 46375s covered at 46375s
+"ss.sva", 237: tb.i1.c_target: started at 46425s covered at 46425s
+"ss.sva", 237: tb.i1.c_target: started at 46475s covered at 46475s
+"ss.sva", 289: tb.i1.c_m1t1r: started at 46175s covered at 46475s
+"ss.sva", 383: tb.i1.c_m1t1r_doc: started at 46175s covered at 46475s
+"target_bfm.v", 113: tb.u6.a_read: started at 46475s failed at 46475s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 46525s covered at 46525s
+"ss.sva", 237: tb.i1.c_target: started at 46575s covered at 46575s
+"ss.sva", 237: tb.i1.c_target: started at 46625s covered at 46625s
+"ss.sva", 237: tb.i1.c_target: started at 46675s covered at 46675s
+"ss.sva", 237: tb.i1.c_target: started at 46725s covered at 46725s
+"ss.sva", 237: tb.i1.c_target: started at 46775s covered at 46775s
+Bus is free at 46825
+
+"ss.sva", 237: tb.i1.c_target: started at 46825s covered at 46825s
+Valid request from a master available at 46875: 100
+
+"ss.sva", 237: tb.i1.c_target: started at 46875s covered at 46875s
+"master_bfm.v", 154: tb.u1.a_master_datao1: started at 46325s succeeded at 46875s
+"master_bfm.v", 164: tb.u1.c_master_datao1: started at 46325s covered at 46875s
+"ss.sva", 237: tb.i1.c_target: started at 46925s covered at 46925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 46925s covered at 46925s
+"ss.sva", 237: tb.i1.c_target: started at 46975s covered at 46975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 46975s covered at 46975s
+"ss.sva", 237: tb.i1.c_target: started at 47025s covered at 47025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 47025s covered at 47025s
+"ss.sva", 237: tb.i1.c_target: started at 47075s covered at 47075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 47075s covered at 47075s
+Bus Occupied at 47125
+
+"ss.sva", 237: tb.i1.c_target: started at 47125s covered at 47125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 47125s covered at 47125s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 47175s covered at 47175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 47175s covered at 47175s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 47175s succeeded at 47175s
+"ss.sva", 237: tb.i1.c_target: started at 47225s covered at 47225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 47225s covered at 47225s
+"ss.sva", 237: tb.i1.c_target: started at 47275s covered at 47275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 47275s covered at 47275s
+"ss.sva", 237: tb.i1.c_target: started at 47325s covered at 47325s
+"ss.sva", 237: tb.i1.c_target: started at 47375s covered at 47375s
+"ss.sva", 237: tb.i1.c_target: started at 47425s covered at 47425s
+"ss.sva", 237: tb.i1.c_target: started at 47475s covered at 47475s
+"target_bfm.v", 113: tb.u7.a_read: started at 47475s failed at 47475s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 47525s covered at 47525s
+"ss.sva", 237: tb.i1.c_target: started at 47575s covered at 47575s
+"ss.sva", 237: tb.i1.c_target: started at 47625s covered at 47625s
+"ss.sva", 237: tb.i1.c_target: started at 47675s covered at 47675s
+"ss.sva", 237: tb.i1.c_target: started at 47725s covered at 47725s
+"ss.sva", 237: tb.i1.c_target: started at 47775s covered at 47775s
+Bus is free at 47825
+
+"ss.sva", 237: tb.i1.c_target: started at 47825s covered at 47825s
+Valid request from a master available at 47875: 010
+
+"ss.sva", 237: tb.i1.c_target: started at 47875s covered at 47875s
+"ss.sva", 237: tb.i1.c_target: started at 47925s covered at 47925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 47925s covered at 47925s
+"ss.sva", 237: tb.i1.c_target: started at 47975s covered at 47975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 47975s covered at 47975s
+"ss.sva", 237: tb.i1.c_target: started at 48025s covered at 48025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 48025s covered at 48025s
+"ss.sva", 237: tb.i1.c_target: started at 48075s covered at 48075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 48075s covered at 48075s
+"ss.sva", 237: tb.i1.c_target: started at 48125s covered at 48125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 48125s covered at 48125s
+Bus Occupied at 48175
+
+"ss.sva", 237: tb.i1.c_target: started at 48175s covered at 48175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 48175s covered at 48175s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 48225s covered at 48225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 48225s covered at 48225s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 48225s succeeded at 48225s
+"ss.sva", 237: tb.i1.c_target: started at 48275s covered at 48275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 48275s covered at 48275s
+"ss.sva", 237: tb.i1.c_target: started at 48325s covered at 48325s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 48325s covered at 48325s
+"ss.sva", 237: tb.i1.c_target: started at 48375s covered at 48375s
+"ss.sva", 237: tb.i1.c_target: started at 48425s covered at 48425s
+"ss.sva", 237: tb.i1.c_target: started at 48475s covered at 48475s
+"ss.sva", 237: tb.i1.c_target: started at 48525s covered at 48525s
+"ss.sva", 325: tb.i1.c_m2t0w: started at 48225s covered at 48525s
+"ss.sva", 391: tb.i1.c_m2t2w_doc: started at 48225s covered at 48525s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 48375s succeeded at 48525s
+"ss.sva", 237: tb.i1.c_target: started at 48575s covered at 48575s
+"ss.sva", 237: tb.i1.c_target: started at 48625s covered at 48625s
+"ss.sva", 237: tb.i1.c_target: started at 48675s covered at 48675s
+"ss.sva", 237: tb.i1.c_target: started at 48725s covered at 48725s
+"ss.sva", 237: tb.i1.c_target: started at 48775s covered at 48775s
+"target_bfm.v", 111: tb.u7.a_write: started at 48775s failed at 48775s
+	Offending '(wi == ($past(wi) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 48825s covered at 48825s
+Bus is free at 48875
+
+"ss.sva", 237: tb.i1.c_target: started at 48875s covered at 48875s
+Valid request from a master available at 48925: 110
+
+"ss.sva", 237: tb.i1.c_target: started at 48925s covered at 48925s
+"ss.sva", 237: tb.i1.c_target: started at 48975s covered at 48975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 48975s covered at 48975s
+"ss.sva", 237: tb.i1.c_target: started at 49025s covered at 49025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 49025s covered at 49025s
+"ss.sva", 237: tb.i1.c_target: started at 49075s covered at 49075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 49075s covered at 49075s
+Bus Occupied at 49125
+
+"ss.sva", 237: tb.i1.c_target: started at 49125s covered at 49125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 49125s covered at 49125s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 49175s covered at 49175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 49175s covered at 49175s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 49175s succeeded at 49175s
+"ss.sva", 237: tb.i1.c_target: started at 49225s covered at 49225s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 49225s covered at 49225s
+"ss.sva", 237: tb.i1.c_target: started at 49275s covered at 49275s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 49275s covered at 49275s
+"ss.sva", 237: tb.i1.c_target: started at 49325s covered at 49325s
+"ss.sva", 237: tb.i1.c_target: started at 49375s covered at 49375s
+"ss.sva", 237: tb.i1.c_target: started at 49425s covered at 49425s
+"ss.sva", 237: tb.i1.c_target: started at 49475s covered at 49475s
+"ss.sva", 237: tb.i1.c_target: started at 49525s covered at 49525s
+"ss.sva", 237: tb.i1.c_target: started at 49575s covered at 49575s
+"ss.sva", 237: tb.i1.c_target: started at 49625s covered at 49625s
+"ss.sva", 237: tb.i1.c_target: started at 49675s covered at 49675s
+"ss.sva", 237: tb.i1.c_target: started at 49725s covered at 49725s
+"ss.sva", 237: tb.i1.c_target: started at 49775s covered at 49775s
+Bus is free at 49825
+
+"ss.sva", 237: tb.i1.c_target: started at 49825s covered at 49825s
+Valid request from a master available at 49875: 100
+
+"ss.sva", 237: tb.i1.c_target: started at 49875s covered at 49875s
+"ss.sva", 237: tb.i1.c_target: started at 49925s covered at 49925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 49925s covered at 49925s
+"ss.sva", 237: tb.i1.c_target: started at 49975s covered at 49975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 49975s covered at 49975s
+Bus Occupied at 50025
+
+"ss.sva", 237: tb.i1.c_target: started at 50025s covered at 50025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 50025s covered at 50025s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 50075s covered at 50075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 50075s covered at 50075s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 50075s succeeded at 50075s
+"ss.sva", 237: tb.i1.c_target: started at 50125s covered at 50125s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 50125s covered at 50125s
+"ss.sva", 237: tb.i1.c_target: started at 50175s covered at 50175s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 50175s covered at 50175s
+"ss.sva", 237: tb.i1.c_target: started at 50225s covered at 50225s
+"ss.sva", 237: tb.i1.c_target: started at 50275s covered at 50275s
+"ss.sva", 237: tb.i1.c_target: started at 50325s covered at 50325s
+"ss.sva", 237: tb.i1.c_target: started at 50375s covered at 50375s
+"ss.sva", 289: tb.i1.c_m1t1r: started at 50075s covered at 50375s
+"ss.sva", 383: tb.i1.c_m1t1r_doc: started at 50075s covered at 50375s
+"target_bfm.v", 113: tb.u6.a_read: started at 50375s failed at 50375s
+	Offending '(ri == ($past(ri) + 1))'
+"ss.sva", 237: tb.i1.c_target: started at 50425s covered at 50425s
+"ss.sva", 237: tb.i1.c_target: started at 50475s covered at 50475s
+"ss.sva", 237: tb.i1.c_target: started at 50525s covered at 50525s
+"ss.sva", 237: tb.i1.c_target: started at 50575s covered at 50575s
+"ss.sva", 237: tb.i1.c_target: started at 50625s covered at 50625s
+"ss.sva", 237: tb.i1.c_target: started at 50675s covered at 50675s
+Bus is free at 50725
+
+"ss.sva", 237: tb.i1.c_target: started at 50725s covered at 50725s
+Valid request from a master available at 50775: 001
+
+"ss.sva", 237: tb.i1.c_target: started at 50775s covered at 50775s
+"master_bfm.v", 154: tb.u1.a_master_datao1: started at 50225s succeeded at 50775s
+"master_bfm.v", 164: tb.u1.c_master_datao1: started at 50225s covered at 50775s
+"ss.sva", 237: tb.i1.c_target: started at 50825s covered at 50825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 50825s covered at 50825s
+"ss.sva", 237: tb.i1.c_target: started at 50875s covered at 50875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 50875s covered at 50875s
+Bus Occupied at 50925
+
+"ss.sva", 237: tb.i1.c_target: started at 50925s covered at 50925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 50925s covered at 50925s
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 50975s covered at 50975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 50975s covered at 50975s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 50975s succeeded at 50975s
+"ss.sva", 237: tb.i1.c_target: started at 51025s covered at 51025s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 51025s covered at 51025s
+"ss.sva", 237: tb.i1.c_target: started at 51075s covered at 51075s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 51075s covered at 51075s
+"ss.sva", 237: tb.i1.c_target: started at 51125s covered at 51125s
+"ss.sva", 237: tb.i1.c_target: started at 51175s covered at 51175s
+"ss.sva", 237: tb.i1.c_target: started at 51225s covered at 51225s
+"ss.sva", 237: tb.i1.c_target: started at 51275s covered at 51275s
+"target_bfm.v", 115: tb.u6.a_target_dataout: started at 51125s succeeded at 51275s
+"ss.sva", 237: tb.i1.c_target: started at 51325s covered at 51325s
+"ss.sva", 237: tb.i1.c_target: started at 51375s covered at 51375s
+"ss.sva", 237: tb.i1.c_target: started at 51425s covered at 51425s
+"ss.sva", 237: tb.i1.c_target: started at 51475s covered at 51475s
+"ss.sva", 237: tb.i1.c_target: started at 51525s covered at 51525s
+"ss.sva", 237: tb.i1.c_target: started at 51575s covered at 51575s
+Bus is free at 51625
+
+"ss.sva", 237: tb.i1.c_target: started at 51625s covered at 51625s
+Valid request from a master available at 51675: 101
+
+"ss.sva", 237: tb.i1.c_target: started at 51675s covered at 51675s
+"ss.sva", 237: tb.i1.c_target: started at 51725s covered at 51725s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 51725s covered at 51725s
+"ss.sva", 237: tb.i1.c_target: started at 51775s covered at 51775s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 51775s covered at 51775s
+Bus Occupied at 51825
+
+"ss.sva", 237: tb.i1.c_target: started at 51825s covered at 51825s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 51825s covered at 51825s
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"ss.sva", 237: tb.i1.c_target: started at 51875s covered at 51875s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 51875s covered at 51875s
+"bus_arbiter.v", 217: tb.u4.a_gnt_frame: started at 51875s succeeded at 51875s
+"ss.sva", 237: tb.i1.c_target: started at 51925s covered at 51925s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 51925s covered at 51925s
+"ss.sva", 237: tb.i1.c_target: started at 51975s covered at 51975s
+"ss.sva", 246: tb.i1.c_bus_in_use: started at 51975s covered at 51975s
+"ss.sva", 237: tb.i1.c_target: started at 52025s covered at 52025s
+"ss.sva", 237: tb.i1.c_target: started at 52075s covered at 52075s
+"ss.sva", 237: tb.i1.c_target: started at 52125s covered at 52125s
+"ss.sva", 237: tb.i1.c_target: started at 52175s covered at 52175s
+"ss.sva", 304: tb.i1.c_m1t0w: started at 51875s covered at 52175s
+"ss.sva", 385: tb.i1.c_m1t2w_doc: started at 51875s covered at 52175s
+"target_bfm.v", 115: tb.u7.a_target_dataout: started at 52025s succeeded at 52175s
+FC: All possible request scenarios covered 3 times
+
+FC: All possible transactions covered 3 times
+
+$finish at simulation time                52225
+"glue.v", 124: tb.u5.a_sel_0: started at 52175s not finished
+"glue.v", 126: tb.u5.a_rsel1_write: started at 52125s not finished
+"glue.v", 126: tb.u5.a_rsel1_write: started at 52075s not finished
+"glue.v", 126: tb.u5.a_rsel1_write: started at 52175s not finished
+"glue.v", 126: tb.u5.a_rsel1_write: started at 51875s not finished
+"glue.v", 134: tb.u5.a_read0: started at 52025s not finished
+"master_bfm.v", 148: tb.u3.a_master_stop2: started at 52025s not finished
+"master_bfm.v", 161: tb.u3.c_master_stop2: started at 52025s not finished
+"master_bfm.v", 148: tb.u2.a_master_stop2: started at 52025s not finished
+"master_bfm.v", 161: tb.u2.c_master_stop2: started at 52025s not finished
+"master_bfm.v", 148: tb.u1.a_master_stop2: started at 52025s not finished
+"master_bfm.v", 161: tb.u1.c_master_stop2: started at 52025s not finished
+"ss.sva", 237: tb.i1.c_target, 1044 attempts, 1044 match, 0 vacuous match
+"ss.sva", 238: tb.i1.c_frame, 1044 attempts, 1044 match, 0 vacuous match
+"ss.sva", 239: tb.i1.c_irdy, 1044 attempts, 1044 match, 0 vacuous match
+"ss.sva", 240: tb.i1.c_rsel, 1044 attempts, 1044 match, 0 vacuous match
+"ss.sva", 241: tb.i1.c_rw, 1044 attempts, 1044 match, 0 vacuous match
+"ss.sva", 242: tb.i1.c_gnt, 1044 attempts, 1043 match, 0 vacuous match
+"ss.sva", 243: tb.i1.c_req_gnt_w, 1044 attempts, 54 match, 0 vacuous match
+"ss.sva", 244: tb.i1.c_start_frame, 1044 attempts, 54 match, 0 vacuous match
+"ss.sva", 245: tb.i1.c_end_frame, 1044 attempts, 53 match, 0 vacuous match
+"ss.sva", 246: tb.i1.c_bus_in_use, 1044 attempts, 404 match, 0 vacuous match
+"ss.sva", 253: tb.i1.c_req1, 1044 attempts, 8 match, 0 vacuous match
+"ss.sva", 258: tb.i1.c_req2, 1044 attempts, 10 match, 0 vacuous match
+"ss.sva", 263: tb.i1.c_req3, 1044 attempts, 7 match, 0 vacuous match
+"ss.sva", 268: tb.i1.c_req12, 1044 attempts, 9 match, 0 vacuous match
+"ss.sva", 273: tb.i1.c_req23, 1044 attempts, 5 match, 0 vacuous match
+"ss.sva", 278: tb.i1.c_req31, 1044 attempts, 10 match, 0 vacuous match
+"ss.sva", 283: tb.i1.c_req123, 1044 attempts, 5 match, 0 vacuous match
+"ss.sva", 289: tb.i1.c_m1t1r, 1044 attempts, 3 match, 0 vacuous match
+"ss.sva", 294: tb.i1.c_m1t1w, 1044 attempts, 4 match, 0 vacuous match
+"ss.sva", 299: tb.i1.c_m1t0r, 1044 attempts, 10 match, 0 vacuous match
+"ss.sva", 304: tb.i1.c_m1t0w, 1044 attempts, 3 match, 0 vacuous match
+"ss.sva", 310: tb.i1.c_m2t1r, 1044 attempts, 4 match, 0 vacuous match
+"ss.sva", 315: tb.i1.c_m2t1w, 1044 attempts, 6 match, 0 vacuous match
+"ss.sva", 320: tb.i1.c_m2t0r, 1044 attempts, 3 match, 0 vacuous match
+"ss.sva", 325: tb.i1.c_m2t0w, 1044 attempts, 3 match, 0 vacuous match
+"ss.sva", 331: tb.i1.c_m3t1r, 1044 attempts, 4 match, 0 vacuous match
+"ss.sva", 336: tb.i1.c_m3t1w, 1044 attempts, 4 match, 0 vacuous match
+"ss.sva", 341: tb.i1.c_m3t0r, 1044 attempts, 4 match, 0 vacuous match
+"ss.sva", 346: tb.i1.c_m3t0w, 1044 attempts, 6 match, 0 vacuous match
+"ss.sva", 382: tb.i1.c_m1t1w_doc, 1044 attempts, 4 match, 0 vacuous match
+"ss.sva", 383: tb.i1.c_m1t1r_doc, 1044 attempts, 3 match, 0 vacuous match
+"ss.sva", 385: tb.i1.c_m1t2w_doc, 1044 attempts, 3 match, 0 vacuous match
+"ss.sva", 386: tb.i1.c_m1t2r_doc, 1044 attempts, 10 match, 0 vacuous match
+"ss.sva", 388: tb.i1.c_m2t1w_doc, 1044 attempts, 6 match, 0 vacuous match
+"ss.sva", 389: tb.i1.c_m2t1r_doc, 1044 attempts, 4 match, 0 vacuous match
+"ss.sva", 391: tb.i1.c_m2t2w_doc, 1044 attempts, 3 match, 0 vacuous match
+"ss.sva", 392: tb.i1.c_m2t2r_doc, 1044 attempts, 3 match, 0 vacuous match
+"ss.sva", 394: tb.i1.c_m3t1w_doc, 1044 attempts, 4 match, 0 vacuous match
+"ss.sva", 395: tb.i1.c_m3t1r_doc, 1044 attempts, 4 match, 0 vacuous match
+"ss.sva", 397: tb.i1.c_m3t2w_doc, 1044 attempts, 6 match, 0 vacuous match
+"ss.sva", 398: tb.i1.c_m3t2r_doc, 1044 attempts, 4 match, 0 vacuous match
+"master_bfm.v", 158: tb.u3.c_master_start1, 1044 attempts, 8 match, 0 vacuous match
+"master_bfm.v", 159: tb.u3.c_master_start2, 1044 attempts, 10 match, 0 vacuous match
+"master_bfm.v", 160: tb.u3.c_master_stop1, 1044 attempts, 25 match, 0 vacuous match
+"master_bfm.v", 161: tb.u3.c_master_stop2, 1044 attempts, 28 match, 0 vacuous match
+"master_bfm.v", 162: tb.u3.c_master_data1, 1044 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 163: tb.u3.c_master_data2, 1044 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 164: tb.u3.c_master_datao1, 1044 attempts, 2 match, 0 vacuous match
+"master_bfm.v", 165: tb.u3.c_master_datao2, 1044 attempts, 2 match, 0 vacuous match
+"master_bfm.v", 158: tb.u2.c_master_start1, 1044 attempts, 10 match, 0 vacuous match
+"master_bfm.v", 159: tb.u2.c_master_start2, 1044 attempts, 6 match, 0 vacuous match
+"master_bfm.v", 160: tb.u2.c_master_stop1, 1044 attempts, 25 match, 0 vacuous match
+"master_bfm.v", 161: tb.u2.c_master_stop2, 1044 attempts, 28 match, 0 vacuous match
+"master_bfm.v", 162: tb.u2.c_master_data1, 1044 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 163: tb.u2.c_master_data2, 1044 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 164: tb.u2.c_master_datao1, 1044 attempts, 2 match, 0 vacuous match
+"master_bfm.v", 165: tb.u2.c_master_datao2, 1044 attempts, 2 match, 0 vacuous match
+"master_bfm.v", 158: tb.u1.c_master_start1, 1044 attempts, 7 match, 0 vacuous match
+"master_bfm.v", 159: tb.u1.c_master_start2, 1044 attempts, 13 match, 0 vacuous match
+"master_bfm.v", 160: tb.u1.c_master_stop1, 1044 attempts, 25 match, 0 vacuous match
+"master_bfm.v", 161: tb.u1.c_master_stop2, 1044 attempts, 28 match, 0 vacuous match
+"master_bfm.v", 162: tb.u1.c_master_data1, 1044 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 163: tb.u1.c_master_data2, 1044 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 164: tb.u1.c_master_datao1, 1044 attempts, 2 match, 0 vacuous match
+"master_bfm.v", 165: tb.u1.c_master_datao2, 1044 attempts, 7 match, 0 vacuous match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 52225
+CPU Time:      0.180 seconds;       Data structure size:   0.2Mb
+Wed Apr 20 09:56:26 2005

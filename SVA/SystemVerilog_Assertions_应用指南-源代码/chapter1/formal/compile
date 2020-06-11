@@ -1,0 +1,1 @@
+vcs *.v +define+SIM -sverilog -PP -assert enable_diag -l compile.log

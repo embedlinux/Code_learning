@@ -1,0 +1,21 @@
+Command: ./simv -assert filter+success -l run.log
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version 7.2; Runtime version 7.2;  Apr 13 06:07 2005
+
+VCD+ Writer 4.4R12A Copyright 1993-2004 Synopsys Inc.
+"formal.v", 107: tb.a_a_to_b: started at 275s succeeded at 525s
+"formal.v", 107: tb.a_a_to_b: started at 625s succeeded at 725s
+"formal.v", 107: tb.a_a_to_b: started at 825s succeeded at 925s
+"formal.v", 107: tb.a_a_to_b: started at 1025s succeeded at 1225s
+"formal.v", 107: tb.a_a_to_b: started at 1325s succeeded at 1625s
+"formal.v", 107: tb.a_a_to_b: started at 1725s succeeded at 2025s
+"formal.v", 107: tb.a_a_to_b: started at 2125s succeeded at 2425s
+"formal.v", 107: tb.a_a_to_b: started at 2525s succeeded at 2675s
+"formal.v", 107: tb.a_a_to_b: started at 2775s succeeded at 2875s
+"formal.v", 107: tb.a_a_to_b: started at 2975s succeeded at 3275s
+$finish at simulation time                 3325
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 3325
+CPU Time:      0.070 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 06:07:31 2005

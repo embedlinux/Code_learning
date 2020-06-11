@@ -1,0 +1,15 @@
+Command: ./simv -l run.log
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version 7.2; Runtime version 7.2;  Apr 13 05:55 2005
+
+VCD+ Writer 4.4R12A Copyright 1993-2004 Synopsys Inc.
+"inline.v", 52: tb.top1.i3.a_mutex: started at 425s failed at 425s
+"inline.v", 52: tb.top1.i3.a_mutex: started at 475s failed at 475s
+$finish at simulation time                  600
+"inline.v", 53: tb.top1.i4.c_mutex, 12 attempts, 12 match, 0 vacuous match
+"inline.v", 53: tb.top1.i3.c_mutex, 12 attempts, 10 match, 0 vacuous match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 600
+CPU Time:      0.080 seconds;       Data structure size:   0.2Mb
+Wed Apr 13 05:55:49 2005

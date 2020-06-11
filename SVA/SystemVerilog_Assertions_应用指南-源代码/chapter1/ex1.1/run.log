@@ -1,0 +1,21 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version 7.2; Runtime version 7.2;  Apr 13 04:51 2005
+
+VCD+ Writer 4.4R12A Copyright 1993-2004 Synopsys Inc.
+SUCCESS: b arrived in time
+                 127
+"vtosva.v", 40: vtosva.a_to_b_chk: started at 125s succeeded at 175s
+SUCCESS: b arrived in time
+                 427
+"vtosva.v", 40: vtosva.a_to_b_chk: started at 325s succeeded at 475s
+ERROR: b did not arrive in time
+                 775
+"vtosva.v", 40: vtosva.a_to_b_chk: started at 625s failed at 775s
+	Offending '$rose(b)'
+$finish at simulation time                  925
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 925
+CPU Time:      0.060 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 04:51:48 2005

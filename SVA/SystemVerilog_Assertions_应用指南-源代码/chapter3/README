@@ -1,0 +1,11 @@
+Chapter 3: FSM SVA Checks:
+=========================
+
+There are three FSM examples in the various directories. 
+
+fsm1: assertions for a linear FSM. 
+fsm2: this is complex FSM, uses a generic master/slave/arbiter example
+fsm2_w: this is similar to the fsm2 examples, just the bfm's have been modified to issue grants after a variable window of time.
+
+
+

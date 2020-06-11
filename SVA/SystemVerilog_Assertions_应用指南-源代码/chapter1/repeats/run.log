@@ -1,0 +1,16 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 13 10:44 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"repeats.v", 168: repeats.a21: started at 75s failed at 275s
+	Offending 'a'
+"repeats.v", 168: repeats.a21: started at 425s succeeded at 775s
+"repeats.v", 168: repeats.a21: started at 825s failed at 1125s
+	Offending 'stop'
+$finish at simulation time                 1275
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1275
+CPU Time:      0.010 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 10:44:13 2005

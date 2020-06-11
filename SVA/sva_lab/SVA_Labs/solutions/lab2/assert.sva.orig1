@@ -1,0 +1,16 @@
+module assert_inputs(input bit frame_n, input bit valid_n, input bit din, input bit clock, input bit reset_n);
+
+endmodule //assert_router_inputs
+
+module assert_outputs(input bit frameo_n, input bit valido_n, input bit clock, input bit reset_n);
+
+bit [2:0] byte_cntr = 0;
+
+always@(posedge clock) begin: byte_counter
+if(!reset_n) byte_cntr = 0;:w
+
+else if(!frameo_n && !valido_n) byte_cntr++;
+//This will not increment on last bit of packet so count checked in sequence is 7
+end 
+
+endmodule //assert_router_outputs

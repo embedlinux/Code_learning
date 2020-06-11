@@ -1,0 +1,62 @@
+Command: vcs add.v arithmetic_b.v data_feeder.v datapath.v encoder.v fsm.v jpeg.v \
+latch.v pipo.v quantization.v ram262144x8.v stage1.v stage2.v stage3.v sub.v tb.v \
+transform.v transpose.v wh.v xpose_b.v zigzag.v jpeg.sva adv_datapath.sva -sverilog \
+-assert enable_diag -PP -l compile.log
+                         Chronologic VCS (TM)
+           Version X-2005.06-B -- Thu Apr 14 17:49:47 2005
+               Copyright (c) 1991-2005 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+***** Warning: ACC/CLI capabilities have been enabled for the entire design.
+      For faster performance enable module specific capability in pli.tab file
+Parsing design file 'add.v'
+Parsing design file 'arithmetic_b.v'
+Parsing design file 'data_feeder.v'
+Parsing included file 'defines.h'.
+Back to file 'data_feeder.v'.
+Parsing design file 'datapath.v'
+Parsing design file 'encoder.v'
+Parsing design file 'fsm.v'
+Parsing design file 'jpeg.v'
+Parsing design file 'latch.v'
+Parsing design file 'pipo.v'
+Parsing design file 'quantization.v'
+Parsing design file 'ram262144x8.v'
+Parsing design file 'stage1.v'
+Parsing design file 'stage2.v'
+Parsing design file 'stage3.v'
+Parsing design file 'sub.v'
+Parsing design file 'tb.v'
+Parsing design file 'transform.v'
+Parsing design file 'transpose.v'
+Parsing design file 'wh.v'
+Parsing design file 'xpose_b.v'
+Parsing design file 'zigzag.v'
+Parsing design file 'jpeg.sva'
+Parsing design file 'adv_datapath.sva'
+Top Level Modules:
+       $root
+       arithmetic
+       tb
+No TimeScale specified
+Notice: Ports coerced to inout, use -notice for details
+Starting vcs inline pass...
+13 modules and 0 UDP read.
+	However, due to incremental compilation, only 2 modules need to be compiled.
+recompiling module datapath because:
+	This module or some inlined child module(s) has/have been modified.
+recompiling module tb because:
+	This module or some inlined child module(s) has/have been modified.
+Both modules done.
+if [ -x ../simv ]; then chmod -x ../simv; fi
+gcc   -o ../simv  5NrI_d.o 5NrIB_d.o E1gK_1_d.o LgGi_1_d.o 9SlH_1_d.o eguG_1_d.o \
+6v0o_1_d.o 9J5m_1_d.o rdnI_1_d.o MDsH_1_d.o Io0o_1_d.o jUh1_1_d.o rnnj_1_d.o W3g9_1_d.o \
+xjje_1_d.o SIM_l.o   /build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/gui/virsim/linux/vcdplus/vcs7_2/libvirsim.a \
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/libvcsnew.so \
+-ldl -lm  -lc -ldl    
+../simv up to date
+CPU time: 3.060 seconds to compile + .200 seconds to link

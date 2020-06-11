@@ -1,0 +1,53 @@
+Command: ./simv -assert filter+success -l run.log -assert maxsuccess=5
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 14 09:03 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"fsm1.sva", 47: tb.fsm_inst.u1.a_onehot: started at 35s succeeded at 35s
+"fsm1.sva", 47: tb.fsm_inst.u1.a_onehot: started at 45s succeeded at 45s
+"fsm1.sva", 47: tb.fsm_inst.u1.a_onehot: started at 55s succeeded at 55s
+"fsm1.sva", 47: tb.fsm_inst.u1.a_onehot: started at 65s succeeded at 65s
+"fsm1.sva", 47: tb.fsm_inst.u1.a_onehot: started at 75s succeeded at 75s
+"fsm1.sva", 76: tb.fsm_inst.u1.a_trans: started at 45s succeeded at 695s
+"fsm1.sva", 77: tb.fsm_inst.u1.c_trans: started at 45s covered at 695s
+"fsm1.sva", 85: tb.fsm_inst.u1.a_linear_trans: started at 695s succeeded at 805s
+"fsm1.sva", 86: tb.fsm_inst.u1.c_linear_trans: started at 695s covered at 805s
+"fsm1.sva", 94: tb.fsm_inst.u1.a_frame: started at 55s succeeded at 805s
+"fsm1.sva", 95: tb.fsm_inst.u1.c_frame: started at 55s covered at 805s
+"fsm1.sva", 107: tb.fsm_inst.u1.c_frame_path2: started at 55s covered at 805s
+"fsm1.sva", 85: tb.fsm_inst.u1.a_linear_trans: started at 1475s succeeded at 1585s
+"fsm1.sva", 86: tb.fsm_inst.u1.c_linear_trans: started at 1475s covered at 1585s
+"fsm1.sva", 94: tb.fsm_inst.u1.a_frame: started at 835s succeeded at 1585s
+"fsm1.sva", 95: tb.fsm_inst.u1.c_frame: started at 835s covered at 1585s
+"fsm1.sva", 102: tb.fsm_inst.u1.c_frame_path1: started at 835s covered at 1585s
+"fsm1.sva", 85: tb.fsm_inst.u1.a_linear_trans: started at 2255s succeeded at 2365s
+"fsm1.sva", 86: tb.fsm_inst.u1.c_linear_trans: started at 2255s covered at 2365s
+"fsm1.sva", 94: tb.fsm_inst.u1.a_frame: started at 1615s succeeded at 2365s
+"fsm1.sva", 95: tb.fsm_inst.u1.c_frame: started at 1615s covered at 2365s
+"fsm1.sva", 102: tb.fsm_inst.u1.c_frame_path1: started at 1615s covered at 2365s
+"fsm1.sva", 85: tb.fsm_inst.u1.a_linear_trans: started at 3035s succeeded at 3145s
+"fsm1.sva", 86: tb.fsm_inst.u1.c_linear_trans: started at 3035s covered at 3145s
+"fsm1.sva", 94: tb.fsm_inst.u1.a_frame: started at 2395s succeeded at 3145s
+"fsm1.sva", 95: tb.fsm_inst.u1.c_frame: started at 2395s covered at 3145s
+"fsm1.sva", 102: tb.fsm_inst.u1.c_frame_path1: started at 2395s covered at 3145s
+"fsm1.sva", 85: tb.fsm_inst.u1.a_linear_trans: started at 3815s succeeded at 3925s
+"fsm1.sva", 86: tb.fsm_inst.u1.c_linear_trans: started at 3815s covered at 3925s
+"fsm1.sva", 94: tb.fsm_inst.u1.a_frame: started at 3175s succeeded at 3925s
+"fsm1.sva", 95: tb.fsm_inst.u1.c_frame: started at 3175s covered at 3925s
+"fsm1.sva", 102: tb.fsm_inst.u1.c_frame_path1: started at 3175s covered at 3925s
+"fsm1.sva", 102: tb.fsm_inst.u1.c_frame_path1: started at 3955s covered at 4705s
+$finish at simulation time                 5040
+"fsm1.sva", 94: tb.fsm_inst.u1.a_frame: started at 4735s not finished
+"fsm1.sva", 95: tb.fsm_inst.u1.c_frame: started at 4735s not finished
+"fsm1.sva", 102: tb.fsm_inst.u1.c_frame_path1: started at 4735s not finished
+"fsm1.sva", 77: tb.fsm_inst.u1.c_trans, 504 attempts, 1 match, 0 vacuous match
+"fsm1.sva", 86: tb.fsm_inst.u1.c_linear_trans, 504 attempts, 6 match, 0 vacuous match
+"fsm1.sva", 95: tb.fsm_inst.u1.c_frame, 504 attempts, 6 match, 0 vacuous match
+"fsm1.sva", 102: tb.fsm_inst.u1.c_frame_path1, 504 attempts, 5 match, 0 vacuous match
+"fsm1.sva", 107: tb.fsm_inst.u1.c_frame_path2, 504 attempts, 1 match, 0 vacuous match
+"fsm1.sva", 118: tb.fsm_inst.u1.c_complete_frame, 504 attempts, 0 match, 0 vacuous match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 5040
+CPU Time:      0.260 seconds;       Data structure size:   0.8Mb
+Thu Apr 14 09:03:43 2005

@@ -1,0 +1,274 @@
+#!/bin/sh
+
+# Script to run ovl_regressions simulations
+
+TOPDIR=$HOME/other/EDA/Averant/local/tests/ovl_regressions
+cd $TOPDIR
+
+echo ""
+echo "SIM: Deleting old simulation logs ..."
+/bin/rm $TOPDIR/dynamic_simulation/*/*/log/*.log*
+sleep 1
+
+
+echo ""
+echo "------------------------------------------------------------------------------"
+echo "SIM: 1) assert_vlog95"
+echo "------------------------------------------------------------------------------"
+SIMDIR=$TOPDIR/dynamic_simulation/assert_vlog95
+
+
+echo ""
+echo "SIM:      - mti simulation"
+echo "==="
+cd $SIMDIR/mti
+run_mti.csh
+grep "^# *OVL_" log/tb_assert_simulation-MTI_OVL.log | sort | sed 's/^#//' > report/tb_assert_simulation-MTI_OVL.rpt
+
+echo ""
+echo "SIM:      - mti formal_pass_sim_wrapper"
+echo "==="
+run_mti.csh tb_assert_formal_pass_sim_wrapper
+
+
+echo ""
+echo "SIM:      - vcs simulation"
+echo "==="
+cd $SIMDIR/vcs
+run_vcs.csh
+grep "^ *OVL_"  log/tb_assert_simulation-VCS_OVL.log | sort > report/tb_assert_simulation-VCS_OVL.rpt
+
+echo ""
+echo "SIM:      - vcs formal_pass_sim_wrapper"
+echo "==="
+run_vcs.csh tb_assert_formal_pass_sim_wrapper
+
+
+echo ""
+echo "SIM:      - nc  simulation"
+echo "==="
+cd $SIMDIR/nc
+run_nc.csh
+grep "^ *OVL_" log/tb_assert_simulation-NC_OVL.log | sort > report/tb_assert_simulation-NC_OVL.rpt
+
+echo ""
+echo "SIM:      - nc  formal_pass_sim_wrapper"
+echo "==="
+run_nc.csh tb_assert_formal_pass_sim_wrapper
+
+
+echo ""
+echo "------------------------------------------------------------------------------"
+echo "SIM: 2) assert_sva05"
+echo "------------------------------------------------------------------------------"
+SIMDIR=$TOPDIR/dynamic_simulation/assert_sva05
+
+
+echo ""
+echo "SIM:      - mti simulation"
+echo "==="
+cd $SIMDIR/mti
+run_mti.csh
+grep "^# *OVL_" log/tb_assert_simulation-MTI_SVA.log | sort | sed 's/^#//' > report/tb_assert_simulation-MTI_SVA.rpt
+
+echo ""
+echo "SIM:      - mti formal_pass_sim_wrapper"
+echo "==="
+run_mti.csh tb_assert_formal_pass_sim_wrapper
+
+
+echo ""
+echo "SIM:      - vcs simulation"
+echo "==="
+cd $SIMDIR/vcs
+run_vcs.csh
+grep "^ *OVL_"  log/tb_assert_simulation-VCS_SVA.log | sort > report/tb_assert_simulation-VCS_SVA.rpt
+
+echo ""
+echo "SIM:      - vcs formal_pass_sim_wrapper"
+echo "==="
+run_vcs.csh tb_assert_formal_pass_sim_wrapper
+
+
+echo ""
+echo "SIM:      - nc  simulation (SKIPPED)"
+echo "==="
+# cd $SIMDIR/nc
+# run_nc.csh
+# grep "^ *OVL_" log/tb_assert_simulation-NC_SVA.log | sort > report/tb_assert_simulation-NC_SVA.rpt
+
+echo ""
+echo "SIM:      - nc  formal_pass_sim_wrapper (SKIPPED)"
+echo "==="
+# run_nc.csh tb_assert_formal_pass_sim_wrapper
+
+
+echo ""
+echo "------------------------------------------------------------------------------"
+echo "SIM: 3) assert_psl05"
+echo "------------------------------------------------------------------------------"
+SIMDIR=$TOPDIR/dynamic_simulation/assert_psl05
+
+
+echo ""
+echo "SIM:      - mti simulation"
+echo "==="
+cd $SIMDIR/mti
+run_mti.csh
+grep "^# *VIOLATION" log/tb_assert_simulation-MTI_PSL.log | sort | sed 's/^#//' > report/tb_assert_simulation-MTI_PSL.rpt
+
+echo ""
+echo "SIM:      - mti formal_pass_sim_wrapper (SKIPPED)"
+echo "==="
+#run_mti.csh tb_assert_formal_pass_sim_wrapper
+
+
+echo ""
+echo "------------------------------------------------------------------------------"
+echo "SIM: 4) ovl_vlog95"
+echo "------------------------------------------------------------------------------"
+SIMDIR=$TOPDIR/dynamic_simulation/ovl_vlog95
+
+
+echo ""
+echo "SIM:      - mti simulation"
+echo "==="
+cd $SIMDIR/mti
+run_mti.csh
+grep "^# *OVL_" log/tb_ovl_simulation-MTI_OVL.log | sort | sed 's/^#//' > report/tb_ovl_simulation-MTI_OVL.rpt
+
+echo ""
+echo "SIM:      - mti formal_pass_sim_wrapper"
+echo "==="
+run_mti.csh tb_ovl_formal_pass_sim_wrapper
+
+
+echo ""
+echo "SIM:      - vcs simulation"
+echo "==="
+cd $SIMDIR/vcs
+run_vcs.csh
+grep "^ *OVL_"  log/tb_ovl_simulation-VCS_OVL.log | sort > report/tb_ovl_simulation-VCS_OVL.rpt
+
+echo ""
+echo "SIM:      - vcs formal_pass_sim_wrapper"
+echo "==="
+run_vcs.csh tb_ovl_formal_pass_sim_wrapper
+
+
+echo ""
+echo "SIM:      - nc  simulation"
+echo "==="
+cd $SIMDIR/nc
+run_nc.csh
+grep "^ *OVL_" log/tb_ovl_simulation-NC_OVL.log | sort > report/tb_ovl_simulation-NC_OVL.rpt
+
+echo ""
+echo "SIM:      - nc  formal_pass_sim_wrapper"
+echo "==="
+run_nc.csh tb_ovl_formal_pass_sim_wrapper
+
+
+echo ""
+echo "------------------------------------------------------------------------------"
+echo "SIM: 5) ovl_sva05"
+echo "------------------------------------------------------------------------------"
+SIMDIR=$TOPDIR/dynamic_simulation/ovl_sva05
+
+
+echo ""
+echo "SIM:      - mti simulation"
+echo "==="
+cd $SIMDIR/mti
+run_mti.csh
+grep "^# *OVL_" log/tb_ovl_simulation-MTI_SVA.log | sort | sed 's/^#//' > report/tb_ovl_simulation-MTI_SVA.rpt
+
+echo ""
+echo "SIM:      - mti formal_pass_sim_wrapper"
+echo "==="
+run_mti.csh tb_ovl_formal_pass_sim_wrapper
+
+
+echo ""
+echo "SIM:      - vcs simulation"
+echo "==="
+cd $SIMDIR/vcs
+run_vcs.csh
+grep "^ *OVL_"  log/tb_ovl_simulation-VCS_SVA.log | sort > report/tb_ovl_simulation-VCS_SVA.rpt
+
+echo ""
+echo "SIM:      - vcs formal_pass_sim_wrapper"
+echo "==="
+run_vcs.csh tb_ovl_formal_pass_sim_wrapper
+
+
+echo ""
+echo "SIM:      - nc  simulation (SKIPPED)"
+echo "==="
+# cd $SIMDIR/nc
+# run_nc.csh
+# grep "^ *OVL_" log/tb_ovl_simulation-NC_SVA.log | sort > report/tb_ovl_simulation-NC_SVA.rpt
+
+echo ""
+echo "SIM:      - nc  formal_pass_sim_wrapper (SKIPPED)"
+echo "==="
+# run_nc.csh tb_ovl_formal_pass_sim_wrapper
+
+
+echo ""
+echo "------------------------------------------------------------------------------"
+echo "SIM: 6) ovl_psl05"
+echo "------------------------------------------------------------------------------"
+SIMDIR=$TOPDIR/dynamic_simulation/ovl_psl05
+
+
+echo ""
+echo "SIM:      - mti simulation"
+echo "==="
+cd $SIMDIR/mti
+run_mti.csh
+grep "^# *VIOLATION" log/tb_ovl_simulation-MTI_PSL.log | sort | sed 's/^#//' > report/tb_ovl_simulation-MTI_PSL.rpt
+
+echo ""
+echo "SIM:      - mti formal_pass_sim_wrapper (SKIPPED)"
+echo "==="
+# run_mti.csh tb_ovl_formal_pass_sim_wrapper
+
+cat <<EOF
+
+  cd $TOPDIR
+
+  tkdiff dynamic_simulation/assert_vlog95/mti/report/tb_assert_simulation-MTI_OVL.rpt
+  tkdiff dynamic_simulation/assert_vlog95/vcs/report/tb_assert_simulation-VCS_OVL.rpt
+  tkdiff dynamic_simulation/assert_vlog95/nc/report/tb_assert_simulation-NC_OVL.rpt
+
+  tkdiff dynamic_simulation/ovl_vlog95/mti/report/tb_ovl_simulation-MTI_OVL.rpt
+  tkdiff dynamic_simulation/ovl_vlog95/vcs/report/tb_ovl_simulation-VCS_OVL.rpt
+  tkdiff dynamic_simulation/ovl_vlog95/nc/report/tb_ovl_simulation-NC_OVL.rpt
+
+  tkdiff dynamic_simulation/assert_sva05/mti/report/tb_assert_simulation-MTI_SVA.rpt
+  tkdiff dynamic_simulation/assert_sva05/vcs/report/tb_assert_simulation-VCS_SVA.rpt
+
+  tkdiff dynamic_simulation/ovl_sva05/mti/report/tb_ovl_simulation-MTI_SVA.rpt
+  tkdiff dynamic_simulation/ovl_sva05/vcs/report/tb_ovl_simulation-VCS_SVA.rpt
+
+  tkdiff dynamic_simulation/assert_psl05/mti/report/tb_assert_simulation-MTI_PSL.rpt
+
+  tkdiff dynamic_simulation/ovl_psl05/mti/report/tb_ovl_simulation-MTI_PSL.rpt
+
+
+  tkdiff dynamic_simulation/assert_vlog95/mti/log/tb_assert_formal_pass_sim_wrapper-MTI_OVL.log
+  tkdiff dynamic_simulation/assert_vlog95/vcs/log/tb_assert_formal_pass_sim_wrapper-VCS_OVL.log
+  tkdiff dynamic_simulation/assert_vlog95/nc/log/tb_assert_formal_pass_sim_wrapper-NC_OVL.log
+
+  tkdiff dynamic_simulation/ovl_vlog95/mti/log/tb_ovl_formal_pass_sim_wrapper-MTI_OVL.log
+  tkdiff dynamic_simulation/ovl_vlog95/vcs/log/tb_ovl_formal_pass_sim_wrapper-VCS_OVL.log
+  tkdiff dynamic_simulation/ovl_vlog95/nc/log/tb_ovl_formal_pass_sim_wrapper-NC_OVL.log
+
+  tkdiff dynamic_simulation/assert_sva05/mti/log/tb_assert_formal_pass_sim_wrapper-MTI_SVA.log
+  tkdiff dynamic_simulation/assert_sva05/vcs/log/tb_assert_formal_pass_sim_wrapper-VCS_SVA.log
+
+  tkdiff dynamic_simulation/ovl_sva05/mti/log/tb_ovl_formal_pass_sim_wrapper-MTI_SVA.log
+  tkdiff dynamic_simulation/ovl_sva05/vcs/log/tb_ovl_formal_pass_sim_wrapper-VCS_SVA.log
+
+EOF

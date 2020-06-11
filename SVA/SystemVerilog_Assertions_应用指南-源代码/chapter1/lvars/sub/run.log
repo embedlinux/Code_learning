@@ -1,0 +1,20 @@
+Command: ./simv -assert filter+success -l run.log
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version 7.2; Runtime version 7.2;  Apr 13 06:06 2005
+
+VCD+ Writer 4.4R12A Copyright 1993-2004 Synopsys Inc.
+Signal a arrived at                  125
+
+Signal b arrived at                  275
+
+"sub.v", 58: sub.a_display_window: started at 125s succeeded at 275s
+Signal a arrived at                  425
+
+"sub.v", 58: sub.a_display_window: started at 425s failed at 675s
+	Offending '$rose(b)'
+$finish at simulation time                  875
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 875
+CPU Time:      0.100 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 06:06:20 2005

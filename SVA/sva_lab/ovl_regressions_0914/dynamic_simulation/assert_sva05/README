@@ -1,0 +1,12 @@
+Directory for running simulations on the SVA implementation of OVL.
+
+To compare reports across the 3 main simulators:
+
+  cd ~/other/OVL/ovl_regressions/dynamic_simulation/assert_sva05
+
+  tkdiff mti/report/tb_assert_simulation-MTI_SVA.rpt vcs/report/tb_assert_simulation-VCS_SVA.rpt
+
+There are currently problems with NC and the SVA implementation of OVL, so the comparisons below are not currently possible.
+
+  tkdiff mti/report/tb_assert_simulation-MTI_SVA.rpt  nc/report/tb_assert_simulation-NC_SVA.rpt
+  tkdiff  nc/report/tb_assert_simulation-NC_SVA.rpt  vcs/report/tb_assert_simulation-VCS_SVA.rpt

@@ -1,0 +1,2 @@
+vcs -sverilog -PP -assert enable_diag andor.v -l compile.log
+

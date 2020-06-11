@@ -1,0 +1,113 @@
+----------------------------------------------------------------------------
+ CONTENTS (last updated: Mon Jul 30 21:31:01 BST 2007)
+ ========
+ 18.  About this file (NC simulations on sva05 OVL)
+ 26.  
+ 27.  Testbench: tb_assert_simulation
+ 33.    1) Simulation in Shell
+ 52.         *** SVA COMPILE ERROR ***
+ 57.    2) Simulation in GUI
+ 66.    3) Generate Failure Report *TBD*
+ 77.    4) Compare NC Results (vlog95 vs sva05) *TBD*
+ 85.  
+ 86.  Testbench: tb_assert_formal_pass_sim_wrapper
+ 93.    1) Simulation in Shell
+----------------------------------------------------------------------------
+
+
+INDEX: About this file (NC simulations on sva05 OVL)
+=====
+This directory is for running the NC simulator on the SVA implementation of OVL.
+
+  cd ~/other/OVL/ovl_regressions/dynamic_simulation/assert_sva05/nc
+
+
+----------------------------------------------------------------------------
+INDEX: 
+INDEX: Testbench: tb_assert_simulation
+=====
+This is the main simulation testbench, failing each assertion.
+----------------------------------------------------------------------------
+
+
+INDEX:   1) Simulation in Shell
+=====
+Run simulation in shell:
+
+  bsub -q inter -I -R "select[rhe3]" -P pr244 run_nc.csh
+
+Compare with last run:
+
+  tkdiff log/tb_assert_simulation-NC_SVA.log.BAK log/NEW-tb_assert_simulation-NC_SVA.log
+
+Compare with last checked in version:
+
+  tkdiff log/tb_assert_simulation-NC_SVA.log
+
+If you want to update the log (e.g. new test added):
+
+  svn commit -m "<message>" log/tb_assert_simulation-NC_SVA.log
+
+
+INDEX:        *** SVA COMPILE ERROR ***
+=====
+In contact with Cadence to resolve this issue. In the meantime, use the Verilog implementation of OVL for NC.
+
+
+INDEX:   2) Simulation in GUI
+=====
+You can also run this simulation in the GUI:
+
+  bsub -q inter -I -R "select[rhe3]" -P pr244 gui_nc.csh
+
+In the GUI, press the play button.
+
+
+INDEX:   3) Generate Failure Report *TBD*
+=====
+A simple failure report is useful to compare with other simulators.
+
+  grep "^ *OVL_"  log/tb_assert_simulation-NC_SVA.log | sort > report/tb_assert_simulation-NC_SVA.rpt
+
+To compare with results of other simulators, see:
+
+  ovl_regressions/dynamic_simulation/assert_sva05/README
+
+
+INDEX:   4) Compare NC Results (vlog95 vs sva05) *TBD*
+=====
+See instructions in:
+
+  ovl_regressions/dynamic_simulation/assert_vlog95/nc/README
+
+
+----------------------------------------------------------------------------
+INDEX: 
+INDEX: Testbench: tb_assert_formal_pass_sim_wrapper
+=====
+This is a secondary simulation testbench, which clocks tb_formal_pass for
+one million clock cycles.
+----------------------------------------------------------------------------
+
+
+INDEX:   1) Simulation in Shell
+=====
+Run simulation in shell:
+
+  bsub -q inter -I -R "select[rhe3]" -P pr244 run_nc.csh tb_assert_formal_pass_sim_wrapper
+
+NOTE: script given an optional parameter to pick up this testbench
+
+Check the log for any unexpected failures.
+
+Compare with last run:
+
+  tkdiff log/tb_assert_formal_pass_sim_wrapper-NC_SVA.log.BAK log/tb_assert_formal_pass_sim_wrapper-NC_SVA.log
+
+Compare with last checked in version:
+
+  tkdiff log/tb_assert_formal_pass_sim_wrapper-NC_SVA.log
+
+If you want to update the log (e.g. new test added):
+
+  svn commit -m "<message>" log/tb_assert_formal_pass_sim_wrapper-NC_SVA.log

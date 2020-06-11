@@ -1,0 +1,15 @@
+Command: ./simv -assert filter+success -l run.log
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version 7.2; Runtime version 7.2;  Apr 13 06:02 2005
+
+VCD+ Writer 4.4R12A Copyright 1993-2004 Synopsys Inc.
+"cubed.v", 78: tb.a_local_var1: started at 125s failed at 325s
+	Offending '(aa == ((lvar1 * lvar1) * lvar1))'
+"cubed.v", 78: tb.a_local_var1: started at 375s failed at 575s
+	Offending '(aa == ((lvar1 * lvar1) * lvar1))'
+$finish at simulation time                  625
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 625
+CPU Time:      0.070 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 06:02:50 2005

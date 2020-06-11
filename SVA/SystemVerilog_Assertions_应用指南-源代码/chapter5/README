@@ -1,0 +1,8 @@
+The memory controller assertions is spread in three directories
+
+sdram - has the system verilog assertions for checking the sdram memories
+sram - this directrory contains the SVA for sram/flash synchronous memories
+ddr-sdram - this has a couple of checks to illustrate the assertions for ddr memories.
+
+The SDRAM assertions take a long time to compile as there a lot of eventualities in the assertion code. So make sure the timing windows are appropriate for the particular vendor
+ 

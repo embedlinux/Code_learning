@@ -1,0 +1,8 @@
+at compile time use the following +define switches to genrate the correct stimulus for the particular construct. 
+
+ use +define+p21 to check cons.repeats
+ use +define+p22 to check cons.repeat on seq
+ use +define+p23 to check cons.repeat on seq with delay
+ use +define+p24 to check cons.repeat on seq with eventuality
+ use +define+p25 to check go to repetetion and non-cons repeat
+

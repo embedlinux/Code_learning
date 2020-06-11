@@ -1,0 +1,435 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *| 
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+// system level checks
+
+module ss_chk(
+	input logic frame1, frame2, frame3,
+	input logic irdy1, irdy2, irdy3,
+	input logic req1, req2, req3,
+	input logic gnt1, gnt2, gnt3,
+	input logic rsel1, rsel2, rsel3,
+	input logic [1:0] sel, trdy,
+	input logic [8:0] data, data1, data2, data3,
+	input logic [7:0] datao,
+	input logic [5:0] ri1, wi1, ri2, wi2,
+	input logic clk
+	);
+
+// reg for FC
+
+integer creq123 = 0;
+integer creq12 = 0;
+integer creq23 = 0;
+integer creq31 = 0;
+integer creq1 = 0;
+integer creq2 = 0;
+integer creq3 = 0;
+
+reg creq1_flag = 1'b0;
+reg creq2_flag = 1'b0;
+reg creq3_flag = 1'b0;
+reg creq12_flag = 1'b0;
+reg creq23_flag = 1'b0;
+reg creq31_flag = 1'b0;
+reg creq123_flag = 1'b0;
+
+integer m1_t1_r = 0;
+integer m1_t1_w = 0;
+integer m1_t0_r = 0;
+integer m1_t0_w = 0;
+integer m2_t1_r = 0;
+integer m2_t1_w = 0;
+integer m2_t0_r = 0;
+integer m2_t0_w = 0;
+integer m3_t1_r = 0;
+integer m3_t1_w = 0;
+integer m3_t0_r = 0;
+integer m3_t0_w = 0;
+
+reg m1_t1_r_flag = 1'b0;
+reg m1_t1_w_flag = 1'b0;
+reg m1_t0_r_flag = 1'b0;
+reg m1_t0_w_flag = 1'b0;
+reg m2_t1_r_flag = 1'b0;
+reg m2_t1_w_flag = 1'b0;
+reg m2_t0_r_flag = 1'b0;
+reg m2_t0_w_flag = 1'b0;
+reg m3_t1_r_flag = 1'b0;
+reg m3_t1_w_flag = 1'b0;
+reg m3_t0_r_flag = 1'b0;
+reg m3_t0_w_flag = 1'b0;
+
+wire rw1, rw2, rw3;
+
+// open files to document transactions
+
+integer h_mt; 
+
+assign frame = frame1 && frame2 && frame3;
+assign irdy = irdy1 && irdy2 && irdy3;
+assign frame_ = !frame1 || !frame2 || !frame3;
+assign irdy_ = !irdy1 || !irdy2 || !irdy3;
+assign trdyp = trdy[1] && trdy[0];
+assign trdy_ = !trdy[1] || !trdy[0];
+assign req = !req1 || !req2 || !req3;
+assign gnt = !gnt1 || !gnt2 || !gnt3;
+assign bus_is_free = gnt1 && gnt2 && gnt3;
+assign rw1 = data1[8];
+assign rw2 = data2[8];
+assign rw3 = data3[8];
+
+initial
+begin
+	h_mt = $fopen("mt.dat");
+end
+
+
+property p_target;
+	@(posedge clk) not (!trdy[0] && !trdy[1]);
+endproperty
+
+property p_frame;
+	@(posedge clk) $countones({frame1, frame2, frame3}) >1;
+endproperty
+
+property p_irdy;
+	@(posedge clk) $countones({irdy1, irdy2, irdy3}) >1;
+endproperty
+
+property p_gnt;
+	@(posedge clk) $countones({gnt1, gnt2, gnt3}) > 1;
+endproperty
+
+property p_rsel;
+	@(posedge clk) 
+	($isunknown(rw1) && $isunknown(rw2) && $isunknown(rw3) ) ||
+	((rw1==1'b1 || rw1==1'b0) && $isunknown(rw2) && $isunknown(rw3)) ||
+	((rw2==1'b1 || rw2==1'b0) && $isunknown(rw1) && $isunknown(rw3)) ||
+	((rw3==1'b1 || rw3==1'b0) && $isunknown(rw2) && $isunknown(rw2)); 
+endproperty
+
+property p_rw;
+	@(posedge clk)
+	($isunknown(rsel1) && $isunknown(rsel2) && $isunknown(rsel3) ) ||
+	((rsel1==1'b1 || rsel1==1'b0) && $isunknown(rsel2) && $isunknown(rsel3)) ||
+	((rsel2==1'b1 || rsel2==1'b0) && $isunknown(rsel1) && $isunknown(rsel3)) ||
+	((rsel3==1'b1 || rsel3==1'b0) && $isunknown(rsel2) && $isunknown(rsel2)); 
+endproperty
+
+property p_req_gnt_w;
+	@(posedge clk) $rose(req) |-> ##[2:5] $rose(gnt);
+endproperty
+
+property p_start_frame;
+	@(posedge clk) $rose(frame_ && irdy_) |-> ##3 $rose(trdy_);
+endproperty
+
+property p_end_frame;
+	@(posedge clk) $rose(frame && irdy) |-> ##2 $rose(trdyp);
+endproperty
+
+property p_bus_not_in_use;
+	@(posedge clk) trdyp |-> ($isunknown(data) && $isunknown(datao));
+endproperty
+
+// Functional coverage statements used to terminate simulation
+// in a random environment
+
+property p_req1;
+        @(posedge clk) $fell(req1) && req2 && req3;
+endproperty
+
+property p_req2;
+        @(posedge clk) $fell(req2) && req3 && req1;
+endproperty
+
+property p_req3;
+        @(posedge clk) $fell(req3) && req1 && req2;
+endproperty
+
+property p_req12;
+        @(posedge clk) $fell(req1) && $fell(req2) && req3;
+endproperty
+
+property p_req23;
+        @(posedge clk) $fell(req2) && $fell(req3) && req1;
+endproperty
+
+property p_req31;
+        @(posedge clk) $fell(req3) && $fell(req1) && req2;
+endproperty
+
+property p_req123;
+	@(posedge clk) $fell(req1) && $fell(req2) && $fell(req3);
+endproperty
+
+property p_m1t1r;
+	@(posedge clk) $fell(frame1 && irdy1) |-> ##3 ($fell(trdy[1])) ##3 !data[8];
+endproperty
+
+property p_m1t1w;
+	@(posedge clk) $fell(frame1 && irdy1) |-> ##3 ($fell(trdy[1])) ##3 data[8];
+endproperty
+
+property p_m1t0r;
+	@(posedge clk) $fell(frame1 && irdy1) |-> ##3 ($fell(trdy[0])) ##3 !data[8];
+endproperty
+
+property p_m1t0w;
+	@(posedge clk) $fell(frame1 && irdy1) |-> ##3 ($fell(trdy[0])) ##3 data[8];
+endproperty
+
+property p_m2t1r;
+	@(posedge clk) $fell(frame2 && irdy2) |-> ##3 ($fell(trdy[1])) ##3 !data[8];
+endproperty
+
+property p_m2t1w;
+	@(posedge clk) $fell(frame2 && irdy2) |-> ##3 ($fell(trdy[1])) ##3 data[8];
+endproperty
+
+property p_m2t0r;
+	@(posedge clk) $fell(frame2 && irdy2) |-> ##3 ($fell(trdy[0])) ##3 !data[8];
+endproperty
+
+property p_m2t0w;
+	@(posedge clk) $fell(frame2 && irdy2) |-> ##3 ($fell(trdy[0])) ##3 data[8];
+endproperty
+
+property p_m3t1r;
+	@(posedge clk) $fell(frame3 && irdy3) |-> ##3 ($fell(trdy[1])) ##3 !data[8];
+endproperty
+
+property p_m3t1w;
+	@(posedge clk) $fell(frame3 && irdy3) |-> ##3 ($fell(trdy[1])) ##3 data[8];
+endproperty
+
+property p_m3t0r;
+	@(posedge clk) $fell(frame3 && irdy3) |-> ##3 ($fell(trdy[0])) ##3 !data[8];
+endproperty
+
+property p_m3t0w;
+	@(posedge clk) $fell(frame3 && irdy3) |-> ##3 ($fell(trdy[0])) ##3 data[8];
+endproperty
+
+`ifdef tb_sva
+
+a_target : assert property(p_target);
+a_frame: assert property(p_frame);
+a_irdy: assert property(p_irdy);
+a_rsel: assert property(p_rsel);
+a_rw: assert property(p_rw);
+a_gnt: assert property(p_gnt);
+a_req_gnt_w : assert property(p_req_gnt_w);
+a_start_frame: assert property(p_start_frame);
+a_end_frame: assert property(p_end_frame);
+a_bus_in_use: assert property(p_bus_not_in_use);
+
+c_target : cover property(p_target);
+c_frame: cover property(p_frame);
+c_irdy: cover property(p_irdy);
+c_rsel: cover property(p_rsel);
+c_rw: cover property(p_rw);
+c_gnt: cover property(p_gnt);
+c_req_gnt_w : cover property(p_req_gnt_w);
+c_start_frame: cover property(p_start_frame);
+c_end_frame: cover property(p_end_frame);
+c_bus_in_use: cover property(p_bus_not_in_use);
+
+`endif
+
+
+`ifdef slv_fc
+
+c_req1: cover property(p_req1) 
+		begin
+			creq1++;
+			if(creq1 == 3) creq1_flag = 1'b1;
+		end
+c_req2: cover property(p_req2) 
+		begin
+			creq2++;
+			if(creq2 == 3) creq2_flag = 1'b1;
+		end
+c_req3: cover property(p_req3) 
+		begin
+			creq3++;
+			if(creq3 == 3) creq3_flag = 1'b1;
+		end
+c_req12: cover property(p_req12) 
+		begin
+			creq12++;
+			if(creq12 == 3) creq12_flag = 1'b1;
+		end
+c_req23: cover property(p_req23) 
+		begin
+			creq23++;
+			if(creq23 == 3) creq23_flag = 1'b1;
+		end
+c_req31: cover property(p_req31) 
+		begin
+			creq31++;
+			if(creq31 == 3) creq31_flag = 1'b1;
+		end
+c_req123: cover property(p_req123) 
+		begin
+			creq123++;
+			if(creq123 == 3) creq123_flag = 1'b1;
+		end
+
+c_m1t1r: cover property(p_m1t1r)
+		begin
+			m1_t1_r++;
+			if(m1_t1_r == 3) m1_t1_r_flag = 1'b1;
+		end
+c_m1t1w: cover property(p_m1t1w)
+		begin
+			m1_t1_w++;
+			if(m1_t1_w == 3) m1_t1_w_flag = 1'b1;
+		end
+c_m1t0r: cover property(p_m1t0r)
+		begin
+			m1_t0_r++;
+			if(m1_t0_r == 3) m1_t0_r_flag = 1'b1;
+		end
+c_m1t0w: cover property(p_m1t0w)
+		begin
+			m1_t0_w++;
+			if(m1_t0_w == 3) m1_t0_w_flag = 1'b1;
+		end
+
+c_m2t1r: cover property(p_m2t1r)
+		begin
+			m2_t1_r++;
+			if(m2_t1_r == 3) m2_t1_r_flag = 1'b1;
+		end
+c_m2t1w: cover property(p_m2t1w)
+		begin
+			m2_t1_w++;
+			if(m2_t1_w == 3) m2_t1_w_flag = 1'b1;
+		end
+c_m2t0r: cover property(p_m2t0r)
+		begin
+			m2_t0_r++;
+			if(m2_t0_r == 3) m2_t0_r_flag = 1'b1;
+		end
+c_m2t0w: cover property(p_m2t0w)
+		begin
+			m2_t0_w++;
+			if(m2_t0_w == 3) m2_t0_w_flag = 1'b1;
+		end
+
+c_m3t1r: cover property(p_m3t1r)
+		begin
+			m3_t1_r++;
+			if(m3_t1_r == 3) m3_t1_r_flag = 1'b1;
+		end
+c_m3t1w: cover property(p_m3t1w)
+		begin
+			m3_t1_w++;
+			if(m3_t1_w == 3) m3_t1_w_flag = 1'b1;
+		end
+c_m3t0r: cover property(p_m3t0r)
+		begin
+			m3_t0_r++;
+			if(m3_t0_r == 3) m3_t0_r_flag = 1'b1;
+		end
+c_m3t0w: cover property(p_m3t0w)
+		begin
+			m3_t0_w++;
+			if(m3_t0_w == 3) m3_t0_w_flag = 1'b1;
+		end
+
+// simulation exit sync
+
+always@(posedge clk)
+begin
+
+if(creq1_flag && creq2_flag && creq3_flag && creq12_flag &&
+	creq23_flag && creq31_flag && creq123_flag && 
+	m1_t1_r_flag && m1_t1_w_flag && m1_t0_r_flag && m1_t0_w_flag &&
+	m2_t1_r_flag && m2_t1_w_flag && m2_t0_r_flag && m2_t0_w_flag &&
+	m3_t1_r_flag && m3_t1_w_flag && m3_t0_r_flag && m3_t0_w_flag) 
+	
+/*
+if(creq1_flag && creq2_flag && creq3_flag && creq12_flag &&
+	creq23_flag && creq31_flag && creq123_flag)  
+*/
+
+begin
+	$display("FC: All possible request scenarios covered 3 times\n");
+	$display("FC: All possible transactions covered 3 times\n");
+	$finish();
+end
+end 
+
+ 
+`endif
+
+// calling task for documentation
+
+`ifdef slv_doc
+
+c_m1t1w_doc: cover property(p_m1t1w) master_xaction(1,1);
+c_m1t1r_doc: cover property(p_m1t1r) master_xaction(1,1);
+
+c_m1t2w_doc: cover property(p_m1t0w) master_xaction(1,2);
+c_m1t2r_doc: cover property(p_m1t0r) master_xaction(1,2);
+
+c_m2t1w_doc: cover property(p_m2t1w) master_xaction(2,1);
+c_m2t1r_doc: cover property(p_m2t1r) master_xaction(2,1);
+
+c_m2t2w_doc: cover property(p_m2t0w) master_xaction(2,2);
+c_m2t2r_doc: cover property(p_m2t0r) master_xaction(2,2);
+
+c_m3t1w_doc: cover property(p_m3t1w) master_xaction(3,1);
+c_m3t1r_doc: cover property(p_m3t1r) master_xaction(3,1);
+
+c_m3t2w_doc: cover property(p_m3t0w) master_xaction(3,2);
+c_m3t2r_doc: cover property(p_m3t0r) master_xaction(3,2);
+
+`endif
+
+task master_xaction(input int m_identity, input int t_identity);
+
+integer i;
+
+begin
+
+if(data[8])
+begin
+	for(i=0; i<8; i++)
+	begin
+	$fwrite(h_mt,"WRITE: Master %0d writing to Target %0d = %0d at %0t\n", 
+			m_identity, t_identity, data[7:0], $time);
+	@(posedge clk);
+	end
+end
+
+if(!data[8])
+begin
+	@(posedge clk);
+	for(i=0; i<8; i++)
+	begin
+	$fwrite(h_mt,"READ: Master %0d reading from Target %0d = %0d at %0t\n",
+			 m_identity, t_identity, datao, $time);
+	@(posedge clk);
+	end
+end
+
+end
+
+endtask
+
+endmodule
+
+bind tb ss_chk i1 (.*);

@@ -1,0 +1,404 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 13 10:38 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"basic.v", 48: simple_seq.a_ia: started at 0s failed at 0s
+	Offending '(a && b)'
+"basic.v", 48: simple_seq.a_ia: started at 0s failed at 0s
+	Offending '(a && b)'
+"basic.v", 48: simple_seq.a_ia: started at 25s succeeded at 25s
+"basic.v", 52: simple_seq.a_s1: started at 25s failed at 25s
+	Offending 'a'
+"basic.v", 55: simple_seq.a_s2: started at 25s failed at 25s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 25s succeeded at 25s
+"basic.v", 61: simple_seq.a_cc: started at 25s succeeded at 25s
+"basic.v", 85: simple_seq.a_p35: started at 25s failed at 25s
+	Offending 'a'
+"basic.v", 88: simple_seq.a_p17: started at 25s failed at 25s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 91: simple_seq.a_p19: started at 25s failed at 25s
+	Offending '($past((a && b), 2) == 1'b1)'
+"basic.v", 48: simple_seq.a_ia: started at 75s failed at 75s
+	Offending '(a && b)'
+"basic.v", 52: simple_seq.a_s1: started at 75s succeeded at 75s
+"basic.v", 55: simple_seq.a_s2: started at 75s succeeded at 75s
+"basic.v", 58: simple_seq.a_s3: started at 75s succeeded at 75s
+"basic.v", 61: simple_seq.a_cc: started at 75s failed at 75s
+"basic.v", 64: simple_seq.a_p8: started at 75s succeeded at 75s
+"basic.v", 88: simple_seq.a_p17: started at 75s succeeded at 75s
+"basic.v", 129: simple_seq.i2.a16: started at 25s succeeded at 75s
+"basic.v", 52: simple_seq.a_s1: started at 125s failed at 125s
+	Offending 'a'
+"basic.v", 55: simple_seq.a_s2: started at 125s failed at 125s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 125s succeeded at 125s
+"basic.v", 61: simple_seq.a_cc: started at 125s succeeded at 125s
+"basic.v", 85: simple_seq.a_p35: started at 125s failed at 125s
+	Offending 'a'
+"basic.v", 88: simple_seq.a_p17: started at 125s succeeded at 125s
+"basic.v", 67: simple_seq.a_p9: started at 75s succeeded at 125s
+"basic.v", 76: simple_seq.a_p12: started at 75s succeeded at 125s
+"basic.v", 79: simple_seq.a_p13: started at 75s succeeded at 125s
+"basic.v", 82: simple_seq.a_p14: started at 75s succeeded at 125s
+"basic.v", 52: simple_seq.a_s1: started at 175s failed at 175s
+	Offending 'a'
+"basic.v", 55: simple_seq.a_s2: started at 175s failed at 175s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 175s succeeded at 175s
+"basic.v", 61: simple_seq.a_cc: started at 175s succeeded at 175s
+"basic.v", 85: simple_seq.a_p35: started at 175s failed at 175s
+	Offending 'a'
+"basic.v", 88: simple_seq.a_p17: started at 175s succeeded at 175s
+"basic.v", 70: simple_seq.a_p10: started at 75s succeeded at 175s
+"basic.v", 98: simple_seq.a15a: started at 75s failed at 175s
+	Offending 'c'
+"basic.v", 129: simple_seq.i2.a16: started at 125s succeeded at 175s
+"basic.v", 129: simple_seq.i1.a16: started at 75s succeeded at 175s
+"basic.v", 48: simple_seq.a_ia: started at 225s failed at 225s
+	Offending '(a && b)'
+"basic.v", 52: simple_seq.a_s1: started at 225s failed at 225s
+	Offending 'a'
+"basic.v", 55: simple_seq.a_s2: started at 225s failed at 225s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 225s succeeded at 225s
+"basic.v", 61: simple_seq.a_cc: started at 225s succeeded at 225s
+"basic.v", 85: simple_seq.a_p35: started at 225s failed at 225s
+	Offending 'a'
+"basic.v", 88: simple_seq.a_p17: started at 225s failed at 225s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 113: simple_seq.a18_ext: started at 175s failed at 225s
+	Offending 's18b.ended'
+"basic.v", 99: simple_seq.a15b: started at 125s failed at 225s
+	Offending 's15b.ended'
+"basic.v", 112: simple_seq.a18: started at 125s failed at 225s
+	Offending 's18b.ended'
+"basic.v", 73: simple_seq.a_p11: started at 75s succeeded at 225s
+"basic.v", 52: simple_seq.a_s1: started at 275s succeeded at 275s
+"basic.v", 55: simple_seq.a_s2: started at 275s succeeded at 275s
+"basic.v", 58: simple_seq.a_s3: started at 275s succeeded at 275s
+"basic.v", 61: simple_seq.a_cc: started at 275s succeeded at 275s
+"basic.v", 64: simple_seq.a_p8: started at 275s failed at 275s
+	Offending 'b'
+"basic.v", 88: simple_seq.a_p17: started at 275s succeeded at 275s
+"basic.v", 91: simple_seq.a_p19: started at 275s failed at 275s
+	Offending '($past((a && b), 2) == 1'b1)'
+"basic.v", 85: simple_seq.a_p35: started at 75s succeeded at 275s
+"basic.v", 52: simple_seq.a_s1: started at 325s succeeded at 325s
+"basic.v", 55: simple_seq.a_s2: started at 325s failed at 325s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 325s succeeded at 325s
+"basic.v", 61: simple_seq.a_cc: started at 325s succeeded at 325s
+"basic.v", 64: simple_seq.a_p8: started at 325s failed at 325s
+	Offending 'b'
+"basic.v", 88: simple_seq.a_p17: started at 325s succeeded at 325s
+"basic.v", 67: simple_seq.a_p9: started at 275s failed at 325s
+	Offending 'b'
+"basic.v", 129: simple_seq.i2.a16: started at 275s failed at 325s
+	Offending 'b'
+"basic.v", 48: simple_seq.a_ia: started at 375s succeeded at 375s
+"basic.v", 52: simple_seq.a_s1: started at 375s succeeded at 375s
+"basic.v", 55: simple_seq.a_s2: started at 375s failed at 375s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 375s succeeded at 375s
+"basic.v", 61: simple_seq.a_cc: started at 375s succeeded at 375s
+"basic.v", 64: simple_seq.a_p8: started at 375s failed at 375s
+	Offending 'b'
+"basic.v", 88: simple_seq.a_p17: started at 375s succeeded at 375s
+"basic.v", 91: simple_seq.a_p19: started at 375s failed at 375s
+	Offending '($past((a && b), 2) == 1'b1)'
+"basic.v", 67: simple_seq.a_p9: started at 325s failed at 375s
+	Offending 'b'
+"basic.v", 70: simple_seq.a_p10: started at 275s failed at 375s
+	Offending 'b'
+"basic.v", 129: simple_seq.i1.a16: started at 275s failed at 375s
+	Offending 'b'
+"basic.v", 52: simple_seq.a_s1: started at 425s succeeded at 425s
+"basic.v", 55: simple_seq.a_s2: started at 425s failed at 425s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 425s succeeded at 425s
+"basic.v", 61: simple_seq.a_cc: started at 425s failed at 425s
+"basic.v", 64: simple_seq.a_p8: started at 425s succeeded at 425s
+"basic.v", 88: simple_seq.a_p17: started at 425s failed at 425s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 67: simple_seq.a_p9: started at 375s succeeded at 425s
+"basic.v", 70: simple_seq.a_p10: started at 325s succeeded at 425s
+"basic.v", 129: simple_seq.i2.a16: started at 375s failed at 425s
+	Offending 'b'
+"basic.v", 129: simple_seq.i1.a16: started at 325s succeeded at 425s
+"basic.v", 48: simple_seq.a_ia: started at 475s failed at 475s
+	Offending '(a && b)'
+"basic.v", 52: simple_seq.a_s1: started at 475s succeeded at 475s
+"basic.v", 55: simple_seq.a_s2: started at 475s failed at 475s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 475s succeeded at 475s
+"basic.v", 61: simple_seq.a_cc: started at 475s failed at 475s
+"basic.v", 64: simple_seq.a_p8: started at 475s succeeded at 475s
+"basic.v", 88: simple_seq.a_p17: started at 475s failed at 475s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 67: simple_seq.a_p9: started at 425s succeeded at 475s
+"basic.v", 70: simple_seq.a_p10: started at 375s succeeded at 475s
+"basic.v", 85: simple_seq.a_p35: started at 275s failed at 475s
+	Offending 'c'
+"basic.v", 98: simple_seq.a15a: started at 375s failed at 475s
+	Offending 'c'
+"basic.v", 129: simple_seq.i1.a16: started at 375s succeeded at 475s
+"basic.v", 48: simple_seq.a_ia: started at 525s succeeded at 525s
+"basic.v", 52: simple_seq.a_s1: started at 525s failed at 525s
+	Offending 'a'
+"basic.v", 55: simple_seq.a_s2: started at 525s failed at 525s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 525s failed at 525s
+	Offending '(a || b)'
+"basic.v", 61: simple_seq.a_cc: started at 525s succeeded at 525s
+"basic.v", 85: simple_seq.a_p35: started at 525s failed at 525s
+	Offending 'a'
+"basic.v", 88: simple_seq.a_p17: started at 525s succeeded at 525s
+"basic.v", 67: simple_seq.a_p9: started at 475s failed at 525s
+	Offending 'b'
+"basic.v", 76: simple_seq.a_p12: started at 475s succeeded at 525s
+"basic.v", 79: simple_seq.a_p13: started at 475s succeeded at 525s
+"basic.v", 113: simple_seq.a18_ext: started at 475s failed at 525s
+	Offending 's18b.ended'
+"basic.v", 70: simple_seq.a_p10: started at 425s failed at 525s
+	Offending 'b'
+"basic.v", 76: simple_seq.a_p12: started at 425s succeeded at 525s
+"basic.v", 79: simple_seq.a_p13: started at 425s succeeded at 525s
+"basic.v", 82: simple_seq.a_p14: started at 425s succeeded at 525s
+"basic.v", 82: simple_seq.a_p14: started at 375s succeeded at 525s
+"basic.v", 82: simple_seq.a_p14: started at 325s succeeded at 525s
+"basic.v", 82: simple_seq.a_p14: started at 275s succeeded at 525s
+"basic.v", 85: simple_seq.a_p35: started at 425s succeeded at 525s
+"basic.v", 85: simple_seq.a_p35: started at 375s succeeded at 525s
+"basic.v", 85: simple_seq.a_p35: started at 325s succeeded at 525s
+"basic.v", 99: simple_seq.a15b: started at 425s failed at 525s
+	Offending 's15b.ended'
+"basic.v", 112: simple_seq.a18: started at 425s failed at 525s
+	Offending 's18b.ended'
+"basic.v", 129: simple_seq.i1.a16: started at 425s failed at 525s
+	Offending 'b'
+"basic.v", 48: simple_seq.a_ia: started at 575s failed at 575s
+	Offending '(a && b)'
+"basic.v", 52: simple_seq.a_s1: started at 575s succeeded at 575s
+"basic.v", 55: simple_seq.a_s2: started at 575s succeeded at 575s
+"basic.v", 58: simple_seq.a_s3: started at 575s succeeded at 575s
+"basic.v", 61: simple_seq.a_cc: started at 575s failed at 575s
+"basic.v", 64: simple_seq.a_p8: started at 575s succeeded at 575s
+"basic.v", 88: simple_seq.a_p17: started at 575s failed at 575s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 113: simple_seq.a18_ext: started at 525s failed at 575s
+	Offending 's18b.ended'
+"basic.v", 70: simple_seq.a_p10: started at 475s succeeded at 575s
+"basic.v", 99: simple_seq.a15b: started at 475s failed at 575s
+	Offending 's15b.ended'
+"basic.v", 112: simple_seq.a18: started at 475s failed at 575s
+	Offending 's18b.ended'
+"basic.v", 98: simple_seq.a15a: started at 425s failed at 575s
+	Offending 'd'
+"basic.v", 129: simple_seq.i2.a16: started at 525s failed at 575s
+	Offending 'b'
+"basic.v", 129: simple_seq.i1.a16: started at 475s succeeded at 575s
+"basic.v", 48: simple_seq.a_ia: started at 625s succeeded at 625s
+"basic.v", 52: simple_seq.a_s1: started at 625s failed at 625s
+	Offending 'a'
+"basic.v", 55: simple_seq.a_s2: started at 625s failed at 625s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 625s failed at 625s
+	Offending '(a || b)'
+"basic.v", 61: simple_seq.a_cc: started at 625s succeeded at 625s
+"basic.v", 85: simple_seq.a_p35: started at 625s failed at 625s
+	Offending 'a'
+"basic.v", 88: simple_seq.a_p17: started at 625s failed at 625s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 91: simple_seq.a_p19: started at 625s failed at 625s
+	Offending '($past((a && b), 2) == 1'b1)'
+"basic.v", 67: simple_seq.a_p9: started at 575s failed at 625s
+	Offending 'b'
+"basic.v", 76: simple_seq.a_p12: started at 575s succeeded at 625s
+"basic.v", 79: simple_seq.a_p13: started at 575s succeeded at 625s
+"basic.v", 73: simple_seq.a_p11: started at 475s failed at 625s
+	Offending '(!d)'
+"basic.v", 82: simple_seq.a_p14: started at 475s succeeded at 625s
+"basic.v", 85: simple_seq.a_p35: started at 475s succeeded at 625s
+"basic.v", 52: simple_seq.a_s1: started at 675s succeeded at 675s
+"basic.v", 55: simple_seq.a_s2: started at 675s succeeded at 675s
+"basic.v", 58: simple_seq.a_s3: started at 675s succeeded at 675s
+"basic.v", 61: simple_seq.a_cc: started at 675s failed at 675s
+"basic.v", 64: simple_seq.a_p8: started at 675s succeeded at 675s
+"basic.v", 88: simple_seq.a_p17: started at 675s failed at 675s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 70: simple_seq.a_p10: started at 575s succeeded at 675s
+"basic.v", 129: simple_seq.i2.a16: started at 625s failed at 675s
+	Offending 'b'
+"basic.v", 129: simple_seq.i1.a16: started at 575s succeeded at 675s
+"basic.v", 48: simple_seq.a_ia: started at 725s failed at 725s
+	Offending '(a && b)'
+"basic.v", 52: simple_seq.a_s1: started at 725s succeeded at 725s
+"basic.v", 55: simple_seq.a_s2: started at 725s failed at 725s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 725s succeeded at 725s
+"basic.v", 61: simple_seq.a_cc: started at 725s failed at 725s
+"basic.v", 64: simple_seq.a_p8: started at 725s succeeded at 725s
+"basic.v", 88: simple_seq.a_p17: started at 725s failed at 725s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 67: simple_seq.a_p9: started at 675s succeeded at 725s
+"basic.v", 73: simple_seq.a_p11: started at 575s succeeded at 725s
+"basic.v", 48: simple_seq.a_ia: started at 775s succeeded at 775s
+"basic.v", 52: simple_seq.a_s1: started at 775s succeeded at 775s
+"basic.v", 55: simple_seq.a_s2: started at 775s failed at 775s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 775s succeeded at 775s
+"basic.v", 61: simple_seq.a_cc: started at 775s succeeded at 775s
+"basic.v", 64: simple_seq.a_p8: started at 775s failed at 775s
+	Offending 'b'
+"basic.v", 88: simple_seq.a_p17: started at 775s succeeded at 775s
+"basic.v", 91: simple_seq.a_p19: started at 775s succeeded at 775s
+"basic.v", 67: simple_seq.a_p9: started at 725s failed at 775s
+	Offending 'b'
+"basic.v", 76: simple_seq.a_p12: started at 725s succeeded at 775s
+"basic.v", 79: simple_seq.a_p13: started at 725s succeeded at 775s
+"basic.v", 70: simple_seq.a_p10: started at 675s failed at 775s
+	Offending 'b'
+"basic.v", 76: simple_seq.a_p12: started at 675s succeeded at 775s
+"basic.v", 79: simple_seq.a_p13: started at 675s succeeded at 775s
+"basic.v", 82: simple_seq.a_p14: started at 675s succeeded at 775s
+"basic.v", 82: simple_seq.a_p14: started at 575s succeeded at 775s
+"basic.v", 85: simple_seq.a_p35: started at 675s succeeded at 775s
+"basic.v", 85: simple_seq.a_p35: started at 575s succeeded at 775s
+"basic.v", 129: simple_seq.i1.a16: started at 675s failed at 775s
+	Offending 'b'
+"basic.v", 48: simple_seq.a_ia: started at 825s failed at 825s
+	Offending '(a && b)'
+"basic.v", 52: simple_seq.a_s1: started at 825s succeeded at 825s
+"basic.v", 55: simple_seq.a_s2: started at 825s failed at 825s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 825s succeeded at 825s
+"basic.v", 61: simple_seq.a_cc: started at 825s failed at 825s
+"basic.v", 64: simple_seq.a_p8: started at 825s succeeded at 825s
+"basic.v", 79: simple_seq.a_p13: started at 825s succeeded at 825s
+"basic.v", 88: simple_seq.a_p17: started at 825s failed at 825s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 67: simple_seq.a_p9: started at 775s succeeded at 825s
+"basic.v", 82: simple_seq.a_p14: started at 775s succeeded at 825s
+"basic.v", 113: simple_seq.a18_ext: started at 775s failed at 825s
+	Offending 's18b.ended'
+"basic.v", 70: simple_seq.a_p10: started at 725s succeeded at 825s
+"basic.v", 82: simple_seq.a_p14: started at 725s succeeded at 825s
+"basic.v", 99: simple_seq.a15b: started at 725s failed at 825s
+	Offending 's15b.ended'
+"basic.v", 112: simple_seq.a18: started at 725s failed at 825s
+	Offending 's18b.ended'
+"basic.v", 98: simple_seq.a15a: started at 675s failed at 825s
+	Offending 'd'
+"basic.v", 129: simple_seq.i2.a16: started at 775s failed at 825s
+	Offending 'b'
+"basic.v", 129: simple_seq.i1.a16: started at 725s succeeded at 825s
+"basic.v", 48: simple_seq.a_ia: started at 875s succeeded at 875s
+"basic.v", 52: simple_seq.a_s1: started at 875s succeeded at 875s
+"basic.v", 55: simple_seq.a_s2: started at 875s failed at 875s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 875s succeeded at 875s
+"basic.v", 61: simple_seq.a_cc: started at 875s succeeded at 875s
+"basic.v", 64: simple_seq.a_p8: started at 875s failed at 875s
+	Offending 'b'
+"basic.v", 88: simple_seq.a_p17: started at 875s succeeded at 875s
+"basic.v", 67: simple_seq.a_p9: started at 825s failed at 875s
+	Offending 'b'
+"basic.v", 70: simple_seq.a_p10: started at 775s failed at 875s
+	Offending 'b'
+"basic.v", 98: simple_seq.a15a: started at 775s failed at 875s
+	Offending 'c'
+"basic.v", 73: simple_seq.a_p11: started at 725s succeeded at 875s
+"basic.v", 129: simple_seq.i2.a16: started at 825s failed at 875s
+	Offending 'b'
+"basic.v", 129: simple_seq.i1.a16: started at 775s failed at 875s
+	Offending 'b'
+"basic.v", 52: simple_seq.a_s1: started at 925s succeeded at 925s
+"basic.v", 55: simple_seq.a_s2: started at 925s failed at 925s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 925s succeeded at 925s
+"basic.v", 61: simple_seq.a_cc: started at 925s failed at 925s
+"basic.v", 64: simple_seq.a_p8: started at 925s succeeded at 925s
+"basic.v", 88: simple_seq.a_p17: started at 925s failed at 925s
+	Offending '(c ? (d == a) : (d == b))'
+"basic.v", 67: simple_seq.a_p9: started at 875s succeeded at 925s
+"basic.v", 113: simple_seq.a18_ext: started at 875s failed at 925s
+	Offending 's18b.ended'
+"basic.v", 70: simple_seq.a_p10: started at 825s succeeded at 925s
+"basic.v", 99: simple_seq.a15b: started at 825s failed at 925s
+	Offending 's15b.ended'
+"basic.v", 112: simple_seq.a18: started at 825s failed at 925s
+	Offending 's18b.ended'
+"basic.v", 85: simple_seq.a_p35: started at 725s failed at 925s
+	Offending 'c'
+"basic.v", 129: simple_seq.i1.a16: started at 825s succeeded at 925s
+"basic.v", 52: simple_seq.a_s1: started at 975s succeeded at 975s
+"basic.v", 55: simple_seq.a_s2: started at 975s failed at 975s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 975s succeeded at 975s
+"basic.v", 61: simple_seq.a_cc: started at 975s failed at 975s
+"basic.v", 64: simple_seq.a_p8: started at 975s succeeded at 975s
+"basic.v", 79: simple_seq.a_p13: started at 975s succeeded at 975s
+"basic.v", 88: simple_seq.a_p17: started at 975s succeeded at 975s
+"basic.v", 91: simple_seq.a_p19: started at 975s failed at 975s
+	Offending '($past((a && b), 2) == 1'b1)'
+"basic.v", 67: simple_seq.a_p9: started at 925s succeeded at 975s
+"basic.v", 76: simple_seq.a_p12: started at 925s succeeded at 975s
+"basic.v", 79: simple_seq.a_p13: started at 925s succeeded at 975s
+"basic.v", 82: simple_seq.a_p14: started at 925s succeeded at 975s
+"basic.v", 70: simple_seq.a_p10: started at 875s succeeded at 975s
+"basic.v", 82: simple_seq.a_p14: started at 875s succeeded at 975s
+"basic.v", 82: simple_seq.a_p14: started at 825s succeeded at 975s
+"basic.v", 85: simple_seq.a_p35: started at 875s succeeded at 975s
+"basic.v", 85: simple_seq.a_p35: started at 825s succeeded at 975s
+"basic.v", 85: simple_seq.a_p35: started at 775s succeeded at 975s
+"basic.v", 76: simple_seq.a_p12: started at 825s succeeded at 975s
+"basic.v", 129: simple_seq.i1.a16: started at 875s succeeded at 975s
+"basic.v", 52: simple_seq.a_s1: started at 1025s succeeded at 1025s
+"basic.v", 55: simple_seq.a_s2: started at 1025s failed at 1025s
+	Offending '$rose(a)'
+"basic.v", 58: simple_seq.a_s3: started at 1025s succeeded at 1025s
+"basic.v", 61: simple_seq.a_cc: started at 1025s failed at 1025s
+"basic.v", 64: simple_seq.a_p8: started at 1025s succeeded at 1025s
+"basic.v", 79: simple_seq.a_p13: started at 1025s succeeded at 1025s
+"basic.v", 88: simple_seq.a_p17: started at 1025s succeeded at 1025s
+"basic.v", 91: simple_seq.a_p19: started at 1025s succeeded at 1025s
+"basic.v", 67: simple_seq.a_p9: started at 975s succeeded at 1025s
+"basic.v", 76: simple_seq.a_p12: started at 975s succeeded at 1025s
+"basic.v", 82: simple_seq.a_p14: started at 975s succeeded at 1025s
+"basic.v", 113: simple_seq.a18_ext: started at 975s succeeded at 1025s
+"basic.v", 70: simple_seq.a_p10: started at 925s succeeded at 1025s
+"basic.v", 85: simple_seq.a_p35: started at 925s succeeded at 1025s
+"basic.v", 99: simple_seq.a15b: started at 925s succeeded at 1025s
+"basic.v", 112: simple_seq.a18: started at 925s succeeded at 1025s
+"basic.v", 98: simple_seq.a15a: started at 875s succeeded at 1025s
+"basic.v", 129: simple_seq.i2.a16: started at 975s succeeded at 1025s
+"basic.v", 129: simple_seq.i1.a16: started at 925s succeeded at 1025s
+$finish at simulation time                 1075
+"basic.v", 67: simple_seq.a_p9: started at 1025s not finished
+"basic.v", 70: simple_seq.a_p10: started at 1025s not finished
+"basic.v", 70: simple_seq.a_p10: started at 975s not finished
+"basic.v", 73: simple_seq.a_p11: started at 1025s not finished
+"basic.v", 73: simple_seq.a_p11: started at 925s not finished
+"basic.v", 73: simple_seq.a_p11: started at 975s not finished
+"basic.v", 76: simple_seq.a_p12: started at 1025s not finished
+"basic.v", 82: simple_seq.a_p14: started at 1025s not finished
+"basic.v", 85: simple_seq.a_p35: started at 975s not finished
+"basic.v", 85: simple_seq.a_p35: started at 1025s not finished
+"basic.v", 98: simple_seq.a15a: started at 1025s not finished
+"basic.v", 98: simple_seq.a15a: started at 975s not finished
+"basic.v", 98: simple_seq.a15a: started at 925s not finished
+"basic.v", 99: simple_seq.a15b: started at 1025s not finished
+"basic.v", 99: simple_seq.a15b: started at 975s not finished
+"basic.v", 112: simple_seq.a18: started at 1025s not finished
+"basic.v", 112: simple_seq.a18: started at 975s not finished
+"basic.v", 113: simple_seq.a18_ext: started at 1025s not finished
+"basic.v", 129: simple_seq.i2.a16: started at 1025s not finished
+"basic.v", 129: simple_seq.i1.a16: started at 1025s not finished
+"basic.v", 129: simple_seq.i1.a16: started at 975s not finished
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1075
+CPU Time:      0.070 seconds;       Data structure size:   0.2Mb
+Wed Apr 13 10:38:33 2005

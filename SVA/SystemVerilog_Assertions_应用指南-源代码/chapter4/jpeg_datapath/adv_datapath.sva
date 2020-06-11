@@ -1,0 +1,206 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *| 
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+
+module dp_chk(
+		input logic reset, clk, enable, 
+		input logic [15:0] d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, 
+					d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, 
+					d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, 
+					d31, d32, d33, d34, d35, d36, d37, d38, d39, d40, 
+					d41, d42, d43, d44, d45, d46, d47, d48, d49, d50, 
+					d51, d52, d53, d54, d55, d56, d57, d58, d59, d60, 
+					d61, d62, d63, d64
+	);
+
+parameter data_file = "";
+parameter identity = "";
+
+integer i=0, j=0;
+integer blk=0;
+integer fd, fdl;
+
+logic [31:0] pix_in_temp;
+logic [15:0] local_array[0:63];
+logic [15:0] pix_in [0:262143];
+
+initial
+begin
+fd = $fopen(data_file, "r");
+end
+
+// copy design data to a local array
+
+always@(*)
+begin
+local_array[0] <= d1;
+local_array[1] <= d2;
+local_array[2] <= d3;
+local_array[3] <= d4;
+local_array[4] <= d5;
+local_array[5] <= d6;
+local_array[6] <= d7;
+local_array[7] <= d8;
+local_array[8] <= d9;
+local_array[9] <= d10;
+local_array[10] <= d11;
+local_array[11] <= d12;
+local_array[12] <= d13;
+local_array[13] <= d14;
+local_array[14] <= d15;
+local_array[15] <= d16;
+local_array[16] <= d17;
+local_array[17] <= d18;
+local_array[18] <= d19;
+local_array[19] <= d20;
+local_array[20] <= d21;
+local_array[21] <= d22;
+local_array[22] <= d23;
+local_array[23] <= d24;
+local_array[24] <= d25;
+local_array[25] <= d26;
+local_array[26] <= d27;
+local_array[27] <= d28;
+local_array[28] <= d29;
+local_array[29] <= d30;
+local_array[30] <= d31;
+local_array[31] <= d32;
+local_array[32] <= d33;
+local_array[33] <= d34;
+local_array[34] <= d35;
+local_array[35] <= d36;
+local_array[36] <= d37;
+local_array[37] <= d38;
+local_array[38] <= d39;
+local_array[39] <= d40;
+local_array[40] <= d41;
+local_array[41] <= d42;
+local_array[42] <= d43;
+local_array[43] <= d44;
+local_array[44] <= d45;
+local_array[45] <= d46;
+local_array[46] <= d47;
+local_array[47] <= d48;
+local_array[48] <= d49;
+local_array[49] <= d50;
+local_array[50] <= d51;
+local_array[51] <= d52;
+local_array[52] <= d53;
+local_array[53] <= d54;
+local_array[54] <= d55;
+local_array[55] <= d56;
+local_array[56] <= d57;
+local_array[57] <= d58;
+local_array[58] <= d59;
+local_array[59] <= d60;
+local_array[60] <= d61;
+local_array[61] <= d62;
+local_array[62] <= d63;
+local_array[63] <= d64;
+end
+
+// load actual results
+
+always@(posedge enable)
+begin
+	if(reset)
+	$display("\nDATA CHECKING: Block number %0d\n", blk);
+	for(j=0; j<64; j++)
+	begin
+	fdl = $fscanf(fd, " %x", pix_in[j]);
+	$display("pix_in[%0d]=%x\n", j, pix_in[j]);
+	end
+	blk++;
+end  
+
+// compare results
+
+genvar k;
+generate
+for(k=0; k<64; k++)
+begin: dchk
+a_dp_chk: assert property(
+	@(posedge clk) (reset && $fell(enable)) |=>
+	(pix_in[k] == local_array[k])) else $fatal;
+end
+endgenerate
+
+endmodule
+
+// check that data is put into blocks of 64 correctly
+// Only the first and last stage is checked, other stages are commented out, can use them as required.
+
+bind data_feeder dp_chk #(.data_file("input_image.dat"), .identity("INPUT")) dpchk1 
+	(reset_, clk, latch_en, q0, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10,
+	q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, 
+	q24, q25, q26, q27, q28, q29, q30, q31, q32, q33, q34, q35, q36,
+	q37, q38, q39, q40, q41, q42, q43, q44, q45, q46, q47, q48, q49,
+	q50, q51, q52, q53, q54, q55, q56, q57, q58, q59, q60, q61, q62, q63);
+
+// check that the output of quantization is correct
+
+bind datapath dp_chk #(.data_file("quantized.dat"), .identity("QUANTIZATION")) dpchk5 (reset, clk, dp_enable4, do1,do2,do3,do4,do5,do6,do7,do8,do9,do10,do11,do12,do13, do14,do15,do16,do17,do18,do19,do20,do21,do22,do23,do24,do25,do26,do27,do28,do29, do30,do31,do32,do33,do34,do35,do36,do37,do38,do39,do40,do41,do42,do43,do44,do45, do46,do47,do48,do49,do50,do51,do52,do53,do54,do55,do56,do57,do58,do59,do60,do61, do62,do63,do64);
+
+/*
+
+// check that the output of first wh transform is correct
+bind datapath dp_chk #(.data_file("wh1.dat"), .identity("WH1")) dpchk2 
+	(reset, clk, dp_enable1, dwl1,dwl2,dwl3,dwl4,dwl5,dwl6,dwl7,dwl8,
+	dwl9,dwl10,dwl11,dwl12,dwl13,dwl14,dwl15,dwl16,dwl17,dwl18,dwl19,
+	dwl20,dwl21,dwl22,dwl23,dwl24, dwl25,dwl26,dwl27,dwl28,dwl29,dwl30,
+	dwl31,dwl32,dwl33,dwl34,dwl35,dwl36,dwl37,dwl38,dwl39,dwl40, dwl41,
+	dwl42,dwl43,dwl44,dwl45,dwl46,dwl47,dwl48,dwl49,dwl50,dwl51,dwl52,
+	dwl53,dwl54,dwl55,dwl56, dwl57,dwl58,dwl59,dwl60,dwl61,dwl62,dwl63,dwl64);
+*/
+
+// check that the transposed data is correct
+
+/*
+bind datapath dp_chk #(.data_file("xposed.dat"), .identity("TRANSPOSE")) dpchk3 
+	(reset, clk, dp_enable2, dwlt1, dwlt2, dwlt3, dwlt4, dwlt5, dwlt6, dwlt7, 
+	dwlt8, dwlt9, dwlt10, dwlt11, dwlt12, dwlt13, dwlt14, dwlt15, dwlt16, dwlt17, 
+	dwlt18, dwlt19, dwlt20, dwlt21, dwlt22, dwlt23, dwlt24, dwlt25, dwlt26, dwlt27, 
+	dwlt28, dwlt29, dwlt30, dwlt31, dwlt32, dwlt33, dwlt34, dwlt35, dwlt36, dwlt37, 
+	dwlt38, dwlt39, dwlt40, dwlt41, dwlt42, dwlt43, dwlt44, dwlt45, dwlt46, dwlt47, 
+	dwlt48, dwlt49, dwlt50, dwlt51, dwlt52, dwlt53, dwlt54, dwlt55, dwlt56, dwlt57, 
+	dwlt58, dwlt59, dwlt60, dwlt61, dwlt62, dwlt63, dwlt64);
+*/
+
+// check that the output of the second wh transform is correct
+
+/*
+bind datapath dp_chk #(.data_file("wh2.dat"), .identity("WH2")) dpchk4 
+	(reset, clk, dp_enable3, dwltwl1, dwltwl2, dwltwl3, dwltwl4, dwltwl5, dwltwl6, 
+	dwltwl7, dwltwl8, dwltwl9, dwltwl10, dwltwl11, dwltwl12, dwltwl13, dwltwl14, 
+	dwltwl15, dwltwl16, dwltwl17, dwltwl18, dwltwl19, dwltwl20, dwltwl21, dwltwl22, 
+	dwltwl23, dwltwl24, dwltwl25, dwltwl26, dwltwl27, dwltwl28, dwltwl29, dwltwl30, 
+	dwltwl31, dwltwl32, dwltwl33, dwltwl34, dwltwl35, dwltwl36, dwltwl37, dwltwl38, 
+	dwltwl39, dwltwl40, dwltwl41, dwltwl42, dwltwl43, dwltwl44, dwltwl45, dwltwl46, 
+	dwltwl47, dwltwl48, dwltwl49, dwltwl50, dwltwl51, dwltwl52, dwltwl53, dwltwl54, 
+	dwltwl55, dwltwl56, dwltwl57, dwltwl58, dwltwl59, dwltwl60, dwltwl61, dwltwl62, 
+	dwltwl63, dwltwl64);
+*/
+
+// check that the output of quantization is correct
+
+//bind datapath dp_chk #(.data_file("quantized.dat"), .identity("QUANTIZATION")) dpchk5 (reset, clk, dp_enable4, do1,do2,do3,do4,do5,do6,do7,do8,do9,do10,do11,do12,do13, do14,do15,do16,do17,do18,do19,do20,do21,do22,do23,do24,do25,do26,do27,do28,do29, do30,do31,do32,do33,do34,do35,do36,do37,do38,do39,do40,do41,do42,do43,do44,do45, do46,do47,do48,do49,do50,do51,do52,do53,do54,do55,do56,do57,do58,do59,do60,do61, do62,do63,do64);
+
+
+
+
+
+
+
+
+
+

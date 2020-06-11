@@ -1,0 +1,215 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *| 
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+
+
+/*
+
+        IDLE    M1      I1      M2      I2      M3      I3
+
+IDLE    Y       Y       N       Y       N       Y       N
+
+M1      Y(Res)  Y       Y       N       N       N       N
+
+I1      Y(Res)  Y       Y       Y       N       Y       N
+
+M2      Y(Res)  N       N       Y       Y       N       N
+
+I2      Y(Res)  Y       N       Y       Y       Y       N
+
+M3      Y(Res)  N       N       N       N       Y       Y       
+
+I3      Y(Res)  Y       N       Y       N       Y       Y       
+
+*/
+
+module arb_checker(state, clk, next, reset, frame, irdy, req1, req2, req3, gnt1, gnt2, gnt3, done);
+
+input logic clk, reset, done, frame, irdy, req1, req2, req3, gnt1, gnt2, gnt3;
+input logic [6:0] state, next;
+
+integer req1_bin = 0;
+integer i1_m1 = 0;
+integer i2_m1 = 0;
+integer i3_m1 = 0;
+integer i1_m2 = 0;
+integer i2_m2 = 0;
+integer i3_m3 = 0;
+integer i3_m2 = 0;
+integer i2_m3 = 0;
+integer i1_m3 = 0;
+integer req1_cnt = 0;
+integer req2_cnt = 0;
+integer req3_cnt = 0;
+integer single_req = 0;
+integer double_req = 0;
+integer triple_req = 0;
+
+enum bit [6:0] {IDLE = 7'b0000001,
+                MASTER1 = 7'b0000010,
+                IDLE1 = 7'b0000100,
+                MASTER2 = 7'b0001000,
+                IDLE2 = 7'b0010000,
+                MASTER3 = 7'b0100000,
+                IDLE3 = 7'b1000000 }next, state;
+
+
+// Check if the state machine encoding is onehot using $onehot system function for this purpose
+
+// FSM2_CHK1
+
+property p_fsm2_encoding;
+	@(posedge clk) $onehot(state); 
+endproperty
+
+a_fsm2_encoding: assert property(p_fsm2_encoding);
+c_fsm2_encoding: cover property(p_fsm2_encoding);
+
+
+// Checking for the various forbidden state transitions
+// from IDLE state you cannot go to IDLE1 or IDLE2 or IDLE3 state
+// IDLE -> IDLE1 || IDLE2 || IDLE3
+
+// FSM2_CHK2
+
+property p_forbid_trans1;
+@(posedge clk) (((state == IDLE1) || (state == IDLE2) || (state == IDLE3)) && reset) |-> $past((state == IDLE) == 0);
+endproperty
+
+a_forbid_trans1: assert property(p_forbid_trans1);
+c_forbid_trans1: cover property(p_forbid_trans1);
+
+// From Master1 you cannot go to other master states and IDLE2  and IDLE3 
+// Forbidden Transactions
+// MASTER1 -> IDLE2 || IDLE3 || MASTER2 || MASTER3
+// MASTER2 -> IDLE1 || IDLE3 || MASTER1 || MASTER3
+// MASTER3 -> IDLE1 || IDLE2 || MASTER1 || MASTER2
+// FSM2_CHK3
+
+
+property p_forbid_trans2a;
+	@(posedge clk) 
+	(((state == IDLE2) || (state == IDLE3) || (state == MASTER2) || (state == MASTER3)) && reset) 
+	|-> $past((state == MASTER1) == 0);
+endproperty
+
+a_forbid_trans2a: assert property(p_forbid_trans2a);
+c_forbid_trans2a: cover property(p_forbid_trans2a);
+
+property p_forbid_trans2b;
+	@(posedge clk) 
+	(((state == IDLE1) || (state == IDLE3) || (state == MASTER1) || (state == MASTER3)) && reset) 
+	|-> $past((state == MASTER2) == 0);
+endproperty
+
+a_forbid_trans2b: assert property(p_forbid_trans2b);
+c_forbid_trans2b: cover property(p_forbid_trans2b);
+
+property p_forbid_trans2c;
+	@(posedge clk) 
+	(((state == IDLE2) || (state == IDLE1) || (state == MASTER2) || (state == MASTER1)) && reset) 
+	|-> $past((state == MASTER3) == 0);
+endproperty
+
+a_forbid_trans2c: assert property(p_forbid_trans2c);
+c_forbid_trans2c: cover property(p_forbid_trans2c);
+
+// from IDLE1 You cannot go to IDLE2 or IDLE3
+// another set of forbidden transitions
+// IDLE1 -> IDLE2 || IDLE3
+// IDLE2 -> IDLE3 || IDLE1
+// IDLE3 -> IDLE1 || IDLE2
+
+// FSM2_CHK4
+
+property p_forbid_trans3a;
+	@(posedge clk) (((state == IDLE2) || (state == IDLE3)) && reset) |-> $past((state== IDLE1) == 0);
+endproperty
+
+a_forbid_trans3a: assert property(p_forbid_trans3a);
+c_forbid_trans3a: cover property(p_forbid_trans3a);
+
+property p_forbid_trans3b;
+	@(posedge clk) (((state == IDLE1) || (state == IDLE3)) && reset) |-> $past((state== IDLE2) == 0);
+endproperty
+
+a_forbid_trans3b: assert property(p_forbid_trans3b);
+c_forbid_trans3b: cover property(p_forbid_trans3b);
+
+property p_forbid_trans3c;
+	@(posedge clk) (((state == IDLE1) || (state == IDLE2)) && reset) |-> $past((state== IDLE3) == 0);
+endproperty
+
+a_forbid_trans3c: assert property(p_forbid_trans3c);
+c_forbid_trans3c: cover property(p_forbid_trans3c);
+
+
+// there should be a grant for every request sent to the arbiter.
+// FSM2_CHK5
+
+property p_req_gnt;
+	@(posedge clk) ((!req1 || !req2 || !req3) && reset) |-> ##1 (!gnt1 || !gnt2 || !gnt3);
+endproperty
+
+a_req_gnt: assert property(p_req_gnt);
+c_req_gnt: cover property(p_req_gnt);
+
+// Checking the number of bus requests from each master
+// failures due to multiple requests are not being generated by the coverage 
+// just doing a cover statement instead of an assert
+// FSM2_CHK6
+
+property p_req_gnt_1;
+	@(posedge clk) ((!req1 && reset)) |-> ##1 !gnt1; 
+endproperty
+
+c_req_gnt_1: cover property(p_req_gnt_1);
+
+
+property p_req_gnt_2;
+	@(posedge clk) ((!req2 && reset)) |-> ##1 !gnt2; 
+endproperty
+
+c_req_gnt_2: cover property(p_req_gnt_2);
+
+property p_req_gnt_3;
+	@(posedge clk) ((!req3 && reset)) |-> ##1 !gnt3; 
+endproperty
+
+c_req_gnt_3: cover property(p_req_gnt_3);
+
+// Assertions for fairness 
+// if a grant is generated, there shouls be a corresponding 
+// request the previous cycle
+
+property p_req1;
+	@(posedge clk)  ($fell(req1) && reset);
+endproperty
+
+c_req1: cover property(p_req1);
+
+property p_req2;
+	@(posedge clk)  ($fell(req2) && reset);
+endproperty
+
+c_req2: cover property(p_req2);
+
+property p_req3;
+	@(posedge clk)  ($fell(req3) && reset);
+endproperty
+
+c_req3: cover property(p_req3);
+
+endmodule
+
+bind bus_arbiter arb_checker u1 (.*);

@@ -1,0 +1,15 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version 7.2; Runtime version 7.2;  Apr 11 06:10 2005
+
+"ddr_assertions.sva", 37: ddr_memctl.u1.c_write: No attempt started
+"ddr_assertions.sva", 36: ddr_memctl.u1.a_write: No attempt started
+"ddr_assertions.sva", 25: ddr_memctl.u1.c_read: No attempt started
+"ddr_assertions.sva", 24: ddr_memctl.u1.a_read: No attempt started
+"ddr_assertions.sva", 37: ddr_memctl.u1.c_write, 0 attempts, 0 match, 0 vacuous match
+"ddr_assertions.sva", 25: ddr_memctl.u1.c_read, 0 attempts, 0 match, 0 vacuous match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0
+CPU Time:      0.080 seconds;       Data structure size:   0.0Mb
+Mon Apr 11 06:10:48 2005

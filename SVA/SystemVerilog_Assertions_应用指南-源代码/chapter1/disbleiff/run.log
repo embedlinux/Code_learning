@@ -1,0 +1,12 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 13 19:14 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"disableiff.v", 66: disableiff.a34: started at 225s succeeded at 975s
+$finish at simulation time                 1875
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1875
+CPU Time:      0.060 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 19:14:12 2005

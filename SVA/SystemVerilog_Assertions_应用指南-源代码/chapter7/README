@@ -1,0 +1,6 @@
+There are two directories in chapter7:
+
+ctc_2signals: automatically generates stimulus for two signals
+ctc_comples: this takes a complex PCI protocol and applies the checking the checer theory to this complex example
+
+

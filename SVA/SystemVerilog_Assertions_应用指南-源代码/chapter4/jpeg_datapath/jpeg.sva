@@ -1,0 +1,96 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *| 
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+
+module jpeg_chk (
+		input logic sipo_en, latch_en,
+		input logic dp1_en, dp2_en, dp3_en, dp4_en, wr,
+		input clk, reset_, rd, get_data, done_frame,
+		input logic [17:0] rd_addr
+		);
+
+integer control = 0, block = 0;
+
+// Property_1: get_data and done_frame are mutully exclusive
+// JPEG_CHK1
+
+property p_mutex;
+	@(posedge clk) ((reset_) |-> not (done_frame && get_data));
+endproperty
+
+a_mutex: assert property(p_mutex);
+
+// Property_2: when read is asserted, the address is incremented by one
+// JPEG_CHK2
+
+sequence s_read;
+	(rd_addr == $past(rd_addr)+1) [*0:$] ##1 $fell(rd);
+endsequence
+
+property p_read;
+	@(posedge clk) (($rose(rd) && reset_) |-> s_read);
+endproperty
+
+a_read: assert property(p_read);
+
+
+// Property_3: Sipo enable to be held high for 64 cycles and then 
+// disabled and latch_en is asserted after 2 cycles 
+// this property checks the data feeder.
+// JPEG_CHK3
+
+sequence s_datafeeder;
+    sipo_en[*64] ##1 $fell(sipo_en) ##1 latch_en ##1 !latch_en;
+	
+endsequence
+
+property p_datafeeder;
+	@(posedge clk) (reset_ && $rose(sipo_en)) |->  s_datafeeder;
+endproperty
+
+a_datafeeder: assert property(p_datafeeder);
+
+// Property_4 
+// JPEG_CHK4
+// control signals for the pipeline are generated in 2 cycle intervals
+
+sequence s_control;
+	dp1_en ##1 !dp1_en ##1 dp2_en ##1 !dp2_en ##1 dp3_en ##1 !dp3_en 
+	##1 dp4_en ##1 !dp4_en ##1 wr ##1 !wr;
+endsequence
+
+property p_control;
+	 @(posedge clk) $fell(latch_en) |=> s_control;
+endproperty
+
+a_control: assert property(p_control);
+
+// JPEG_CHK5
+// Complete control signal generation for the whole frame
+
+property p_control_all;
+	 @(posedge clk) ($rose(sipo_en) && reset_) |-> s_datafeeder ##1 s_control;
+endproperty
+
+property p_block;
+	@(posedge clk) $fell(get_data) && $rose(done_frame) |-> (block == 4095);
+endproperty
+
+a_control_all: assert property(p_control_all);
+a_block: assert property(p_block);
+c_control_all: cover property(p_control_all) block++;
+
+endmodule
+
+bind jpeg jpeg_chk i1 (.*);
+

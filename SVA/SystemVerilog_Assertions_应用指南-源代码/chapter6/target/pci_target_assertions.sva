@@ -1,0 +1,327 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *|
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+module pci_target_checker (clk, rstn, framen, irdyn, trdyn, devseln, idsel, cxben, stopn, reqn, gntn, perrn, par, serrn, req64n, ack64n, par64, ad);
+
+input logic clk, rstn, framen, irdyn, trdyn, stopn, idsel, devseln;
+input logic [7:0] cxben;
+input logic reqn, gntn;
+input logic perrn, serrn, par;
+input logic req64n, par64, ack64n; 
+input logic [63:0] ad;
+
+
+// Definitions
+`define s_IO_READ ($fell(framen) && (cxben[3:0] == 4'b0010))
+`define s_IO_WRITE ($fell(framen) && (cxben[3:0] == 4'b0011))
+`define s_MEM_READ ($fell(framen) && (cxben[3:0] == 4'b0110))
+`define s_MEM_WRITE ($fell(framen) && (cxben[3:0] == 4'b0111))
+`define s_CONFIG_READ ($fell(framen) && (cxben[3:0] == 4'b1010))
+`define s_CONFIG_WRITE ($fell(framen) && (cxben[3:0] == 4'b1011))
+`define s_DUAL_ADDR_CYCLE ($fell(framen) && (cxben[3:0] == 4'b1101))
+`define s_MEM_READ_LINE ($fell(framen) && (cxben[3:0] == 4'b1110))
+`define s_MEM_WRITE_INV ($fell(framen) && (cxben[3:0] == 4'b1111))
+`define s_BUS_IDLE (framen && irdyn)
+
+// Latencies:
+// framen -> irdyn 8 cycles
+// framen -> first data transfer s 16 cycles
+// dataphase -> dataphase is 8 clock cycles 
+// framen -> devseln 5 cycles else master abort 
+
+// Target_Chk1: Once Target has asserted STOP, it show keep STOP asserted until FRAME is deasserted then stop is deasserted.
+
+property p_tchk1;
+        @(posedge clk) $fell(stopn) && !framen |-> !stopn [*1:$] ##0 $rose(framen) ##1 $rose(stopn);
+endproperty
+
+a_tchk1: assert property(p_tchk1);
+c_tchk1: cover property(p_tchk1);
+
+// Target_Chk2: Once target has asserted TRDY it cannot change DEVSEL, TRDY untilt the current data phase completes
+
+sequence s_tchk2;
+	@(posedge clk) (!irdyn && !trdyn && !devseln);
+endsequence
+
+property p_tchk2;
+	@(posedge clk) $fell(trdyn) |-> (!trdyn && !devseln) [*0:16] ##0 !irdyn;
+endproperty
+
+a_tchk2: assert property(p_tchk2);
+c_tchk2: cover property(p_tchk2);
+
+
+// Target_Chk3: TRDY cannot be asserted until devsel is asserted
+
+property p_tchk3;
+	@(posedge clk) $fell(trdyn) |-> !devseln;
+endproperty
+
+a_tchk3: assert property(p_tchk3);
+c_tchk3: cover property(p_tchk3);
+
+
+// Target_chk5: Disconnect with data
+// May be signaled on any data phase by asserting TRDY and STOP together 
+// Complete the current data phase
+
+property p_tchk5b;
+	@(posedge clk) ($fell(stopn) && !framen && !trdyn && !irdyn) |=> 
+			(framen && trdyn) ##1 (stopn && devseln && irdyn); 
+endproperty
+
+a_tchk5b: assert property(p_tchk5b);
+c_tchk5b: cover property(p_tchk5b);
+
+// Target_chk6: Disconnet without data
+// may be signalled on any subsequent data phase meaning by deasserting TRDY and asserting STOP 
+
+sequence s_tchk6a;
+	@(posedge clk) (!irdyn && !trdyn && !devseln && !framen);
+endsequence
+
+sequence s_tchk6b;
+	@(posedge clk)  ($fell(stopn) && $rose(trdyn) && !framen);
+endsequence
+
+sequence s_tchk6c;
+	@(posedge clk) $rose(framen) ##[0:8] (!irdyn && !stopn);	
+endsequence
+
+sequence s_tchk6;
+	@(posedge clk) s_tchk6a.ended ##[1:8] s_tchk6b;
+endsequence
+
+property p_tchk6;
+	@(posedge clk) s_tchk6.ended |=> s_tchk6c;
+endproperty
+
+a_tchk6: assert property(p_tchk6);
+c_tchk6: cover property(p_tchk6);
+
+// Master naturally termianting and target also issuing an abort 
+
+sequence s_tchk6_1;
+	@(posedge clk) (!irdyn && !trdyn && !devseln && !framen) ##[1:8] 
+		($fell(stopn) && trdyn && framen);
+endsequence
+
+property p_tchk6_1;
+	@(posedge clk) s_tchk6_1.ended |=> (irdyn && stopn);
+endproperty
+
+a_tchk6_1: assert property(p_tchk6_1);
+c_tchk6_1: cover property(p_tchk6_1);
+
+// Target_Chk7: Retry
+// signals  retry by asserting STOP and not asserting TRDY in the initial dataphase of the transaction
+
+sequence s_tchk7a;
+        @(posedge clk) ($fell(framen) ##[1:8] $fell(irdyn));
+endsequence
+
+sequence s_tchk7b;
+        @(posedge clk) ($fell(framen) ##[1:5] ($fell(devseln) && $fell(stopn) && trdyn));
+endsequence
+
+sequence s_tchk7;
+        @(posedge clk) first_match(s_tchk7a and s_tchk7b);
+endsequence
+
+property p_tchk7;
+        @(posedge clk) s_tchk7.ended |=>  framen;
+endproperty
+
+a_tchk7: assert property(p_tchk7);
+c_tchk7: cover property(p_tchk7);
+
+
+// Target_Chk8: DEVSEL is not asserted for a special cycle 
+// this is similar to termination by master abort
+// A similar check can also be written to check that the target does not respond to the reserved words when cxben = 4,5,8,9
+
+property p_tchk8;
+	@(posedge clk) $fell(framen) && (cxben[3:0] == 4'b0001) |-> 
+			devseln [*1:$] ##0 $rose(framen);
+endproperty
+
+a_tchk8: assert property(p_tchk8);
+c_tchk8: cover property(p_tchk8);
+
+// Target_Chk9: Latency for the first data phase to be completed is 16 cycles from the assertion of frame
+
+sequence s_tchk9a;
+	@(posedge clk) (!irdyn && !trdyn);
+endsequence
+
+sequence s_tchk9b;
+	@(posedge clk) (!irdyn && !stopn);
+endsequence
+
+sequence s_tchk9_fast;
+	@(posedge clk) $fell(framen) ##1 $fell(devseln);
+endsequence
+
+sequence s_tchk9_medium;
+	@(posedge clk) $fell(framen) ##2 $fell(devseln);
+endsequence
+
+sequence s_tchk9_slow;
+	@(posedge clk) $fell(framen) ##3 $fell(devseln);
+endsequence
+
+sequence s_tchk9_subtractive;
+	@(posedge clk) $fell(framen) ##4 $fell(devseln);
+endsequence
+
+property p_tchk9_fast;
+	@(posedge clk) s_tchk9_fast |-> (!devseln) throughout(##[0:15] (s_tchk9a.ended || s_tchk9b.ended));
+endproperty
+
+a_tchk9_fast: assert property(p_tchk9_fast);
+c_tchk9_fast: cover property(p_tchk9_fast);
+
+property p_tchk9_medium;
+	@(posedge clk) s_tchk9_medium |-> ##[0:14] (s_tchk9a.ended || s_tchk9b.ended);
+endproperty
+
+a_tchk9_medium: assert property(p_tchk9_medium);
+c_tchk9_medium: cover property(p_tchk9_medium);
+
+property p_tchk9_slow;
+	@(posedge clk) s_tchk9_slow |-> ##[0:13] (s_tchk9a.ended || s_tchk9b.ended);
+endproperty
+
+a_tchk9_slow: assert property(p_tchk9_slow);
+c_tchk9_slow: cover property(p_tchk9_slow);
+
+property p_tchk9_subtractive;
+	@(posedge clk) s_tchk9_subtractive |-> ##[0:12] (s_tchk9a.ended || s_tchk9b.ended);
+endproperty
+
+a_tchk9_subtractive: assert property(p_tchk9_subtractive);
+c_tchk9_subtractive: cover property(p_tchk9_subtractive);
+
+// Target_Chk10: Latency for the subsequent data phase to be completed is 8 cycles from the previous data cycles
+
+property p_tchk10;
+	@(posedge clk) (!irdyn && !trdyn && !devseln && !framen) |-> ##[1:8] (!irdyn && (!trdyn || !stopn));
+endproperty
+
+a_tchk10: assert property(p_tchk10);
+c_tchk10: cover property(p_tchk10);
+
+// Target_Chk11: The first data phase on a read command requires a turnaround cycle enforced by TRDYN, the address/data bus requires a turnaround cycle
+
+sequence s_tchk11a;	
+	@(posedge clk) ($fell(framen) && (cxben[1:0] === 2'b10));
+endsequence
+
+sequence s_tchk11b;
+	@(posedge clk) first_match($fell(devseln) ##[1:16] $fell(trdyn));
+endsequence
+
+sequence s_tchk11;
+	@(posedge clk) s_tchk11a.ended ##[1:5] s_tchk11b;
+endsequence
+
+property p_tchk11;
+	@(posedge clk) s_tchk11.ended |-> ($isunknown(par) && $past($isunknown(ad[31:0]))); 
+endproperty
+
+a_tchk11: assert property(p_tchk11);
+c_tchk11: cover property(p_tchk11);
+
+
+// Configuration Cycle
+// Target_Chk12
+// Valid config cycles are cycle 0 and cycle 1
+
+sequence s_tchk12a;
+	@(posedge clk) (`s_CONFIG_READ || `s_CONFIG_WRITE) && 
+			((ad[1:0] == 2'b00) || (ad[1:0] == 2'b01)) &&
+			idsel;
+endsequence
+
+sequence s_tchk12b;
+	@(posedge clk) !devseln && stopn;
+endsequence
+
+sequence s_tchk12;
+	@(posedge clk) s_tchk12a ##[1:5] s_tchk12b;
+endsequence
+
+property p_tchk12;
+	@(posedge clk) first_match(s_tchk12) |-> ##[0:5] $fell(trdyn);
+endproperty
+
+a_tchk12: assert property(p_tchk12);
+c_tchk12: cover property(p_tchk12);
+
+// Target_chk13
+// if config cycles are not equal to type0 or type1, then Master abort 
+
+sequence s_tchk13a;
+	@(posedge clk) (`s_CONFIG_READ || `s_CONFIG_WRITE) && 
+			((ad[1:0] == 2'b10) || (ad[1:0] == 2'b11)) &&
+			idsel;
+endsequence
+
+sequence s_tchk13b;
+	@(posedge clk) (devseln && stopn && trdyn) throughout (##[1:5] $rose(framen));
+endsequence
+
+property p_tchk13;
+	@(posedge clk) s_tchk13a |-> s_tchk13b;
+endproperty
+
+a_tchk13: assert property(p_tchk13);
+c_tchk13: cover property(p_tchk13);
+
+
+
+// Special Coverage Scenario's - 
+// Making sure that DEVSEL is not asserted for different reserverd commands
+// Making sure that Target Abort conditions was tried for different commands
+// SERR/PERR is generate dproperly for the various commands
+// FAST BACK to BACK transactions write followed by a write, write followed by a read, read folowed by a write etc..
+
+
+property p_tcov1;
+	@(posedge clk) $fell(framen) && (cxben[3:0] == 4'b0100) |-> devseln [*1:5] ##0 $rose(framen);
+endproperty
+
+c_tcov1: cover property(p_tcov1);
+
+property p_tcov2;
+	@(posedge clk) $fell(framen) && (cxben[3:0] == 4'b0101) |-> devseln [*1:5] ##0 $rose(framen);
+endproperty
+
+c_tcov2: cover property(p_tcov2);
+
+property p_tcov3;
+	@(posedge clk) $fell(framen) && (cxben[3:0] == 4'b1000) |-> devseln [*1:5] ##0 $rose(framen);
+endproperty
+
+c_tcov3: cover property(p_tcov3);
+
+property p_tcov4;
+	@(posedge clk) $fell(framen) && (cxben[3:0] == 4'b1001) |-> devseln [*1:5] ##0 $rose(framen);
+endproperty
+
+c_tcov4: cover property(p_tcov4);
+
+endmodule
+
+bind pci_target pci_target_checker u1 (.clk(PCLK), .rstn(PRSTNN), .framen(PFRAMENN), .irdyn(PIRDYNN), .trdyn(PTRDYNN), .stopn(PSTOPNN), .devseln(PDEVSELNN), .idsel(PIDSEL), .cxben({PBENN,PCXBENN}), .gntn(PGNTNN), .reqn(PREQNN), .perrn(PPERRNN), .ad({PD, PADATA}), .req64n(PREQ64NN), .ack64n(PACK64NN), .par64(PPAR64), .par(PPAR), .serrn(PSERRNN)); 

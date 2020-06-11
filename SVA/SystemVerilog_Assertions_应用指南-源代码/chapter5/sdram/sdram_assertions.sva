@@ -1,0 +1,301 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *| 
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+
+module sdram_checker(clk, dqm, resetn, burst, size, bank_addr, ras_n, cas_n, sel_n, we_n, addr, data, rd_pop, rd_start);
+
+input logic clk, resetn, ras_n, cas_n, we_n;
+input logic [7:0] sel_n;
+input logic [15:0] addr;
+input logic [31:0] data;
+input logic [2:0] burst;
+input logic [1:0] size;
+input logic [1:0] bank_addr;
+input logic [3:0] dqm;
+input logic rd_pop, rd_start;
+integer wr = 0;
+integer rd = 0;
+
+
+
+`define s_precharge (!ras_n && !sel_n[0] && !we_n && cas_n)
+`define s_read (ras_n && !sel_n[0] && we_n && !cas_n && (burst == 3'b000))
+`define s_burst_read (ras_n && !sel_n[0] && we_n && !cas_n && (burst != 3'b000))
+`define s_autorefresh (!ras_n && !cas_n && !sel_n[0] && we_n)
+`define s_loadmoderegister (!ras_n && !cas_n && !sel_n[0] && !we_n)
+`define s_active (!ras_n && !sel_n[0] && cas_n && we_n)
+`define s_write (!cas_n && !we_n && !sel_n[0] && ras_n && (burst == 3'b000))
+`define s_burst_write (!cas_n && !we_n && !sel_n[0] && ras_n && (burst != 3'b000))
+
+
+// Change the following parameter values to make your assertions work for vaiours DRAM's.
+
+parameter tMRD = 4; // loadmoderegister to active command is 2clock cycles(min)
+parameter tRCD = 2; // active to read/write period(20ns)
+parameter tRAS_min = 4; // active to precharge command min is 40ns or 4 clock cycles
+parameter tRAS_max = 12000; // active to precharge max time is 120000ns or 12000 cycles
+parameter tRC = 6; // active to active min time is 60ns or 6 cycles
+parameter tRRD = 2; // active of bank a to active of bank b min is 15ns or 2 cycles.
+parameter tRFC = 6; // autorefresh -> autorefresh min is 6 cycles
+parameter tRP = 2; // precharge -> autorefresh is 20ns or 2 cycles min
+parameter tCAS = 2; // cas latency is 2 for read cycles
+
+// SDRAM_CHK1
+// loadmode register to active command tMRD
+
+property p_tMRD;
+        @(posedge clk) `s_loadmoderegister |-> ##tMRD `s_active;
+endproperty
+
+a_tMRD: assert property(p_tMRD);
+c_tMRD: cover property(p_tMRD);
+
+// SDRAM_CHK2
+// Check the value of register loaded by the loadmode register command
+
+property p_loadmoderegister;
+	@(posedge clk) (`s_loadmoderegister) |-> (addr == 16'h0022); 
+endproperty	
+
+a_loadmoderegister: assert property(p_loadmoderegister);
+c_loadmoderegister: cover property(p_loadmoderegister);
+
+
+
+// SDRAM_CHK3
+// tCAS read data available with a tCAS latency after read command is issued
+
+property p_read;
+	@(posedge clk) (`s_read || `s_burst_read) |-> ##tCAS ($isunknown(data) == 0);
+endproperty
+
+a_read: assert property(p_read); 
+c_read: cover property(p_read); 
+	
+
+// Assertion_7
+// Command Inhibit mode: If sel is disabled, then new commands are prevented from being executed.
+// ongoing command will be completed.
+
+property p_disable;
+	@(posedge clk) (sel_n[0]) |-> not rd_start;
+endproperty
+
+a_disable: assert property (p_disable);
+c_disable: cover property (p_disable);
+
+// SRAM_CHK4
+// tRCD after an actgive command, read/write can occur only after tRCD
+
+property p_tRCD_not;
+	@(posedge clk) `s_active |-> not ##[0:(tRCD-1)] (`s_read || `s_write || `s_burst_read || `s_burst_write);
+endproperty
+
+property p_tRCD;
+	@(posedge clk) `s_active |-> ##[tRCD:10] (`s_read || `s_write || `s_burst_read || `s_burst_write);
+endproperty
+
+a_tRCD_not: assert property (p_tRCD_not);
+a_tRCD: assert property (p_tRCD);
+
+c_tRCD_not: cover property (p_tRCD_not);
+c_tRCD: cover property (p_tRCD);
+
+// SRAMP_CHK5
+// tRC active to active command cannot come within tRC
+
+property p_tRC_not;
+	@(posedge clk) `s_active |->  not ##[1:(tRC-1)] `s_active;
+endproperty
+
+property p_tRC;
+	@(posedge clk) `s_active |->  ##[tRC:12000] `s_active;
+endproperty
+
+a_tRC_not: assert property (p_tRC_not);
+a_tRC: assert property (p_tRC);
+
+c_tRC_not: cover property (p_tRC_not);
+c_tRC: cover property (p_tRC);
+
+// SDRAM_CHK6
+// autorefresh to autorefresh cannot come within tRFC
+
+property p_tRFC_not;
+        @(posedge clk) `s_autorefresh |-> not ##[1:(tRFC-1)] `s_autorefresh;
+endproperty
+
+property p_tRFC;
+        @(posedge clk) `s_autorefresh |-> ##[tRFC:12000] `s_autorefresh;
+endproperty
+
+a_tRFC_not: assert property (p_tRFC_not);
+a_tRFC: assert property (p_tRFC);
+
+c_tRFC_not: cover property (p_tRFC_not);
+c_tRFC: cover property (p_tRFC);
+
+// SDRAM_CHK7
+// write command can follow a read command only after tCAS
+
+property p_rd_wr;
+        @(posedge clk) `s_read |-> not ##[0:tCAS] `s_write;
+endproperty
+
+a_rd_wr: assert property (p_rd_wr);
+c_rd_wr: cover property (p_rd_wr);
+
+
+// SDRAM_CHK8
+// precharge to active command cannot be issued until tRP is met
+
+property p_tRP_not;
+        @(posedge clk) `s_precharge |-> not ##[0:(tRP-1)] `s_active;
+endproperty
+
+property p_tRP;
+        @(posedge clk) `s_precharge |-> ##[tRP:12000] `s_active;
+endproperty
+
+a_tRP_not: assert property (p_tRP_not);
+a_tRP: assert property (p_tRP);
+
+c_trp_not: assert property (p_tRP_not);
+c_trp: assert property (p_tRP);
+
+// SDRAM_CHK9
+// active to precharge must occur with tRAS min to tRAS max
+
+property p_tRAS_not;
+        @(posedge clk) `s_active |-> ##[0:(tRAS_min-1)] `s_precharge;
+endproperty
+
+property p_tRAS;
+        @(posedge clk) `s_active |-> ##[tRAS_min:tRAS_max] `s_precharge;
+endproperty
+
+a_tRAS_not: assert property (p_tRAS_not);
+a_tRAS: assert property (p_tRAS);
+
+c_tRAS_not: cover property (p_tRAS_not);
+c_tRAS: cover property (p_tRAS);
+
+// SDRAM_CHK10
+// back to back writes are not allowed
+
+property p_wr_wr;
+        @(posedge clk) `s_write |-> not ##1 `s_write;
+endproperty
+
+a_wr_wr: assert property (p_wr_wr);
+c_wr_wr: cover property (p_wr_wr);
+
+
+// SDRAM_CHK11
+// Check if autoprecharge is disabled during read/write operations
+property p_disable_autoprecharge;
+        @(posedge clk) (`s_write || `s_burst_write || `s_read || `s_burst_read) |-> addr[10] == 0;
+endproperty
+
+a_disable_autoprecharge:  assert property(p_disable_autoprecharge);
+
+
+// SDRAM_CHK12
+// tRRD, mim time interval between active commands to different banks  
+
+property p_tRRD;
+        @(posedge clk) (`s_active && bank_addr[1:0] == 0) |-> not ##[0: tRRD] (`s_active && (bank_addr[1:0] != 0));
+endproperty
+
+a_tRRD: assert property(p_tRRD);
+c_tRRD: cover property (p_tRRD);
+
+genvar j;
+generate
+
+for (j=0; j<4; j++)
+begin:loop
+a_generate: assert property(@(posedge clk) (`s_active && bank_addr[1:0] == j) |-> not ##[0: tRRD] (`s_active && (bank_addr[1:0] != j)));
+c_generate: cover property(@(posedge clk) (`s_active && bank_addr[1:0] == j) |-> not ##[0: tRRD] (`s_active && (bank_addr[1:0] != j)));
+end
+endgenerate
+
+// SDRAM_CHK13
+// 128 bit data transfer
+
+property p_xfer128;
+        @(posedge clk) ((size == 0) && ((dqm[0] == 0 &&(`s_write ||`s_burst_write))) |=> ##1 ($fell(dqm[1]) && addr == $past(addr, 2) && (`s_write ||`s_burst_write)) ##1 $rose(dqm[1]) ##1 ($fell(dqm[2]) && addr == $past(addr, 2) && (`s_write ||`s_burst_write)) ##1 $rose(dqm[2]) ##1 ($fell(dqm[3]) && addr == $past(addr, 2) && (`s_write ||`s_burst_write)) ##1 $rose(dqm[3]));
+endproperty
+
+a_xfer128: assert property(p_xfer128);
+c_xfer128: cover  property(p_xfer128);
+
+// SDRAM_CHK14
+// 64bit transfer
+
+property p_xfer64;
+        @(posedge clk) ((size == 1) && ((dqm[1:0] == 0 &&(`s_write ||`s_burst_write))) |=> ##1 ($fell(dqm[2] &&  dqm[3]) && addr == $past(addr, 2) && (`s_write ||`s_burst_write)) ##1 $rose(dqm[3] && dqm[2]));
+endproperty
+
+a_xfer64: assert property(p_xfer64);
+c_xfer64: cover  property(p_xfer64);
+
+// SDRAM_CHK15
+// read write terminated by a burst terminate
+
+sequence s_burstterminate;
+	(!sel_n[0] && !we_n && ras_n && cas_n);
+endsequence
+
+property p_wr_rd_burstterminate;
+	@(posedge clk) (s_burstterminate) |-> $past((`s_burst_write||`s_write||`s_read||`s_burst_read));
+endproperty
+
+a_wr_rd_burstterminate: assert property(p_wr_rd_burstterminate);
+c_wr_rd_burstterminate: cover property(p_wr_rd_burstterminate);
+
+
+// Read Burst terminate
+// SDRAM_COVER_CHK2
+
+property p_rd_burstterminate;
+	@(posedge clk) (s_burstterminate) |-> $past((`s_burst_read || `s_read), 1); 
+endproperty
+
+c_rd_burstterminate: cover property(p_rd_burstterminate);
+
+// Write Burst terminate
+// SDRAM_COVER_CHK1
+
+property p_wr_burstterminate;
+	@(posedge clk) (s_burstterminate) |-> $past((`s_burst_write || `s_write), 1); 
+endproperty
+
+c_wr_burstterminate: cover property(p_wr_burstterminate);
+
+// SDRAM_COVER_CHK3
+// write terminated by a read
+
+property p_wr_rdterminate;	
+	@(posedge clk) (`s_write || `s_burst_write) ##1 (`s_read || `s_burst_read);
+endproperty
+
+c_wr_rdterminate : cover property(p_wr_rdterminate); 
+
+
+
+endmodule
+
+bind memctl sdram_checker u1 (.clk(hclk), .resetn(hresetn), .bank_addr(s_bank_addr), .size(hsize), .burst(hburst), .ras_n(s_ras_n), .cas_n(s_cas_n), .sel_n(s_sel_n), .we_n(s_we_n), .addr(s_addr), .data(s_rd_data), .rd_pop(s_rd_pop), .rd_start(s_rd_start), .dqm(s_dqm));
+
+

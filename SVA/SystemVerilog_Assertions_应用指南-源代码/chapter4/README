@@ -1,0 +1,5 @@
+There are three directories in datapath checker example
+
+au - this directory has a multiplier and uses immediate assertions for checking the functionality. Assertions are inlined
+au_comp - this does the data integrity checking and it is implemented using SVA. for the mutiplier
+jpeg - this directory does the complete datapath checking for the JPEG unit. It has verilog task and functions

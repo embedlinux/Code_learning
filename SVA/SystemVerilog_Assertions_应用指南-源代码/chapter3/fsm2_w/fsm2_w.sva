@@ -1,0 +1,65 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *| 
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+module arb_checker(clk, reset, frame, irdy, req1, req2, req3, gnt1, gnt2, gnt3, done);
+
+input logic clk, reset, done, frame, irdy, req1, req2, req3, gnt1, gnt2, gnt3;
+
+logic [3:1] req_local, gnt_local;
+
+assign req_local[3:1] = ({req3, req2, req1});
+assign gnt_local[3:1] = ({gnt3, gnt2, gnt1});
+
+assign req = !req1 || !req2 || !req3;
+assign gnt = !gnt1 || !gnt2 || !gnt3;
+
+property p_req_gnt_w;
+	@(posedge clk) $rose(req) |-> ##[2:5] $rose(gnt);
+endproperty
+
+a_req_gnt_w : assert property(p_req_gnt_w);
+c_req_gnt_w : cover property(p_req_gnt_w);
+
+// trying to use generate statements to implement window assertions
+// implememnted for each req/gnt
+
+genvar j, k;
+generate
+	
+for (j=2; j<6; j++)
+begin: latency 
+for (k=1; k<4; k++)	
+begin: Master 
+c_gnt_o : cover property(@(posedge clk) $fell(gnt_local[k]) |-> ($past(req_local[k],j) == 1'b0));
+end
+end
+endgenerate
+
+// implementation in the book
+// combined loop for all req/gnt's
+
+genvar s;
+generate
+
+for (s=2; s<6; s++)
+begin: generic
+c_gnt_generic : cover property(@(posedge clk) $rose(gnt) |-> ($past(req,s) == 1'b1));
+end
+
+endgenerate
+
+endmodule
+
+bind bus_arbiter arb_checker u1 (.*);
+
+
