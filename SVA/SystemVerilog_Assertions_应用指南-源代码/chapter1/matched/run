@@ -1,0 +1,1 @@
+simv -assert success+filter -l run.log

@@ -1,0 +1,113 @@
+Command: ./simv -l run.log
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 13 10:35 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"basic_time.v", 60: basic_time.a_s4: started at 25s failed at 25s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 25s failed at 25s
+	Offending 'a'
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 125s failed at 125s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 125s failed at 125s
+	Offending 'a'
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 175s failed at 175s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 175s failed at 175s
+	Offending 'a'
+"basic_time.v", 60: basic_time.a_s4: started at 75s failed at 175s
+	Offending 'b'
+"basic_time.v", 72: basic_time.a7: started at 75s failed at 175s
+	Offending 'b'
+Property p7 failed
+
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 275s failed at 275s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 275s failed at 275s
+	Offending 'a'
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 325s failed at 325s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 325s failed at 325s
+	Offending 'a'
+"basic_time.v", 64: basic_time.a_s6: started at 225s failed at 325s
+Property p7 failed
+
+Property p7 succeeded
+
+"basic_time.v", 60: basic_time.a_s4: started at 375s failed at 375s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 375s failed at 375s
+	Offending 'a'
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 475s failed at 475s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 475s failed at 475s
+	Offending 'a'
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 525s failed at 525s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 525s failed at 525s
+	Offending 'a'
+"basic_time.v", 60: basic_time.a_s4: started at 425s failed at 525s
+	Offending 'b'
+"basic_time.v", 72: basic_time.a7: started at 425s failed at 525s
+	Offending 'b'
+Property p7 failed
+
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 575s failed at 575s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 575s failed at 575s
+	Offending 'a'
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 625s failed at 625s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 625s failed at 625s
+	Offending 'a'
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 725s failed at 725s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 725s failed at 725s
+	Offending 'a'
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 775s failed at 775s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 775s failed at 775s
+	Offending 'a'
+"basic_time.v", 64: basic_time.a_s6: started at 675s failed at 775s
+Property p7 failed
+
+Property p7 succeeded
+
+"basic_time.v", 60: basic_time.a_s4: started at 825s failed at 825s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 825s failed at 825s
+	Offending 'a'
+Property p7 failed
+
+"basic_time.v", 60: basic_time.a_s4: started at 875s failed at 875s
+	Offending 'a'
+"basic_time.v", 72: basic_time.a7: started at 875s failed at 875s
+	Offending 'a'
+Property p7 failed
+
+$finish at simulation time                  925
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 925
+CPU Time:      0.020 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 10:35:01 2005

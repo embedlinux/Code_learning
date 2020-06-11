@@ -1,0 +1,63 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 13 10:48 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"fm.v", 69: f_match.a30: started at 25s failed at 25s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 25s failed at 25s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 75s failed at 75s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 75s failed at 75s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 175s failed at 175s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 175s failed at 175s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 225s failed at 225s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 225s failed at 225s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 125s succeeded at 225s
+"fm.v", 70: f_match.a30_fm: started at 125s succeeded at 225s
+"fm.v", 69: f_match.a30: started at 275s failed at 275s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 275s failed at 275s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 325s failed at 325s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 325s failed at 325s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 375s failed at 375s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 375s failed at 375s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 475s failed at 475s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 475s failed at 475s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 425s succeeded at 475s
+"fm.v", 70: f_match.a30_fm: started at 425s succeeded at 475s
+"fm.v", 69: f_match.a30: started at 525s failed at 525s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 525s failed at 525s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 575s failed at 575s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 575s failed at 575s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 625s failed at 625s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 625s failed at 625s
+	Offending 'c'
+"fm.v", 69: f_match.a30: started at 675s failed at 675s
+	Offending 'c'
+"fm.v", 70: f_match.a30_fm: started at 675s failed at 675s
+	Offending 'c'
+$finish at simulation time                  725
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 725
+CPU Time:      0.020 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 10:48:57 2005

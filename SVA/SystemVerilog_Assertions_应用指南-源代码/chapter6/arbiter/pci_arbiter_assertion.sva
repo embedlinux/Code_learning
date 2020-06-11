@@ -1,0 +1,94 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *|
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+module pci_arbiter_checker (clk, rstn, framen, irdyn, trdyn, devseln, idsel, cxben, stopn, reqn, gntn, perrn, par, serrn, req64n, ack64n, par64, ad, lockn);
+
+input logic clk, rstn, framen, irdyn, trdyn, stopn, devseln;
+input logic [7:0] cxben;
+input logic [3:0] reqn, gntn, idsel;
+input logic perrn, serrn, par, lockn;
+input logic req64n, par64, ack64n; 
+input logic [63:0] ad;
+
+
+// System Checks 1
+// GNT should be asserted when frame is asserted
+
+property p_schk1;
+	@(posedge clk) $fell(framen) |-> !gntn[2] || $rose(gntn[2]);
+endproperty
+
+a_schk1: assert property(p_schk1);
+c_schk1: cover property(p_schk1);
+
+// GNT's are mutually exclusive
+
+property p_schk2;
+	@(posedge clk) $onehot0({!gntn[3], !gntn[2]});
+endproperty
+
+a_schk2: assert property(p_schk2);
+c_schk2: cover property(p_schk2);
+
+// One grant cannot be deasserted and another asserted in the same Cycle unless it is in idle cycle
+
+property p_schk3;
+	@(posedge clk) $rose(gntn[2]) && (!framen || !irdyn) |-> not $fell(gntn[3]);
+endproperty
+
+a_schk3: assert property(p_schk3);
+c_schk3: cover property(p_schk3);
+
+// Lets define the LOCK sequence
+// Lock should be asserted for the whole data phase 
+
+sequence s_schk4a;
+	@(posedge clk) first_match($fell(lockn) ##[0:5] !devseln); 
+endsequence
+
+sequence s_schk4b;
+	@(posedge clk) framen && !irdyn && (!trdyn || !stopn); 
+endsequence
+
+property p_schk4;
+	@(posedge clk) s_schk4a.ended |-> !lockn [*1:$] ##0 s_schk4b; 
+endproperty
+
+a_schk4: assert property(p_schk4);
+c_schk4: cover property(p_schk4);
+
+// LOCK should be deasserted during Address Phase 
+
+property p_schk5;
+	@(posedge clk) $fell(lockn) |-> (($past(framen) == 0) && ($past(framen,2) == 1));
+endproperty
+
+a_schk5: assert property(p_schk5);
+c_schk5: cover property(p_schk5);
+
+// First transaction of a lock should be a read operation
+sequence s_schk6;
+	@(posedge clk) first_match($fell(gntn[2]) ##[1:8] $fell(framen) ##1 $fell(lockn)); 
+endsequence
+
+property p_schk6;
+	@(posedge clk) s_schk6.ended |-> ($past(cxben[1:0]) == 2'b10); 
+endproperty
+
+a_schk6: assert property(p_schk6);
+c_schk6: cover property(p_schk6);
+
+endmodule
+
+bind pci_top pci_arbiter_checker u2 (.clk(pclk), .rstn(prstnn), .framen(pframenn), .irdyn(pirdynn), .trdyn(ptrdynn), .stopn(pstopnn), .devseln(pdevselnn), .idsel(pidsel), .cxben({pcxbenn_upper, pcxbenn_lower}), .gntn(pgntnn), .reqn(preqnn), .perrn(pperrnn), .ad({pad_upper, pad_lower}), .req64n(preq64nn), .ack64n(pack64nn), .par64(ppar64), .par(ppar), .serrn(pserrnn), .lockn(plocknn)); 
+

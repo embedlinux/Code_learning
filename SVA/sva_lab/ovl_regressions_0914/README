@@ -1,0 +1,70 @@
+----------------------------------------------------------------------------
+ CONTENTS (last updated: Tue Sep 11 16:29:41 BST 2007)
+ ========
+ 12.  About this file (OVL testbench, for simulation & formal)
+ 21.    - To-Do List
+ 30.    - Objectives
+ 41.    - Simulation
+ 59.    - Formal Verification
+----------------------------------------------------------------------------
+
+
+INDEX: About this file (OVL testbench, for simulation & formal)
+=====
+This directory contains regressions for OVL releases, based on a DUT that instances 33 assert_ modules (some in several configs):
+
+  testbench/vlog95/assert_every_config.v
+
+Testbenches are provided for simulation and formal verification.
+
+
+INDEX:   - To-Do List
+=====
+1) Add tests for assert_fifo_index, assert_frame, assert_handshake to tb_assert_simulation
+2) Turn on ovl_coverage in tb_assert_simulation, to ensure nothing is missed
+3) Add 17 new checkers to ovl_<checker> directories/files, and use new enable/fire ports
+4) More updates to tb_formal_pass
+5) Add _psl simulation directories.
+
+
+INDEX:   - Objectives
+=====
+These testbenches provide:
+
+  - Regressions to verify OVL releases
+  - Comparisons between different implementations of OVL (e.g. Verilog vs SVA)
+  - Compatability checks/comparisons of EDA tools
+
+Some EDA vendors have their own internal OVL testbenches that are also used to check OVL releases.
+
+
+INDEX:   - Simulation
+=====
+Two testbenches are supplied under testbench/assert_vlog95:
+
+  tb_assert_simulation.v              (tries to fail each OVL)
+  tb_assert_formal_pass_sim_wrapper.v (runs passing-formal testbench for 1 million clock cycles, should pass)
+
+The 2nd testbench is a useful double-check of formal, and can also be used for performance testing (of all OVLs, or using +define+TEST_ macros to check a subset). 
+
+Regression scripts are supplied for simulation on 3 major simulators, currently just for Verilog and SVA versions of OVL (but will later be extended to include VHDL, PSL and SystemC).
+
+See sub-directories for instructions for each OVL language and simulator, e.g.:
+
+  dynamic_simulations/assert_vlog95/vcs/README
+
+There are also "ovl_" versions of the testbenches and simulations.
+
+
+INDEX:   - Formal Verification
+=====
+Two testbenches are supplied under testbench/assert_vlog95:
+
+  tb_assert_formal_fail.v  (primary inputs drive OVL ports, should be easy to fail)
+  tb_assert_formal_pass.v  (non-trivial exhaustive pass of each OVL)
+
+Note that there's also a simulation-wrapper for the 2nd testbench, to run for 1 million clock cycles. See "Simulation" section above for more details.
+
+No scripts are currently supplied for EDA tools.
+
+There are also "ovl_" versions of the testbenches.

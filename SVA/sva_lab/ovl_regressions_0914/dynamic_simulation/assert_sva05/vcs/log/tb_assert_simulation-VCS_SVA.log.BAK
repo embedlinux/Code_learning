@@ -1,0 +1,830 @@
+Command: vcs -R -f ../tb_assert_simulation.vc -sverilog -assert enable_diag -debug_all \
++define+ASSERT_ON -l log/tb_assert_simulation-VCS_SVA.log -assert quiet+maxfail=20 \
+
+                         Chronologic VCS (TM)
+            Version G-2012.09 -- Fri Jul 24 16:28:01 2015
+               Copyright (c) 1991-2012 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+Parsing design file '../../../testbench/assert_vlog95/tb_assert_simulation.v'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '../../../testbench/assert_vlog95/tb_assert_simulation.v'.
+Parsing library directory file '../../../testbench/assert_vlog95/assert_every_config.v'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '../../../testbench/assert_vlog95/assert_every_config.v'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_always.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_always.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_always.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_always.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_always.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_always_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_always.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_always_on_edge.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_always_on_edge.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_always_on_edge.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_always_on_edge.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_always_on_edge.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_always_on_edge_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_always_on_edge.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_change.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_change.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_change.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_change.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_change.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_change_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_change.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_cycle_sequence.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_cycle_sequence.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_cycle_sequence.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_cycle_sequence.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_cycle_sequence.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_cycle_sequence_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_cycle_sequence.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_decrement.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_decrement.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_decrement.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_decrement.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_decrement.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_decrement_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_decrement.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_delta.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_delta.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_delta.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_delta.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_delta.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_delta_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_delta.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_even_parity.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_even_parity.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_even_parity.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_even_parity.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_even_parity.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_even_parity_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_even_parity.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_fifo_index.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_fifo_index.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_fifo_index.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_fifo_index.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_fifo_index.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_fifo_index_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_fifo_index.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_frame.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_frame.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_frame.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_frame.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_frame.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_frame.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_handshake.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_handshake.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_handshake.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_handshake.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_handshake.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_handshake_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_handshake.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_implication.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_implication.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_implication.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_implication.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_implication.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_implication_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_implication.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_increment.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_increment.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_increment.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_increment.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_increment.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_increment_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_increment.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_never.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_never_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_never.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_never_unknown.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_never_unknown_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_never_unknown_async.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown_async.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown_async.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown_async.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown_async.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_never_unknown_async_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_never_unknown_async.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_next.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_next.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_next.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_next.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_next.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_next_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_next.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_no_overflow.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_overflow.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_overflow.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_overflow.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_overflow.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_no_overflow_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_overflow.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_no_transition.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_transition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_transition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_transition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_transition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_no_transition_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_transition.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_no_underflow.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_underflow.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_underflow.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_underflow.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_underflow.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_no_underflow_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_no_underflow.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_odd_parity.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_odd_parity.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_odd_parity.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_odd_parity.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_odd_parity.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_odd_parity_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_odd_parity.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_one_cold.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_cold.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_cold.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_cold.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_cold.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_one_cold_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_cold.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_one_hot.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_hot.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_hot.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_hot.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_hot.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_one_hot_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_one_hot.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_proposition.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_proposition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_proposition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_proposition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_proposition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_proposition_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_proposition.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_quiescent_state.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_quiescent_state.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_quiescent_state.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_quiescent_state.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_quiescent_state.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_quiescent_state_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_quiescent_state.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_range.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_range.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_range.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_range.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_range.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_range_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_range.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_time.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_time.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_time.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_time.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_time.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_time_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_time.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_transition.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_transition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_transition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_transition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_transition.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_transition_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_transition.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_unchange.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_unchange.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_unchange.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_unchange.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_unchange.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_unchange_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_unchange.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_width.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_width.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_width.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_width.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_width.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_width_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_width.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_win_change.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_change.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_change.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_change.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_change.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_win_change_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_change.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_win_unchange.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_unchange.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_unchange.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_unchange.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_unchange.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_win_unchange_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_win_unchange.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_window.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_window.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_window.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_window.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_window.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_window_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_window.vlib'.
+Parsing library directory file '/home/klin/assertion/std_ovl/assert_zero_one_hot.vlib'
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_defines.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_zero_one_hot.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_cover.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_zero_one_hot.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_task.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_zero_one_hot.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/std_ovl_init.h'.
+Back to file '/home/klin/assertion/std_ovl/assert_zero_one_hot.vlib'.
+Parsing included file '/home/klin/assertion/std_ovl/./sva05/assert_zero_one_hot_logic.sv'.
+Back to file '/home/klin/assertion/std_ovl/assert_zero_one_hot.vlib'.
+Top Level Modules:
+       tb_assert_simulation
+TimeScale is 1 ns / 1 ns
+Starting vcs inline pass...
+34 modules and 0 UDP read.
+	However, due to incremental compilation, only 1 module needs to be compiled.
+recompiling module tb_assert_simulation because:
+	This module or some inlined child module(s) has/have been modified.
+ld -r -m elf_i386 -o pre_vcsobj_1_1.o --whole-archive pre_vcsobj_1_1.a --no-whole-archive \
+
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++  -o ../simv -melf_i386    -Wl,-whole-archive    -Wl,-no-whole-archive  _vcsobj_1_1.o \
+5NrI_d.o 5NrIB_d.o SIM_l.o    pre_vcsobj_1_1.o  rmapats_mop.o rmapats.o       /eda/synopsys/vcs/2012.09/linux/lib/libnplex_stub.so \
+/eda/synopsys/vcs/2012.09/linux/lib/libvirsim.so /eda/synopsys/vcs/2012.09/linux/lib/librterrorinf.so \
+/eda/synopsys/vcs/2012.09/linux/lib/libsnpsmalloc.so     /eda/synopsys/vcs/2012.09/linux/lib/libvcsnew.so \
+/eda/synopsys/vcs/2012.09/linux/lib/libuclinative.so         /eda/synopsys/vcs/2012.09/linux/lib/vcs_save_restore_new.o \
+/eda/synopsys/vcs/2012.09/linux/lib/ctype-stubs_32.a -ldl -lm  -lc -lpthread -ldl \
+
+../simv up to date
+Command: ./simv +define+ASSERT_ON -a log/tb_assert_simulation-VCS_SVA.log -assert quiet+maxfail=20
+Chronologic VCS simulator copyright 1991-2012
+Contains Synopsys proprietary information.
+Compiler version G-2012.09; Runtime version G-2012.09;  Jul 24 16:28 2015
+VCD+ Writer G-2012.09 Copyright (c) 1991-2012 by Synopsys Inc.
+
+INDEX: |==========|==========================================|==========================================|
+INDEX: |   TIME   |                   EVENT                  |                 FAILURES                 |
+INDEX: |==========|==========================================|==========================================|
+
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |     0 ns | Reset On (other signals X)               | 0 failures expected                      |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |   150 ns | Reset Off (other signals set to pass)    | 0 failures expected                      |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |   250 ns | never_unknown_async X-check, te:0X       | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_NEVER_UNKNOWN_ASYNC : nua_1_test_expr should never be X or Z : test_expr contains X or Z : severity 1 : time 250 : tb_assert_simulation.DUT.u_nua_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |   550 ns | never_unknown_async X-check, te:1X       | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_NEVER_UNKNOWN_ASYNC : nua_1_test_expr should never be X or Z : test_expr contains X or Z : severity 1 : time 550 : tb_assert_simulation.DUT.u_nua_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |   650 ns | proposition X-check                      | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_PROPOSITION : prp_1_test_expr should be high : Test expression is FALSE : severity 1 : time 650 : tb_assert_simulation.DUT.u_prp_1.ovl_error_t
+       OVL_ERROR : ASSERT_PROPOSITION : prp_1_test_expr should be high : test_expr contains X or Z : severity 1 : time 650 : tb_assert_simulation.DUT.u_prp_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |   850 ns | proposition 2-val check                  | 1 fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_PROPOSITION : prp_1_test_expr should be high : Test expression is FALSE : severity 1 : time 850 : tb_assert_simulation.DUT.u_prp_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  1050 ns | always X-check                           | 2 X-fail: ERROR (1 ASSUME, 1 ASSERT)     |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ALWAYS : alw_4_test_expr should be permanently high : Test expression is FALSE : severity 1 : time 1100 : tb_assert_simulation.DUT.u_alw_4.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS : alw_1_test_expr should be permanently high : Test expression is FALSE : severity 1 : time 1100 : tb_assert_simulation.DUT.u_alw_1.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS : alw_1_test_expr should be permanently high : test_expr contains X or Z : severity 1 : time 1100 : tb_assert_simulation.DUT.u_alw_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  1150 ns | always 2val-check                        | 3 Fail: ERROR (1 ASSUME, 2 ASSERT)       |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ALWAYS : alw_4_test_expr should be permanently high : Test expression is FALSE : severity 1 : time 1200 : tb_assert_simulation.DUT.u_alw_4.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS : alw_1_test_expr should be permanently high : Test expression is FALSE : severity 1 : time 1200 : tb_assert_simulation.DUT.u_alw_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  1350 ns | even_parity X-check                      | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_EVEN_PARITY : evp_1_test_expr should have an even number of bits asserted : Test expression does not exhibit even parity : severity 1 : time 1400 : tb_assert_simulation.DUT.u_evp_1.ovl_error_t
+       OVL_ERROR : ASSERT_EVEN_PARITY : evp_1_test_expr should have an even number of bits asserted : test_expr contains X or Z : severity 1 : time 1400 : tb_assert_simulation.DUT.u_evp_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  1450 ns | even_parity 2val-check                   | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_EVEN_PARITY : evp_1_test_expr should have an even number of bits asserted : Test expression does not exhibit even parity : severity 1 : time 1500 : tb_assert_simulation.DUT.u_evp_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  1750 ns | implication X-check (ante=X, cons=0)     | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_IMPLICATION : imp_1_consequent_expr should be high when imp_1_antecedent_expr is high : antecedent_expr contains X or Z : severity 1 : time 1800 : tb_assert_simulation.DUT.u_imp_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  1850 ns | implication X-check (ante=X, cons=1)     | 0 failures expected                      |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  1950 ns | implication X-check (ante=1,cons=X)      | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_IMPLICATION : imp_1_consequent_expr should be high when imp_1_antecedent_expr is high : Antecedent does not have consequent : severity 1 : time 2000 : tb_assert_simulation.DUT.u_imp_1.ovl_error_t
+       OVL_ERROR : ASSERT_IMPLICATION : imp_1_consequent_expr should be high when imp_1_antecedent_expr is high : consequent_expr contains X or Z : severity 1 : time 2000 : tb_assert_simulation.DUT.u_imp_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  2050 ns | implication X-check (ante=0, cons=X)     | 0 failures expected                      |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  2150 ns | implication X-check (ante=X,cons=X)      | X-fail: ERROR *BUG* only 1 (Mantis 1803) |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  2250 ns | implication 2val-check                   | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_IMPLICATION : imp_1_consequent_expr should be high when imp_1_antecedent_expr is high : Antecedent does not have consequent : severity 1 : time 2300 : tb_assert_simulation.DUT.u_imp_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  2450 ns | never X-check                            | 2 X-fail: WARN & INFO                    |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+     OVL_WARNING : ASSERT_NEVER : nvr_2_test_expr should be permanently low : Test expression is not FALSE : severity 2 : time 2500 : tb_assert_simulation.DUT.u_nvr_2.ovl_error_t
+     OVL_WARNING : ASSERT_NEVER : nvr_2_test_expr should be permanently low : test_expr contains X or Z : severity 2 : time 2500 : tb_assert_simulation.DUT.u_nvr_2.ovl_error_t
+        OVL_INFO : ASSERT_NEVER : nvr_3_test_expr should be permanently low : Test expression is not FALSE : severity 3 : time 2500 : tb_assert_simulation.DUT.u_nvr_3.ovl_error_t
+        OVL_INFO : ASSERT_NEVER : nvr_3_test_expr should be permanently low : test_expr contains X or Z : severity 3 : time 2500 : tb_assert_simulation.DUT.u_nvr_3.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  2550 ns | never 2val-check                         | 2 Fail: WARN & INFO                      |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+     OVL_WARNING : ASSERT_NEVER : nvr_2_test_expr should be permanently low : Test expression is not FALSE : severity 2 : time 2600 : tb_assert_simulation.DUT.u_nvr_2.ovl_error_t
+        OVL_INFO : ASSERT_NEVER : nvr_3_test_expr should be permanently low : Test expression is not FALSE : severity 3 : time 2600 : tb_assert_simulation.DUT.u_nvr_3.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  2750 ns | never_unknown X-check                    | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_NEVER_UNKNOWN : nun_1_test_expr should never be X or Z : test_expr contains X or Z : severity 1 : time 2800 : tb_assert_simulation.DUT.u_nun_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  2950 ns | never_unknown X-check (both X)           | *BUG*: should fire here!                 |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  3250 ns | odd_parity X-check                       | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ODD_PARITY : odp_1_test_expr should have an odd number of bits asserted : Test expression does not exhibit odd parity : severity 1 : time 3300 : tb_assert_simulation.DUT.u_odp_1.ovl_error_t
+       OVL_ERROR : ASSERT_ODD_PARITY : odp_1_test_expr should have an odd number of bits asserted : test_expr contains X or Z : severity 1 : time 3300 : tb_assert_simulation.DUT.u_odp_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  3350 ns | odd_parity 2val-check                    | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ODD_PARITY : odp_1_test_expr should have an odd number of bits asserted : Test expression does not exhibit odd parity : severity 1 : time 3400 : tb_assert_simulation.DUT.u_odp_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  3650 ns | one_cold X-check                         | 3 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ONE_COLD : ocd_1_test_expr should be onecold : test_expr contains X or Z : severity 1 : time 3700 : tb_assert_simulation.DUT.u_ocd_1.ovl_error_t
+       OVL_ERROR : ASSERT_ONE_COLD : ocd_2_test_expr should be onecold or zero : test_expr contains X or Z : severity 1 : time 3700 : tb_assert_simulation.DUT.u_ocd_2.ovl_error_t
+       OVL_ERROR : ASSERT_ONE_COLD : ocd_3_test_expr should be onecold or all-ones : test_expr contains X or Z : severity 1 : time 3700 : tb_assert_simulation.DUT.u_ocd_3.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  3750 ns | one_cold 2val-check                      | 3 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ONE_COLD : ocd_1_test_expr should be onecold : Test expression contains more or less than 1 deasserted bits : severity 1 : time 3800 : tb_assert_simulation.DUT.u_ocd_1.ovl_error_t
+       OVL_ERROR : ASSERT_ONE_COLD : ocd_2_test_expr should be onecold or zero : Test expression contains more or less than 1 deasserted bits : severity 1 : time 3800 : tb_assert_simulation.DUT.u_ocd_2.ovl_error_t
+       OVL_ERROR : ASSERT_ONE_COLD : ocd_3_test_expr should be onecold or all-ones : Test expression contains more or less than 1 deasserted bits : severity 1 : time 3800 : tb_assert_simulation.DUT.u_ocd_3.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  3850 ns | one_cold max/zero-check                  | 3 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ONE_COLD : ocd_1_test_expr should be onecold : Test expression contains more or less than 1 deasserted bits : severity 1 : time 3900 : tb_assert_simulation.DUT.u_ocd_1.ovl_error_t
+       OVL_ERROR : ASSERT_ONE_COLD : ocd_2_test_expr should be onecold or zero : Test expression contains more or less than 1 deasserted bits : severity 1 : time 3900 : tb_assert_simulation.DUT.u_ocd_2.ovl_error_t
+       OVL_ERROR : ASSERT_ONE_COLD : ocd_3_test_expr should be onecold or all-ones : Test expression contains more or less than 1 deasserted bits : severity 1 : time 3900 : tb_assert_simulation.DUT.u_ocd_3.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  4050 ns | one_hot X-check                          | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ONE_HOT : oht_1_test_expr should be onehot : test_expr contains X or Z : severity 1 : time 4100 : tb_assert_simulation.DUT.u_oht_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  4150 ns | one_hot 2val-check                       | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ONE_HOT : oht_1_test_expr should be onehot : Test expression contains more or less than 1 asserted bits : severity 1 : time 4200 : tb_assert_simulation.DUT.u_oht_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  4250 ns | one_hot zero-check                       | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ONE_HOT : oht_1_test_expr should be onehot : Test expression contains more or less than 1 asserted bits : severity 1 : time 4300 : tb_assert_simulation.DUT.u_oht_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  4450 ns | range X-check (can be 0)                 | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_RANGE : rng_1_test_expr should be between 1 and 6 : Test expression evaluates to a value outside the range specified by parameters min and max : severity 1 : time 4500 : tb_assert_simulation.DUT.u_rng_1.ovl_error_t
+       OVL_ERROR : ASSERT_RANGE : rng_1_test_expr should be between 1 and 6 : test_expr contains X or Z : severity 1 : time 4500 : tb_assert_simulation.DUT.u_rng_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  4550 ns | range X-check (can be 7)                 | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_RANGE : rng_1_test_expr should be between 1 and 6 : Test expression evaluates to a value outside the range specified by parameters min and max : severity 1 : time 4600 : tb_assert_simulation.DUT.u_rng_1.ovl_error_t
+       OVL_ERROR : ASSERT_RANGE : rng_1_test_expr should be between 1 and 6 : test_expr contains X or Z : severity 1 : time 4600 : tb_assert_simulation.DUT.u_rng_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  4650 ns | range X-check (OK, cannot be 0 or 7)     | *BUG*: should NOT fire here!             |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_RANGE : rng_1_test_expr should be between 1 and 6 : Test expression evaluates to a value outside the range specified by parameters min and max : severity 1 : time 4700 : tb_assert_simulation.DUT.u_rng_1.ovl_error_t
+       OVL_ERROR : ASSERT_RANGE : rng_1_test_expr should be between 1 and 6 : test_expr contains X or Z : severity 1 : time 4700 : tb_assert_simulation.DUT.u_rng_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  4750 ns | range min-check                          | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_RANGE : rng_1_test_expr should be between 1 and 6 : Test expression evaluates to a value outside the range specified by parameters min and max : severity 1 : time 4800 : tb_assert_simulation.DUT.u_rng_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  4850 ns | range max-check                          | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_RANGE : rng_1_test_expr should be between 1 and 6 : Test expression evaluates to a value outside the range specified by parameters min and max : severity 1 : time 4900 : tb_assert_simulation.DUT.u_rng_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  5050 ns | zero_one_hot X-check                     | 1 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ZERO_ONE_HOT : zoh_1_test_expr should be onehot or zero : test_expr contains X or Z : severity 1 : time 5100 : tb_assert_simulation.DUT.u_zoh_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  5150 ns | zero_one_hot 2val-check                  | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ZERO_ONE_HOT : zoh_1_test_expr should be onehot or zero : Test expression contains more than 1 asserted bits : severity 1 : time 5200 : tb_assert_simulation.DUT.u_zoh_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  5450 ns | ays_on_edge X-check, te:1X, se:-- (same) | 1 X-fail: ERROR (NOEDGE)                 |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_1_test_expr should be permanently high : Test expression is FALSE irrespective of sampling event : severity 1 : time 5500 : tb_assert_simulation.DUT.u_aoe_1.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_1_test_expr should be permanently high : test_expr contains X or Z : severity 1 : time 5500 : tb_assert_simulation.DUT.u_aoe_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  5550 ns | ays_on_edge X-check: te:XX, se=-E (edge) | 4 X-fail: ERROR                          |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_1_test_expr should be permanently high : Test expression is FALSE irrespective of sampling event : severity 1 : time 5600 : tb_assert_simulation.DUT.u_aoe_1.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_1_test_expr should be permanently high : test_expr contains X or Z : severity 1 : time 5600 : tb_assert_simulation.DUT.u_aoe_1.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_2_test_expr should be high on posedge : test_expr contains X or Z : severity 1 : time 5600 : tb_assert_simulation.DUT.u_aoe_2.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_2_test_expr should be high on posedge : Test expression is FALSE on posedge of sampling event : severity 1 : time 5600 : tb_assert_simulation.DUT.u_aoe_2.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_3_test_expr should be high on negedge : test_expr contains X or Z : severity 1 : time 5600 : tb_assert_simulation.DUT.u_aoe_3.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_3_test_expr should be high on negedge : Test expression is FALSE on negedge of sampling event : severity 1 : time 5600 : tb_assert_simulation.DUT.u_aoe_3.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_4_test_expr should be high on any edge : test_expr contains X or Z : severity 1 : time 5600 : tb_assert_simulation.DUT.u_aoe_4.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_4_test_expr should be high on any edge : Test expression is FALSE on any edge of sampling event : severity 1 : time 5600 : tb_assert_simulation.DUT.u_aoe_4.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  5650 ns | always_on_edge X-check: te=X0, se=--     | 1 Fail: ERROR (NOEDGE)                   |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_1_test_expr should be permanently high : Test expression is FALSE irrespective of sampling event : severity 1 : time 5700 : tb_assert_simulation.DUT.u_aoe_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  5850 ns | always_on_edge sampling_event X-check    | 3 X-fail                                 |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_2_test_expr should be high on posedge : sampling_event contains X or Z : severity 1 : time 5900 : tb_assert_simulation.DUT.u_aoe_2.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_3_test_expr should be high on negedge : sampling_event contains X or Z : severity 1 : time 5900 : tb_assert_simulation.DUT.u_aoe_3.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_4_test_expr should be high on any edge : sampling_event contains X or Z : severity 1 : time 5900 : tb_assert_simulation.DUT.u_aoe_4.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  5950 ns | always_on_edge sampling_event X-check    | *BUG*: aoe_2/3/4 should NOT fire here!   |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_2_test_expr should be high on posedge : sampling_event contains X or Z : severity 1 : time 6000 : tb_assert_simulation.DUT.u_aoe_2.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_3_test_expr should be high on negedge :  sampling_event contains X or Z  : severity 1 : time 6000 : tb_assert_simulation.DUT.u_aoe_3.ovl_error_t
+       OVL_ERROR : ASSERT_ALWAYS_ON_EDGE : aoe_4_test_expr should be high on any edge : sampling_event contains X or Z : severity 1 : time 6000 : tb_assert_simulation.DUT.u_aoe_4.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  6050 ns | decrement 2val-check                     | 2 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_DECREMENT : dec_1_test_expr should decrement by 1 : Test expression is decreased by a value other than specified : severity 1 : time 6100 : tb_assert_simulation.DUT.u_dec_1.ovl_error_t
+       OVL_ERROR : ASSERT_DECREMENT : dec_2_test_expr should decrement by 2 : Test expression is decreased by a value other than specified : severity 1 : time 6100 : tb_assert_simulation.DUT.u_dec_2.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  6650 ns | delta min 2valcheck                      | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_DELTA : dlt_1_test_expr should change by 2 to 4 : Test expression changed by a delta value not in the range specified by min and max : severity 1 : time 6700 : tb_assert_simulation.DUT.u_dlt_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  6750 ns | delta max 2valcheck                      | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_DELTA : dlt_1_test_expr should change by 2 to 4 : Test expression changed by a delta value not in the range specified by min and max : severity 1 : time 6800 : tb_assert_simulation.DUT.u_dlt_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  6950 ns | delta max-modulo 2valcheck               | *BUG*: should NOT fire here!             |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_DELTA : dlt_1_test_expr should change by 2 to 4 : Test expression changed by a delta value not in the range specified by min and max : severity 1 : time 7000 : tb_assert_simulation.DUT.u_dlt_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  7050 ns | delta min-modulo 2valcheck               | *BUG*: should NOT fire here!             |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  7150 ns | increment 2val-check                     | 2 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_INCREMENT : inc_1_test_expr should increment by 1 : Test expression is increased by a value other than specified : severity 1 : time 7200 : tb_assert_simulation.DUT.u_inc_1.ovl_error_t
+       OVL_ERROR : ASSERT_INCREMENT : inc_2_test_expr should increment by 2 : Test expression is increased by a value other than specified : severity 1 : time 7200 : tb_assert_simulation.DUT.u_inc_2.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  7550 ns | no_overflow min 2val-check               | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_NO_OVERFLOW : noo_1_test_expr should not overflow : Test expression changed value from allowed maximum value max to a value in the range max+1 to min : severity 1 : time 7600 : tb_assert_simulation.DUT.u_noo_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  7750 ns | no_overflow max 2val-check               | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_NO_OVERFLOW : noo_1_test_expr should not overflow : Test expression changed value from allowed maximum value max to a value in the range max+1 to min : severity 1 : time 7800 : tb_assert_simulation.DUT.u_noo_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  8050 ns | no_transition 2val-check                 | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_NO_TRANSITION : not_1_test_expr should not change from start_state to next_state : Test expression transitioned from value equal to start_state to a value equal to next_state : severity 1 : time 8100 : tb_assert_simulation.DUT.u_not_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  8250 ns | no_underflow min 2val-check              | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_NO_UNDERFLOW : nou_1_test_expr should not underflow : Test expression changed value from allowed minimum value min to a value in the range min-1 to max : severity 1 : time 8300 : tb_assert_simulation.DUT.u_nou_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  8450 ns | no_underflow max 2val-check              | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_NO_UNDERFLOW : nou_1_test_expr should not underflow : Test expression changed value from allowed minimum value min to a value in the range min-1 to max : severity 1 : time 8500 : tb_assert_simulation.DUT.u_nou_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  8550 ns | quiescent_state 2val-check               | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_QUIESCENT_STATE : qst_1_state_expr should equal check_value on a rising-edge of sample_event : State expression is not equal to check_value while sample event is asserted : severity 1 : time 8600 : tb_assert_simulation.DUT.u_qst_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  8850 ns | transition 2val-check                    | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_TRANSITION : trn_1_test_expr should change from start_state to next_state : Test expression transitioned from value start_state to a value other than next_state : severity 1 : time 8900 : tb_assert_simulation.DUT.u_trn_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: |  9750 ns | change 2val-check                        | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_CHANGE : chg_1_test_expr should change within num_cks of start_event : Test expression did not change value within num_cks cycles after start event : severity 1 : time 9900 : tb_assert_simulation.DUT.u_chg_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 10050 ns | cycle_sequence 2val-check                | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_CYCLE_SEQUENCE : csq_1_event_sequence[0] should be high at end of sequence : First num_cks-1 events occured but they are not followed by the last event in sequence : severity 1 : time 10100 : tb_assert_simulation.DUT.u_csq_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 10350 ns | next 2val-check                          | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_NEXT : nxt_1_test_expr should occur num_cks after start_event : Test expression is not asserted after elapse of num_cks cycles from start event : severity 1 : time 10400 : tb_assert_simulation.DUT.u_nxt_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 10950 ns | time 2val-check                          | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_TIME : tim_1_test_expr must hold for 5 cycles after tim_1_start_event (ignore new start) : Test expression is not TRUE within specified num_cks cycles from the start_event : severity 1 : time 11000 : tb_assert_simulation.DUT.u_tim_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 11450 ns | unchange 2val-check                      | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_UNCHANGE : unc_1_test_expr should be stable during num_cks of start_event : Test expression changed value within num_cks from the start event asserted : severity 1 : time 11500 : tb_assert_simulation.DUT.u_unc_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 11850 ns | width 2val-check                         | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_WIDTH : wid_1_test_expr should hold between min and max cycles : Test expression was held TRUE for less than specified minimum min_cks cycles : severity 1 : time 11900 : tb_assert_simulation.DUT.u_wid_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 13050 ns | win_change 2val-check                    | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_WIN_CHANGE : wch_1_test_expr should change between start_event & end_event : Test expression has not changed value before window is closed : severity 1 : time 13100 : tb_assert_simulation.DUT.u_wch_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 14350 ns | window before-end 2val-check             | 3 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_WINDOW : win_1_test_expr should hold between start_event & end_event : Test expression changed value during an open event window : severity 1 : time 14400 : tb_assert_simulation.DUT.u_win_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 14950 ns | window at-end 2val-check                 | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_WINDOW : win_1_test_expr should hold between start_event & end_event : Test expression changed value during an open event window : severity 1 : time 15000 : tb_assert_simulation.DUT.u_win_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 16350 ns | win_unchange before-end 2val-check       | 3 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_WIN_UNCHANGE : wuc_1_test_expr should be stable between start_event & end_event : Test expression has changed value before the event window closes : severity 1 : time 16400 : tb_assert_simulation.DUT.u_wuc_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 16950 ns | win_unchange at-end 2val-check           | 1 Fail: ERROR                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_ERROR : ASSERT_WIN_UNCHANGE : wuc_1_test_expr should be stable between start_event & end_event : Test expression has changed value before the event window closes : severity 1 : time 17000 : tb_assert_simulation.DUT.u_wuc_1.ovl_error_t
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 27050 ns | simulation_done=1'b1                     | 2 fail: ERROR (_EOS)                     |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+
+
+INDEX: |==========|==========================================|==========================================|
+
+       |----------|------------------------------------------|------------------------------------------|
+INDEX: | 99800 ns | never 2val-check                         | 1 fail: FATAL                            |
+~~~~~  |----------|------------------------------------------|------------------------------------------|
+       OVL_FATAL : ASSERT_NEVER : nvr_1_test_expr should be permanently low : Test expression is not FALSE : severity 0 : time 99900 : tb_assert_simulation.DUT.u_nvr_1.ovl_error_t
+$finish called from file "/home/klin/assertion/std_ovl/std_ovl_task.h", line 83.
+$finish at simulation time               100000
+**** Following assertions did not fire at all during simulation. *****
+"/home/klin/assertion/std_ovl/./sva05/assert_width_logic.sv", 38: tb_assert_simulation.DUT.u_wid_4.ovl_assert.a_assert_width_min_check.A_ASSERT_WIDTH_MIN_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_width_logic.sv", 42: tb_assert_simulation.DUT.u_wid_4.ovl_assert.a_assert_width_max_check.A_ASSERT_WIDTH_MAX_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_width_logic.sv", 38: tb_assert_simulation.DUT.u_wid_3.ovl_assert.a_assert_width_min_check.A_ASSERT_WIDTH_MIN_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_width_logic.sv", 42: tb_assert_simulation.DUT.u_wid_3.ovl_assert.a_assert_width_max_check.A_ASSERT_WIDTH_MAX_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_width_logic.sv", 42: tb_assert_simulation.DUT.u_wid_2.ovl_assert.a_assert_width_max_check.A_ASSERT_WIDTH_MAX_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_unchange_logic.sv", 119: tb_assert_simulation.DUT.u_unc_3.ovl_assert.A_ASSERT_UNCHANGE_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_unchange_logic.sv", 89: tb_assert_simulation.DUT.u_unc_3.ovl_assert.not_ovl_reset_on_new_start.A_ASSERT_UNCHANGE_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_unchange_logic.sv", 99: tb_assert_simulation.DUT.u_unc_3.ovl_assert.ovl_error_on_new_start.A_ASSERT_UNCHANGE_ERR_ON_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_unchange_logic.sv", 115: tb_assert_simulation.DUT.u_unc_3.ovl_assert.ovl_ignore_new_start.A_ASSERT_UNCHANGE_XZ_ON_NEW_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_unchange_logic.sv", 119: tb_assert_simulation.DUT.u_unc_2.ovl_assert.A_ASSERT_UNCHANGE_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_unchange_logic.sv", 94: tb_assert_simulation.DUT.u_unc_2.ovl_assert.ovl_reset_on_new_start.A_ASSERT_UNCHANGE_RESET_ON_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_unchange_logic.sv", 115: tb_assert_simulation.DUT.u_unc_2.ovl_assert.ovl_ignore_new_start.A_ASSERT_UNCHANGE_XZ_ON_NEW_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_time_logic.sv", 121: tb_assert_simulation.DUT.u_tim_3.ovl_assert.A_ASSERT_TIME_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_time_logic.sv", 92: tb_assert_simulation.DUT.u_tim_3.ovl_assert.not_ovl_reset_on_new_start.A_ASSERT_TIME_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_time_logic.sv", 102: tb_assert_simulation.DUT.u_tim_3.ovl_assert.ovl_error_on_new_start.A_ASSERT_TIME_ERR_ON_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_time_logic.sv", 117: tb_assert_simulation.DUT.u_tim_3.ovl_assert.not_ovl_ignore_on_new_start.A_ASSERT_TIME_XZ_ON_NEW_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_time_logic.sv", 121: tb_assert_simulation.DUT.u_tim_2.ovl_assert.A_ASSERT_TIME_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_time_logic.sv", 97: tb_assert_simulation.DUT.u_tim_2.ovl_assert.ovl_reset_on_new_start.A_ASSERT_TIME_RESET_ON_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_time_logic.sv", 117: tb_assert_simulation.DUT.u_tim_2.ovl_assert.not_ovl_ignore_on_new_start.A_ASSERT_TIME_XZ_ON_NEW_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_next_logic.sv", 72: tb_assert_simulation.DUT.u_nxt_3.ovl_assert.a_assert_next_start_without_test.A_ASSERT_NEXT_START_WITHOUT_TEST_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_next_logic.sv", 72: tb_assert_simulation.DUT.u_nxt_2.ovl_assert.a_assert_next_start_without_test.A_ASSERT_NEXT_START_WITHOUT_TEST_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_next_logic.sv", 98: tb_assert_simulation.DUT.u_nxt_2.ovl_assert.a_assert_next_start_without_test.A_ASSERT_NEXT_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_next_logic.sv", 82: tb_assert_simulation.DUT.u_nxt_2.ovl_assert.a_assert_next_start_without_test.a_assert_next_no_overlap.A_ASSERT_NEXT_NO_OVERLAP_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_handshake_logic.sv", 128: tb_assert_simulation.DUT.u_hnd_1.ovl_assert.A_ASSERT_HANDSHAKE_ACK_WITHOUT_REQ_FIRST_REQ_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_handshake_logic.sv", 106: tb_assert_simulation.DUT.u_hnd_1.ovl_assert.a_assert_handshake_ack_max_cycle.A_ASSERT_HANDSHAKE_ACK_MAX_CYCLE_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_handshake_logic.sv", 111: tb_assert_simulation.DUT.u_hnd_1.ovl_assert.a_assert_handshake_ack_max_length.A_ASSERT_HANDSHAKE_ACK_MAX_LENGTH_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_handshake_logic.sv", 116: tb_assert_simulation.DUT.u_hnd_1.ovl_assert.a_assert_handshake_req_deassert.A_ASSERT_HANDSHAKE_REQ_DEASSERT_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_handshake_logic.sv", 121: tb_assert_simulation.DUT.u_hnd_1.ovl_assert.a_assert_handshake_req_drop.A_ASSERT_HANDSHAKE_REQ_DROP_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 164: tb_assert_simulation.DUT.u_frm_5.ovl_assert.a_ignore_or_error_on_new_start.a_assert_frame_min_check.A_ASSERT_FRAME_MIN_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 169: tb_assert_simulation.DUT.u_frm_5.ovl_assert.a_ignore_or_error_on_new_start.a_assert_frame_max_check.A_ASSERT_FRAME_MAX_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 204: tb_assert_simulation.DUT.u_frm_5.ovl_assert.a_assert_frame_xz_on_test_expr.A_ASSERT_FRAME_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 209: tb_assert_simulation.DUT.u_frm_5.ovl_assert.a_assert_frame_xz_on_test_expr.a_assert_frame_xz_on_new_start.A_ASSERT_FRAME_XZ_ON_NEW_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 176: tb_assert_simulation.DUT.u_frm_4.ovl_assert.a_reset_on_new_start.a_assert_frame_reset_on_start_min_check.A_ASSERT_FRAME_RESET_ON_START_MIN_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 181: tb_assert_simulation.DUT.u_frm_4.ovl_assert.a_reset_on_new_start.a_assert_frame_reset_on_start_max_check.A_ASSERT_FRAME_RESET_ON_START_MAX_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 204: tb_assert_simulation.DUT.u_frm_4.ovl_assert.a_assert_frame_xz_on_test_expr.A_ASSERT_FRAME_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 209: tb_assert_simulation.DUT.u_frm_4.ovl_assert.a_assert_frame_xz_on_test_expr.a_assert_frame_xz_on_new_start.A_ASSERT_FRAME_XZ_ON_NEW_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 164: tb_assert_simulation.DUT.u_frm_3.ovl_assert.a_ignore_or_error_on_new_start.a_assert_frame_min_check.A_ASSERT_FRAME_MIN_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 169: tb_assert_simulation.DUT.u_frm_3.ovl_assert.a_ignore_or_error_on_new_start.a_assert_frame_max_check.A_ASSERT_FRAME_MAX_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 204: tb_assert_simulation.DUT.u_frm_3.ovl_assert.a_assert_frame_xz_on_test_expr.A_ASSERT_FRAME_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 169: tb_assert_simulation.DUT.u_frm_2.ovl_assert.a_ignore_or_error_on_new_start.a_assert_frame_max_check.A_ASSERT_FRAME_MAX_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 204: tb_assert_simulation.DUT.u_frm_2.ovl_assert.a_assert_frame_xz_on_test_expr.A_ASSERT_FRAME_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 164: tb_assert_simulation.DUT.u_frm_1.ovl_assert.a_ignore_or_error_on_new_start.a_assert_frame_min_check.A_ASSERT_FRAME_MIN_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_frame_logic.sv", 215: tb_assert_simulation.DUT.u_frm_1.ovl_assert.a_assert_frame_min_xz_check.A_ASSERT_FRAME_MIN_XZ_CHECK_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_cycle_sequence_logic.sv", 153: tb_assert_simulation.DUT.u_csq_1.ovl_assert.a_assert_sequence_trigger_on_nc0_xz.A_ASSERT_SEQUENCE_TRIGGER_ON_NC0_LAST_EVENT_XZ_1_XZ_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_change_logic.sv", 117: tb_assert_simulation.DUT.u_chg_3.ovl_assert.A_ASSERT_CHANGE_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_change_logic.sv", 88: tb_assert_simulation.DUT.u_chg_3.ovl_assert.not_ovl_reset_on_new_start.A_ASSERT_CHANGE_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_change_logic.sv", 98: tb_assert_simulation.DUT.u_chg_3.ovl_assert.ovl_error_on_new_start.A_ASSERT_CHANGE_ERR_ON_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_change_logic.sv", 113: tb_assert_simulation.DUT.u_chg_3.ovl_assert.ovl_ignore_new_start.A_ASSERT_CHANGE_XZ_ON_NEW_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_change_logic.sv", 117: tb_assert_simulation.DUT.u_chg_2.ovl_assert.A_ASSERT_CHANGE_XZ_ON_TEST_EXPR_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_change_logic.sv", 93: tb_assert_simulation.DUT.u_chg_2.ovl_assert.ovl_reset_on_new_start.A_ASSERT_CHANGE_RESET_ON_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_change_logic.sv", 113: tb_assert_simulation.DUT.u_chg_2.ovl_assert.ovl_ignore_new_start.A_ASSERT_CHANGE_XZ_ON_NEW_START_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_fifo_index_logic.sv", 98: tb_assert_simulation.DUT.u_fix_1.ovl_assert.A_ASSERT_FIFO_INDEX_OVERFLOW_P: Antecedent of the implication never satisfied.
+"/home/klin/assertion/std_ovl/./sva05/assert_fifo_index_logic.sv", 102: tb_assert_simulation.DUT.u_fix_1.ovl_assert.A_ASSERT_FIFO_INDEX_UNDERFLOW_P: Antecedent of the implication never satisfied.
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 100000 ns
+CPU Time:      3.000 seconds;       Data structure size:   0.2Mb
+Fri Jul 24 16:28:18 2015
+CPU time: 4.155 seconds to compile + .104 seconds to elab + .337 seconds to link + 3.752 seconds in simulation

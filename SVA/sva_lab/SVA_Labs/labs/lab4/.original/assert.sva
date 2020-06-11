@@ -1,0 +1,8 @@
+module assert_router_arbiter(input logic clock, reset_n, input logic [15:0] request, grant);
+
+//request and grant are active high
+
+endmodule
+
+	  //16 bindings for 16 arbiters
+

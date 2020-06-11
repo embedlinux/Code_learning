@@ -1,0 +1,30 @@
+Command: vcs pci_target.v pci_target_assertions.sva -sverilog -assert enable_diag \
+-PP -l compile.log
+                         Chronologic VCS (TM)
+              Version 7.2R16 -- Wed Apr 20 10:00:33 2005
+               Copyright (c) 1991-2004 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+***** Warning: ACC/CLI capabilities have been enabled for the entire design.
+      For faster performance enable module specific capability in pli.tab file
+Parsing design file 'pci_target.v'
+Parsing design file 'pci_target_assertions.sva'
+Top Level Modules:
+       $root
+       pci_target
+No TimeScale specified
+Starting vcs inline pass...
+2 modules and 0 UDP read.
+recompiling module $root
+recompiling module pci_target
+Both modules done.
+if [ -x ../simv ]; then chmod -x ../simv; fi
+gcc   -o ../simv  5NrI_d.o 5NrIB_d.o E1gK_1_d.o 66sx_1_d.o SIM_l.o   /remote/hlvrelease/vcs_support/7.2/Linux/vcs7.2R16/gui/virsim/linux/vcdplus/vcs7_2/libvirsim.a \
+/remote/hlvrelease/vcs_support/7.2/Linux/vcs7.2R16/linux/lib/libvcsnew.so     -ldl \
+-lm  -lc -ldl    
+../simv up to date
+CPU time: 1.260 seconds to compile + .210 seconds to link

@@ -1,0 +1,203 @@
+Command: ./simv -assert filter+success -l run.log
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 14 07:16 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+out_local[          0]=0307
+
+out_local[          1]=00d5
+
+out_local[          2]=ff55
+
+out_local[          3]=ff77
+
+out_local[          4]=ff8b
+
+out_local[          5]=0009
+
+out_local[          6]=00ad
+
+out_local[          7]=0117
+
+"au_comp.sva", 82: tb.i1.a1.loop[0].a_au_comp_chk_o: started at 375s succeeded at 375s
+"au_comp.sva", 82: tb.i1.a1.loop[1].a_au_comp_chk_o: started at 375s succeeded at 375s
+"au_comp.sva", 82: tb.i1.a1.loop[2].a_au_comp_chk_o: started at 375s succeeded at 375s
+"au_comp.sva", 82: tb.i1.a1.loop[3].a_au_comp_chk_o: started at 375s succeeded at 375s
+"au_comp.sva", 82: tb.i1.a1.loop[4].a_au_comp_chk_o: started at 375s succeeded at 375s
+"au_comp.sva", 82: tb.i1.a1.loop[5].a_au_comp_chk_o: started at 375s succeeded at 375s
+"au_comp.sva", 82: tb.i1.a1.loop[6].a_au_comp_chk_o: started at 375s succeeded at 375s
+"au_comp.sva", 82: tb.i1.a1.loop[7].a_au_comp_chk_o: started at 375s succeeded at 375s
+out_local[          0]=04f7
+
+out_local[          1]=0121
+
+out_local[          2]=fef1
+
+out_local[          3]=0137
+
+out_local[          4]=ff51
+
+out_local[          5]=00cf
+
+out_local[          6]=003f
+
+out_local[          7]=0021
+
+"au_comp.sva", 82: tb.i1.a1.loop[0].a_au_comp_chk_o: started at 575s succeeded at 575s
+"au_comp.sva", 82: tb.i1.a1.loop[1].a_au_comp_chk_o: started at 575s succeeded at 575s
+"au_comp.sva", 82: tb.i1.a1.loop[2].a_au_comp_chk_o: started at 575s succeeded at 575s
+"au_comp.sva", 82: tb.i1.a1.loop[3].a_au_comp_chk_o: started at 575s succeeded at 575s
+"au_comp.sva", 82: tb.i1.a1.loop[4].a_au_comp_chk_o: started at 575s succeeded at 575s
+"au_comp.sva", 82: tb.i1.a1.loop[5].a_au_comp_chk_o: started at 575s succeeded at 575s
+"au_comp.sva", 82: tb.i1.a1.loop[6].a_au_comp_chk_o: started at 575s succeeded at 575s
+"au_comp.sva", 82: tb.i1.a1.loop[7].a_au_comp_chk_o: started at 575s succeeded at 575s
+out_local[          0]=030f
+
+out_local[          1]=fef7
+
+out_local[          2]=ff99
+
+out_local[          3]=008d
+
+out_local[          4]=00f9
+
+out_local[          5]=ff75
+
+out_local[          6]=ffff
+
+out_local[          7]=fe8f
+
+"au_comp.sva", 82: tb.i1.a1.loop[0].a_au_comp_chk_o: started at 775s succeeded at 775s
+"au_comp.sva", 82: tb.i1.a1.loop[1].a_au_comp_chk_o: started at 775s succeeded at 775s
+"au_comp.sva", 82: tb.i1.a1.loop[2].a_au_comp_chk_o: started at 775s succeeded at 775s
+"au_comp.sva", 82: tb.i1.a1.loop[3].a_au_comp_chk_o: started at 775s succeeded at 775s
+"au_comp.sva", 82: tb.i1.a1.loop[4].a_au_comp_chk_o: started at 775s succeeded at 775s
+"au_comp.sva", 82: tb.i1.a1.loop[5].a_au_comp_chk_o: started at 775s succeeded at 775s
+"au_comp.sva", 82: tb.i1.a1.loop[6].a_au_comp_chk_o: started at 775s succeeded at 775s
+"au_comp.sva", 82: tb.i1.a1.loop[7].a_au_comp_chk_o: started at 775s succeeded at 775s
+out_local[          0]=03b5
+
+out_local[          1]=ff7b
+
+out_local[          2]=ff5f
+
+out_local[          3]=01d5
+
+out_local[          4]=ff43
+
+out_local[          5]=0039
+
+out_local[          6]=ff31
+
+out_local[          7]=ffaf
+
+"au_comp.sva", 82: tb.i1.a1.loop[0].a_au_comp_chk_o: started at 975s succeeded at 975s
+"au_comp.sva", 82: tb.i1.a1.loop[1].a_au_comp_chk_o: started at 975s succeeded at 975s
+"au_comp.sva", 82: tb.i1.a1.loop[2].a_au_comp_chk_o: started at 975s succeeded at 975s
+"au_comp.sva", 82: tb.i1.a1.loop[3].a_au_comp_chk_o: started at 975s succeeded at 975s
+"au_comp.sva", 82: tb.i1.a1.loop[4].a_au_comp_chk_o: started at 975s succeeded at 975s
+"au_comp.sva", 82: tb.i1.a1.loop[5].a_au_comp_chk_o: started at 975s succeeded at 975s
+"au_comp.sva", 82: tb.i1.a1.loop[6].a_au_comp_chk_o: started at 975s succeeded at 975s
+"au_comp.sva", 82: tb.i1.a1.loop[7].a_au_comp_chk_o: started at 975s succeeded at 975s
+out_local[          0]=04b1
+
+out_local[          1]=ff7b
+
+out_local[          2]=fffb
+
+out_local[          3]=0125
+
+out_local[          4]=ff0d
+
+out_local[          5]=ff57
+
+out_local[          6]=00ab
+
+out_local[          7]=0095
+
+"au_comp.sva", 82: tb.i1.a1.loop[0].a_au_comp_chk_o: started at 1175s succeeded at 1175s
+"au_comp.sva", 82: tb.i1.a1.loop[1].a_au_comp_chk_o: started at 1175s succeeded at 1175s
+"au_comp.sva", 82: tb.i1.a1.loop[2].a_au_comp_chk_o: started at 1175s succeeded at 1175s
+"au_comp.sva", 82: tb.i1.a1.loop[3].a_au_comp_chk_o: started at 1175s succeeded at 1175s
+"au_comp.sva", 82: tb.i1.a1.loop[4].a_au_comp_chk_o: started at 1175s succeeded at 1175s
+"au_comp.sva", 82: tb.i1.a1.loop[5].a_au_comp_chk_o: started at 1175s succeeded at 1175s
+"au_comp.sva", 82: tb.i1.a1.loop[6].a_au_comp_chk_o: started at 1175s succeeded at 1175s
+"au_comp.sva", 82: tb.i1.a1.loop[7].a_au_comp_chk_o: started at 1175s succeeded at 1175s
+out_local[          0]=0331
+
+out_local[          1]=002b
+
+out_local[          2]=ff2b
+
+out_local[          3]=0035
+
+out_local[          4]=fe65
+
+out_local[          5]=ff23
+
+out_local[          6]=01ab
+
+out_local[          7]=ff01
+
+"au_comp.sva", 82: tb.i1.a1.loop[0].a_au_comp_chk_o: started at 1375s succeeded at 1375s
+"au_comp.sva", 82: tb.i1.a1.loop[1].a_au_comp_chk_o: started at 1375s succeeded at 1375s
+"au_comp.sva", 82: tb.i1.a1.loop[2].a_au_comp_chk_o: started at 1375s succeeded at 1375s
+"au_comp.sva", 82: tb.i1.a1.loop[3].a_au_comp_chk_o: started at 1375s succeeded at 1375s
+"au_comp.sva", 82: tb.i1.a1.loop[4].a_au_comp_chk_o: started at 1375s succeeded at 1375s
+"au_comp.sva", 82: tb.i1.a1.loop[5].a_au_comp_chk_o: started at 1375s succeeded at 1375s
+"au_comp.sva", 82: tb.i1.a1.loop[6].a_au_comp_chk_o: started at 1375s succeeded at 1375s
+"au_comp.sva", 82: tb.i1.a1.loop[7].a_au_comp_chk_o: started at 1375s succeeded at 1375s
+out_local[          0]=0447
+
+out_local[          1]=fea7
+
+out_local[          2]=0029
+
+out_local[          3]=ff01
+
+out_local[          4]=0059
+
+out_local[          5]=feed
+
+out_local[          6]=ff97
+
+out_local[          7]=007b
+
+"au_comp.sva", 82: tb.i1.a1.loop[0].a_au_comp_chk_o: started at 1575s succeeded at 1575s
+"au_comp.sva", 82: tb.i1.a1.loop[1].a_au_comp_chk_o: started at 1575s succeeded at 1575s
+"au_comp.sva", 82: tb.i1.a1.loop[2].a_au_comp_chk_o: started at 1575s succeeded at 1575s
+"au_comp.sva", 82: tb.i1.a1.loop[3].a_au_comp_chk_o: started at 1575s succeeded at 1575s
+"au_comp.sva", 82: tb.i1.a1.loop[4].a_au_comp_chk_o: started at 1575s succeeded at 1575s
+"au_comp.sva", 82: tb.i1.a1.loop[5].a_au_comp_chk_o: started at 1575s succeeded at 1575s
+"au_comp.sva", 82: tb.i1.a1.loop[6].a_au_comp_chk_o: started at 1575s succeeded at 1575s
+"au_comp.sva", 82: tb.i1.a1.loop[7].a_au_comp_chk_o: started at 1575s succeeded at 1575s
+out_local[          0]=020c
+
+out_local[          1]=0088
+
+out_local[          2]=0054
+
+out_local[          3]=ffcc
+
+out_local[          4]=ffde
+
+out_local[          5]=ff16
+
+out_local[          6]=0092
+
+out_local[          7]=ff66
+
+"au_comp.sva", 82: tb.i1.a1.loop[0].a_au_comp_chk_o: started at 1775s succeeded at 1775s
+"au_comp.sva", 82: tb.i1.a1.loop[1].a_au_comp_chk_o: started at 1775s succeeded at 1775s
+"au_comp.sva", 82: tb.i1.a1.loop[2].a_au_comp_chk_o: started at 1775s succeeded at 1775s
+"au_comp.sva", 82: tb.i1.a1.loop[3].a_au_comp_chk_o: started at 1775s succeeded at 1775s
+"au_comp.sva", 82: tb.i1.a1.loop[4].a_au_comp_chk_o: started at 1775s succeeded at 1775s
+"au_comp.sva", 82: tb.i1.a1.loop[5].a_au_comp_chk_o: started at 1775s succeeded at 1775s
+"au_comp.sva", 82: tb.i1.a1.loop[6].a_au_comp_chk_o: started at 1775s succeeded at 1775s
+"au_comp.sva", 82: tb.i1.a1.loop[7].a_au_comp_chk_o: started at 1775s succeeded at 1775s
+$finish at simulation time                 1875
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1875
+CPU Time:      0.040 seconds;       Data structure size:   0.2Mb
+Thu Apr 14 07:16:53 2005

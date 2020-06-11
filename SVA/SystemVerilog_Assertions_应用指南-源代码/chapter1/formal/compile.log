@@ -1,0 +1,27 @@
+Command: vcs formal.v +define+SIM -sverilog -PP -assert enable_diag -l compile.log \
+
+                         Chronologic VCS (TM)
+               Version 7.2 -- Wed Apr 13 06:07:24 2005
+               Copyright (c) 1991-2004 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+***** Warning: ACC/CLI capabilities have been enabled for the entire design.
+      For faster performance enable module specific capability in pli.tab file
+Parsing design file 'formal.v'
+Top Level Modules:
+       tb
+No TimeScale specified
+Starting vcs inline pass...
+1 module and 0 UDP read.
+recompiling module tb because:
+	Generated file (jUh1_1) not found, or not incremental.
+if [ -x ../simv ]; then chmod -x ../simv; fi
+gcc   -o ../simv  5NrI_d.o 5NrIB_d.o jUh1_1_d.o SIM_l.o   /global/apps/vcs_7.2/gui/virsim/linux/vcdplus/vcs7_2/libvirsim.a \
+/global/apps/vcs_7.2/linux/lib/libvcsnew.so     /global/apps/vcs_7.2/linux/lib/ctype-stubs_32.a \
+-ldl -lm  -lc -ldl   
+../simv up to date
+CPU time: .260 seconds to compile + .240 seconds to link

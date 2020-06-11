@@ -1,0 +1,63 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 13 19:13 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"routines.v", 52: routines.a33a: started at 25s failed at 25s
+	Offending '$onehot(state)'
+"routines.v", 53: routines.a33b: started at 25s succeeded at 25s
+"routines.v", 54: routines.a33c: started at 25s succeeded at 25s
+"routines.v", 55: routines.a33d: started at 25s failed at 25s
+	Offending '($countones(bus) > 3'b1)'
+"routines.v", 52: routines.a33a: started at 75s failed at 75s
+	Offending '$onehot(state)'
+"routines.v", 53: routines.a33b: started at 75s succeeded at 75s
+"routines.v", 54: routines.a33c: started at 75s failed at 75s
+	Offending '$isunknown(bus)'
+"routines.v", 55: routines.a33d: started at 75s failed at 75s
+	Offending '($countones(bus) > 3'b1)'
+"routines.v", 52: routines.a33a: started at 125s succeeded at 125s
+"routines.v", 53: routines.a33b: started at 125s succeeded at 125s
+"routines.v", 54: routines.a33c: started at 125s failed at 125s
+	Offending '$isunknown(bus)'
+"routines.v", 55: routines.a33d: started at 125s failed at 125s
+	Offending '($countones(bus) > 3'b1)'
+"routines.v", 52: routines.a33a: started at 175s succeeded at 175s
+"routines.v", 53: routines.a33b: started at 175s succeeded at 175s
+"routines.v", 54: routines.a33c: started at 175s failed at 175s
+	Offending '$isunknown(bus)'
+"routines.v", 55: routines.a33d: started at 175s succeeded at 175s
+"routines.v", 52: routines.a33a: started at 225s failed at 225s
+	Offending '$onehot(state)'
+"routines.v", 53: routines.a33b: started at 225s failed at 225s
+	Offending '$onehot0(state)'
+"routines.v", 54: routines.a33c: started at 225s succeeded at 225s
+"routines.v", 55: routines.a33d: started at 225s failed at 225s
+	Offending '($countones(bus) > 3'b1)'
+"routines.v", 52: routines.a33a: started at 275s failed at 275s
+	Offending '$onehot(state)'
+"routines.v", 53: routines.a33b: started at 275s failed at 275s
+	Offending '$onehot0(state)'
+"routines.v", 54: routines.a33c: started at 275s succeeded at 275s
+"routines.v", 55: routines.a33d: started at 275s failed at 275s
+	Offending '($countones(bus) > 3'b1)'
+"routines.v", 52: routines.a33a: started at 325s failed at 325s
+	Offending '$onehot(state)'
+"routines.v", 53: routines.a33b: started at 325s failed at 325s
+	Offending '$onehot0(state)'
+"routines.v", 54: routines.a33c: started at 325s succeeded at 325s
+"routines.v", 55: routines.a33d: started at 325s failed at 325s
+	Offending '($countones(bus) > 3'b1)'
+"routines.v", 52: routines.a33a: started at 375s failed at 375s
+	Offending '$onehot(state)'
+"routines.v", 53: routines.a33b: started at 375s failed at 375s
+	Offending '$onehot0(state)'
+"routines.v", 54: routines.a33c: started at 375s failed at 375s
+	Offending '$isunknown(bus)'
+"routines.v", 55: routines.a33d: started at 375s succeeded at 375s
+$finish at simulation time                  425
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 425
+CPU Time:      0.030 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 19:13:18 2005

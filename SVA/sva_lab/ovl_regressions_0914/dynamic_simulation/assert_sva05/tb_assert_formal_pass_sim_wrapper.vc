@@ -1,0 +1,62 @@
++libext+.v+.vlib+.sv
+
++define+OVL_SVA
+ 
++define+OVL_ASSERT_ON
++define+OVL_MAX_REPORT_ERROR=10
+
+// +define+OVL_XCHECK_OFF
+// +define+OVL_IMPLICIT_XCHECK_OFF
+
+// +define+OVL_END_OF_SIMULATION=tb_AxiPC_simulation.simulation_done
+// +define+OVL_INIT_MSG
+// +define+OVL_INIT_COUNT=tb_AxiPC_simulation.ovl_init_count
+
+// OVL Release (previous one commented-out)
+// ===========
+//+incdir+/eda/design_kits/accellera/ovl/releases/ovl_v2p1_29sep2007/std_ovl
+//-y      /eda/design_kits/accellera/ovl/releases/ovl_v2p1_29sep2007/std_ovl
+//
++incdir+/eda/design_kits/accellera/ovl/releases/ovl_v2p2_04feb2008/std_ovl
+-y      /eda/design_kits/accellera/ovl/releases/ovl_v2p2_04feb2008/std_ovl
+
+// Enables below can be commented-out to disable tests for certain OVLs
++define+TEST_ALW
++define+TEST_AOE
++define+TEST_CHG
++define+TEST_CSQ
++define+TEST_DEC
++define+TEST_DLT
++define+TEST_EVP
++define+TEST_FIX
++define+TEST_FRM
++define+TEST_HND
++define+TEST_IMP
++define+TEST_INC
++define+TEST_NOO
++define+TEST_NOT
++define+TEST_NOU
++define+TEST_NUA
++define+TEST_NUN
++define+TEST_NVR
++define+TEST_NXT
++define+TEST_OCD
++define+TEST_ODP
++define+TEST_OHT
++define+TEST_PRP
++define+TEST_QST
++define+TEST_RNG
++define+TEST_TIM
++define+TEST_TRN
++define+TEST_UNC
++define+TEST_WCH
++define+TEST_WID
++define+TEST_WIN
++define+TEST_WUC
++define+TEST_ZOH
+
+// DUT
+-y ../../../testbench/assert_vlog95
+
+// Testbench
+../../../testbench/assert_vlog95/tb_assert_formal_pass_sim_wrapper.v

@@ -1,0 +1,27 @@
+module assert_router_arbiter(input logic clock, reset_n, input logic [15:0] request, grant);
+
+`define bind_arbiter(i) \
+    bind router_test_top.dut assert_arbiter \
+    #(.no_chnl(16), .arbitration_rule(1)) \
+    arb_``i (clock, reset_n, ~request_n[i],, ~grant_n[i]);
+
+`bind_arbiter(0)
+/*
+`bind_arbiter(1)
+`bind_arbiter(2)
+`bind_arbiter(3)
+`bind_arbiter(4)
+`bind_arbiter(5)
+`bind_arbiter(6)
+`bind_arbiter(7)
+`bind_arbiter(8)
+`bind_arbiter(9)
+`bind_arbiter(10)
+`bind_arbiter(11)
+`bind_arbiter(12)
+`bind_arbiter(13)
+`bind_arbiter(14)
+`bind_arbiter(15)
+*/
+
+endmodule

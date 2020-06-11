@@ -1,0 +1,4 @@
+vcs *.v -sverilog \
+-PP -assert enable_diag -cm assert \
++define+master1_blk_chk \
+-l compile.log

@@ -1,0 +1,153 @@
+Command: ./simv -assert filter+success -l run.log
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 14 18:34 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 25s succeeded at 25s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 25s failed at 25s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 25s failed at 25s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 25s failed at 25s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 75s succeeded at 75s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 75s failed at 75s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 75s failed at 75s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 125s succeeded at 125s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 125s failed at 125s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 125s failed at 125s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 125s failed at 125s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 175s succeeded at 175s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 175s failed at 175s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 175s failed at 175s
+	Offending '$fell(a)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 75s succeeded at 175s
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 225s succeeded at 225s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 225s failed at 225s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 225s failed at 225s
+	Offending '$fell(b)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 175s succeeded at 225s
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 275s succeeded at 275s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 275s failed at 275s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 275s failed at 275s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 275s failed at 275s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 325s succeeded at 325s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 325s failed at 325s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 325s failed at 325s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 325s failed at 325s
+	Offending '$fell(b)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 225s failed at 325s
+	Offending '(!b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 375s succeeded at 375s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 375s failed at 375s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 375s failed at 375s
+	Offending '$fell(a)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 425s succeeded at 425s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 425s failed at 425s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 425s failed at 425s
+	Offending '$fell(b)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 375s succeeded at 425s
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 475s succeeded at 475s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 475s failed at 475s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 475s failed at 475s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 475s failed at 475s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 525s succeeded at 525s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 525s failed at 525s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 525s failed at 525s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 525s failed at 525s
+	Offending '$fell(b)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 425s failed at 525s
+	Offending '(!b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 575s succeeded at 575s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 575s failed at 575s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 575s failed at 575s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 575s failed at 575s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 625s succeeded at 625s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 625s failed at 625s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 625s failed at 625s
+	Offending '$fell(a)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 675s succeeded at 675s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 675s failed at 675s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 675s failed at 675s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 675s failed at 675s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 725s succeeded at 725s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 725s failed at 725s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 725s failed at 725s
+	Offending '$fell(b)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 625s succeeded at 725s
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 775s succeeded at 775s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 775s failed at 775s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 775s failed at 775s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 775s failed at 775s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 825s succeeded at 825s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 825s failed at 825s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 825s failed at 825s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 825s failed at 825s
+	Offending '$fell(b)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 725s failed at 825s
+	Offending '(!b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 875s succeeded at 875s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 875s failed at 875s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 875s failed at 875s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 875s failed at 875s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 925s succeeded at 925s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 925s failed at 925s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 925s failed at 925s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 925s failed at 925s
+	Offending '$fell(b)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 975s succeeded at 975s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 975s failed at 975s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 975s failed at 975s
+	Offending '$fell(a)'
+"2sig_sva.v", 481: sig_sva_tb.i1.a_check2: started at 1025s succeeded at 1025s
+"2sig_sva.v", 483: sig_sva_tb.i1.a_check4: started at 1025s failed at 1025s
+	Offending '(repetition > 1)'
+"2sig_sva.v", 451: sig_sva_tb.i1.a7_c_rpt_fl: started at 1025s failed at 1025s
+	Offending '$fell(a)'
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 1025s failed at 1025s
+	Offending '$fell(b)'
+$finish at simulation time                 1075
+"2sig_sva.v", 452: sig_sva_tb.i1.a7_cu_rpt_fl: started at 975s not finished
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1075
+CPU Time:      0.060 seconds;       Data structure size:   0.0Mb
+Thu Apr 14 18:34:36 2005

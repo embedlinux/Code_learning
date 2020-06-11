@@ -1,0 +1,4 @@
+setenv VCS_HOME your_path
+set path = ($VCS_HOME/bin $path)
+
+ 

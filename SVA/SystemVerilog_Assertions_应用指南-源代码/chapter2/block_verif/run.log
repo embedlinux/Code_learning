@@ -1,0 +1,4587 @@
+Command: ./simv -l run.log -assert filter+success -assert maxsuccess=3
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 14 08:37 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+
+Resetting the design at 75
+
+Reset finished at 175
+
+Waiting for Master Requests
+
+Valid request from a master available at 225: 100
+
+Bus Occupied at 425
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"master_bfm.v", 142: tb.u1.a_master_start1: started at 325s succeeded at 625s
+"master_bfm.v", 158: tb.u1.c_master_start1: started at 325s covered at 625s
+Bus is free at 1125
+
+Valid request from a master available at 1175: 101
+
+"master_bfm.v", 146: tb.u1.a_master_stop1: started at 625s succeeded at 1175s
+"master_bfm.v", 160: tb.u1.c_master_stop1: started at 625s covered at 1175s
+Bus Occupied at 1325
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 2025
+
+Valid request from a master available at 2075: 101
+
+"master_bfm.v", 146: tb.u1.a_master_stop1: started at 1525s succeeded at 2075s
+"master_bfm.v", 160: tb.u1.c_master_stop1: started at 1525s covered at 2075s
+Bus Occupied at 2325
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"master_bfm.v", 142: tb.u1.a_master_start1: started at 2175s succeeded at 2525s
+"master_bfm.v", 158: tb.u1.c_master_start1: started at 2175s covered at 2525s
+Bus is free at 3025
+
+Valid request from a master available at 3075: 101
+
+"master_bfm.v", 146: tb.u1.a_master_stop1: started at 2525s succeeded at 3075s
+"master_bfm.v", 160: tb.u1.c_master_stop1: started at 2525s covered at 3075s
+Bus Occupied at 3275
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 3975
+
+No valid requests from any master at 4025
+
+No valid requests from any master at 4025
+
+Valid request from a master available at 4025: 010
+
+Bus Occupied at 4225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 4925
+
+Valid request from a master available at 4975: 011
+
+"master_bfm.v", 148: tb.u1.a_master_stop2: started at 4425s succeeded at 4975s
+"master_bfm.v", 161: tb.u1.c_master_stop2: started at 4425s covered at 4975s
+Bus Occupied at 5225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 5925
+
+Valid request from a master available at 5975: 010
+
+"master_bfm.v", 148: tb.u1.a_master_stop2: started at 5425s succeeded at 5975s
+"master_bfm.v", 161: tb.u1.c_master_stop2: started at 5425s covered at 5975s
+Bus Occupied at 6225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 6925
+
+No valid requests from any master at 6975
+
+Valid request from a master available at 6975: 001
+
+Bus Occupied at 7275
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 7975
+
+Valid request from a master available at 8025: 110
+
+"master_bfm.v", 148: tb.u1.a_master_stop2: started at 7475s succeeded at 8025s
+"master_bfm.v", 161: tb.u1.c_master_stop2: started at 7475s covered at 8025s
+Bus Occupied at 8175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"master_bfm.v", 144: tb.u1.a_master_start2: started at 8125s succeeded at 8375s
+"master_bfm.v", 159: tb.u1.c_master_start2: started at 8125s covered at 8375s
+Bus is free at 8875
+
+Valid request from a master available at 8925: 001
+
+Bus Occupied at 9175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 9875
+
+No valid requests from any master at 9925
+
+Valid request from a master available at 9925: 111
+
+Bus Occupied at 10125
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"master_bfm.v", 144: tb.u1.a_master_start2: started at 10025s succeeded at 10325s
+"master_bfm.v", 159: tb.u1.c_master_start2: started at 10025s covered at 10325s
+Bus is free at 10825
+
+Valid request from a master available at 10875: 010
+
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 10325s succeeded at 10875s
+"master_bfm.v", 165: tb.u1.c_master_datao2: started at 10325s covered at 10875s
+Bus Occupied at 11025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 11725
+
+Valid request from a master available at 11775: 011
+
+Bus Occupied at 11975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 12675
+
+No valid requests from any master at 12725
+
+Valid request from a master available at 12725: 110
+
+Bus Occupied at 12975
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"master_bfm.v", 144: tb.u1.a_master_start2: started at 12825s succeeded at 13175s
+"master_bfm.v", 159: tb.u1.c_master_start2: started at 12825s covered at 13175s
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 13175s failed at 13375s
+	Offending '($isunknown(data_o) == 0)'
+Bus is free at 13675
+
+Valid request from a master available at 13725: 110
+
+Bus Occupied at 14025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 14725
+
+Valid request from a master available at 14775: 101
+
+Bus Occupied at 15025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 15725
+
+Valid request from a master available at 15775: 010
+
+Bus Occupied at 15975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 16675
+
+Valid request from a master available at 16725: 110
+
+Bus Occupied at 17025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 17225s failed at 17425s
+	Offending '($isunknown(data_o) == 0)'
+Bus is free at 17725
+
+No valid requests from any master at 17775
+
+Valid request from a master available at 17775: 001
+
+Bus Occupied at 17925
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 18625
+
+Valid request from a master available at 18675: 110
+
+Bus Occupied at 18875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 19075s failed at 19275s
+	Offending '($isunknown(data_o) == 0)'
+Bus is free at 19575
+
+Valid request from a master available at 19625: 111
+
+Bus Occupied at 19825
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 20525
+
+No valid requests from any master at 20575
+
+Valid request from a master available at 20575: 101
+
+Bus Occupied at 20875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 21575
+
+Valid request from a master available at 21625: 100
+
+Bus Occupied at 21825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+"master_bfm.v", 142: tb.u1.a_master_start1: started at 21725s succeeded at 22025s
+"master_bfm.v", 158: tb.u1.c_master_start1: started at 21725s covered at 22025s
+"master_bfm.v", 154: tb.u1.a_master_datao1: started at 22025s failed at 22225s
+	Offending '($isunknown(data_o) == 0)'
+Bus is free at 22525
+
+Valid request from a master available at 22575: 110
+
+Bus Occupied at 22825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 23525
+
+No valid requests from any master at 23575
+
+Valid request from a master available at 23575: 011
+
+Bus Occupied at 23825
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 24525
+
+Valid request from a master available at 24575: 101
+
+Bus Occupied at 24825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 25525
+
+Valid request from a master available at 25575: 110
+
+Bus Occupied at 25875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 26575
+
+Valid request from a master available at 26625: 001
+
+Bus Occupied at 26825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 27525
+
+Valid request from a master available at 27575: 011
+
+Bus Occupied at 27875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 28575
+
+Valid request from a master available at 28625: 110
+
+Bus Occupied at 28775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 29475
+
+Valid request from a master available at 29525: 001
+
+Bus Occupied at 29675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 30375
+
+Valid request from a master available at 30425: 111
+
+Bus Occupied at 30675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 31375
+
+Valid request from a master available at 31425: 010
+
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 30875s succeeded at 31425s
+"master_bfm.v", 165: tb.u1.c_master_datao2: started at 30875s covered at 31425s
+Bus Occupied at 31625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 32325
+
+Valid request from a master available at 32375: 010
+
+Bus Occupied at 32575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 33275
+
+Valid request from a master available at 33325: 011
+
+Bus Occupied at 33625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 34325
+
+No valid requests from any master at 34375
+
+Valid request from a master available at 34375: 101
+
+Bus Occupied at 34675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 35375
+
+Valid request from a master available at 35425: 101
+
+"master_bfm.v", 156: tb.u1.a_master_datao2: started at 34875s succeeded at 35425s
+"master_bfm.v", 165: tb.u1.c_master_datao2: started at 34875s covered at 35425s
+Bus Occupied at 35575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 36275
+
+Valid request from a master available at 36325: 100
+
+Bus Occupied at 36625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 37325
+
+No valid requests from any master at 37375
+
+Valid request from a master available at 37375: 001
+
+Bus Occupied at 37575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 38275
+
+Valid request from a master available at 38325: 100
+
+Bus Occupied at 38575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 39275
+
+Valid request from a master available at 39325: 111
+
+Bus Occupied at 39525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 40225
+
+Valid request from a master available at 40275: 010
+
+Bus Occupied at 40525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 41225
+
+Valid request from a master available at 41275: 100
+
+Bus Occupied at 41475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 42175
+
+Valid request from a master available at 42225: 010
+
+Bus Occupied at 42475
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 43175
+
+Valid request from a master available at 43225: 111
+
+Bus Occupied at 43375
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 44075
+
+Valid request from a master available at 44125: 010
+
+Bus Occupied at 44275
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 44975
+
+Valid request from a master available at 45025: 101
+
+Bus Occupied at 45225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 45925
+
+Valid request from a master available at 45975: 100
+
+Bus Occupied at 46125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 46825
+
+Valid request from a master available at 46875: 100
+
+"master_bfm.v", 154: tb.u1.a_master_datao1: started at 46325s succeeded at 46875s
+"master_bfm.v", 164: tb.u1.c_master_datao1: started at 46325s covered at 46875s
+Bus Occupied at 47125
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 47825
+
+Valid request from a master available at 47875: 010
+
+Bus Occupied at 48175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 48875
+
+Valid request from a master available at 48925: 110
+
+Bus Occupied at 49125
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 49825
+
+Valid request from a master available at 49875: 100
+
+Bus Occupied at 50025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 50725
+
+Valid request from a master available at 50775: 001
+
+"master_bfm.v", 154: tb.u1.a_master_datao1: started at 50225s succeeded at 50775s
+"master_bfm.v", 164: tb.u1.c_master_datao1: started at 50225s covered at 50775s
+Bus Occupied at 50925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 51625
+
+Valid request from a master available at 51675: 101
+
+Bus Occupied at 51825
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 52525
+
+Valid request from a master available at 52575: 010
+
+Bus Occupied at 52725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 53425
+
+Valid request from a master available at 53475: 011
+
+Bus Occupied at 53625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 54325
+
+Valid request from a master available at 54375: 010
+
+Bus Occupied at 54525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 55225
+
+No valid requests from any master at 55275
+
+Valid request from a master available at 55275: 111
+
+Bus Occupied at 55525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 56225
+
+No valid requests from any master at 56275
+
+Valid request from a master available at 56275: 010
+
+Bus Occupied at 56475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 57175
+
+Valid request from a master available at 57225: 110
+
+Bus Occupied at 57375
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 58075
+
+Valid request from a master available at 58125: 100
+
+"master_bfm.v", 154: tb.u1.a_master_datao1: started at 57575s succeeded at 58125s
+"master_bfm.v", 164: tb.u1.c_master_datao1: started at 57575s covered at 58125s
+Bus Occupied at 58325
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 59025
+
+Valid request from a master available at 59075: 101
+
+Bus Occupied at 59325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 60025
+
+Valid request from a master available at 60075: 001
+
+Bus Occupied at 60375
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 61075
+
+Valid request from a master available at 61125: 010
+
+Bus Occupied at 61325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 62025
+
+Valid request from a master available at 62075: 010
+
+Bus Occupied at 62275
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 62975
+
+Valid request from a master available at 63025: 010
+
+Bus Occupied at 63225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 63925
+
+No valid requests from any master at 63975
+
+Valid request from a master available at 63975: 011
+
+Bus Occupied at 64175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 64875
+
+Valid request from a master available at 64925: 100
+
+Bus Occupied at 65225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 65925
+
+Valid request from a master available at 65975: 011
+
+Bus Occupied at 66225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 66925
+
+Valid request from a master available at 66975: 110
+
+Bus Occupied at 67125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 67825
+
+Valid request from a master available at 67875: 110
+
+Bus Occupied at 68125
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 68825
+
+Valid request from a master available at 68875: 101
+
+Bus Occupied at 69175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 69875
+
+Valid request from a master available at 69925: 101
+
+Bus Occupied at 70075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 70775
+
+Valid request from a master available at 70825: 101
+
+Bus Occupied at 71025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 71725
+
+Valid request from a master available at 71775: 101
+
+Bus Occupied at 71975
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 72675
+
+Valid request from a master available at 72725: 100
+
+Bus Occupied at 72875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 73575
+
+Valid request from a master available at 73625: 110
+
+Bus Occupied at 73925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 74625
+
+Valid request from a master available at 74675: 010
+
+Bus Occupied at 74825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 75525
+
+Valid request from a master available at 75575: 100
+
+Bus Occupied at 75775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 76475
+
+Valid request from a master available at 76525: 011
+
+Bus Occupied at 76675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 77375
+
+Valid request from a master available at 77425: 110
+
+Bus Occupied at 77675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 78375
+
+No valid requests from any master at 78425
+
+Valid request from a master available at 78425: 010
+
+Bus Occupied at 78625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 79325
+
+Valid request from a master available at 79375: 010
+
+Bus Occupied at 79525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 80225
+
+Valid request from a master available at 80275: 010
+
+Bus Occupied at 80475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 81175
+
+Valid request from a master available at 81225: 010
+
+Bus Occupied at 81375
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 82075
+
+Valid request from a master available at 82125: 001
+
+Bus Occupied at 82425
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 83125
+
+Valid request from a master available at 83175: 111
+
+Bus Occupied at 83375
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 84075
+
+Valid request from a master available at 84125: 001
+
+Bus Occupied at 84425
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 85125
+
+Valid request from a master available at 85175: 011
+
+Bus Occupied at 85425
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 86125
+
+No valid requests from any master at 86175
+
+Valid request from a master available at 86175: 100
+
+Bus Occupied at 86325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 87025
+
+No valid requests from any master at 87075
+
+Valid request from a master available at 87075: 101
+
+Bus Occupied at 87325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 88025
+
+Valid request from a master available at 88075: 011
+
+Bus Occupied at 88375
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 89075
+
+Valid request from a master available at 89125: 101
+
+Bus Occupied at 89325
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 90025
+
+Valid request from a master available at 90075: 100
+
+Bus Occupied at 90225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 90925
+
+Valid request from a master available at 90975: 011
+
+Bus Occupied at 91125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 91825
+
+Valid request from a master available at 91875: 010
+
+Bus Occupied at 92025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 92725
+
+No valid requests from any master at 92775
+
+Valid request from a master available at 92775: 111
+
+Bus Occupied at 93075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 93775
+
+Valid request from a master available at 93825: 011
+
+Bus Occupied at 93975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 94675
+
+Valid request from a master available at 94725: 010
+
+Bus Occupied at 94975
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 95675
+
+Valid request from a master available at 95725: 101
+
+Bus Occupied at 95875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 96575
+
+Valid request from a master available at 96625: 011
+
+Bus Occupied at 96875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 97575
+
+Valid request from a master available at 97625: 001
+
+Bus Occupied at 97775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 98475
+
+Valid request from a master available at 98525: 111
+
+Bus Occupied at 98725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 99425
+
+Valid request from a master available at 99475: 111
+
+Bus Occupied at 99725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 100425
+
+Valid request from a master available at 100475: 110
+
+Bus Occupied at 100675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 101375
+
+Valid request from a master available at 101425: 010
+
+Bus Occupied at 101675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 102375
+
+Valid request from a master available at 102425: 011
+
+Bus Occupied at 102725
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 103425
+
+Valid request from a master available at 103475: 001
+
+Bus Occupied at 103725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 104425
+
+Valid request from a master available at 104475: 111
+
+Bus Occupied at 104625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 105325
+
+Valid request from a master available at 105375: 100
+
+Bus Occupied at 105675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 106375
+
+Valid request from a master available at 106425: 010
+
+Bus Occupied at 106725
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 107425
+
+Valid request from a master available at 107475: 100
+
+Bus Occupied at 107675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 108375
+
+Valid request from a master available at 108425: 001
+
+Bus Occupied at 108625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 109325
+
+No valid requests from any master at 109375
+
+Valid request from a master available at 109375: 010
+
+Bus Occupied at 109625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 110325
+
+Valid request from a master available at 110375: 010
+
+Bus Occupied at 110625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 111325
+
+Valid request from a master available at 111375: 011
+
+Bus Occupied at 111575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 112275
+
+Valid request from a master available at 112325: 101
+
+Bus Occupied at 112525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 113225
+
+Valid request from a master available at 113275: 100
+
+Bus Occupied at 113525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 114225
+
+Valid request from a master available at 114275: 011
+
+Bus Occupied at 114475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 115175
+
+Valid request from a master available at 115225: 100
+
+Bus Occupied at 115525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 116225
+
+Valid request from a master available at 116275: 110
+
+Bus Occupied at 116475
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 117175
+
+Valid request from a master available at 117225: 111
+
+Bus Occupied at 117425
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 118125
+
+Valid request from a master available at 118175: 100
+
+Bus Occupied at 118325
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 119025
+
+Valid request from a master available at 119075: 110
+
+Bus Occupied at 119225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 119925
+
+Valid request from a master available at 119975: 110
+
+Bus Occupied at 120175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 120875
+
+No valid requests from any master at 120925
+
+Valid request from a master available at 120925: 111
+
+Bus Occupied at 121075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 121775
+
+Valid request from a master available at 121825: 001
+
+Bus Occupied at 121975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 122675
+
+Valid request from a master available at 122725: 001
+
+Bus Occupied at 123025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 123725
+
+Valid request from a master available at 123775: 010
+
+Bus Occupied at 123925
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 124625
+
+No valid requests from any master at 124675
+
+Valid request from a master available at 124675: 100
+
+Bus Occupied at 124825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 125525
+
+Valid request from a master available at 125575: 101
+
+Bus Occupied at 125875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 126575
+
+Valid request from a master available at 126625: 100
+
+Bus Occupied at 126775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 127475
+
+Valid request from a master available at 127525: 110
+
+Bus Occupied at 127675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 128375
+
+Valid request from a master available at 128425: 111
+
+Bus Occupied at 128625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 129325
+
+Valid request from a master available at 129375: 010
+
+Bus Occupied at 129525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 130225
+
+No valid requests from any master at 130275
+
+Valid request from a master available at 130275: 001
+
+Bus Occupied at 130575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 131275
+
+Valid request from a master available at 131325: 010
+
+Bus Occupied at 131525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 132225
+
+Valid request from a master available at 132275: 101
+
+Bus Occupied at 132525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 133225
+
+Valid request from a master available at 133275: 100
+
+Bus Occupied at 133525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 134225
+
+No valid requests from any master at 134275
+
+Valid request from a master available at 134275: 010
+
+Bus Occupied at 134575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 135275
+
+Valid request from a master available at 135325: 011
+
+Bus Occupied at 135575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 136275
+
+Valid request from a master available at 136325: 100
+
+Bus Occupied at 136525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 137225
+
+Valid request from a master available at 137275: 110
+
+Bus Occupied at 137525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 138225
+
+Valid request from a master available at 138275: 100
+
+Bus Occupied at 138425
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 139125
+
+Valid request from a master available at 139175: 101
+
+Bus Occupied at 139425
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 140125
+
+Valid request from a master available at 140175: 111
+
+Bus Occupied at 140325
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 141025
+
+Valid request from a master available at 141075: 111
+
+Bus Occupied at 141275
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 141975
+
+Valid request from a master available at 142025: 101
+
+Bus Occupied at 142275
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 142975
+
+Valid request from a master available at 143025: 011
+
+Bus Occupied at 143175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 143875
+
+Valid request from a master available at 143925: 101
+
+Bus Occupied at 144125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 144825
+
+Valid request from a master available at 144875: 101
+
+Bus Occupied at 145025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 145725
+
+Valid request from a master available at 145775: 001
+
+Bus Occupied at 145925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 146625
+
+No valid requests from any master at 146675
+
+Valid request from a master available at 146675: 010
+
+Bus Occupied at 146875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 147575
+
+Valid request from a master available at 147625: 011
+
+Bus Occupied at 147925
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 148625
+
+Valid request from a master available at 148675: 100
+
+Bus Occupied at 148875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 149575
+
+Valid request from a master available at 149625: 101
+
+Bus Occupied at 149825
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 150525
+
+Valid request from a master available at 150575: 001
+
+Bus Occupied at 150725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 151425
+
+Valid request from a master available at 151475: 110
+
+Bus Occupied at 151675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 152375
+
+Valid request from a master available at 152425: 011
+
+Bus Occupied at 152625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 153325
+
+Valid request from a master available at 153375: 111
+
+Bus Occupied at 153625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 154325
+
+No valid requests from any master at 154375
+
+Valid request from a master available at 154375: 001
+
+Bus Occupied at 154675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 155375
+
+No valid requests from any master at 155425
+
+Valid request from a master available at 155425: 011
+
+Bus Occupied at 155575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 156275
+
+Valid request from a master available at 156325: 111
+
+Bus Occupied at 156475
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 157175
+
+Valid request from a master available at 157225: 010
+
+Bus Occupied at 157525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 158225
+
+Valid request from a master available at 158275: 110
+
+Bus Occupied at 158575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 159275
+
+Valid request from a master available at 159325: 100
+
+Bus Occupied at 159475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 160175
+
+No valid requests from any master at 160225
+
+Valid request from a master available at 160225: 101
+
+Bus Occupied at 160525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 161225
+
+No valid requests from any master at 161275
+
+Valid request from a master available at 161275: 001
+
+Bus Occupied at 161425
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 162125
+
+Valid request from a master available at 162175: 101
+
+Bus Occupied at 162375
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 163075
+
+Valid request from a master available at 163125: 110
+
+Bus Occupied at 163325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 164025
+
+Valid request from a master available at 164075: 010
+
+Bus Occupied at 164325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 165025
+
+Valid request from a master available at 165075: 100
+
+Bus Occupied at 165325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 166025
+
+Valid request from a master available at 166075: 111
+
+Bus Occupied at 166275
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 166975
+
+Valid request from a master available at 167025: 011
+
+Bus Occupied at 167175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 167875
+
+Valid request from a master available at 167925: 010
+
+Bus Occupied at 168125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 168825
+
+Valid request from a master available at 168875: 011
+
+Bus Occupied at 169075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 169775
+
+Valid request from a master available at 169825: 101
+
+Bus Occupied at 170025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 170725
+
+Valid request from a master available at 170775: 010
+
+Bus Occupied at 171075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 171775
+
+Valid request from a master available at 171825: 111
+
+Bus Occupied at 172025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 172725
+
+Valid request from a master available at 172775: 100
+
+Bus Occupied at 172975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 173675
+
+Valid request from a master available at 173725: 011
+
+Bus Occupied at 173875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 174575
+
+Valid request from a master available at 174625: 111
+
+Bus Occupied at 174875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 175575
+
+Valid request from a master available at 175625: 011
+
+Bus Occupied at 175875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 176575
+
+Valid request from a master available at 176625: 101
+
+Bus Occupied at 176875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 177575
+
+Valid request from a master available at 177625: 100
+
+Bus Occupied at 177925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 178625
+
+Valid request from a master available at 178675: 011
+
+Bus Occupied at 178825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 179525
+
+Valid request from a master available at 179575: 100
+
+Bus Occupied at 179725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 180425
+
+Valid request from a master available at 180475: 100
+
+Bus Occupied at 180725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 181425
+
+Valid request from a master available at 181475: 100
+
+Bus Occupied at 181625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 182325
+
+Valid request from a master available at 182375: 111
+
+Bus Occupied at 182675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 183375
+
+Valid request from a master available at 183425: 001
+
+Bus Occupied at 183575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 184275
+
+No valid requests from any master at 184325
+
+Valid request from a master available at 184325: 111
+
+Bus Occupied at 184575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 185275
+
+Valid request from a master available at 185325: 101
+
+Bus Occupied at 185525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 186225
+
+Valid request from a master available at 186275: 111
+
+Bus Occupied at 186525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 187225
+
+Valid request from a master available at 187275: 001
+
+Bus Occupied at 187575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 188275
+
+Valid request from a master available at 188325: 001
+
+Bus Occupied at 188625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 189325
+
+Valid request from a master available at 189375: 010
+
+Bus Occupied at 189575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 190275
+
+Valid request from a master available at 190325: 100
+
+Bus Occupied at 190575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 191275
+
+Valid request from a master available at 191325: 010
+
+Bus Occupied at 191475
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 192175
+
+No valid requests from any master at 192225
+
+Valid request from a master available at 192225: 010
+
+Bus Occupied at 192525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 193225
+
+Valid request from a master available at 193275: 011
+
+Bus Occupied at 193475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 194175
+
+Valid request from a master available at 194225: 010
+
+Bus Occupied at 194375
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 195075
+
+Valid request from a master available at 195125: 111
+
+Bus Occupied at 195375
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 196075
+
+Valid request from a master available at 196125: 110
+
+Bus Occupied at 196275
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 196975
+
+Valid request from a master available at 197025: 100
+
+Bus Occupied at 197175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 197875
+
+Valid request from a master available at 197925: 111
+
+Bus Occupied at 198125
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 198825
+
+Valid request from a master available at 198875: 101
+
+Bus Occupied at 199175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 199875
+
+Valid request from a master available at 199925: 001
+
+Bus Occupied at 200225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 200925
+
+Valid request from a master available at 200975: 001
+
+Bus Occupied at 201175
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 201875
+
+Valid request from a master available at 201925: 100
+
+Bus Occupied at 202225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 202925
+
+Valid request from a master available at 202975: 001
+
+Bus Occupied at 203175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 203875
+
+Valid request from a master available at 203925: 101
+
+Bus Occupied at 204225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 204925
+
+Valid request from a master available at 204975: 111
+
+Bus Occupied at 205125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 205825
+
+Valid request from a master available at 205875: 001
+
+Bus Occupied at 206075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 206775
+
+Valid request from a master available at 206825: 111
+
+Bus Occupied at 207125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 207825
+
+Valid request from a master available at 207875: 111
+
+Bus Occupied at 208025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 208725
+
+Valid request from a master available at 208775: 110
+
+Bus Occupied at 208925
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 209625
+
+Valid request from a master available at 209675: 100
+
+Bus Occupied at 209825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 210525
+
+Valid request from a master available at 210575: 100
+
+Bus Occupied at 210725
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 211425
+
+No valid requests from any master at 211475
+
+Valid request from a master available at 211475: 111
+
+Bus Occupied at 211675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 212375
+
+Valid request from a master available at 212425: 101
+
+Bus Occupied at 212575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 213275
+
+Valid request from a master available at 213325: 100
+
+Bus Occupied at 213475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 214175
+
+Valid request from a master available at 214225: 111
+
+Bus Occupied at 214425
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 215125
+
+Valid request from a master available at 215175: 011
+
+Bus Occupied at 215375
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 216075
+
+Valid request from a master available at 216125: 001
+
+Bus Occupied at 216275
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 216975
+
+No valid requests from any master at 217025
+
+Valid request from a master available at 217025: 110
+
+Bus Occupied at 217325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 218025
+
+Valid request from a master available at 218075: 010
+
+Bus Occupied at 218275
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 218975
+
+Valid request from a master available at 219025: 010
+
+Bus Occupied at 219175
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 219875
+
+Valid request from a master available at 219925: 100
+
+Bus Occupied at 220175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 220875
+
+Valid request from a master available at 220925: 011
+
+Bus Occupied at 221225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 221925
+
+No valid requests from any master at 221975
+
+Valid request from a master available at 221975: 111
+
+Bus Occupied at 222125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 222825
+
+Valid request from a master available at 222875: 011
+
+Bus Occupied at 223075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 223775
+
+Valid request from a master available at 223825: 110
+
+Bus Occupied at 223975
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 224675
+
+Valid request from a master available at 224725: 001
+
+Bus Occupied at 224925
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 225625
+
+Valid request from a master available at 225675: 100
+
+Bus Occupied at 225925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 226625
+
+Valid request from a master available at 226675: 011
+
+Bus Occupied at 226925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 227625
+
+Valid request from a master available at 227675: 010
+
+Bus Occupied at 227975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 228675
+
+Valid request from a master available at 228725: 100
+
+Bus Occupied at 229025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 229725
+
+Valid request from a master available at 229775: 001
+
+Bus Occupied at 229925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 230625
+
+Valid request from a master available at 230675: 110
+
+Bus Occupied at 230875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 231575
+
+Valid request from a master available at 231625: 110
+
+Bus Occupied at 231875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 232575
+
+Valid request from a master available at 232625: 101
+
+Bus Occupied at 232825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 233525
+
+Valid request from a master available at 233575: 010
+
+Bus Occupied at 233875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 234575
+
+No valid requests from any master at 234625
+
+Valid request from a master available at 234625: 111
+
+Bus Occupied at 234775
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 235475
+
+Valid request from a master available at 235525: 111
+
+Bus Occupied at 235725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 236425
+
+Valid request from a master available at 236475: 110
+
+Bus Occupied at 236775
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 237475
+
+Valid request from a master available at 237525: 101
+
+Bus Occupied at 237675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 238375
+
+No valid requests from any master at 238425
+
+Valid request from a master available at 238425: 001
+
+Bus Occupied at 238675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 239375
+
+Valid request from a master available at 239425: 101
+
+Bus Occupied at 239625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 240325
+
+No valid requests from any master at 240375
+
+Valid request from a master available at 240375: 100
+
+Bus Occupied at 240575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 241275
+
+Valid request from a master available at 241325: 010
+
+Bus Occupied at 241475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 242175
+
+No valid requests from any master at 242225
+
+No valid requests from any master at 242225
+
+No valid requests from any master at 242225
+
+Valid request from a master available at 242225: 101
+
+Bus Occupied at 242375
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 243075
+
+Valid request from a master available at 243125: 100
+
+Bus Occupied at 243325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 244025
+
+Valid request from a master available at 244075: 011
+
+Bus Occupied at 244375
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 245075
+
+Valid request from a master available at 245125: 101
+
+Bus Occupied at 245425
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 246125
+
+Valid request from a master available at 246175: 010
+
+Bus Occupied at 246325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 247025
+
+Valid request from a master available at 247075: 010
+
+Bus Occupied at 247375
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 248075
+
+Valid request from a master available at 248125: 100
+
+Bus Occupied at 248275
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 248975
+
+No valid requests from any master at 249025
+
+Valid request from a master available at 249025: 111
+
+Bus Occupied at 249175
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 249875
+
+Valid request from a master available at 249925: 010
+
+Bus Occupied at 250225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 250925
+
+Valid request from a master available at 250975: 010
+
+Bus Occupied at 251225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 251925
+
+Valid request from a master available at 251975: 011
+
+Bus Occupied at 252225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 252925
+
+Valid request from a master available at 252975: 101
+
+Bus Occupied at 253175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 253875
+
+Valid request from a master available at 253925: 111
+
+Bus Occupied at 254225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 254925
+
+No valid requests from any master at 254975
+
+No valid requests from any master at 254975
+
+Valid request from a master available at 254975: 010
+
+Bus Occupied at 255125
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 255825
+
+No valid requests from any master at 255875
+
+Valid request from a master available at 255875: 110
+
+Bus Occupied at 256025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 256725
+
+Valid request from a master available at 256775: 101
+
+Bus Occupied at 257025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 257725
+
+No valid requests from any master at 257775
+
+Valid request from a master available at 257775: 110
+
+Bus Occupied at 258075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 258775
+
+No valid requests from any master at 258825
+
+Valid request from a master available at 258825: 111
+
+Bus Occupied at 259125
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 259825
+
+Valid request from a master available at 259875: 101
+
+Bus Occupied at 260075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 260775
+
+Valid request from a master available at 260825: 011
+
+Bus Occupied at 261125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 261825
+
+No valid requests from any master at 261875
+
+No valid requests from any master at 261875
+
+Valid request from a master available at 261875: 010
+
+Bus Occupied at 262025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 262725
+
+Valid request from a master available at 262775: 110
+
+Bus Occupied at 262975
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 263675
+
+Valid request from a master available at 263725: 010
+
+Bus Occupied at 263975
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 264675
+
+Valid request from a master available at 264725: 110
+
+Bus Occupied at 264925
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 265625
+
+Valid request from a master available at 265675: 111
+
+Bus Occupied at 265975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 266675
+
+Valid request from a master available at 266725: 001
+
+Bus Occupied at 266875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 267575
+
+Valid request from a master available at 267625: 111
+
+Bus Occupied at 267825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 268525
+
+Valid request from a master available at 268575: 111
+
+Bus Occupied at 268725
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 269425
+
+Valid request from a master available at 269475: 011
+
+Bus Occupied at 269625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 270325
+
+Valid request from a master available at 270375: 101
+
+Bus Occupied at 270575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 271275
+
+Valid request from a master available at 271325: 010
+
+Bus Occupied at 271475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 272175
+
+Valid request from a master available at 272225: 101
+
+Bus Occupied at 272375
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 273075
+
+Valid request from a master available at 273125: 010
+
+Bus Occupied at 273275
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 273975
+
+Valid request from a master available at 274025: 101
+
+Bus Occupied at 274225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 274925
+
+Valid request from a master available at 274975: 100
+
+Bus Occupied at 275225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 275925
+
+Valid request from a master available at 275975: 010
+
+Bus Occupied at 276125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 276825
+
+Valid request from a master available at 276875: 010
+
+Bus Occupied at 277125
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 277825
+
+Valid request from a master available at 277875: 111
+
+Bus Occupied at 278025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 278725
+
+Valid request from a master available at 278775: 010
+
+Bus Occupied at 279025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 279725
+
+Valid request from a master available at 279775: 110
+
+Bus Occupied at 280075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 280775
+
+Valid request from a master available at 280825: 111
+
+Bus Occupied at 281075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 281775
+
+Valid request from a master available at 281825: 001
+
+Bus Occupied at 282075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 282775
+
+Valid request from a master available at 282825: 011
+
+Bus Occupied at 282975
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 283675
+
+Valid request from a master available at 283725: 110
+
+Bus Occupied at 283875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 284575
+
+Valid request from a master available at 284625: 101
+
+Bus Occupied at 284925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 285625
+
+Valid request from a master available at 285675: 111
+
+Bus Occupied at 285825
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 286525
+
+Valid request from a master available at 286575: 001
+
+Bus Occupied at 286825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 287525
+
+Valid request from a master available at 287575: 011
+
+Bus Occupied at 287875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 288575
+
+Valid request from a master available at 288625: 001
+
+Bus Occupied at 288925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 289625
+
+No valid requests from any master at 289675
+
+Valid request from a master available at 289675: 101
+
+Bus Occupied at 289975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 290675
+
+Valid request from a master available at 290725: 111
+
+Bus Occupied at 290925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 291625
+
+Valid request from a master available at 291675: 110
+
+Bus Occupied at 291925
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 292625
+
+Valid request from a master available at 292675: 011
+
+Bus Occupied at 292825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 293525
+
+Valid request from a master available at 293575: 001
+
+Bus Occupied at 293725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 294425
+
+Valid request from a master available at 294475: 111
+
+Bus Occupied at 294675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 295375
+
+Valid request from a master available at 295425: 111
+
+Bus Occupied at 295725
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 296425
+
+Valid request from a master available at 296475: 101
+
+Bus Occupied at 296775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 297475
+
+Valid request from a master available at 297525: 001
+
+Bus Occupied at 297675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 298375
+
+Valid request from a master available at 298425: 110
+
+Bus Occupied at 298725
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 299425
+
+Valid request from a master available at 299475: 110
+
+Bus Occupied at 299725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 300425
+
+Valid request from a master available at 300475: 100
+
+Bus Occupied at 300775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 301475
+
+Valid request from a master available at 301525: 011
+
+Bus Occupied at 301675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 302375
+
+No valid requests from any master at 302425
+
+Valid request from a master available at 302425: 110
+
+Bus Occupied at 302725
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 303425
+
+Valid request from a master available at 303475: 111
+
+Bus Occupied at 303625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 304325
+
+Valid request from a master available at 304375: 010
+
+Bus Occupied at 304575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 305275
+
+Valid request from a master available at 305325: 010
+
+Bus Occupied at 305625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 306325
+
+Valid request from a master available at 306375: 111
+
+Bus Occupied at 306675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 307375
+
+Valid request from a master available at 307425: 100
+
+Bus Occupied at 307675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 308375
+
+Valid request from a master available at 308425: 010
+
+Bus Occupied at 308675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 309375
+
+Valid request from a master available at 309425: 011
+
+Bus Occupied at 309675
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 310375
+
+Valid request from a master available at 310425: 011
+
+Bus Occupied at 310625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 311325
+
+No valid requests from any master at 311375
+
+Valid request from a master available at 311375: 111
+
+Bus Occupied at 311525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 312225
+
+Valid request from a master available at 312275: 100
+
+Bus Occupied at 312425
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 313125
+
+Valid request from a master available at 313175: 111
+
+Bus Occupied at 313325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 314025
+
+Valid request from a master available at 314075: 011
+
+Bus Occupied at 314225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 314925
+
+No valid requests from any master at 314975
+
+Valid request from a master available at 314975: 110
+
+Bus Occupied at 315225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 315925
+
+Valid request from a master available at 315975: 111
+
+Bus Occupied at 316225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 316925
+
+Valid request from a master available at 316975: 011
+
+Bus Occupied at 317175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 317875
+
+Valid request from a master available at 317925: 100
+
+Bus Occupied at 318175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 318875
+
+Valid request from a master available at 318925: 001
+
+Bus Occupied at 319075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 319775
+
+Valid request from a master available at 319825: 101
+
+Bus Occupied at 320075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 320775
+
+Valid request from a master available at 320825: 001
+
+Bus Occupied at 321025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 321725
+
+Valid request from a master available at 321775: 110
+
+Bus Occupied at 322075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 322775
+
+Valid request from a master available at 322825: 001
+
+Bus Occupied at 323025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 323725
+
+Valid request from a master available at 323775: 010
+
+Bus Occupied at 324025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 324725
+
+Valid request from a master available at 324775: 011
+
+Bus Occupied at 325075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 325775
+
+Valid request from a master available at 325825: 111
+
+Bus Occupied at 326125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 326825
+
+Valid request from a master available at 326875: 100
+
+Bus Occupied at 327075
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 327775
+
+Valid request from a master available at 327825: 001
+
+Bus Occupied at 328075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 328775
+
+Valid request from a master available at 328825: 011
+
+Bus Occupied at 329025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 329725
+
+Valid request from a master available at 329775: 011
+
+Bus Occupied at 329975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 330675
+
+Valid request from a master available at 330725: 001
+
+Bus Occupied at 331025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 331725
+
+Valid request from a master available at 331775: 110
+
+Bus Occupied at 331925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 332625
+
+No valid requests from any master at 332675
+
+Valid request from a master available at 332675: 100
+
+Bus Occupied at 332875
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 333575
+
+Valid request from a master available at 333625: 010
+
+Bus Occupied at 333775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 334475
+
+Valid request from a master available at 334525: 110
+
+Bus Occupied at 334675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 335375
+
+Valid request from a master available at 335425: 111
+
+Bus Occupied at 335725
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 336425
+
+Valid request from a master available at 336475: 010
+
+Bus Occupied at 336625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 337325
+
+Valid request from a master available at 337375: 011
+
+Bus Occupied at 337625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 338325
+
+Valid request from a master available at 338375: 111
+
+Bus Occupied at 338575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 339275
+
+No valid requests from any master at 339325
+
+Valid request from a master available at 339325: 101
+
+Bus Occupied at 339525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 340225
+
+Valid request from a master available at 340275: 100
+
+Bus Occupied at 340525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 341225
+
+No valid requests from any master at 341275
+
+Valid request from a master available at 341275: 101
+
+Bus Occupied at 341475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 342175
+
+No valid requests from any master at 342225
+
+Valid request from a master available at 342225: 100
+
+Bus Occupied at 342475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 343175
+
+Valid request from a master available at 343225: 010
+
+Bus Occupied at 343475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 344175
+
+Valid request from a master available at 344225: 011
+
+Bus Occupied at 344375
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 345075
+
+No valid requests from any master at 345125
+
+Valid request from a master available at 345125: 001
+
+Bus Occupied at 345275
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 345975
+
+Valid request from a master available at 346025: 100
+
+Bus Occupied at 346225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 346925
+
+Valid request from a master available at 346975: 110
+
+Bus Occupied at 347175
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 347875
+
+No valid requests from any master at 347925
+
+Valid request from a master available at 347925: 011
+
+Bus Occupied at 348125
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 348825
+
+Valid request from a master available at 348875: 110
+
+Bus Occupied at 349125
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 349825
+
+Valid request from a master available at 349875: 111
+
+Bus Occupied at 350075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 350775
+
+Valid request from a master available at 350825: 001
+
+Bus Occupied at 351075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 351775
+
+Valid request from a master available at 351825: 001
+
+Bus Occupied at 352025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 352725
+
+Valid request from a master available at 352775: 101
+
+Bus Occupied at 352925
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 353625
+
+No valid requests from any master at 353675
+
+Valid request from a master available at 353675: 101
+
+Bus Occupied at 353825
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 354525
+
+Valid request from a master available at 354575: 101
+
+Bus Occupied at 354775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 355475
+
+Valid request from a master available at 355525: 010
+
+Bus Occupied at 355825
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 356525
+
+Valid request from a master available at 356575: 010
+
+Bus Occupied at 356775
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 357475
+
+Valid request from a master available at 357525: 111
+
+Bus Occupied at 357775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 358475
+
+Valid request from a master available at 358525: 111
+
+Bus Occupied at 358775
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 359475
+
+Valid request from a master available at 359525: 010
+
+Bus Occupied at 359775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 360475
+
+Valid request from a master available at 360525: 110
+
+Bus Occupied at 360725
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 361425
+
+Valid request from a master available at 361475: 111
+
+Bus Occupied at 361625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 362325
+
+No valid requests from any master at 362375
+
+Valid request from a master available at 362375: 011
+
+Bus Occupied at 362575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 363275
+
+Valid request from a master available at 363325: 010
+
+Bus Occupied at 363575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 364275
+
+Valid request from a master available at 364325: 011
+
+Bus Occupied at 364625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 365325
+
+Valid request from a master available at 365375: 001
+
+Bus Occupied at 365625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 366325
+
+Valid request from a master available at 366375: 011
+
+Bus Occupied at 366575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 367275
+
+Valid request from a master available at 367325: 001
+
+Bus Occupied at 367525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 368225
+
+Valid request from a master available at 368275: 110
+
+Bus Occupied at 368525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 369225
+
+Valid request from a master available at 369275: 011
+
+Bus Occupied at 369425
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 370125
+
+Valid request from a master available at 370175: 111
+
+Bus Occupied at 370475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 371175
+
+Valid request from a master available at 371225: 100
+
+Bus Occupied at 371475
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 372175
+
+Valid request from a master available at 372225: 001
+
+Bus Occupied at 372475
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 373175
+
+Valid request from a master available at 373225: 110
+
+Bus Occupied at 373525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 374225
+
+Valid request from a master available at 374275: 111
+
+Bus Occupied at 374525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 375225
+
+Valid request from a master available at 375275: 011
+
+Bus Occupied at 375525
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 376225
+
+Valid request from a master available at 376275: 001
+
+Bus Occupied at 376575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 377275
+
+No valid requests from any master at 377325
+
+Valid request from a master available at 377325: 100
+
+Bus Occupied at 377575
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 378275
+
+Valid request from a master available at 378325: 010
+
+Bus Occupied at 378625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 379325
+
+Valid request from a master available at 379375: 111
+
+Bus Occupied at 379625
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 380325
+
+Valid request from a master available at 380375: 010
+
+Bus Occupied at 380625
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 381325
+
+Valid request from a master available at 381375: 110
+
+Bus Occupied at 381675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 382375
+
+Valid request from a master available at 382425: 100
+
+Bus Occupied at 382575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 383275
+
+Valid request from a master available at 383325: 110
+
+Bus Occupied at 383525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 384225
+
+Valid request from a master available at 384275: 100
+
+Bus Occupied at 384425
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 385125
+
+Valid request from a master available at 385175: 110
+
+Bus Occupied at 385325
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 386025
+
+Valid request from a master available at 386075: 010
+
+Bus Occupied at 386225
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 386925
+
+Valid request from a master available at 386975: 110
+
+Bus Occupied at 387225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 387925
+
+Valid request from a master available at 387975: 011
+
+Bus Occupied at 388175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 388875
+
+Valid request from a master available at 388925: 100
+
+Bus Occupied at 389175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 389875
+
+No valid requests from any master at 389925
+
+Valid request from a master available at 389925: 001
+
+Bus Occupied at 390225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 390925
+
+Valid request from a master available at 390975: 010
+
+Bus Occupied at 391175
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 391875
+
+Valid request from a master available at 391925: 010
+
+Bus Occupied at 392175
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 392875
+
+Valid request from a master available at 392925: 111
+
+Bus Occupied at 393075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 393775
+
+Valid request from a master available at 393825: 100
+
+Bus Occupied at 394025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 394725
+
+Valid request from a master available at 394775: 100
+
+Bus Occupied at 395025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 395725
+
+Valid request from a master available at 395775: 010
+
+Bus Occupied at 396025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 396725
+
+Valid request from a master available at 396775: 101
+
+Bus Occupied at 396925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 397625
+
+Valid request from a master available at 397675: 011
+
+Bus Occupied at 397825
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 398525
+
+Valid request from a master available at 398575: 011
+
+Bus Occupied at 398775
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 399475
+
+No valid requests from any master at 399525
+
+Valid request from a master available at 399525: 100
+
+Bus Occupied at 399675
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 400375
+
+Valid request from a master available at 400425: 100
+
+Bus Occupied at 400575
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 401275
+
+No valid requests from any master at 401325
+
+No valid requests from any master at 401325
+
+Valid request from a master available at 401325: 101
+
+Bus Occupied at 401525
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 402225
+
+Valid request from a master available at 402275: 010
+
+Bus Occupied at 402425
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 403125
+
+Valid request from a master available at 403175: 010
+
+Bus Occupied at 403325
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 404025
+
+Valid request from a master available at 404075: 011
+
+Bus Occupied at 404275
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 404975
+
+Valid request from a master available at 405025: 011
+
+Bus Occupied at 405275
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 405975
+
+Valid request from a master available at 406025: 101
+
+Bus Occupied at 406325
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 407025
+
+No valid requests from any master at 407075
+
+Valid request from a master available at 407075: 001
+
+Bus Occupied at 407275
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 407975
+
+Valid request from a master available at 408025: 101
+
+Bus Occupied at 408175
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 408875
+
+Valid request from a master available at 408925: 010
+
+Bus Occupied at 409225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 409925
+
+Valid request from a master available at 409975: 100
+
+Bus Occupied at 410225
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 410925
+
+Valid request from a master available at 410975: 101
+
+Bus Occupied at 411175
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 411875
+
+Valid request from a master available at 411925: 011
+
+Bus Occupied at 412075
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 412775
+
+Valid request from a master available at 412825: 111
+
+Bus Occupied at 413025
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 413725
+
+Valid request from a master available at 413775: 011
+
+Bus Occupied at 413925
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 414625
+
+Valid request from a master available at 414675: 101
+
+Bus Occupied at 414975
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 415675
+
+Valid request from a master available at 415725: 100
+
+Bus Occupied at 416025
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 416725
+
+Valid request from a master available at 416775: 101
+
+Bus Occupied at 416925
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 417625
+
+Valid request from a master available at 417675: 111
+
+Bus Occupied at 417975
+
+Target device 0 selected for transaction
+
+waiting for target device 0 to respond
+
+Bus is free at 418675
+
+Valid request from a master available at 418725: 100
+
+Bus Occupied at 418975
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 419675
+
+Valid request from a master available at 419725: 011
+
+Bus Occupied at 419875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 420575
+
+Valid request from a master available at 420625: 010
+
+Bus Occupied at 420875
+
+Target device 1 selected for transaction
+
+waiting for target device 1 to respond
+
+Bus is free at 421575
+
+$finish at simulation time               421725
+"master_bfm.v", 150: tb.u1.a_master_data1: started at 421675s not finished
+"master_bfm.v", 162: tb.u1.c_master_data1: started at 421675s not finished
+"bus_arbiter.v", 223: tb.u4.c_arb_onehot0, 8434 attempts, 0 match, 0 vacuous match
+"bus_arbiter.v", 224: tb.u4.c_req_gnt, 8434 attempts, 0 match, 0 vacuous match
+"bus_arbiter.v", 225: tb.u4.c_gnt_frame, 8434 attempts, 0 match, 0 vacuous match
+"bus_arbiter.v", 226: tb.u4.c_frame_gnt, 8434 attempts, 0 match, 0 vacuous match
+"glue.v", 136: tb.u5.c_sel_1, 8434 attempts, 0 match, 0 vacuous match
+"glue.v", 137: tb.u5.c_sel_0, 8434 attempts, 0 match, 0 vacuous match
+"glue.v", 138: tb.u5.c_rsel1_write, 8434 attempts, 0 match, 0 vacuous match
+"glue.v", 139: tb.u5.c_rsel2_write, 8434 attempts, 0 match, 0 vacuous match
+"glue.v", 140: tb.u5.c_rsel3_write, 8434 attempts, 0 match, 0 vacuous match
+"glue.v", 141: tb.u5.c_read1, 8434 attempts, 0 match, 0 vacuous match
+"glue.v", 142: tb.u5.c_read0, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 158: tb.u3.c_master_start1, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 159: tb.u3.c_master_start2, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 160: tb.u3.c_master_stop1, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 161: tb.u3.c_master_stop2, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 162: tb.u3.c_master_data1, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 163: tb.u3.c_master_data2, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 164: tb.u3.c_master_datao1, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 165: tb.u3.c_master_datao2, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 158: tb.u2.c_master_start1, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 159: tb.u2.c_master_start2, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 160: tb.u2.c_master_stop1, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 161: tb.u2.c_master_stop2, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 162: tb.u2.c_master_data1, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 163: tb.u2.c_master_data2, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 164: tb.u2.c_master_datao1, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 165: tb.u2.c_master_datao2, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 158: tb.u1.c_master_start1, 8434 attempts, 71 match, 0 vacuous match
+"master_bfm.v", 159: tb.u1.c_master_start2, 8434 attempts, 68 match, 0 vacuous match
+"master_bfm.v", 160: tb.u1.c_master_stop1, 8434 attempts, 217 match, 0 vacuous match
+"master_bfm.v", 161: tb.u1.c_master_stop2, 8434 attempts, 219 match, 0 vacuous match
+"master_bfm.v", 162: tb.u1.c_master_data1, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 163: tb.u1.c_master_data2, 8434 attempts, 0 match, 0 vacuous match
+"master_bfm.v", 164: tb.u1.c_master_datao1, 8434 attempts, 32 match, 0 vacuous match
+"master_bfm.v", 165: tb.u1.c_master_datao2, 8434 attempts, 38 match, 0 vacuous match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 421725
+CPU Time:      0.920 seconds;       Data structure size:   0.2Mb
+Thu Apr 14 08:37:30 2005

@@ -1,0 +1,58 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *| 
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+
+module ddr_checker(clk, clk2x, ras_n, cas_n, sel_n, we_n, addr, data, read_start);
+
+input logic clk, clk2x, ras_n, cas_n, we_n, read_start;
+input logic [7:0] sel_n;
+input logic [15:0] addr;
+input logic [15:0] data;
+
+
+`define s_precharge (!ras_n && !sel_n[0] && !we_n && cas_n)
+`define s_autorefresh (!ras_n && !cas_n && !sel_n[0] && we_n)
+`define s_loadmoderegister (!ras_n && !cas_n && !sel_n[0] && !we_n)
+`define s_active (!ras_n && !sel_n[0] && cas_n && we_n)
+
+// DDR_chk1
+
+sequence s_read;
+	@(posedge clk) (ras_n && !sel_n[0] && we_n && !cas_n && read_start);
+endsequence
+
+property p_read;
+	@(negedge clk2x) s_read.matched |-> ##3 ($isunknown(data)) ##1 ($isunknown(data) == 0) ##1 ($isunknown(data) == 0);
+endproperty
+
+a_read: assert property(p_read);
+c_read: cover property(p_read);
+
+// DDR_Chk2
+
+sequence s_write;
+	@(posedge clk) (ras_n && !sel_n[0] && !we_n && !cas_n);
+endsequence
+
+property p_write;
+	@(posedge clk2x) s_write.matched |-> ##1 ($isunknown(data) == 0) ##1 ($isunknown(data) == 0);
+endproperty
+
+a_write: assert property(p_write);
+c_write: cover property(p_write);
+
+endmodule
+
+bind ddr_memctl ddr_checker u1 (.clk(s_clk), .clk2x(s_clk2x), .ras_n(s_ras_n), .cas_n(s_cas_n), .sel_n(s_sel_n), .we_n(s_we_n), .addr(s_addr), .data(d_dq), .read_start(s_rd_start));
+
+

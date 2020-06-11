@@ -1,0 +1,26 @@
+Command: vcs -sverilog -PP -assert enable_diag cond.v -l compile.log
+                         Chronologic VCS (TM)
+           Version X-2005.06-B -- Wed Apr 13 19:11:18 2005
+               Copyright (c) 1991-2005 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+***** Warning: ACC/CLI capabilities have been enabled for the entire design.
+      For faster performance enable module specific capability in pli.tab file
+Parsing design file 'cond.v'
+Top Level Modules:
+       cond
+No TimeScale specified
+Starting vcs inline pass...
+1 module and 0 UDP read.
+recompiling module cond
+if [ -x ../simv ]; then chmod -x ../simv; fi
+gcc   -o ../simv  5NrI_d.o 5NrIB_d.o CcLC_1_d.o SIM_l.o   /build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/gui/virsim/linux/vcdplus/vcs7_2/libvirsim.a \
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/libvcsnew.so \
+/build/SCRATCH_agni/ugaira/X-2005.06-B/VCS/Linux/vcsX-2005.06-B/linux/lib/ctype-stubs_32.a \
+-ldl -lm  -lc -ldl    
+../simv up to date
+CPU time: .380 seconds to compile + .280 seconds to link

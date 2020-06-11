@@ -1,0 +1,14 @@
+Command: ./simv -assert success+filter -l run.log
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version 7.2; Runtime version 7.2;  Apr 13 05:57 2005
+
+VCD+ Writer 4.4R12A Copyright 1993-2004 Synopsys Inc.
+"match.v", 60: match.a_match: started at 225s succeeded at 375s
+"match.v", 60: match.a_match: started at 675s failed at 825s
+	Offending '$rose(b)'
+$finish at simulation time                  975
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 975
+CPU Time:      0.090 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 05:57:14 2005

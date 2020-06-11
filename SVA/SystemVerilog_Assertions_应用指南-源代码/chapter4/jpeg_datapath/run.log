@@ -1,0 +1,619 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 14 17:50 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"jpeg.sva", 76: tb.jpeg_int.i1.a_control: started at 5s failed at 15s
+	Offending 'dp1_en'
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 35s succeeded at 35s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 45s succeeded at 45s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 55s succeeded at 55s
+"jpeg.sva", 44: tb.jpeg_int.i1.a_read: started at 55s failed at 55s
+	Offending '$fell(rd)'
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 65s succeeded at 65s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 75s succeeded at 75s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 85s succeeded at 85s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 95s succeeded at 95s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 105s succeeded at 105s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 115s succeeded at 115s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 125s succeeded at 125s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 135s succeeded at 135s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 145s succeeded at 145s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 155s succeeded at 155s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 165s succeeded at 165s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 175s succeeded at 175s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 185s succeeded at 185s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 195s succeeded at 195s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 205s succeeded at 205s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 215s succeeded at 215s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 225s succeeded at 225s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 235s succeeded at 235s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 245s succeeded at 245s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 255s succeeded at 255s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 265s succeeded at 265s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 275s succeeded at 275s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 285s succeeded at 285s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 295s succeeded at 295s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 305s succeeded at 305s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 315s succeeded at 315s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 325s succeeded at 325s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 335s succeeded at 335s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 345s succeeded at 345s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 355s succeeded at 355s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 365s succeeded at 365s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 375s succeeded at 375s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 385s succeeded at 385s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 395s succeeded at 395s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 405s succeeded at 405s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 415s succeeded at 415s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 425s succeeded at 425s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 435s succeeded at 435s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 445s succeeded at 445s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 455s succeeded at 455s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 465s succeeded at 465s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 475s succeeded at 475s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 485s succeeded at 485s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 495s succeeded at 495s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 505s succeeded at 505s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 515s succeeded at 515s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 525s succeeded at 525s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 535s succeeded at 535s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 545s succeeded at 545s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 555s succeeded at 555s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 565s succeeded at 565s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 575s succeeded at 575s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 585s succeeded at 585s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 595s succeeded at 595s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 605s succeeded at 605s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 615s succeeded at 615s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 625s succeeded at 625s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 635s succeeded at 635s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 645s succeeded at 645s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 655s succeeded at 655s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 665s succeeded at 665s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 675s succeeded at 675s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 685s succeeded at 685s
+
+DATA CHECKING: Block number 0
+
+pix_in[0]=00d3
+
+pix_in[1]=00c8
+
+pix_in[2]=0034
+
+pix_in[3]=00ae
+
+pix_in[4]=000f
+
+pix_in[5]=00d9
+
+pix_in[6]=0029
+
+pix_in[7]=007b
+
+pix_in[8]=0064
+
+pix_in[9]=00bd
+
+pix_in[10]=00c5
+
+pix_in[11]=00ef
+
+pix_in[12]=00f2
+
+pix_in[13]=003a
+
+pix_in[14]=00f6
+
+pix_in[15]=0037
+
+pix_in[16]=0086
+
+pix_in[17]=00d6
+
+pix_in[18]=00a1
+
+pix_in[19]=0089
+
+pix_in[20]=0056
+
+pix_in[21]=006f
+
+pix_in[22]=0070
+
+pix_in[23]=0020
+
+pix_in[24]=00f1
+
+pix_in[25]=00f1
+
+pix_in[26]=00e6
+
+pix_in[27]=002d
+
+pix_in[28]=00f8
+
+pix_in[29]=00cd
+
+pix_in[30]=001f
+
+pix_in[31]=004a
+
+pix_in[32]=00b3
+
+pix_in[33]=0079
+
+pix_in[34]=0009
+
+pix_in[35]=0055
+
+pix_in[36]=0028
+
+pix_in[37]=00ae
+
+pix_in[38]=0077
+
+pix_in[39]=0037
+
+pix_in[40]=00ba
+
+pix_in[41]=0092
+
+pix_in[42]=00da
+
+pix_in[43]=008a
+
+pix_in[44]=00fd
+
+pix_in[45]=0094
+
+pix_in[46]=000a
+
+pix_in[47]=0094
+
+pix_in[48]=00be
+
+pix_in[49]=0029
+
+pix_in[50]=00e3
+
+pix_in[51]=0091
+
+pix_in[52]=00f3
+
+pix_in[53]=0024
+
+pix_in[54]=001e
+
+pix_in[55]=00cb
+
+pix_in[56]=008e
+
+pix_in[57]=00e4
+
+pix_in[58]=0031
+
+pix_in[59]=006b
+
+pix_in[60]=00e6
+
+pix_in[61]=0008
+
+pix_in[62]=009e
+
+pix_in[63]=0080
+
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 695s succeeded at 695s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 705s succeeded at 705s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 715s succeeded at 715s
+"jpeg.sva", 61: tb.jpeg_int.i1.a_datafeeder: started at 55s succeeded at 715s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 725s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[0].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[1].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[2].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[3].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[4].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[5].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[6].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[7].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[8].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[9].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[10].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[11].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[12].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[13].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[14].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[15].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[16].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[17].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[18].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[19].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[20].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[21].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[22].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[23].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[24].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[25].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[26].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[27].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[28].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[29].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[30].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[31].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[32].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[33].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[34].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[35].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[36].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[37].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[38].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[39].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[40].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[41].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[42].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[43].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[44].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[45].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[46].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[47].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[48].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[49].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[50].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[51].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[52].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[53].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[54].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[55].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[56].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[57].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[58].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[59].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[60].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[61].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[62].a_dp_chk: started at 715s succeeded at 725s
+"adv_datapath.sva", 132: tb.jpeg_int.data_feeder_inst.dpchk1.dchk[63].a_dp_chk: started at 715s succeeded at 725s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 735s succeeded at 735s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 745s succeeded at 745s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 755s succeeded at 755s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 765s succeeded at 765s
+
+DATA CHECKING: Block number 0
+
+pix_in[0]=0114
+
+pix_in[1]=0007
+
+pix_in[2]=0003
+
+pix_in[3]=0000
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[4]=fffd
+
+pix_in[5]=0004
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[6]=ffff
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[7]=fffd
+
+pix_in[8]=0011
+
+pix_in[9]=000a
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[10]=ffff
+
+pix_in[11]=0000
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[12]=ffff
+
+pix_in[13]=0001
+
+pix_in[14]=0001
+
+pix_in[15]=0000
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[16]=fffd
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[17]=ffff
+
+pix_in[18]=0002
+
+pix_in[19]=0000
+
+pix_in[20]=0007
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[21]=fffe
+
+pix_in[22]=0001
+
+pix_in[23]=0001
+
+pix_in[24]=000a
+
+pix_in[25]=0001
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[26]=fff9
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[27]=ffff
+
+pix_in[28]=0004
+
+pix_in[29]=0002
+
+pix_in[30]=0000
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[31]=ffff
+
+pix_in[32]=0003
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[33]=fff8
+
+pix_in[34]=0005
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[35]=ffff
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[36]=ffff
+
+pix_in[37]=0002
+
+pix_in[38]=0000
+
+pix_in[39]=0000
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[40]=fffc
+
+pix_in[41]=0003
+
+pix_in[42]=0000
+
+pix_in[43]=0004
+
+pix_in[44]=0002
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[45]=fffe
+
+pix_in[46]=0000
+
+pix_in[47]=0004
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[48]=ffff
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[49]=fffe
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[50]=fffd
+
+pix_in[51]=0000
+
+pix_in[52]=0001
+
+pix_in[53]=0006
+
+pix_in[54]=0000
+
+pix_in[55]=0003
+
+pix_in[56]=0003
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[57]=fffe
+
+pix_in[58]=0000
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[59]=fffe
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[60]=fffd
+
+pix_in[61]=0000
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[62]=fffd
+
+
+Warning: Too many digits in hexadecimal number
+
+pix_in[63]=fffd
+
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 775s succeeded at 775s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 785s succeeded at 785s
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 795s succeeded at 795s
+The address is      0
+"jpeg.sva", 31: tb.jpeg_int.i1.a_mutex: started at 805s succeeded at 805s
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[0].a_dp_chk: started at 795s succeeded at 805s
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[1].a_dp_chk: started at 795s succeeded at 805s
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[2].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[2] == local_array[2])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[3].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[3] == local_array[3])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[4].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[4] == local_array[4])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[5].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[5] == local_array[5])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[6].a_dp_chk: started at 795s succeeded at 805s
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[7].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[7] == local_array[7])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[8].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[8] == local_array[8])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[9].a_dp_chk: started at 795s succeeded at 805s
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[10].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[10] == local_array[10])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[11].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[11] == local_array[11])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[12].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[12] == local_array[12])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[13].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[13] == local_array[13])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[14].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[14] == local_array[14])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[15].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[15] == local_array[15])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[16].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[16] == local_array[16])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[17].a_dp_chk: started at 795s succeeded at 805s
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[18].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[18] == local_array[18])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[19].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[19] == local_array[19])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[20].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[20] == local_array[20])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[21].a_dp_chk: started at 795s succeeded at 805s
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[22].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[22] == local_array[22])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[23].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[23] == local_array[23])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[24].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[24] == local_array[24])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[25].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[25] == local_array[25])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[26].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[26] == local_array[26])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[27].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[27] == local_array[27])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[28].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[28] == local_array[28])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[29].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[29] == local_array[29])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[30].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[30] == local_array[30])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[31].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[31] == local_array[31])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[32].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[32] == local_array[32])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[33].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[33] == local_array[33])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[34].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[34] == local_array[34])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[35].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[35] == local_array[35])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[36].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[36] == local_array[36])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[37].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[37] == local_array[37])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[38].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[38] == local_array[38])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[39].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[39] == local_array[39])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[40].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[40] == local_array[40])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[41].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[41] == local_array[41])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[42].a_dp_chk: started at 795s succeeded at 805s
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[43].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[43] == local_array[43])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[44].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[44] == local_array[44])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[45].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[45] == local_array[45])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[46].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[46] == local_array[46])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[47].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[47] == local_array[47])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[48].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[48] == local_array[48])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[49].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[49] == local_array[49])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[50].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[50] == local_array[50])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[51].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[51] == local_array[51])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[52].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[52] == local_array[52])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[53].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[53] == local_array[53])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[54].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[54] == local_array[54])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[55].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[55] == local_array[55])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[56].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[56] == local_array[56])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[57].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[57] == local_array[57])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[58].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[58] == local_array[58])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[59].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[59] == local_array[59])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[60].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[60] == local_array[60])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[61].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[61] == local_array[61])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[62].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[62] == local_array[62])'
+"adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[63].a_dp_chk: started at 795s failed at 805s
+	Offending '(pix_in[63] == local_array[63])'
+Fatal: "adv_datapath.sva", 132: tb.jpeg_int.datapath_inst.dpchk5.dchk[2].a_dp_chk: at time 805
+$finish at simulation time                  805
+"jpeg.sva", 76: tb.jpeg_int.i1.a_control: started at 715s not finished
+"jpeg.sva", 89: tb.jpeg_int.i1.a_control_all: started at 55s not finished
+"jpeg.sva", 91: tb.jpeg_int.i1.c_control_all: started at 55s not finished
+"jpeg.sva", 91: tb.jpeg_int.i1.c_control_all, 81 attempts, 0 match, 0 vacuous match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 805
+CPU Time:      0.300 seconds;       Data structure size:   4.2Mb
+Thu Apr 14 17:50:06 2005

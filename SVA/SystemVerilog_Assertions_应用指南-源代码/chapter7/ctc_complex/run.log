@@ -1,0 +1,524 @@
+Command: ./simv -assert filter+success -l run.log
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 14 05:12 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 125s succeeded at 225s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 125s covered at 225s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 375s succeeded at 475s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 375s covered at 475s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 625s failed at 725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 875s failed at 975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 1125s succeeded at 1225s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 1125s covered at 1225s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 1375s failed at 1525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 1625s failed at 1725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 1875s failed at 1975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 2125s failed at 2275s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 2375s failed at 2525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 2625s failed at 2725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 2875s failed at 2975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 3125s failed at 3275s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 3375s failed at 3525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 3625s failed at 3725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 3875s failed at 3975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 4125s succeeded at 4275s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 4125s covered at 4275s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 4425s succeeded at 4575s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 4425s covered at 4575s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 4725s failed at 4875s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 5025s failed at 5175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 5325s succeeded at 5475s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 5325s covered at 5475s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 5625s failed at 5825s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 5925s failed at 6075s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 6225s failed at 6375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 6525s failed at 6725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 6825s failed at 7025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 7125s failed at 7275s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 7425s failed at 7575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 7725s failed at 7925s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 8025s failed at 8225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 8325s failed at 8475s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 8625s failed at 8775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 8925s succeeded at 9125s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 8925s covered at 9125s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 9275s succeeded at 9475s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 9275s covered at 9475s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 9625s failed at 9825s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 9975s failed at 10175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 10325s succeeded at 10525s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 10325s covered at 10525s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 10675s failed at 10925s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 11025s failed at 11225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 11375s failed at 11575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 11725s failed at 11975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 12075s failed at 12325s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 12425s failed at 12625s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 12775s failed at 12975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 13125s failed at 13375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 13475s failed at 13725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 13825s failed at 14025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 14175s failed at 14375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 14525s succeeded at 14775s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 14525s covered at 14775s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 14925s succeeded at 15175s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 14925s covered at 15175s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 15325s failed at 15575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 15725s failed at 15975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 16125s succeeded at 16375s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 16125s covered at 16375s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 16525s failed at 16825s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 16925s failed at 17175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 17325s failed at 17575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 17725s failed at 18025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 18125s failed at 18425s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 18525s failed at 18775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 18925s failed at 19175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 19325s failed at 19625s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 19725s failed at 20025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 20125s failed at 20375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 20525s failed at 20775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 20925s succeeded at 21225s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 20925s covered at 21225s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 21375s succeeded at 21675s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 21375s covered at 21675s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 21825s failed at 22125s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 22275s failed at 22575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 22725s succeeded at 23025s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 22725s covered at 23025s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 23175s failed at 23525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 23625s failed at 23925s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 24075s failed at 24375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 24525s failed at 24875s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 24975s failed at 25325s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 25425s failed at 25725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 25875s failed at 26175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 26325s failed at 26675s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 26775s failed at 27125s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 27225s failed at 27525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 27675s failed at 27975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 28125s succeeded at 28475s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 28125s covered at 28475s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 28625s succeeded at 28975s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 28625s covered at 28975s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 29125s failed at 29475s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 29625s failed at 29975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 30125s succeeded at 30475s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 30125s covered at 30475s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 30625s failed at 31025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 31125s failed at 31475s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 31625s failed at 31975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 32125s failed at 32525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 32625s failed at 33025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 33125s failed at 33475s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 33625s failed at 33975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 34125s failed at 34525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 34625s failed at 35025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 35125s failed at 35475s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 35625s failed at 35975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 36125s succeeded at 36525s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 36125s covered at 36525s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 36675s succeeded at 37075s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 36675s covered at 37075s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 37225s failed at 37625s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 37775s failed at 38175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 38325s succeeded at 38725s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 38325s covered at 38725s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 38875s failed at 39325s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 39425s failed at 39825s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 39975s failed at 40375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 40525s failed at 40975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 41075s failed at 41525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 41625s failed at 42025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 42175s failed at 42575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 42725s failed at 43175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 43275s failed at 43725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 43825s failed at 44225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 44375s failed at 44775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 44925s succeeded at 45375s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 44925s covered at 45375s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 45525s succeeded at 45975s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 45525s covered at 45975s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 46125s failed at 46575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 46725s failed at 47175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 47325s succeeded at 47775s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 47325s covered at 47775s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 47925s failed at 48425s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 48525s failed at 48975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 49125s failed at 49575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 49725s failed at 50225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 50325s failed at 50825s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 50925s failed at 51375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 51525s failed at 51975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 52125s failed at 52625s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 52725s failed at 53225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 53325s failed at 53775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 53925s failed at 54375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 54525s succeeded at 55025s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 54525s covered at 55025s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 55175s succeeded at 55675s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 55175s covered at 55675s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 55825s failed at 56325s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 56475s failed at 56975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 57125s succeeded at 57625s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 57125s covered at 57625s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 57775s failed at 58325s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 58425s failed at 58925s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 59075s failed at 59575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 59725s failed at 60275s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 60375s failed at 60925s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 61025s failed at 61525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 61675s failed at 62175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 62325s failed at 62875s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 62975s failed at 63525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 63625s failed at 64125s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 64275s failed at 64775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 64925s succeeded at 65475s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 64925s covered at 65475s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 65625s succeeded at 66175s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 65625s covered at 66175s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 66325s failed at 66875s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 67025s failed at 67575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 67725s succeeded at 68275s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 67725s covered at 68275s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 68425s failed at 69025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 69125s failed at 69675s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 69825s failed at 70375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 70525s failed at 71125s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 71225s failed at 71825s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 71925s failed at 72475s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 72625s failed at 73175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 73325s failed at 73925s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 74025s failed at 74625s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 74725s failed at 75275s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 75425s failed at 75975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 76125s succeeded at 76725s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 76125s covered at 76725s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 76875s succeeded at 77475s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 76875s covered at 77475s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 77625s failed at 78225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 78375s failed at 78975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 79125s succeeded at 79725s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 79125s covered at 79725s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 79875s failed at 80525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 80625s failed at 81225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 81375s failed at 81975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 82125s failed at 82775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 82875s failed at 83525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 83625s failed at 84225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 84375s failed at 84975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 85125s failed at 85775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 85875s failed at 86525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 86625s failed at 87225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 87375s failed at 87975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 88125s succeeded at 88775s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 88125s covered at 88775s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 88925s succeeded at 89575s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 88925s covered at 89575s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 89725s failed at 90375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 90525s failed at 91175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 91325s succeeded at 91975s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 91325s covered at 91975s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 92125s failed at 92825s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 92925s failed at 93575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 93725s failed at 94375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 94525s failed at 95225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 95325s failed at 96025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 96125s failed at 96775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 96925s failed at 97575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 97725s failed at 98425s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 98525s failed at 99225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 99325s failed at 99975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 100125s failed at 100775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 100925s succeeded at 101625s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 100925s covered at 101625s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 101775s succeeded at 102475s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 101775s covered at 102475s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 102625s failed at 103325s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 103475s failed at 104175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 104325s succeeded at 105025s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 104325s covered at 105025s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 105175s failed at 105925s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 106025s failed at 106725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 106875s failed at 107575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 107725s failed at 108475s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 108575s failed at 109325s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 109425s failed at 110125s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 110275s failed at 110975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 111125s failed at 111875s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 111975s failed at 112725s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 112825s failed at 113525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 113675s failed at 114375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 114525s succeeded at 115275s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 114525s covered at 115275s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 115425s succeeded at 116175s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 115425s covered at 116175s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 116325s failed at 117075s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 117225s failed at 117975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 118125s succeeded at 118875s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 118125s covered at 118875s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 119025s failed at 119825s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 119925s failed at 120675s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 120825s failed at 121575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 121725s failed at 122525s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 122625s failed at 123425s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 123525s failed at 124275s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 124425s failed at 125175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 125325s failed at 126125s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 126225s failed at 127025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 127125s failed at 127875s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 128025s failed at 128775s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 128925s succeeded at 129725s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 128925s covered at 129725s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 129875s succeeded at 130675s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 129875s covered at 130675s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 130825s failed at 131625s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 131775s failed at 132575s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 132725s succeeded at 133525s
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast: started at 132725s covered at 133525s
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 133675s failed at 134475s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 134625s failed at 135425s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 135575s failed at 136375s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 136525s failed at 137325s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 137475s failed at 138275s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 138425s failed at 139225s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 139375s failed at 140175s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 140325s failed at 141125s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 141275s failed at 142075s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 142225s failed at 143025s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 143175s failed at 143975s
+	Offending '((!framen) && (!devseln))'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 144125s failed at 144925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 145125s failed at 145925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 146125s failed at 146925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 147125s failed at 147925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 148125s failed at 148925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 149125s failed at 149925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 150125s failed at 150925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 151125s failed at 151925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 152125s failed at 152925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 153125s failed at 153925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 154125s failed at 154925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 155125s failed at 155925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 156125s failed at 156925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 157125s failed at 157925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 158125s failed at 158925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+"ctc_complex.v", 79: ctc_complex.a_tchk9_fast: started at 159125s failed at 159925s
+	Offending '(s_tchk9a.ended || s_tchk9b.ended)'
+$finish at simulation time               160175
+"ctc_complex.v", 80: ctc_complex.c_tchk9_fast, 3203 attempts, 45 match, 0 vacuous match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 160175
+CPU Time:      0.060 seconds;       Data structure size:   0.0Mb
+Thu Apr 14 05:12:24 2005

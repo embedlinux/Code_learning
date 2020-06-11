@@ -1,0 +1,44 @@
+m255
+13
+cModel Technology
+dD:\led
+T_opt
+VCI9aN9igUi^C40DbYFb[c1
+04 8 4 work routines fast 0
+o-quiet -auto_acc_if_foreign -work work
+tExplicit 1
+OE;O;6.2b;35
+T_opt1
+V:6j5fR3zLB_@Zf[h>BMRf0
+04 8 4 work ROUTINES fast 0
+o-quiet -auto_acc_if_foreign -work work +acc=lprnb -opt=-merge -opt=-suppressAlways
+tExplicit 1
+OE;O;6.2b;35
+vROUTINES
+M1 sv_std std
+DX sv_std std YBfSj6^e3JebL:f0FhH=c1
+I82>aASlEW_eRb;TiH?_m=2
+VKBAcjUI^1Pi>zM4odzgLI0
+S1
+d.
+Fnofile
+L0 15
+VKBAcjUI^1Pi>zM4odzgLI0
+OE;L;6.2b;35
+r1
+31
+o-work work -hazard -nodebug -nodebug -u -quiet -source -O0
+n@r@o@u@t@i@n@e@s
+vroutines
+M1 sv_std std
+DX sv_std std YBfSj6^e3JebL:f0FhH=c1
+VU48689P5leQ]4=UDm3em;1
+r1
+31
+I:YW;R=hlhKjS:dGaTLOJH0
+dD:\sva\chapter1\routines
+w1148624492
+FD:/sva/chapter1/routines/routines.sv
+L0 15
+OE;L;6.2b;35
+o-work work

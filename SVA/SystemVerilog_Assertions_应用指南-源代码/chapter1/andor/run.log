@@ -1,0 +1,80 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 13 10:48 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"andor.v", 70: andor.a27: started at 25s failed at 25s
+	Offending 'a'
+"andor.v", 71: andor.a28: started at 25s failed at 25s
+	Offending 'a'
+"andor.v", 72: andor.a29: started at 25s failed at 25s
+	Offending 'c'
+"andor.v", 70: andor.a27: started at 75s failed at 75s
+	Offending 'a'
+"andor.v", 71: andor.a28: started at 75s failed at 75s
+	Offending 'a'
+"andor.v", 72: andor.a29: started at 75s failed at 75s
+	Offending 'c'
+"andor.v", 70: andor.a27: started at 175s failed at 175s
+	Offending 'a'
+"andor.v", 71: andor.a28: started at 175s failed at 175s
+	Offending 'a'
+"andor.v", 72: andor.a29: started at 175s failed at 175s
+	Offending 'c'
+"andor.v", 72: andor.a29: started at 125s succeeded at 175s
+"andor.v", 70: andor.a27: started at 225s failed at 225s
+	Offending 'a'
+"andor.v", 71: andor.a28: started at 225s failed at 225s
+	Offending 'a'
+"andor.v", 72: andor.a29: started at 225s failed at 225s
+	Offending 'c'
+"andor.v", 70: andor.a27: started at 125s succeeded at 225s
+"andor.v", 71: andor.a28: started at 125s failed at 225s
+	Offending 'b'
+"andor.v", 70: andor.a27: started at 275s failed at 275s
+	Offending 'a'
+"andor.v", 71: andor.a28: started at 275s failed at 275s
+	Offending 'a'
+"andor.v", 72: andor.a29: started at 275s failed at 275s
+	Offending 'c'
+"andor.v", 72: andor.a29: started at 375s succeeded at 425s
+"andor.v", 71: andor.a28: started at 325s failed at 425s
+	Offending 'd'
+"andor.v", 72: andor.a29: started at 325s succeeded at 425s
+"andor.v", 72: andor.a29: started at 425s succeeded at 475s
+"andor.v", 70: andor.a27: started at 375s succeeded at 475s
+"andor.v", 71: andor.a28: started at 375s succeeded at 475s
+"andor.v", 70: andor.a27: started at 325s succeeded at 475s
+"andor.v", 72: andor.a29: started at 475s succeeded at 525s
+"andor.v", 70: andor.a27: started at 425s succeeded at 525s
+"andor.v", 71: andor.a28: started at 425s succeeded at 525s
+"andor.v", 72: andor.a29: started at 525s succeeded at 575s
+"andor.v", 70: andor.a27: started at 475s succeeded at 575s
+"andor.v", 71: andor.a28: started at 475s succeeded at 575s
+"andor.v", 70: andor.a27: started at 625s failed at 625s
+	Offending 'a'
+"andor.v", 71: andor.a28: started at 625s failed at 625s
+	Offending 'a'
+"andor.v", 72: andor.a29: started at 625s failed at 625s
+	Offending 'c'
+"andor.v", 71: andor.a28: started at 525s failed at 625s
+	Offending 'b'
+"andor.v", 70: andor.a27: started at 675s failed at 675s
+	Offending 'a'
+"andor.v", 71: andor.a28: started at 675s failed at 675s
+	Offending 'a'
+"andor.v", 72: andor.a29: started at 675s failed at 675s
+	Offending 'c'
+"andor.v", 70: andor.a27: started at 575s failed at 675s
+	Offending 'b'
+"andor.v", 71: andor.a28: started at 575s failed at 675s
+	Offending 'b'
+"andor.v", 70: andor.a27: started at 525s failed at 675s
+	Offending 'd'
+$finish at simulation time                  725
+"andor.v", 72: andor.a29: started at 575s not finished
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 725
+CPU Time:      0.050 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 10:48:05 2005

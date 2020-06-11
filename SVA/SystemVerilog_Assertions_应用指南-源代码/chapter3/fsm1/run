@@ -1,0 +1,1 @@
+simv -assert filter+success -l run.log -assert maxsuccess=5

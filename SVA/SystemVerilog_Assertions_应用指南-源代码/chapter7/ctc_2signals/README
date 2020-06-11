@@ -1,0 +1,6 @@
+This tesbench can be configured to generate stimulus for a variety of SVA constructs.
+
+We can configure by chaning the parameter value in the config.v file
+
+
+

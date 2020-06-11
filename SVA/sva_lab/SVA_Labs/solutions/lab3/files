@@ -1,0 +1,12 @@
+-sverilog
+-ntb_opts dtm
+-l simv.log
+-assert enable_diag
+-assert dve
+router_test_top.sv
+../../rtl/router.v
+router_io.sv
+assert.sva
+assert_binds.sva
+test.sv
+

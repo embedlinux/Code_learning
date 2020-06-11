@@ -1,0 +1,9 @@
+This Chapter has three category of assertions
+
+master - this directory has the pci_master assertions
+target - this directory has the pci_target assertions
+arbiter - this has the pci_bus assertions
+
+I have binded the assertions to the dummy modules. You can replace the dummy module with your design under test.
+
+

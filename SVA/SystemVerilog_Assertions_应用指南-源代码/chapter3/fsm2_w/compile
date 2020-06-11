@@ -1,0 +1,1 @@
+vcs *.v *.sva -sverilog -PP -assert enable_diag -cm assert -l compile.log

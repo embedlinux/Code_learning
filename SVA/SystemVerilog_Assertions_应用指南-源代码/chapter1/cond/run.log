@@ -1,0 +1,16 @@
+Command: ./simv -l run.log -assert filter+success
+Chronologic VCS simulator copyright 1991-2004
+Contains Synopsys proprietary information.
+Compiler version X-2005.06-B; Runtime version X-2005.06-B;  Apr 13 19:11 2005
+
+VCD+ Writer X-2005.06-B Copyright 1993-2004 Synopsys Inc.
+"cond.v", 95: cond.a31: started at 125s succeeded at 575s
+"cond.v", 96: cond.a32: started at 125s succeeded at 625s
+"cond.v", 95: cond.a31: started at 775s failed at 1175s
+	Offending '(!start)'
+$finish at simulation time                 1275
+"cond.v", 96: cond.a32: started at 775s not finished
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1275
+CPU Time:      0.030 seconds;       Data structure size:   0.0Mb
+Wed Apr 13 19:11:33 2005

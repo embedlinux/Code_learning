@@ -1,0 +1,40 @@
+module assert_inputs(input clk, reset_n, logic[15:0] frame_n, valid_n, din);
+parameter port_no = 0;
+
+//Lab2 - Create a named property that checks the input protocol for the pad phase
+//ToDo
+
+//Lab2 - Assert the property that checks the input protocol for the pad phase
+//ToDo
+
+endmodule //assert_inputs
+
+module assert_outputs(input clk, reset_n, logic[15:0] frameo_n, valido_n, dout);
+parameter port_no = 0;
+
+int unsigned bit_cntr;
+
+//Lab2 - create a general error message handler that prints the error message 
+//along with simulation time and port of failure
+//ToDo
+
+
+dout_unknown_check: assert property (@(posedge clk) !valido_n[port_no] |-> (!$isunknown(dout[port_no])));
+
+always@(posedge clk or negedge reset_n) begin: bit_counter
+  if (!reset_n) bit_cntr = 0;
+  else if (!valido_n[port_no]) bit_cntr++;
+end : bit_counter
+
+//Lab2 - Create a Named Sequence called s_frame to detect the period in which
+//the signal frameo_n stays low.
+//ToDo
+
+//Lab2 - Create a Named Property p_vld_lo_on_rsng_frm to use the 
+//Named Sequence s_frame to detect the end of a packet coming out of DUT
+//ToDo
+
+//Lab2 - Write a concurrent assertion using the Named Property created earlier
+//ToDo
+
+endmodule //assert_outputs

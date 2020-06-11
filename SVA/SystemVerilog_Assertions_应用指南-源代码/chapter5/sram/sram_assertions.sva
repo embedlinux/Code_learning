@@ -1,0 +1,139 @@
+/************************************************************************\
+|*                                                                      *|
+|*    Copyright (c) 2005  Springer. All rights reserved.                *|
+|*                                                                      *|
+|*  This example code shouyld be used only for illustration purpose     *| 
+|*  This material is not to reproduced,  copied,  or used  in any       *|
+|*  manner without the authorization of the author's/publishers         *|
+|*  written permission                                                  *|
+|*                                                                      *|
+\************************************************************************/
+
+// Author: Srikanth Vijayaraghavan and Meyyappan Ramanathan
+
+
+
+module sram_checker(clk, resetn, addr, data, sel_n, we_n, wp_n, oe_n);
+
+input logic clk, resetn, we_n, oe_n;
+input logic [3:0] wp_n;
+input logic [22:0] addr;
+input logic [31:0] data;
+input logic [7:0] sel_n;
+
+parameter tCW = 1;
+parameter tWP = 2;
+
+// write cycle time should be greater than 1 cycle
+// SRAM_CHK1
+
+property p_tWC;
+	@(posedge clk) ($fell(we_n) && !sel_n[2]) |=> $stable(addr[22:0]);
+	//@(posedge clk) $rose(we_n) |-> ((addr[22:0] == $past(addr[22:0], 1)) && (addr[22:0] == $past(addr[22:0], 2)));
+endproperty
+
+a_tWC: assert property(p_tWC);
+c_tWC: cover property(p_tWC);
+
+// Write enable pulse width should be greater than one cycle
+// SRAM_CHK2
+
+property p_tWP;
+	@(posedge clk) $fell(we_n) |-> ##tWP $rose(we_n); 
+endproperty
+
+a_tWP: assert property(p_tWP);
+c_tWP: cover property(p_tWP);
+
+// SRAM_CHK3
+// Read Cycle Time 
+
+property p_tRC;
+	@(posedge clk) (!sel_n[2] && we_n && !oe_n && $isunknown(data)) |=> ($stable(addr));
+endproperty
+
+a_tRC: assert property(p_tRC);
+c_tRC: cover property(p_tRC);
+
+// chip select to output data valid
+// SRAM_CHK4
+
+property p_tCO;
+	@(posedge clk) (!sel_n[2] && we_n && !oe_n && ($isunknown(data))) |=> ($isunknown(data))==0;
+endproperty
+
+a_tCO: assert property(p_tCO);
+c_tCO: cover property(p_tCO);
+
+// valid address to valid data is 12ns 
+// SRAM_CHK5
+
+property p_tAA;
+	@(posedge clk) (!sel_n[2] && we_n && !oe_n && $isunknown(data)) |=> ((addr == $past(addr,1)) ##0 ($isunknown(data))==0);
+endproperty
+
+a_tAA: assert property(p_tAA);
+c_tAA: cover property(p_tAA);
+
+
+/**********************************************************************
+Flash Assertions
+***********************************************************************/
+
+// flash is write protected
+// FLASH_CHK1
+
+property p_write_protect;
+	@(posedge clk) (!sel_n[3]) |-> wp_n == 0;	
+endproperty
+
+a_write_protect: assert property (p_write_protect);
+c_write_protect: cover property (p_write_protect);
+
+// FLASH_CHK3
+// chip select to valid data is tELQV
+
+property p_tELQV;
+	@(posedge clk) (!oe_n && $fell(sel_n[3])) |-> ##14 $isunknown(data) ##1 ($isunknown(data)==0); 
+endproperty
+
+a_tELQV: assert property(p_tELQV);
+c_tELQV: cover property(p_tELQV);
+
+// FLASH_CHK4
+// Address to valid data
+
+sequence s_data_trans;
+	(!sel_n[3] && !oe_n && ($stable(addr)==0) && $stable(oe_n)) ##0 $isunknown(data) ##3 $isunknown(data)==0 ;
+endsequence
+
+property p_tAPA;
+	@(posedge clk) s_data_trans |-> $stable(addr);	
+endproperty
+
+
+a_tAPA: assert property(p_tAPA);
+c_tAPA: cover property(p_tAPA);
+
+
+// Read Cycle Time
+// FLASH_CHK2
+
+property p_tAVAV_not;
+	@(posedge clk) (!sel_n[3] && $fell(oe_n)) |-> not ##[0:15] $rose(oe_n); 
+endproperty
+
+a_tAVAV_not: assert property(p_tAVAV_not);
+c_tAVAV_not: cover property(p_tAVAV_not);
+
+
+property p_tAVAV;
+	@(posedge clk) (!sel_n[3] && $fell(oe_n)) |->  ##[16 : 300] $rose(oe_n); 
+endproperty
+
+a_tAVAV: assert property(p_tAVAV);
+c_tAVAV: cover property(p_tAVAV);
+
+endmodule
+
+bind sram_memctl sram_checker u1 (.clk(hclk), .resetn(hresetn), .sel_n(s_sel_n), .we_n(sm_we_n), .wp_n(sm_wp_n), .addr(sm_addr), .data(sm_rd_data), .oe_n(sm_oe_n));
