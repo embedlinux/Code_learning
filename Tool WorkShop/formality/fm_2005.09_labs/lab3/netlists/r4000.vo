@@ -1,0 +1,1938 @@
+
+module mCntrl ( Op, Clk, Reset, PCWrite, PCWriteCond, IorD, MemRead, MemWrite, 
+    IRWrite, MemtoReg, PCSource, TargetWrite, ALUOp, ALUSelA, ALUSelB, 
+    RegWrite, RegDst );
+input  [5:0] Op;
+output [1:0] PCSource;
+output [1:0] ALUOp;
+output [1:0] ALUSelB;
+input  Clk, Reset;
+output PCWrite, PCWriteCond, IorD, MemRead, MemWrite, IRWrite, MemtoReg, 
+    TargetWrite, ALUSelA, RegWrite, RegDst;
+    wire \PCSource164[0] , \state195[3] , \state[6] , \state[2] , 
+        \state195[7] , \state[0] , \ALUSelB150[1] , \state195[5] , \state[9] , 
+        \state195[1] , \state[4] , \state195[8] , n_2238, \state195[0] , 
+        \state[5] , \state195[9] , \state[1] , \ALUSelB150[0] , \state195[4] , 
+        \state[8] , \state[3] , \state195[6] , \state[7] , \state195[2] , 
+        \PCSource164[1] , n370, n371, n372, n373, n374, n375, n376, n377, n378, 
+        n379, n380, n381, n382, n383, n384, n385, n386, n387, n388, n389, n390, 
+        n391, n392, n393, n394, n395, n396, n397, n398, n399, n400, n401, n402, 
+        n403, n420, \*cell*250/U42/CONTROL2 , \*cell*250/U36/CONTROL1 , 
+        \*cell*250/U33/CONTROL2 , \*cell*250/U32/CONTROL2 , 
+        \*cell*250/U29/CONTROL2 , \*cell*250/U28/CONTROL2 , 
+        \*cell*250/U14/DATA2_0 , \*cell*250/U12/DATA2_0 , 
+        \*cell*250/U7/DATA2_0 , \*cell*250/U4/DATA2_0 , \*cell*250/U3/DATA2_0 ;
+    dfptnq0 \ALUSelB_reg[1]  ( .d(\ALUSelB150[1] ), .cp(Clk), .sdn(1'b1), .q(
+        ALUSelB[1]) );
+    dfptnq0 \ALUSelB_reg[0]  ( .d(\ALUSelB150[0] ), .cp(Clk), .sdn(1'b1), .q(
+        ALUSelB[0]) );
+    dfptnq0 \ALUOp_reg[1]  ( .d(\state195[7] ), .cp(Clk), .sdn(1'b1), .q(ALUOp
+        [1]) );
+    dfptnq0 \ALUOp_reg[0]  ( .d(\PCSource164[0] ), .cp(Clk), .sdn(1'b1), .q(
+        ALUOp[0]) );
+    dhntnq0 \state_reg[9]  ( .da(\state195[9] ), .sa(n_2238), .cp(Clk), .q(
+        \state[9] ) );
+    dhntnq0 \state_reg[8]  ( .da(\state195[8] ), .sa(n_2238), .cp(Clk), .q(
+        \state[8] ) );
+    dhntnq0 \state_reg[7]  ( .da(\state195[7] ), .sa(n_2238), .cp(Clk), .q(
+        \state[7] ) );
+    dhntnq0 \state_reg[6]  ( .da(\state195[6] ), .sa(n_2238), .cp(Clk), .q(
+        \state[6] ) );
+    dhntnq0 \state_reg[5]  ( .da(\state195[5] ), .sa(n_2238), .cp(Clk), .q(
+        \state[5] ) );
+    dhntnq0 \state_reg[4]  ( .da(\state195[4] ), .sa(n_2238), .cp(Clk), .q(
+        \state[4] ) );
+    dhntnq0 \state_reg[3]  ( .da(\state195[3] ), .sa(n_2238), .cp(Clk), .q(
+        \state[3] ) );
+    dhntnq0 \state_reg[2]  ( .da(\state195[2] ), .sa(n_2238), .cp(Clk), .q(
+        \state[2] ) );
+    dhntnq0 \state_reg[1]  ( .da(\state195[1] ), .sa(n_2238), .cp(Clk), .q(
+        \state[1] ) );
+    dhntnq0 \state_reg[0]  ( .da(\state195[0] ), .sa(n_2238), .cp(Clk), .q(
+        \state[0] ) );
+    mfntnq0 RegDst_reg ( .da(n420), .db(1'b0), .sa(\*cell*250/U42/CONTROL2 ), 
+        .cp(Clk), .q(RegDst) );
+    mfntnq0 RegWrite_reg ( .da(n420), .db(1'b0), .sa(\*cell*250/U12/DATA2_0 ), 
+        .cp(Clk), .q(RegWrite) );
+    aoi21d0 U106 ( .a1(n371), .a2(\state[2] ), .b(n372), .zn(n370) );
+    nd02d0 U107 ( .a1(n373), .a2(n371), .zn(\*cell*250/U36/CONTROL1 ) );
+    fn05d0 U108 ( .a1(n374), .b1(n375), .zn(\*cell*250/U42/CONTROL2 ) );
+    or02d1 U109 ( .a1(n375), .a2(Reset), .z(\ALUSelB150[0] ) );
+    nr02d0 U110 ( .a1(Reset), .a2(n370), .zn(\ALUSelB150[1] ) );
+    oai31d0 U111 ( .a1(n376), .a2(\ALUSelB150[0] ), .a3(n374), .b(n377), .zn(
+        \PCSource164[0] ) );
+    oai32d0 U112 ( .a1(n378), .a2(n379), .a3(n380), .b1(n381), .b2(
+        \ALUSelB150[0] ), .zn(\PCSource164[1] ) );
+    nd02d0 U113 ( .a1(n420), .a2(n382), .zn(\state195[0] ) );
+    nr02d0 U114 ( .a1(Reset), .a2(n371), .zn(\state195[1] ) );
+    nr02d0 U115 ( .a1(n379), .a2(n383), .zn(\state195[2] ) );
+    nr02d0 U116 ( .a1(Reset), .a2(n384), .zn(\state195[3] ) );
+    an03d1 U117 ( .a1(n385), .a2(\state[3] ), .a3(n420), .z(\state195[4] ) );
+    fn05d0 U118 ( .a1(\*cell*250/U3/DATA2_0 ), .b1(Reset), .zn(\state195[5] )
+         );
+    fn10d0 U119 ( .a1(n386), .a2(Op[2]), .a3(n379), .zn(\state195[6] ) );
+    nr02d0 U120 ( .a1(n379), .a2(n387), .zn(\state195[8] ) );
+    aon211d1 U121 ( .a1(n388), .a2(n389), .b(n390), .c(n379), .z(n_2238) );
+    oai31d0 U122 ( .a1(n380), .a2(n373), .a3(n378), .b(n371), .zn(
+        \*cell*250/U7/DATA2_0 ) );
+    nd02d0 U123 ( .a1(n382), .a2(n384), .zn(\*cell*250/U4/DATA2_0 ) );
+    aon321d1 U124 ( .a1(n381), .a2(n391), .a3(n392), .b1(n372), .b2(n393), .c(
+        \*cell*250/U33/CONTROL2 ), .z(\*cell*250/U14/DATA2_0 ) );
+    oai21d0 U125 ( .a1(n375), .a2(n394), .b(n384), .zn(\*cell*250/U12/DATA2_0 
+        ) );
+    in01d0 U126 ( .i(Reset), .zn(n420) );
+    aoi21d0 U127 ( .a1(\state[8] ), .a2(n396), .b(\state[6] ), .zn(n395) );
+    fn10d0 U128 ( .a1(n397), .a2(\state[5] ), .a3(\state[4] ), .zn(n392) );
+    nr02d0 U129 ( .a1(\*cell*250/U36/CONTROL1 ), .a2(\state[2] ), .zn(n385) );
+    nd02d0 U130 ( .a1(n394), .a2(n396), .zn(n374) );
+    nd02d0 U131 ( .a1(n385), .a2(n392), .zn(n375) );
+    fn10d0 U132 ( .a1(\state[8] ), .a2(n375), .a3(n374), .zn(
+        \*cell*250/U28/CONTROL2 ) );
+    in01d0 U133 ( .i(\state[1] ), .zn(n373) );
+    nr02d0 U134 ( .a1(n373), .a2(\state[0] ), .zn(n372) );
+    nd02d0 U135 ( .a1(n372), .a2(n420), .zn(n379) );
+    in01d0 U136 ( .i(Op[2]), .zn(n387) );
+    in01d0 U137 ( .i(\state[6] ), .zn(n394) );
+    in01d0 U138 ( .i(Op[1]), .zn(n386) );
+    nd02d0 U139 ( .a1(Op[1]), .a2(n387), .zn(n378) );
+    in01d0 U140 ( .i(Op[5]), .zn(n383) );
+    nr04d0 U141 ( .a1(n398), .a2(n383), .a3(Op[4]), .a4(n378), .zn(n390) );
+    fn05d0 U142 ( .a1(\state[2] ), .b1(\*cell*250/U36/CONTROL1 ), .zn(
+        \*cell*250/U33/CONTROL2 ) );
+    fn13d0 U143 ( .a1(n399), .a2(n390), .b(\*cell*250/U33/CONTROL2 ), .zn(
+        \*cell*250/U3/DATA2_0 ) );
+    in01d0 U144 ( .i(\state[3] ), .zn(n397) );
+    nd03d0 U145 ( .a1(n390), .a2(n399), .a3(\*cell*250/U33/CONTROL2 ), .zn(
+        n384) );
+    in01d0 U146 ( .i(\state[0] ), .zn(n371) );
+    nr04d0 U147 ( .a1(Op[3]), .a2(Op[0]), .a3(Op[5]), .a4(Op[4]), .zn(n389) );
+    or03d1 U148 ( .a1(\state[8] ), .a2(\state[9] ), .a3(n374), .z(n381) );
+    in01d0 U149 ( .i(\state[9] ), .zn(n376) );
+    nd02d0 U150 ( .a1(n383), .a2(n399), .zn(n400) );
+    or02d1 U151 ( .a1(\state[4] ), .a2(\state[5] ), .z(n401) );
+    in01d0 U152 ( .i(Op[4]), .zn(n402) );
+    in01d0 U153 ( .i(Op[3]), .zn(n399) );
+    in01d0 U154 ( .i(\state[7] ), .zn(n396) );
+    oai211d0 U155 ( .a1(n395), .a2(n401), .b(n397), .c(n385), .zn(n382) );
+    in01d0 U156 ( .i(n382), .zn(\*cell*250/U32/CONTROL2 ) );
+    nr02d0 U157 ( .a1(n394), .a2(\ALUSelB150[0] ), .zn(\state195[7] ) );
+    nd02d0 U158 ( .a1(\*cell*250/U28/CONTROL2 ), .a2(n420), .zn(n377) );
+    in01d0 U159 ( .i(n377), .zn(\state195[9] ) );
+    in01d0 U160 ( .i(n389), .zn(n380) );
+    in01d0 U161 ( .i(\*cell*250/U36/CONTROL1 ), .zn(n391) );
+    nd02d0 U162 ( .a1(Op[1]), .a2(Op[2]), .zn(n388) );
+    in01d0 U163 ( .i(n370), .zn(\*cell*250/U29/CONTROL2 ) );
+    oai2111d0 U164 ( .a1(Op[5]), .a2(Op[2]), .b(n388), .c(n402), .d(n403), 
+        .zn(n393) );
+    mi21d0 U165 ( .i0(n400), .i1(n386), .s(Op[0]), .zn(n403) );
+    in01d0 U166 ( .i(Op[0]), .zn(n398) );
+    dfptnq1 \PCSource_reg[1]  ( .d(\PCSource164[1] ), .cp(Clk), .sdn(1'b1), 
+        .q(PCSource[1]) );
+    dfptnq1 \PCSource_reg[0]  ( .d(\PCSource164[0] ), .cp(Clk), .sdn(1'b1), 
+        .q(PCSource[0]) );
+    mfntnq1 MemtoReg_reg ( .da(n420), .db(1'b0), .sa(\*cell*250/U33/CONTROL2 ), 
+        .cp(Clk), .q(MemtoReg) );
+    mfntnq1 PCWriteCond_reg ( .da(n420), .db(1'b0), .sa(
+        \*cell*250/U28/CONTROL2 ), .cp(Clk), .q(PCWriteCond) );
+    mfntnq1 PCWrite_reg ( .da(n420), .db(1'b0), .sa(\*cell*250/U7/DATA2_0 ), 
+        .cp(Clk), .q(PCWrite) );
+    mfntnq1 IRWrite_reg ( .da(1'b1), .db(Reset), .sa(\*cell*250/U32/CONTROL2 ), 
+        .cp(Clk), .q(IRWrite) );
+    mfntnq1 MemWrite_reg ( .da(n420), .db(1'b0), .sa(\*cell*250/U3/DATA2_0 ), 
+        .cp(Clk), .q(MemWrite) );
+    mfntnq1 ALUSelA_reg ( .da(n420), .db(1'b0), .sa(\*cell*250/U14/DATA2_0 ), 
+        .cp(Clk), .q(ALUSelA) );
+    mfntnq1 TargetWrite_reg ( .da(n420), .db(1'b0), .sa(
+        \*cell*250/U36/CONTROL1 ), .cp(Clk), .q(TargetWrite) );
+    mfntnq1 MemRead_reg ( .da(1'b1), .db(Reset), .sa(\*cell*250/U4/DATA2_0 ), 
+        .cp(Clk), .q(MemRead) );
+    mfntnq1 IorD_reg ( .da(n420), .db(1'b0), .sa(\*cell*250/U29/CONTROL2 ), 
+        .cp(Clk), .q(IorD) );
+endmodule
+
+
+module mAlu_DW01_addsub_32_0 ( A, B, CI, ADD_SUB, SUM, CO );
+input  [31:0] A;
+input  [31:0] B;
+output [31:0] SUM;
+input  CI, ADD_SUB;
+output CO;
+    wire \carry[9] , \carry[4] , \B_AS[3] , \B_AS[7] , \carry[2] , \carry[30] , 
+        \carry[20] , \carry[13] , \carry[6] , \B_AS[5] , \B_AS[8] , \B_AS[1] , 
+        \B_AS[25] , \B_AS[16] , \carry[29] , \carry[26] , \carry[24] , 
+        \carry[17] , \B_AS[31] , \B_AS[28] , \carry[15] , \B_AS[23] , 
+        \B_AS[21] , \B_AS[12] , \B_AS[10] , \B_AS[19] , \carry[27] , 
+        \carry[23] , \carry[22] , \carry[18] , \carry[11] , \B_AS[27] , 
+        \B_AS[14] , \carry[19] , \carry[10] , \B_AS[26] , \B_AS[15] , 
+        \carry[14] , \B_AS[22] , \B_AS[11] , \carry[25] , \carry[16] , 
+        \B_AS[30] , \B_AS[18] , \B_AS[29] , \carry[21] , \carry[12] , 
+        \B_AS[20] , \B_AS[13] , \carry[31] , \carry[28] , \B_AS[24] , 
+        \B_AS[17] , \carry[7] , \carry[3] , \B_AS[9] , \B_AS[0] , \B_AS[4] , 
+        \carry[8] , \B_AS[6] , \carry[5] , \carry[1] , \B_AS[2] ;
+    xo03d1 U1_31 ( .a1(A[31]), .a2(\B_AS[31] ), .a3(\carry[31] ), .z(SUM[31])
+         );
+    xo02d0 U4 ( .a1(ADD_SUB), .a2(B[9]), .z(\B_AS[9] ) );
+    xo02d0 U5 ( .a1(ADD_SUB), .a2(B[8]), .z(\B_AS[8] ) );
+    xo02d0 U6 ( .a1(ADD_SUB), .a2(B[7]), .z(\B_AS[7] ) );
+    xo02d0 U7 ( .a1(ADD_SUB), .a2(B[6]), .z(\B_AS[6] ) );
+    xo02d0 U8 ( .a1(ADD_SUB), .a2(B[5]), .z(\B_AS[5] ) );
+    xo02d0 U9 ( .a1(ADD_SUB), .a2(B[4]), .z(\B_AS[4] ) );
+    xo02d0 U10 ( .a1(ADD_SUB), .a2(B[3]), .z(\B_AS[3] ) );
+    xo02d0 U11 ( .a1(ADD_SUB), .a2(B[31]), .z(\B_AS[31] ) );
+    xo02d0 U12 ( .a1(ADD_SUB), .a2(B[30]), .z(\B_AS[30] ) );
+    xo02d0 U13 ( .a1(ADD_SUB), .a2(B[2]), .z(\B_AS[2] ) );
+    xo02d0 U14 ( .a1(ADD_SUB), .a2(B[29]), .z(\B_AS[29] ) );
+    xo02d0 U15 ( .a1(ADD_SUB), .a2(B[28]), .z(\B_AS[28] ) );
+    xo02d0 U16 ( .a1(ADD_SUB), .a2(B[27]), .z(\B_AS[27] ) );
+    xo02d0 U17 ( .a1(ADD_SUB), .a2(B[26]), .z(\B_AS[26] ) );
+    xo02d0 U18 ( .a1(ADD_SUB), .a2(B[25]), .z(\B_AS[25] ) );
+    xo02d0 U19 ( .a1(ADD_SUB), .a2(B[24]), .z(\B_AS[24] ) );
+    xo02d0 U20 ( .a1(ADD_SUB), .a2(B[23]), .z(\B_AS[23] ) );
+    xo02d0 U21 ( .a1(ADD_SUB), .a2(B[22]), .z(\B_AS[22] ) );
+    xo02d0 U22 ( .a1(ADD_SUB), .a2(B[21]), .z(\B_AS[21] ) );
+    xo02d0 U23 ( .a1(ADD_SUB), .a2(B[20]), .z(\B_AS[20] ) );
+    xo02d0 U24 ( .a1(ADD_SUB), .a2(B[1]), .z(\B_AS[1] ) );
+    xo02d0 U25 ( .a1(ADD_SUB), .a2(B[19]), .z(\B_AS[19] ) );
+    xo02d0 U26 ( .a1(ADD_SUB), .a2(B[18]), .z(\B_AS[18] ) );
+    xo02d0 U27 ( .a1(ADD_SUB), .a2(B[17]), .z(\B_AS[17] ) );
+    xo02d0 U28 ( .a1(ADD_SUB), .a2(B[16]), .z(\B_AS[16] ) );
+    xo02d0 U29 ( .a1(ADD_SUB), .a2(B[15]), .z(\B_AS[15] ) );
+    xo02d0 U30 ( .a1(ADD_SUB), .a2(B[14]), .z(\B_AS[14] ) );
+    xo02d0 U31 ( .a1(ADD_SUB), .a2(B[13]), .z(\B_AS[13] ) );
+    xo02d0 U32 ( .a1(ADD_SUB), .a2(B[12]), .z(\B_AS[12] ) );
+    xo02d0 U33 ( .a1(ADD_SUB), .a2(B[11]), .z(\B_AS[11] ) );
+    xo02d0 U34 ( .a1(ADD_SUB), .a2(B[10]), .z(\B_AS[10] ) );
+    xo02d0 U35 ( .a1(B[0]), .a2(ADD_SUB), .z(\B_AS[0] ) );
+    ad01d0 U1_24 ( .a(A[24]), .b(\B_AS[24] ), .ci(\carry[24] ), .s(SUM[24]), 
+        .co(\carry[25] ) );
+    ad01d0 U1_1 ( .a(A[1]), .b(\B_AS[1] ), .ci(\carry[1] ), .s(SUM[1]), .co(
+        \carry[2] ) );
+    ad01d0 U1_18 ( .a(A[18]), .b(\B_AS[18] ), .ci(\carry[18] ), .s(SUM[18]), 
+        .co(\carry[19] ) );
+    ad01d0 U1_8 ( .a(A[8]), .b(\B_AS[8] ), .ci(\carry[8] ), .s(SUM[8]), .co(
+        \carry[9] ) );
+    ad01d0 U1_11 ( .a(A[11]), .b(\B_AS[11] ), .ci(\carry[11] ), .s(SUM[11]), 
+        .co(\carry[12] ) );
+    ad01d0 U1_16 ( .a(A[16]), .b(\B_AS[16] ), .ci(\carry[16] ), .s(SUM[16]), 
+        .co(\carry[17] ) );
+    ad01d0 U1_0 ( .a(A[0]), .b(\B_AS[0] ), .ci(ADD_SUB), .s(SUM[0]), .co(
+        \carry[1] ) );
+    ad01d0 U1_6 ( .a(A[6]), .b(\B_AS[6] ), .ci(\carry[6] ), .s(SUM[6]), .co(
+        \carry[7] ) );
+    ad01d0 U1_23 ( .a(A[23]), .b(\B_AS[23] ), .ci(\carry[23] ), .s(SUM[23]), 
+        .co(\carry[24] ) );
+    ad01d0 U1_17 ( .a(A[17]), .b(\B_AS[17] ), .ci(\carry[17] ), .s(SUM[17]), 
+        .co(\carry[18] ) );
+    ad01d0 U1_30 ( .a(A[30]), .b(\B_AS[30] ), .ci(\carry[30] ), .s(SUM[30]), 
+        .co(\carry[31] ) );
+    ad01d0 U1_7 ( .a(A[7]), .b(\B_AS[7] ), .ci(\carry[7] ), .s(SUM[7]), .co(
+        \carry[8] ) );
+    ad01d0 U1_22 ( .a(A[22]), .b(\B_AS[22] ), .ci(\carry[22] ), .s(SUM[22]), 
+        .co(\carry[23] ) );
+    ad01d0 U1_19 ( .a(A[19]), .b(\B_AS[19] ), .ci(\carry[19] ), .s(SUM[19]), 
+        .co(\carry[20] ) );
+    ad01d0 U1_25 ( .a(A[25]), .b(\B_AS[25] ), .ci(\carry[25] ), .s(SUM[25]), 
+        .co(\carry[26] ) );
+    ad01d0 U1_9 ( .a(A[9]), .b(\B_AS[9] ), .ci(\carry[9] ), .s(SUM[9]), .co(
+        \carry[10] ) );
+    ad01d0 U1_10 ( .a(A[10]), .b(\B_AS[10] ), .ci(\carry[10] ), .s(SUM[10]), 
+        .co(\carry[11] ) );
+    ad01d0 U1_2 ( .a(A[2]), .b(\B_AS[2] ), .ci(\carry[2] ), .s(SUM[2]), .co(
+        \carry[3] ) );
+    ad01d0 U1_27 ( .a(A[27]), .b(\B_AS[27] ), .ci(\carry[27] ), .s(SUM[27]), 
+        .co(\carry[28] ) );
+    ad01d0 U1_3 ( .a(A[3]), .b(\B_AS[3] ), .ci(\carry[3] ), .s(SUM[3]), .co(
+        \carry[4] ) );
+    ad01d0 U1_5 ( .a(A[5]), .b(\B_AS[5] ), .ci(\carry[5] ), .s(SUM[5]), .co(
+        \carry[6] ) );
+    ad01d0 U1_12 ( .a(A[12]), .b(\B_AS[12] ), .ci(\carry[12] ), .s(SUM[12]), 
+        .co(\carry[13] ) );
+    ad01d0 U1_15 ( .a(A[15]), .b(\B_AS[15] ), .ci(\carry[15] ), .s(SUM[15]), 
+        .co(\carry[16] ) );
+    ad01d0 U1_29 ( .a(A[29]), .b(\B_AS[29] ), .ci(\carry[29] ), .s(SUM[29]), 
+        .co(\carry[30] ) );
+    ad01d0 U1_20 ( .a(A[20]), .b(\B_AS[20] ), .ci(\carry[20] ), .s(SUM[20]), 
+        .co(\carry[21] ) );
+    ad01d0 U1_14 ( .a(A[14]), .b(\B_AS[14] ), .ci(\carry[14] ), .s(SUM[14]), 
+        .co(\carry[15] ) );
+    ad01d0 U1_28 ( .a(A[28]), .b(\B_AS[28] ), .ci(\carry[28] ), .s(SUM[28]), 
+        .co(\carry[29] ) );
+    ad01d0 U1_21 ( .a(A[21]), .b(\B_AS[21] ), .ci(\carry[21] ), .s(SUM[21]), 
+        .co(\carry[22] ) );
+    ad01d0 U1_4 ( .a(A[4]), .b(\B_AS[4] ), .ci(\carry[4] ), .s(SUM[4]), .co(
+        \carry[5] ) );
+    ad01d0 U1_13 ( .a(A[13]), .b(\B_AS[13] ), .ci(\carry[13] ), .s(SUM[13]), 
+        .co(\carry[14] ) );
+    ad01d0 U1_26 ( .a(A[26]), .b(\B_AS[26] ), .ci(\carry[26] ), .s(SUM[26]), 
+        .co(\carry[27] ) );
+endmodule
+
+
+module mAlu ( PC, ReadData1, ReadData2, Instruction, ALUSelA, ALUSelB, ALUOp, 
+    Zero, ALU_result );
+input  [31:0] PC;
+input  [31:0] ReadData2;
+input  [1:0] ALUSelB;
+input  [31:0] ReadData1;
+input  [15:0] Instruction;
+input  [1:0] ALUOp;
+output [31:0] ALU_result;
+input  ALUSelA;
+output Zero;
+    wire \MuxA[22] , \MuxA[11] , \ALU_result245[11] , \ALU_result245[22] , 
+        \ALU_result245[18] , \MuxA[18] , \ALU_result245[15] , 
+        \ALU_result245[26] , \MuxA[26] , \MuxA[15] , \ALU_result245[17] , 
+        \ALU_result245[24] , \MuxA[24] , \MuxA[17] , \ALU_result245[30] , 
+        \ALU_result245[29] , \MuxA[30] , \MuxA[29] , \MuxA[20] , \MuxA[13] , 
+        \ALU_result245[13] , \ALU_result245[20] , \MuxA[4] , \MuxB[7] , 
+        \MuxB[16] , \MuxB[25] , \ALU_result245[4] , \MuxA[0] , \MuxB[3] , 
+        \MuxB[31] , \MuxB[28] , \ALU_result245[9] , \ALU_result245[0] , 
+        \MuxA[9] , \MuxB[12] , \MuxB[21] , \MuxB[10] , \MuxB[8] , \MuxB[23] , 
+        \ALU_result245[2] , \MuxA[2] , \MuxB[1] , \MuxB[19] , 
+        \ALU_result245[6] , \MuxB[14] , \MuxB[27] , \MuxA[6] , \MuxB[5] , 
+        \ALU_result245[7] , \MuxB[15] , \MuxB[26] , \MuxB[4] , \MuxA[7] , 
+        \MuxB[9] , \MuxB[11] , \MuxB[22] , \ALU_result245[3] , \MuxA[3] , 
+        \MuxB[0] , \MuxB[18] , \MuxB[2] , \MuxA[1] , \MuxB[30] , \MuxB[29] , 
+        \ALU_result245[8] , \ALU_result245[1] , \MuxA[8] , \MuxB[13] , 
+        \MuxB[20] , \MuxA[5] , \MuxB[6] , \MuxB[17] , \MuxB[24] , 
+        \ALU_result245[5] , \MuxA[31] , \MuxA[28] , \ALU_result245[28] , 
+        \ALU_result245[31] , \ALU_result245[12] , \ALU_result245[21] , 
+        \MuxA[21] , \MuxA[12] , \MuxA[25] , \MuxA[16] , \ALU_result245[16] , 
+        \ALU_result245[25] , \MuxA[27] , \MuxA[14] , \ALU_result245[14] , 
+        \ALU_result245[27] , \ALU_result245[10] , \ALU_result245[23] , 
+        \MuxA[23] , \MuxA[10] , \MuxA[19] , \ALU_result245[19] , n427, n428, 
+        n429, n430, n431, n432, n433, n434, n435, n436, n437, n438, n439, n440, 
+        n441, n442, n443, n444, n445, n446, n447, n448, n449, n450, n451, n452, 
+        n453, n454, n455, n456, n457, n458, n459, n460, n461, n462, n463, n464, 
+        n465, n466, n467, n468, n469, n470, n471, n472, n473, n474, n475, n476, 
+        n477, n478, n479, n480, n481, n482, n483, n484, n485, n486, n487, n488, 
+        n489, n490, n491, n492, n493, n494, n495, n496, n497, n498, n499, n500, 
+        n501, n502, n503, n504, n505, n506, n507, n508, n509, n510, n511, n512, 
+        n513, n514, n515, n516, n517, n518, n519, n520, n521, n522, n523, n524, 
+        n525, n526, n527, n528, n529, n530, n531, n532, n533, n534, n535, n536, 
+        n537, n538, n539, n540, n541, n542, n543, n544, n545, n546, n547, n548, 
+        n549, n550, n551, n552, n553, n554, n555, n556, n557, n558, n559, n560, 
+        n561, n562, n563, n564, n565, n566, n567, n568, n569, n570, n571, n572, 
+        n573, n574, n575, n576, n577, n578, n579, n580, n581, n582, n583, n584, 
+        n585, n586, n587, n588, n589, n590, n591, n592, n593, n594, n595, n596, 
+        n597, n598, n599, n600, n601, n602, n603, n604, n605, n606, n607, n608, 
+        n609, n610, n611, n612, n613, n614, n615, n616, n617, n618, n619, n620, 
+        n621, n622, n623, n624, n625, n626, n627, n628, n629, n630, n631, n632, 
+        n633, n634, n635, n636, n637, n638, n639, n640, n641, n642, n643, n644, 
+        n645, n646, n647, n648, n649, n650, n651, n652, n653, n654, n655, n656, 
+        n657, n658, n659, n660, n661, n662, n663, n664, n665, n666, n667, n668, 
+        n669, n670, n671, n672, n673, n674, n675, n676, \*cell*222/U18/Z_0 ;
+    nd02d2 U116 ( .a1(n633), .a2(Instruction[2]), .zn(n636) );
+    in01d2 U117 ( .i(n586), .zn(n669) );
+    oai211d2 U118 ( .a1(Instruction[2]), .a2(n634), .b(n591), .c(ALUOp[1]), 
+        .zn(n676) );
+    in01d2 U119 ( .i(n631), .zn(n597) );
+    nd02d2 U120 ( .a1(Instruction[2]), .a2(n632), .zn(n631) );
+    in01d2 U121 ( .i(n432), .zn(n668) );
+    nr02d2 U122 ( .a1(ALUSelB[0]), .a2(ALUSelB[1]), .zn(n593) );
+    an02d3 U123 ( .a1(Instruction[0]), .a2(ALUOp[1]), .z(n599) );
+    nd02d2 U124 ( .a1(n591), .a2(n592), .zn(\*cell*222/U18/Z_0 ) );
+    an04d1 U125 ( .a1(n427), .a2(n428), .a3(n429), .a4(n430), .z(Zero) );
+    oai2211d0 U126 ( .a1(n431), .a2(n432), .b1(n433), .b2(n434), .c(n435), .d(
+        n436), .zn(ALU_result[31]) );
+    oai2111d0 U127 ( .a1(n431), .a2(n437), .b(n438), .c(n439), .d(n440), .zn(
+        ALU_result[30]) );
+    oai2111d0 U128 ( .a1(n441), .a2(n442), .b(n443), .c(n444), .d(n445), .zn(
+        ALU_result[29]) );
+    oai2111d0 U129 ( .a1(n446), .a2(n447), .b(n448), .c(n449), .d(n450), .zn(
+        ALU_result[28]) );
+    oai2111d0 U130 ( .a1(n451), .a2(n452), .b(n453), .c(n454), .d(n455), .zn(
+        ALU_result[27]) );
+    oai2111d0 U131 ( .a1(n456), .a2(n457), .b(n458), .c(n459), .d(n460), .zn(
+        ALU_result[26]) );
+    oai2111d0 U132 ( .a1(n461), .a2(n462), .b(n463), .c(n464), .d(n465), .zn(
+        ALU_result[25]) );
+    oai2111d0 U133 ( .a1(n466), .a2(n467), .b(n468), .c(n469), .d(n470), .zn(
+        ALU_result[24]) );
+    oai2111d0 U134 ( .a1(n471), .a2(n472), .b(n473), .c(n474), .d(n475), .zn(
+        ALU_result[23]) );
+    oai2111d0 U135 ( .a1(n476), .a2(n477), .b(n478), .c(n479), .d(n480), .zn(
+        ALU_result[22]) );
+    oai2111d0 U136 ( .a1(n481), .a2(n482), .b(n483), .c(n484), .d(n485), .zn(
+        ALU_result[21]) );
+    oai2111d0 U137 ( .a1(n486), .a2(n487), .b(n488), .c(n489), .d(n490), .zn(
+        ALU_result[20]) );
+    oai2111d0 U138 ( .a1(n491), .a2(n492), .b(n493), .c(n494), .d(n495), .zn(
+        ALU_result[19]) );
+    oai2111d0 U139 ( .a1(n496), .a2(n497), .b(n498), .c(n499), .d(n500), .zn(
+        ALU_result[18]) );
+    oai2111d0 U140 ( .a1(n501), .a2(n502), .b(n503), .c(n504), .d(n505), .zn(
+        ALU_result[17]) );
+    oai2111d0 U141 ( .a1(n506), .a2(n507), .b(n508), .c(n509), .d(n510), .zn(
+        ALU_result[16]) );
+    oai2111d0 U142 ( .a1(n511), .a2(n512), .b(n513), .c(n514), .d(n515), .zn(
+        ALU_result[15]) );
+    oai2111d0 U143 ( .a1(n516), .a2(n517), .b(n518), .c(n519), .d(n520), .zn(
+        ALU_result[14]) );
+    oai2111d0 U144 ( .a1(n521), .a2(n522), .b(n523), .c(n524), .d(n525), .zn(
+        ALU_result[13]) );
+    oai2111d0 U145 ( .a1(n526), .a2(n527), .b(n528), .c(n529), .d(n530), .zn(
+        ALU_result[12]) );
+    oai2111d0 U146 ( .a1(n531), .a2(n532), .b(n533), .c(n534), .d(n535), .zn(
+        ALU_result[11]) );
+    oai2111d0 U147 ( .a1(n536), .a2(n537), .b(n538), .c(n539), .d(n540), .zn(
+        ALU_result[10]) );
+    oai2111d0 U148 ( .a1(n541), .a2(n542), .b(n543), .c(n544), .d(n545), .zn(
+        ALU_result[9]) );
+    oai2111d0 U149 ( .a1(n546), .a2(n547), .b(n548), .c(n549), .d(n550), .zn(
+        ALU_result[8]) );
+    oai2111d0 U150 ( .a1(n551), .a2(n552), .b(n553), .c(n554), .d(n555), .zn(
+        ALU_result[7]) );
+    oai2111d0 U151 ( .a1(n556), .a2(n557), .b(n558), .c(n559), .d(n560), .zn(
+        ALU_result[6]) );
+    oai2111d0 U152 ( .a1(n561), .a2(n562), .b(n563), .c(n564), .d(n565), .zn(
+        ALU_result[5]) );
+    oai2111d0 U153 ( .a1(n566), .a2(n567), .b(n568), .c(n569), .d(n570), .zn(
+        ALU_result[4]) );
+    oai2111d0 U154 ( .a1(n571), .a2(n572), .b(n573), .c(n574), .d(n575), .zn(
+        ALU_result[3]) );
+    oai2111d0 U155 ( .a1(n576), .a2(n577), .b(n578), .c(n579), .d(n580), .zn(
+        ALU_result[2]) );
+    oai2111d0 U156 ( .a1(n581), .a2(n582), .b(n583), .c(n584), .d(n585), .zn(
+        ALU_result[1]) );
+    oai2211d0 U157 ( .a1(n581), .a2(n586), .b1(n587), .b2(n588), .c(n589), .d(
+        n590), .zn(ALU_result[0]) );
+    aoi21d0 U158 ( .a1(ReadData2[30]), .a2(n593), .b(n594), .zn(n431) );
+    aoi21d0 U159 ( .a1(n593), .a2(ReadData2[31]), .b(n594), .zn(n433) );
+    aoi21d0 U160 ( .a1(ReadData2[29]), .a2(n593), .b(n594), .zn(n441) );
+    aoi21d0 U161 ( .a1(ReadData2[28]), .a2(n593), .b(n594), .zn(n446) );
+    aoi21d0 U162 ( .a1(ReadData2[27]), .a2(n593), .b(n594), .zn(n451) );
+    aoi21d0 U163 ( .a1(ReadData2[26]), .a2(n593), .b(n594), .zn(n456) );
+    aoi21d0 U164 ( .a1(ReadData2[25]), .a2(n593), .b(n594), .zn(n461) );
+    aoi21d0 U165 ( .a1(ReadData2[24]), .a2(n593), .b(n594), .zn(n466) );
+    aoi21d0 U166 ( .a1(ReadData2[23]), .a2(n593), .b(n594), .zn(n471) );
+    aoi21d0 U167 ( .a1(ReadData2[22]), .a2(n593), .b(n594), .zn(n476) );
+    aoi21d0 U168 ( .a1(ReadData2[21]), .a2(n593), .b(n594), .zn(n481) );
+    aoi21d0 U169 ( .a1(ReadData2[20]), .a2(n593), .b(n594), .zn(n486) );
+    aoi21d0 U170 ( .a1(ReadData2[19]), .a2(n593), .b(n594), .zn(n491) );
+    aoi21d0 U171 ( .a1(ReadData2[18]), .a2(n593), .b(n594), .zn(n496) );
+    aoi21d0 U172 ( .a1(ReadData2[17]), .a2(n593), .b(n594), .zn(n501) );
+    aoi21d0 U173 ( .a1(ReadData2[16]), .a2(n593), .b(n594), .zn(n506) );
+    aoi21d0 U174 ( .a1(ReadData2[15]), .a2(n593), .b(n594), .zn(n511) );
+    aoi22d0 U175 ( .a1(ReadData2[14]), .a2(n593), .b1(Instruction[14]), .b2(
+        ALUSelB[1]), .zn(n516) );
+    aoi22d0 U176 ( .a1(ReadData2[13]), .a2(n593), .b1(Instruction[13]), .b2(
+        ALUSelB[1]), .zn(n521) );
+    aoi22d0 U177 ( .a1(ReadData2[12]), .a2(n593), .b1(Instruction[12]), .b2(
+        ALUSelB[1]), .zn(n526) );
+    aoi22d0 U178 ( .a1(ReadData2[11]), .a2(n593), .b1(Instruction[11]), .b2(
+        ALUSelB[1]), .zn(n531) );
+    aoi22d0 U179 ( .a1(ReadData2[10]), .a2(n593), .b1(Instruction[10]), .b2(
+        ALUSelB[1]), .zn(n536) );
+    aoi22d0 U180 ( .a1(ReadData2[9]), .a2(n593), .b1(Instruction[9]), .b2(
+        ALUSelB[1]), .zn(n541) );
+    aoi22d0 U181 ( .a1(ReadData2[8]), .a2(n593), .b1(Instruction[8]), .b2(
+        ALUSelB[1]), .zn(n546) );
+    aoi22d0 U182 ( .a1(ReadData2[7]), .a2(n593), .b1(Instruction[7]), .b2(
+        ALUSelB[1]), .zn(n551) );
+    aoi22d0 U183 ( .a1(ReadData2[6]), .a2(n593), .b1(Instruction[6]), .b2(
+        ALUSelB[1]), .zn(n556) );
+    aoi22d0 U184 ( .a1(ALUSelB[1]), .a2(Instruction[5]), .b1(ReadData2[5]), 
+        .b2(n593), .zn(n561) );
+    aoi22d0 U185 ( .a1(ReadData2[4]), .a2(n593), .b1(Instruction[4]), .b2(
+        ALUSelB[1]), .zn(n566) );
+    aoi22d0 U186 ( .a1(ReadData2[3]), .a2(n593), .b1(Instruction[3]), .b2(
+        ALUSelB[1]), .zn(n571) );
+    aoi22d0 U187 ( .a1(ALUSelB[1]), .a2(Instruction[2]), .b1(ReadData2[2]), 
+        .b2(n593), .zn(n576) );
+    aoi22d0 U188 ( .a1(ALUSelB[1]), .a2(Instruction[1]), .b1(ReadData2[1]), 
+        .b2(n593), .zn(n581) );
+    nd02d0 U189 ( .a1(n595), .a2(n596), .zn(\MuxB[0] ) );
+    aoi21d0 U190 ( .a1(n597), .a2(n598), .b(n599), .zn(n434) );
+    aoi21d0 U191 ( .a1(n597), .a2(n600), .b(n599), .zn(n437) );
+    aoi21d0 U192 ( .a1(n597), .a2(n601), .b(n599), .zn(n442) );
+    aoi21d0 U193 ( .a1(n597), .a2(n602), .b(n599), .zn(n447) );
+    aoi21d0 U194 ( .a1(n597), .a2(n603), .b(n599), .zn(n452) );
+    aoi21d0 U195 ( .a1(n597), .a2(n604), .b(n599), .zn(n457) );
+    aoi21d0 U196 ( .a1(n597), .a2(n605), .b(n599), .zn(n462) );
+    aoi21d0 U197 ( .a1(n597), .a2(n606), .b(n599), .zn(n467) );
+    aoi21d0 U198 ( .a1(n597), .a2(n607), .b(n599), .zn(n472) );
+    aoi21d0 U199 ( .a1(n597), .a2(n608), .b(n599), .zn(n477) );
+    aoi21d0 U200 ( .a1(n597), .a2(n609), .b(n599), .zn(n482) );
+    aoi21d0 U201 ( .a1(n597), .a2(n610), .b(n599), .zn(n487) );
+    aoi21d0 U202 ( .a1(n597), .a2(n611), .b(n599), .zn(n492) );
+    aoi21d0 U203 ( .a1(n597), .a2(n612), .b(n599), .zn(n497) );
+    aoi21d0 U204 ( .a1(n597), .a2(n613), .b(n599), .zn(n502) );
+    aoi21d0 U205 ( .a1(n597), .a2(n614), .b(n599), .zn(n507) );
+    aoi21d0 U206 ( .a1(n597), .a2(n615), .b(n599), .zn(n512) );
+    aoi21d0 U207 ( .a1(n597), .a2(n616), .b(n599), .zn(n517) );
+    aoi21d0 U208 ( .a1(n597), .a2(n617), .b(n599), .zn(n522) );
+    aoi21d0 U209 ( .a1(n597), .a2(n618), .b(n599), .zn(n527) );
+    aoi21d0 U210 ( .a1(n597), .a2(n619), .b(n599), .zn(n532) );
+    aoi21d0 U211 ( .a1(n597), .a2(n620), .b(n599), .zn(n537) );
+    aoi21d0 U212 ( .a1(n597), .a2(n621), .b(n599), .zn(n542) );
+    aoi21d0 U213 ( .a1(n597), .a2(n622), .b(n599), .zn(n547) );
+    aoi21d0 U214 ( .a1(n597), .a2(n623), .b(n599), .zn(n552) );
+    aoi21d0 U215 ( .a1(n597), .a2(n624), .b(n599), .zn(n557) );
+    aoi21d0 U216 ( .a1(n597), .a2(n625), .b(n599), .zn(n562) );
+    aoi21d0 U217 ( .a1(n597), .a2(n626), .b(n599), .zn(n567) );
+    aoi21d0 U218 ( .a1(n597), .a2(n627), .b(n599), .zn(n572) );
+    aoi21d0 U219 ( .a1(n597), .a2(n628), .b(n599), .zn(n577) );
+    aoi21d0 U220 ( .a1(n597), .a2(n629), .b(n599), .zn(n582) );
+    aoi21d0 U221 ( .a1(n597), .a2(n630), .b(n599), .zn(n588) );
+    mi21d0 U222 ( .i0(PC[31]), .i1(ReadData1[31]), .s(ALUSelA), .zn(n598) );
+    mi21d0 U223 ( .i0(PC[30]), .i1(ReadData1[30]), .s(ALUSelA), .zn(n600) );
+    mi21d0 U224 ( .i0(PC[29]), .i1(ReadData1[29]), .s(ALUSelA), .zn(n601) );
+    mi21d0 U225 ( .i0(PC[28]), .i1(ReadData1[28]), .s(ALUSelA), .zn(n602) );
+    mi21d0 U226 ( .i0(PC[27]), .i1(ReadData1[27]), .s(ALUSelA), .zn(n603) );
+    mi21d0 U227 ( .i0(PC[26]), .i1(ReadData1[26]), .s(ALUSelA), .zn(n604) );
+    mi21d0 U228 ( .i0(PC[25]), .i1(ReadData1[25]), .s(ALUSelA), .zn(n605) );
+    mi21d0 U229 ( .i0(PC[24]), .i1(ReadData1[24]), .s(ALUSelA), .zn(n606) );
+    mi21d0 U230 ( .i0(PC[23]), .i1(ReadData1[23]), .s(ALUSelA), .zn(n607) );
+    mi21d0 U231 ( .i0(PC[22]), .i1(ReadData1[22]), .s(ALUSelA), .zn(n608) );
+    mi21d0 U232 ( .i0(PC[21]), .i1(ReadData1[21]), .s(ALUSelA), .zn(n609) );
+    mi21d0 U233 ( .i0(PC[20]), .i1(ReadData1[20]), .s(ALUSelA), .zn(n610) );
+    mi21d0 U234 ( .i0(PC[19]), .i1(ReadData1[19]), .s(ALUSelA), .zn(n611) );
+    mi21d0 U235 ( .i0(PC[18]), .i1(ReadData1[18]), .s(ALUSelA), .zn(n612) );
+    mi21d0 U236 ( .i0(PC[17]), .i1(ReadData1[17]), .s(ALUSelA), .zn(n613) );
+    mi21d0 U237 ( .i0(PC[16]), .i1(ReadData1[16]), .s(ALUSelA), .zn(n614) );
+    mi21d0 U238 ( .i0(PC[15]), .i1(ReadData1[15]), .s(ALUSelA), .zn(n615) );
+    mi21d0 U239 ( .i0(PC[14]), .i1(ReadData1[14]), .s(ALUSelA), .zn(n616) );
+    mi21d0 U240 ( .i0(PC[13]), .i1(ReadData1[13]), .s(ALUSelA), .zn(n617) );
+    mi21d0 U241 ( .i0(PC[12]), .i1(ReadData1[12]), .s(ALUSelA), .zn(n618) );
+    mi21d0 U242 ( .i0(PC[11]), .i1(ReadData1[11]), .s(ALUSelA), .zn(n619) );
+    mi21d0 U243 ( .i0(PC[10]), .i1(ReadData1[10]), .s(ALUSelA), .zn(n620) );
+    mi21d0 U244 ( .i0(PC[9]), .i1(ReadData1[9]), .s(ALUSelA), .zn(n621) );
+    mi21d0 U245 ( .i0(PC[8]), .i1(ReadData1[8]), .s(ALUSelA), .zn(n622) );
+    mi21d0 U246 ( .i0(PC[7]), .i1(ReadData1[7]), .s(ALUSelA), .zn(n623) );
+    mi21d0 U247 ( .i0(PC[6]), .i1(ReadData1[6]), .s(ALUSelA), .zn(n624) );
+    mi21d0 U248 ( .i0(PC[5]), .i1(ReadData1[5]), .s(ALUSelA), .zn(n625) );
+    mi21d0 U249 ( .i0(PC[4]), .i1(ReadData1[4]), .s(ALUSelA), .zn(n626) );
+    mi21d0 U250 ( .i0(PC[3]), .i1(ReadData1[3]), .s(ALUSelA), .zn(n627) );
+    mi21d0 U251 ( .i0(PC[2]), .i1(ReadData1[2]), .s(ALUSelA), .zn(n628) );
+    mi21d0 U252 ( .i0(PC[1]), .i1(ReadData1[1]), .s(ALUSelA), .zn(n629) );
+    mi21d0 U253 ( .i0(PC[0]), .i1(ReadData1[0]), .s(ALUSelA), .zn(n630) );
+    nd02d0 U254 ( .a1(Instruction[1]), .a2(ALUOp[1]), .zn(n592) );
+    fn05d0 U255 ( .a1(ALUOp[1]), .b1(Instruction[1]), .zn(n633) );
+    in01d0 U256 ( .i(Instruction[5]), .zn(n634) );
+    nd02d0 U257 ( .a1(n633), .a2(n634), .zn(n432) );
+    nd02d0 U258 ( .a1(n632), .a2(n634), .zn(n586) );
+    mi21d0 U259 ( .i0(n631), .i1(n636), .s(\MuxB[31] ), .zn(n635) );
+    mi21d0 U260 ( .i0(n631), .i1(n636), .s(\MuxB[30] ), .zn(n637) );
+    mi21d0 U261 ( .i0(n631), .i1(n636), .s(\MuxB[29] ), .zn(n638) );
+    mi21d0 U262 ( .i0(n631), .i1(n636), .s(\MuxB[28] ), .zn(n639) );
+    mi21d0 U263 ( .i0(n631), .i1(n636), .s(\MuxB[27] ), .zn(n640) );
+    mi21d0 U264 ( .i0(n631), .i1(n636), .s(\MuxB[26] ), .zn(n641) );
+    mi21d0 U265 ( .i0(n631), .i1(n636), .s(\MuxB[25] ), .zn(n642) );
+    mi21d0 U266 ( .i0(n631), .i1(n636), .s(\MuxB[24] ), .zn(n643) );
+    mi21d0 U267 ( .i0(n631), .i1(n636), .s(\MuxB[23] ), .zn(n644) );
+    mi21d0 U268 ( .i0(n631), .i1(n636), .s(\MuxB[22] ), .zn(n645) );
+    mi21d0 U269 ( .i0(n631), .i1(n636), .s(\MuxB[21] ), .zn(n646) );
+    mi21d0 U270 ( .i0(n631), .i1(n636), .s(\MuxB[20] ), .zn(n647) );
+    mi21d0 U271 ( .i0(n631), .i1(n636), .s(\MuxB[19] ), .zn(n648) );
+    mi21d0 U272 ( .i0(n631), .i1(n636), .s(\MuxB[18] ), .zn(n649) );
+    mi21d0 U273 ( .i0(n631), .i1(n636), .s(\MuxB[17] ), .zn(n650) );
+    mi21d0 U274 ( .i0(n631), .i1(n636), .s(\MuxB[16] ), .zn(n651) );
+    mi21d0 U275 ( .i0(n631), .i1(n636), .s(\MuxB[15] ), .zn(n652) );
+    mi21d0 U276 ( .i0(n631), .i1(n636), .s(\MuxB[14] ), .zn(n653) );
+    mi21d0 U277 ( .i0(n631), .i1(n636), .s(\MuxB[13] ), .zn(n654) );
+    mi21d0 U278 ( .i0(n631), .i1(n636), .s(\MuxB[12] ), .zn(n655) );
+    mi21d0 U279 ( .i0(n631), .i1(n636), .s(\MuxB[11] ), .zn(n656) );
+    mi21d0 U280 ( .i0(n631), .i1(n636), .s(\MuxB[10] ), .zn(n657) );
+    mi21d0 U281 ( .i0(n631), .i1(n636), .s(\MuxB[9] ), .zn(n658) );
+    mi21d0 U282 ( .i0(n631), .i1(n636), .s(\MuxB[8] ), .zn(n659) );
+    mi21d0 U283 ( .i0(n631), .i1(n636), .s(\MuxB[7] ), .zn(n660) );
+    mi21d0 U284 ( .i0(n631), .i1(n636), .s(\MuxB[6] ), .zn(n661) );
+    mi21d0 U285 ( .i0(n631), .i1(n636), .s(\MuxB[5] ), .zn(n662) );
+    mi21d0 U286 ( .i0(n631), .i1(n636), .s(\MuxB[4] ), .zn(n663) );
+    mi21d0 U287 ( .i0(n631), .i1(n636), .s(\MuxB[3] ), .zn(n664) );
+    mi21d0 U288 ( .i0(n631), .i1(n636), .s(\MuxB[2] ), .zn(n665) );
+    mi21d0 U289 ( .i0(n631), .i1(n636), .s(\MuxB[1] ), .zn(n666) );
+    mi21d0 U290 ( .i0(n631), .i1(n636), .s(\MuxB[0] ), .zn(n667) );
+    aoi22d0 U291 ( .a1(n668), .a2(\MuxB[29] ), .b1(n669), .b2(\MuxB[31] ), 
+        .zn(n440) );
+    aoi22d0 U292 ( .a1(n668), .a2(\MuxB[28] ), .b1(n669), .b2(\MuxB[30] ), 
+        .zn(n445) );
+    aoi22d0 U293 ( .a1(n668), .a2(\MuxB[27] ), .b1(n669), .b2(\MuxB[29] ), 
+        .zn(n450) );
+    aoi22d0 U294 ( .a1(n668), .a2(\MuxB[26] ), .b1(n669), .b2(\MuxB[28] ), 
+        .zn(n455) );
+    aoi22d0 U295 ( .a1(n668), .a2(\MuxB[25] ), .b1(n669), .b2(\MuxB[27] ), 
+        .zn(n460) );
+    aoi22d0 U296 ( .a1(n668), .a2(\MuxB[24] ), .b1(n669), .b2(\MuxB[26] ), 
+        .zn(n465) );
+    aoi22d0 U297 ( .a1(n668), .a2(\MuxB[23] ), .b1(n669), .b2(\MuxB[25] ), 
+        .zn(n470) );
+    aoi22d0 U298 ( .a1(n668), .a2(\MuxB[22] ), .b1(n669), .b2(\MuxB[24] ), 
+        .zn(n475) );
+    aoi22d0 U299 ( .a1(n668), .a2(\MuxB[21] ), .b1(n669), .b2(\MuxB[23] ), 
+        .zn(n480) );
+    aoi22d0 U300 ( .a1(n668), .a2(\MuxB[20] ), .b1(n669), .b2(\MuxB[22] ), 
+        .zn(n485) );
+    aoi22d0 U301 ( .a1(n668), .a2(\MuxB[19] ), .b1(n669), .b2(\MuxB[21] ), 
+        .zn(n490) );
+    aoi22d0 U302 ( .a1(n668), .a2(\MuxB[18] ), .b1(n669), .b2(\MuxB[20] ), 
+        .zn(n495) );
+    aoi22d0 U303 ( .a1(n668), .a2(\MuxB[17] ), .b1(n669), .b2(\MuxB[19] ), 
+        .zn(n500) );
+    aoi22d0 U304 ( .a1(n668), .a2(\MuxB[16] ), .b1(n669), .b2(\MuxB[18] ), 
+        .zn(n505) );
+    aoi22d0 U305 ( .a1(n668), .a2(\MuxB[15] ), .b1(n669), .b2(\MuxB[17] ), 
+        .zn(n510) );
+    aoi22d0 U306 ( .a1(n668), .a2(\MuxB[14] ), .b1(n669), .b2(\MuxB[16] ), 
+        .zn(n515) );
+    aoi22d0 U307 ( .a1(n668), .a2(\MuxB[13] ), .b1(n669), .b2(\MuxB[15] ), 
+        .zn(n520) );
+    aoi22d0 U308 ( .a1(n668), .a2(\MuxB[12] ), .b1(n669), .b2(\MuxB[14] ), 
+        .zn(n525) );
+    aoi22d0 U309 ( .a1(n668), .a2(\MuxB[11] ), .b1(n669), .b2(\MuxB[13] ), 
+        .zn(n530) );
+    aoi22d0 U310 ( .a1(n668), .a2(\MuxB[10] ), .b1(n669), .b2(\MuxB[12] ), 
+        .zn(n535) );
+    aoi22d0 U311 ( .a1(n668), .a2(\MuxB[9] ), .b1(n669), .b2(\MuxB[11] ), .zn(
+        n540) );
+    aoi22d0 U312 ( .a1(n668), .a2(\MuxB[8] ), .b1(n669), .b2(\MuxB[10] ), .zn(
+        n545) );
+    aoi22d0 U313 ( .a1(n668), .a2(\MuxB[7] ), .b1(n669), .b2(\MuxB[9] ), .zn(
+        n550) );
+    aoi22d0 U314 ( .a1(n668), .a2(\MuxB[6] ), .b1(n669), .b2(\MuxB[8] ), .zn(
+        n555) );
+    aoi22d0 U315 ( .a1(n668), .a2(\MuxB[5] ), .b1(n669), .b2(\MuxB[7] ), .zn(
+        n560) );
+    aoi22d0 U316 ( .a1(n668), .a2(\MuxB[4] ), .b1(n669), .b2(\MuxB[6] ), .zn(
+        n565) );
+    aoi22d0 U317 ( .a1(n668), .a2(\MuxB[3] ), .b1(n669), .b2(\MuxB[5] ), .zn(
+        n570) );
+    aoi22d0 U318 ( .a1(n668), .a2(\MuxB[2] ), .b1(n669), .b2(\MuxB[4] ), .zn(
+        n575) );
+    aoi22d0 U319 ( .a1(n668), .a2(\MuxB[1] ), .b1(n669), .b2(\MuxB[3] ), .zn(
+        n580) );
+    aoi22d0 U320 ( .a1(n668), .a2(\MuxB[0] ), .b1(n669), .b2(\MuxB[2] ), .zn(
+        n585) );
+    or02d1 U321 ( .a1(ALU_result[30]), .a2(ALU_result[28]), .z(n670) );
+    or04d1 U322 ( .a1(ALU_result[25]), .a2(ALU_result[24]), .a3(ALU_result[27]
+        ), .a4(ALU_result[26]), .z(n671) );
+    nr04d0 U323 ( .a1(n671), .a2(n670), .a3(ALU_result[29]), .a4(ALU_result
+        [31]), .zn(n429) );
+    nr04d0 U324 ( .a1(ALU_result[23]), .a2(ALU_result[22]), .a3(ALU_result[21]
+        ), .a4(ALU_result[20]), .zn(n428) );
+    nr04d0 U325 ( .a1(ALU_result[19]), .a2(ALU_result[18]), .a3(ALU_result[17]
+        ), .a4(ALU_result[16]), .zn(n427) );
+    nr04d0 U326 ( .a1(ALU_result[15]), .a2(ALU_result[14]), .a3(ALU_result[13]
+        ), .a4(ALU_result[12]), .zn(n672) );
+    nr04d0 U327 ( .a1(ALU_result[11]), .a2(ALU_result[10]), .a3(ALU_result[9]), 
+        .a4(ALU_result[8]), .zn(n673) );
+    nr04d0 U328 ( .a1(ALU_result[7]), .a2(ALU_result[6]), .a3(ALU_result[5]), 
+        .a4(ALU_result[4]), .zn(n674) );
+    nr04d0 U329 ( .a1(ALU_result[3]), .a2(ALU_result[2]), .a3(ALU_result[1]), 
+        .a4(ALU_result[0]), .zn(n675) );
+    an04d1 U330 ( .a1(n675), .a2(n674), .a3(n673), .a4(n672), .z(n430) );
+    in01d0 U331 ( .i(ALUOp[0]), .zn(n591) );
+    an02d1 U332 ( .a1(Instruction[15]), .a2(ALUSelB[1]), .z(n594) );
+    in01d0 U333 ( .i(n592), .zn(n632) );
+    in01d0 U334 ( .i(n431), .zn(\MuxB[30] ) );
+    in01d0 U335 ( .i(n433), .zn(\MuxB[31] ) );
+    oai21d0 U336 ( .a1(n599), .a2(n635), .b(\MuxA[31] ), .zn(n436) );
+    nd02d0 U337 ( .a1(\ALU_result245[31] ), .a2(n676), .zn(n435) );
+    in01d0 U338 ( .i(n441), .zn(\MuxB[29] ) );
+    oai21d0 U339 ( .a1(n599), .a2(n637), .b(\MuxA[30] ), .zn(n438) );
+    nd02d0 U340 ( .a1(\ALU_result245[30] ), .a2(n676), .zn(n439) );
+    in01d0 U341 ( .i(n446), .zn(\MuxB[28] ) );
+    oai21d0 U342 ( .a1(n599), .a2(n638), .b(\MuxA[29] ), .zn(n443) );
+    nd02d0 U343 ( .a1(\ALU_result245[29] ), .a2(n676), .zn(n444) );
+    in01d0 U344 ( .i(n451), .zn(\MuxB[27] ) );
+    oai21d0 U345 ( .a1(n599), .a2(n639), .b(\MuxA[28] ), .zn(n448) );
+    nd02d0 U346 ( .a1(\ALU_result245[28] ), .a2(n676), .zn(n449) );
+    in01d0 U347 ( .i(n456), .zn(\MuxB[26] ) );
+    oai21d0 U348 ( .a1(n599), .a2(n640), .b(\MuxA[27] ), .zn(n453) );
+    nd02d0 U349 ( .a1(\ALU_result245[27] ), .a2(n676), .zn(n454) );
+    in01d0 U350 ( .i(n461), .zn(\MuxB[25] ) );
+    oai21d0 U351 ( .a1(n599), .a2(n641), .b(\MuxA[26] ), .zn(n458) );
+    nd02d0 U352 ( .a1(\ALU_result245[26] ), .a2(n676), .zn(n459) );
+    in01d0 U353 ( .i(n466), .zn(\MuxB[24] ) );
+    oai21d0 U354 ( .a1(n599), .a2(n642), .b(\MuxA[25] ), .zn(n463) );
+    nd02d0 U355 ( .a1(\ALU_result245[25] ), .a2(n676), .zn(n464) );
+    in01d0 U356 ( .i(n471), .zn(\MuxB[23] ) );
+    oai21d0 U357 ( .a1(n599), .a2(n643), .b(\MuxA[24] ), .zn(n468) );
+    nd02d0 U358 ( .a1(\ALU_result245[24] ), .a2(n676), .zn(n469) );
+    in01d0 U359 ( .i(n476), .zn(\MuxB[22] ) );
+    oai21d0 U360 ( .a1(n599), .a2(n644), .b(\MuxA[23] ), .zn(n473) );
+    nd02d0 U361 ( .a1(\ALU_result245[23] ), .a2(n676), .zn(n474) );
+    in01d0 U362 ( .i(n481), .zn(\MuxB[21] ) );
+    oai21d0 U363 ( .a1(n599), .a2(n645), .b(\MuxA[22] ), .zn(n478) );
+    nd02d0 U364 ( .a1(\ALU_result245[22] ), .a2(n676), .zn(n479) );
+    in01d0 U365 ( .i(n486), .zn(\MuxB[20] ) );
+    oai21d0 U366 ( .a1(n599), .a2(n646), .b(\MuxA[21] ), .zn(n483) );
+    nd02d0 U367 ( .a1(\ALU_result245[21] ), .a2(n676), .zn(n484) );
+    in01d0 U368 ( .i(n491), .zn(\MuxB[19] ) );
+    oai21d0 U369 ( .a1(n599), .a2(n647), .b(\MuxA[20] ), .zn(n488) );
+    nd02d0 U370 ( .a1(\ALU_result245[20] ), .a2(n676), .zn(n489) );
+    in01d0 U371 ( .i(n496), .zn(\MuxB[18] ) );
+    oai21d0 U372 ( .a1(n599), .a2(n648), .b(\MuxA[19] ), .zn(n493) );
+    nd02d0 U373 ( .a1(\ALU_result245[19] ), .a2(n676), .zn(n494) );
+    in01d0 U374 ( .i(n501), .zn(\MuxB[17] ) );
+    oai21d0 U375 ( .a1(n599), .a2(n649), .b(\MuxA[18] ), .zn(n498) );
+    nd02d0 U376 ( .a1(\ALU_result245[18] ), .a2(n676), .zn(n499) );
+    in01d0 U377 ( .i(n506), .zn(\MuxB[16] ) );
+    oai21d0 U378 ( .a1(n599), .a2(n650), .b(\MuxA[17] ), .zn(n503) );
+    nd02d0 U379 ( .a1(\ALU_result245[17] ), .a2(n676), .zn(n504) );
+    in01d0 U380 ( .i(n511), .zn(\MuxB[15] ) );
+    oai21d0 U381 ( .a1(n599), .a2(n651), .b(\MuxA[16] ), .zn(n508) );
+    nd02d0 U382 ( .a1(\ALU_result245[16] ), .a2(n676), .zn(n509) );
+    in01d0 U383 ( .i(n516), .zn(\MuxB[14] ) );
+    oai21d0 U384 ( .a1(n599), .a2(n652), .b(\MuxA[15] ), .zn(n513) );
+    nd02d0 U385 ( .a1(\ALU_result245[15] ), .a2(n676), .zn(n514) );
+    in01d0 U386 ( .i(n521), .zn(\MuxB[13] ) );
+    oai21d0 U387 ( .a1(n599), .a2(n653), .b(\MuxA[14] ), .zn(n518) );
+    nd02d0 U388 ( .a1(\ALU_result245[14] ), .a2(n676), .zn(n519) );
+    in01d0 U389 ( .i(n526), .zn(\MuxB[12] ) );
+    oai21d0 U390 ( .a1(n599), .a2(n654), .b(\MuxA[13] ), .zn(n523) );
+    nd02d0 U391 ( .a1(\ALU_result245[13] ), .a2(n676), .zn(n524) );
+    in01d0 U392 ( .i(n531), .zn(\MuxB[11] ) );
+    oai21d0 U393 ( .a1(n599), .a2(n655), .b(\MuxA[12] ), .zn(n528) );
+    nd02d0 U394 ( .a1(\ALU_result245[12] ), .a2(n676), .zn(n529) );
+    in01d0 U395 ( .i(n536), .zn(\MuxB[10] ) );
+    oai21d0 U396 ( .a1(n599), .a2(n656), .b(\MuxA[11] ), .zn(n533) );
+    nd02d0 U397 ( .a1(\ALU_result245[11] ), .a2(n676), .zn(n534) );
+    in01d0 U398 ( .i(n541), .zn(\MuxB[9] ) );
+    oai21d0 U399 ( .a1(n599), .a2(n657), .b(\MuxA[10] ), .zn(n538) );
+    nd02d0 U400 ( .a1(\ALU_result245[10] ), .a2(n676), .zn(n539) );
+    in01d0 U401 ( .i(n546), .zn(\MuxB[8] ) );
+    oai21d0 U402 ( .a1(n599), .a2(n658), .b(\MuxA[9] ), .zn(n543) );
+    nd02d0 U403 ( .a1(\ALU_result245[9] ), .a2(n676), .zn(n544) );
+    in01d0 U404 ( .i(n551), .zn(\MuxB[7] ) );
+    oai21d0 U405 ( .a1(n599), .a2(n659), .b(\MuxA[8] ), .zn(n548) );
+    nd02d0 U406 ( .a1(\ALU_result245[8] ), .a2(n676), .zn(n549) );
+    in01d0 U407 ( .i(n556), .zn(\MuxB[6] ) );
+    oai21d0 U408 ( .a1(n599), .a2(n660), .b(\MuxA[7] ), .zn(n553) );
+    nd02d0 U409 ( .a1(\ALU_result245[7] ), .a2(n676), .zn(n554) );
+    in01d0 U410 ( .i(n561), .zn(\MuxB[5] ) );
+    oai21d0 U411 ( .a1(n599), .a2(n661), .b(\MuxA[6] ), .zn(n558) );
+    nd02d0 U412 ( .a1(\ALU_result245[6] ), .a2(n676), .zn(n559) );
+    in01d0 U413 ( .i(n566), .zn(\MuxB[4] ) );
+    oai21d0 U414 ( .a1(n599), .a2(n662), .b(\MuxA[5] ), .zn(n563) );
+    nd02d0 U415 ( .a1(\ALU_result245[5] ), .a2(n676), .zn(n564) );
+    in01d0 U416 ( .i(n571), .zn(\MuxB[3] ) );
+    oai21d0 U417 ( .a1(n599), .a2(n663), .b(\MuxA[4] ), .zn(n568) );
+    nd02d0 U418 ( .a1(\ALU_result245[4] ), .a2(n676), .zn(n569) );
+    in01d0 U419 ( .i(n576), .zn(\MuxB[2] ) );
+    oai21d0 U420 ( .a1(n599), .a2(n664), .b(\MuxA[3] ), .zn(n573) );
+    nd02d0 U421 ( .a1(\ALU_result245[3] ), .a2(n676), .zn(n574) );
+    in01d0 U422 ( .i(n581), .zn(\MuxB[1] ) );
+    oai21d0 U423 ( .a1(n599), .a2(n665), .b(\MuxA[2] ), .zn(n578) );
+    nd02d0 U424 ( .a1(\ALU_result245[2] ), .a2(n676), .zn(n579) );
+    nd02d0 U425 ( .a1(ReadData2[0]), .a2(n593), .zn(n596) );
+    in01d0 U426 ( .i(\MuxB[0] ), .zn(n587) );
+    oai21d0 U427 ( .a1(n599), .a2(n666), .b(\MuxA[1] ), .zn(n583) );
+    nd02d0 U428 ( .a1(\ALU_result245[1] ), .a2(n676), .zn(n584) );
+    oai21d0 U429 ( .a1(n599), .a2(n667), .b(\MuxA[0] ), .zn(n590) );
+    nd02d0 U430 ( .a1(\ALU_result245[0] ), .a2(n676), .zn(n589) );
+    in01d0 U431 ( .i(n598), .zn(\MuxA[31] ) );
+    in01d0 U432 ( .i(n600), .zn(\MuxA[30] ) );
+    in01d0 U433 ( .i(n601), .zn(\MuxA[29] ) );
+    in01d0 U434 ( .i(n602), .zn(\MuxA[28] ) );
+    in01d0 U435 ( .i(n603), .zn(\MuxA[27] ) );
+    in01d0 U436 ( .i(n604), .zn(\MuxA[26] ) );
+    in01d0 U437 ( .i(n605), .zn(\MuxA[25] ) );
+    in01d0 U438 ( .i(n606), .zn(\MuxA[24] ) );
+    in01d0 U439 ( .i(n607), .zn(\MuxA[23] ) );
+    in01d0 U440 ( .i(n608), .zn(\MuxA[22] ) );
+    in01d0 U441 ( .i(n609), .zn(\MuxA[21] ) );
+    in01d0 U442 ( .i(n610), .zn(\MuxA[20] ) );
+    in01d0 U443 ( .i(n611), .zn(\MuxA[19] ) );
+    in01d0 U444 ( .i(n612), .zn(\MuxA[18] ) );
+    in01d0 U445 ( .i(n613), .zn(\MuxA[17] ) );
+    in01d0 U446 ( .i(n614), .zn(\MuxA[16] ) );
+    in01d0 U447 ( .i(n615), .zn(\MuxA[15] ) );
+    in01d0 U448 ( .i(n616), .zn(\MuxA[14] ) );
+    in01d0 U449 ( .i(n617), .zn(\MuxA[13] ) );
+    in01d0 U450 ( .i(n618), .zn(\MuxA[12] ) );
+    in01d0 U451 ( .i(n619), .zn(\MuxA[11] ) );
+    in01d0 U452 ( .i(n620), .zn(\MuxA[10] ) );
+    in01d0 U453 ( .i(n621), .zn(\MuxA[9] ) );
+    in01d0 U454 ( .i(n622), .zn(\MuxA[8] ) );
+    in01d0 U455 ( .i(n623), .zn(\MuxA[7] ) );
+    in01d0 U456 ( .i(n624), .zn(\MuxA[6] ) );
+    in01d0 U457 ( .i(n625), .zn(\MuxA[5] ) );
+    in01d0 U458 ( .i(n626), .zn(\MuxA[4] ) );
+    in01d0 U459 ( .i(n627), .zn(\MuxA[3] ) );
+    in01d0 U460 ( .i(n628), .zn(\MuxA[2] ) );
+    in01d0 U461 ( .i(n629), .zn(\MuxA[1] ) );
+    mi21d0 U462 ( .i0(ALUSelB[0]), .i1(Instruction[0]), .s(ALUSelB[1]), .zn(
+        n595) );
+    in01d0 U463 ( .i(n630), .zn(\MuxA[0] ) );
+    mAlu_DW01_addsub_32_0 r40 ( .A({\MuxA[31] , \MuxA[30] , \MuxA[29] , 
+        \MuxA[28] , \MuxA[27] , \MuxA[26] , \MuxA[25] , \MuxA[24] , \MuxA[23] , 
+        \MuxA[22] , \MuxA[21] , \MuxA[20] , \MuxA[19] , \MuxA[18] , \MuxA[17] , 
+        \MuxA[16] , \MuxA[15] , \MuxA[14] , \MuxA[13] , \MuxA[12] , \MuxA[11] , 
+        \MuxA[10] , \MuxA[9] , \MuxA[8] , \MuxA[7] , \MuxA[6] , \MuxA[5] , 
+        \MuxA[4] , \MuxA[3] , \MuxA[2] , \MuxA[1] , \MuxA[0] }), .B({
+        \MuxB[31] , \MuxB[30] , \MuxB[29] , \MuxB[28] , \MuxB[27] , \MuxB[26] , 
+        \MuxB[25] , \MuxB[24] , \MuxB[23] , \MuxB[22] , \MuxB[21] , \MuxB[20] , 
+        \MuxB[19] , \MuxB[18] , \MuxB[17] , \MuxB[16] , \MuxB[15] , \MuxB[14] , 
+        \MuxB[13] , \MuxB[12] , \MuxB[11] , \MuxB[10] , \MuxB[9] , \MuxB[8] , 
+        \MuxB[7] , \MuxB[6] , \MuxB[5] , \MuxB[4] , \MuxB[3] , \MuxB[2] , 
+        \MuxB[1] , \MuxB[0] }), .CI(1'b0), .ADD_SUB(\*cell*222/U18/Z_0 ), 
+        .SUM({\ALU_result245[31] , \ALU_result245[30] , \ALU_result245[29] , 
+        \ALU_result245[28] , \ALU_result245[27] , \ALU_result245[26] , 
+        \ALU_result245[25] , \ALU_result245[24] , \ALU_result245[23] , 
+        \ALU_result245[22] , \ALU_result245[21] , \ALU_result245[20] , 
+        \ALU_result245[19] , \ALU_result245[18] , \ALU_result245[17] , 
+        \ALU_result245[16] , \ALU_result245[15] , \ALU_result245[14] , 
+        \ALU_result245[13] , \ALU_result245[12] , \ALU_result245[11] , 
+        \ALU_result245[10] , \ALU_result245[9] , \ALU_result245[8] , 
+        \ALU_result245[7] , \ALU_result245[6] , \ALU_result245[5] , 
+        \ALU_result245[4] , \ALU_result245[3] , \ALU_result245[2] , 
+        \ALU_result245[1] , \ALU_result245[0] }) );
+endmodule
+
+
+module mRegister ( Clk, Reset, Read1RegSel, Read2RegSel, WriteRegSel, 
+    WriteRegData, WriteReg, Reg1Data, Reg2Data );
+input  [1:0] Read1RegSel;
+input  [1:0] Read2RegSel;
+input  [1:0] WriteRegSel;
+output [31:0] Reg1Data;
+input  [31:0] WriteRegData;
+output [31:0] Reg2Data;
+input  Clk, Reset, WriteReg;
+    wire \register0[20] , \register0[13] , \register1[19] , \register1[10] , 
+        \register1[23] , \register0[30] , \register0[29] , \register1[6] , 
+        \register2[5] , \register384[25] , \register384[16] , 
+        \register384[31] , \register384[28] , \register0[17] , \register0[24] , 
+        \register2[8] , \register384[21] , \register384[12] , \register1[2] , 
+        \register2[1] , \register1[14] , \register1[27] , \register1[16] , 
+        \register1[25] , \register384[23] , \register384[10] , \register2[3] , 
+        \register1[0] , \register384[19] , \register0[26] , \register0[15] , 
+        \register1[9] , \register0[18] , \register1[4] , \register2[7] , 
+        \register384[27] , \register384[14] , \register1[12] , \register1[21] , 
+        \register1[31] , \register1[28] , \register0[11] , \register0[22] , 
+        \register2[24] , \register2[17] , \register0[0] , \register3[3] , 
+        \register384[6] , \register3[27] , \register3[14] , \register0[9] , 
+        \register3[19] , \register384[2] , \register0[4] , \register3[7] , 
+        \register2[20] , \register2[13] , \register2[29] , \register2[30] , 
+        \register3[23] , \register3[10] , \register3[21] , \register3[12] , 
+        \register384[9] , n_2001, \register2[18] , \register0[6] , 
+        \register3[5] , \register2[22] , \register2[11] , \register3[31] , 
+        \register3[28] , \register384[0] , \register3[8] , \register3[25] , 
+        \register3[16] , \register384[4] , \register2[26] , \register2[15] , 
+        \register0[2] , \register3[1] , \register3[9] , \register3[24] , 
+        \register3[17] , \register384[5] , \register2[27] , \register2[14] , 
+        n_2193, \register0[3] , \register3[20] , \register3[0] , 
+        \register3[13] , \register384[8] , \register2[19] , \register3[4] , 
+        \register0[7] , \register2[23] , \register2[10] , \register3[30] , 
+        \register3[29] , \register384[1] , \register3[18] , \register384[3] , 
+        \register0[5] , \register3[6] , \register2[21] , \register2[12] , 
+        \register2[31] , \register2[28] , \register3[22] , \register3[11] , 
+        \register2[25] , \register2[16] , \register3[2] , \register0[1] , 
+        \register384[7] , n_2577, \register3[26] , \register3[15] , 
+        \register0[8] , \register1[5] , \register2[6] , \register0[19] , 
+        \register384[26] , \register384[15] , \register1[13] , \register1[20] , 
+        \register1[30] , \register1[29] , \register0[10] , \register0[23] , 
+        \register1[17] , \register1[24] , \register384[22] , \register384[11] , 
+        \register1[1] , \register2[2] , \register384[18] , \register1[8] , 
+        \register0[14] , \register0[27] , \register384[30] , \register384[29] , 
+        \register2[9] , \register0[16] , \register0[25] , \register384[20] , 
+        \register384[13] , \register2[0] , \register1[3] , \register1[15] , 
+        \register1[26] , n_2385, \register0[12] , \register0[21] , 
+        \register1[18] , \register1[11] , \register1[22] , \register0[31] , 
+        \register0[28] , \register1[7] , \register2[4] , \register384[24] , 
+        \register384[17] , n226, n227, n228, n229, n230, n231, n232, n233, 
+        n234, n235, n236, n237, n238, n239, n240, n241, n242, n243, n244, n245, 
+        n246, n247, n248, n249, n250, n251, n252, n253, n254, n255, n256, n257, 
+        n258, n259, n260, n261, n262, n263, n264, n265, n266, n267, n268, n269, 
+        n270, n271, n272, n273, n274, n275, n276, n277, n278, n279, n280, n281, 
+        n282, n283, n284, n285, n286, n287, n288, n289, n290, n291, n292, n293, 
+        n294, n295, n296, n297, n298, n299, n300, n301, n302, n303, n304, n305, 
+        n306, n307, n308, n309, n310, n311, n312, n313, n314, n315, n316, n317, 
+        n318, n319, n320, n321, n322, n323, n324, n325, n326, n327, n328, n329, 
+        n330, n331, n332, n333, n334, n335, n336, n337, n338, n339, n340, n341, 
+        n342, n343, n344, n345, n346, n347, n348, n349, n350, n351, n352, n353, 
+        n354, n355, n356, n357, n358, n359, n360, n361, n362, n363, n364, n365, 
+        n366, n367, n368, n369;
+    nd02d1 U34 ( .a1(n368), .a2(n369), .zn(n227) );
+    nd02d1 U35 ( .a1(Read1RegSel[0]), .a2(n369), .zn(n229) );
+    nd02d1 U36 ( .a1(Read1RegSel[1]), .a2(n368), .zn(n231) );
+    nd02d1 U37 ( .a1(Read1RegSel[1]), .a2(Read1RegSel[0]), .zn(n233) );
+    oai31d1 U38 ( .a1(n358), .a2(WriteRegSel[1]), .a3(WriteRegSel[0]), .b(n359
+        ), .zn(n_2001) );
+    oai31d1 U39 ( .a1(n358), .a2(WriteRegSel[1]), .a3(n360), .b(n359), .zn(
+        n_2193) );
+    oai31d1 U40 ( .a1(n358), .a2(WriteRegSel[0]), .a3(n361), .b(n359), .zn(
+        n_2385) );
+    oai31d1 U41 ( .a1(n358), .a2(n360), .a3(n361), .b(n359), .zn(n_2577) );
+    in01d2 U42 ( .i(Reset), .zn(n359) );
+    nd02d1 U43 ( .a1(n366), .a2(n367), .zn(n362) );
+    nd02d1 U44 ( .a1(Read2RegSel[0]), .a2(n367), .zn(n363) );
+    nd02d1 U45 ( .a1(Read2RegSel[1]), .a2(n366), .zn(n364) );
+    nd02d1 U46 ( .a1(Read2RegSel[1]), .a2(Read2RegSel[0]), .zn(n365) );
+    dhntnq0 \register0_reg[31]  ( .da(\register384[31] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[31] ) );
+    dhntnq0 \register0_reg[30]  ( .da(\register384[30] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[30] ) );
+    dhntnq0 \register0_reg[29]  ( .da(\register384[29] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[29] ) );
+    dhntnq0 \register0_reg[28]  ( .da(\register384[28] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[28] ) );
+    dhntnq0 \register0_reg[27]  ( .da(\register384[27] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[27] ) );
+    dhntnq0 \register0_reg[26]  ( .da(\register384[26] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[26] ) );
+    dhntnq0 \register0_reg[25]  ( .da(\register384[25] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[25] ) );
+    dhntnq0 \register0_reg[24]  ( .da(\register384[24] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[24] ) );
+    dhntnq0 \register0_reg[23]  ( .da(\register384[23] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[23] ) );
+    dhntnq0 \register0_reg[22]  ( .da(\register384[22] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[22] ) );
+    dhntnq0 \register0_reg[21]  ( .da(\register384[21] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[21] ) );
+    dhntnq0 \register0_reg[20]  ( .da(\register384[20] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[20] ) );
+    dhntnq0 \register0_reg[19]  ( .da(\register384[19] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[19] ) );
+    dhntnq0 \register0_reg[18]  ( .da(\register384[18] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[18] ) );
+    dhntnq0 \register0_reg[17]  ( .da(\register384[17] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[17] ) );
+    dhntnq0 \register0_reg[16]  ( .da(\register384[16] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[16] ) );
+    dhntnq0 \register0_reg[15]  ( .da(\register384[15] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[15] ) );
+    dhntnq0 \register0_reg[14]  ( .da(\register384[14] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[14] ) );
+    dhntnq0 \register0_reg[13]  ( .da(\register384[13] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[13] ) );
+    dhntnq0 \register0_reg[12]  ( .da(\register384[12] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[12] ) );
+    dhntnq0 \register0_reg[11]  ( .da(\register384[11] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[11] ) );
+    dhntnq0 \register0_reg[10]  ( .da(\register384[10] ), .sa(n_2001), .cp(Clk
+        ), .q(\register0[10] ) );
+    dhntnq0 \register0_reg[9]  ( .da(\register384[9] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[9] ) );
+    dhntnq0 \register0_reg[8]  ( .da(\register384[8] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[8] ) );
+    dhntnq0 \register0_reg[7]  ( .da(\register384[7] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[7] ) );
+    dhntnq0 \register0_reg[6]  ( .da(\register384[6] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[6] ) );
+    dhntnq0 \register0_reg[5]  ( .da(\register384[5] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[5] ) );
+    dhntnq0 \register0_reg[4]  ( .da(\register384[4] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[4] ) );
+    dhntnq0 \register0_reg[3]  ( .da(\register384[3] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[3] ) );
+    dhntnq0 \register0_reg[2]  ( .da(\register384[2] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[2] ) );
+    dhntnq0 \register0_reg[1]  ( .da(\register384[1] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[1] ) );
+    dhntnq0 \register0_reg[0]  ( .da(\register384[0] ), .sa(n_2001), .cp(Clk), 
+        .q(\register0[0] ) );
+    dhntnq0 \register1_reg[31]  ( .da(\register384[31] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[31] ) );
+    dhntnq0 \register1_reg[30]  ( .da(\register384[30] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[30] ) );
+    dhntnq0 \register1_reg[29]  ( .da(\register384[29] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[29] ) );
+    dhntnq0 \register1_reg[28]  ( .da(\register384[28] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[28] ) );
+    dhntnq0 \register1_reg[27]  ( .da(\register384[27] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[27] ) );
+    dhntnq0 \register1_reg[26]  ( .da(\register384[26] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[26] ) );
+    dhntnq0 \register1_reg[25]  ( .da(\register384[25] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[25] ) );
+    dhntnq0 \register1_reg[24]  ( .da(\register384[24] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[24] ) );
+    dhntnq0 \register1_reg[23]  ( .da(\register384[23] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[23] ) );
+    dhntnq0 \register1_reg[22]  ( .da(\register384[22] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[22] ) );
+    dhntnq0 \register1_reg[21]  ( .da(\register384[21] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[21] ) );
+    dhntnq0 \register1_reg[20]  ( .da(\register384[20] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[20] ) );
+    dhntnq0 \register1_reg[19]  ( .da(\register384[19] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[19] ) );
+    dhntnq0 \register1_reg[18]  ( .da(\register384[18] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[18] ) );
+    dhntnq0 \register1_reg[17]  ( .da(\register384[17] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[17] ) );
+    dhntnq0 \register1_reg[16]  ( .da(\register384[16] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[16] ) );
+    dhntnq0 \register1_reg[15]  ( .da(\register384[15] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[15] ) );
+    dhntnq0 \register1_reg[14]  ( .da(\register384[14] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[14] ) );
+    dhntnq0 \register1_reg[13]  ( .da(\register384[13] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[13] ) );
+    dhntnq0 \register1_reg[12]  ( .da(\register384[12] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[12] ) );
+    dhntnq0 \register1_reg[11]  ( .da(\register384[11] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[11] ) );
+    dhntnq0 \register1_reg[10]  ( .da(\register384[10] ), .sa(n_2193), .cp(Clk
+        ), .q(\register1[10] ) );
+    dhntnq0 \register1_reg[9]  ( .da(\register384[9] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[9] ) );
+    dhntnq0 \register1_reg[8]  ( .da(\register384[8] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[8] ) );
+    dhntnq0 \register1_reg[7]  ( .da(\register384[7] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[7] ) );
+    dhntnq0 \register1_reg[6]  ( .da(\register384[6] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[6] ) );
+    dhntnq0 \register1_reg[5]  ( .da(\register384[5] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[5] ) );
+    dhntnq0 \register1_reg[4]  ( .da(\register384[4] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[4] ) );
+    dhntnq0 \register1_reg[3]  ( .da(\register384[3] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[3] ) );
+    dhntnq0 \register1_reg[2]  ( .da(\register384[2] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[2] ) );
+    dhntnq0 \register1_reg[1]  ( .da(\register384[1] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[1] ) );
+    dhntnq0 \register1_reg[0]  ( .da(\register384[0] ), .sa(n_2193), .cp(Clk), 
+        .q(\register1[0] ) );
+    dhntnq0 \register2_reg[31]  ( .da(\register384[31] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[31] ) );
+    dhntnq0 \register2_reg[30]  ( .da(\register384[30] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[30] ) );
+    dhntnq0 \register2_reg[29]  ( .da(\register384[29] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[29] ) );
+    dhntnq0 \register2_reg[28]  ( .da(\register384[28] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[28] ) );
+    dhntnq0 \register2_reg[27]  ( .da(\register384[27] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[27] ) );
+    dhntnq0 \register2_reg[26]  ( .da(\register384[26] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[26] ) );
+    dhntnq0 \register2_reg[25]  ( .da(\register384[25] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[25] ) );
+    dhntnq0 \register2_reg[24]  ( .da(\register384[24] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[24] ) );
+    dhntnq0 \register2_reg[23]  ( .da(\register384[23] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[23] ) );
+    dhntnq0 \register2_reg[22]  ( .da(\register384[22] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[22] ) );
+    dhntnq0 \register2_reg[21]  ( .da(\register384[21] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[21] ) );
+    dhntnq0 \register2_reg[20]  ( .da(\register384[20] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[20] ) );
+    dhntnq0 \register2_reg[19]  ( .da(\register384[19] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[19] ) );
+    dhntnq0 \register2_reg[18]  ( .da(\register384[18] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[18] ) );
+    dhntnq0 \register2_reg[17]  ( .da(\register384[17] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[17] ) );
+    dhntnq0 \register2_reg[16]  ( .da(\register384[16] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[16] ) );
+    dhntnq0 \register2_reg[15]  ( .da(\register384[15] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[15] ) );
+    dhntnq0 \register2_reg[14]  ( .da(\register384[14] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[14] ) );
+    dhntnq0 \register2_reg[13]  ( .da(\register384[13] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[13] ) );
+    dhntnq0 \register2_reg[12]  ( .da(\register384[12] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[12] ) );
+    dhntnq0 \register2_reg[11]  ( .da(\register384[11] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[11] ) );
+    dhntnq0 \register2_reg[10]  ( .da(\register384[10] ), .sa(n_2385), .cp(Clk
+        ), .q(\register2[10] ) );
+    dhntnq0 \register2_reg[9]  ( .da(\register384[9] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[9] ) );
+    dhntnq0 \register2_reg[8]  ( .da(\register384[8] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[8] ) );
+    dhntnq0 \register2_reg[7]  ( .da(\register384[7] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[7] ) );
+    dhntnq0 \register2_reg[6]  ( .da(\register384[6] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[6] ) );
+    dhntnq0 \register2_reg[5]  ( .da(\register384[5] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[5] ) );
+    dhntnq0 \register2_reg[4]  ( .da(\register384[4] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[4] ) );
+    dhntnq0 \register2_reg[3]  ( .da(\register384[3] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[3] ) );
+    dhntnq0 \register2_reg[2]  ( .da(\register384[2] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[2] ) );
+    dhntnq0 \register2_reg[1]  ( .da(\register384[1] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[1] ) );
+    dhntnq0 \register2_reg[0]  ( .da(\register384[0] ), .sa(n_2385), .cp(Clk), 
+        .q(\register2[0] ) );
+    dhntnq0 \register3_reg[31]  ( .da(\register384[31] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[31] ) );
+    dhntnq0 \register3_reg[30]  ( .da(\register384[30] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[30] ) );
+    dhntnq0 \register3_reg[29]  ( .da(\register384[29] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[29] ) );
+    dhntnq0 \register3_reg[28]  ( .da(\register384[28] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[28] ) );
+    dhntnq0 \register3_reg[27]  ( .da(\register384[27] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[27] ) );
+    dhntnq0 \register3_reg[26]  ( .da(\register384[26] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[26] ) );
+    dhntnq0 \register3_reg[25]  ( .da(\register384[25] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[25] ) );
+    dhntnq0 \register3_reg[24]  ( .da(\register384[24] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[24] ) );
+    dhntnq0 \register3_reg[23]  ( .da(\register384[23] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[23] ) );
+    dhntnq0 \register3_reg[22]  ( .da(\register384[22] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[22] ) );
+    dhntnq0 \register3_reg[21]  ( .da(\register384[21] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[21] ) );
+    dhntnq0 \register3_reg[20]  ( .da(\register384[20] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[20] ) );
+    dhntnq0 \register3_reg[19]  ( .da(\register384[19] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[19] ) );
+    dhntnq0 \register3_reg[18]  ( .da(\register384[18] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[18] ) );
+    dhntnq0 \register3_reg[17]  ( .da(\register384[17] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[17] ) );
+    dhntnq0 \register3_reg[16]  ( .da(\register384[16] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[16] ) );
+    dhntnq0 \register3_reg[15]  ( .da(\register384[15] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[15] ) );
+    dhntnq0 \register3_reg[14]  ( .da(\register384[14] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[14] ) );
+    dhntnq0 \register3_reg[13]  ( .da(\register384[13] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[13] ) );
+    dhntnq0 \register3_reg[12]  ( .da(\register384[12] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[12] ) );
+    dhntnq0 \register3_reg[11]  ( .da(\register384[11] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[11] ) );
+    dhntnq0 \register3_reg[10]  ( .da(\register384[10] ), .sa(n_2577), .cp(Clk
+        ), .q(\register3[10] ) );
+    dhntnq0 \register3_reg[9]  ( .da(\register384[9] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[9] ) );
+    dhntnq0 \register3_reg[8]  ( .da(\register384[8] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[8] ) );
+    dhntnq0 \register3_reg[7]  ( .da(\register384[7] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[7] ) );
+    dhntnq0 \register3_reg[6]  ( .da(\register384[6] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[6] ) );
+    dhntnq0 \register3_reg[5]  ( .da(\register384[5] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[5] ) );
+    dhntnq0 \register3_reg[4]  ( .da(\register384[4] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[4] ) );
+    dhntnq0 \register3_reg[3]  ( .da(\register384[3] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[3] ) );
+    dhntnq0 \register3_reg[2]  ( .da(\register384[2] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[2] ) );
+    dhntnq0 \register3_reg[1]  ( .da(\register384[1] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[1] ) );
+    dhntnq0 \register3_reg[0]  ( .da(\register384[0] ), .sa(n_2577), .cp(Clk), 
+        .q(\register3[0] ) );
+    oai2222d0 U47 ( .a1(n226), .a2(n227), .b1(n228), .b2(n229), .c1(n230), 
+        .c2(n231), .d1(n232), .d2(n233), .zn(Reg1Data[0]) );
+    oai2222d0 U48 ( .a1(n234), .a2(n227), .b1(n235), .b2(n229), .c1(n236), 
+        .c2(n231), .d1(n237), .d2(n233), .zn(Reg1Data[1]) );
+    oai2222d0 U49 ( .a1(n238), .a2(n227), .b1(n239), .b2(n229), .c1(n240), 
+        .c2(n231), .d1(n241), .d2(n233), .zn(Reg1Data[2]) );
+    oai2222d0 U50 ( .a1(n242), .a2(n227), .b1(n243), .b2(n229), .c1(n244), 
+        .c2(n231), .d1(n245), .d2(n233), .zn(Reg1Data[3]) );
+    oai2222d0 U51 ( .a1(n246), .a2(n227), .b1(n247), .b2(n229), .c1(n248), 
+        .c2(n231), .d1(n249), .d2(n233), .zn(Reg1Data[4]) );
+    oai2222d0 U52 ( .a1(n250), .a2(n227), .b1(n251), .b2(n229), .c1(n252), 
+        .c2(n231), .d1(n253), .d2(n233), .zn(Reg1Data[5]) );
+    oai2222d0 U53 ( .a1(n254), .a2(n227), .b1(n255), .b2(n229), .c1(n256), 
+        .c2(n231), .d1(n257), .d2(n233), .zn(Reg1Data[6]) );
+    oai2222d0 U54 ( .a1(n258), .a2(n227), .b1(n259), .b2(n229), .c1(n260), 
+        .c2(n231), .d1(n261), .d2(n233), .zn(Reg1Data[7]) );
+    oai2222d0 U55 ( .a1(n262), .a2(n227), .b1(n263), .b2(n229), .c1(n264), 
+        .c2(n231), .d1(n265), .d2(n233), .zn(Reg1Data[8]) );
+    oai2222d0 U56 ( .a1(n266), .a2(n227), .b1(n267), .b2(n229), .c1(n268), 
+        .c2(n231), .d1(n269), .d2(n233), .zn(Reg1Data[9]) );
+    oai2222d0 U57 ( .a1(n270), .a2(n227), .b1(n271), .b2(n229), .c1(n272), 
+        .c2(n231), .d1(n273), .d2(n233), .zn(Reg1Data[10]) );
+    oai2222d0 U58 ( .a1(n274), .a2(n227), .b1(n275), .b2(n229), .c1(n276), 
+        .c2(n231), .d1(n277), .d2(n233), .zn(Reg1Data[11]) );
+    oai2222d0 U59 ( .a1(n278), .a2(n227), .b1(n279), .b2(n229), .c1(n280), 
+        .c2(n231), .d1(n281), .d2(n233), .zn(Reg1Data[12]) );
+    oai2222d0 U60 ( .a1(n282), .a2(n227), .b1(n283), .b2(n229), .c1(n284), 
+        .c2(n231), .d1(n285), .d2(n233), .zn(Reg1Data[13]) );
+    oai2222d0 U61 ( .a1(n286), .a2(n227), .b1(n287), .b2(n229), .c1(n288), 
+        .c2(n231), .d1(n289), .d2(n233), .zn(Reg1Data[14]) );
+    oai2222d0 U62 ( .a1(n290), .a2(n227), .b1(n291), .b2(n229), .c1(n292), 
+        .c2(n231), .d1(n293), .d2(n233), .zn(Reg1Data[15]) );
+    oai2222d0 U63 ( .a1(n294), .a2(n227), .b1(n295), .b2(n229), .c1(n296), 
+        .c2(n231), .d1(n297), .d2(n233), .zn(Reg1Data[16]) );
+    oai2222d0 U64 ( .a1(n298), .a2(n227), .b1(n299), .b2(n229), .c1(n300), 
+        .c2(n231), .d1(n301), .d2(n233), .zn(Reg1Data[17]) );
+    oai2222d0 U65 ( .a1(n302), .a2(n227), .b1(n303), .b2(n229), .c1(n304), 
+        .c2(n231), .d1(n305), .d2(n233), .zn(Reg1Data[18]) );
+    oai2222d0 U66 ( .a1(n306), .a2(n227), .b1(n307), .b2(n229), .c1(n308), 
+        .c2(n231), .d1(n309), .d2(n233), .zn(Reg1Data[19]) );
+    oai2222d0 U67 ( .a1(n310), .a2(n227), .b1(n311), .b2(n229), .c1(n312), 
+        .c2(n231), .d1(n313), .d2(n233), .zn(Reg1Data[20]) );
+    oai2222d0 U68 ( .a1(n314), .a2(n227), .b1(n315), .b2(n229), .c1(n316), 
+        .c2(n231), .d1(n317), .d2(n233), .zn(Reg1Data[21]) );
+    oai2222d0 U69 ( .a1(n318), .a2(n227), .b1(n319), .b2(n229), .c1(n320), 
+        .c2(n231), .d1(n321), .d2(n233), .zn(Reg1Data[22]) );
+    oai2222d0 U70 ( .a1(n322), .a2(n227), .b1(n323), .b2(n229), .c1(n324), 
+        .c2(n231), .d1(n325), .d2(n233), .zn(Reg1Data[23]) );
+    oai2222d0 U71 ( .a1(n326), .a2(n227), .b1(n327), .b2(n229), .c1(n328), 
+        .c2(n231), .d1(n329), .d2(n233), .zn(Reg1Data[24]) );
+    oai2222d0 U72 ( .a1(n330), .a2(n227), .b1(n331), .b2(n229), .c1(n332), 
+        .c2(n231), .d1(n333), .d2(n233), .zn(Reg1Data[25]) );
+    oai2222d0 U73 ( .a1(n334), .a2(n227), .b1(n335), .b2(n229), .c1(n336), 
+        .c2(n231), .d1(n337), .d2(n233), .zn(Reg1Data[26]) );
+    oai2222d0 U74 ( .a1(n338), .a2(n227), .b1(n339), .b2(n229), .c1(n340), 
+        .c2(n231), .d1(n341), .d2(n233), .zn(Reg1Data[27]) );
+    oai2222d0 U75 ( .a1(n342), .a2(n227), .b1(n343), .b2(n229), .c1(n344), 
+        .c2(n231), .d1(n345), .d2(n233), .zn(Reg1Data[28]) );
+    oai2222d0 U76 ( .a1(n346), .a2(n227), .b1(n347), .b2(n229), .c1(n348), 
+        .c2(n231), .d1(n349), .d2(n233), .zn(Reg1Data[29]) );
+    oai2222d0 U77 ( .a1(n350), .a2(n227), .b1(n351), .b2(n229), .c1(n352), 
+        .c2(n231), .d1(n353), .d2(n233), .zn(Reg1Data[30]) );
+    oai2222d0 U78 ( .a1(n354), .a2(n227), .b1(n355), .b2(n229), .c1(n356), 
+        .c2(n231), .d1(n357), .d2(n233), .zn(Reg1Data[31]) );
+    oai2222d0 U79 ( .a1(n362), .a2(n226), .b1(n363), .b2(n228), .c1(n364), 
+        .c2(n230), .d1(n365), .d2(n232), .zn(Reg2Data[0]) );
+    oai2222d0 U80 ( .a1(n362), .a2(n234), .b1(n363), .b2(n235), .c1(n364), 
+        .c2(n236), .d1(n365), .d2(n237), .zn(Reg2Data[1]) );
+    oai2222d0 U81 ( .a1(n362), .a2(n238), .b1(n363), .b2(n239), .c1(n364), 
+        .c2(n240), .d1(n365), .d2(n241), .zn(Reg2Data[2]) );
+    oai2222d0 U82 ( .a1(n362), .a2(n242), .b1(n363), .b2(n243), .c1(n364), 
+        .c2(n244), .d1(n365), .d2(n245), .zn(Reg2Data[3]) );
+    oai2222d0 U83 ( .a1(n362), .a2(n246), .b1(n363), .b2(n247), .c1(n364), 
+        .c2(n248), .d1(n365), .d2(n249), .zn(Reg2Data[4]) );
+    oai2222d0 U84 ( .a1(n362), .a2(n250), .b1(n363), .b2(n251), .c1(n364), 
+        .c2(n252), .d1(n365), .d2(n253), .zn(Reg2Data[5]) );
+    oai2222d0 U85 ( .a1(n362), .a2(n254), .b1(n363), .b2(n255), .c1(n364), 
+        .c2(n256), .d1(n365), .d2(n257), .zn(Reg2Data[6]) );
+    oai2222d0 U86 ( .a1(n362), .a2(n258), .b1(n363), .b2(n259), .c1(n364), 
+        .c2(n260), .d1(n365), .d2(n261), .zn(Reg2Data[7]) );
+    oai2222d0 U87 ( .a1(n362), .a2(n262), .b1(n363), .b2(n263), .c1(n364), 
+        .c2(n264), .d1(n365), .d2(n265), .zn(Reg2Data[8]) );
+    oai2222d0 U88 ( .a1(n266), .a2(n362), .b1(n267), .b2(n363), .c1(n268), 
+        .c2(n364), .d1(n269), .d2(n365), .zn(Reg2Data[9]) );
+    oai2222d0 U89 ( .a1(n362), .a2(n270), .b1(n363), .b2(n271), .c1(n364), 
+        .c2(n272), .d1(n365), .d2(n273), .zn(Reg2Data[10]) );
+    oai2222d0 U90 ( .a1(n362), .a2(n274), .b1(n363), .b2(n275), .c1(n364), 
+        .c2(n276), .d1(n365), .d2(n277), .zn(Reg2Data[11]) );
+    oai2222d0 U91 ( .a1(n362), .a2(n278), .b1(n363), .b2(n279), .c1(n364), 
+        .c2(n280), .d1(n365), .d2(n281), .zn(Reg2Data[12]) );
+    oai2222d0 U92 ( .a1(n362), .a2(n282), .b1(n363), .b2(n283), .c1(n364), 
+        .c2(n284), .d1(n365), .d2(n285), .zn(Reg2Data[13]) );
+    oai2222d0 U93 ( .a1(n362), .a2(n286), .b1(n363), .b2(n287), .c1(n364), 
+        .c2(n288), .d1(n365), .d2(n289), .zn(Reg2Data[14]) );
+    oai2222d0 U94 ( .a1(n362), .a2(n290), .b1(n363), .b2(n291), .c1(n364), 
+        .c2(n292), .d1(n365), .d2(n293), .zn(Reg2Data[15]) );
+    oai2222d0 U95 ( .a1(n362), .a2(n294), .b1(n363), .b2(n295), .c1(n364), 
+        .c2(n296), .d1(n365), .d2(n297), .zn(Reg2Data[16]) );
+    oai2222d0 U96 ( .a1(n362), .a2(n298), .b1(n363), .b2(n299), .c1(n364), 
+        .c2(n300), .d1(n365), .d2(n301), .zn(Reg2Data[17]) );
+    oai2222d0 U97 ( .a1(n362), .a2(n302), .b1(n363), .b2(n303), .c1(n364), 
+        .c2(n304), .d1(n365), .d2(n305), .zn(Reg2Data[18]) );
+    oai2222d0 U98 ( .a1(n362), .a2(n306), .b1(n363), .b2(n307), .c1(n364), 
+        .c2(n308), .d1(n365), .d2(n309), .zn(Reg2Data[19]) );
+    oai2222d0 U99 ( .a1(n362), .a2(n310), .b1(n363), .b2(n311), .c1(n364), 
+        .c2(n312), .d1(n365), .d2(n313), .zn(Reg2Data[20]) );
+    oai2222d0 U100 ( .a1(n362), .a2(n314), .b1(n363), .b2(n315), .c1(n364), 
+        .c2(n316), .d1(n365), .d2(n317), .zn(Reg2Data[21]) );
+    oai2222d0 U101 ( .a1(n362), .a2(n318), .b1(n363), .b2(n319), .c1(n364), 
+        .c2(n320), .d1(n365), .d2(n321), .zn(Reg2Data[22]) );
+    oai2222d0 U102 ( .a1(n362), .a2(n322), .b1(n363), .b2(n323), .c1(n364), 
+        .c2(n324), .d1(n365), .d2(n325), .zn(Reg2Data[23]) );
+    oai2222d0 U103 ( .a1(n362), .a2(n326), .b1(n363), .b2(n327), .c1(n364), 
+        .c2(n328), .d1(n365), .d2(n329), .zn(Reg2Data[24]) );
+    oai2222d0 U104 ( .a1(n362), .a2(n330), .b1(n363), .b2(n331), .c1(n364), 
+        .c2(n332), .d1(n365), .d2(n333), .zn(Reg2Data[25]) );
+    oai2222d0 U105 ( .a1(n362), .a2(n334), .b1(n363), .b2(n335), .c1(n364), 
+        .c2(n336), .d1(n365), .d2(n337), .zn(Reg2Data[26]) );
+    oai2222d0 U106 ( .a1(n362), .a2(n338), .b1(n363), .b2(n339), .c1(n364), 
+        .c2(n340), .d1(n365), .d2(n341), .zn(Reg2Data[27]) );
+    oai2222d0 U107 ( .a1(n362), .a2(n342), .b1(n363), .b2(n343), .c1(n364), 
+        .c2(n344), .d1(n365), .d2(n345), .zn(Reg2Data[28]) );
+    oai2222d0 U108 ( .a1(n362), .a2(n346), .b1(n363), .b2(n347), .c1(n364), 
+        .c2(n348), .d1(n365), .d2(n349), .zn(Reg2Data[29]) );
+    oai2222d0 U109 ( .a1(n362), .a2(n350), .b1(n363), .b2(n351), .c1(n364), 
+        .c2(n352), .d1(n365), .d2(n353), .zn(Reg2Data[30]) );
+    oai2222d0 U110 ( .a1(n362), .a2(n354), .b1(n363), .b2(n355), .c1(n364), 
+        .c2(n356), .d1(n365), .d2(n357), .zn(Reg2Data[31]) );
+    in01d0 U111 ( .i(WriteRegSel[0]), .zn(n360) );
+    in01d0 U112 ( .i(WriteRegSel[1]), .zn(n361) );
+    in01d0 U113 ( .i(WriteReg), .zn(n358) );
+    in01d0 U114 ( .i(Read2RegSel[0]), .zn(n366) );
+    in01d0 U115 ( .i(Read2RegSel[1]), .zn(n367) );
+    in01d0 U116 ( .i(\register3[9] ), .zn(n269) );
+    in01d0 U117 ( .i(\register2[9] ), .zn(n268) );
+    in01d0 U118 ( .i(\register1[9] ), .zn(n267) );
+    in01d0 U119 ( .i(\register0[9] ), .zn(n266) );
+    in01d0 U120 ( .i(\register3[8] ), .zn(n265) );
+    in01d0 U121 ( .i(\register2[8] ), .zn(n264) );
+    in01d0 U122 ( .i(\register1[8] ), .zn(n263) );
+    in01d0 U123 ( .i(\register0[8] ), .zn(n262) );
+    in01d0 U124 ( .i(\register3[7] ), .zn(n261) );
+    in01d0 U125 ( .i(\register2[7] ), .zn(n260) );
+    in01d0 U126 ( .i(\register1[7] ), .zn(n259) );
+    in01d0 U127 ( .i(\register0[7] ), .zn(n258) );
+    in01d0 U128 ( .i(\register3[6] ), .zn(n257) );
+    in01d0 U129 ( .i(\register2[6] ), .zn(n256) );
+    in01d0 U130 ( .i(\register1[6] ), .zn(n255) );
+    in01d0 U131 ( .i(\register0[6] ), .zn(n254) );
+    in01d0 U132 ( .i(\register3[5] ), .zn(n253) );
+    in01d0 U133 ( .i(\register2[5] ), .zn(n252) );
+    in01d0 U134 ( .i(\register1[5] ), .zn(n251) );
+    in01d0 U135 ( .i(\register0[5] ), .zn(n250) );
+    in01d0 U136 ( .i(\register3[4] ), .zn(n249) );
+    in01d0 U137 ( .i(\register2[4] ), .zn(n248) );
+    in01d0 U138 ( .i(\register1[4] ), .zn(n247) );
+    in01d0 U139 ( .i(\register0[4] ), .zn(n246) );
+    in01d0 U140 ( .i(\register3[3] ), .zn(n245) );
+    in01d0 U141 ( .i(\register2[3] ), .zn(n244) );
+    in01d0 U142 ( .i(\register1[3] ), .zn(n243) );
+    in01d0 U143 ( .i(\register0[3] ), .zn(n242) );
+    in01d0 U144 ( .i(\register3[31] ), .zn(n357) );
+    in01d0 U145 ( .i(\register2[31] ), .zn(n356) );
+    in01d0 U146 ( .i(\register1[31] ), .zn(n355) );
+    in01d0 U147 ( .i(\register0[31] ), .zn(n354) );
+    in01d0 U148 ( .i(\register3[30] ), .zn(n353) );
+    in01d0 U149 ( .i(\register2[30] ), .zn(n352) );
+    in01d0 U150 ( .i(\register1[30] ), .zn(n351) );
+    in01d0 U151 ( .i(\register0[30] ), .zn(n350) );
+    in01d0 U152 ( .i(\register3[2] ), .zn(n241) );
+    in01d0 U153 ( .i(\register2[2] ), .zn(n240) );
+    in01d0 U154 ( .i(\register1[2] ), .zn(n239) );
+    in01d0 U155 ( .i(\register0[2] ), .zn(n238) );
+    in01d0 U156 ( .i(\register3[29] ), .zn(n349) );
+    in01d0 U157 ( .i(\register2[29] ), .zn(n348) );
+    in01d0 U158 ( .i(\register1[29] ), .zn(n347) );
+    in01d0 U159 ( .i(\register0[29] ), .zn(n346) );
+    in01d0 U160 ( .i(\register3[28] ), .zn(n345) );
+    in01d0 U161 ( .i(\register2[28] ), .zn(n344) );
+    in01d0 U162 ( .i(\register1[28] ), .zn(n343) );
+    in01d0 U163 ( .i(\register0[28] ), .zn(n342) );
+    in01d0 U164 ( .i(\register3[27] ), .zn(n341) );
+    in01d0 U165 ( .i(\register2[27] ), .zn(n340) );
+    in01d0 U166 ( .i(\register1[27] ), .zn(n339) );
+    in01d0 U167 ( .i(\register0[27] ), .zn(n338) );
+    in01d0 U168 ( .i(\register3[26] ), .zn(n337) );
+    in01d0 U169 ( .i(\register2[26] ), .zn(n336) );
+    in01d0 U170 ( .i(\register1[26] ), .zn(n335) );
+    in01d0 U171 ( .i(\register0[26] ), .zn(n334) );
+    in01d0 U172 ( .i(\register3[25] ), .zn(n333) );
+    in01d0 U173 ( .i(\register2[25] ), .zn(n332) );
+    in01d0 U174 ( .i(\register1[25] ), .zn(n331) );
+    in01d0 U175 ( .i(\register0[25] ), .zn(n330) );
+    in01d0 U176 ( .i(\register3[24] ), .zn(n329) );
+    in01d0 U177 ( .i(\register2[24] ), .zn(n328) );
+    in01d0 U178 ( .i(\register1[24] ), .zn(n327) );
+    in01d0 U179 ( .i(\register0[24] ), .zn(n326) );
+    in01d0 U180 ( .i(\register3[23] ), .zn(n325) );
+    in01d0 U181 ( .i(\register2[23] ), .zn(n324) );
+    in01d0 U182 ( .i(\register1[23] ), .zn(n323) );
+    in01d0 U183 ( .i(\register0[23] ), .zn(n322) );
+    in01d0 U184 ( .i(\register3[22] ), .zn(n321) );
+    in01d0 U185 ( .i(\register2[22] ), .zn(n320) );
+    in01d0 U186 ( .i(\register1[22] ), .zn(n319) );
+    in01d0 U187 ( .i(\register0[22] ), .zn(n318) );
+    in01d0 U188 ( .i(\register3[21] ), .zn(n317) );
+    in01d0 U189 ( .i(\register2[21] ), .zn(n316) );
+    in01d0 U190 ( .i(\register1[21] ), .zn(n315) );
+    in01d0 U191 ( .i(\register0[21] ), .zn(n314) );
+    in01d0 U192 ( .i(\register3[20] ), .zn(n313) );
+    in01d0 U193 ( .i(\register2[20] ), .zn(n312) );
+    in01d0 U194 ( .i(\register1[20] ), .zn(n311) );
+    in01d0 U195 ( .i(\register0[20] ), .zn(n310) );
+    in01d0 U196 ( .i(\register3[1] ), .zn(n237) );
+    in01d0 U197 ( .i(\register2[1] ), .zn(n236) );
+    in01d0 U198 ( .i(\register1[1] ), .zn(n235) );
+    in01d0 U199 ( .i(\register0[1] ), .zn(n234) );
+    in01d0 U200 ( .i(\register3[19] ), .zn(n309) );
+    in01d0 U201 ( .i(\register2[19] ), .zn(n308) );
+    in01d0 U202 ( .i(\register1[19] ), .zn(n307) );
+    in01d0 U203 ( .i(\register0[19] ), .zn(n306) );
+    in01d0 U204 ( .i(\register3[18] ), .zn(n305) );
+    in01d0 U205 ( .i(\register2[18] ), .zn(n304) );
+    in01d0 U206 ( .i(\register1[18] ), .zn(n303) );
+    in01d0 U207 ( .i(\register0[18] ), .zn(n302) );
+    in01d0 U208 ( .i(\register3[17] ), .zn(n301) );
+    in01d0 U209 ( .i(\register2[17] ), .zn(n300) );
+    in01d0 U210 ( .i(\register1[17] ), .zn(n299) );
+    in01d0 U211 ( .i(\register0[17] ), .zn(n298) );
+    in01d0 U212 ( .i(\register3[16] ), .zn(n297) );
+    in01d0 U213 ( .i(\register2[16] ), .zn(n296) );
+    in01d0 U214 ( .i(\register1[16] ), .zn(n295) );
+    in01d0 U215 ( .i(\register0[16] ), .zn(n294) );
+    in01d0 U216 ( .i(\register3[15] ), .zn(n293) );
+    in01d0 U217 ( .i(\register2[15] ), .zn(n292) );
+    in01d0 U218 ( .i(\register1[15] ), .zn(n291) );
+    in01d0 U219 ( .i(\register0[15] ), .zn(n290) );
+    in01d0 U220 ( .i(\register3[14] ), .zn(n289) );
+    in01d0 U221 ( .i(\register2[14] ), .zn(n288) );
+    in01d0 U222 ( .i(\register1[14] ), .zn(n287) );
+    in01d0 U223 ( .i(\register0[14] ), .zn(n286) );
+    in01d0 U224 ( .i(\register3[13] ), .zn(n285) );
+    in01d0 U225 ( .i(\register2[13] ), .zn(n284) );
+    in01d0 U226 ( .i(\register1[13] ), .zn(n283) );
+    in01d0 U227 ( .i(\register0[13] ), .zn(n282) );
+    in01d0 U228 ( .i(\register3[12] ), .zn(n281) );
+    in01d0 U229 ( .i(\register2[12] ), .zn(n280) );
+    in01d0 U230 ( .i(\register1[12] ), .zn(n279) );
+    in01d0 U231 ( .i(\register0[12] ), .zn(n278) );
+    in01d0 U232 ( .i(\register3[11] ), .zn(n277) );
+    in01d0 U233 ( .i(\register2[11] ), .zn(n276) );
+    in01d0 U234 ( .i(\register1[11] ), .zn(n275) );
+    in01d0 U235 ( .i(\register0[11] ), .zn(n274) );
+    in01d0 U236 ( .i(\register3[10] ), .zn(n273) );
+    in01d0 U237 ( .i(\register2[10] ), .zn(n272) );
+    in01d0 U238 ( .i(\register1[10] ), .zn(n271) );
+    in01d0 U239 ( .i(\register0[10] ), .zn(n270) );
+    in01d0 U240 ( .i(\register3[0] ), .zn(n232) );
+    in01d0 U241 ( .i(\register2[0] ), .zn(n230) );
+    in01d0 U242 ( .i(\register1[0] ), .zn(n228) );
+    in01d0 U243 ( .i(\register0[0] ), .zn(n226) );
+    in01d0 U244 ( .i(Read1RegSel[0]), .zn(n368) );
+    in01d0 U245 ( .i(Read1RegSel[1]), .zn(n369) );
+    an02d1 U246 ( .a1(WriteRegData[0]), .a2(n359), .z(\register384[0] ) );
+    an02d1 U247 ( .a1(WriteRegData[1]), .a2(n359), .z(\register384[1] ) );
+    an02d1 U248 ( .a1(WriteRegData[2]), .a2(n359), .z(\register384[2] ) );
+    an02d1 U249 ( .a1(WriteRegData[3]), .a2(n359), .z(\register384[3] ) );
+    an02d1 U250 ( .a1(WriteRegData[4]), .a2(n359), .z(\register384[4] ) );
+    an02d1 U251 ( .a1(WriteRegData[5]), .a2(n359), .z(\register384[5] ) );
+    an02d1 U252 ( .a1(WriteRegData[6]), .a2(n359), .z(\register384[6] ) );
+    an02d1 U253 ( .a1(WriteRegData[7]), .a2(n359), .z(\register384[7] ) );
+    an02d1 U254 ( .a1(WriteRegData[8]), .a2(n359), .z(\register384[8] ) );
+    an02d1 U255 ( .a1(WriteRegData[9]), .a2(n359), .z(\register384[9] ) );
+    an02d1 U256 ( .a1(WriteRegData[10]), .a2(n359), .z(\register384[10] ) );
+    an02d1 U257 ( .a1(WriteRegData[11]), .a2(n359), .z(\register384[11] ) );
+    an02d1 U258 ( .a1(WriteRegData[12]), .a2(n359), .z(\register384[12] ) );
+    an02d1 U259 ( .a1(WriteRegData[13]), .a2(n359), .z(\register384[13] ) );
+    an02d1 U260 ( .a1(WriteRegData[14]), .a2(n359), .z(\register384[14] ) );
+    an02d1 U261 ( .a1(WriteRegData[15]), .a2(n359), .z(\register384[15] ) );
+    an02d1 U262 ( .a1(WriteRegData[16]), .a2(n359), .z(\register384[16] ) );
+    an02d1 U263 ( .a1(WriteRegData[17]), .a2(n359), .z(\register384[17] ) );
+    an02d1 U264 ( .a1(WriteRegData[18]), .a2(n359), .z(\register384[18] ) );
+    an02d1 U265 ( .a1(WriteRegData[19]), .a2(n359), .z(\register384[19] ) );
+    an02d1 U266 ( .a1(WriteRegData[20]), .a2(n359), .z(\register384[20] ) );
+    an02d1 U267 ( .a1(WriteRegData[21]), .a2(n359), .z(\register384[21] ) );
+    an02d1 U268 ( .a1(WriteRegData[22]), .a2(n359), .z(\register384[22] ) );
+    an02d1 U269 ( .a1(WriteRegData[23]), .a2(n359), .z(\register384[23] ) );
+    an02d1 U270 ( .a1(WriteRegData[24]), .a2(n359), .z(\register384[24] ) );
+    an02d1 U271 ( .a1(WriteRegData[25]), .a2(n359), .z(\register384[25] ) );
+    an02d1 U272 ( .a1(WriteRegData[26]), .a2(n359), .z(\register384[26] ) );
+    an02d1 U273 ( .a1(WriteRegData[27]), .a2(n359), .z(\register384[27] ) );
+    an02d1 U274 ( .a1(WriteRegData[28]), .a2(n359), .z(\register384[28] ) );
+    an02d1 U275 ( .a1(WriteRegData[29]), .a2(n359), .z(\register384[29] ) );
+    an02d1 U276 ( .a1(WriteRegData[30]), .a2(n359), .z(\register384[30] ) );
+    an02d1 U277 ( .a1(WriteRegData[31]), .a2(n359), .z(\register384[31] ) );
+endmodule
+
+
+module mR4000 ( Clk, Reset, MemData, ReadAdd, WriteAdd, WriteData, MemWrite, 
+    MemRead );
+input  [31:0] MemData;
+output [31:0] ReadAdd;
+output [31:0] WriteAdd;
+output [31:0] WriteData;
+input  Clk, Reset;
+output MemWrite, MemRead;
+    wire \Instruction[31] , \Instruction[27] , \Instruction[23] , 
+        \Instruction[10] , \Instruction[9] , \Instruction[6] , 
+        \Instruction[2] , \TargetReg[4] , \ReadData1[2] , PCWrite, 
+        \TargetReg[22] , \TargetReg[11] , \ALUSelB[1] , n_1352, 
+        \TargetReg[18] , n_1349, IorD, n_1335, IRWrite, \TargetReg[26] , 
+        \TargetReg[15] , \ReadData1[6] , \Instruction[4] , \TargetReg[0] , 
+        n_1340, \TargetReg[9] , RegWrite, \PCSource[1] , n_1347, n_1360, 
+        \ReadData1[4] , \TargetReg[2] , n_1332, \TargetReg[24] , 
+        \TargetReg[17] , \Instruction[0] , \ReadData1[9] , \TargetReg[30] , 
+        \TargetReg[29] , \TargetReg[20] , \TargetReg[13] , n_1355, 
+        \WriteRegSel[0] , \TargetReg[6] , \ReadData1[0] , n_1333, TargetWrite, 
+        \WriteRegData[4] , \Instruction[19] , RegDst, \ReadData1[20] , 
+        \ReadData1[13] , \WriteRegData[19] , \PC[24] , \ReadData1[30] , 
+        \ReadData1[29] , \PC[17] , n_1346, n_1361, \Instruction[14] , \PC[2] , 
+        \WriteRegData[23] , \WriteRegData[10] , n_1587, \ReadData1[24] , 
+        \PC[30] , \PC[29] , \ReadData1[17] , \Instruction[25] , 
+        \Instruction[16] , \WriteRegData[0] , n_1354, MemToReg, 
+        \WriteRegData[9] , \PC[6] , \WriteRegData[14] , \WriteRegData[27] , 
+        \PC[20] , \PC[13] , \PC[4] , \WriteRegData[25] , \WriteRegData[16] , 
+        \PC[22] , \PC[11] , n_1348, \ALUOp[0] , \WriteRegData[2] , PCWriteCond, 
+        n_1353, \PC[18] , \ReadData1[26] , \ReadData1[15] , \PC[26] , \PC[15] , 
+        \ReadData1[18] , n_1341, \Instruction[30] , \Instruction[29] , 
+        \Instruction[28] , \Instruction[21] , \Instruction[12] , 
+        \WriteRegData[12] , \PC[0] , \WriteRegData[21] , \ReadData1[22] , 
+        \PC[9] , \ReadData1[11] , \WriteRegData[31] , \WriteRegData[28] , 
+        n_1334, \WriteRegData[6] , \Instruction[26] , \Instruction[24] , 
+        \Instruction[20] , \Instruction[13] , n_1351, \PC[27] , 
+        \ReadData1[19] , \PC[14] , \PC[1] , \ReadData1[23] , 
+        \WriteRegData[20] , \WriteRegData[13] , \ReadData1[10] , 
+        \Instruction[17] , \WriteRegData[30] , \WriteRegData[29] , \PC[8] , 
+        \WriteRegData[7] , \WriteRegData[17] , \PC[5] , \WriteRegData[24] , 
+        \PC[23] , \PC[10] , n_1336, n_1358, \ALUOp[1] , \WriteRegData[3] , 
+        n_1343, \Instruction[15] , \PC[19] , \ReadData1[27] , \ReadData1[14] , 
+        \Instruction[22] , \Instruction[11] , \ReadData1[25] , \ReadData1[16] , 
+        \PC[31] , \PC[28] , \WriteRegData[1] , n_1344, \WriteRegData[8] , 
+        \WriteRegData[15] , \PC[21] , \PC[7] , \WriteRegData[26] , \PC[12] , 
+        n_1331, \WriteRegData[5] , \ReadData1[21] , \ReadData1[12] , 
+        \Instruction[18] , \WriteRegData[18] , \Instruction[8] , \PC[25] , 
+        \PC[16] , n_1356, \ReadData1[31] , \ReadData1[28] , \PC[3] , 
+        \WriteRegData[11] , ALUSelA, \WriteRegData[22] , n_1338, n_1330, 
+        \Instruction[7] , \Instruction[5] , \Instruction[1] , \ReadData1[8] , 
+        \TargetReg[31] , \TargetReg[28] , \TargetReg[21] , \TargetReg[12] , 
+        \WriteRegSel[1] , n_1345, \TargetReg[7] , \ReadData1[1] , 
+        \PCSource[0] , n_1339, n_1357, \ReadData1[5] , \TargetReg[3] , 
+        \TargetReg[25] , \TargetReg[16] , Zero, \TargetReg[27] , 
+        \TargetReg[14] , \ReadData1[7] , \Instruction[3] , \TargetReg[1] , 
+        n_1350, \TargetReg[8] , \TargetReg[5] , \ReadData1[3] , 
+        \TargetReg[23] , \ALUSelB[0] , \TargetReg[10] , n_1342, 
+        \TargetReg[19] , n_1359, n_1337, n422, n423, n424;
+    mCntrl cntrl ( .Op({\Instruction[31] , \Instruction[30] , 
+        \Instruction[29] , \Instruction[28] , \Instruction[27] , 
+        \Instruction[26] }), .Clk(Clk), .Reset(Reset), .PCWrite(PCWrite), 
+        .PCWriteCond(PCWriteCond), .IorD(IorD), .MemRead(MemRead), .MemWrite(
+        MemWrite), .IRWrite(IRWrite), .MemtoReg(MemToReg), .PCSource({
+        \PCSource[1] , \PCSource[0] }), .TargetWrite(TargetWrite), .ALUOp({
+        \ALUOp[1] , \ALUOp[0] }), .ALUSelA(ALUSelA), .ALUSelB({\ALUSelB[1] , 
+        \ALUSelB[0] }), .RegWrite(RegWrite), .RegDst(RegDst) );
+    mAlu alu ( .PC({\PC[31] , \PC[30] , \PC[29] , \PC[28] , \PC[27] , \PC[26] , 
+        \PC[25] , \PC[24] , \PC[23] , \PC[22] , \PC[21] , \PC[20] , \PC[19] , 
+        \PC[18] , \PC[17] , \PC[16] , \PC[15] , \PC[14] , \PC[13] , \PC[12] , 
+        \PC[11] , \PC[10] , \PC[9] , \PC[8] , \PC[7] , \PC[6] , \PC[5] , 
+        \PC[4] , \PC[3] , \PC[2] , \PC[1] , \PC[0] }), .ReadData1({
+        \ReadData1[31] , \ReadData1[30] , \ReadData1[29] , \ReadData1[28] , 
+        \ReadData1[27] , \ReadData1[26] , \ReadData1[25] , \ReadData1[24] , 
+        \ReadData1[23] , \ReadData1[22] , \ReadData1[21] , \ReadData1[20] , 
+        \ReadData1[19] , \ReadData1[18] , \ReadData1[17] , \ReadData1[16] , 
+        \ReadData1[15] , \ReadData1[14] , \ReadData1[13] , \ReadData1[12] , 
+        \ReadData1[11] , \ReadData1[10] , \ReadData1[9] , \ReadData1[8] , 
+        \ReadData1[7] , \ReadData1[6] , \ReadData1[5] , \ReadData1[4] , 
+        \ReadData1[3] , \ReadData1[2] , \ReadData1[1] , \ReadData1[0] }), 
+        .ReadData2(WriteData), .Instruction({\Instruction[15] , 
+        \Instruction[14] , \Instruction[13] , \Instruction[12] , 
+        \Instruction[11] , \Instruction[10] , \Instruction[9] , 
+        \Instruction[8] , \Instruction[7] , \Instruction[6] , \Instruction[5] , 
+        \Instruction[4] , \Instruction[3] , \Instruction[2] , \Instruction[1] , 
+        \Instruction[0] }), .ALUSelA(ALUSelA), .ALUSelB({\ALUSelB[1] , 
+        \ALUSelB[0] }), .ALUOp({\ALUOp[1] , \ALUOp[0] }), .Zero(Zero), 
+        .ALU_result(WriteAdd) );
+    mRegister register ( .Clk(Clk), .Reset(Reset), .Read1RegSel({
+        \Instruction[22] , \Instruction[21] }), .Read2RegSel({
+        \Instruction[17] , \Instruction[16] }), .WriteRegSel({\WriteRegSel[1] , 
+        \WriteRegSel[0] }), .WriteRegData({\WriteRegData[31] , 
+        \WriteRegData[30] , \WriteRegData[29] , \WriteRegData[28] , 
+        \WriteRegData[27] , \WriteRegData[26] , \WriteRegData[25] , 
+        \WriteRegData[24] , \WriteRegData[23] , \WriteRegData[22] , 
+        \WriteRegData[21] , \WriteRegData[20] , \WriteRegData[19] , 
+        \WriteRegData[18] , \WriteRegData[17] , \WriteRegData[16] , 
+        \WriteRegData[15] , \WriteRegData[14] , \WriteRegData[13] , 
+        \WriteRegData[12] , \WriteRegData[11] , \WriteRegData[10] , 
+        \WriteRegData[9] , \WriteRegData[8] , \WriteRegData[7] , 
+        \WriteRegData[6] , \WriteRegData[5] , \WriteRegData[4] , 
+        \WriteRegData[3] , \WriteRegData[2] , \WriteRegData[1] , 
+        \WriteRegData[0] }), .WriteReg(RegWrite), .Reg1Data({\ReadData1[31] , 
+        \ReadData1[30] , \ReadData1[29] , \ReadData1[28] , \ReadData1[27] , 
+        \ReadData1[26] , \ReadData1[25] , \ReadData1[24] , \ReadData1[23] , 
+        \ReadData1[22] , \ReadData1[21] , \ReadData1[20] , \ReadData1[19] , 
+        \ReadData1[18] , \ReadData1[17] , \ReadData1[16] , \ReadData1[15] , 
+        \ReadData1[14] , \ReadData1[13] , \ReadData1[12] , \ReadData1[11] , 
+        \ReadData1[10] , \ReadData1[9] , \ReadData1[8] , \ReadData1[7] , 
+        \ReadData1[6] , \ReadData1[5] , \ReadData1[4] , \ReadData1[3] , 
+        \ReadData1[2] , \ReadData1[1] , \ReadData1[0] }), .Reg2Data(WriteData)
+         );
+    aoi21d2 U65 ( .a1(\PCSource[1] ), .a2(\PCSource[0] ), .b(n423), .zn(n_1587
+        ) );
+    nr02d1 U66 ( .a1(\PCSource[0] ), .a2(\PCSource[1] ), .zn(n422) );
+    dhntnq0 \Instruction_reg[31]  ( .da(MemData[31]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[31] ) );
+    dhntnq0 \Instruction_reg[30]  ( .da(MemData[30]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[30] ) );
+    dhntnq0 \Instruction_reg[29]  ( .da(MemData[29]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[29] ) );
+    dhntnq0 \Instruction_reg[28]  ( .da(MemData[28]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[28] ) );
+    dhntnq0 \Instruction_reg[27]  ( .da(MemData[27]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[27] ) );
+    dhntnq0 \Instruction_reg[26]  ( .da(MemData[26]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[26] ) );
+    dhntnq0 \Instruction_reg[25]  ( .da(MemData[25]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[25] ) );
+    dhntnq0 \Instruction_reg[24]  ( .da(MemData[24]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[24] ) );
+    dhntnq0 \Instruction_reg[23]  ( .da(MemData[23]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[23] ) );
+    dhntnq0 \Instruction_reg[22]  ( .da(MemData[22]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[22] ) );
+    dhntnq0 \Instruction_reg[21]  ( .da(MemData[21]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[21] ) );
+    dhntnq0 \Instruction_reg[20]  ( .da(MemData[20]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[20] ) );
+    dhntnq0 \Instruction_reg[19]  ( .da(MemData[19]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[19] ) );
+    dhntnq0 \Instruction_reg[18]  ( .da(MemData[18]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[18] ) );
+    dhntnq0 \Instruction_reg[17]  ( .da(MemData[17]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[17] ) );
+    dhntnq0 \Instruction_reg[16]  ( .da(MemData[16]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[16] ) );
+    dhntnq0 \Instruction_reg[15]  ( .da(MemData[15]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[15] ) );
+    dhntnq0 \Instruction_reg[14]  ( .da(MemData[14]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[14] ) );
+    dhntnq0 \Instruction_reg[13]  ( .da(MemData[13]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[13] ) );
+    dhntnq0 \Instruction_reg[12]  ( .da(MemData[12]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[12] ) );
+    dhntnq0 \Instruction_reg[11]  ( .da(MemData[11]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[11] ) );
+    dhntnq0 \Instruction_reg[10]  ( .da(MemData[10]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[10] ) );
+    dhntnq0 \Instruction_reg[9]  ( .da(MemData[9]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[9] ) );
+    dhntnq0 \Instruction_reg[8]  ( .da(MemData[8]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[8] ) );
+    dhntnq0 \Instruction_reg[7]  ( .da(MemData[7]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[7] ) );
+    dhntnq0 \Instruction_reg[6]  ( .da(MemData[6]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[6] ) );
+    dhntnq0 \Instruction_reg[5]  ( .da(MemData[5]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[5] ) );
+    dhntnq0 \Instruction_reg[4]  ( .da(MemData[4]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[4] ) );
+    dhntnq0 \Instruction_reg[3]  ( .da(MemData[3]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[3] ) );
+    dhntnq0 \Instruction_reg[2]  ( .da(MemData[2]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[2] ) );
+    dhntnq0 \Instruction_reg[1]  ( .da(MemData[1]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[1] ) );
+    dhntnq0 \Instruction_reg[0]  ( .da(MemData[0]), .sa(IRWrite), .cp(Clk), 
+        .q(\Instruction[0] ) );
+    dhctnq0 \PC_reg[31]  ( .da(n_1330), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[31] ) );
+    dhctnq0 \PC_reg[30]  ( .da(n_1331), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[30] ) );
+    dhctnq0 \PC_reg[29]  ( .da(n_1332), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[29] ) );
+    dhctnq0 \PC_reg[28]  ( .da(n_1333), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[28] ) );
+    dhctnq0 \PC_reg[27]  ( .da(n_1334), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[27] ) );
+    dhctnq0 \PC_reg[26]  ( .da(n_1335), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[26] ) );
+    dhctnq0 \PC_reg[25]  ( .da(n_1336), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[25] ) );
+    dhctnq0 \PC_reg[24]  ( .da(n_1337), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[24] ) );
+    dhctnq0 \PC_reg[23]  ( .da(n_1338), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[23] ) );
+    dhctnq0 \PC_reg[22]  ( .da(n_1339), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[22] ) );
+    dhctnq0 \PC_reg[21]  ( .da(n_1340), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[21] ) );
+    dhctnq0 \PC_reg[20]  ( .da(n_1341), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[20] ) );
+    dhctnq0 \PC_reg[19]  ( .da(n_1342), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[19] ) );
+    dhctnq0 \PC_reg[18]  ( .da(n_1343), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[18] ) );
+    dhctnq0 \PC_reg[17]  ( .da(n_1344), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[17] ) );
+    dhctnq0 \PC_reg[16]  ( .da(n_1345), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[16] ) );
+    dhctnq0 \PC_reg[15]  ( .da(n_1346), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[15] ) );
+    dhctnq0 \PC_reg[14]  ( .da(n_1347), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[14] ) );
+    dhctnq0 \PC_reg[13]  ( .da(n_1348), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[13] ) );
+    dhctnq0 \PC_reg[12]  ( .da(n_1349), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[12] ) );
+    dhctnq0 \PC_reg[11]  ( .da(n_1350), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[11] ) );
+    dhctnq0 \PC_reg[10]  ( .da(n_1351), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[10] ) );
+    dhctnq0 \PC_reg[9]  ( .da(n_1352), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[9] ) );
+    dhctnq0 \PC_reg[8]  ( .da(n_1353), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[8] ) );
+    dhctnq0 \PC_reg[7]  ( .da(n_1354), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[7] ) );
+    dhctnq0 \PC_reg[6]  ( .da(n_1355), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[6] ) );
+    dhctnq0 \PC_reg[5]  ( .da(n_1356), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[5] ) );
+    dhctnq0 \PC_reg[4]  ( .da(n_1357), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[4] ) );
+    dhctnq0 \PC_reg[3]  ( .da(n_1358), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[3] ) );
+    dhctnq0 \PC_reg[2]  ( .da(n_1359), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[2] ) );
+    dhctnq0 \PC_reg[1]  ( .da(n_1360), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[1] ) );
+    dhctnq0 \PC_reg[0]  ( .da(n_1361), .sa(n_1587), .cp(Clk), .cdn(n424), .q(
+        \PC[0] ) );
+    dhntnq0 \TargetReg_reg[31]  ( .da(WriteAdd[31]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[31] ) );
+    dhntnq0 \TargetReg_reg[30]  ( .da(WriteAdd[30]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[30] ) );
+    dhntnq0 \TargetReg_reg[29]  ( .da(WriteAdd[29]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[29] ) );
+    dhntnq0 \TargetReg_reg[28]  ( .da(WriteAdd[28]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[28] ) );
+    dhntnq0 \TargetReg_reg[27]  ( .da(WriteAdd[27]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[27] ) );
+    dhntnq0 \TargetReg_reg[26]  ( .da(WriteAdd[26]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[26] ) );
+    dhntnq0 \TargetReg_reg[25]  ( .da(WriteAdd[25]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[25] ) );
+    dhntnq0 \TargetReg_reg[24]  ( .da(WriteAdd[24]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[24] ) );
+    dhntnq0 \TargetReg_reg[23]  ( .da(WriteAdd[23]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[23] ) );
+    dhntnq0 \TargetReg_reg[22]  ( .da(WriteAdd[22]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[22] ) );
+    dhntnq0 \TargetReg_reg[21]  ( .da(WriteAdd[21]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[21] ) );
+    dhntnq0 \TargetReg_reg[20]  ( .da(WriteAdd[20]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[20] ) );
+    dhntnq0 \TargetReg_reg[19]  ( .da(WriteAdd[19]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[19] ) );
+    dhntnq0 \TargetReg_reg[18]  ( .da(WriteAdd[18]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[18] ) );
+    dhntnq0 \TargetReg_reg[17]  ( .da(WriteAdd[17]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[17] ) );
+    dhntnq0 \TargetReg_reg[16]  ( .da(WriteAdd[16]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[16] ) );
+    dhntnq0 \TargetReg_reg[15]  ( .da(WriteAdd[15]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[15] ) );
+    dhntnq0 \TargetReg_reg[14]  ( .da(WriteAdd[14]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[14] ) );
+    dhntnq0 \TargetReg_reg[13]  ( .da(WriteAdd[13]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[13] ) );
+    dhntnq0 \TargetReg_reg[12]  ( .da(WriteAdd[12]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[12] ) );
+    dhntnq0 \TargetReg_reg[11]  ( .da(WriteAdd[11]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[11] ) );
+    dhntnq0 \TargetReg_reg[10]  ( .da(WriteAdd[10]), .sa(TargetWrite), .cp(Clk
+        ), .q(\TargetReg[10] ) );
+    dhntnq0 \TargetReg_reg[9]  ( .da(WriteAdd[9]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[9] ) );
+    dhntnq0 \TargetReg_reg[8]  ( .da(WriteAdd[8]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[8] ) );
+    dhntnq0 \TargetReg_reg[7]  ( .da(WriteAdd[7]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[7] ) );
+    dhntnq0 \TargetReg_reg[6]  ( .da(WriteAdd[6]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[6] ) );
+    dhntnq0 \TargetReg_reg[5]  ( .da(WriteAdd[5]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[5] ) );
+    dhntnq0 \TargetReg_reg[4]  ( .da(WriteAdd[4]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[4] ) );
+    dhntnq0 \TargetReg_reg[3]  ( .da(WriteAdd[3]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[3] ) );
+    dhntnq0 \TargetReg_reg[2]  ( .da(WriteAdd[2]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[2] ) );
+    dhntnq0 \TargetReg_reg[1]  ( .da(WriteAdd[1]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[1] ) );
+    dhntnq0 \TargetReg_reg[0]  ( .da(WriteAdd[0]), .sa(TargetWrite), .cp(Clk), 
+        .q(\TargetReg[0] ) );
+    in01d2 U67 ( .i(Reset), .zn(n424) );
+    aon222d1 U68 ( .a1(\TargetReg[0] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[0] ), .b2(\PCSource[1] ), .c1(n422), .c2(WriteAdd[0]), 
+        .z(n_1361) );
+    aon222d1 U69 ( .a1(\TargetReg[1] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[1] ), .b2(\PCSource[1] ), .c1(WriteAdd[1]), .c2(n422), 
+        .z(n_1360) );
+    aon222d1 U70 ( .a1(\TargetReg[2] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[2] ), .b2(\PCSource[1] ), .c1(WriteAdd[2]), .c2(n422), 
+        .z(n_1359) );
+    aon222d1 U71 ( .a1(\TargetReg[3] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[3] ), .b2(\PCSource[1] ), .c1(WriteAdd[3]), .c2(n422), 
+        .z(n_1358) );
+    aon222d1 U72 ( .a1(\TargetReg[4] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[4] ), .b2(\PCSource[1] ), .c1(WriteAdd[4]), .c2(n422), 
+        .z(n_1357) );
+    aon222d1 U73 ( .a1(\TargetReg[5] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[5] ), .b2(\PCSource[1] ), .c1(WriteAdd[5]), .c2(n422), 
+        .z(n_1356) );
+    aon222d1 U74 ( .a1(\TargetReg[6] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[6] ), .b2(\PCSource[1] ), .c1(WriteAdd[6]), .c2(n422), 
+        .z(n_1355) );
+    aon222d1 U75 ( .a1(\TargetReg[7] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[7] ), .b2(\PCSource[1] ), .c1(WriteAdd[7]), .c2(n422), 
+        .z(n_1354) );
+    aon222d1 U76 ( .a1(\TargetReg[8] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[8] ), .b2(\PCSource[1] ), .c1(WriteAdd[8]), .c2(n422), 
+        .z(n_1353) );
+    aon222d1 U77 ( .a1(\TargetReg[9] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[9] ), .b2(\PCSource[1] ), .c1(WriteAdd[9]), .c2(n422), 
+        .z(n_1352) );
+    aon222d1 U78 ( .a1(\TargetReg[10] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[10] ), .b2(\PCSource[1] ), .c1(WriteAdd[10]), .c2(n422), 
+        .z(n_1351) );
+    aon222d1 U79 ( .a1(\Instruction[11] ), .a2(\PCSource[1] ), .b1(
+        \TargetReg[11] ), .b2(\PCSource[0] ), .c1(WriteAdd[11]), .c2(n422), 
+        .z(n_1350) );
+    aon222d1 U80 ( .a1(\Instruction[12] ), .a2(\PCSource[1] ), .b1(
+        \TargetReg[12] ), .b2(\PCSource[0] ), .c1(WriteAdd[12]), .c2(n422), 
+        .z(n_1349) );
+    aon222d1 U81 ( .a1(\TargetReg[13] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[13] ), .b2(\PCSource[1] ), .c1(WriteAdd[13]), .c2(n422), 
+        .z(n_1348) );
+    aon222d1 U82 ( .a1(\TargetReg[14] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[14] ), .b2(\PCSource[1] ), .c1(WriteAdd[14]), .c2(n422), 
+        .z(n_1347) );
+    aon222d1 U83 ( .a1(\TargetReg[15] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[15] ), .b2(\PCSource[1] ), .c1(WriteAdd[15]), .c2(n422), 
+        .z(n_1346) );
+    aon222d1 U84 ( .a1(\Instruction[16] ), .a2(\PCSource[1] ), .b1(
+        \TargetReg[16] ), .b2(\PCSource[0] ), .c1(WriteAdd[16]), .c2(n422), 
+        .z(n_1345) );
+    aon222d1 U85 ( .a1(\Instruction[17] ), .a2(\PCSource[1] ), .b1(
+        \TargetReg[17] ), .b2(\PCSource[0] ), .c1(WriteAdd[17]), .c2(n422), 
+        .z(n_1344) );
+    aon222d1 U86 ( .a1(\TargetReg[18] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[18] ), .b2(\PCSource[1] ), .c1(WriteAdd[18]), .c2(n422), 
+        .z(n_1343) );
+    aon222d1 U87 ( .a1(\TargetReg[19] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[19] ), .b2(\PCSource[1] ), .c1(WriteAdd[19]), .c2(n422), 
+        .z(n_1342) );
+    aon222d1 U88 ( .a1(\TargetReg[20] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[20] ), .b2(\PCSource[1] ), .c1(WriteAdd[20]), .c2(n422), 
+        .z(n_1341) );
+    aon222d1 U89 ( .a1(\TargetReg[21] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[21] ), .b2(\PCSource[1] ), .c1(WriteAdd[21]), .c2(n422), 
+        .z(n_1340) );
+    aon222d1 U90 ( .a1(\TargetReg[22] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[22] ), .b2(\PCSource[1] ), .c1(WriteAdd[22]), .c2(n422), 
+        .z(n_1339) );
+    aon222d1 U91 ( .a1(\TargetReg[23] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[23] ), .b2(\PCSource[1] ), .c1(WriteAdd[23]), .c2(n422), 
+        .z(n_1338) );
+    aon222d1 U92 ( .a1(\TargetReg[24] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[24] ), .b2(\PCSource[1] ), .c1(WriteAdd[24]), .c2(n422), 
+        .z(n_1337) );
+    aon222d1 U93 ( .a1(\TargetReg[25] ), .a2(\PCSource[0] ), .b1(
+        \Instruction[25] ), .b2(\PCSource[1] ), .c1(WriteAdd[25]), .c2(n422), 
+        .z(n_1336) );
+    aon222d1 U94 ( .a1(\TargetReg[26] ), .a2(\PCSource[0] ), .b1(\PC[28] ), 
+        .b2(\PCSource[1] ), .c1(WriteAdd[26]), .c2(n422), .z(n_1335) );
+    aon222d1 U95 ( .a1(\TargetReg[27] ), .a2(\PCSource[0] ), .b1(\PC[29] ), 
+        .b2(\PCSource[1] ), .c1(WriteAdd[27]), .c2(n422), .z(n_1334) );
+    aon222d1 U96 ( .a1(\TargetReg[28] ), .a2(\PCSource[0] ), .b1(\PC[30] ), 
+        .b2(\PCSource[1] ), .c1(WriteAdd[28]), .c2(n422), .z(n_1333) );
+    aon222d1 U97 ( .a1(\TargetReg[29] ), .a2(\PCSource[0] ), .b1(\PC[31] ), 
+        .b2(\PCSource[1] ), .c1(WriteAdd[29]), .c2(n422), .z(n_1332) );
+    aon22d1 U98 ( .a1(WriteAdd[30]), .a2(n422), .b1(\TargetReg[30] ), .b2(
+        \PCSource[0] ), .z(n_1331) );
+    aon22d1 U99 ( .a1(WriteAdd[31]), .a2(n422), .b1(\TargetReg[31] ), .b2(
+        \PCSource[0] ), .z(n_1330) );
+    aoi21d0 U100 ( .a1(PCWriteCond), .a2(Zero), .b(PCWrite), .zn(n423) );
+    mx21d0 U101 ( .i0(\Instruction[17] ), .i1(\Instruction[12] ), .s(RegDst), 
+        .z(\WriteRegSel[1] ) );
+    mx21d0 U102 ( .i0(\Instruction[16] ), .i1(\Instruction[11] ), .s(RegDst), 
+        .z(\WriteRegSel[0] ) );
+    mx21d0 U103 ( .i0(WriteAdd[9]), .i1(MemData[9]), .s(MemToReg), .z(
+        \WriteRegData[9] ) );
+    mx21d0 U104 ( .i0(WriteAdd[8]), .i1(MemData[8]), .s(MemToReg), .z(
+        \WriteRegData[8] ) );
+    mx21d0 U105 ( .i0(WriteAdd[7]), .i1(MemData[7]), .s(MemToReg), .z(
+        \WriteRegData[7] ) );
+    mx21d0 U106 ( .i0(WriteAdd[6]), .i1(MemData[6]), .s(MemToReg), .z(
+        \WriteRegData[6] ) );
+    mx21d0 U107 ( .i0(WriteAdd[5]), .i1(MemData[5]), .s(MemToReg), .z(
+        \WriteRegData[5] ) );
+    mx21d0 U108 ( .i0(WriteAdd[4]), .i1(MemData[4]), .s(MemToReg), .z(
+        \WriteRegData[4] ) );
+    mx21d0 U109 ( .i0(WriteAdd[3]), .i1(MemData[3]), .s(MemToReg), .z(
+        \WriteRegData[3] ) );
+    mx21d0 U110 ( .i0(WriteAdd[31]), .i1(MemData[31]), .s(MemToReg), .z(
+        \WriteRegData[31] ) );
+    mx21d0 U111 ( .i0(WriteAdd[30]), .i1(MemData[30]), .s(MemToReg), .z(
+        \WriteRegData[30] ) );
+    mx21d0 U112 ( .i0(WriteAdd[2]), .i1(MemData[2]), .s(MemToReg), .z(
+        \WriteRegData[2] ) );
+    mx21d0 U113 ( .i0(WriteAdd[29]), .i1(MemData[29]), .s(MemToReg), .z(
+        \WriteRegData[29] ) );
+    mx21d0 U114 ( .i0(WriteAdd[28]), .i1(MemData[28]), .s(MemToReg), .z(
+        \WriteRegData[28] ) );
+    mx21d0 U115 ( .i0(WriteAdd[27]), .i1(MemData[27]), .s(MemToReg), .z(
+        \WriteRegData[27] ) );
+    mx21d0 U116 ( .i0(WriteAdd[26]), .i1(MemData[26]), .s(MemToReg), .z(
+        \WriteRegData[26] ) );
+    mx21d0 U117 ( .i0(WriteAdd[25]), .i1(MemData[25]), .s(MemToReg), .z(
+        \WriteRegData[25] ) );
+    mx21d0 U118 ( .i0(WriteAdd[24]), .i1(MemData[24]), .s(MemToReg), .z(
+        \WriteRegData[24] ) );
+    mx21d0 U119 ( .i0(WriteAdd[23]), .i1(MemData[23]), .s(MemToReg), .z(
+        \WriteRegData[23] ) );
+    mx21d0 U120 ( .i0(WriteAdd[22]), .i1(MemData[22]), .s(MemToReg), .z(
+        \WriteRegData[22] ) );
+    mx21d0 U121 ( .i0(WriteAdd[21]), .i1(MemData[21]), .s(MemToReg), .z(
+        \WriteRegData[21] ) );
+    mx21d0 U122 ( .i0(WriteAdd[20]), .i1(MemData[20]), .s(MemToReg), .z(
+        \WriteRegData[20] ) );
+    mx21d0 U123 ( .i0(WriteAdd[1]), .i1(MemData[1]), .s(MemToReg), .z(
+        \WriteRegData[1] ) );
+    mx21d0 U124 ( .i0(WriteAdd[19]), .i1(MemData[19]), .s(MemToReg), .z(
+        \WriteRegData[19] ) );
+    mx21d0 U125 ( .i0(WriteAdd[18]), .i1(MemData[18]), .s(MemToReg), .z(
+        \WriteRegData[18] ) );
+    mx21d0 U126 ( .i0(WriteAdd[17]), .i1(MemData[17]), .s(MemToReg), .z(
+        \WriteRegData[17] ) );
+    mx21d0 U127 ( .i0(WriteAdd[16]), .i1(MemData[16]), .s(MemToReg), .z(
+        \WriteRegData[16] ) );
+    mx21d0 U128 ( .i0(WriteAdd[15]), .i1(MemData[15]), .s(MemToReg), .z(
+        \WriteRegData[15] ) );
+    mx21d0 U129 ( .i0(WriteAdd[14]), .i1(MemData[14]), .s(MemToReg), .z(
+        \WriteRegData[14] ) );
+    mx21d0 U130 ( .i0(WriteAdd[13]), .i1(MemData[13]), .s(MemToReg), .z(
+        \WriteRegData[13] ) );
+    mx21d0 U131 ( .i0(WriteAdd[12]), .i1(MemData[12]), .s(MemToReg), .z(
+        \WriteRegData[12] ) );
+    mx21d0 U132 ( .i0(WriteAdd[11]), .i1(MemData[11]), .s(MemToReg), .z(
+        \WriteRegData[11] ) );
+    mx21d0 U133 ( .i0(WriteAdd[10]), .i1(MemData[10]), .s(MemToReg), .z(
+        \WriteRegData[10] ) );
+    mx21d0 U134 ( .i0(WriteAdd[0]), .i1(MemData[0]), .s(MemToReg), .z(
+        \WriteRegData[0] ) );
+    mx21d0 U135 ( .i0(\PC[9] ), .i1(WriteAdd[9]), .s(IorD), .z(ReadAdd[9]) );
+    mx21d0 U136 ( .i0(\PC[8] ), .i1(WriteAdd[8]), .s(IorD), .z(ReadAdd[8]) );
+    mx21d0 U137 ( .i0(\PC[7] ), .i1(WriteAdd[7]), .s(IorD), .z(ReadAdd[7]) );
+    mx21d0 U138 ( .i0(\PC[6] ), .i1(WriteAdd[6]), .s(IorD), .z(ReadAdd[6]) );
+    mx21d0 U139 ( .i0(\PC[5] ), .i1(WriteAdd[5]), .s(IorD), .z(ReadAdd[5]) );
+    mx21d0 U140 ( .i0(\PC[4] ), .i1(WriteAdd[4]), .s(IorD), .z(ReadAdd[4]) );
+    mx21d0 U141 ( .i0(\PC[3] ), .i1(WriteAdd[3]), .s(IorD), .z(ReadAdd[3]) );
+    mx21d0 U142 ( .i0(\PC[31] ), .i1(WriteAdd[31]), .s(IorD), .z(ReadAdd[31])
+         );
+    mx21d0 U143 ( .i0(\PC[30] ), .i1(WriteAdd[30]), .s(IorD), .z(ReadAdd[30])
+         );
+    mx21d0 U144 ( .i0(\PC[2] ), .i1(WriteAdd[2]), .s(IorD), .z(ReadAdd[2]) );
+    mx21d0 U145 ( .i0(\PC[29] ), .i1(WriteAdd[29]), .s(IorD), .z(ReadAdd[29])
+         );
+    mx21d0 U146 ( .i0(\PC[28] ), .i1(WriteAdd[28]), .s(IorD), .z(ReadAdd[28])
+         );
+    mx21d0 U147 ( .i0(\PC[27] ), .i1(WriteAdd[27]), .s(IorD), .z(ReadAdd[27])
+         );
+    mx21d0 U148 ( .i0(\PC[26] ), .i1(WriteAdd[26]), .s(IorD), .z(ReadAdd[26])
+         );
+    mx21d0 U149 ( .i0(\PC[25] ), .i1(WriteAdd[25]), .s(IorD), .z(ReadAdd[25])
+         );
+    mx21d0 U150 ( .i0(\PC[24] ), .i1(WriteAdd[24]), .s(IorD), .z(ReadAdd[24])
+         );
+    mx21d0 U151 ( .i0(\PC[23] ), .i1(WriteAdd[23]), .s(IorD), .z(ReadAdd[23])
+         );
+    mx21d0 U152 ( .i0(\PC[22] ), .i1(WriteAdd[22]), .s(IorD), .z(ReadAdd[22])
+         );
+    mx21d0 U153 ( .i0(\PC[21] ), .i1(WriteAdd[21]), .s(IorD), .z(ReadAdd[21])
+         );
+    mx21d0 U154 ( .i0(\PC[20] ), .i1(WriteAdd[20]), .s(IorD), .z(ReadAdd[20])
+         );
+    mx21d0 U155 ( .i0(\PC[1] ), .i1(WriteAdd[1]), .s(IorD), .z(ReadAdd[1]) );
+    mx21d0 U156 ( .i0(\PC[19] ), .i1(WriteAdd[19]), .s(IorD), .z(ReadAdd[19])
+         );
+    mx21d0 U157 ( .i0(\PC[18] ), .i1(WriteAdd[18]), .s(IorD), .z(ReadAdd[18])
+         );
+    mx21d0 U158 ( .i0(\PC[17] ), .i1(WriteAdd[17]), .s(IorD), .z(ReadAdd[17])
+         );
+    mx21d0 U159 ( .i0(\PC[16] ), .i1(WriteAdd[16]), .s(IorD), .z(ReadAdd[16])
+         );
+    mx21d0 U160 ( .i0(\PC[15] ), .i1(WriteAdd[15]), .s(IorD), .z(ReadAdd[15])
+         );
+    mx21d0 U161 ( .i0(\PC[14] ), .i1(WriteAdd[14]), .s(IorD), .z(ReadAdd[14])
+         );
+    mx21d0 U162 ( .i0(\PC[13] ), .i1(WriteAdd[13]), .s(IorD), .z(ReadAdd[13])
+         );
+    mx21d0 U163 ( .i0(\PC[12] ), .i1(WriteAdd[12]), .s(IorD), .z(ReadAdd[12])
+         );
+    mx21d0 U164 ( .i0(\PC[11] ), .i1(WriteAdd[11]), .s(IorD), .z(ReadAdd[11])
+         );
+    mx21d0 U165 ( .i0(\PC[10] ), .i1(WriteAdd[10]), .s(IorD), .z(ReadAdd[10])
+         );
+    mx21d0 U166 ( .i0(\PC[0] ), .i1(WriteAdd[0]), .s(IorD), .z(ReadAdd[0]) );
+endmodule
+

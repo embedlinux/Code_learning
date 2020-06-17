@@ -1,0 +1,9 @@
+1.  Version displayed when you invoke the tool.
+2.  printvar *match*
+    printvar *limit*
+    man signature_analysis_matching
+4.  set signature_analysis_matching false
+6.  View->increase font size
+    Shell icon -> matching tab
+    View -> context pane
+    View -> console

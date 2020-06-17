@@ -1,0 +1,729 @@
+
+                        DC Professional (TM)
+                           DC Expert (TM)
+                            DC Ultra (TM)
+                       FloorPlan Manager (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                        Library Compiler (TM)
+                      DesignWare Developer (TM)
+                          DFT Compiler (TM)
+                            BSD Compiler
+                         Power Compiler (TM)
+
+           Version W-2004.12 for sparcOS5 -- Dec 22, 2004
+              Copyright (c) 1988-2004 by Synopsys, Inc.
+                         ALL RIGHTS RESERVED
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+The above trademark notice does not imply that you are licensed to use 
+all of the listed products. You are licensed to use only those products 
+for which you have lawfully obtained a valid license key.
+
+Information: For optimal performance and to take advantage of the
+latest enhancements and capabilities in Synopsys synthesis products,
+we recommend the use of XG mode. XG mode is available in TCL only.
+For more information please go to http://solvnet.synopsys.com
+
+Initializing...
+set hdlin_enable_presto_for_vhdl true
+true
+define_design_lib WORK -path ./DC_WORK  
+1
+set_svf tv80s.svf
+1
+lappend search_path "./rtl"
+. /remote/release/synthesis/W-2004.12/libraries/syn /remote/release/synthesis/W-2004.12/dw/sim_ver ./rtl
+set synthetic_library ""
+set target_library  "class.db" 
+class.db
+set link_library   " $target_library $synthetic_library "
+ class.db  
+analyze -f verilog   {  tv80_alu.v      tv80_core.v      tv80_mcode.v      tv80_reg.v      tv80s.v   }
+Running PRESTO HDLC
+Searching for ./tv80_alu.v
+Searching for /remote/release/synthesis/W-2004.12/libraries/syn/tv80_alu.v
+Searching for /remote/release/synthesis/W-2004.12/dw/sim_ver/tv80_alu.v
+Searching for ./rtl/tv80_alu.v
+Searching for ./tv80_core.v
+Searching for /remote/release/synthesis/W-2004.12/libraries/syn/tv80_core.v
+Searching for /remote/release/synthesis/W-2004.12/dw/sim_ver/tv80_core.v
+Searching for ./rtl/tv80_core.v
+Searching for ./tv80_mcode.v
+Searching for /remote/release/synthesis/W-2004.12/libraries/syn/tv80_mcode.v
+Searching for /remote/release/synthesis/W-2004.12/dw/sim_ver/tv80_mcode.v
+Searching for ./rtl/tv80_mcode.v
+Searching for ./tv80_reg.v
+Searching for /remote/release/synthesis/W-2004.12/libraries/syn/tv80_reg.v
+Searching for /remote/release/synthesis/W-2004.12/dw/sim_ver/tv80_reg.v
+Searching for ./rtl/tv80_reg.v
+Searching for ./tv80s.v
+Searching for /remote/release/synthesis/W-2004.12/libraries/syn/tv80s.v
+Searching for /remote/release/synthesis/W-2004.12/dw/sim_ver/tv80s.v
+Searching for ./rtl/tv80s.v
+Compiling source file ./rtl/tv80_alu.v
+Compiling source file ./rtl/tv80_core.v
+Warning:  ./rtl/tv80_core.v:316: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:317: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:318: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:319: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:320: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:321: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:322: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:323: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:324: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:326: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:327: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:328: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:329: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:330: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:331: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:332: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:333: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:335: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:336: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:337: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:338: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:339: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:340: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:341: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:342: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:350: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:351: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:352: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:354: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:358: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:361: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:362: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:365: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:369: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:380: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:381: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:382: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:387: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:392: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:396: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:400: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:403: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:410: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:414: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:421: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:422: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:424: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:429: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:430: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:442: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:445: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:451: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:454: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:455: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:456: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:457: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:461: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:462: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:465: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:466: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:470: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:471: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:475: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:476: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:477: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:478: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:487: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:493: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:497: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:507: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:512: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:516: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:518: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:524: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:532: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:533: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:537: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:543: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:550: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:554: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:555: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:561: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:568: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:569: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:574: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:575: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:576: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:577: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:578: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:583: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:584: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:585: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:586: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:587: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:592: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:593: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:594: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:595: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:596: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:605: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:609: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:614: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:619: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:623: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:630: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:637: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:643: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:647: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:648: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:649: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:650: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:654: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:663: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:667: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:675: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:676: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:681: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:682: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:686: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:689: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:699: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:700: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:701: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:704: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:709: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:712: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:719: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:720: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:723: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:727: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:729: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:730: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:736: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:739: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:740: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:744: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:745: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:751: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:752: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:755: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:756: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:762: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:763: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:764: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:765: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:769: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:777: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:779: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:781: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:783: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:785: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:803: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:806: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:810: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:813: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:817: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:821: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:825: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:830: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:836: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:840: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:844: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:964: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:969: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:973: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:977: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:979: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:981: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:983: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:985: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:987: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:989: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:991: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:993: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:998: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1003: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1007: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1011: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1013: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1015: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1017: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1019: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1033: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1041: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1045: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1077: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1078: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1079: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1080: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1086: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1087: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1090: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1094: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1096: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1111: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1112: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1113: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1114: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1115: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1116: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1117: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1118: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1119: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1120: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1121: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1122: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1123: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1131: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1135: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1137: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1138: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1145: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1146: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1150: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1157: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1158: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1163: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1167: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1174: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1182: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1186: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1190: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1193: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1194: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1197: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1202: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1208: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1209: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1210: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1211: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1214: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1215: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1219: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1220: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1221: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1226: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1235: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80_core.v:1241: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Compiling source file ./rtl/tv80_mcode.v
+Compiling source file ./rtl/tv80_reg.v
+Compiling source file ./rtl/tv80s.v
+Warning:  ./rtl/tv80s.v:102: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:103: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:104: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:105: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:106: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:110: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:111: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:112: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:113: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:118: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:119: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:120: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:123: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:129: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:130: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:131: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:137: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:138: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:139: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:146: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:147: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:148: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ./rtl/tv80s.v:155: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Presto compilation completed successfully.
+1
+elaborate tv80s
+Running PRESTO HDLC
+Loading db file '/remote/release/synthesis/W-2004.12/libraries/syn/standard.sldb'
+Loading db file '/remote/release/synthesis/W-2004.12/libraries/syn/gtech.db'
+Loading db file '/remote/release/synthesis/W-2004.12/libraries/syn/class.db'
+
+Inferred memory devices in process
+	in routine tv80s line 98 in file
+		'./rtl/tv80s.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      rd_n_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     iorq_n_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     mreq_n_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      wr_n_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     di_reg_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'tv80_core'. (HDL-193)
+Running PRESTO HDLC
+Warning:  ./rtl/tv80_core.v:1256: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./rtl/tv80_core.v:1274: signed to unsigned assignment occurs. (VER-318)
+Warning:  ./rtl/tv80_core.v:1280: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 312 in file
+	'./rtl/tv80_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           482            |    auto/auto     |
+|           672            |    auto/auto     |
+|           775            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 871 in file
+	'./rtl/tv80_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           880            |     no/auto      |
+|           899            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 958 in file
+	'./rtl/tv80_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           962            |    auto/auto     |
+|           996            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine tv80_core line 312 in file
+		'./rtl/tv80_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       PC_reg        | Flip-flop |  16   |  N  | N  | N  | N  | N  | N  | N  |
+|     mcycles_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  Read_To_Reg_r_reg  | Flip-flop |   5   |  Y  | N  | N  | N  | N  | N  | N  |
+|    Arith16_r_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    ALU_Op_r_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    Alternate_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       do_reg        | Flip-flop |   8   |  N  | N  | N  | N  | N  | N  | N  |
+|     TmpAddr_reg     | Flip-flop |  16   |  N  | N  | N  | N  | N  | N  | N  |
+|    XY_State_reg     | Flip-flop |   2   |  N  | N  | N  | N  | N  | N  | N  |
+|       SP_reg        | Flip-flop |  16   |  N  | N  | N  | N  | N  | N  | N  |
+|       Ap_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|        R_reg        | Flip-flop |   8   |  N  | N  | N  | N  | N  | N  | N  |
+|      BTR_r_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      Z16_r_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       ACC_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     XY_Ind_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   PreserveC_r_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   Save_ALU_r_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      ISet_reg       | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     IStatus_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|        F_reg        | Flip-flop |   8   |  N  | N  | N  | N  | N  | N  | N  |
+|        A_reg        | Flip-flop |  16   |  N  | N  | N  | N  | N  | N  | N  |
+|       IR_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|        I_reg        | Flip-flop |   8   |  N  | N  | N  | N  | N  | N  | N  |
+|       Fp_reg        | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine tv80_core line 798 in file
+		'./rtl/tv80_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   RegAddrA_r_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|     IncDecZ_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   RegAddrB_r_reg    | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|    RegBusA_r_reg    | Flip-flop |  16   |  Y  | N  | N  | N  | N  | N  | N  |
+|    RegAddrC_reg     | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine tv80_core line 958 in file
+		'./rtl/tv80_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      BusB_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|      BusA_reg       | Flip-flop |   8   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine tv80_core line 1072 in file
+		'./rtl/tv80_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      NMI_s_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      INT_s_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    Oldnmi_n_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    BusReq_s_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine tv80_core line 1029 in file
+		'./rtl/tv80_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     rfsh_n_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine tv80_core line 1107 in file
+		'./rtl/tv80_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     mcycle_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  Auto_Wait_t1_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    IntE_FF1_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     No_BTR_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     BusAck_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    NMICycle_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    IntE_FF2_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      m1_n_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     Halt_FF_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   Pre_XY_F_M_reg    | Flip-flop |   3   |  N  | N  | N  | N  | N  | N  | N  |
+|    IntCycle_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     tstate_reg      | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|  Auto_Wait_t2_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'tv80_mcode' instantiated from design 'tv80_core' with
+	the parameters "1,0,1,2,3,4,5,6,7". (HDL-193)
+Running PRESTO HDLC
+Warning:  ./rtl/tv80_mcode.v:171: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:390: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:465: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:552: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:603: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:761: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:802: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:1234: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:1477: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:1627: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:2702: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+Warning:  ./rtl/tv80_mcode.v:2733: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 206 in file
+	'./rtl/tv80_mcode.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           268            |    auto/auto     |
+|           278            |    auto/auto     |
+|           300            |    auto/auto     |
+|           315            |    auto/auto     |
+|           331            |    auto/auto     |
+|           348            |    auto/auto     |
+|           366            |    auto/auto     |
+|           379            |    auto/auto     |
+|           409            |    auto/auto     |
+|           433            |    auto/auto     |
+|           451            |    auto/auto     |
+|           488            |    auto/auto     |
+|           515            |    auto/auto     |
+|           572            |    auto/auto     |
+|           625            |    auto/auto     |
+|           665            |    auto/auto     |
+|           710            |    auto/auto     |
+|           839            |    auto/auto     |
+|           911            |    auto/auto     |
+|           962            |    auto/auto     |
+|           998            |    auto/auto     |
+|           1047           |    auto/auto     |
+|           1079           |    auto/auto     |
+|           1134           |    auto/auto     |
+|           1142           |    auto/auto     |
+|           1164           |    auto/auto     |
+|           1215           |    auto/auto     |
+|           1323           |    auto/auto     |
+|           186            |    auto/auto     |
+|           1349           |    auto/auto     |
+|           1369           |    auto/auto     |
+|           1396           |    auto/auto     |
+|           1423           |    auto/auto     |
+|           1451           |    auto/auto     |
+|           1485           |    auto/auto     |
+|           1518           |    auto/auto     |
+|           1555           |    auto/auto     |
+|           186            |    auto/auto     |
+|           1601           |    auto/auto     |
+|           1737           |    auto/auto     |
+|           186            |    auto/auto     |
+|           1771           |    auto/auto     |
+|           1805           |    auto/auto     |
+|           1829           |    auto/auto     |
+|           1896           |    auto/auto     |
+|           1932           |    auto/auto     |
+|           1971           |    auto/auto     |
+|           2006           |    auto/auto     |
+|           2045           |    auto/auto     |
+|           2076           |    auto/auto     |
+|           2142           |    auto/auto     |
+|           2195           |    auto/auto     |
+|           2249           |    auto/auto     |
+|           2301           |    auto/auto     |
+|           2371           |    auto/auto     |
+|           2379           |    auto/auto     |
+|           2398           |    auto/auto     |
+|           2417           |    auto/auto     |
+|           2425           |    auto/auto     |
+|           2444           |    auto/auto     |
+|           2461           |    auto/auto     |
+|           2493           |    auto/auto     |
+|           2521           |    auto/auto     |
+|           2547           |    auto/auto     |
+|           2571           |    auto/auto     |
+|           2596           |    auto/auto     |
+|           2643           |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'tv80_alu' instantiated from design 'tv80_core' with
+	the parameters "1,0,1,2,3,4,5,6,7". (HDL-193)
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 96 in file
+	'./rtl/tv80_alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            98            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 119 in file
+	'./rtl/tv80_alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           127            |    auto/auto     |
+|           133            |    auto/auto     |
+|           197            |    auto/auto     |
+|           343            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'tv80_reg'. (HDL-193)
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine tv80_reg line 50 in file
+		'./rtl/tv80_reg.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      RegsL_reg      | Flip-flop |  64   |  N  | N  | N  | N  | N  | N  | N  |
+|      RegsH_reg      | Flip-flop |  64   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+|   tv80_reg/59    |   8    |   16    |      3       | N  |
+|   tv80_reg/63    |   8    |   16    |      3       | N  |
+|   tv80_reg/61    |   8    |   16    |      3       | N  |
+===========================================================
+Presto compilation completed successfully.
+Current design is now 'tv80s'
+1
+compile 
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library       |      Version       | Available |
+============================================================================
+| Basic DW Building Blocks                | W-2004.12-DWF_0412 |     *     |
+| Licensed DW Building Blocks             |                    |           |
+============================================================================
+
+  Loading target library 'class'
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'tv80_mcode_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7'
+  Processing 'tv80_alu_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7'
+  Processing 'tv80_reg'
+  Processing 'tv80_core'
+  Processing 'tv80s'
+
+  Updating timing information
+Information: Design 'tv80s' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'tv80_core_DW01_add_width16_0'
+  Processing 'tv80_core_DW01_inc_width16_0'
+  Processing 'tv80_core_DW01_inc_width7_0'
+  Processing 'DW01_inc_width3_0'
+  Processing 'DW01_inc_width3_1'
+  Processing 'tv80_core_DW01_add_width16_1'
+  Processing 'tv80_core_DW01_add_width16_2'
+  Processing 'DW01_cmp2_width4_0'
+  Processing 'tv80_alu_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7_DW01_add_width5_0'
+  Processing 'DW01_add_width4_0'
+  Processing 'DW01_add_2_0'
+  Processing 'tv80_alu_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7_DW01_cmp2_width8_0'
+  Processing 'tv80_alu_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7_DW01_addsub_width9_0'
+  Processing 'tv80_alu_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7_DW01_cmp2_5_0'
+  Processing 'tv80_alu_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7_DW01_addsub_width9_1'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Structuring 'tv80_reg'
+  Mapping 'tv80_reg'
+  Structuring 'tv80_alu_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7'
+  Mapping 'tv80_alu_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7'
+  Structuring 'tv80_mcode_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7'
+  Mapping 'tv80_mcode_Mode1_Flag_C0_Flag_N1_Flag_P2_Flag_X3_Flag_H4_Flag_Y5_Flag_Z6_Flag_S7'
+  Structuring 'tv80_core'
+  Mapping 'tv80_core'
+  Structuring 'tv80s'
+  Mapping 'tv80s'
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:49    8852.0      0.00       0.0       0.0                          
+    0:01:51    8465.0      0.00       0.0       0.0                          
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:51    8465.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:51    8465.0      0.00       0.0       0.0                          
+    0:01:51    8465.0      0.00       0.0       0.0                          
+    0:01:53    8335.0      0.00       0.0       0.0                          
+
+  Optimization Complete
+  ---------------------
+  Transferring design 'tv80s' to database 'tv80s.db'
+
+Current design is 'tv80s'.
+1
+change_names -rule verilog
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+1
+write -hier -format verilog -out tv80s.vg
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+ungroup -all -flatten -simple_names
+Current instance is the top-level of design 'tv80s'.
+Information: Updating design information... (UID-85)
+1
+change_names -rule verilog
+1
+write -hier -format verilog -out tv80s.flat.vg
+1
+Information: Defining new variable 'cpt_new_idn_switch'. (CMD-041)
+1
+dc_shell-t> 
+Memory usage for this session 46057 Kbytes.
+CPU usage for this session 121 seconds.
+
+Thank you...
