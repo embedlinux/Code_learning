@@ -1,0 +1,18 @@
+search_path = {. synopsys_root + "/libraries/syn" "../lib" }
+
+synthetic_library = { "dw02.sldb", "dw01.sldb" }
+
+/*
+link_library = {"*", "vsc1083.db", "dw02.sldb", "dw01.sldb" } 
+*/
+link_library = {"*", "vsc1083.db" } 
+target_library = { "vsc1083.db" }
+symbol_library = { "vsc1083.sdb" }
+
+cache_write = "/remote/cae112"
+cache_read = { "/remote/cae112" , cache_write }
+cache_write_info = true
+cache_read_info = true   
+cache_file_chmod_octal = "666"
+cache_dir_chmod_octal = "777"
+
