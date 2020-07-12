@@ -1,0 +1,9 @@
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":40:10:40:17|Object ireg_pos is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":41:10:41:17|Object ireg_neg is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":42:10:42:18|Object din_clk_a is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":43:10:43:18|Object din_clk_b is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":44:6:44:17|Object ireg_ctl_pos is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":45:6:45:17|Object ireg_ctl_neg is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":46:6:46:14|Object rx_ctrl_a is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":47:6:47:14|Object rx_ctrl_b is declared but not assigned. Either assign a value or remove the declaration.
+

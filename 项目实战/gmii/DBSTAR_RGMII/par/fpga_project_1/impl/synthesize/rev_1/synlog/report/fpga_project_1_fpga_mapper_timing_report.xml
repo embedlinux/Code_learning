@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- *************************************************************************************
+FILE DESCRIPTION
+Max Top 5 critical clocks will be reported. For rest user needs to refer to Detailed report
+*******************************************************************************************-->
+<report_table display_priority="2" name="Timing Summary">
+<report_link name="Detailed report">
+<data>G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\synlog\fpga_project_1_fpga_mapper.srr</data>
+<title>START OF TIMING REPORT</title>
+</report_link>
+<row>
+<data tcl_name="clock_name">Clock Name</data>
+<data tcl_name="req_freq">Req Freq</data>
+<data tcl_name="est_freq">Est Freq</data>
+<data tcl_name="slack">Slack</data>
+</row>
+<row>
+<data>GW_PLL|clkout_inferred_clock</data>
+<data>283.1 MHz</data>
+<data>240.6 MHz</data>
+<data>-0.623</data>
+</row>
+<row>
+<data>top|clk</data>
+<data>300.3 MHz</data>
+<data>255.2 MHz</data>
+<data>-0.588</data>
+</row>
+<row>
+<data>top|rx_clk</data>
+<data>883.9 MHz</data>
+<data>751.3 MHz</data>
+<data>-0.200</data>
+</row>
+</report_table>

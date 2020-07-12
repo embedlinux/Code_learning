@@ -1,0 +1,132 @@
+# Mon Jul  2 20:10:54 2018
+
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+Synopsys Generic Technology Pre-mapping, Version mapgw, Build 1086R, Built May 17 2018 10:22:59
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+@A: MF827 |No constraint file specified.
+@L: G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\fpga_project_1_scck.rpt 
+Printing clock  summary report in "G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\fpga_project_1_scck.rpt" file 
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 112MB peak: 114MB)
+
+@W: FX474 |User-specified initial value defined for some sequential elements which can prevent optimum synthesis results from being achieved. 
+@N: MH105 |UMR3 is only supported for HAPS-80.
+@N: MH105 |UMR3 is only supported for HAPS-80.
+syn_allowed_resources : blockrams=46  set on top level netlist top
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 189MB peak: 191MB)
+
+
+
+Clock Summary
+******************
+
+          Start                            Requested      Requested     Clock        Clock                     Clock
+Level     Clock                            Frequency      Period        Type         Group                     Load 
+--------------------------------------------------------------------------------------------------------------------
+0 -       top|clk                          410.0 MHz      2.439         inferred     Autoconstr_clkgroup_0     60   
+                                                                                                                    
+0 -       GW_PLL|clkout_inferred_clock     315.5 MHz      3.170         inferred     Autoconstr_clkgroup_1     34   
+                                                                                                                    
+0 -       top|rx_clk                       1940.6 MHz     0.515         inferred     Autoconstr_clkgroup_2     15   
+====================================================================================================================
+
+
+
+Clock Load Summary
+***********************
+
+                                 Clock     Source                                         Clock Pin                Non-clock Pin     Non-clock Pin                        
+Clock                            Load      Pin                                            Seq Example              Seq Example       Comb Example                         
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+top|clk                          60        clk(port)                                      rx_en_buf[3:0].C         -                 -                                    
+                                                                                                                                                                          
+GW_PLL|clkout_inferred_clock     34        u_rgmii2gmii.U_PLL_TX.pll_inst.CLKOUT(PLL)     cnt[9].C                 -                 -                                    
+                                                                                                                                                                          
+top|rx_clk                       15        rx_clk(port)                                   u_rgmii2gmii.rx_dv.C     -                 u_rgmii2gmii.rx_clk_dly.I[0](keepbuf)
+==========================================================================================================================================================================
+
+@W: MT529 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":36:0:36:5|Found inferred clock top|clk which controls 60 sequential elements including cnt0[0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+@W: MT529 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\ddr_ecp3.v":165:5:165:12|Found inferred clock GW_PLL|clkout_inferred_clock which controls 34 sequential elements including u_rgmii2gmii.U_RX.U_TX_CTL. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+@W: MT529 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\ddr_ecp3.v":125:0:125:6|Found inferred clock top|rx_clk which controls 15 sequential elements including u_rgmii2gmii.U_RX.U4_IDDR. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+
+ICG Latch Removal Summary:
+Number of ICG latches removed: 0
+Number of ICG latches not removed:	0
+
+
+@S |Clock Optimization Summary
+
+
+
+#### START OF PREMAP CLOCK OPTIMIZATION REPORT #####[
+
+2 non-gated/non-generated clock tree(s) driving 75 clock pin(s) of sequential element(s)
+1 gated/generated clock tree(s) driving 34 clock pin(s) of sequential element(s)
+0 instances converted, 34 sequential instances remain driven by gated/generated clocks
+
+=============================== Non-Gated/Non-Generated Clocks ===============================
+Clock Tree ID     Driving Element         Drive Element Type     Fanout     Sample Instance   
+----------------------------------------------------------------------------------------------
+@KP:ckid0_2       u_rgmii2gmii.rx_clk     Unconstrained_port     15         u_rgmii2gmii.rx_er
+@KP:ckid0_3       clk                     Unconstrained_port     60         cnt0[0]           
+==============================================================================================
+=================================================================== Gated/Generated Clocks ====================================================================
+Clock Tree ID     Driving Element                           Drive Element Type     Unconverted Fanout     Sample Instance               Explanation            
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+@KP:ckid0_1       u_rgmii2gmii.U_PLL_TX.pll_inst.CLKOUT     PLL                    34                     u_rgmii2gmii.txd_buf[7:0]     Black box on clock path
+===============================================================================================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######
+
+@N|Skipping assigning INTERNAL_VREF to iobanks, because the table of mapping from pin to iobank is not initialized.
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\fpga_project_1.sap.
+
+Starting constraint checker (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 188MB peak: 191MB)
+
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 188MB peak: 191MB)
+
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 188MB peak: 191MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:01s; Memory used current: 104MB peak: 191MB)
+
+Process took 0h:00m:03s realtime, 0h:00m:01s cputime
+# Mon Jul  2 20:10:57 2018
+
+###########################################################]

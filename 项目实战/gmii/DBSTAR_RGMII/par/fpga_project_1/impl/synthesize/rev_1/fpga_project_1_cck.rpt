@@ -1,0 +1,91 @@
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+
+# Written on Mon Jul  2 20:10:56 2018
+
+##### DESIGN INFO #######################################################
+
+Top View:                "top"
+Constraint File(s):      (none)
+
+
+
+
+##### SUMMARY ############################################################
+
+Found 0 issues in 0 out of 0 constraints
+
+
+##### DETAILS ############################################################
+
+
+
+Clock Relationships
+*******************
+
+Starting                         Ending                           |     rise to rise     |     fall to fall     |     rise to fall     |     fall to rise                     
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+top|clk                          top|clk                          |     2.439            |     No paths         |     No paths         |     No paths                         
+GW_PLL|clkout_inferred_clock     top|clk                          |     Diff grp         |     No paths         |     No paths         |     No paths                         
+GW_PLL|clkout_inferred_clock     GW_PLL|clkout_inferred_clock     |     3.170            |     No paths         |     1.585            |     No paths                         
+top|rx_clk                       top|clk                          |     Diff grp         |     No paths         |     No paths         |     No paths                         
+top|rx_clk                       top|rx_clk                       |     0.515            |     No paths         |     No paths         |     No paths                         
+=============================================================================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+Unconstrained Start/End Points
+******************************
+
+p:flag
+p:flag2
+p:ledo
+p:rd[0]
+p:rd[1]
+p:rd[2]
+p:rd[3]
+p:rx_ctl
+p:td[0]
+p:td[1]
+p:td[2]
+p:td[3]
+p:tx_clk
+p:tx_ctl
+
+
+Inapplicable constraints
+************************
+
+(none)
+
+
+Applicable constraints with issues
+**********************************
+
+(none)
+
+
+Constraints with matching wildcard expressions
+**********************************************
+
+(none)
+
+
+Library Report
+**************
+
+
+# End of Constraint Checker Report

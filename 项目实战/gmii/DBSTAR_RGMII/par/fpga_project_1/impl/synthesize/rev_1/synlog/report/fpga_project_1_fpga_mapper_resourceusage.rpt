@@ -1,0 +1,31 @@
+---------------------------------------
+Resource Usage Report for top 
+
+Mapping to part: gw2ar_18lqfp144-8
+Cell usage:
+ALU             64 uses
+DFF             74 uses
+DFFE            32 uses
+DFFR            4 uses
+GSR             1 use
+IDDR            5 uses
+IODELAY         5 uses
+MUX2_LUT5       16 uses
+MUX2_LUT6       3 uses
+ODDR            6 uses
+PLL             1 use
+LUT2            5 uses
+LUT3            14 uses
+LUT4            69 uses
+
+I/O ports: 16
+I/O primitives: 16
+IBUF           7 uses
+OBUF           9 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   110 of 15552 (0%)
+
+@S |Mapping Summary:
+Total  LUTs: 88 (0%)
+

@@ -1,0 +1,7 @@
+C:\Gowin\1.8\SynplifyPro\bin64\syn_nfilter.exe  -link  -multisrs  G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\rev_1\synwork\ao_0_comp.srs  -osyn  G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\rev_1\synwork\ao_0_mult.srs  -log  G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\rev_1\synlog\ao_0_multi_srs_gen.srr 
+relcom:C:\Gowin\1.8\SynplifyPro\bin64\syn_nfilter.exe -link -multisrs ..\synwork\ao_0_comp.srs -osyn ..\synwork\ao_0_mult.srs -log ..\synlog\ao_0_multi_srs_gen.srr
+rc:0 success:1 runtime:0
+file:..\synwork\ao_0_comp.srs|io:i|time:1530533489|size:218123|exec:0|csum:F2324D65E1EBB6DF5311DF6684C5DFE6
+file:..\synwork\ao_0_mult.srs|io:o|time:1530533491|size:109554|exec:0|csum:
+file:..\synlog\ao_0_multi_srs_gen.srr|io:o|time:1530533491|size:1050|exec:0|csum:
+file:C:\Gowin\1.8\SynplifyPro\bin64\syn_nfilter.exe|io:i|time:1526401362|size:8704000|exec:1|csum:B95ED65EC47187934F9262CDAE086B51

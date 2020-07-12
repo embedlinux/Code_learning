@@ -1,0 +1,3 @@
+ckid0_1:@|S:u_rgmii2gmii.U_PLL_TX.pll_inst.CLKOUT@|E:u_rgmii2gmii.txd_buf[7:0]@|F:@syn_dgcc_clockid0_1==1@|M:ClockId_0_1
+ckid0_2:@|S:u_rgmii2gmii.rx_clk@|E:u_rgmii2gmii.rx_er@|F:@syn_dgcc_clockid0_2==1@|M:ClockId_0_2
+ckid0_3:@|S:clk@|E:cnt0[0]@|F:@syn_dgcc_clockid0_3==1@|M:ClockId_0_3

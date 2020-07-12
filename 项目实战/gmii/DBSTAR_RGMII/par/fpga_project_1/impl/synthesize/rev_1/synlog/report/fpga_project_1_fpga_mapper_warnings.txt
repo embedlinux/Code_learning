@@ -1,0 +1,4 @@
+@W: MT246 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\gw_pll\gw_pll.v":28:4:28:11|Blackbox PLL is missing a user supplied timing model. This may have a negative effect on timing analysis and optimizations (Quality of Results) 
+@W: MT420 |Found inferred clock top|clk with period 3.33ns. Please declare a user-defined clock on port clk.
+@W: MT420 |Found inferred clock GW_PLL|clkout_inferred_clock with period 3.53ns. Please declare a user-defined clock on net u_rgmii2gmii.U_PLL_TX.tx_clk_int.
+@W: MT420 |Found inferred clock top|rx_clk with period 1.13ns. Please declare a user-defined clock on port rx_clk.

@@ -1,0 +1,153 @@
+`timescale 1ns/100ps
+module top
+(input clk//25 osc
+,output      tx_clk//pll output 125    
+,input       rx_clk//     
+,input [3:0] rd         
+,input       rx_ctl     
+,output[3:0] td         
+,output      tx_ctl
+,output      flag   
+,output      ledo  
+);
+
+reg  [9:0] cnt=0;
+reg  [29:0] cnt0=0;
+reg  [7:0] txd=0;        
+reg        tx_en=0;      
+reg        tx_er=0;      
+
+wire [7:0] rxd;        
+wire       rx_dv;      
+wire       rx_er;
+wire [7:0] mem[0:63];
+wire tx_clk_int;
+
+assign flag = ^rxd && rx_dv && rx_er;
+
+always @(posedge tx_clk_int) begin
+    cnt <= cnt + 1;
+end
+
+always @(posedge clk) begin
+//always @(posedge rx_clk) begin
+//always @(posedge tx_clk_int) begin
+    cnt0 <= cnt0 + 1;
+end
+
+assign ledo = cnt0[19];
+
+always @(posedge tx_clk_int) begin
+    if(cnt == 0) begin
+        txd <= 0;  
+        tx_en <= 0;
+        tx_er <= 0;
+    end else if(cnt == 1) begin
+        txd <= 8'hd5;  
+        tx_en <= 1;
+        tx_er <= 0;
+    end else if(cnt <= 8) begin
+    	  txd <= 8'h55;  
+        tx_en <= 1;
+        tx_er <= 0;
+    end else if(cnt <= 72) begin
+    	  txd <= mem[cnt-9];  
+        tx_en <= 1;
+        tx_er <= 0;
+    end else begin
+    	  txd <= 0;  
+        tx_en <= 0;
+        tx_er <= 0;
+    end	
+end
+
+rgmii2gmii
+u_rgmii2gmii
+(.rstn    (1)
+,.tx_clk  (clk)
+,.rx_clk  (rx_clk)
+,.td      (td    )
+,.tx_ctl  (tx_ctl)
+,.rd      (rd    )
+,.rx_ctl  (rx_ctl)
+,.rxd     (rxd   )
+,.rx_dv   (rx_dv )
+,.rx_er   (rx_er )
+,.txd     (txd   )
+,.tx_en   (tx_en )
+,.tx_er   (tx_er )
+,.tx_clk_out1(tx_clk)
+,.tx_clk_out(tx_clk_int)
+);
+
+//DA
+assign mem[0] = 8'h01;
+assign mem[1] = 8'h80;
+assign mem[2] = 8'hc2;
+assign mem[3] = 8'h00;
+assign mem[4] = 8'h00;
+assign mem[5] = 8'h00;
+//SA
+assign mem[6] = 8'h3c;
+assign mem[7] = 8'he5;
+assign mem[8] = 8'ha6;
+assign mem[9] = 8'hf7;
+assign mem[10] = 8'ha9;
+assign mem[11] = 8'hf8;
+//LEN
+assign mem[12] = 8'h00;
+assign mem[13] = 8'h27;
+//PAYLOAD
+assign mem[14] = 8'h42;
+assign mem[15] = 8'h42;
+assign mem[16] = 8'h03;
+assign mem[17] = 8'h00;
+assign mem[18] = 8'h00;
+assign mem[19] = 8'h02;
+assign mem[20] = 8'h2c;
+assign mem[21] = 8'h80;
+assign mem[22] = 8'h00;
+assign mem[23] = 8'h00;
+assign mem[24] = 8'h23;
+assign mem[25] = 8'h89;
+assign mem[26] = 8'h7e;
+assign mem[27] = 8'h85;
+assign mem[28] = 8'hb5;
+assign mem[29] = 8'h00;
+assign mem[30] = 8'h00;
+assign mem[31] = 8'h00;
+assign mem[32] = 8'h14;
+assign mem[33] = 8'h80;
+assign mem[34] = 8'h00;
+assign mem[35] = 8'h3c;
+assign mem[36] = 8'he5;
+assign mem[37] = 8'ha6;
+assign mem[38] = 8'hf7;
+assign mem[39] = 8'ha9;
+assign mem[40] = 8'he5;
+assign mem[41] = 8'h80;
+assign mem[42] = 8'h0c;
+assign mem[43] = 8'h01;
+assign mem[44] = 8'h00;
+assign mem[45] = 8'h14;
+assign mem[46] = 8'h00;
+assign mem[47] = 8'h02;
+assign mem[48] = 8'h00;
+assign mem[49] = 8'h0f;
+assign mem[50] = 8'h00;
+assign mem[51] = 8'h00;
+assign mem[52] = 8'h00;
+assign mem[53] = 8'h00;
+assign mem[54] = 8'h00;
+assign mem[55] = 8'h00;
+assign mem[56] = 8'h00;
+assign mem[57] = 8'h00;
+assign mem[58] = 8'h00;
+assign mem[59] = 8'h00;
+//FCS
+assign mem[60] = 8'hAA;
+assign mem[61] = 8'hBB;
+assign mem[62] = 8'hCC;
+assign mem[63] = 8'hDD;
+
+endmodule

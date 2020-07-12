@@ -1,0 +1,10 @@
+-d G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\fpga_project_1.vm
+-cst G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\fpga_project_1.cst
+-p GW2AR-18-LQFP144-8
+-cfg G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-gao G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\gao.v
+-gpa

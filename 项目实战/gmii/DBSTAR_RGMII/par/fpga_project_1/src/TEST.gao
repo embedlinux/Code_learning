@@ -1,0 +1,165 @@
+<?xml version="1" encoding="UTF-8"?>
+<GAO_CONFIG>
+    <Version>3.0</Version>
+    <Mode>Standard</Mode>
+    <AoCore index="0" sample_clock="rx_clk" trig_type="0" storage_depth="1024" window_num="1" capture_amount="1024" trigger_pos="500">
+        <SignalList>
+            <Signal>txd[7]</Signal>
+            <Signal>txd[6]</Signal>
+            <Signal>txd[5]</Signal>
+            <Signal>txd[4]</Signal>
+            <Signal>txd[3]</Signal>
+            <Signal>txd[2]</Signal>
+            <Signal>txd[1]</Signal>
+            <Signal>txd[0]</Signal>
+            <Signal>tx_cnt[15]</Signal>
+            <Signal>tx_cnt[14]</Signal>
+            <Signal>tx_cnt[13]</Signal>
+            <Signal>tx_cnt[12]</Signal>
+            <Signal>tx_cnt[11]</Signal>
+            <Signal>tx_cnt[10]</Signal>
+            <Signal>tx_cnt[9]</Signal>
+            <Signal>tx_cnt[8]</Signal>
+            <Signal>tx_cnt[7]</Signal>
+            <Signal>tx_cnt[6]</Signal>
+            <Signal>tx_cnt[5]</Signal>
+            <Signal>tx_cnt[4]</Signal>
+            <Signal>tx_cnt[3]</Signal>
+            <Signal>tx_cnt[2]</Signal>
+            <Signal>tx_cnt[1]</Signal>
+            <Signal>tx_cnt[0]</Signal>
+            <Signal>rxd[7]</Signal>
+            <Signal>rxd[6]</Signal>
+            <Signal>rxd[5]</Signal>
+            <Signal>rxd[4]</Signal>
+            <Signal>rxd[3]</Signal>
+            <Signal>rxd[2]</Signal>
+            <Signal>rxd[1]</Signal>
+            <Signal>rxd[0]</Signal>
+            <Signal>rx_cnt[15]</Signal>
+            <Signal>rx_cnt[14]</Signal>
+            <Signal>rx_cnt[13]</Signal>
+            <Signal>rx_cnt[12]</Signal>
+            <Signal>rx_cnt[11]</Signal>
+            <Signal>rx_cnt[10]</Signal>
+            <Signal>rx_cnt[9]</Signal>
+            <Signal>rx_cnt[8]</Signal>
+            <Signal>rx_cnt[7]</Signal>
+            <Signal>rx_cnt[6]</Signal>
+            <Signal>rx_cnt[5]</Signal>
+            <Signal>rx_cnt[4]</Signal>
+            <Signal>rx_cnt[3]</Signal>
+            <Signal>rx_cnt[2]</Signal>
+            <Signal>rx_cnt[1]</Signal>
+            <Signal>rx_cnt[0]</Signal>
+            <Signal>tx_en</Signal>
+            <Signal>rx_dv</Signal>
+            <Signal>rx_er</Signal>
+        </SignalList>
+        <Triggers>
+            <Trigger index="0">
+                <SignalList>
+                    <Signal>txd[7]</Signal>
+                    <Signal>txd[6]</Signal>
+                    <Signal>txd[5]</Signal>
+                    <Signal>txd[4]</Signal>
+                    <Signal>txd[3]</Signal>
+                    <Signal>txd[2]</Signal>
+                    <Signal>txd[1]</Signal>
+                    <Signal>txd[0]</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="1">
+                <SignalList>
+                    <Signal>tx_cnt[15]</Signal>
+                    <Signal>tx_cnt[14]</Signal>
+                    <Signal>tx_cnt[13]</Signal>
+                    <Signal>tx_cnt[12]</Signal>
+                    <Signal>tx_cnt[11]</Signal>
+                    <Signal>tx_cnt[10]</Signal>
+                    <Signal>tx_cnt[9]</Signal>
+                    <Signal>tx_cnt[8]</Signal>
+                    <Signal>tx_cnt[7]</Signal>
+                    <Signal>tx_cnt[6]</Signal>
+                    <Signal>tx_cnt[5]</Signal>
+                    <Signal>tx_cnt[4]</Signal>
+                    <Signal>tx_cnt[3]</Signal>
+                    <Signal>tx_cnt[2]</Signal>
+                    <Signal>tx_cnt[1]</Signal>
+                    <Signal>tx_cnt[0]</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="2">
+                <SignalList>
+                    <Signal>rxd[7]</Signal>
+                    <Signal>rxd[6]</Signal>
+                    <Signal>rxd[5]</Signal>
+                    <Signal>rxd[4]</Signal>
+                    <Signal>rxd[3]</Signal>
+                    <Signal>rxd[2]</Signal>
+                    <Signal>rxd[1]</Signal>
+                    <Signal>rxd[0]</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="3">
+                <SignalList>
+                    <Signal>rx_cnt[15]</Signal>
+                    <Signal>rx_cnt[14]</Signal>
+                    <Signal>rx_cnt[13]</Signal>
+                    <Signal>rx_cnt[12]</Signal>
+                    <Signal>rx_cnt[11]</Signal>
+                    <Signal>rx_cnt[10]</Signal>
+                    <Signal>rx_cnt[9]</Signal>
+                    <Signal>rx_cnt[8]</Signal>
+                    <Signal>rx_cnt[7]</Signal>
+                    <Signal>rx_cnt[6]</Signal>
+                    <Signal>rx_cnt[5]</Signal>
+                    <Signal>rx_cnt[4]</Signal>
+                    <Signal>rx_cnt[3]</Signal>
+                    <Signal>rx_cnt[2]</Signal>
+                    <Signal>rx_cnt[1]</Signal>
+                    <Signal>rx_cnt[0]</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="4">
+                <SignalList>
+                    <Signal>tx_en</Signal>
+                    <Signal>rx_dv</Signal>
+                    <Signal>rx_er</Signal>
+                </SignalList>
+            </Trigger>
+            <Trigger index="5"/>
+            <Trigger index="6"/>
+            <Trigger index="7"/>
+            <Trigger index="8"/>
+            <Trigger index="9"/>
+            <Trigger index="10"/>
+            <Trigger index="11"/>
+            <Trigger index="12"/>
+            <Trigger index="13"/>
+            <Trigger index="14"/>
+            <Trigger index="15"/>
+        </Triggers>
+        <MatchUnits>
+            <MatchUnit index="0" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="XXXXXXXX" value1="00000000" trigger="0"/>
+            <MatchUnit index="1" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="XXXXXXXXXXXXXXXX" value1="0000000000000000" trigger="1"/>
+            <MatchUnit index="2" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="XXXXXXXX" value1="00000000" trigger="2"/>
+            <MatchUnit index="3" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="XXXXXXXXXXXXXXXX" value1="0000000000000000" trigger="3"/>
+            <MatchUnit index="4" enabled="1" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="XXX" value1="000" trigger="4"/>
+            <MatchUnit index="5" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="6" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="7" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="8" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="9" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="10" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="11" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="12" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="13" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="14" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+            <MatchUnit index="15" enabled="0" match_type="0" counter_enable="0" counter_width="2" counter="2" countinuous="0" func="0" value0="" value1=""/>
+        </MatchUnits>
+        <Expressions>
+            <Expression>M0&amp;M1&amp;M2&amp;M3&amp;M4</Expression>
+        </Expressions>
+    </AoCore>
+</GAO_CONFIG>

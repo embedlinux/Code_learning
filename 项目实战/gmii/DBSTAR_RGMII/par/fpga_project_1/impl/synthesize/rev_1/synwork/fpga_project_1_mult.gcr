@@ -1,0 +1,56 @@
+i u_rgmii2gmii.U_PLL_TX.clkout_i
+m 0 0
+u 27 34
+n ckid0_0 {t:u_rgmii2gmii.U_RX.U_TX_CTL.CLK} Black box on clock path
+p {t:u_rgmii2gmii.U_PLL_TX.pll_inst.CLKOUT}{t:u_rgmii2gmii.U_PLL_TX.clkout_inferred_clock.I[0]}{t:u_rgmii2gmii.U_PLL_TX.clkout_inferred_clock.OUT[0]}{p:u_rgmii2gmii.U_PLL_TX.clkout}{t:u_rgmii2gmii.U_PLL_TX.clkout}{t:u_rgmii2gmii.txd_buf[7:0].C}
+e ckid0_1 {t:u_rgmii2gmii.txd_buf[7:0].C} dffr
+d ckid0_0,ckid0_1 {t:u_rgmii2gmii.U_PLL_TX.pll_inst.CLKOUT} PLL Black box on clock path
+i u_rgmii2gmii.rx_clk_dly
+m 0 0
+u 8 15
+p {t:u_rgmii2gmii.rx_clk_dly.OUT[0]}{t:u_rgmii2gmii.rx_er.C}
+e ckid0_2 {t:u_rgmii2gmii.rx_er.C} dff
+c ckid0_2 {p:u_rgmii2gmii.rx_clk} Unconstrained_port Inferred clock from port
+i clk
+m 0 0
+u 24 60
+p {p:clk}{t:cnt0[0].C}
+e ckid0_3 {t:cnt0[0].C} dffr
+c ckid0_3 {p:clk} Unconstrained_port Inferred clock from port
+i rx_clk
+m 0 0
+u 0 0
+c ckid0_4 {p:rx_clk} Unconstrained_port Inferred clock from port
+i u_rgmii2gmii.U_RX.dout_b[3]
+m 0 0
+u 0 0
+d ckid0_5 {t:u_rgmii2gmii.U_RX.U3_IDDR.Q1} IDDR Clock source is invalid for GCC
+i u_rgmii2gmii.U_RX.dout_b[2]
+m 0 0
+u 0 0
+d ckid0_6 {t:u_rgmii2gmii.U_RX.U2_IDDR.Q1} IDDR Clock source is invalid for GCC
+i u_rgmii2gmii.U_RX.dout_b[1]
+m 0 0
+u 0 0
+d ckid0_7 {t:u_rgmii2gmii.U_RX.U1_IDDR.Q1} IDDR Clock source is invalid for GCC
+i u_rgmii2gmii.U_RX.dout_b[0]
+m 0 0
+u 0 0
+d ckid0_8 {t:u_rgmii2gmii.U_RX.U0_IDDR.Q1} IDDR Clock source is invalid for GCC
+i u_rgmii2gmii.U_RX.dout_a[3]
+m 0 0
+u 0 0
+d ckid0_9 {t:u_rgmii2gmii.U_RX.U3_IDDR.Q0} IDDR Clock source is invalid for GCC
+i u_rgmii2gmii.U_RX.dout_a[2]
+m 0 0
+u 0 0
+d ckid0_10 {t:u_rgmii2gmii.U_RX.U2_IDDR.Q0} IDDR Clock source is invalid for GCC
+i u_rgmii2gmii.U_RX.dout_a[1]
+m 0 0
+u 0 0
+d ckid0_11 {t:u_rgmii2gmii.U_RX.U1_IDDR.Q0} IDDR Clock source is invalid for GCC
+i u_rgmii2gmii.U_RX.dout_a[0]
+m 0 0
+u 0 0
+d ckid0_12 {t:u_rgmii2gmii.U_RX.U0_IDDR.Q0} IDDR Clock source is invalid for GCC
+l 0 0 0 0 0

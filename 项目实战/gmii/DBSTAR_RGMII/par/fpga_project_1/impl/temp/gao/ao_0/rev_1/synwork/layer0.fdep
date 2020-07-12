@@ -1,0 +1,54 @@
+#OPTIONS:"|-layerid|0|-orig_srs|G:\\gowin_test\\DBSTAR_RGMII\\par\\fpga_project_1\\impl\\temp\\gao\\ao_0\\rev_1\\synwork\\ao_0_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-sdff_counter|-nram|-divnmod|-nostructver|-infer_seqShift|-I|G:\\gowin_test\\DBSTAR_RGMII\\par\\fpga_project_1\\impl\\temp\\gao\\ao_0\\|-I|C:\\Gowin\\1.8\\SynplifyPro\\lib|-sysv|-devicelib|C:\\Gowin\\1.8\\SynplifyPro\\lib\\generic\\gw2a.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-D_MULTIPLE_FILE_COMPILATION_UNIT_|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\Gowin\\1.8\\SynplifyPro\\bin64\\c_ver.exe":1526401174
+#CUR:"C:\\Gowin\\1.8\\SynplifyPro\\lib\\generic\\gw2a.v":1526403274
+#CUR:"C:\\Gowin\\1.8\\SynplifyPro\\lib\\vlog\\hypermods.v":1526400512
+#CUR:"C:\\Gowin\\1.8\\SynplifyPro\\lib\\vlog\\umr_capim.v":1526400512
+#CUR:"C:\\Gowin\\1.8\\SynplifyPro\\lib\\vlog\\scemi_objects.v":1526400512
+#CUR:"C:\\Gowin\\1.8\\SynplifyPro\\lib\\vlog\\scemi_pipes.svh":1526400512
+#CUR:"G:\\gowin_test\\DBSTAR_RGMII\\par\\fpga_project_1\\impl\\temp\\gao\\ao_0\\gw_ao_parameter.v":1530533471
+#CUR:"G:\\gowin_test\\DBSTAR_RGMII\\par\\fpga_project_1\\impl\\temp\\gao\\ao_0\\gw_ao_top_define.v":1530533471
+#CUR:"G:\\gowin_test\\DBSTAR_RGMII\\par\\fpga_project_1\\impl\\temp\\gao\\ao_0\\gw_ao_expression.v":1530533471
+#CUR:"C:\\Gowin\\1.8\\IDE\\data\\ipcores\\GAO\\GW_AO_0\\gw_ao_crc32.v":1493882276
+#CUR:"C:\\Gowin\\1.8\\IDE\\data\\ipcores\\GAO\\GW_AO_0\\gw_ao_define.v":1493882276
+#CUR:"C:\\Gowin\\1.8\\IDE\\data\\ipcores\\GAO\\GW_AO_0\\gw_ao_match.v":1493882276
+#CUR:"C:\\Gowin\\1.8\\IDE\\data\\ipcores\\GAO\\GW_AO_0\\gw_ao_define.v":1493882276
+#CUR:"C:\\Gowin\\1.8\\IDE\\data\\ipcores\\GAO\\GW_AO_0\\gw_ao_mem_ctrl.v":1493882276
+#CUR:"C:\\Gowin\\1.8\\IDE\\data\\ipcores\\GAO\\GW_AO_0\\gw_ao_top.v":1493882276
+#CUR:"C:\\Gowin\\1.8\\IDE\\data\\ipcores\\GAO\\GW_AO_0\\gw_ao_define.v":1493882276
+#CUR:"G:\\gowin_test\\DBSTAR_RGMII\\par\\fpga_project_1\\impl\\temp\\gao\\ao_0\\gw_ao_top_define.v":1530533471
+#CUR:"G:\\gowin_test\\DBSTAR_RGMII\\par\\fpga_project_1\\impl\\temp\\gao\\ao_0\\gw_ao_expression.v":1530533471
+#CUR:"G:\\gowin_test\\DBSTAR_RGMII\\par\\fpga_project_1\\impl\\temp\\gao\\ao_0\\gw_ao_parameter.v":1530533471
+#numinternalfiles:5
+#defaultlanguage:verilog
+0			"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_parameter.v" verilog
+1			"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_top_define.v" verilog
+2			"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_expression.v" verilog
+3			"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v" verilog
+4			"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_define.v" verilog
+5			"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v" verilog
+6			"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v" verilog
+7			"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v" verilog
+#Dependency Lists(Uses List)
+0 4 1 2 0
+1 0 4 2
+2 0 4 1
+3 0
+4 0 1 2
+5 4 0
+6 0
+7 4 1 2 0 6 3 5
+#Dependency Lists(Users Of)
+0 0 1 2 3 4 5 6 7
+1 0 2 4 7
+2 0 1 4 7
+3 7
+4 0 1 2 5 7
+5 7
+6 7
+7 -1
+#Design Unit to File Association
+package work work_G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_parameter.v_unit 0
+module work ao_crc32_0 3
+module work ao_match_0 5
+module work ao_mem_ctrl_0 6
+module work ao_top_0 7

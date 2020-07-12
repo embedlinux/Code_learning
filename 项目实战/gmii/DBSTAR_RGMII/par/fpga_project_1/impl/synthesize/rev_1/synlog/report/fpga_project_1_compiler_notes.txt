@@ -1,0 +1,19 @@
+@N|Running in 64-bit mode
+@N|Running in 64-bit mode
+@N:: Running Verilog Compiler in System Verilog mode
+@N:: Running Verilog Compiler in Multiple File Compilation Unit mode
+@N: CG364 :"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v":1532:7:1532:9|Synthesizing module PLL in library work.
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\gw_pll\gw_pll.v":13:7:13:12|Synthesizing module GW_PLL in library work.
+@N: CG364 :"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v":558:7:558:13|Synthesizing module IODELAY in library work.
+@N: CG364 :"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v":386:7:386:10|Synthesizing module IDDR in library work.
+@N: CG364 :"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v":415:7:415:10|Synthesizing module ODDR in library work.
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":2:7:2:9|Synthesizing module DDR in library work.
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\rgmii2gmii.v":2:7:2:16|Synthesizing module rgmii2gmii in library work.
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\top.v":2:7:2:9|Synthesizing module top in library work.
+@N: CG179 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\top.v":47:58:47:63|Removing redundant assignment.
+@N: CG179 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\top.v":48:58:48:63|Removing redundant assignment.
+@N: CL189 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\top.v":51:0:51:5|Register bit tx_er is always 0.
+@N: CL159 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":19:13:19:16|Input rstn is unused.
+@N: CL159 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":20:13:20:18|Input rx_clk is unused.
+@N|Running in 64-bit mode
+

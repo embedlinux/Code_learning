@@ -1,0 +1,2 @@
+@E: CG906 :"D:\design\DBSTAR_RGMII\par\fpga_project_1\src\top.v":46:33:46:37|Reference to unknown variable rx_en.
+

@@ -1,0 +1,15 @@
+<?xml version="1" encoding="UTF-8"?>
+<!DOCTYPE gowin-fpga-project>
+<Project>
+    <Template>FPGA</Template>
+    <Version>3</Version>
+    <Device id="GW2AR-18" package="LQFP144" speed="8"/>
+    <FileList>
+        <File type="file.verilog" enable="1" path="src/ddr_ecp3.v"/>
+        <File type="file.verilog" enable="1" path="src/rgmii2gmii.v"/>
+        <File type="file.verilog" enable="1" path="src/top.v"/>
+        <File type="file.cst" enable="1" path="src/fpga_project_1.cst"/>
+        <File type="file.verilog" enable="1" path="src/gw_pll/gw_pll.v"/>
+        <File type="file.gao" enable="1" path="src/TEST.gao"/>
+    </FileList>
+</Project>

@@ -1,0 +1,32 @@
+Warning (CM1005) : Unsupported attribute 'background_programming' to current device 'GW2AR-18' found in configure file.
+Info    (PA0001) : "G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\fpga_project_1.vm" | Reading netlist file.
+Info    (PA0004) : Parsing netlist file 'G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\fpga_project_1.vm' completed.
+Info    (PA0006) : Processing netlist completed.
+Info    (PA0004) : Parsing netlist file 'G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\gao.v' completed.
+Warning (PA1000) : Dangling Net 'tdo_er2' in module 'gw_gao' has NO source instance.
+Warning (PA1000) : Dangling Net 'rx_clk' in module 'ao_top_0' has NO source instance.
+Warning (PA1000) : Dangling Net 'rx_clk' in module 'ao_top_0' has NO source instance.
+Warning (PA1000) : Dangling Net 'rx_clk' in module 'ao_top_0' has NO source instance.
+Warning (PA1000) : Dangling Net 'rx_clk' in module 'ao_top_0' has NO source instance.
+Warning (PA1000) : Dangling Net 'rx_clk' in module 'ao_top_0' has NO source instance.
+Warning (PA1000) : Dangling Net 'rx_clk' in module 'ao_top_0' has NO source instance.
+Warning (PA1000) : Dangling Net 'rx_clk' in module 'ao_top_0' has NO source instance.
+Warning (PA1000) : Dangling Net 'rx_clk' in module 'ao_top_0' has NO source instance.
+Warning (PA1000) : Dangling Net 'rx_clk' in module 'ao_top_0' has NO source instance.
+Info    (PA0006) : Processing netlist completed.
+Warning (CT1001) : Generic routing resource will be used to clock signal 'clk' by the specified constraint. And then it may lead to the excessive delay or skew.
+Info    (CT0002) : Physical Constraint parsed completed.
+Info    (PR0001) : Placement in progress......
+Info    (PR0005) : Routing in progress......
+Info    (PR0002) : Placement and routing completed.
+Info    (TA0001) : Timing analysis completed.
+Info    (PR0008) : Placement and routing completed for gao design.
+Info    (FS0001) : Bitstream generation in progress......
+Info    (FS0002) : Bitstream generation completed.
+Info    (PW0001) : Power analysis completed.
+Info    (CM0008) : Generate 'fpga_project_1.power.html' file completed.
+Info    (CM0008) : Generate 'fpga_project_1.tr.html' file completed.
+Info    (CM0008) : Generate 'fpga_project_1.rpt.html' file completed.
+Info    (CM0008) : Generate 'fpga_project_1.rpt.txt' file completed.
+Info    (CM0001) : Mon Jul 02 20:12:06 2018
+

@@ -1,0 +1,72 @@
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+
+#### START OF AREA REPORT #####[
+
+Part:			GW2AR_18LQFP144-8 (GoWin)
+
+-------------------------------------------------------------------
+########   Utilization report for  Top level view:   top   ########
+===================================================================
+
+SEQUENTIAL ELEMENTS
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+REGISTERS     110                100 %                
+======================================================
+Total SEQUENTIAL ELEMENTS in the block top:	110 (33.03 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+LUTS          88                 100 %                
+MUX2_LUT5     16                 100 %                
+MUX2_LUT6     3                  100 %                
+ALU           64                 100 %                
+======================================================
+Total COMBINATIONAL LOGIC in the block top:	171 (51.35 % Utilization)
+
+----------------------------------------------------------------
+########   Utilization report for  cell:   rgmii2gmii   ########
+Instance path:   top.rgmii2gmii                                 
+================================================================
+
+SEQUENTIAL ELEMENTS
+Name          Total elements     Utilization     Notes
+------------------------------------------------------
+REGISTERS     19                 17.3 %               
+======================================================
+Total SEQUENTIAL ELEMENTS in the block top.rgmii2gmii:	19 (5.71 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+LUTS     1                  1.14 %               
+=================================================
+Total COMBINATIONAL LOGIC in the block top.rgmii2gmii:	1 (0.30 % Utilization)
+
+---------------------------------------------------------
+########   Utilization report for  cell:   DDR   ########
+Instance path:   rgmii2gmii.DDR                          
+=========================================================
+------------------------------------------------------------
+########   Utilization report for  cell:   GW_PLL   ########
+Instance path:   rgmii2gmii.GW_PLL                          
+============================================================
+
+##### END OF AREA REPORT #####]
+

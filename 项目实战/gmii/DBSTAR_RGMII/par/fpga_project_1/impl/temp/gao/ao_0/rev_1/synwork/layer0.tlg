@@ -1,0 +1,15 @@
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_parameter.v":1:0:1:8|Synthesizing module work_G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_parameter.v_unit in library work.
+Selecting top level module ao_top_0
+Extracted state machine for register module_state
+State machine has 11 reachable states with original encodings of:
+   0000
+   0001
+   0010
+   0011
+   0100
+   0101
+   0110
+   0111
+   1001
+   1010
+   1011

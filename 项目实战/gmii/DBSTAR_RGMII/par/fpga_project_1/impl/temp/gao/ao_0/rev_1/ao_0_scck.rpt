@@ -1,0 +1,51 @@
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+
+# Written on Mon Jul  2 20:11:32 2018
+
+##### FILES SYNTAX CHECKED ##############################################
+Constraint File(s):      (none)
+
+#Run constraint checker to find more issues with constraints.
+#########################################################################
+
+
+
+No issues found in constraint syntax.
+
+
+
+Clock Summary
+*************
+
+          Start                   Requested     Requested     Clock        Clock                     Clock
+Level     Clock                   Frequency     Period        Type         Group                     Load 
+----------------------------------------------------------------------------------------------------------
+0 -       ao_top_0|control[0]     150.0 MHz     6.667         inferred     Autoconstr_clkgroup_1     462  
+                                                                                                          
+0 -       ao_top_0|clk_i          217.6 MHz     4.596         inferred     Autoconstr_clkgroup_0     149  
+==========================================================================================================
+
+
+Clock Load Summary
+******************
+
+                        Clock     Source               Clock Pin                                Non-clock Pin     Non-clock Pin       
+Clock                   Load      Pin                  Seq Example                              Seq Example       Comb Example        
+--------------------------------------------------------------------------------------------------------------------------------------
+ao_top_0|control[0]     462       control[0](port)     data_register[72:0].C                    -                 -                   
+                                                                                                                                      
+ao_top_0|clk_i          149       clk_i(port)          internal_reg_force_triger_syn[1:0].C     -                 clk_ao.I[0](keepbuf)
+======================================================================================================================================

@@ -1,0 +1,146 @@
+#Build: Synplify Pro (R) N-2018.03G-Beta6, Build 118R, May 15 2018
+#install: C:\Gowin\1.8\SynplifyPro
+#OS: Windows 8 6.2
+#Hostname: DESKTOP-NJ8P8F8
+
+# Mon Jul  2 20:17:33 2018
+
+#Implementation: rev_1
+
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+Synopsys HDL Compiler, Version comp2018q1p1, Build 118R, Built May 15 2018 09:18:11
+
+@N|Running in 64-bit mode
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+Synopsys Verilog Compiler, Version comp2018q1p1, Build 118R, Built May 15 2018 09:18:11
+
+@N|Running in 64-bit mode
+@N:: Running Verilog Compiler in System Verilog mode
+@N:: Running Verilog Compiler in Multiple File Compilation Unit mode
+@I::"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v" (library work)
+@I::"C:\Gowin\1.8\SynplifyPro\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"C:\Gowin\1.8\SynplifyPro\lib\vlog\umr_capim.v" (library snps_haps)
+@I::"C:\Gowin\1.8\SynplifyPro\lib\vlog\scemi_objects.v" (library snps_haps)
+@I::"C:\Gowin\1.8\SynplifyPro\lib\vlog\scemi_pipes.svh" (library snps_haps)
+@I::"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v" (library work)
+@I::"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\rgmii2gmii.v" (library work)
+@I::"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\top.v" (library work)
+@I::"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\gw_pll\gw_pll.v" (library work)
+Verilog syntax check successful!
+
+Compiler output is up to date.  No re-compile necessary
+
+Selecting top level module top
+@N: CG364 :"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v":1532:7:1532:9|Synthesizing module PLL in library work.
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\gw_pll\gw_pll.v":13:7:13:12|Synthesizing module GW_PLL in library work.
+@N: CG364 :"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v":558:7:558:13|Synthesizing module IODELAY in library work.
+@N: CG364 :"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v":386:7:386:10|Synthesizing module IDDR in library work.
+@N: CG364 :"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v":415:7:415:10|Synthesizing module ODDR in library work.
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":2:7:2:9|Synthesizing module DDR in library work.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":40:10:40:17|Object ireg_pos is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":41:10:41:17|Object ireg_neg is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":42:10:42:18|Object din_clk_a is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":43:10:43:18|Object din_clk_b is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":44:6:44:17|Object ireg_ctl_pos is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":45:6:45:17|Object ireg_ctl_neg is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":46:6:46:14|Object rx_ctrl_a is declared but not assigned. Either assign a value or remove the declaration.
+@W: CG133 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":47:6:47:14|Object rx_ctrl_b is declared but not assigned. Either assign a value or remove the declaration.
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\rgmii2gmii.v":2:7:2:16|Synthesizing module rgmii2gmii in library work.
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\top.v":2:7:2:9|Synthesizing module top in library work.
+@N: CG179 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\top.v":47:58:47:63|Removing redundant assignment.
+@N: CG179 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\top.v":48:58:48:63|Removing redundant assignment.
+@N: CL189 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\top.v":51:0:51:5|Register bit tx_er is always 0.
+@N: CL159 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":19:13:19:16|Input rstn is unused.
+@N: CL159 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\src\ddr_ecp3.v":20:13:20:18|Input rx_clk is unused.
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 68MB peak: 70MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Mon Jul  2 20:17:34 2018
+
+###########################################################]
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+Synopsys Synopsys Netlist Linker, Version comp2018q1p1, Build 118R, Built May 15 2018 09:18:11
+
+@N|Running in 64-bit mode
+
+Linker output is up to date. No re-linking necessary
+
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Mon Jul  2 20:17:34 2018
+
+###########################################################]
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Mon Jul  2 20:17:34 2018
+
+###########################################################]
+
+@A: multi_srs_gen output is up to date. No run necessary.
+To force a re-synthesis, select [Resynthesize All] in menu [Run].
+Click link to view previous log file.
+Multi-srs Generator Report
+@R:"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\synlog\fpga_project_1_multi_srs_gen.srr"
+
+@A: premap output is up to date. No run necessary.
+To force a re-synthesis, select [Resynthesize All] in menu [Run].
+Click link to view previous log file.
+Premap Report
+@R:"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\synlog\fpga_project_1_premap.srr"
+
+@A: fpga_mapper output is up to date. No run necessary.
+To force a re-synthesis, select [Resynthesize All] in menu [Run].
+Click link to view previous log file.
+Map & Optimize Report
+@R:"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\synthesize\rev_1\synlog\fpga_project_1_fpga_mapper.srr"

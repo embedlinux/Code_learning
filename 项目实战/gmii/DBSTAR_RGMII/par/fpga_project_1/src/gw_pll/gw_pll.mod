@@ -1,0 +1,31 @@
+-series GW2AR
+-device GW2AR-18
+-package LQFP144
+
+
+-mod_name GW_PLL
+-file_name gw_pll
+-path D:/design/DBSTAR_RGMII/par/fpga_project_1/src/gw_pll/
+-type PLL
+-file_type vlg
+-dev_type gw2ar18
+-dyn_idiv_sel false
+-idiv_sel 1
+-dyn_fbdiv_sel false
+-fbdiv_sel 5
+-odiv_sel 8
+-dyn_da_en false
+-rst_sig false
+-fclkin 25
+-rst_sig_i false
+-clkfb_sel 0
+-en_lock true
+-clkout_bypass false
+-en_clkoutp true
+-clkoutp_bypass false
+-psda_sel 4
+-dutyda_sel 8
+-rst_sig_p false
+-en_clkoutd false
+-clkoutd_bypass false
+-en_clkoutd3 false

@@ -1,0 +1,24 @@
+@N: MF916 |Option synthesis_strategy=base is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: MT206 |Auto Constrain mode is enabled
+@N: FX493 |Applying initial value "00000000" on instance txd[7:0].
+@N: FX493 |Applying initial value "0" on instance tx_en.
+@N: FX493 |Applying initial value "00000000000000000000" on instance cnt0[19:0].
+@N: FX493 |Applying initial value "0000000000" on instance cnt[9:0].
+@N: MO231 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":44:0:44:5|Found counter in view:work.top(verilog) instance tx_cnt[15:0] 
+@N: MO231 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":44:0:44:5|Found counter in view:work.top(verilog) instance rx_cnt[15:0] 
+@N: MO106 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":65:14:65:24|Found ROM txd_2[7:0] (in view: work.top(verilog)) with 64 words by 8 bits.
+@N: FX271 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":32:0:32:5|Replicating instance cnt[2] (in view: work.top(verilog)) with 29 loads 2 times to improve timing.
+@N: FX271 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":32:0:32:5|Replicating instance cnt[0] (in view: work.top(verilog)) with 25 loads 2 times to improve timing.
+@N: FX271 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":32:0:32:5|Replicating instance cnt[4] (in view: work.top(verilog)) with 27 loads 2 times to improve timing.
+@N: FX271 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":32:0:32:5|Replicating instance cnt[1] (in view: work.top(verilog)) with 26 loads 2 times to improve timing.
+@N: FX271 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":32:0:32:5|Replicating instance cnt[5] (in view: work.top(verilog)) with 10 loads 1 time to improve timing.
+@N: FX271 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":32:0:32:5|Replicating instance cnt[3] (in view: work.top(verilog)) with 27 loads 2 times to improve timing.
+@N: FX271 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":52:4:52:5|Replicating instance g0 (in view: work.top(verilog)) with 5 loads 1 time(s) to improve timing.
+@N: FX271 :"g:\gowin_test\dbstar_rgmii\par\fpga_project_1\src\top.v":32:0:32:5|Replicating instance cnt[6] (in view: work.top(verilog)) with 12 loads 1 time to improve timing.
+@N: FX164 |The option to pack registers in the IOB has not been specified. Please set syn_useioff attribute.  
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

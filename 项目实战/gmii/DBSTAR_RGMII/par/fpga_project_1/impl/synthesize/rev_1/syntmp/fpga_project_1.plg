@@ -1,0 +1,22 @@
+@P:  Worst Slack : -0.623
+@P:  GW_PLL|clkout_inferred_clock - Estimated Frequency : 240.6 MHz
+@P:  GW_PLL|clkout_inferred_clock - Requested Frequency : 283.1 MHz
+@P:  GW_PLL|clkout_inferred_clock - Estimated Period : 4.156
+@P:  GW_PLL|clkout_inferred_clock - Requested Period : 3.533
+@P:  GW_PLL|clkout_inferred_clock - Slack : -0.623
+@P:  top|clk - Estimated Frequency : 255.2 MHz
+@P:  top|clk - Requested Frequency : 300.3 MHz
+@P:  top|clk - Estimated Period : 3.918
+@P:  top|clk - Requested Period : 3.330
+@P:  top|clk - Slack : -0.588
+@P:  top|rx_clk - Estimated Frequency : 751.3 MHz
+@P:  top|rx_clk - Requested Frequency : 883.9 MHz
+@P:  top|rx_clk - Estimated Period : 1.331
+@P:  top|rx_clk - Requested Period : 1.131
+@P:  top|rx_clk - Slack : -0.200
+@P: top Part : gw2ar_18lqfp144-8
+@P: top I/O primitives : 16
+@P: top I/O Register bits : 0
+@P: top Register bits (Non I/O) : 110 (0%)
+@P: top Total Luts : 88 of 800 (0%)
+@P:  CPU Time : 0h:00m:04s

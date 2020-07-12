@@ -1,0 +1,21 @@
+/***********************************************************************
+ Physical Constraint file 
+ Version:1.8.0Alpha
+ Created Time:   Mon Mar 26 11:07:38 2018
+ Device:         GW2AR-18
+ Package:        LQFP144
+************************************************************************/
+IO_LOC "clk" 106;
+IO_LOC "rd[0]" 122;
+IO_LOC "rd[1]" 123;
+IO_LOC "rd[2]" 124;
+IO_LOC "rd[3]" 125;
+IO_LOC "rx_clk" 121;
+IO_LOC "rx_ctl" 126;
+IO_LOC "td[0]" 87;
+IO_LOC "td[1]" 88;
+IO_LOC "td[2]" 90;
+IO_LOC "td[3]" 92;
+IO_LOC "tx_clk" 97;
+IO_LOC "tx_ctl" 86;
+INS_LOC "u_rgmii2gmii/U_PLL_TX/pll_inst" PLL_L[1];

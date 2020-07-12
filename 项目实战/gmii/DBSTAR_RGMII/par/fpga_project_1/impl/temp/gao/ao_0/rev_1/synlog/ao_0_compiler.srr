@@ -1,0 +1,138 @@
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+Synopsys HDL Compiler, Version comp2018q1p1, Build 118R, Built May 15 2018 09:18:11
+
+@N|Running in 64-bit mode
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+Synopsys Verilog Compiler, Version comp2018q1p1, Build 118R, Built May 15 2018 09:18:11
+
+@N|Running in 64-bit mode
+@N:: Running Verilog Compiler in System Verilog mode
+@N:: Running Verilog Compiler in Multiple File Compilation Unit mode
+@I::"C:\Gowin\1.8\SynplifyPro\lib\generic\gw2a.v" (library work)
+@I::"C:\Gowin\1.8\SynplifyPro\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"C:\Gowin\1.8\SynplifyPro\lib\vlog\umr_capim.v" (library snps_haps)
+@I::"C:\Gowin\1.8\SynplifyPro\lib\vlog\scemi_objects.v" (library snps_haps)
+@I::"C:\Gowin\1.8\SynplifyPro\lib\vlog\scemi_pipes.svh" (library snps_haps)
+@I::"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_parameter.v" (library work)
+@I::"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_top_define.v" (library work)
+@I::"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_expression.v" (library work)
+@I::"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_crc32.v" (library work)
+@I::"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_define.v" (library work)
+@I::"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v" (library work)
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":109:9:109:26|Net match_m0_en_reg_wr is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":110:9:110:26|Net match_m1_en_reg_wr is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":111:9:111:26|Net match_m2_en_reg_wr is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":112:9:112:27|Net match_ctl_en_reg_wr is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_match.v":113:9:113:24|Net match_cnt_reg_wr is not declared.
+@I::"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v" (library work)
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_mem_ctrl.v":122:9:122:27|Net capture_length_zero is not declared.
+@I::"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v" (library work)
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":500:9:500:20|Net start_reg_wr is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":503:9:503:29|Net trig_level_max_reg_wr is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":504:9:504:31|Net capture_mem_addr_max_wr is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":505:9:505:31|Net capture_mem_addr_rem_wr is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":506:9:506:30|Net capture_windows_num_wr is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1717:9:1717:18|Net match_en_0 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1718:9:1718:18|Net match_en_1 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1719:9:1719:18|Net match_en_2 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1720:9:1720:18|Net match_en_3 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1721:9:1721:18|Net match_en_4 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1722:9:1722:18|Net match_en_5 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1723:9:1723:18|Net match_en_6 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1724:9:1724:18|Net match_en_7 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1725:9:1725:18|Net match_en_8 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1726:9:1726:18|Net match_en_9 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1727:9:1727:19|Net match_en_10 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1728:9:1728:19|Net match_en_11 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1729:9:1729:19|Net match_en_12 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1730:9:1730:19|Net match_en_13 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1731:9:1731:19|Net match_en_14 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":1732:9:1732:19|Net match_en_15 is not declared.
+@W: CG1337 :"C:\Gowin\1.8\IDE\data\ipcores\GAO\GW_AO_0\gw_ao_top.v":2213:9:2213:16|Net stop_reg is not declared.
+Verilog syntax check successful!
+@N: CG364 :"G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_parameter.v":1:0:1:8|Synthesizing module work_G:\gowin_test\DBSTAR_RGMII\par\fpga_project_1\impl\temp\gao\ao_0\gw_ao_parameter.v_unit in library work.
+Selecting top level module ao_top_0
+Extracted state machine for register module_state
+State machine has 11 reachable states with original encodings of:
+   0000
+   0001
+   0010
+   0011
+   0100
+   0101
+   0110
+   0111
+   1001
+   1010
+   1011
+
+At c_ver Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 80MB peak: 90MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Mon Jul  2 20:11:29 2018
+
+###########################################################]
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify Pro (R)
+Build: N-2018.03G-Beta6
+Install: C:\Gowin\1.8\SynplifyPro
+OS: Windows 6.2
+
+Hostname: DESKTOP-NJ8P8F8
+
+Implementation : rev_1
+Synopsys Synopsys Netlist Linker, Version comp2018q1p1, Build 118R, Built May 15 2018 09:18:11
+
+@N|Running in 64-bit mode
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 68MB peak: 70MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Mon Jul  2 20:11:29 2018
+
+###########################################################]
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 3MB peak: 4MB)
+
+Process took 0h:00m:02s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Mon Jul  2 20:11:29 2018
+
+###########################################################]
