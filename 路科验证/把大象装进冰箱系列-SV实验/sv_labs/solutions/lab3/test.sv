@@ -160,17 +160,17 @@ program automatic test(router_io.TB rtr_io);
           datum[i++] = rtr_io.cb.dout[da];
         if(rtr_io.cb.frameo_n[da])
           if(i==8) begin //byte alligned
-      	  pkt2cmp_payload.push_back(datum);
-      	  return;      //done with payload
-      	end
+      	     pkt2cmp_payload.push_back(datum);
+      	     return;      //done with payload
+		  end
 
           //Lab 3 - Task 3, Step 7
           //
           //If payload is not byte aligned, print message and end simulation
           //ToDo
-      	else begin
-      	  $display("\n%m\n[ERROR]%t Packet payload not byte aligned!\n", $realtime);
-      	  $finish;
+      	  else begin
+      	     $display("\n%m\n[ERROR]%t Packet payload not byte aligned!\n", $realtime);
+      	     $finish;
       	end
         @(rtr_io.cb);
       end
