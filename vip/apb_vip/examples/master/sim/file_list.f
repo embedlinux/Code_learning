@@ -1,0 +1,15 @@
+../rtl/aes_ctrl.v
+../rtl/aes_enc.v
+../rtl/aes_enc_core.v
+../rtl/aes_key_gen.v
+../rtl/aes_mx_clm.v
+../rtl/aes_sbox.v
+../rtl/aes_sbox_inv.v
+../rtl/aes_s_apb.v
+../../../verification_ip/master/apb_m.sv
+../../../verification_ip/master/apb_m_if.sv
+../testbench/packet.sv
+../testbench/aes.sv
+../testbench/testenv.sv
+../testbench/testbench_top.sv
+../testbench/test.sv
