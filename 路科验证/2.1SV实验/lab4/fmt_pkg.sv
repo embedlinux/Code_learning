@@ -106,17 +106,17 @@ package fmt_pkg;
       forever begin
         this.req_mb.get(req);
         case(req.fifo)
-          SHORT_FIFO: this.fifo_bound = 64;
-          MED_FIFO: this.fifo_bound = 256;
-          LONG_FIFO: this.fifo_bound = 512;
-          ULTRA_FIFO: this.fifo_bound = 2048;
+          SHORT_FIFO: 	this.fifo_bound = 64;
+          MED_FIFO: 	this.fifo_bound = 256;
+          LONG_FIFO: 	this.fifo_bound = 512;
+          ULTRA_FIFO: 	this.fifo_bound = 2048;
         endcase
         this.fifo = new(this.fifo_bound);
         case(req.bandwidth)
-          LOW_WIDTH: this.data_consum_peroid = 8;
-          MED_WIDTH: this.data_consum_peroid = 4;
-          HIGH_WIDTH: this.data_consum_peroid = 2;
-          ULTRA_WIDTH: this.data_consum_peroid = 1;
+          LOW_WIDTH: 	this.data_consum_peroid = 8;
+          MED_WIDTH: 	this.data_consum_peroid = 4;
+          HIGH_WIDTH: 	this.data_consum_peroid = 2;
+          ULTRA_WIDTH: 	this.data_consum_peroid = 1;
         endcase
         rsp = req.clone();
         rsp.rsp = 1;
