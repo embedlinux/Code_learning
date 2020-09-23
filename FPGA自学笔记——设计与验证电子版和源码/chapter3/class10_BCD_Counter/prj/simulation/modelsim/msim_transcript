@@ -1,0 +1,50 @@
+# Reading D:/altera/13.0/modelsim_ae/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do BCD_Counter_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/rtl {D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/rtl/BCD_Counter.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module BCD_Counter
+# 
+# Top level modules:
+# 	BCD_Counter
+# 
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench {D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench/BCD_Counter_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module BCD_Counter_tb
+# 
+# Top level modules:
+# 	BCD_Counter_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  BCD_Counter_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps BCD_Counter_tb 
+# //  ModelSim ALTERA 10.1d Nov  2 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.BCD_Counter_tb
+# Loading work.BCD_Counter
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module BCD_Counter_tb at D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench/BCD_Counter_tb.v line 38
+# Simulation Breakpoint: Break in Module BCD_Counter_tb at D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench/BCD_Counter_tb.v line 38
+# MACRO ./BCD_Counter_run_msim_rtl_verilog.do PAUSED at line 17

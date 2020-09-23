@@ -1,0 +1,25 @@
+`timescale 1ns/1ns
+`define clk_period 20
+
+module uart_byte_rx_tb;
+
+	reg Clk;
+	reg Rst_n;
+	reg [2:0]baud_set;
+	reg Rs232_Rx;
+	
+	wire [7:0]data_byte;
+	wire Rx_Done;	
+	
+	uart_byte_rx uart_byte_rx(
+		.Clk(),
+		.Rst_n(),
+		.baud_set(),
+		.Rs232_Rx(),
+		
+		.data_byte(),
+		.Rx_Done()
+	);
+
+
+endmodule

@@ -1,0 +1,7 @@
+
+State Machine - |ir_decode_test|ir_decode:ir_decode|state
+Name state.DATE_GET state.LEADER_T4_5 state.LEADER_T9 state.IDEL 
+state.IDEL 0 0 0 0 
+state.LEADER_T9 0 0 1 1 
+state.LEADER_T4_5 0 1 0 1 
+state.DATE_GET 1 0 0 1 

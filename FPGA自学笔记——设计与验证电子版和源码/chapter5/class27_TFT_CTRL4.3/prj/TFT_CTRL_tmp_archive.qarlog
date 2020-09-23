@@ -1,0 +1,28 @@
+Quartus II Archive log --	G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/TFT_CTRL_tmp_archive.qarlog
+
+Archive:	G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/TFT_CTRL_tmp_archive.qar
+Date:		Thu Jul 21 23:03:57 2016
+Quartus II 64-Bit		13.0.0 Build 156 04/24/2013 SJ Full Version
+
+	=========== Files Selected: ===========
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/TFT_CTRL.qpf
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/TFT_CTRL.qsf
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/TFT_test_pll.ppf
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/TFT_test_pll.qip
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/TFT_test_pll.v
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/TFT_test_pll_bb.v
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/incremental_db/compiled_partitions/TFT_CTRL.db_info
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/rtl/TFT_CTRL.v
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/rtl/TFT_CTRL_test.v
+G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/testbench/TFT_CTRL_tb.v
+d:/altera/13.0/quartus/bin64/assignment_defaults.qdf
+	======= Total: 11 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
+
+
+******* Archived project restoration attempt on Thu Jul 21 23:04:00 2016
+Source archive file:	G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRL/prj/TFT_CTRL_tmp_archive.qar
+Archive was extracted into	G:/XiaoMeige_fpga_System/CoreCourseDemo/TFT_CTRLcopy/
+		 - successfully.

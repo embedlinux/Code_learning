@@ -1,0 +1,47 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter3\class10_BCD_Counter\prj\simulation\modelsim
+vBCD_Counter
+IfI?c6DS]h3YBK<]SeCh]k3
+VH[7_LSR:lYLOXZ8emeF8D2
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter3\class10_BCD_Counter\prj\simulation\modelsim
+w1490972785
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/rtl/BCD_Counter.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/rtl/BCD_Counter.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@b@c@d_@counter
+!i10b 1
+!s100 DkVa@66RI8gmWb;IfRTFf1
+!s85 0
+!s108 1512654466.702000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/rtl/BCD_Counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/rtl/BCD_Counter.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/rtl -O0
+vBCD_Counter_tb
+!i10b 1
+!s100 mHOd2mY@4BKSlaEk5S>;70
+I>cWQ5jXC<JzL;K@Gmd`TS0
+Vo_g2R69_=IX?nKA:>g0I@3
+R1
+w1437790462
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench/BCD_Counter_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench/BCD_Counter_tb.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1512654466.756000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench/BCD_Counter_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench/BCD_Counter_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class10_BCD_Counter/prj/../testbench -O0
+n@b@c@d_@counter_tb

@@ -1,0 +1,168 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter4\class19_UART_DPRAM\prj\simulation\modelsim
+vCTRL
+IJ[cYHn_NBYHDKkP8mDQ7N1
+VU;kj]`l6@no``DGFZGm7@1
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter4\class19_UART_DPRAM\prj\simulation\modelsim
+w1491014033
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/CTRL.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/CTRL.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl -O0
+n@c@t@r@l
+!i10b 1
+!s100 L7@dRg8DU5TPF0V^73?Dd1
+!s85 0
+!s108 1512659618.474000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/CTRL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl|D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/CTRL.v|
+!s101 -O0
+vdpram
+IU[?1Q:[7oFM68KQU8QgQG3
+V;=38g?5kMHzzGmY>9f;=I2
+R1
+w1491013124
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/ip/dpram.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/ip/dpram.v
+L0 39
+R2
+r1
+31
+R3
+!i10b 1
+!s100 _D@MMKbke7ciR7OWEHQ4B0
+!s85 0
+!s108 1512659618.107000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/ip/dpram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/ip|D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/ip/dpram.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/ip -O0
+vkey_filter
+I`V]YQXOQL674T2_z<eEo<0
+VcmQS:L56j<?^X7Q2YZ0eD2
+R1
+w1491013818
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/key_filter.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/key_filter.v
+L0 11
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 oB4HKKdibTP;VenB=Ne;X2
+!s85 0
+!s108 1512659618.398000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/key_filter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl|D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/key_filter.v|
+!s101 -O0
+vkey_model
+!i10b 1
+!s100 1bm;VY0:QNz]?SWXD;mYQ3
+I`hZ>]C?4Eb1g6lAo2iXiI2
+VYDWdeDVKiJWTl:zaaOkVC1
+R1
+w1440855868
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench/key_model.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench/key_model.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1512659618.623000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench/key_model.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench/key_model.v|
+!s101 -O0
+R3
+Z5 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench -O0
+vuart_byte_rx
+I;>f9BWflhjFND7DA<GSfh2
+Vfb<e?M2ePFEF3dQ7>4@^80
+R1
+w1491013784
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/uart_byte_rx.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/uart_byte_rx.v
+L0 11
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 zTEZIAJ`aA?P?X1C5Ifza3
+!s85 0
+!s108 1512659618.322000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/uart_byte_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl|D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/uart_byte_rx.v|
+!s101 -O0
+vuart_byte_tx
+ImTzz[MADjN3Ibo9_9cje21
+Vfdg2RF=>LIZSQoIj;dU@E0
+R1
+w1491013796
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/uart_byte_tx.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/uart_byte_tx.v
+L0 11
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 niLOI514mnF60e=CQZH0^1
+!s85 0
+!s108 1512659618.250000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/uart_byte_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl|D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/uart_byte_tx.v|
+!s101 -O0
+vUART_DPRAM
+Ia>TAC7S3gOz]7hh7oVJQW0
+V@QndZM0`5QiMg;flXUNI41
+R1
+w1491013937
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/UART_DPRAM.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/UART_DPRAM.v
+L0 11
+R2
+r1
+31
+R3
+n@u@a@r@t_@d@p@r@a@m
+R4
+!i10b 1
+!s100 dzYcFED^6I7<I]dO6i=Y>2
+!s85 0
+!s108 1512659618.180000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/UART_DPRAM.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl|D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/rtl/UART_DPRAM.v|
+!s101 -O0
+vUART_DPRAM_tb
+IRbJO6T]L7Vn21zH2JRjXi2
+V^Bc:2T[i?Q;;l7;TALb;51
+R1
+w1444831384
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench/UART_DPRAM_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench/UART_DPRAM_tb.v
+L0 5
+R2
+r1
+31
+R3
+n@u@a@r@t_@d@p@r@a@m_tb
+!i10b 1
+!s100 l`hW7RPS>CU1AUb1hhUT:2
+!s85 0
+!s108 1512659618.548000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench/UART_DPRAM_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter4/class19_UART_DPRAM/prj/../testbench/UART_DPRAM_tb.v|
+!s101 -O0
+R5

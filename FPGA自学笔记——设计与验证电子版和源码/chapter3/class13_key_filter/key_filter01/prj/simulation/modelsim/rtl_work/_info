@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter3\class13_key_filter\key_filter01\prj\simulation\modelsim
+vkey_filter
+IbTRYU7TzzkCIB]:HCG?>>2
+VcmQS:L56j<?^X7Q2YZ0eD2
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter3\class13_key_filter\key_filter01\prj\simulation\modelsim
+w1490973855
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/rtl/key_filter.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/rtl/key_filter.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 e9Tna19gmPaV_;7iP_Vla1
+!s85 0
+!s108 1512657468.349000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/rtl/key_filter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/rtl/key_filter.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/rtl -O0
+vkey_filter_tb
+!i10b 1
+!s100 4LEa169^>UeigjDcS[Y9E0
+I]D1QzPfk]gQJ3O_ZHijGl1
+VT6bW6H4OZ8Z;cP@K;akW^3
+R1
+w1512657414
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/prj/../testbench/key_filter_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/prj/../testbench/key_filter_tb.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1512657468.426000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/prj/../testbench/key_filter_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/prj/../testbench/key_filter_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter01/prj/../testbench -O0

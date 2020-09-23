@@ -1,0 +1,572 @@
+Analysis & Synthesis report for Dig_Volt
+Thu Nov 08 11:28:48 2018
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |Dig_Volt|Channel_Slect:Channel_Slect|key_filter:key_filter|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: HEX_top:HEX_top|HC595_Driver:HC595_Driver
+ 14. Parameter Settings for Inferred Entity Instance: Hex_to_V:Hex_to_V|lpm_mult:Mult0
+ 15. lpm_mult Parameter Settings by Entity Instance
+ 16. Port Connectivity Checks: "HEX_top:HEX_top|HC595_Driver:HC595_Driver"
+ 17. Port Connectivity Checks: "HEX_top:HEX_top|HEX8:HEX8"
+ 18. Port Connectivity Checks: "HEX_top:HEX_top"
+ 19. Port Connectivity Checks: "Binary_to_BCD:Binary_to_BCD|bcd_modify:bcd_modify"
+ 20. Port Connectivity Checks: "Binary_to_BCD:Binary_to_BCD"
+ 21. Port Connectivity Checks: "adc128s022:adc128s022"
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Nov 08 11:28:48 2018       ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Full Version ;
+; Revision Name                      ; Dig_Volt                                    ;
+; Top-level Entity Name              ; Dig_Volt                                    ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 415                                         ;
+;     Total combinational functions  ; 356                                         ;
+;     Dedicated logic registers      ; 245                                         ;
+; Total registers                    ; 245                                         ;
+; Total pins                         ; 10                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE10F17C8       ;                    ;
+; Top-level entity name                                                      ; Dig_Volt           ; Dig_Volt           ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                           ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+; ../rtl/key_filter.v              ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/Desktop/28_Dig_Volt/rtl/key_filter.v            ;         ;
+; ../rtl/HEX8.v                    ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/Desktop/28_Dig_Volt/rtl/HEX8.v                  ;         ;
+; ../rtl/HEX_top.v                 ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/Desktop/28_Dig_Volt/rtl/HEX_top.v               ;         ;
+; ../rtl/Hex_to_V.v                ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/Desktop/28_Dig_Volt/rtl/Hex_to_V.v              ;         ;
+; ../rtl/HC595_Driver.v            ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/Desktop/28_Dig_Volt/rtl/HC595_Driver.v          ;         ;
+; ../rtl/Dig_Volt.v                ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/Desktop/28_Dig_Volt/rtl/Dig_Volt.v              ;         ;
+; ../rtl/Channel_Slect.v           ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/Desktop/28_Dig_Volt/rtl/Channel_Slect.v         ;         ;
+; ../rtl/Binary_to_BCD.v           ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/Desktop/28_Dig_Volt/rtl/Binary_to_BCD.v         ;         ;
+; ../rtl/adc128s022.v              ; yes             ; User Verilog HDL File        ; C:/Users/Administrator/Desktop/28_Dig_Volt/rtl/adc128s022.v            ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/lpm_mult.tdf            ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/multcore.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; multcore.tdf                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/multcore.tdf            ;         ;
+; csa_add.inc                      ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/csa_add.inc             ;         ;
+; mpar_add.inc                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/mpar_add.inc            ;         ;
+; muleabz.inc                      ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/muleabz.inc             ;         ;
+; mul_lfrg.inc                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/mul_lfrg.inc            ;         ;
+; mul_boothc.inc                   ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/mul_boothc.inc          ;         ;
+; alt_ded_mult.inc                 ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/alt_ded_mult.inc        ;         ;
+; alt_ded_mult_y.inc               ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/alt_ded_mult_y.inc      ;         ;
+; dffpipe.inc                      ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/dffpipe.inc             ;         ;
+; mpar_add.tdf                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/mpar_add.tdf            ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; db/add_sub_kgh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrator/Desktop/28_Dig_Volt/prj/db/add_sub_kgh.tdf      ;         ;
+; db/add_sub_ogh.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Administrator/Desktop/28_Dig_Volt/prj/db/add_sub_ogh.tdf      ;         ;
+; altshift.tdf                     ; yes             ; Megafunction                 ; d:/altera/13.0/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 415       ;
+;                                             ;           ;
+; Total combinational functions               ; 356       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 149       ;
+;     -- 3 input functions                    ; 83        ;
+;     -- <=2 input functions                  ; 124       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 234       ;
+;     -- arithmetic mode                      ; 122       ;
+;                                             ;           ;
+; Total registers                             ; 245       ;
+;     -- Dedicated logic registers            ; 245       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 10        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 237       ;
+; Total fan-out                               ; 1981      ;
+; Average fan-out                             ; 3.19      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                               ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                ; Library Name ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |Dig_Volt                                         ; 356 (0)           ; 245 (0)      ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |Dig_Volt                                                                                                                                          ;              ;
+;    |Binary_to_BCD:Binary_to_BCD|                  ; 68 (56)           ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Binary_to_BCD:Binary_to_BCD                                                                                                              ;              ;
+;       |bcd_modify:bcd_modify|                     ; 12 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Binary_to_BCD:Binary_to_BCD|bcd_modify:bcd_modify                                                                                        ;              ;
+;          |bcd_single_modify:bcd0|                 ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Binary_to_BCD:Binary_to_BCD|bcd_modify:bcd_modify|bcd_single_modify:bcd0                                                                 ;              ;
+;          |bcd_single_modify:bcd1|                 ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Binary_to_BCD:Binary_to_BCD|bcd_modify:bcd_modify|bcd_single_modify:bcd1                                                                 ;              ;
+;          |bcd_single_modify:bcd2|                 ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Binary_to_BCD:Binary_to_BCD|bcd_modify:bcd_modify|bcd_single_modify:bcd2                                                                 ;              ;
+;          |bcd_single_modify:bcd3|                 ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Binary_to_BCD:Binary_to_BCD|bcd_modify:bcd_modify|bcd_single_modify:bcd3                                                                 ;              ;
+;    |Channel_Slect:Channel_Slect|                  ; 47 (4)            ; 35 (3)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Channel_Slect:Channel_Slect                                                                                                              ;              ;
+;       |key_filter:key_filter|                     ; 43 (43)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Channel_Slect:Channel_Slect|key_filter:key_filter                                                                                        ;              ;
+;    |HEX_top:HEX_top|                              ; 111 (0)           ; 64 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|HEX_top:HEX_top                                                                                                                          ;              ;
+;       |HC595_Driver:HC595_Driver|                 ; 42 (42)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|HEX_top:HEX_top|HC595_Driver:HC595_Driver                                                                                                ;              ;
+;       |HEX8:HEX8|                                 ; 69 (69)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|HEX_top:HEX_top|HEX8:HEX8                                                                                                                ;              ;
+;    |Hex_to_V:Hex_to_V|                            ; 96 (36)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Hex_to_V:Hex_to_V                                                                                                                        ;              ;
+;       |lpm_mult:Mult0|                            ; 60 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0                                                                                                         ;              ;
+;          |multcore:mult_core|                     ; 60 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core                                                                                      ;              ;
+;             |mpar_add:padder|                     ; 28 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder                                                                      ;              ;
+;                |lpm_add_sub:adder[0]|             ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]                                                 ;              ;
+;                   |add_sub_kgh:auto_generated|    ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_kgh:auto_generated                      ;              ;
+;                |mpar_add:sub_par_add|             ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add                                                 ;              ;
+;                   |lpm_add_sub:adder[0]|          ; 14 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]                            ;              ;
+;                      |add_sub_ogh:auto_generated| ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_ogh:auto_generated ;              ;
+;    |adc128s022:adc128s022|                        ; 34 (34)           ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Dig_Volt|adc128s022:adc128s022                                                                                                                    ;              ;
++---------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------+
+; State Machine - |Dig_Volt|Channel_Slect:Channel_Slect|key_filter:key_filter|state ;
++---------------+---------------+------------+---------------+----------------------+
+; Name          ; state.FILTER1 ; state.DOWN ; state.FILTER0 ; state.IDEL           ;
++---------------+---------------+------------+---------------+----------------------+
+; state.IDEL    ; 0             ; 0          ; 0             ; 0                    ;
+; state.FILTER0 ; 0             ; 0          ; 1             ; 1                    ;
+; state.DOWN    ; 0             ; 1          ; 0             ; 1                    ;
+; state.FILTER1 ; 1             ; 0          ; 0             ; 1                    ;
++---------------+---------------+------------+---------------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                          ;
++------------------------------------------+------------------------------------------------------------------+
+; Register name                            ; Reason for Removal                                               ;
++------------------------------------------+------------------------------------------------------------------+
+; adc128s022:adc128s022|en                 ; Merged with HEX_top:HEX_top|HC595_Driver:HC595_Driver|r_data[15] ;
+; Binary_to_BCD:Binary_to_BCD|shift_reg[0] ; Stuck at GND due to stuck port data_in                           ;
+; Total Number of Removed Registers = 2    ;                                                                  ;
++------------------------------------------+------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 245   ;
+; Number of registers using Synchronous Clear  ; 50    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 217   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 129   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------+
+; Inverted Register Statistics                                          ;
++-------------------------------------------------------------+---------+
+; Inverted Register                                           ; Fan out ;
++-------------------------------------------------------------+---------+
+; adc128s022:adc128s022|ADC_SCLK                              ; 2       ;
+; adc128s022:adc128s022|ADC_CS_N                              ; 3       ;
+; adc128s022:adc128s022|ADC_DIN                               ; 3       ;
+; HEX_top:HEX_top|HEX8:HEX8|sel_r[0]                          ; 12      ;
+; Channel_Slect:Channel_Slect|key_filter:key_filter|key_state ; 4       ;
+; Total number of inverted registers = 5                      ;         ;
++-------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Dig_Volt|adc128s022:adc128s022|DIV_CNT[6]          ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |Dig_Volt|Hex_to_V:Hex_to_V|Hex_SUM[16]             ;
+; 32:1               ; 15 bits   ; 315 LEs       ; 15 LEs               ; 300 LEs                ; Yes        ; |Dig_Volt|Binary_to_BCD:Binary_to_BCD|shift_reg[25] ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |Dig_Volt|Binary_to_BCD:Binary_to_BCD|shift_reg[20] ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 11 LEs               ; 33 LEs                 ; Yes        ; |Dig_Volt|Binary_to_BCD:Binary_to_BCD|shift_reg[12] ;
+; 256:1              ; 3 bits    ; 510 LEs       ; 57 LEs               ; 453 LEs                ; No         ; |Dig_Volt|HEX_top:HEX_top|HEX8:HEX8|Selector2       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: HEX_top:HEX_top|HC595_Driver:HC595_Driver ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; DATA_WIDTH     ; 16    ; Signed Integer                                                ;
+; CNT_MAX        ; 4     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: Hex_to_V:Hex_to_V|lpm_mult:Mult0   ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 16           ; Untyped             ;
+; LPM_WIDTHB                                     ; 12           ; Untyped             ;
+; LPM_WIDTHP                                     ; 28           ; Untyped             ;
+; LPM_WIDTHR                                     ; 28           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; YES          ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                           ;
++---------------------------------------+----------------------------------+
+; Name                                  ; Value                            ;
++---------------------------------------+----------------------------------+
+; Number of entity instances            ; 1                                ;
+; Entity Instance                       ; Hex_to_V:Hex_to_V|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                               ;
+;     -- LPM_WIDTHB                     ; 12                               ;
+;     -- LPM_WIDTHP                     ; 28                               ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                         ;
+;     -- INPUT_A_IS_CONSTANT            ; YES                              ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                               ;
+;     -- USE_EAB                        ; OFF                              ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                             ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                               ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                               ;
++---------------------------------------+----------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "HEX_top:HEX_top|HC595_Driver:HC595_Driver" ;
++----------+-------+----------+-----------------------------------------+
+; Port     ; Type  ; Severity ; Details                                 ;
++----------+-------+----------+-----------------------------------------+
+; Data[15] ; Input ; Info     ; Stuck at VCC                            ;
+; S_EN     ; Input ; Info     ; Stuck at VCC                            ;
++----------+-------+----------+-----------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "HEX_top:HEX_top|HEX8:HEX8" ;
++------+-------+----------+-----------------------------+
+; Port ; Type  ; Severity ; Details                     ;
++------+-------+----------+-----------------------------+
+; En   ; Input ; Info     ; Stuck at VCC                ;
++------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "HEX_top:HEX_top"         ;
++-------------------+-------+----------+--------------+
+; Port              ; Type  ; Severity ; Details      ;
++-------------------+-------+----------+--------------+
+; disp_data[31..30] ; Input ; Info     ; Stuck at VCC ;
+; disp_data[27..26] ; Input ; Info     ; Stuck at VCC ;
+; disp_data[19..17] ; Input ; Info     ; Stuck at VCC ;
+; disp_data[29..28] ; Input ; Info     ; Stuck at GND ;
+; disp_data[25]     ; Input ; Info     ; Stuck at GND ;
+; disp_data[24]     ; Input ; Info     ; Stuck at VCC ;
+; disp_data[23]     ; Input ; Info     ; Stuck at GND ;
+; disp_data[16]     ; Input ; Info     ; Stuck at GND ;
++-------------------+-------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Binary_to_BCD:Binary_to_BCD|bcd_modify:bcd_modify"                                          ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_out[47] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Binary_to_BCD:Binary_to_BCD"                                                                                                                            ;
++--------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                         ;
++--------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Do_Translate ; Input  ; Info     ; Stuck at VCC                                                                                                                                    ;
+; Bin          ; Input  ; Warning  ; Input port expression (16 bits) is smaller than the input port (20 bits) it drives.  Extra input bit(s) "Bin[19..16]" will be connected to GND. ;
+; Bcd          ; Output ; Warning  ; Output or bidir port (28 bits) is wider than the port expression (16 bits) it drives; bit(s) "Bcd[27..16]" have no fanouts                      ;
+; Done_Sig     ; Output ; Info     ; Explicitly unconnected                                                                                                                          ;
++--------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "adc128s022:adc128s022"            ;
++-----------------+--------+----------+------------------------+
+; Port            ; Type   ; Severity ; Details                ;
++-----------------+--------+----------+------------------------+
+; En_Conv         ; Input  ; Info     ; Stuck at VCC           ;
+; ADC_State       ; Output ; Info     ; Explicitly unconnected ;
+; DIV_PARAM[3..2] ; Input  ; Info     ; Stuck at VCC           ;
+; DIV_PARAM[7..4] ; Input  ; Info     ; Stuck at GND           ;
+; DIV_PARAM[1]    ; Input  ; Info     ; Stuck at GND           ;
+; DIV_PARAM[0]    ; Input  ; Info     ; Stuck at VCC           ;
++-----------------+--------+----------+------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+    Info: Processing started: Thu Nov 08 11:28:45 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Dig_Volt -c Dig_Volt
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file /users/administrator/desktop/28_dig_volt/rtl/key_filter.v
+    Info (12023): Found entity 1: key_filter
+Info (12021): Found 1 design units, including 1 entities, in source file /users/administrator/desktop/28_dig_volt/rtl/hex8.v
+    Info (12023): Found entity 1: HEX8
+Info (12021): Found 1 design units, including 1 entities, in source file /users/administrator/desktop/28_dig_volt/rtl/hex_top.v
+    Info (12023): Found entity 1: HEX_top
+Info (12021): Found 1 design units, including 1 entities, in source file /users/administrator/desktop/28_dig_volt/rtl/hex_to_v.v
+    Info (12023): Found entity 1: Hex_to_V
+Info (12021): Found 1 design units, including 1 entities, in source file /users/administrator/desktop/28_dig_volt/rtl/hc595_driver.v
+    Info (12023): Found entity 1: HC595_Driver
+Info (12021): Found 1 design units, including 1 entities, in source file /users/administrator/desktop/28_dig_volt/rtl/dig_volt.v
+    Info (12023): Found entity 1: Dig_Volt
+Info (12021): Found 1 design units, including 1 entities, in source file /users/administrator/desktop/28_dig_volt/rtl/channel_slect.v
+    Info (12023): Found entity 1: Channel_Slect
+Info (12021): Found 3 design units, including 3 entities, in source file /users/administrator/desktop/28_dig_volt/rtl/binary_to_bcd.v
+    Info (12023): Found entity 1: Binary_to_BCD
+    Info (12023): Found entity 2: bcd_modify
+    Info (12023): Found entity 3: bcd_single_modify
+Info (12021): Found 1 design units, including 1 entities, in source file /users/administrator/desktop/28_dig_volt/rtl/adc128s022.v
+    Info (12023): Found entity 1: adc128s022
+Info (12127): Elaborating entity "Dig_Volt" for the top level hierarchy
+Info (12128): Elaborating entity "Channel_Slect" for hierarchy "Channel_Slect:Channel_Slect"
+Info (12128): Elaborating entity "key_filter" for hierarchy "Channel_Slect:Channel_Slect|key_filter:key_filter"
+Info (12128): Elaborating entity "adc128s022" for hierarchy "adc128s022:adc128s022"
+Info (12128): Elaborating entity "Hex_to_V" for hierarchy "Hex_to_V:Hex_to_V"
+Warning (10230): Verilog HDL assignment warning at Hex_to_V.v(61): truncated value with size 32 to match size of target (16)
+Info (12128): Elaborating entity "Binary_to_BCD" for hierarchy "Binary_to_BCD:Binary_to_BCD"
+Info (12128): Elaborating entity "bcd_modify" for hierarchy "Binary_to_BCD:Binary_to_BCD|bcd_modify:bcd_modify"
+Info (12128): Elaborating entity "bcd_single_modify" for hierarchy "Binary_to_BCD:Binary_to_BCD|bcd_modify:bcd_modify|bcd_single_modify:bcd6"
+Info (12128): Elaborating entity "HEX_top" for hierarchy "HEX_top:HEX_top"
+Info (12128): Elaborating entity "HEX8" for hierarchy "HEX_top:HEX_top|HEX8:HEX8"
+Info (10264): Verilog HDL Case Statement information at HEX8.v(59): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "HC595_Driver" for hierarchy "HEX_top:HEX_top|HC595_Driver:HC595_Driver"
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "Hex_to_V:Hex_to_V|Mult0"
+Info (12130): Elaborated megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "Hex_to_V:Hex_to_V|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "12"
+    Info (12134): Parameter "LPM_WIDTHP" = "28"
+    Info (12134): Parameter "LPM_WIDTHR" = "28"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12131): Elaborated megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]", which is child of megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_kgh.tdf
+    Info (12023): Found entity 1: add_sub_kgh
+Info (12131): Elaborated megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add", which is child of megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0"
+Info (12131): Elaborated megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]", which is child of megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_ogh.tdf
+    Info (12023): Found entity 1: add_sub_ogh
+Info (12131): Elaborated megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "Hex_to_V:Hex_to_V|lpm_mult:Mult0"
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 441 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 6 output pins
+    Info (21061): Implemented 431 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 470 megabytes
+    Info: Processing ended: Thu Nov 08 11:28:48 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

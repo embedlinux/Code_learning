@@ -1,0 +1,13 @@
+module key_led_top(Clk,Rst_n,key_in0,key_in1,led);
+
+	input Clk;
+	input Rst_n;
+	input key_in0;
+	input key_in1;
+	
+	output [3:0]led;
+
+
+
+
+endmodule

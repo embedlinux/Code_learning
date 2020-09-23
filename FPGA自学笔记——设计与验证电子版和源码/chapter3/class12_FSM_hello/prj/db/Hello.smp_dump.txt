@@ -1,0 +1,8 @@
+
+State Machine - |Hello|state
+Name state.CHECK_o state.CHECK_lb state.CHECK_la state.CHECK_e state.CHECK_H 
+state.CHECK_H 0 0 0 0 0 
+state.CHECK_e 0 0 0 1 1 
+state.CHECK_la 0 0 1 0 1 
+state.CHECK_lb 0 1 0 0 1 
+state.CHECK_o 1 0 0 0 1 

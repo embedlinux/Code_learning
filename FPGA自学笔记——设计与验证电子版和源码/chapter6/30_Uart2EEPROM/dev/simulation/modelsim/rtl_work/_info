@@ -1,0 +1,208 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter6\30_Uart2EEPROM\dev\simulation\modelsim
+vcmd_analysis
+I3E^:bImfm1oTDS=F5]56J3
+V<D_VLZGJLjkOlAN;goKC51
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter6\30_Uart2EEPROM\dev\simulation\modelsim
+w1491035630
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/cmd_analysis.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/cmd_analysis.v
+L0 10
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src -O0
+!i10b 1
+!s100 So_T<o6>kKZeTID2eYXVh1
+!s85 0
+!s108 1512662035.600000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/cmd_analysis.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/cmd_analysis.v|
+!s101 -O0
+vfifo_rd
+IQQ39CQF0ZAi_KnDR?la`]0
+VegGI;EK3m8JkP=<nBO8Qz0
+R1
+w1491033860
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_rd.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_rd.v
+L0 39
+R2
+r1
+31
+R3
+!i10b 1
+!s100 4eJdK4H5K[=]]TR=D>9T;3
+!s85 0
+!s108 1512662035.673000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_rd.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_rd.v|
+!s101 -O0
+Z5 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core -O0
+vfifo_wr
+!i10b 1
+!s100 jE5imDf7S7QHo6e7MzH083
+ICGF:4YUH4VPeeGB^UgdVg3
+V?IN`eLb=Z;_FS_3L9i_[V3
+R1
+w1491033978
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_wr.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_wr.v
+L0 39
+R2
+r1
+!s85 0
+31
+!s108 1512662035.747000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_wr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_wr.v|
+!s101 -O0
+R3
+R5
+vI2C
+IM;8IT^bAT9DY6JDP6BD^Q0
+V1HHdcF6SmP4YSHEXP:][L1
+R1
+w1491035567
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/I2C.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/I2C.v
+L0 10
+R2
+r1
+31
+R3
+R4
+n@i2@c
+!i10b 1
+!s100 7j<e?@]1435[eEnG<Gohf0
+!s85 0
+!s108 1512662035.525000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/I2C.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/I2C.v|
+!s101 -O0
+vM24LC04B
+IS8cMOVR]Zfge]TlOed0Qo2
+Vk`GHkb:X`Z8Kg2@C5ODcQ0
+R1
+w1489501170
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC04B.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC04B.v
+L0 85
+R2
+r1
+31
+R3
+Z6 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim -O0
+n@m24@l@c04@b
+!i10b 1
+!s100 eo^H<n>nF0eeB:efK?^X;1
+!s85 0
+!s108 1512662035.229000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC04B.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC04B.v|
+!s101 -O0
+vM24LC64
+IA7BOi0[Jh1K>zDOYk65Pk2
+VYXM1[O=YaDMNXU8M0^Fk62
+R1
+w1489126788
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC64.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC64.v
+L0 87
+R2
+r1
+31
+R3
+R6
+n@m24@l@c64
+!i10b 1
+!s100 4Bc9?ca2M4VM@PI;l`aA:3
+!s85 0
+!s108 1512662035.152000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC64.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC64.v|
+!s101 -O0
+vuart_byte_rx
+IbOOehD>Ff=z4[`8Yj^F:A0
+VB`5H7YEIEYHEoe^4hfVEA3
+R1
+w1491035700
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_rx.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_rx.v
+L0 10
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 ;NP[F`6SjZ^n?UaMe8k032
+!s85 0
+!s108 1512662035.449000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_rx.v|
+!s101 -O0
+vuart_byte_tx
+IA;U7jDUaWU5C=k85@gAX=1
+V6bh0]UNJjKzoOez4^lSc_3
+R1
+w1491035717
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_tx.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_tx.v
+L0 10
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 JWOm??RhaeZg_41n6TSUV3
+!s85 0
+!s108 1512662035.375000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_tx.v|
+!s101 -O0
+vuart_eeprom
+Ik5_Ee7>gTZ9QLj<`X8h3I2
+V1oKYCfBLU1VTFINomGZ`M0
+R1
+w1491035490
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_eeprom.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_eeprom.v
+L0 10
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 5_Vk83[J:O6P=QYWgU`Le0
+!s85 0
+!s108 1512662035.303000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_eeprom.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_eeprom.v|
+!s101 -O0
+vuart_eeprom_tb
+ID0_Y5ini7g6>kYdFi8Z643
+V9WFen]i6]QoAmEU7_dWY90
+R1
+w1490854661
+8D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/uart_eeprom_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/uart_eeprom_tb.v
+L0 4
+R2
+r1
+31
+R3
+R6
+!i10b 1
+!s100 4e[TB_BJcnmh>5ni6EfWb1
+!s85 0
+!s108 1512662035.075000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/uart_eeprom_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim|D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/uart_eeprom_tb.v|
+!s101 -O0

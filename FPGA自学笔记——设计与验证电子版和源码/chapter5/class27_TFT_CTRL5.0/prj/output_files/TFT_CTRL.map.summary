@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Sep 08 09:05:18 2018
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : TFT_CTRL
+Top-level Entity Name : TFT_CTRL_test
+Family : Cyclone IV E
+Total logic elements : 94
+    Total combinational functions : 94
+    Dedicated logic registers : 24
+Total registers : 24
+Total pins : 23
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

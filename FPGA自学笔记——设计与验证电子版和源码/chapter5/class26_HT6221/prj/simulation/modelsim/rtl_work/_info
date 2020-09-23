@@ -1,0 +1,86 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter5\class26_HT6221\prj\simulation\modelsim
+vir_decode
+IVfXSidc]ohL=M@iMofJ6Z2
+V_l9_;6ed7U_Q`E5_aWaX=0
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter5\class26_HT6221\prj\simulation\modelsim
+w1491022792
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl/ir_decode.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl/ir_decode.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl -O0
+!i10b 1
+!s100 lCa2=klZiWU>ToGz1;NgH2
+!s85 0
+!s108 1512661791.060000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl/ir_decode.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl|D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl/ir_decode.v|
+!s101 -O0
+vir_decode_tb
+!i10b 1
+!s100 3glShJbm<>RM4=^Tlo8Ob1
+IiE8H6]biW]5bEFRba01]m1
+ViK9]<PHn<^XoXnljaL>U]0
+R1
+w1451135328
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/../testbench/ir_decode_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/../testbench/ir_decode_tb.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1512661791.202000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/../testbench/ir_decode_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/../testbench/ir_decode_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/../testbench -O0
+vir_decode_test
+IVPFa1XL6MKcX]Ld<eXQ5V3
+Vb>mN=<b<MJDmA]FHe@[RF1
+R1
+w1491022804
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl/ir_decode_test.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl/ir_decode_test.v
+L0 10
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 FPH3Pdgko;[U2ld2D15PG1
+!s85 0
+!s108 1512661790.993000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl/ir_decode_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl|D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/rtl/ir_decode_test.v|
+!s101 -O0
+vISSP
+I:oReZjnnGZI6^4hGH0iRT3
+Vbb1PR:GOQieo`F563JC250
+R1
+w1491022710
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/ip/ISSP.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/ip/ISSP.v
+L0 39
+R2
+r1
+31
+R3
+n@i@s@s@p
+!i10b 1
+!s100 ?;;Db@?]DSJ]Hn=N[A5?U2
+!s85 0
+!s108 1512661791.128000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/ip/ISSP.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/ip|D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/ip/ISSP.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class26_HT6221/prj/ip -O0

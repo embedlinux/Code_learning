@@ -1,0 +1,16 @@
+|block_nonblock
+Clk => d[0].CLK
+Clk => d[1].CLK
+Clk => out[0]~reg0.CLK
+Clk => out[1]~reg0.CLK
+Rst_n => out[0]~reg0.ACLR
+Rst_n => out[1]~reg0.ACLR
+Rst_n => d[0].ENA
+Rst_n => d[1].ENA
+a => Add1.IN1
+b => Add1.IN2
+c => Add0.IN2
+out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

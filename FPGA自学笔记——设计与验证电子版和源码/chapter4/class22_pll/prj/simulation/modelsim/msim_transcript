@@ -1,0 +1,81 @@
+# Reading D:/altera/13.0/modelsim_ae/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do pll_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl {D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/PLL_LED.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PLL_LED
+# 
+# Top level modules:
+# 	PLL_LED
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl {D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/counter.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module counter
+# 
+# Top level modules:
+# 	counter
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/ip {D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/ip/pll.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pll
+# 
+# Top level modules:
+# 	pll
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/db {D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/db/pll_altpll.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module pll_altpll
+# 
+# Top level modules:
+# 	pll_altpll
+# 
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench {D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench/PLL_LED_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PLL_LED_tb
+# 
+# Top level modules:
+# 	PLL_LED_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  PLL_LED_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps PLL_LED_tb 
+# //  ModelSim ALTERA 10.1d Nov  2 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.PLL_LED_tb
+# Loading work.PLL_LED
+# Loading work.pll
+# Loading altera_mf_ver.altpll
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.pll_iobuf
+# Loading work.counter
+# Loading altera_mf_ver.MF_cycloneiii_pll
+# Loading altera_mf_ver.cda_m_cntr
+# Loading altera_mf_ver.cda_n_cntr
+# Loading altera_mf_ver.cda_scale_cntr
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#  Note : Cyclone IV E PLL was reset
+# Time: 0  Instance: PLL_LED_tb.PLL_LED.pll.altpll_component.cycloneiii_pll.pll3
+#  Note : Cyclone IV E PLL locked to incoming clock
+# Time: 480000  Instance: PLL_LED_tb.PLL_LED.pll.altpll_component.cycloneiii_pll.pll3
+# Break in Module PLL_LED_tb at D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench/PLL_LED_tb.v line 38
+# Simulation Breakpoint: Break in Module PLL_LED_tb at D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench/PLL_LED_tb.v line 38
+# MACRO ./pll_run_msim_rtl_verilog.do PAUSED at line 20

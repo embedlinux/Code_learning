@@ -1,0 +1,7 @@
+prj为工程文件存放目录
+rtl为verilog可综合代码
+img为设计相关图片存放目录（主要为了方便后期写文档）
+doc为设计相关文档存放目录
+testbench为对应的testbench存放目录
+
+prj文件夹下的ip文件夹存放quartus ii中生成的ip核文件

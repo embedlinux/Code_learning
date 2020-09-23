@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Dig_Volt">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_kgh.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Dig_Volt|Hex_to_V:Hex_to_V|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]" CBX_FILE_NAME="add_sub_ogh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

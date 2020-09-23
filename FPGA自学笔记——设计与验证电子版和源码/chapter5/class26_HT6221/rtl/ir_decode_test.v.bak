@@ -1,0 +1,36 @@
+module ir_decode_test(
+	Clk,
+	Rst_n,
+	
+	iIR,
+	
+	Get_Flag,
+	irData,
+	irAddr
+);
+
+	input Clk;
+	input Rst_n;
+	input iIR;
+	
+	output Get_Flag;
+	output [15:0]irData;
+	output [15:0]irAddr;
+	
+	ir_decode ir_decode(
+		.Clk(Clk),
+		.Rst_n(Rst_n),
+		
+		.iIR(iIR),
+		
+		.Get_Flag(Get_Flag),
+		.irData(irData),
+		.irAddr(irAddr)
+	);
+	
+	issp issp(
+		.probe({irData,irAddr}),
+		.source()
+	);
+
+endmodule

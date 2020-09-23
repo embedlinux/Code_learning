@@ -1,0 +1,21 @@
+module uart_tx_top(Clk,Rst_n,Rs232_Tx);
+
+	input Clk;
+	input Rst_n;
+	output Rs232_Tx;
+	
+	
+	uart_byte_tx uart_byte_tx(
+		.Clk(Clk),
+		.Rst_n(Rst_n),
+		.data_byte(data_byte),
+		.send_en(send_en),
+		.baud_set(baud_set),
+		
+		.Rs232_Tx(Rs232_Tx),
+		.Tx_Done(Tx_Done),
+		.uart_state(uart_state)
+	);
+
+
+endmodule

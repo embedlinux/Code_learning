@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Dec 08 14:38:27 2017
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : Sdram_Control
+Top-level Entity Name : sdram_control_top
+Family : Cyclone IV E
+Total logic elements : 967
+    Total combinational functions : 831
+    Dedicated logic registers : 456
+Total registers : 456
+Total pins : 193
+Total virtual pins : 0
+Total memory bits : 8,192
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

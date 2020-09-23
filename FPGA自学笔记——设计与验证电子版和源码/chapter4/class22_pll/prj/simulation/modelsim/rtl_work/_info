@@ -1,0 +1,107 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter4\class22_pll\prj\simulation\modelsim
+vcounter
+I7PeecBZf[:RX3OI]=b2Ig2
+Vk4GhV5aB8ZPUH<2W@eK_;1
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter4\class22_pll\prj\simulation\modelsim
+w1491016039
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/counter.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/counter.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl -O0
+!i10b 1
+!s100 FgLo`[c>3B5GLD61>R0oM1
+!s85 0
+!s108 1512660985.348000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl|D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/counter.v|
+!s101 -O0
+vpll
+IJl]jSSfd?3H;9lIn0Qj;N1
+V<^iYRmU<hXL;iS0?VAlN73
+R1
+w1491015901
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/ip/pll.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/ip/pll.v
+L0 39
+R2
+r1
+31
+R3
+!i10b 1
+!s100 V@ZV1hMhMiT3ZCDF]96F13
+!s85 0
+!s108 1512660985.415000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/ip/pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/ip|D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/ip/pll.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/ip -O0
+vpll_altpll
+I1f5OLT]d@i@a<KV:H:;Sd3
+V?DF8j=RJ_EcKZlDzF;fMW0
+R1
+w1491016061
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/db/pll_altpll.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/db/pll_altpll.v
+L0 30
+R2
+r1
+31
+R3
+!i10b 1
+!s100 `4CkamaH^@LjDQ@FfWTzY1
+!s85 0
+!s108 1512660985.490000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/db/pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/db|D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/db/pll_altpll.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/db -O0
+vPLL_LED
+I`zZ^Y3NJY3=:8687?T[]X1
+VfZEn9dUl8UeaVCdK_hfHO1
+R1
+w1491015984
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/PLL_LED.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/PLL_LED.v
+L0 11
+R2
+r1
+31
+R3
+n@p@l@l_@l@e@d
+R4
+!i10b 1
+!s100 SXe;KS:c^G=C:a^]:mZfb0
+!s85 0
+!s108 1512660985.281000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/PLL_LED.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl|D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/rtl/PLL_LED.v|
+!s101 -O0
+vPLL_LED_tb
+!i10b 1
+!s100 LX23b@:OgM4]15cc85Cm^1
+I@J;]Xg:9H7XkR2^UZEzEi3
+VNS=m[N7<67DnX0K?18HPb1
+R1
+w1446840377
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench/PLL_LED_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench/PLL_LED_tb.v
+L0 4
+R2
+r1
+!s85 0
+31
+!s108 1512660985.571000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench/PLL_LED_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench/PLL_LED_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class22_pll/prj/../testbench -O0
+n@p@l@l_@l@e@d_tb

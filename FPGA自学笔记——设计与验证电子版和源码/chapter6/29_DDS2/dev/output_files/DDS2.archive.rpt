@@ -1,0 +1,106 @@
+Archive Project report for DDS2
+Sun Jun 25 12:18:39 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Sun Jun 25 12:18:39 2017 ;
+; Revision Name          ; DDS2                                  ;
+; Top-level Entity Name  ; DDS2                                  ;
+; Family                 ; Cyclone IV E                          ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Custom' contains:
+    Info: Automatically detected source files
+    Info: Project source and settings files
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'C:/Users/Administrator/Desktop/29_DDS2_back/dev/output_files/DDS2.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'DDS2.archive.rpt'
+Info (23030): Evaluation of Tcl script d:/altera/13.0/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus II 64-Bit Shell was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 346 megabytes
+    Info: Processing ended: Sun Jun 25 12:18:39 2017
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------------------------------------+
+; Files Archived                                                         ;
++------------------------------------------------------------------------+
+; File Name                                                              ;
++------------------------------------------------------------------------+
+; ../src/CMD.v                                                           ;
+; ../src/DAC_2CH.v                                                       ;
+; ../src/DDS2.v                                                          ;
+; ../src/DDS_Module.v                                                    ;
+; ../src/tlv5618.v                                                       ;
+; ../src/uart_byte_rx.v                                                  ;
+; ../src/uart_rx_frameend.v                                              ;
+; C:/Users/Administrator/Desktop/29_DDS2_back/dev/stp1_auto_stripped.stp ;
+; C:/Users/Administrator/Desktop/29_DDS2_back/src/CMD.v                  ;
+; C:/Users/Administrator/Desktop/29_DDS2_back/src/DAC_2CH.v              ;
+; C:/Users/Administrator/Desktop/29_DDS2_back/src/DDS2.v                 ;
+; C:/Users/Administrator/Desktop/29_DDS2_back/src/DDS_Module.v           ;
+; C:/Users/Administrator/Desktop/29_DDS2_back/src/tlv5618.v              ;
+; C:/Users/Administrator/Desktop/29_DDS2_back/src/uart_byte_rx.v         ;
+; C:/Users/Administrator/Desktop/29_DDS2_back/src/uart_rx_frameend.v     ;
+; D:/altera/13.0/quartus/bin64/assignment_defaults.qdf                   ;
+; d:/altera/13.0/quartus/bin64/assignment_defaults.qdf                   ;
+; db/altsyncram_6124.tdf                                                 ;
+; db/altsyncram_jc91.tdf                                                 ;
+; db/cmpr_ngc.tdf                                                        ;
+; db/cmpr_rgc.tdf                                                        ;
+; db/cntr_23j.tdf                                                        ;
+; db/cntr_ggi.tdf                                                        ;
+; db/cntr_m9j.tdf                                                        ;
+; db/decode_dvf.tdf                                                      ;
+; db/mux_tsc.tdf                                                         ;
+; DDS2.qpf                                                               ;
+; DDS2.qsf                                                               ;
+; ddsrom.mif                                                             ;
+; ddsrom.v                                                               ;
+; incremental_db/compiled_partitions/DDS2.db_info                        ;
+; output_files/DDS2.sof                                                  ;
+; stp1.stp                                                               ;
+; stp1_auto_stripped.stp                                                 ;
++------------------------------------------------------------------------+
+
+

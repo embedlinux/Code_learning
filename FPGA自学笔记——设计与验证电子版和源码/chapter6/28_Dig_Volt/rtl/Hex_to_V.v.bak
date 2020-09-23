@@ -1,0 +1,71 @@
+	/*============================================================================
+	*
+	*  LOGIC CORE:          Hex_to_V		
+	*  MODULE NAME:         Hex_to_V()
+	*  COMPANY:             芯航线电子工作室
+	*                       http://xiaomeige.taobao.com
+	*	author:					小梅哥
+	*	author QQ Group：472607506
+	*  REVISION HISTORY:  
+	*
+	*    Revision 1.0  01/01/2016     Description: Initial Release.
+	*
+	*	FileType	：RTL
+	*
+	*  FUNCTIONAL DESCRIPTION:将ADC输出的12bit二进制数转换成实际电压值，且为了
+	*	                        实现均值滤波，累计采集1024次数据，计算一次平均值。
+	                          这样能让采样结果显示很稳定，电压表中往往也有这种方式
+	===========================================================================*/
+module Hex_to_V(
+		Clk,
+		Rst_n,
+		ADC_flag,
+		Hex_data,
+		Voltage
+		);
+
+	input Clk;
+	input Rst_n;
+	input ADC_flag;
+	input [11:0]Hex_data;
+	
+	output [15:0]Voltage;
+	
+	reg [21:0]Hex_SUM;
+	reg [11:0]Hex;
+	
+	//计数1024次
+	reg [9:0]cnt;
+	always@(posedge Clk or negedge Rst_n)
+		if(!Rst_n)
+			cnt <= 10'b0;
+		else if(ADC_flag)
+		   cnt <= cnt + 1'b1;
+		else 
+			cnt <= cnt;
+	
+   // 累加1024次数据	
+	always@(posedge Clk or negedge Rst_n)
+		if(!Rst_n)
+			Hex_SUM <= 22'd0;
+		else if(cnt == 1023 && ADC_flag)
+		   Hex_SUM <= 22'd0;
+	   else if(ADC_flag)
+		   Hex_SUM <= Hex_SUM + Hex_data;
+	   else
+		   Hex_SUM <= Hex_SUM;
+	// 除以1024 直接取
+	always@(posedge Clk or negedge Rst_n)
+		if(!Rst_n)
+			Hex <= 10'b0;
+		else if(cnt == 1023 && ADC_flag)
+		   Hex <= Hex_SUM[21:10];
+    	else
+		   Hex <= Hex;
+//Voltage*1000 = (3.3*65536*Hex) >> 16
+//Voltage*1000  = ((3.3/4096)*65536*1000*Hex) >> 16  52800
+
+   assign Voltage = (52800 * Hex) >> 16;           
+	
+
+endmodule

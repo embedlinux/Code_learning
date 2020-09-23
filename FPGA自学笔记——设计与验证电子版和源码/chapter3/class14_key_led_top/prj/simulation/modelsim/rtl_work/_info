@@ -1,0 +1,105 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter3\class14_key_led_top\prj\simulation\modelsim
+vkey_filter
+IcfMbb=3CPee]HQY0COZkA3
+VcmQS:L56j<?^X7Q2YZ0eD2
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter3\class14_key_led_top\prj\simulation\modelsim
+w1490973855
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/key_filter.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/key_filter.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl -O0
+!i10b 1
+!s100 9XSUBjdf5aR4^Hz1>SHDX3
+!s85 0
+!s108 1512658222.414000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/key_filter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/key_filter.v|
+!s101 -O0
+vkey_led_top
+IFGF8R>n@EITl[YEl?kXkH2
+VO9kWbDKg4DH:Z4D;m3Wjn3
+R1
+w1490973993
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/key_led_top.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/key_led_top.v
+L0 11
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 P4XJl?`ol<ciiTMiCKk?m3
+!s85 0
+!s108 1512658222.346000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/key_led_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/key_led_top.v|
+!s101 -O0
+vkey_led_top_tb
+InOEH5M5bBe]0a@9iG_TVg2
+V^c@E?kaf8^DP2H`=N<fIO0
+R1
+w1440855596
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench/key_led_top_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench/key_led_top_tb.v
+L0 5
+R2
+r1
+31
+R3
+!i10b 1
+!s100 iE>^9Od@X@KzP@o7R:UF]0
+!s85 0
+!s108 1512658222.486000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench/key_led_top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench/key_led_top_tb.v|
+!s101 -O0
+Z5 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench -O0
+vkey_model
+!i10b 1
+!s100 4HGjhdQEU1aJNz>>5@d5n1
+IX1BD_TQSaK=5VD1k`99UH3
+VYDWdeDVKiJWTl:zaaOkVC1
+R1
+w1481109230
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench/key_model.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench/key_model.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1512658222.554000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench/key_model.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/prj/../testbench/key_model.v|
+!s101 -O0
+R3
+R5
+vled_ctrl
+IHgH2C`]5LdTVMiK3]hPXL1
+Vhl`Z:HUMjcfIJJR3_Ch?^2
+R1
+w1490973986
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/led_ctrl.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/led_ctrl.v
+L0 11
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 gH]K?iZgHM7eSZiB@^A?n2
+!s85 0
+!s108 1512658222.277000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/led_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class14_key_led_top/rtl/led_ctrl.v|
+!s101 -O0

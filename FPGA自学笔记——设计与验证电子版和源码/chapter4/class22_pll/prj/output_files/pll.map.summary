@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Apr 01 11:08:18 2017
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : pll
+Top-level Entity Name : PLL_LED
+Family : Cyclone IV E
+Total logic elements : 184
+    Total combinational functions : 184
+    Dedicated logic registers : 104
+Total registers : 104
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

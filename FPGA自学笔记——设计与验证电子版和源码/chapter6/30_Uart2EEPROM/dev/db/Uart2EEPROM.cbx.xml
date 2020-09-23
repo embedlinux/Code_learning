@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Uart2EEPROM">
+		<CBX_INST_ENTRY INSTANCE_NAME="|uart_eeprom|fifo_rd:fifo_rd|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_qh31.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|uart_eeprom|fifo_wr:fifo_wr|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_ok31.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

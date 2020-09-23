@@ -1,0 +1,65 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter5\class23_pwm_generator\prj\simulation\modelsim
+vpwm_generator
+I=D[n9P2MXij9ZZMkXR?bE0
+V8?Yb4dN8C9DD9al^fH7cb0
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter5\class23_pwm_generator\prj\simulation\modelsim
+w1491017525
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl/pwm_generator.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl/pwm_generator.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl -O0
+!i10b 1
+!s100 iDb[_4CbjaYBaEd0YT?<V1
+!s85 0
+!s108 1512661107.010000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl/pwm_generator.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl|D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl/pwm_generator.v|
+!s101 -O0
+vpwm_generator_tb
+!i10b 1
+!s100 PK@;a[QNK69VJ04QAF<?;1
+IVLLo]@O`e[8VdS@53AW0]0
+V]d<WT9g<KYioG0FGKL67m1
+R1
+w1468593296
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/prj/../testbench/pwm_generator_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/prj/../testbench/pwm_generator_tb.v
+L0 4
+R2
+r1
+!s85 0
+31
+!s108 1512661107.149000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/prj/../testbench/pwm_generator_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/prj/../testbench/pwm_generator_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/prj/../testbench -O0
+vpwm_generator_test
+IC4US6e9;mUPC>4<?NJ4<i3
+VW7A8PGW3GNEc8jeL3SMea2
+R1
+w1491017594
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl/pwm_generator_test.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl/pwm_generator_test.v
+L0 11
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 bfSie5EU7YW1_L9zog9zj0
+!s85 0
+!s108 1512661107.077000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl/pwm_generator_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl|D:/fpga/ac620/demo_release/book_prj/chapter5/class23_pwm_generator/rtl/pwm_generator_test.v|
+!s101 -O0

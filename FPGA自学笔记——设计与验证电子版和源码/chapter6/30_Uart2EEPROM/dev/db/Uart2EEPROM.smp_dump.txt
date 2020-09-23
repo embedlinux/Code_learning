@@ -1,0 +1,12 @@
+
+State Machine - |uart_eeprom|I2C:I2C|main_state
+Name main_state.STOP main_state.RD_DATA main_state.RD_CTRL main_state.RD_START main_state.WR_DATA main_state.WR_WADDR main_state.WR_CTRL main_state.WR_START main_state.IDLE 
+main_state.IDLE 0 0 0 0 0 0 0 0 0 
+main_state.WR_START 0 0 0 0 0 0 0 1 1 
+main_state.WR_CTRL 0 0 0 0 0 0 1 0 1 
+main_state.WR_WADDR 0 0 0 0 0 1 0 0 1 
+main_state.WR_DATA 0 0 0 0 1 0 0 0 1 
+main_state.RD_START 0 0 0 1 0 0 0 0 1 
+main_state.RD_CTRL 0 0 1 0 0 0 0 0 1 
+main_state.RD_DATA 0 1 0 0 0 0 0 0 1 
+main_state.STOP 1 0 0 0 0 0 0 0 1 

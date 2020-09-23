@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter3\class8_bin_counter\prj\simulation\modelsim
+vcounter
+I`1J]TI]Sk5[1Zo>8UTVhc1
+VoCAgT=DY6ZmQHPz>O;0YS3
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter3\class8_bin_counter\prj\simulation\modelsim
+w1490972140
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/rtl/counter.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/rtl/counter.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 8Tbi3PacDIQFhb>H@OA:M2
+!s85 0
+!s108 1512654081.016000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/rtl/counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/rtl/counter.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/rtl -O0
+vcounter_tb
+!i10b 1
+!s100 `KTbB92CbhZF0ONUUL0`>0
+I0<ZNVl`Zh63kEN6XL`mkf1
+VN6X[[7nWg]oz4[ZCKXDXe0
+R1
+w1437395369
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/prj/../testbench/counter_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/prj/../testbench/counter_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1512654081.069000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/prj/../testbench/counter_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/prj/../testbench/counter_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class8_bin_counter/prj/../testbench -O0

@@ -1,0 +1,87 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter5\class24_DACtlv5618\prj\simulation\modelsim
+vDAC_test
+IFG4N<AE<<[?Soc=[0>il11
+V_XVm^_fdk1]^2KfdXI[gN1
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter5\class24_DACtlv5618\prj\simulation\modelsim
+w1491018338
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl/DAC_test.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl/DAC_test.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl -O0
+n@d@a@c_test
+!i10b 1
+!s100 PY8Kh6AcaT4^E]dad0Km02
+!s85 0
+!s108 1512661650.894000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl/DAC_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl|D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl/DAC_test.v|
+!s101 -O0
+vISSP
+I9I6ES]cH?G<Eca8]NB[de2
+Vjje9S=aeU_SolYdfL3M?;1
+R1
+w1491018180
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/ip/ISSP.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/ip/ISSP.v
+L0 39
+R2
+r1
+31
+R3
+n@i@s@s@p
+!i10b 1
+!s100 ?dRM9IKd_MFZMN<McWOkE1
+!s85 0
+!s108 1512661650.739000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/ip/ISSP.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/ip|D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/ip/ISSP.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/ip -O0
+vtlv5618
+IFJ3PKTKb_Bk_Z7YZh0_m42
+VHZ8;cnf@Vn@K4XgFA=o7Q3
+R1
+w1512661601
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl/tlv5618.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl/tlv5618.v
+L0 13
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 eXak?RUifSWjH0N?`N3zz3
+!s85 0
+!s108 1512661650.815000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl/tlv5618.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl|D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/rtl/tlv5618.v|
+!s101 -O0
+vtlv5618_tb
+!i10b 1
+!s100 K`8dfPX7of_4NzcKMaY`O2
+IAXROb@`O0PV0DC@b?=eI_2
+V<VeX28HhdZLIKQ9KEfeZ80
+R1
+w1512661626
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/../testbench/tlv5618_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/../testbench/tlv5618_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1512661650.973000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/../testbench/tlv5618_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/../testbench/tlv5618_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class24_DACtlv5618/prj/../testbench -O0

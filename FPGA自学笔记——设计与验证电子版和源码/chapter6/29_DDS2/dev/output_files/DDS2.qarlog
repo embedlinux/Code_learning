@@ -1,0 +1,37 @@
+Quartus II Archive log --	C:/Users/Administrator/Desktop/29_DDS2_back/dev/output_files/DDS2.qarlog
+
+Archive:	C:/Users/Administrator/Desktop/29_DDS2_back/dev/output_files/DDS2.qar
+Date:		Sun Jun 25 12:18:39 2017
+Quartus II 64-Bit		13.0.0 Build 156 04/24/2013 SJ Full Version
+
+	=========== Files Selected: ===========
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/DDS2.qpf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/DDS2.qsf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/db/altsyncram_6124.tdf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/db/altsyncram_jc91.tdf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/db/cmpr_ngc.tdf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/db/cmpr_rgc.tdf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/db/cntr_23j.tdf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/db/cntr_ggi.tdf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/db/cntr_m9j.tdf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/db/decode_dvf.tdf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/db/mux_tsc.tdf
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/ddsrom.mif
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/ddsrom.v
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/incremental_db/compiled_partitions/DDS2.db_info
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/output_files/DDS2.sof
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/stp1.stp
+C:/Users/Administrator/Desktop/29_DDS2_back/dev/stp1_auto_stripped.stp
+C:/Users/Administrator/Desktop/29_DDS2_back/src/CMD.v
+C:/Users/Administrator/Desktop/29_DDS2_back/src/DAC_2CH.v
+C:/Users/Administrator/Desktop/29_DDS2_back/src/DDS2.v
+C:/Users/Administrator/Desktop/29_DDS2_back/src/DDS_Module.v
+C:/Users/Administrator/Desktop/29_DDS2_back/src/tlv5618.v
+C:/Users/Administrator/Desktop/29_DDS2_back/src/uart_byte_rx.v
+C:/Users/Administrator/Desktop/29_DDS2_back/src/uart_rx_frameend.v
+D:/altera/13.0/quartus/bin64/assignment_defaults.qdf
+d:/altera/13.0/quartus/bin64/assignment_defaults.qdf
+	======= Total: 26 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

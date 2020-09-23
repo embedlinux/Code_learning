@@ -1,0 +1,40 @@
+|Hello
+Clk => led~reg0.CLK
+Clk => state~1.DATAIN
+Rst_n => led~reg0.PRESET
+Rst_n => state~3.DATAIN
+data[0] => Equal0.IN3
+data[0] => Equal1.IN7
+data[0] => Equal2.IN7
+data[0] => Equal3.IN5
+data[1] => Equal0.IN7
+data[1] => Equal1.IN6
+data[1] => Equal2.IN6
+data[1] => Equal3.IN4
+data[2] => Equal0.IN2
+data[2] => Equal1.IN3
+data[2] => Equal2.IN5
+data[2] => Equal3.IN3
+data[3] => Equal0.IN6
+data[3] => Equal1.IN2
+data[3] => Equal2.IN1
+data[3] => Equal3.IN2
+data[4] => Equal0.IN5
+data[4] => Equal1.IN5
+data[4] => Equal2.IN4
+data[4] => Equal3.IN7
+data[5] => Equal0.IN1
+data[5] => Equal1.IN1
+data[5] => Equal2.IN3
+data[5] => Equal3.IN1
+data[6] => Equal0.IN0
+data[6] => Equal1.IN0
+data[6] => Equal2.IN0
+data[6] => Equal3.IN0
+data[7] => Equal0.IN4
+data[7] => Equal1.IN4
+data[7] => Equal2.IN2
+data[7] => Equal3.IN6
+led <= led~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

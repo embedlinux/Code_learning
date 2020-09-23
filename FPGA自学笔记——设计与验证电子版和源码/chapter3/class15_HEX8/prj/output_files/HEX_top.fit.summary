@@ -1,0 +1,16 @@
+Fitter Status : Successful - Thu Dec 07 22:58:00 2017
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : HEX_top
+Top-level Entity Name : HEX_top
+Family : Cyclone IV E
+Device : EP4CE10F17C8
+Timing Models : Final
+Total logic elements : 341 / 10,320 ( 3 % )
+    Total combinational functions : 322 / 10,320 ( 3 % )
+    Dedicated logic registers : 214 / 10,320 ( 2 % )
+Total registers : 214
+Total pins : 5 / 180 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 0 / 423,936 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

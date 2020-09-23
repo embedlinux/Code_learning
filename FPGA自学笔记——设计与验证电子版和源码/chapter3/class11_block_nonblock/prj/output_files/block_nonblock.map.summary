@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Dec 07 21:51:30 2017
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : block_nonblock
+Top-level Entity Name : block_nonblock
+Family : Cyclone IV E
+Total logic elements : 4
+    Total combinational functions : 4
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 7
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

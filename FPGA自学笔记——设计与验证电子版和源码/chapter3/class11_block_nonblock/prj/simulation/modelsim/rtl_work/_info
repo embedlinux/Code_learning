@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter3\class11_block_nonblock\prj\simulation\modelsim
+vblock_nonblock
+IC71=mVF?ChCPFE;LTm5>d1
+VCOIT]DES4zbGo_olZ>SO;2
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter3\class11_block_nonblock\prj\simulation\modelsim
+w1490970215
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/rtl/block_nonblock.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/rtl/block_nonblock.v
+L0 58
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 019KIno7YYz0W0z6E0?El3
+!s85 0
+!s108 1512654759.623000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/rtl/block_nonblock.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/rtl/block_nonblock.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/rtl -O0
+vblock_nonblock_tb
+!i10b 1
+!s100 QG`2H[F88THH2d0G?8KIl1
+IYD;PfaRVHBUV]b1hOMgbO2
+V=E[4RASBVK@n[4H];[kSY3
+R1
+w1437815960
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/prj/../testbench/block_nonblock_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/prj/../testbench/block_nonblock_tb.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1512654759.681000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/prj/../testbench/block_nonblock_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/prj/../testbench/block_nonblock_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class11_block_nonblock/prj/../testbench -O0

@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter4\class20_rom\prj\simulation\modelsim
+vrom
+I^ibQI[>imzEi^Af[llm<E2
+V9_[3;ZXZebUcL;V@AAB9o1
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter4\class20_rom\prj\simulation\modelsim
+w1512660308
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/ip/rom.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/ip/rom.v
+L0 39
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 :Wb_Af2Z<>>emH1R;V5GE0
+!s85 0
+!s108 1512660321.316000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/ip/rom.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/ip|D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/ip/rom.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/ip -O0
+vrom_tb
+!i10b 1
+!s100 ToM`F_WZN0l8>J;DP1Ehm1
+I61Ne`E<Li>Y>Qh5lb1ONH0
+VYEMW=:Xjaek[2L_We=6DK0
+R1
+w1444917829
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/../testbench/rom_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/../testbench/rom_tb.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1512660321.425000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/../testbench/rom_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/../testbench/rom_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class20_rom/prj/../testbench -O0

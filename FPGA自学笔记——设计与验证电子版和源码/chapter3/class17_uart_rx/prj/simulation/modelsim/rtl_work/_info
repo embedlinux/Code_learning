@@ -1,0 +1,106 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter3\class17_uart_rx\prj\simulation\modelsim
+vISSP
+I2R24]o:oaU6AKQX:`CGdX3
+Vh8m61<G:Ndb_k=[>=HYdM3
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter3\class17_uart_rx\prj\simulation\modelsim
+w1491012525
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/ip/ISSP.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/ip/ISSP.v
+L0 39
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@i@s@s@p
+!i10b 1
+!s100 NPEFXMdAMmh^P882ZDaQI3
+!s85 0
+!s108 1512659113.744000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/ip/ISSP.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/ip|D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/ip/ISSP.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/ip -O0
+vuart_byte_rx
+I5I7I;3B8HoeTj:[d@ALKa1
+Vfb<e?M2ePFEF3dQ7>4@^80
+R1
+w1491012443
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl/uart_byte_rx.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl/uart_byte_rx.v
+L0 11
+R2
+r1
+31
+R3
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl -O0
+!i10b 1
+!s100 E<4;18ARHCWZ`=Lo50IBa3
+!s85 0
+!s108 1512659113.892000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl/uart_byte_rx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl/uart_byte_rx.v|
+!s101 -O0
+vuart_byte_rx_tb
+IE=9Yzc2GF<1Szn^GM=dc=1
+VL>4MVNnQZY;zffE5N`[`N2
+R1
+w1461550846
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../testbench/uart_byte_rx_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../testbench/uart_byte_rx_tb.v
+L0 4
+R2
+r1
+31
+R3
+!i10b 1
+!s100 ]V[ZNUQleN43SYgY4aSf02
+!s85 0
+!s108 1512659113.964000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../testbench/uart_byte_rx_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../testbench/uart_byte_rx_tb.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../testbench -O0
+vuart_byte_tx
+!i10b 1
+!s100 h]KRg2jEK^NFnj2ZJWGXf3
+I]?gn9PBM=2Cf4LYl;[`>l3
+Vfdg2RF=>LIZSQoIj;dU@E0
+R1
+w1491012357
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../rtl/uart_byte_tx.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../rtl/uart_byte_tx.v
+L0 11
+R2
+r1
+!s85 0
+31
+!s108 1512659114.034000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../rtl/uart_byte_tx.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../rtl/uart_byte_tx.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/prj/../rtl -O0
+vuart_rx_top
+IkeD<[<kffCL@ULg7oe4TX3
+V=h1`MdSAVS?Z1]DV1mm;c2
+R1
+w1491012483
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl/uart_rx_top.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl/uart_rx_top.v
+L0 11
+R2
+r1
+31
+R3
+R4
+!i10b 1
+!s100 aT76h6=Yi[8C89HdL=@AJ0
+!s85 0
+!s108 1512659113.821000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl/uart_rx_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class17_uart_rx/rtl/uart_rx_top.v|
+!s101 -O0

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Thu Dec 07 23:53:40 2017
+Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Full Version
+Revision Name : Uart2EEPROM
+Top-level Entity Name : uart_eeprom
+Family : Cyclone IV E
+Total logic elements : 589
+    Total combinational functions : 470
+    Dedicated logic registers : 327
+Total registers : 327
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 1,024
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

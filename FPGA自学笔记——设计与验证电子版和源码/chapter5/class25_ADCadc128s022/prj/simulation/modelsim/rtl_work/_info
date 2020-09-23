@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter5\class25_ADCadc128s022\prj\simulation\modelsim
+vadc128s022
+IB7af5:7IVNl^3c;7<FEPe0
+VA^VJdh@JCCD<g11IKHL9j3
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter5\class25_ADCadc128s022\prj\simulation\modelsim
+w1491019203
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/rtl/adc128s022.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/rtl/adc128s022.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 EPT@2og^mLUYLH85LFCVh2
+!s85 0
+!s108 1512661373.219000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/rtl/adc128s022.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/rtl|D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/rtl/adc128s022.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/rtl -O0
+vadc128s022_tb
+!i10b 1
+!s100 =DI5_^nHP:aiH@^XZQ7>i2
+Ih:=zBS?32C8]U9CVQk>Dg0
+VF0WkXZULGniDX0zb^SPa32
+R1
+w1512652638
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/prj/../testbench/adc128s022_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/prj/../testbench/adc128s022_tb.v
+L0 10
+R2
+r1
+!s85 0
+31
+!s108 1512661373.297000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/prj/../testbench/adc128s022_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/prj/../testbench/adc128s022_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class25_ADCadc128s022/prj/../testbench -O0

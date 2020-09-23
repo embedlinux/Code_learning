@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter3\class7_decoder3_8\prj\simulation\modelsim
+vdecoder3_8
+IM=I<=gI`[9NbzC<0UheBc2
+V8b>kL==AM5RC[>N>2LfWe0
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter3\class7_decoder3_8\prj\simulation\modelsim
+w1490968647
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/rtl/decoder3_8.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/rtl/decoder3_8.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 Y3Snd_BX1CE:5<YzTNF<a3
+!s85 0
+!s108 1512653223.735000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/rtl/decoder3_8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/rtl/decoder3_8.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/rtl -O0
+vdecoder3_8_tb
+!i10b 1
+!s100 OLzbA5Ld7P?F[GPA_B6mn2
+IeoRGJH96o4oYJ7Ff5oo=83
+VBmE6dXAc]dcmKUYCIC^VR3
+R1
+w1512653019
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/prj/../testbench/decoder3_8_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/prj/../testbench/decoder3_8_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1512653223.794000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/prj/../testbench/decoder3_8_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/prj/../testbench/decoder3_8_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class7_decoder3_8/prj/../testbench -O0

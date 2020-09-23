@@ -1,0 +1,281 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "o_pwm",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[31]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[30]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[29]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[28]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[27]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[26]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[25]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[24]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[23]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[22]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[21]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[20]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[19]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[18]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[17]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[16]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[15]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[14]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[13]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[12]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_ccr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Clk50M",
+					"strict" : false
+				},
+				{
+					"name" : "Rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[31]",
+					"strict" : false
+				},
+				{
+					"name" : "cnt_en",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[30]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[29]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[28]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[27]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[26]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[25]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[24]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[23]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[22]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[21]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[20]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[19]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[18]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[17]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[16]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[15]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[14]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[13]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[12]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "counter_arr[0]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

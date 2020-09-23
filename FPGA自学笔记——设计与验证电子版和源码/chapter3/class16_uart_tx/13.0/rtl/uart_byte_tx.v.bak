@@ -1,0 +1,25 @@
+module uart_byte_tx(
+	Clk,
+	Rst_n,
+	data_byte,
+	send_en,
+	baud_set
+	
+	Rs232_Tx,
+	Tx_Done,
+	uart_state
+);
+
+	input Clk;
+	input Rst_n;
+	input [7:0]data_byte;
+	input send_en;
+	input [2:0]baud_set;
+	
+	output Rs232_Tx;
+	output Tx_Done;
+	output uart_state;
+
+
+
+endmodule

@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter4\class18_dpram\prj\simulation\modelsim
+vdpram
+I3]c9_m4ceKm_<Q4;7_o`92
+V;=38g?5kMHzzGmY>9f;=I2
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter4\class18_dpram\prj\simulation\modelsim
+w1491013457
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/ip/dpram.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/ip/dpram.v
+L0 39
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 0VN2GLZKbA1P:9AJO>NfS3
+!s85 0
+!s108 1512659363.531000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/ip/dpram.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/ip|D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/ip/dpram.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/ip -O0
+vdpram_tb
+!i10b 1
+!s100 ]X;1E]IXjSa9aM8<g^>;73
+IZE=CjY0CJ6m4S;DUIP=Ic0
+V1MMMz75HiD2V]TNSf>I8:0
+R1
+w1481619250
+8D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/../testbench/dpram_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/../testbench/dpram_tb.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1512659363.606000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/../testbench/dpram_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/../testbench/dpram_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter4/class18_dpram/prj/../testbench -O0

@@ -1,0 +1,110 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter5\class27_TFT_CTRL\prj\simulation\modelsim
+vTFT_CTRL
+IAWVO:b?OC:z4[FIB]D5@<2
+VCNmW0]HjPGk;Lf[:IZZh10
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter5\class27_TFT_CTRL\prj\simulation\modelsim
+w1468514318
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl/TFT_CTRL.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl/TFT_CTRL.v
+L0 15
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl -O0
+n@t@f@t_@c@t@r@l
+!i10b 1
+!s100 gDY=mR^0VVb<V^H2TXN6d3
+!s85 0
+!s108 1512661882.585000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl/TFT_CTRL.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl|D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl/TFT_CTRL.v|
+!s101 -O0
+vTFT_CTRL_tb
+!i10b 1
+!s100 X0c9aQAlV>U`H9Y?NH1z=2
+IY5zX2WmSA_:bFWh[P51L_3
+V8N?W;D?fdb:[7jo?i?7]K1
+R1
+w1468515296
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/../testbench/TFT_CTRL_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/../testbench/TFT_CTRL_tb.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1512661882.808000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/../testbench/TFT_CTRL_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/../testbench/TFT_CTRL_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/../testbench -O0
+n@t@f@t_@c@t@r@l_tb
+vTFT_CTRL_test
+I<Ng?Wf5l>B4aj?XRIQK>G3
+V^`UaX_?i;Z5og[bV<MFEe0
+R1
+w1468501395
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl/TFT_CTRL_test.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl/TFT_CTRL_test.v
+L0 1
+R2
+r1
+31
+R3
+n@t@f@t_@c@t@r@l_test
+R4
+!i10b 1
+!s100 APGI`K::^ok0[UFnm0Ind0
+!s85 0
+!s108 1512661882.516000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl/TFT_CTRL_test.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl|D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/rtl/TFT_CTRL_test.v|
+!s101 -O0
+vTFT_test_pll
+I9_lNl`Z65JDze[oJ9ZR`^0
+VZRH8zY8@7iGEhRzbETC]93
+R1
+w1468499303
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/TFT_test_pll.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/TFT_test_pll.v
+L0 39
+R2
+r1
+31
+R3
+n@t@f@t_test_pll
+!i10b 1
+!s100 h7NL62UWo_<eYThOhazXi3
+!s85 0
+!s108 1512661882.654000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/TFT_test_pll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj|D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/TFT_test_pll.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj -O0
+vTFT_test_pll_altpll
+I:o3kGhj5NUTml?lBodgfk0
+VWf5f1N^XH`]DJ021DoAAG1
+R1
+w1468499375
+8D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/db/tft_test_pll_altpll.v
+FD:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/db/tft_test_pll_altpll.v
+L0 29
+R2
+r1
+31
+R3
+n@t@f@t_test_pll_altpll
+!i10b 1
+!s100 zkeFNzU0a>[53XBe`DN9O3
+!s85 0
+!s108 1512661882.730000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/db/tft_test_pll_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/db|D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/db/tft_test_pll_altpll.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter5/class27_TFT_CTRL/prj/db -O0

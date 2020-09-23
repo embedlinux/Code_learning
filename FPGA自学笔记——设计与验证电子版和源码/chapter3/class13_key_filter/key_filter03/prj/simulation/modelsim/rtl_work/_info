@@ -1,0 +1,65 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter3\class13_key_filter\key_filter03\prj\simulation\modelsim
+vkey_filter
+IP0h>Q=>mPA5G[>AbM`6kE1
+VcmQS:L56j<?^X7Q2YZ0eD2
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter3\class13_key_filter\key_filter03\prj\simulation\modelsim
+w1490973855
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/rtl/key_filter.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/rtl/key_filter.v
+L0 11
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 6_L4>>fFgPl?BQU^b[Joj3
+!s85 0
+!s108 1512658019.196000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/rtl/key_filter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/rtl/key_filter.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/rtl -O0
+vkey_filter_tb
+IOYhH82mLOo;ND7@=Y2o^]1
+VT6bW6H4OZ8Z;cP@K;akW^3
+R1
+w1512657979
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench/key_filter_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench/key_filter_tb.v
+L0 5
+R2
+r1
+31
+R3
+!i10b 1
+!s100 [kd^<5[9784^Q4=0c:d;90
+!s85 0
+!s108 1512658019.294000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench/key_filter_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench/key_filter_tb.v|
+!s101 -O0
+Z4 !s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench -O0
+vkey_model
+!i10b 1
+!s100 eYcYHFIkMJ=NSzbAMzYRX2
+I_loY21U2WCU?11BeaaUeU1
+VQi`O[05cEKJLVof>WL9BK3
+R1
+w1512657975
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench/key_model.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench/key_model.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1512658019.378000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench/key_model.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class13_key_filter/key_filter03/prj/../testbench/key_model.v|
+!s101 -O0
+R3
+R4

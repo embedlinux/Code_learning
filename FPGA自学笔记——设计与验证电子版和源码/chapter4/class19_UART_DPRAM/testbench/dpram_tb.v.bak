@@ -1,0 +1,26 @@
+`timescale 1ns/1ns
+
+`define clk_period 20
+
+module dpram_tb;
+
+	reg clock;
+	reg [7:0]data;
+	reg [7:0]rdaddress;
+	reg [7:0]wraddress;
+	reg wren;
+	
+	wire [7:0]q;
+	
+	dpram dpram0(
+		.clock(),
+		.data(),
+		.rdaddress(),
+		.wraddress(),
+		.wren(),
+		.q()
+	);
+
+
+
+endmodule

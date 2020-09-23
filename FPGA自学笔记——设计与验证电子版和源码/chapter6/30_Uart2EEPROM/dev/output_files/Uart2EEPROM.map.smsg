@@ -1,0 +1,5 @@
+Info (10281): Verilog HDL Declaration information at uart_eeprom.v(26): object "Uart_rx" differs only in case from object "uart_rx" in the same scope
+Info (10281): Verilog HDL Declaration information at uart_eeprom.v(27): object "Uart_tx" differs only in case from object "uart_tx" in the same scope
+Info (10281): Verilog HDL Declaration information at I2C.v(51): object "Wr_data" differs only in case from object "WR_DATA" in the same scope
+Info (10281): Verilog HDL Declaration information at I2C.v(54): object "Rd_data" differs only in case from object "RD_DATA" in the same scope
+Info (10281): Verilog HDL Declaration information at uart_eeprom_tb.v(13): object "Uart_tx" differs only in case from object "uart_tx" in the same scope

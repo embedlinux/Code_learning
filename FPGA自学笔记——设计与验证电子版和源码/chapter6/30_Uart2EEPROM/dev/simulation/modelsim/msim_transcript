@@ -1,0 +1,149 @@
+# Reading D:/altera/13.0/modelsim_ae/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do Uart2EEPROM_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src/uart_eeprom.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_eeprom
+# 
+# Top level modules:
+# 	uart_eeprom
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src/uart_byte_tx.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_byte_tx
+# 
+# Top level modules:
+# 	uart_byte_tx
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src/uart_byte_rx.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_byte_rx
+# 
+# Top level modules:
+# 	uart_byte_rx
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src/I2C.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module I2C
+# 
+# Top level modules:
+# 	I2C
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/src/cmd_analysis.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module cmd_analysis
+# 
+# Top level modules:
+# 	cmd_analysis
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/core {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/core/fifo_rd.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module fifo_rd
+# 
+# Top level modules:
+# 	fifo_rd
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/core {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/core/fifo_wr.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module fifo_wr
+# 
+# Top level modules:
+# 	fifo_wr
+# 
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/uart_eeprom_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_eeprom_tb
+# 
+# Top level modules:
+# 	uart_eeprom_tb
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC64.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module M24LC64
+# 
+# Top level modules:
+# 	M24LC64
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/24LC04B.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module M24LC04B
+# 
+# Top level modules:
+# 	M24LC04B
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_eeprom.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_eeprom
+# 
+# Top level modules:
+# 	uart_eeprom
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_tx.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_byte_tx
+# 
+# Top level modules:
+# 	uart_byte_tx
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/uart_byte_rx.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module uart_byte_rx
+# 
+# Top level modules:
+# 	uart_byte_rx
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/I2C.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module I2C
+# 
+# Top level modules:
+# 	I2C
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../src/cmd_analysis.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module cmd_analysis
+# 
+# Top level modules:
+# 	cmd_analysis
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_rd.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module fifo_rd
+# 
+# Top level modules:
+# 	fifo_rd
+# vlog -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core {D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../core/fifo_wr.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module fifo_wr
+# 
+# Top level modules:
+# 	fifo_wr
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  uart_eeprom_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps uart_eeprom_tb 
+# //  ModelSim ALTERA 10.1d Nov  2 2012 
+# //
+# //  Copyright 1991-2012 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# Loading work.uart_eeprom_tb
+# Loading work.uart_byte_tx
+# Loading work.uart_eeprom
+# Loading work.uart_byte_rx
+# Loading work.cmd_analysis
+# Loading work.fifo_wr
+# Loading altera_mf_ver.scfifo
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading work.I2C
+# Loading work.fifo_rd
+# Loading work.M24LC64
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module uart_eeprom_tb at D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/uart_eeprom_tb.v line 109
+# Simulation Breakpoint: Break in Module uart_eeprom_tb at D:/fpga/ac620/demo_release/book_prj/chapter6/30_Uart2EEPROM/dev/../sim/uart_eeprom_tb.v line 109
+# MACRO ./Uart2EEPROM_run_msim_rtl_verilog.do PAUSED at line 32

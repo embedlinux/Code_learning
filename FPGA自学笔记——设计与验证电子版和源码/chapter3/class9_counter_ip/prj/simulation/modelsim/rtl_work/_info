@@ -1,0 +1,65 @@
+m255
+K3
+13
+cModel Technology
+Z0 dD:\fpga\ac620\demo_release\book_prj\chapter3\class9_counter_ip\prj\simulation\modelsim
+vcounter
+ImQ^KiMe`9BFd9f9oY30zo0
+V<;9KhZ7cXFZR@SGfcIVkX0
+Z1 dD:\fpga\ac620\demo_release\book_prj\chapter3\class9_counter_ip\prj\simulation\modelsim
+w1491010228
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/ip/counter.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/ip/counter.v
+L0 39
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 75le>aT_ZR^hl6anW`cGA1
+!s85 0
+!s108 1512654343.514000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/ip/counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/ip|D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/ip/counter.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/ip -O0
+vcounter_tb
+!i10b 1
+!s100 Y[ZDVY=7O5^WM`gIP1ozA3
+IW_Z4=72[b?KfdR9JS?c9l1
+VN6X[[7nWg]oz4[ZCKXDXe0
+R1
+w1437741919
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/../testbench/counter_tb.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/../testbench/counter_tb.v
+L0 5
+R2
+r1
+!s85 0
+31
+!s108 1512654343.569000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/../testbench/counter_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/../testbench|D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/../testbench/counter_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/prj/../testbench -O0
+vcounter_top
+IMF94UFg`kzgfCjBCo5gfi3
+VWbN9Udbh]EzP=3@Ag7>E22
+R1
+w1491010250
+8D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/rtl/counter_top.v
+FD:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/rtl/counter_top.v
+L0 11
+R2
+r1
+31
+R3
+!i10b 1
+!s100 DheTcEgRz<e?12G_:WRgE0
+!s85 0
+!s108 1512654343.462000
+!s107 D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/rtl/counter_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/rtl|D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/rtl/counter_top.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/fpga/ac620/demo_release/book_prj/chapter3/class9_counter_ip/rtl -O0

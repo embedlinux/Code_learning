@@ -1,0 +1,127 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.0 Build 156 04/24/2013 SJ Full Version
+# Date created = 21:04:59  March 29, 2015
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		uart_scope_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE10F17C8
+set_global_assignment -name TOP_LEVEL_ENTITY uart_scope
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:04:59  MARCH 29, 2015"
+set_global_assignment -name LAST_QUARTUS_VERSION 13.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_E1 -to Clk
+set_location_assignment PIN_B5 -to Rs232_Rx
+set_location_assignment PIN_A6 -to Rs232_Tx
+set_location_assignment PIN_M16 -to Key_in[0]
+set_location_assignment PIN_E15 -to Key_in[1]
+set_location_assignment PIN_E16 -to Rst_n
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH uart_scope_tb -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME uart_scope_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id uart_scope_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME uart_scope_tb -section_id uart_scope_tb
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name EDA_TEST_BENCH_NAME Uart_Byte_Tx_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Uart_Byte_Tx_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Uart_Byte_Tx_tb -section_id Uart_Byte_Tx_tb
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 8
+set_location_assignment PIN_E8 -to DAC_CS_N
+set_location_assignment PIN_C8 -to DAC_DIN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DIN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DOUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_SCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DAC_CS_N
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DAC_DIN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DAC_SCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Key_in[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Key_in[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Rs232_Rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Rs232_Tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Rst_n
+set_location_assignment PIN_E7 -to DAC_SCLK
+set_location_assignment PIN_D9 -to ADC_CS_N
+set_location_assignment PIN_C9 -to ADC_DIN
+set_location_assignment PIN_E9 -to ADC_DOUT
+set_location_assignment PIN_B7 -to ADC_SCLK
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_SETUP_SCRIPT simulation/modelsim/mydo.do -section_id eda_simulation
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE rtl/uart_rx/Rx_Bps_Gen.v
+set_global_assignment -name VERILOG_FILE rtl/uart_rx/Uart_Byte_Rx.v
+set_global_assignment -name VERILOG_FILE rtl/uart_tx/Tx_Bps_Gen.v
+set_global_assignment -name VERILOG_FILE rtl/uart_tx/UART_Byte_Tx.v
+set_global_assignment -name VERILOG_FILE rtl/CMD/CMD.v
+set_global_assignment -name VERILOG_FILE rtl/uart_scope.v
+set_global_assignment -name VERILOG_FILE rtl/Sample_Ctrl.v
+set_global_assignment -name VERILOG_FILE rtl/UART_Tx_Ctrl.v
+set_global_assignment -name VERILOG_FILE rtl/DDS/DDS_Module.v
+set_global_assignment -name VERILOG_FILE rtl/DDS/ddsrom.v
+set_global_assignment -name VERILOG_FILE rtl/DDS/DDS.v
+set_global_assignment -name VERILOG_FILE rtl/header.v
+set_global_assignment -name VERILOG_FILE testbench/uart_scope_tb.v
+set_global_assignment -name VERILOG_FILE testbench/sim_model/Uart_RX_Model.v
+set_global_assignment -name VERILOG_FILE testbench/sim_model/Uart_Tx_Model.v
+set_global_assignment -name VERILOG_FILE testbench/Uart_Byte_Tx_tb.v
+set_global_assignment -name EDA_TEST_BENCH_FILE testbench/sim_model/Uart_Tx_Model.v -section_id uart_scope_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE testbench/sim_model/Uart_RX_Model.v -section_id uart_scope_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE testbench/uart_scope_tb.v -section_id uart_scope_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE testbench/Uart_Byte_Tx_tb.v -section_id Uart_Byte_Tx_tb
+set_global_assignment -name VERILOG_FILE rtl/adc128s022.v
+set_global_assignment -name VERILOG_FILE rtl/Key/key_filter.v
+set_global_assignment -name VERILOG_FILE rtl/tlv5618.v
+set_global_assignment -name SEARCH_PATH rtl/ -tag from_archive
+set_global_assignment -name SEARCH_PATH rtl/CMD/ -tag from_archive
+set_global_assignment -name SEARCH_PATH rtl/DDS/ -tag from_archive
+set_global_assignment -name SEARCH_PATH rtl/Key/ -tag from_archive
+set_global_assignment -name SEARCH_PATH rtl/uart_rx/ -tag from_archive
+set_global_assignment -name SEARCH_PATH rtl/uart_tx/ -tag from_archive
+set_global_assignment -name SEARCH_PATH simulation/modelsim/ -tag from_archive
+set_global_assignment -name SEARCH_PATH testbench/ -tag from_archive
+set_global_assignment -name SEARCH_PATH testbench/sim_model/ -tag from_archive

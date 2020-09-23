@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="counter_ip">
+		<CBX_INST_ENTRY INSTANCE_NAME="|counter_top|counter:counter0|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_euj.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|counter_top|counter:counter1|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_euj.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
