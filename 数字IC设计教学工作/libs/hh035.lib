@@ -1,0 +1,2907 @@
+******************************************************************
+*       	 BCD350 SPICE MODEL  1/2                         *
+*  FOR HVOX HIGH VOLTAGE 40V/20V ASYMMETRIC/SYMMETRIC DMOS       *
+*  AND LVOX HIGH VOLTAGE 40V/20V ASYMMETRIC/SYMMETRIC DMOS       *
+*  5V CMOS STD,5V CMOS(5V/20V/40V BODY),BJT,RESISTOR,5V DIODE    *
+*  CLAMP DIODE, 5V/20V/40V SCHOTTKY DIODE, ZENER DIODE,12V/5V    *
+*  NWELL/PWELL GATE CAP AND MIP CAP                              *
+*                                                                *
+*                     Version 1.4                                *
+*                     2009/07/15                                 *
+*                SHANGHAI HUAHONG-NEC                            *
+******************************************************************
+*
+******************************************************************
+* BCD350 LVOX/HVOX 20/40V LDMOS 5V MOS/BJT/DIO/RES/MIP/12V/5V    *
+* NWELL/PWELL GATE CAP MODEL                                     *
+* DEVICE PARAMETER FOR HSPICE LEVEL49/53 (BSIM3V3.2)             *
+* BJT PARAMETER FOR HSPICE LEVEL1                                *
+* DIODE PARAMETER FOR HSPICE LEVEL3                              *
+* NOTE:USE THIS MODEL WITH HSPICE 2000.4 OR LATE                 *
+*      VERSION, DO NOT USE WITH OTHER VERSIONS                   *
+*   << HHNEC CONFIDENTIAL AND PROPRIETARY >>                     *
+******************************************************************
+*
+******************************************************************
+*    IN THIS MODEL LIB CONTAINS:                                 *             
+*    1. LIB TT_40A                                               *
+*           SS_40A                                               *
+*           FF_40A                                               *
+*   (40V ASYMMETRIC LVOX/HVOX NON-ISOLATED NLDMOS CORNER MODELS) *
+*   (40V ASYMMETRIC LVOX/HVOX ISOLATED NLDMOS CORNER MODELS)     *
+*   (40V ASYMMETRIC LVOX/HVOX PLDMOS CORNER MODELS)              *
+*                                                                *
+*                                                                *
+*    2. LIB TT_20A                                               *
+*           SS_20A                                               *
+*           FF_20A                                               *
+*                                                                *
+*   ( 20V ASYMMETRIC LVOX/HVOX NON-ISOLATED NLDMOS CORNER MODELS)*
+*   ( 20V ASYMMETRIC LVOX/HVOX ISOLATED NLDMOS CORNER MODELS)    *
+*   ( 20V ASYMMETRIC LVOX/HVOX PLDMOS CORNER MODELS)             *
+*                                                                *
+*    3. LIB TT_40S                                               *
+*           SS_40S                                               *
+*           FF_40S                                               *
+*     (20V/40V LVOX/HVOX SYMMETRIC NLDMOS CORNER MODELS)         *
+*     (20V/40V LVOX/HVOX SYMMETRIC PLDMOS CORNER MODELS)         *
+*                                                                *
+*    4. LIB TT_5V                                                *
+*           SS_5V                                                *
+*           FF_5V                                                *
+*           SF_5V                                                *
+*           FS_5V                                                *
+*      ( 5V NORMAL DEVICE CORNER MODELS )                        *
+*      ( 5V N+/PW,P+/NW DIODE MODELS)                            *
+*      ( 20V/40V ISOLATION RING DIODE MODELS )                   *
+*      ( 10V CLAMP DIODE MODELS )                                *
+*      ( 5V/20V/40V SCHOTTKY BARRIER DIODE MODELS )              * 
+*      ( FLOATING CMOS MODELS)                                   *
+*                                                                *
+*    5. LIB TT_40VNPN                                            *
+*           FF_40VNPN                                            *
+*           SS_40VNPN                                            *
+*      ( HV  VNPN CORNER MODELS)                                 *
+*                                                                *
+*    6. LIB TT_40LPNP                                            *
+*           FF_40LPNP                                            *
+*           SS_40LPNP                                            *
+*      ( HV  LPNP CORNER MODELS)                                 *
+*                                                                *
+*    7. LIB TT_RES                                               *
+*           MIN_RES                                              *
+*           MAX_RES                                              *
+*      ( resistor corner models)                                 *
+*                                                                *
+*    8. LIB TT_MIP                                               *
+*           MIN_MIP                                              *
+*           MAX_MIP                                              *
+*      (mip capacitor corner models)                             *
+*                                                                *
+*    9. LIB TT_MOSVAR                                            *
+*           MIN_MOSVAR                                           *
+*           MAX_MOSVAR                                           *
+*      (12V/5V nwell/pwell gate capacitance corner models)       *
+******************************************************************
+******************************************************************
+*  subckt  resists name are list below:                          *
+*                                                                *
+*       device name                  subckt name:                *
+*  ------------------------------------------------------------  *
+*                                                                *
+*       resistance:                                              *
+*       n+diff (w/i silicide)         rndiff                     *
+*       n+diff (w/o silicide)         rnffo                      *
+*       p+diff (w/i silicide)         rpdiff                     *
+*       p+diff (w/o silicide)         rpffo                      *
+*       pwell                         rpwell                     *
+*       hvpw                          rhvpw                      *
+*       poly   (w/i silicide)         rplcd                      *
+*       high resist rpoly             rrpolyh                    *
+*       low temp_coeff rpoly          rrpolyl                    *
+*       metal1                        rm1                        *
+*       metal2                        rm2                        *
+*       metal3                        rm3                        *
+*       top metal (option)            rm4                        * 
+*       thick top metal               rtm4                       *   
+* _____________________________________________________________  *
+*      capacitor:                                                *
+*       5V nwell gate capacitor       cpnw5                      *
+*       5V pwell gate capacitor       cppw5                      *
+*       12V nwell gate capacitor      cpnw12                     *
+*       12V pwell gate capacitor      cppw12                     *
+*       mip                           capmip                     *
+*                                     capmip1                    *
+* _____________________________________________________________  *
+*      diode:                                                    ********
+*       diode 5v n+_pwell model name = ndio5                            *
+*       diode 5v P+_nwell model name = pdio5                            *
+*       clamp diode 10v n+_pwell model name = dnpluspw (subckt name)    *
+*       clamp diode 10v p+_nwell model name = dpplusnw (subckt name)    *
+*       isolation 20V diode model name = isodiod20                      *
+*       isolation 40V diode model name = isodiod40                      *
+*       isolation pwell_nbl diode model name = pwnbldiod                *
+*       5v schottky barrier diode model name = dsch5   (subckt name)    *
+*       20v schottky barrier diode model name = dsch20 (subckt name)    *
+*       40v schottky barrier diode model name = dsch40 (subckt name)    *
+*       floating pmos 20v model name = pl20 (subckt name)               *
+*       floating pmos 40v model name = pl40 (subckt name)               *
+*       floating nmos 20v model name = nl20 (subckt name)               *
+*       floating nmos 40v model name = nl40 (subcktname)                *
+*************************************************************************
+*
+*******************************************************
+*    LIB ZENER_DIO                                    *
+*      ( ZENER DIODE)                                 *
+*******************************************************
+*******************************************************************************************
+*                                                                                         *
+*  IN THIS MODEL FILE, 32 LDMOS, 2 MOS & 2 BJT MODELS ARE SUPPLIED                        *
+*                                                                                         *
+*  1. NLD40AI       -- FOR 5V LVOX 40V HV asymmetric isolated NLDMOS                      *
+*  2. NLD40AI_LVGS  -- FOR Low VGS case of 5V LVOX 40V HV asymmetric isolated NLDMOS      *
+*  3. NLD40AN       -- FOR 5V LVOX 40V HV asymmetric non-isolated NLDMOS                  *
+*  4. NLD40AN_LVGS  -- FOR Low VGS case of 5V LVOX 40V HV asymmetric non-isolated NLDMOS  *
+*  5. PLD40A        -- FOR 5V LVOX 40V HV asymmetric PLDMOS                  (Subcircuit) *
+*  6. PLD40A_LVGS   -- FOR Low VGS case of 5V LVOX 40V HV asymmetric PLDMOS  (Subcircuit) *
+*  7. NHD40AI       -- FOR 12V HVOX 40V HV asymmetric isolated NLDMOS                     *
+*  8. NHD40AI_LVGS  -- FOR Low VGS case of 12V HVOX 40V HV asymmetric isolated NLDMOS     *
+*  9. NHD40AN       -- FOR 12V HVOX 40V HV asymmetric non-isolated NLDMOS                 *
+* 10. NHD40AN_LVGS  -- FOR Low VGS case of 12V HVOX 40V HV asymmetric non-isolated NLDMOS *
+* 11. PHD40A        -- FOR 12V HVOX 40V HV asymmetric PLDMOS                 (Subcircuit) *
+* 12. PHD40A_LVGS   -- FOR Low VGS case of 12V HVOX 40V HV asymmetric PLDMOS (Subcircuit) *
+*                                                                                         *
+* 13. NLD20AI       -- FOR 5V LVOX 20V HV asymmetric isolated NLDMOS                      *
+* 14. NLD20AI_LVGS  -- FOR Low VGS of 5V LVOX 20V HV asymmetric isolated NLDMOS           *
+* 15. NLD20AN       -- FOR 5V LVOX 20V HV asymmetric non-isolated NLDMOS                  *
+* 16. NLD20AN_LVGS  -- FOR Low VGS of 5V LVOX 20V HV asymmetric non-isolated NLDMOS       *  
+* 17. PLD20A        -- FOR 5V LVOX 20V HV asymmetric PLDMOS                  (Subcircuit) *         
+* 18. PLD20A_LVGS   -- FOR Low VGS case of 5V LVOX 20V HV asymmetric PLDMOS  (Subcircuit) *
+* 19. NHD20AI       -- FOR 12V HVOX 20V HV asymmetric isolated NLDMOS                     *
+* 20. NHD20AI_LVGS  -- FOR Low VGS case of 12V HVOX 20V HV asymmetric isolated NLDMOS     *
+* 21. NHD20AN       -- FOR 12V HVOX 20V HV asymmetric non-isolated NLDMOS                 *
+* 22. NHD20AN_LVGS  -- FOR Low VGS case of 12V HVOX 20V HV asymmetric non-isolated NLDMOS *
+* 23. PHD20A        -- FOR 12V HVOX 20V HV asymmetric PLDMOS                              *
+* 24. PHD20A_LVGS   -- FOR Low VGS case of 12V HVOX 20V HV asymmetric PLDMOS              *
+*                                                                                         *
+* 25. NLD40S        -- FOR 5V LVOX 20V/40V HV symmetric NLDMOS                            *
+* 26. NLD40S_LVGS   -- FOR Low VGS case of 5V LVOX 20V/40V HV symmetric NLDMOS            *
+* 27. PLD40S        -- FOR 5V LVOX 20V/40V HV symmetric PLDMOS                            *
+* 28. PLD40S_LVGS   -- FOR Low VGS case of 5V LVOX 20V/40V HV symmetric PLDMOS            *
+* 29. NHD40S        -- FOR 12V HVOX 20V/40V HV symmetric NLDMOS                           *
+* 30. NHD40S_LVGS   -- FOR Low VGS case of 12V HVOX 20V/40V HV symmetric NLDMOS           *
+* 31. PHD40S        -- FOR 12V HVOX 20V/40V HV symmetric PLDMOS                           *
+* 32. PHD40S_LVGS   -- FOR Low VGS case of 12V HVOX 20V/40V HV symmetric PLDMOS           *
+*                                                                                         *
+*                       (Low VGS case is 1V<|VGS|<2V)                                     *
+*                                                                                         *
+* 33. NENH5    -- FOR 5V normal NMOS                                                      *
+* 34. PENH5    -- FOR 5V normal PMOS                                                      *
+*                                                                                         *
+* 35. VNPN40   -- FOR HV  VNPN                                                            *
+* 36. LPNP40   -- FOR HV  LPNP                                                            *
+*                                                                                         *
+*******************************************************************************************
+* Note: LDMOS model with the suffix of _LVGS, such as PLD40A_LVGS, are only for high      *
+*       accurate simulation when 1V<|VGS|<2V. All other case please refer to the model    *
+*       without the suffix of _LVGS in the model name.                                    * 
+*******************************************************************************************
+
+.lib TT_40A
+.param
++toxl40a   = 1.2E-8          toxnl40a   = 1.2e-8             toxpl40a   = 1.2E-8
++vth0l40a  = 0.64            vth0nl40a  = 0.601              vth0pl40a  = -0.95
++lintl40a  = -2.0E-7         lintnl40a  = -2.0E-7            lintpl40a  = -1.35E-7
++vsatl40a  = 2.4e5           vsatnl40a  = 4.55e5             vsatpl40a  = 2.2e5             
++rdswl40a  = 8.25e3          rdswnl40a  = 8.27e3             rdsspl40a  = 0.01695
++cgl40a    = 1               cgnl40a    = 1                  cgpl40a    = 1
++rcjl40a   = 1               rcjnl40a   = 1                  rcjpl40a   = 1
++rcjswl40a = 1               rcjswnl40a = 1                  rcjswpl40a = 1
+
++toxni40a   = 4.7e-008       toxnn40a   = 4.7E-08            toxp40a   = 4.9E-8
++vth0ni40a  = 0.995          vth0nn40a  = 0.954              vth0p40a  = -1.114             
++lintni40a  = 2.95E-7        lintnn40a  = 2.2E-07            lintp40a  = 2.5E-7
++vsatni40a  = 8.53e4         vsatnn40a  = 8.8e4              vsatp40a  = 7.192e4              
++rdswni40a  = 1.332e4        rdswnn40a  = 1.41e4             rdssp40a  = 0.0201             
++cgni40a    = 1              cgnn40a    = 1                  cgp40a    = 1                                   
++rcjni40a   = 1              rcjnn40a   = 1                  rcjp40a   = 1
++rcjswni40a = 1              rcjswnn40a = 1                  rcjswp40a = 1
+.lib 'hh035.lib' HD40A
+.endl TT_40A
+
+.lib FF_40A
+.param
++toxl40a   = 1.1E-8          toxnl40a   = 1.1e-8             toxpl40a   = 1.1E-8
++vth0l40a  = 0.427           vth0nl40a  = 0.4445             vth0pl40a  = -0.741
++lintl40a  = -1.5E-7         lintnl40a  = -1.5e-007          lintpl40a  = -8.5E-8
++vsatl40a  = 1.31e5          vsatnl40a  = 2.483e5            vsatpl40a  = 1.4e5            
++rdswl40a  = 5.93e3          rdswnl40a  = 6.49e3             rdsspl40a  = 0.01257                
++cgl40a    = 1.09            cgnl40a    = 1.09               cgpl40a    = 1.09
++rcjl40a   = 0.95            rcjnl40a   = 0.95               rcjpl40a   = 0.95
++rcjswl40a = 0.95            rcjswnl40a = 0.95               rcjswpl40a = 0.95
+
++toxni40a   = 4.45e-008	     toxnn40a   = 4.45E-08           toxp40a   = 4.65E-8
++vth0ni40a  = 0.794 	     vth0nn40a  = 0.751              vth0p40a  = -0.921
++lintni40a  = 3.45e-007      lintnn40a  = 2.7E-07            lintp40a  = 3.0E-7 
++vsatni40a  = 9.289587e4     vsatnn40a  = 9.03e4             vsatp40a  = 1.0682e5            
++rdswni40a  = 9.165e3        rdswnn40a  = 1.055e4            rdssp40a  = 0.0114             
++cgni40a    = 1.06           cgnn40a    = 1.06               cgp40a    = 1.05	                                   
++rcjni40a   = 0.95           rcjnn40a   = 0.95               rcjp40a   = 0.95
++rcjswni40a = 0.95           rcjswnn40a = 0.95               rcjswp40a = 0.95
+.lib 'hh035.lib' HD40A
+.endl FF_40A
+
+.lib SS_40A
+.param
++toxl40a   = 1.3E-8          toxnl40a   = 1.3e-8             toxpl40a   = 1.3E-8
++vth0l40a  = 0.85            vth0nl40a  = 0.756              vth0pl40a  = -1.145 
++lintl40a  = -2.5E-7         lintnl40a  = -2.5e-007          lintpl40a  = -1.85E-7
++vsatl40a  = 3.2e5           vsatnl40a  = 3.93e5             vsatpl40a  = 1.78e5            
++rdswl40a  = 1.045e4         rdswnl40a  = 9.95e3             rdsspl40a  = 0.0211                
++cgl40a    = 0.92            cgnl40a    = 0.92               cgpl40a    = 0.92
++rcjl40a   = 1.05            rcjnl40a   = 1.05               rcjpl40a   = 1.05
++rcjswl40a = 1.05            rcjswnl40a = 1.05               rcjswpl40a = 1.05
+
++toxni40a   = 4.95E-8	     toxnn40a   = 4.95E-08           toxp40a   = 5.15E-8
++vth0ni40a  = 1.195          vth0nn40a  = 1.155              vth0p40a  = -1.306             
++lintni40a  = 2.45e-007      lintnn40a  = 1.7E-07            lintp40a  = 2.0E-7
++vsatni40a  = 6.35e4         vsatnn40a  = 7.36e4             vsatp40a  = 3.955e4 
++rdswni40a  = 1.75e4         rdswnn40a  = 1.740e4            rdssp40a  = 0.0287             
++cgni40a    = 0.95           cgnn40a    = 0.95               cgp40a    = 0.95
++rcjni40a   = 1.05           rcjnn40a   = 1.05               rcjp40a   = 1.05
++rcjswni40a = 1.05           rcjswnn40a = 1.05               rcjswp40a = 1.05
+.lib 'hh035.lib' HD40A
+.endl SS_40A
+
+.lib TT_20A
+.param
++toxl20a   = 1.2E-8          toxnl20a   = 1.2e-8             toxpl20a   = 1.2E-8
++vth0l20a  = 0.64            vth0nl20a  = 0.64               vth0pl20a  = -1.025 
++lintl20a  = -2.4E-7         lintnl20a  = -1.7122E-7         lintpl20a  = -9.0E-8
++vsatl20a  =2.22E5           vsatnl20a  = 2.7108E5           vsatpl20a  = 4E5            
++rdswl20a  = 5.43E3          rdswnl20a  = 5.981096E3         rdsspl20a  = 0.00771
++cgl20a    = 1               cgnl20a    = 1                  cgpl20a    = 1
++rcjl20a   = 1               rcjnl20a   = 1                  rcjpl20a   = 1
++rcjswl20a = 1               rcjswnl20a = 1                  rcjswpl20a = 1
+
++toxni20a   = 4.7E-8         toxnn20a   = 4.7E-08            toxp20a   = 4.9E-8
++vth0ni20a  = 1.0344         vth0nn20a  = 0.9915             vth0p20a  = -1.168                       
++lintni20a  = 8.0E-8         lintnn20a  = 1.6E-07            lintp20a  = 3.28e-7            
++vsatni20a  = 1.018e5        vsatnn20a  = 97020              vsatp20a  = 1.123929E5                              
++rdswni20a  = 9.88e3         rdswnn20a  = 11340              rdswp20a  = 2.271762e4                      
++cgni20a    = 1              cgnn20a    = 1                  cgp20a    = 1
++rcjni20a   = 1              rcjnn20a   = 1                  rcjp20a   = 1
++rcjswni20a = 1              rcjswnn20a = 1                  rcjswp20a = 1
+.lib 'hh035.lib' HD20A
+.endl TT_20A
+
+.lib FF_20A
+.param
++toxl20a   = 1.1E-8          toxnl20a   = 1.1e-8             toxpl20a   = 1.1e-8
++vth0l20a  = 0.482           vth0nl20a  = 0.4815             vth0pl20a  = -0.816
++lintl20a  = -1.9E-7         lintnl20a  = -1.2122e-007       lintpl20a  = -4.0E-8
++vsatl20a  =  1.67E5         vsatnl20a  = 2.467E5            vsatpl20a  = 1.7E5 
++rdswl20a  = 4.168E3         rdswnl20a  = 4.59E3             rdsspl20a  = 0.00501 
++cgl20a    = 1.09            cgnl20a    = 1.09               cgpl20a    = 1.09
++rcjl20a   = 0.95            rcjnl20a   = 0.95               rcjpl20a   = 0.95
++rcjswl20a = 0.95            rcjswnl20a = 0.95               rcjswpl20a = 0.95
+
++toxni20a   = 4.45E-8        toxnn20a  = 4.45E-08            toxp20a   = 4.65E-8
++vth0ni20a  = 0.831          vth0nn20a = 0.845               vth0p20a  = -0.975                      
++lintni20a  = 1.3e-007       lintnn20a = 2.1E-07             lintp20a  = 3.78e-7            
++vsatni20a  = 1.01e5         vsatnn20a = 102300              vsatp20a  = 1.305793E5                               
++rdswni20a  = 6.163e3        rdswnn20a = 8160                rdswp20a  = 1.354669e4                      
++cgni20a    = 1.06           cgnn20a   = 1.06                cgp20a    = 1.05
++rcjni20a   = 0.95           rcjnn20a   = 0.95               rcjp20a   = 0.95
++rcjswni20a = 0.95           rcjswnn20a = 0.95               rcjswp20a = 0.95
+.lib 'hh035.lib' HD20A
+.endl FF_20A
+
+.lib SS_20A
+.param
++toxl20a   = 1.3e-8          toxnl20a   = 1.3e-8             toxpl20a   = 1.3E-8
++vth0l20a  = 0.7925          vth0nl20a  = 0.794              vth0pl20a  = -1.218
++lintl20a  = -2.9e-7         lintnl20a  = -2.2122e-007       lintpl20a  = -1.4E-7
++vsatl20a  = 2.00E5          vsatnl20a  = 2.162E5            vsatpl20a  = 1.6E5 
++rdswl20a  = 6.628E3         rdswnl20a  = 7.26E3             rdsspl20a  = 0.0102
++cgl20a    = 0.92            cgnl20a    = 0.92               cgpl20a    = 0.92    
++rcjl20a   = 1.05            rcjnl20a   = 1.05               rcjpl20a   = 1.05
++rcjswl20a = 1.05            rcjswnl20a = 1.05               rcjswpl20a = 1.05
+
++toxni20a   = 4.95E-8        toxnn20a   = 4.95E-08           toxp20a   = 5.15E-8
++vth0ni20a  = 1.237          vth0nn20a  = 1.142              vth0p20a  = -1.362        
++lintni20a  = 3e-008         lintnn20a  = 1.1E-07            lintp20a  = 2.78e-7            
++vsatni20a  = 9.06e4         vsatnn20a  = 79700              vsatp20a  = 6.33929E4                                
++rdswni20a  = 1.349e4        rdswnn20a  = 14285              rdswp20a  = 3.171762e4                       
++cgni20a    = 0.95           cgnn20a    = 0.95               cgp20a    = 0.95
++rcjni20a   = 1.05           rcjnn20a   = 1.05               rcjp20a   = 1.05
++rcjswni20a = 1.05           rcjswnn20a = 1.05               rcjswp20a = 1.05
+.lib 'hh035.lib' HD20A
+.endl SS_20A
+
+.lib TT_40S
+.param
++toxnl40s   = 1.2e-8          toxpl40s   = 1.2e-8 
++vth0nl40s  = 0.6417          vth0pl40s  = -1.0524           
++lintnl40s  = -4.8E-7         lintpl40s  = 0.0
++vsatnl40s  = 2.2e5           vsatpl40s  = 3.06288e4         
++rdswnl40s  = 1.97e4          rdswpl40s  = 5.482e4           
++cgnl40s    = 1               cgpl40s    = 1
++rcjnl40s   = 1               rcjpl40s   = 1              
++rcjswnl40s = 1               rcjswpl40s = 1  
+
++toxn40s   = 4.7E-08          toxp40s   = 4.9E-8
++vth0n40s  = 0.902            vth0p40s  = -1.14              
++lintn40s  = 1.4345E-7        lintp40s  = 4.3E-7
++vsatn40s  = 8.9e4            vsatp40s  = 1.25e5             
++rdswn40s  = 2.291e4          rdswp40s  = 4.39e4
++cgn40s    = 1                cgp40s    = 1
++rcjn40s   = 1                rcjp40s   = 1              
++rcjswn40s = 1                rcjswp40s = 1  
+.lib 'hh035.lib' HD40S
+.endl TT_40S
+
+.lib FF_40S
+.param
++toxnl40s   = 1.1e-8          toxpl40s   = 1.1e-8
++vth0nl40s  = 0.487           vth0pl40s  = -0.850968         
++lintnl40s  = -4.3e-007       lintpl40s  = 5.0e-8
++vsatnl40s  = 9.8e4           vsatpl40s  = 2.07288e4 
++rdswnl40s  = 1.416e4         rdswpl40s  = 3.96116e4         
++cgnl40s    = 1.09            cgpl40s    = 1.09
++rcjnl40s   = 0.95            rcjpl40s   = 0.95              
++rcjswnl40s = 0.95            rcjswpl40s = 0.95
+
++toxn40s   = 4.45E-08         toxp40s   = 4.65E-8
++vth0n40s  = 0.701            vth0p40s  = -0.937             
++lintn40s  = 1.9345e-007      lintp40s  = 4.8E-7
++vsatn40s  = 9.0e4            vsatp40s  = 1.55e5             
++rdswn40s  = 1.637e4          rdswp40s  = 2.49e4             
++cgn40s    = 1.06             cgp40s    = 1.05
++rcjn40s   = 0.95             rcjp40s   = 0.95              
++rcjswn40s = 0.95             rcjswp40s = 0.95
+.lib 'hh035.lib' HD40S
+.endl FF_40S
+
+.lib SS_40S
+.param
++toxnl40s   = 1.3e-8          toxpl40s   = 1.3e-8
++vth0nl40s  = 0.796           vth0pl40s  = -1.25488          
++lintnl40s  = -5.3e-007       lintpl40s  = -5.0e-8
++vsatnl40s  = 1.11e5          vsatpl40s  = 2.70288e4         
++rdswnl40s  = 2.5e4           rdswpl40s  = 6.93732e4         
++cgnl40s    = 0.92            cgpl40s    = 0.92
++rcjnl40s   = 1.05            rcjpl40s   = 1.05              
++rcjswnl40s = 1.05            rcjswpl40s = 1.05
+
++toxn40s   = 4.95E-08         toxp40s   = 5.15E-8
++vth0n40s  = 1.102            vth0p40s  = -1.342             
++lintn40s  = 9.345e-008       lintp40s  = 3.8E-7
++vsatn40s  = 6.7e4            vsatp40s  = 5.1e4
++rdswn40s  = 2.917e4          rdswp40s  = 6.24e4             
++cgn40s    = 0.95             cgp40s    = 0.95
++rcjn40s   = 1.05             rcjp40s   = 1.05              
++rcjswn40s = 1.05             rcjswp40s = 1.05
+.lib 'hh035.lib' HD40S
+.endl SS_40S
+
+.LIB TT_5V
+.PARAM
++TOXN5   =1.15E-8                   TOXP5   = 1.22E-8        
++LINTN5  =2.6E-8                    LINTP5  = -4.7E-8
++VTH0N5  =0.654                     VTH0P5  = -0.7903
++VSATN5  =74180                     VSATP5  = 101500
++RCJN5    =1                        RCJP5   = 1
++RCJSWN5  =1                        RCJSWP5 = 1 
++RCJSWGN5 =1                        RCJSWGP5= 1 
++RCGON5   =1                        RCGOP5  = 1  
+.LIB 'hh035.lib' MOS_5V
+.ENDL TT_5V
+*
+.LIB FF_5V
+.PARAM
++TOXN5    = 1.05E-8                 TOXP5   = 1.12E-8      
++LINTN5   = 4.35E-8                 LINTP5  = -2.95E-8      
++VTH0N5   =0.526                    VTH0P5  = -0.6702 
++VSATN5   =82550                    VSATP5  = 164100
++RCJN5    =0.95                     RCJP5   = 0.95  
++RCJSWN5  =0.95                     RCJSWP5 = 0.95 
++RCJSWGN5 =0.95                     RCJSWGP5= 0.95 
++RCGON5   =1.10                     RCGOP5  = 1.09
+.LIB 'hh035.lib' MOS_5V
+.ENDL FF_5V
+*
+.LIB SS_5V
+.PARAM
++TOXN5   =1.25E-8                   TOXP5   = 1.32E-8
++LINTN5  =8.5E-9                    LINTP5  = -6.45E-8       
++VTH0N5  =0.781                     VTH0P5  = -0.9103
++VSATN5  =62130                     VSATP5  = 55350
++RCJN5    =1.05                     RCJP5   = 1.05 
++RCJSWN5  =1.05                     RCJSWP5 = 1.05
++RCJSWGN5 =1.05                     RCJSWGP5= 1.05 
++RCGON5   =0.92                     RCGOP5  = 0.92
+.LIB 'hh035.lib' MOS_5V
+.ENDL SS_5V
+*
+.LIB SF_5V
+.PARAM 
++TOXN5   =1.15E-8                   TOXP5    = 1.22E-8        
++LINTN5  =2.6E-8                    LINTP5   = -4.7E-8      
++VTH0N5  =0.774                     VTH0P5   = -0.6704
++VSATN5  =74180                     VSATP5   = 101500
++RCJN5    =1.05                     RCJP5    = 0.95 
++RCJSWN5  =1.05                     RCJSWP5  = 0.95 
++RCJSWGN5 =1.05                     RCJSWGP5 = 0.95 
++RCGON5   =1                        RCGOP5   = 1 
+.LIB 'hh035.lib' MOS_5V
+.ENDL SF_5V
+*
+.LIB FS_5V
+.PARAM
++TOXN5   =1.15E-8                   TOXP5   = 1.22E-8        
++LINTN5  =2.6E-8                    LINTP5  = -4.7E-8      
++VTH0N5  =0.534                     VTH0P5  = -0.9102
++VSATN5  =74180                     VSATP5  = 101500
++RCJN5   =0.95                      RCJP5   = 1.05
++RCJSWN5 =0.95                      RCJSWP5 = 1.05 
++RCJSWGN5=0.95                      RCJSWGP5= 1.05 
++RCGON5  =1                         RCGOP5  = 1
+.LIB 'hh035.lib' MOS_5V
+.ENDL FS_5V
+
+.lib tt_40vnpn
+.param
++ isn = 1 
++ bfn = 1.2 
+.lib 'hh035.lib' vnpn40
+.endl tt_40vnpn
+
+.lib ff_40vnpn
+.param
++ isn = 1.1 
++ bfn = 2.45 
+.lib 'hh035.lib' vnpn40
+.endl ff_40vnpn
+
+.lib ss_40vnpn
+.param
++ isn = 0.885 
++ bfn = 0.47 
+.lib 'hh035.lib' vnpn40
+.endl ss_40vnpn
+
+.lib tt_40lpnp
+.param
++ isp = 1
++ bfp = 1
+.lib 'hh035.lib' lpnp40
+.endl tt_40lpnp
+
+.lib ff_40lpnp
+.param
++ isp = 1.057
++ bfp = 2.23
+.lib 'hh035.lib' lpnp40
+.endl ff_40lpnp
+
+.lib ss_40lpnp
+.param
++ isp = 0.944
++ bfp = 0.36
+.lib 'hh035.lib' lpnp40
+.endl ss_40lpnp
+
+.LIB TT_RES
+.PARAM
++  RSH_RPWELL=1400         RSH_RNDIFF=4          RSH_RNFFO=100          RSH_RPFFO=175
++  RSH_RPDIFF=3.8          RSH_RPLCD=9           RSH_RHVPW=7300
++  RSH_RM1=0.06            RSH_RM2=0.055         RSH_RM3=0.055
++  RSH_RM4=0.044           RSH_RTM4=0.0096       RSH_RRPOLYH=2000       RSH_RRPOLYL=240 
+.LIB 'hh035.lib' RES
+.ENDL TT_RES
+
+.LIB MAX_RES
+.PARAM
++  RSH_RPWELL=1680         RSH_RNDIFF=20         RSH_RNFFO=120          RSH_RPFFO=210
++  RSH_RPDIFF=11           RSH_RPLCD=12          RSH_RHVPW=8760
++  RSH_RM1=0.14            RSH_RM2=0.14          RSH_RM3=0.14
++  RSH_RM4=0.105           RSH_RTM4=0.012        RSH_RRPOLYH=2400       RSH_RRPOLYL=270 
+.LIB 'hh035.lib' RES
+.ENDL MAX_RES
+
+.LIB MIN_RES
+.PARAM
++  RSH_RPWELL=1120         RSH_RNDIFF=4          RSH_RNFFO=80           RSH_RPFFO=140
++  RSH_RPDIFF=2            RSH_RPLCD=7           RSH_RHVPW=5840
++  RSH_RM1=0.06            RSH_RM2=0.055         RSH_RM3=0.055 
++  RSH_RM4=0.044           RSH_RTM4=0.0096       RSH_RRPOLYH=1600       RSH_RRPOLYL=210 
+.LIB 'hh035.lib' RES
+.ENDL MIN_RES
+
+.LIB TT_MIP
+.PARAM
++  CC_COX =0.68e-3  CC_CAPSW =3e-11
++  CC_COX1=1e-3     CC_CAPSW1=5e-11
+.LIB 'hh035.lib' MIP
+.ENDL TT_MIP
+
+.LIB MAX_MIP
+.PARAM
++  CC_COX =0.75e-3  CC_CAPSW =3e-11
++  CC_COX1=1.1e-3   CC_CAPSW1=5e-11
+.LIB 'hh035.lib' MIP
+.ENDL MAX_MIP
+
+.LIB MIN_MIP
+.PARAM
++  CC_COX =0.61e-3  CC_CAPSW =3e-11
++  CC_COX1=0.9e-3   CC_CAPSW1=5e-11
+.LIB 'hh035.lib' MIP
+.ENDL MIN_MIP
+
+.LIB TT_MOSVAR
+.PARAM
++  rcpnw12 = 1          rcppw12 = 1
++  rcpnw5  = 1          rcppw5  = 1
+.LIB 'hh035.lib' MOSVAR
+.ENDL TT_MOSVAR
+
+.LIB MAX_MOSVAR
+.PARAM
++  rcpnw12 = 1.05       rcppw12 = 1.05
++  rcpnw5  = 1.09       rcppw5  = 1.09
+.LIB 'hh035.lib' MOSVAR
+.ENDL MAX_MOSVAR
+
+.LIB MIN_MOSVAR
+.PARAM
++  rcpnw12 = 0.95       rcppw12 = 0.95
++  rcpnw5  = 0.91       rcppw5  = 0.91
+.LIB 'hh035.lib' MOSVAR
+.ENDL MIN_MOSVAR
+
+****************************************************************************
+*                        40V HV asymmetric                                 *
+****************************************************************************
+****************************************************************************
+*                                                                          *
+*         5V LVOX 40V LDMOS MODEL                                          *
+*                                                                          *
+****************************************************************************
+.lib HD40A
+
+.model nld40ai nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxl40a'               xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1E-7                   wl = -1E-13                   wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintl40a'             ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.36E-8                dwb = 1.4E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0l40a'             k1 = 0.875231                 k2 = 0.0135                   
++lk2 = 1.3E-8                  k3 = 9.7                      k3b = -3.6                    
++w0 = 2.5E-6                   nlx = 5.9E-7                  dvt0 = 2.2                    
++dvt1 = 0.53                   dvt2 = 0                      dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.063                    ua = 1.05E-9                  ub = 1.9E-18                  
++uc = 9E-11                    vsat = 'vsatl40a'             a0 = 1.4                      
++la0 = -1.5E-6                 ags = 0.16                    b0 = 4.3E-7                   
++b1 = 0                        keta = -8.4E-3                lketa = -4E-8                 
++a1 = 0                        a2 = 1                        rdsw = 'rdswl40a'            
++prdsw = -7.4E-9               prwb = 0.033                  prwg = -0.0265                
++wr = 1                        
++voff = -0.08                  nfactor = 0.9                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 2                      pdiblc1 = 0.578799            pdiblc2 = 1.5093E-4           
++pdiblcb = 0                   drout = 0.8059                pscbe1 = 4.24E8               
++pscbe2 = 1E-20                pvag = 0                      delta = 0.15                  
++alpha0 = -1.07E-6             alpha1 = 1                    beta0 = 200                   
++xpart = 0                     cgso = 'cgl40a*1.0E-10'       cgdo = 'cgl40a*5.5e-010'     
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -5.75E-7                   
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 0.46                   moin = 15                     cgsl = 'cgl40a*1.0E-11'      
++cgdl = 'cgl40a*1e-010'       
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjl40a*0.0001197'    
++mj = 0.35009                  mjsw = 0.78039                cjsw = 'rcjswl40a*4.6738e-010' 
++js = 7.3667E-7                jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.63703                  
++tnom = 25                     ute = -1.38                   kt1 = -0.34                   
++kt1l = -1.6E-8                kt2 = -0.021                  ua1 = 4.68E-9                 
++ub1 = -5.58E-18               uc1 = -7E-11                  at = -1.5E5                   
++prt = 1.3E4                   wprt = -0.016                 pprt = 4E-9                   
++nj = 1.0182                   xti = 4.5                  
+
+*******************************************************************************
+.model nld40ai_lvgs nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxl40a'               xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1E-7                   wl = -1E-13                   wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintl40a'             ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.36E-8                dwb = 1.4E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0l40a'             k1 = 0.875231                 k2 = 0.0135                   
++lk2 = 1.3E-8                  k3 = 9.7                      k3b = -3.6                    
++w0 = 2.5E-6                   nlx = 5.9E-7                  dvt0 = 2.2                    
++dvt1 = 0.53                   dvt2 = 0                      dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.063                    ua = 1.05E-9                  ub = 1.9E-18                  
++uc = 9E-11                    vsat = 'vsatl40a'             a0 = 1.904                    
++la0 = -1.83E-6                ags = 0.16                    b0 = 4.3E-7                   
++b1 = 0                        keta = -8.4E-3                lketa = -4E-8                 
++a1 = 0                        a2 = 1                        rdsw = 'rdswl40a'            
++prdsw = -7.4E-9               prwb = 0.033                  prwg = -0.0265                
++wr = 1                        
++voff = -0.08                  nfactor = 0.9                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 2                      pdiblc1 = 0.578799            pdiblc2 = 1.5093E-4           
++pdiblcb = 0                   drout = 0.8059                pscbe1 = 4.24E8               
++pscbe2 = 1E-20                pvag = 0                      delta = 0.15                  
++alpha0 = -1.07E-6             alpha1 = 1                    beta0 = 200 
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       
++xpart = 0                     cgso = 'cgl40a*1.0E-10'       cgdo = 'cgl40a*5.5e-010'     
++cgbo = 0                      cj = 'rcjl40a*0.0001197'      pb = 0.63703
++mj = 0.35009                  mjsw = 0.78039                cjsw = 'rcjswl40a*4.6738e-010' 
++js = 7.3667E-7                jsw = 1E-12                   pbsw = 0.5                                                      
++ckappa = 0.6                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -5.75E-7                dwc = 0                       
++noff = 1                      voffcv = 0                    acde = 0.46                   
++moin = 15                     cgsl = 'cgl40a*1.0E-11'       cgdl = 'cgl40a*1e-010'       
++tnom = 25                     ute = -1.38                   kt1 = -0.34                   
++kt1l = -1.6E-8                kt2 = -0.021                  ua1 = 4.68E-9                 
++ub1 = -5.58E-18               uc1 = -7E-11                  at = -1.5E5                   
++prt = 1.3E4                   wprt = -0.016                 pprt = 4E-9                   
++nj = 1.0182                   xti = 4.5                    
+
+
+*******************************************************************************
+.subckt pld40a d g s b w=2.0E-5 l=1.0E-6 dtemp=0.0 ad=125p pd=60u as=20p ps=42u pf=1
+.param
++rdss = rdsspl40a              vv1 = 0.19                    w0 = 8.0e-7
++vv2 = 0.0                     tc1x = 5.808e-3               tc2x = 0.0                                      
+r1 d d1 'rdss*(1+vv1*abs(v(d,d1))+vv2*v(d,d1)*v(d,d1))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+m1 d1 g s1 b plv_40a w=w l=l dtemp=dtemp ad=ad pd=pd as=as ps=ps m=pf
+r2 s1 s '(rdss/20)*(1+vv1*abs(v(s1,s))+vv2*v(s1,s)*v(s1,s))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+
+.model plv_40a pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxpl40a'              xj = 2.5E-7                   nch = 1.7E17                  
++wint = 2.1E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintpl40a'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.5E-8                 dwb = 1.685E-8                
++vth0 = 'vth0pl40a'            wvth0 = 1.6E-7                pvth0 = -4.4E-14              
++k1 = 0.2371                   k2 = 0.025                    k3 = 0                        
++k3b = 0                       w0 = 2.5E-6                   nlx = 2.7E-7                  
++dvt0 = 0.2                    dvt1 = 0.1734                 dvt2 = -0.30173               
++dvt0w = 0                     dvt1w = 5.3E6                 dvt2w = -0.032                
++ngate = 1E23                  
++u0 = 0.08                     ua = 1.66E-8                  ub = -4.53E-18                
++uc = -2.59E-10                vsat = 'vsatpl40a'            a0 = 1.7                      
++la0 = -3.4E-6                 ags = 0.23                    b0 = 8.3E-7                   
++b1 = 0                        keta = -5E-3                  lketa = -1E-8                 
++a1 = 0                        a2 = 1                        rdsw = 7.5E3                  
++prdsw = -4.5E-9               prwb = 0.147                  pprwb = 3.4E-14               
++prwg = -0.116                 pprwg = -3.071E-14            wr = 1                        
++voff = 0                      nfactor = 0.1                 eta0 = 0.08                   
++etab = -1.3                   dsub = 0.67                   cit = 6.15E-4                 
++cdsc = 2.5E-4                 cdscb = 5E-5                  cdscd = 0                     
++pclm = 1                      pdiblc1 = 0.1                 pdiblc2 = 1E-6                
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 1E10                 
++pscbe2 = 1E-5                 pvag = 0                      delta = 0.12                  
++alpha0 = 0                    alpha1 = 0                    beta0 = 30                    
++xpart = 0                     cgso = 'cgpl40a*1.2E-10'      cgdo = 'cgpl40a*4e-010'       
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -4.425E-7               
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgpl40a*2.0E-11'      
++cgdl = 'cgpl40a*1e-010'       
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjpl40a*0.00010465'    
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswpl40a*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                  
++tnom = 25                     ute = -1.9                    kt1 = -0.65                   
++kt1l = 6E-8                   kt2 = -0.027                  ua1 = -3.6E-9                 
++lua1 = 0                      ub1 = -6.732E-18              uc1 = 1.01901E-10             
++at = -2.45E5                  prt = 1E4                     nj = 1.0182                   
++xti = 4.5                     
+                                        
+.ends
+
+*******************************************************************************
+.subckt pld40a_lvgs d g s b w=2.0E-5 l=1.0E-6 dtemp=0.0 ad=125p pd=60u as=20p ps=42u pf=1
+.param
++rdss = rdsspl40a              vv1 = 0.19                    w0 = 8.0e-7
++vv2 = 0.0                     tc1x = 5.808e-3               tc2x = 0.0                                      
+r1 d d1 'rdss*(1+vv1*abs(v(d,d1))+vv2*v(d,d1)*v(d,d1))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+m1 d1 g s1 b plv_40a_lvgs w=w l=l dtemp=dtemp ad=ad pd=pd as=as ps=ps m=pf
+r2 s1 s '(rdss/20)*(1+vv1*abs(v(s1,s))+vv2*v(s1,s)*v(s1,s))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+
+.model plv_40a_lvgs pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxpl40a'              xj = 2.5E-7                   nch = 1.7E17                  
++wint = 2.1E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintpl40a'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.5E-8                 dwb = 1.685E-8                
++vth0 = 'vth0pl40a'            wvth0 = 1.6E-7                pvth0 = -4.4E-14              
++k1 = 0.2371                   k2 = 0.025                    k3 = 0                        
++k3b = 0                       w0 = 2.5E-6                   nlx = 2.7E-7                  
++dvt0 = 0.2                    dvt1 = 0.1734                 dvt2 = -0.30173               
++dvt0w = 0                     dvt1w = 5.3E6                 dvt2w = -0.032                
++ngate = 1E23                  
++u0 = 0.08                     ua = 1.66E-8                  ub = -4.53E-18                
++uc = -2.59E-10                vsat = 'vsatpl40a'            a0 = 1.7                      
++la0 = -3.4E-6                 ags = 0.03                    lags = 4.45E-7                
++b0 = 8.3E-7                   b1 = 0                        keta = -5E-3                  
++lketa = -1E-8                 a1 = 0                        a2 = 1                        
++rdsw = 7.5E3                  prdsw = -4.5E-9               prwb = 0.147                  
++pprwb = 3.4E-14               prwg = -0.116                 pprwg = -3.071E-14            
++wr = 1                        
++voff = 0                      nfactor = 0.1                 eta0 = 0.08                   
++etab = -1.3                   dsub = 0.67                   cit = 6.15E-4                 
++cdsc = 2.5E-4                 cdscb = 5E-5                  cdscd = 0                     
++pclm = 1.3                    pdiblc1 = 0.2                 pdiblc2 = 1E-6                
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 1E10                 
++pscbe2 = 1E-5                 pvag = 0                      delta = 0.12                  
++alpha0 = 0                    alpha1 = 0                    beta0 = 30                    
++xpart = 0                     cgso = 'cgpl40a*1.2E-10'      cgdo = 'cgpl40a*4e-010'       
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -4.425E-7               
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgpl40a*2.0E-11'      
++cgdl = 'cgpl40a*1e-010'       
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjpl40a*0.00010465'    
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswpl40a*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                    
++tnom = 25                     ute = -1.9                    kt1 = -0.65                   
++kt1l = 6E-8                   kt2 = -0.027                  ua1 = -3.6E-9                 
++lua1 = 0                      ub1 = -6.732E-18              uc1 = 1.01901E-10             
++at = -2.45E5                  prt = 1E4                     nj = 1.0182                   
++xti = 4.5                     
+                                        
+.ends
+
+********************************************************************************
+.model nld40an nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxnl40a'              xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1E-7                   wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintnl40a'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -8E-9                   dwb = 2.4E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0nl40a'            k1 = 0.875231                 k2 = 0.0135                   
++k3 = 9.7                      k3b = -3.6                    w0 = 2.5E-6                   
++nlx = 3.6E-7                  dvt0 = 2.2                    dvt1 = 0.53                   
++dvt2 = 0                      dvt0w = 0                     dvt1w = 5.3E6                 
++dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.062                    ua = 1.05E-9                  ub = 1.9E-18                  
++uc = 9E-11                    vsat = 'vsatnl40a'            a0 = 1.86                     
++la0 = -1.57728E-6             ags = 0.18                                          
++b0 = 5E-7                     b1 = 0                        keta = -7E-3                  
++lketa = -3.3E-8               a1 = 0                        a2 = 1                        
++rdsw = 'rdswnl40a'            prdsw = -7.4E-9               prwb = 0.028                  
++pprwb = 4.68E-14              prwg = -0.0205                pprwg = -1.9E-14              
++wr = 1                        
++voff = -0.08                  nfactor = 0.9                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 2.4                    pdiblc1 = 0.578799            pdiblc2 = 1.5093E-4           
++pdiblcb = 0                   drout = 0.8059                pscbe1 = 4.24E8               
++pscbe2 = 1E-20                pvag = 0                      delta = 0.05                  
++alpha0 = -8.16E-8             alpha1 = 0.066                beta0 = 127.6155              
++xpart = 0                     cgso = 'cgnl40a*1.0E-10'      cgdo = 'cgnl40a*4.1e-010'     
++cgbo = 0                      ckappa = 0.1                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -6E-7                   
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 0.46                   moin = 15                     cgsl = 'cgnl40a*1.0E-11'      
++cgdl = 'cgnl40a*1e-010'       
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjnl40a*0.00010465'    
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswnl40a*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                 
++tnom = 25                     ute = -1.38                   kt1 = -0.34                   
++kt1l = -1.28E-7               kt2 = -0.021                  ua1 = 4.1652E-9               
++ub1 = -5.58E-18               uc1 = -7E-11                  at = -4E5                     
++prt = 1.326E4                 pprt = -1.856E-8                                
++nj = 1.0182                   xti = 4.5                                           
+
+********************************************************************************
+.model nld40an_lvgs nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxnl40a'              xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1E-7                   wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintnl40a'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -8E-9                   dwb = 2.4E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0nl40a'            k1 = 0.875231                 k2 = 0.0135                   
++k3 = 9.7                      k3b = -3.6                    w0 = 2.5E-6                   
++nlx = 3.6E-7                  dvt0 = 2.2                    dvt1 = 0.53                   
++dvt2 = 0                      dvt0w = 0                     dvt1w = 5.3E6                 
++dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.062                    ua = 1.05E-9                  ub = 1.9E-18                  
++uc = 9E-11                    vsat = 'vsatnl40a'            a0 = 1.86                     
++la0 = -1.57728E-6             ags = 0.18                                         
++b0 = 5E-7                     b1 = 0                        keta = -7E-3                  
++lketa = -3.3E-8               a1 = 0                        a2 = 1                        
++rdsw = 'rdswnl40a'            prdsw = -7.4E-9               prwb = 0.028                  
++pprwb = 4.68E-14              prwg = -0.0205                pprwg = -1.9E-14              
++wr = 1                        
++voff = -0.08                  nfactor = 0.9                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 2.4                    pdiblc1 = 0.578799            pdiblc2 = 1.5093E-4           
++pdiblcb = 0                   drout = 0.8059                pscbe1 = 4.24E8               
++pscbe2 = 1E-20                pvag = 0                      delta = 0.05                  
++alpha0 = -8.16E-8             alpha1 = 0.066                beta0 = 127.6155              
++xpart = 0                     cgso = 'cgnl40a*1.0E-10'      cgdo = 'cgnl40a*4.1e-010'     
++cgbo = 0                      ckappa = 0.1                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -6E-7                   
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 0.46                   moin = 15                     cgsl = 'cgnl40a*1.0E-11'      
++cgdl = 'cgnl40a*1e-010'       
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjnl40a*0.00010465'    
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswnl40a*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                 
++tnom = 25                     ute = -1.38                   kt1 = -0.34                   
++kt1l = -1.28E-7               kt2 = -0.021                  ua1 = 4.1652E-9               
++ub1 = -5.58E-18               uc1 = -7E-11                  at = -4E5                     
++prt = 1.326E4                 pprt = -1.856E-8                                
++nj = 1.0182                   xti = 4.5 
+
+****************************************************
+* 12V HVOX 40V LDMOS                               *
+****************************************************
+.model nhd40ai nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxni40a'              xj = 1.5E-7                   nch = 1.7E17                  
++wint = -2.856E-7              wl = 0                        wln = 1                       
++ww = 9.6E-13                  wwn = 1                       wwl = -9.764E-19              
++lint = 'lintni40a'            ll = 0                        lln = 1                       
++lw = -5.5E-13                 lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.73E-8                dwb = 4.5E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0ni40a'            k1 = 1.57                     k2 = 0.064                    
++lk2 = -1.7E-8                 pk2 = -6.144E-14              k3 = 15                       
++k3b = -5.6                    w0 = 2.5E-6                   nlx = 2.91E-7                 
++dvt0 = 2.2                    dvt1 = 0.3021                 dvt2 = -0.032                 
++dvt0w = 0.583                 dvt1w = 5.81145E3             dvt2w = 0                     
++ngate = 1E23                  
++u0 = 0.064696                 ua = 2.54562E-9               ub = -1.1832E-18              
++uc = 2.754E-11                vsat = 'vsatni40a'            pvsat = 7.6E-8                
++a0 = 1.1396                   la0 = -2.52E-6                ags = 0.059514                
++lags = 8.28E-8                b0 = 1.67E-6                  wb0 = -1.4E-12                
++b1 = 0                        keta = 0                      lketa = -6.9E-8               
++wketa = 4E-8                  a1 = 0                        a2 = 1                        
++rdsw = 'rdswni40a'            prdsw = -2.4252E-8            prwb = 0                      
++prwg = -0.02299               pprwg = -1.6E-14              wr = 1                        
++voff = -0.096                 nfactor = 0.2                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 1.2E-4                  
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 0.65                   pdiblc1 = 0.01                pdiblc2 = 4.3E-6              
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 1.2E9                
++pscbe2 = 0                    lpscbe2 = 0                   ppscbe2 = 0                   
++pvag = 0                      delta = 0.1                   alpha0 = -3.8E-8              
++alpha1 = 0.029                beta0 = 80                    
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       
++xpart = 0                     cgso = 'cgni40a*8.9E-11'      cgdo = 'cgni40a*4.5e-010'     
++cgbo = 0                      cj = 'rcjni40a*0.0001197'     mj = 0.35009                   
++mjsw = 0.78039                cjsw = 'rcjswni40a*4.6738e-010' js = 7.3667E-7                 
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.63703                     
++ckappa = 0.6                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -3.15E-7                dwc = 0                       
++noff = 1                      lnoff = 1.5E-6                voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgni40a*2.0E-11'      
++cgdl = 'cgni40a*1e-010'       
++tnom = 25                     ute = -1.7                    kt1 = -0.76                   
++kt1l = -1E-7                  kt2 = -0.08271                ua1 = 2.394E-9                
++ub1 = -6E-18                  uc1 = -5.6E-11                at = -5E3                     
++prt = 1.885E4                 pprt = -4.745E-8              nj = 1.0182                   
++xti = 4.5                  
+
+***************************************************************************************
+.model nhd40ai_lvgs nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxni40a'              xj = 1.5E-7                   nch = 1.7E17                  
++wint = -2.856E-7              wl = 0                        wln = 1                       
++ww = 9.6E-13                  wwn = 1                       wwl = -9.764E-19              
++lint = 'lintni40a'            ll = 0                        lln = 1                       
++lw = -5.5E-13                 lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.73E-8                dwb = 4.5E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0ni40a'            k1 = 1.57                     k2 = 0.064                    
++lk2 = -1.7E-8                 pk2 = -6.144E-14              k3 = 15                       
++k3b = -5.6                    w0 = 2.5E-6                   nlx = 2.91E-7                 
++dvt0 = 2.2                    dvt1 = 0.3021                 dvt2 = -0.032                 
++dvt0w = 0.583                 dvt1w = 5.81145E3             dvt2w = 0                     
++ngate = 1E23                  
++u0 = 0.064696                 ua = 2.54562E-9               ub = -1.1832E-18              
++uc = 2.754E-11                vsat = 'vsatni40a'            pvsat = 7.6E-8                
++a0 = 1.356124                 la0 = -2.016E-6               ags = 0.033923                
++lags = 0                      b0 = 1.67E-6                  wb0 = -1.4E-12                
++b1 = 0                        keta = 0                      lketa = -6.9E-8               
++wketa = 4E-8                  a1 = 0                        a2 = 1                        
++rdsw = 'rdswni40a'            prdsw = -2.4252E-8            prwb = 0                      
++prwg = -0.02299               pprwg = -1.6E-14              wr = 1                        
++voff = -0.096                 nfactor = 0.2                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 1.2E-4                  
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 0.65                   pdiblc1 = 0.01                pdiblc2 = 4.3E-6              
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 1.2E9                
++pscbe2 = 1E-6                 pvag = 0                      delta = 0.1                   
++alpha0 = -3.8E-8              alpha1 = 0.029                beta0 = 80                    
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       
++xpart = 0                     cgso = 'cgni40a*8.9E-11'      cgdo = 'cgni40a*4.5e-010'     
++cgbo = 0                      cj = 'rcjni40a*0.0001197'     mj = 0.35009                   
++mjsw = 0.78039                cjsw = 'rcjswni40a*4.6738e-010' js = 7.3667E-7                 
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.63703                    
++ckappa = 0.6                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -3.15E-7                dwc = 0                       
++noff = 1                      lnoff = 1.5E-6                voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgni40a*2.0E-11'      
++cgdl = 'cgni40a*1e-010'       
++tnom = 25                     ute = -1.7                    kt1 = -0.6916                 
++kt1l = 0                      kt2 = -0.08271                ua1 = 2.394E-9                
++ub1 = -6E-18                  uc1 = -5.6E-11                at = -5E3                     
++prt = 1.885E4                 pprt = -4.745E-8              nj = 1.0182                   
++xti = 4.5                  
+
+
+***************************************************************************************
+.subckt phd40a d g s b w=2.0E-5 l=2.5E-6 dtemp=0.0 ad=125p pd=60u as=20p ps=42u pf=1
+.param
++tc1x = 1.717e-3               tc2x = 9.752e-6               rdss = rdssp40a               
++vv1 = 0.165                   vv2 = 0                       w0 = 3.5e-7                     
+r1 d d1 'rdss*(1+vv1*abs(v(d,d1))+vv2*v(d,d1)*v(d,d1))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+m1 d1 g s1 b phv_40a w=w l=l dtemp=dtemp ad=ad pd=pd as=as ps=ps m=pf
+r2 s1 s '(rdss/20)*(1+vv1*abs(v(s1,s))+vv2*v(s1,s)*v(s1,s))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+
+.model phv_40a pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxp40a'               xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.421E-7               wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintp40a'             ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -5.7E-9                 dwb = 1E-8                    xl = 0                        
++xw = 0                        
++vth0 = 'vth0p40a'             wvth0 = 0                     pvth0 = 7.84E-14              
++k1 = 0.91                     k2 = 0.043                    wk2 = 4.16E-8                 
++k3 = 21.89                    k3b = -2.5                    w0 = 2.5E-6                   
++nlx = 3.38E-7                 dvt0 = 4.459                  dvt1 = 0.192012               
++dvt2 = 2.88E-3                dvt0w = -0.1216               dvt1w = 2.4E5                 
++dvt2w = 0                     ngate = 1E23                  
++u0 = 0.0352                   ua = 1.05E-8                  ub = -1.009E-17               
++uc = -1.4E-10                 vsat = 'vsatp40a'             pvsat = -1E-8                 
++a0 = 0.7608                   la0 = -1.56915E-6             ags = 3.58892E-2              
++lags = 5.383E-8               b0 = 4.08E-7                  b1 = 0                        
++keta = -0.0225                lketa = -2.92572E-8           wketa = 2.2E-8                
++pketa = 0                     a1 = 0                        a2 = 1                        
++rdsw = 2.06E3                 prdsw = 0                     prwb = 0.15                   
++prwg = -0.017                 pprwg = -1E-12                wr = 0.8                      
++voff = -0.0225                lvoff = 5.4E-9                wvoff = -1.944E-7             
++nfactor = 0.01                eta0 = 0.08                   etab = -0.07                  
++dsub = 0.56                   cit = 7E-4                    cdsc = 2.4E-4                 
++cdscb = 0                     cdscd = 0                     
++pclm = 1.28688                pdiblc1 = 5.1E-3              pdiblc2 = 1E-6                
++pdiblcb = 0                   drout = 1.122                 pscbe1 = 4.24E8               
++pscbe2 = 2.25E-9              pvag = 0                      ppvag = 0                     
++delta = 0.01                  alpha0 = 0                    beta0 = 30               
++xpart = 0                     cgso = 'cgp40a*7.8E-11'       cgdo = 'cgp40a*3e-010'        
++cgbo = 0                      ckappa = 0.9                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -6.5E-7                 
++dwc = 0                       vfbcv = -1                    noff = 1                      
++voffcv = 0                    acde = 1                      moin = 15                     
++cgsl = 'cgp40a*7E-11'         cgdl = 'cgp40a*1e-010'        
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjp40a*0.00010465'     
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswp40a*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                  
++tnom = 25                     ute = -1.9                    pute = -6E-13                 
++kt1 = -0.798                  kt1l = 0                      kt2 = -0.0512                 
++ua1 = -7.30544E-9             ub1 = 0                       lub1 = 1.50912E-23            
++wub1 = 1.834E-24              pub1 = -1.35192E-29           uc1 = 6E-11
++luc1 = 0                      puc1 = -1.2364E-21            at = -5E4                
++lat = 0.06156                 pat = 6.8112E-8               prt = 9E3               
++nj = 1.0182                   xti = 4.5                  
+
+.ends              
+
+***************************************************************************************
+.subckt phd40a_lvgs d g s b w=2.0E-5 l=2.5E-6 dtemp=0.0 ad=125p pd=60u as=20p ps=42u pf=1
+.param
++tc1x = 1.717e-3               tc2x = 9.752e-6               rdss = rdssp40a               
++vv1 = 0.165                   vv2 = 0                       w0 = 3.5e-7                     
+r1 d d1 'rdss*(1+vv1*abs(v(d,d1))+vv2*v(d,d1)*v(d,d1))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+m1 d1 g s1 b phv_40a_lvgs w=w l=l dtemp=dtemp ad=ad pd=pd as=as ps=ps m=pf
+r2 s1 s '(rdss/20)*(1+vv1*abs(v(s1,s))+vv2*v(s1,s)*v(s1,s))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+
+.model phv_40a_lvgs pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxp40a'               xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.421E-7               wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintp40a'             ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -5.7E-9                 dwb = 1E-8                    xl = 0                        
++xw = 0                        
++vth0 = 'vth0p40a'             wvth0 = 0                     pvth0 = 7.84E-14              
++k1 = 0.91                     k2 = 0.043                    wk2 = 4.16E-8                 
++k3 = 21.89                    k3b = -2.5                    w0 = 2.5E-6                   
++nlx = 3.38E-7                 dvt0 = 4.459                  dvt1 = 0.192012               
++dvt2 = 2.88E-3                dvt0w = -0.1216               dvt1w = 2.4E5                 
++dvt2w = 0                     ngate = 1E23                  
++u0 = 0.0352                   ua = 1.05E-8                  ub = -1.009E-17               
++uc = -1.4E-10                 vsat = 'vsatp40a'             pvsat = -1E-8                 
++a0 = 1.65678                  la0 = -3.86809E-6             ags = 3.58892E-2              
++lags = 5.383e-8                b0 = 4.08E-7                  b1 = 0                        
++keta = -0.0225                lketa = -2.92572E-8           wketa = 2.2E-8                
++pketa = 0                     a1 = 0                        a2 = 1                        
++rdsw = 2.06E3                 prdsw = 0                     prwb = 0.15                   
++prwg = -0.017                 pprwg = -1E-12                wr = 0.8                      
++voff = -0.0225                lvoff = 5.4E-9                wvoff = -1.944E-7             
++nfactor = 0.01                eta0 = 0.08                   etab = -0.07                  
++dsub = 0.56                   cit = 7E-4                    cdsc = 2.4E-4                 
++cdscb = 0                     cdscd = 0                     
++pclm = 1.28688                pdiblc1 = 5.1E-3              pdiblc2 = 1E-6                
++pdiblcb = 0                   drout = 1.122                 pscbe1 = 4.24E8               
++pscbe2 = 2.25E-9              pvag = 0                      ppvag = 0                     
++delta = 0.01                  alpha0 = 0                    beta0 = 30               
++xpart = 0                     cgso = 'cgp40a*7.8E-11'       cgdo = 'cgp40a*3e-010'        
++cgbo = 0                      ckappa = 0.9                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -6.5E-7                 
++dwc = 0                       vfbcv = -1                    noff = 1                      
++voffcv = 0                    acde = 1                      moin = 15                     
++cgsl = 'cgp40a*7E-11'         cgdl = 'cgp40a*1e-010'        
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjp40a*0.00010465'     
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswp40a*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                    
++tnom = 25                     ute = -1.9                    pute = -6E-13                 
++kt1 = -0.798                  kt1l = 0                      kt2 = -0.0512                 
++ua1 = -7.30544E-9             ub1 = 0                       lub1 = 1.50912E-23            
++wub1 = 1.834E-24              pub1 = -1.35192E-29           uc1 = 6E-11
++luc1 = 0                      puc1 = -1.2364E-21            at = -5E4                
++lat = 0.06156                  pat = 6.8112E-8               prt = 9E3               
++nj = 1.0182                   xti = 4.5                  
+                            
+
+.ends              
+
+***********************************************************************************
+.model nhd40an nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxnn40a'              xj = 2.5E-7                   nch = 3.44E16                 
++wint = 2.3E-7                 wl = -6.8E-13                 wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintnn40a'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.05E-8                dwb = 3E-8                    
++vth0 = 'vth0nn40a'            pvth0 = -3.7E-13              k1 = 1.4                      
++k2 = 0.113                    k3 = 0.3                      k3b = -3                      
++w0 = 2.5E-6                   nlx = 2.44E-7                 dvt0 = 10.8327                
++dvt1 = 0.774811               dvt2 = -0.051                 dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.0711                   ua = 2.63E-9                  ub = -9.1E-19                 
++uc = 2.3E-11                  vsat = 'vsatnn40a'            a0 = 1.1                      
++la0 = -1.8E-6                 ags = 0.049                   b0 = 4.28E-7                  
++b1 = 4.44E-21                 keta = 7.6E-3                 lketa = -8.75E-8              
++wketa = 2.5E-8                a1 = 0                        a2 = 1                        
++rdsw = 'rdswnn40a'            prwb = -0.02                  pprwb = 1.6E-13               
++prwg = -0.024                 pprwg = -3.6E-14              wr = 1                        
++voff = -0.08                  nfactor = 1                   eta0 = 0                      
++etab = 0                      dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 4.427                  pdiblc1 = 1E-3                pdiblc2 = 1E-6                
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4.24E8               
++pscbe2 = 1E-9                 pvag = 6.6                    delta = 0.2                   
++alpha0 = -1.2E-7              alpha1 = 0.1                  beta0 = 170                   
++xpart = 0                     cgso = 'cgnn40a*8.5E-11'      cgdo = 'cgnn40a*4.5e-010'     
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -6.15E-7                
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgnn40a*9.0E-11'      
++cgdl = 'cgnn40a*1e-010'       
++tlevc = 1                     acm = 13                      rsh = 0                       
++cj = 'rcjnn40a*0.00010465'    mj = 0.78039                  mjsw = 0.78039                
++cjsw = 'rcjswnn40a*4.6738e-010' js = 1E-6                   jsw = 1E-12              
++pbsw = 0.5                    pb = 0.5                  
++tnom = 25                     ute = -1.62767                kt1 = -0.680314               
++kt1l = -2.1E-7                kt2 = -8.14336E-2             ua1 = 3.3E-9                  
++wua1 = -1.4E-15               ub1 = -5.18E-18               uc1 = 0                       
++wuc1 = 0                      at = 3E3                      prt = 2.2E4                   
++nj = 1.0182                   xti = 4.5                                    
+
+***********************************************************************************
+.model nhd40an_lvgs nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxnn40a'              xj = 2.5E-7                   nch = 3.44E16                 
++wint = 2.3E-7                 wl = -6.8E-13                 wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintnn40a'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.05E-8                dwb = 3E-8                    
++vth0 = 'vth0nn40a'            pvth0 = -3.7E-13              k1 = 1.4                      
++k2 = 0.113                    k3 = 0.3                      k3b = -3                      
++w0 = 2.5E-6                   nlx = 2.44E-7                 dvt0 = 10.8327                
++dvt1 = 0.774811               dvt2 = -0.051                 dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.0711                   ua = 2.63E-9                  ub = -9.1E-19                 
++uc = 2.3E-11                  vsat = 'vsatnn40a'            a0 = 2                        
++la0 = -1.8E-6                 wa0 = 1.9E-6                  ags = 0.063                   
++b0 = 4.28E-7                  b1 = 4.44E-21                 keta = 7.6E-3                 
++lketa = -8.75E-8              wketa = 2.5E-8                a1 = 0                        
++a2 = 1                        rdsw = 'rdswnn40a'            prwb = -0.02                  
++pprwb = 1.6E-13               prwg = -0.024                 pprwg = -3.6E-14              
++wr = 1                        
++voff = -0.08                  nfactor = 1                   eta0 = 0                      
++etab = 0                      dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 4.427                  pdiblc1 = 1E-3                pdiblc2 = 1E-6                
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4.24E8               
++pscbe2 = 1E-9                 pvag = 6.6                    delta = 0.2                   
++alpha0 = -1.2E-7              alpha1 = 0.1                  beta0 = 170                   
++xpart = 0                     cgso = 'cgnn40a*8.5E-11'      cgdo = 'cgnn40a*4.5e-010'     
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -6.15E-7                
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgnn40a*9.0E-11'      
++cgdl = 'cgnn40a*1e-010'       
++tlevc = 1                     acm = 13                      rsh = 0                       
++cj = 'rcjnn40a*0.00010465'    mj = 0.78039                  mjsw = 0.78039                
++cjsw = 'rcjswnn40a*4.6738e-010' js = 1E-6                   jsw = 1E-12              
++pbsw = 0.5                    pb = 0.5           
++tnom = 25                     ute = -1.62767                kt1 = -0.680314               
++kt1l = -2.1E-7                kt2 = -8.14336E-2             ua1 = 3.3E-9                  
++wua1 = -1.4E-15               ub1 = -5.18E-18               uc1 = 0                       
++wuc1 = 0                      at = 3E3                      prt = 2.2E4                   
++nj = 1.0182                   xti = 4.5                
+
+
+.endl HD40A
+
+
+********************************************************************************
+*                                                                              *
+*                        20V HV asymmetric                                     *
+*                                                                              *
+********************************************************************************
+*                                                                              *
+* 5V LVOX 20V LDMOS MODEL                                                      *
+*                                                                              *
+********************************************************************************
+.LIB HD20A
+
+.model nld20ai nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = toxl20a                 xj = 2.5E-7                   nch = 1.4993E17               
++wint = 1.3E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = -8E-20                  
++lint = lintl20a               ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.2E-8                 dwb = 1.8E-8                  
++vth0 = vth0l20a               k1 = 0.783999                 k2 = 4.19879E-2               
++k3 = 5.5                      k3b = -2.6                    w0 = 2.5E-6                   
++nlx = 3.8E-7                  dvt0 = 2.2                    dvt1 = 0.84                   
++dvt2 = 0                      dvt0w = 0                     dvt1w = 5.3E6                 
++dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.0521                   ua = 3.9E-10                  ub = 1.94E-18                 
++uc = 7.9E-11                  vsat = vsatl20a               a0 = 1.463                    
++la0 = -1.87E-6                ags = 0.1512                  b0 = 5E-7                     
++b1 = 0                        keta = 0                      lketa = -4E-8                 
++a1 = 0                        a2 = 1                        rdsw = rdswl20a                
++prdsw = -3.57E-9              prwb = 0                      pprwb = 0                     
++prwg = -0.0275                pprwg = -5E-14                wr = 1                        
++voff = -0.1144                nfactor = 1                   eta0 = 0                      
++etab = 0                      dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 1.3                    pdiblc1 = 0.39                pdiblc2 = 8.6E-4              
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4E9                  
++pscbe2 = 1E-5                 pvag = 10                     delta = 0.01                  
++alpha0 = -2E-6                alpha1 = 2.5                  beta0 = 150                   
++tlevc = 1                     acm = 13                      rsh = 0                       
++xpart = 0                     cgso = 'cgl20a*1.0E-10'       cgdo = 'cgl20a*4.1e-010'
++cgbo = 0                      cj = 'rcjl20a*0.0001197'      mj = 0.35009                   
++mjsw = 0.78039                cjsw = 'rcjswl20a*4.6738e-010'    js = 7.3667E-7                 
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.63703                      
++ckappa = 0.1                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -6E-7                   dwc = 0                       
++noff = 1                      voffcv = 0                    acde = 0.46                   
++moin = 15                     cgsl = 'cgl20a*1.0E-11'       cgdl = 'cgl20a*1.0E-10'       
++tnom = 25                     ute = -1.66439                kt1 = -0.4                    
++kt1l = 1E-9                   kt2 = -3.82968E-2             ua1 = 2.3E-9                  
++wua1 = -7.32E-16              ub1 = -3.745E-18              pub1 = 0                      
++uc1 = -5.5783E-11             at = -1E5                     prt = 7.84E3                  
++pprt = -6.5E-9                nj = 1.0182                   xti = 4.5                  
+
+
+********************************************************************************
+.model nld20ai_lvgs nmos 
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = toxl20a                 xj = 2.5E-7                   nch = 1.4993E17               
++wint = 1.3E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = -8E-20                  
++lint = lintl20a               ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.2E-8                 dwb = 1.8E-8                  
++vth0 = vth0l20a               k1 = 0.783999                 k2 = 4.19879E-2               
++k3 = 5.5                      k3b = -2.6                    w0 = 2.5E-6                   
++nlx = 3.8E-7                  dvt0 = 2.2                    dvt1 = 0.84                   
++dvt2 = 0                      dvt0w = 0                     dvt1w = 5.3E6                 
++dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.0521                   ua = 3.9E-10                  ub = 1.94E-18                 
++uc = 7.9E-11                  vsat = vsatl20a               a0 = 1.463                    
++la0 = -1.87E-6                ags = 0.1512                  b0 = 5E-7                     
++b1 = 0                        keta = 0                      lketa = -4E-8                 
++a1 = 0                        a2 = 1                        rdsw = rdswl20a                
++prdsw = -3.57E-9              prwb = 0                      pprwb = 0                     
++prwg = -0.0275                pprwg = -5E-14                wr = 1                        
++voff = -0.1144                nfactor = 1                   eta0 = 0                      
++etab = 0                      dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 1.3                    pdiblc1 = 0.39                pdiblc2 = 8.6E-4              
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4E9                  
++pscbe2 = 1E-5                 pvag = 10                     delta = 0.01                  
++alpha0 = -2E-6                alpha1 = 2.5                  beta0 = 150                   
++tlevc = 1                     acm = 13                      rsh = 0                       
++xpart = 0                     cgso = 'cgl20a*1.0E-10'       cgdo = 'cgl20a*4.1e-010'
++cgbo = 0                      cj = 'rcjl20a*0.0001197'      mj = 0.35009                   
++mjsw = 0.78039                cjsw = 'rcjswl20a*4.6738e-010'    js = 7.3667E-7                 
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.63703                   
++ckappa = 0.1                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -6E-7                   dwc = 0                       
++noff = 1                      voffcv = 0                    acde = 0.46                   
++moin = 15                     cgsl = 'cgl20a*1.0E-11'       cgdl = 'cgl20a*1.0E-10'       
++tnom = 25                     ute = -1.66439                kt1 = -0.4                    
++kt1l = 1E-9                   kt2 = -3.82968E-2             ua1 = 2.3E-9                  
++wua1 = -7.32E-16              ub1 = -3.745E-18              pub1 = 0                      
++uc1 = -5.5783E-11             at = -1E5                     prt = 7.84E3                  
++pprt = -6.5E-9                nj = 1.0182                   xti = 4.5
+                                                                                      
+
+***********************************************************************************
+.subckt pld20a d g s b w=2.0E-5 l=1.0E-6 dtemp=0.0 ad=125p pd=60u as=20p ps=42u pf=1
+.param
++rdss = rdsspl20a              vv1 = 0.3                     w0 = 0.0 
++vv2 = 0.0                     tc1x = 5.166e-3               tc2x = 0.0                                    
+r1 d d1 'rdss*(1+vv1*abs(v(d,d1))+vv2*v(d,d1)*v(d,d1))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+m1 d1 g s1 b plv_20a w=w l=l dtemp=dtemp ad=ad pd=pd as=as ps=ps m=pf
+r2 s1 s '(rdss/20)*(1+vv1*abs(v(s1,s))+vv2*v(s1,s)*v(s1,s))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+
+.model plv_20a pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = toxpl20a                xj = 2.5E-7                   nch = 1.7E17                  
++wint = 2E-7                   wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = lintpl20a              ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1E-8                   dwb = 1E-8                    
++vth0 = vth0pl20a              wvth0 = 1.4E-7                pvth0 = -4.3E-14              
++k1 = 0.2571                   k2 = 0.024                    k3 = 0                        
++k3b = -1.5                    w0 = 2.5E-6                   nlx = 2.1238E-7               
++dvt0 = 0.3                    dvt1 = 0.1581                 dvt2 = -0.365                 
++dvt0w = 0                     dvt1w = 5.3E6                 dvt2w = -0.032                
++ngate = 1E23                  
++u0 = 0.07972                  lu0 = -1.722E-8               ua = 1.69E-8                  
++ub = -4.9377E-18              uc = -2.69E-10                vsat = vsatpl20a                    
++a0 = 0.6                      la0 = -9E-7                   ags = 0.35                    
++lags = 5.676E-7               b0 = 4.9E-7                   b1 = 0                        
++keta = -8.2E-3                a1 = 0                        a2 = 1                        
++rdsw = 3.41E3                 prdsw = -1.9437E-9            prwb = 0.0695                 
++pprwb = 3.4E-14               prwg = -0.075                 pprwg = -3.7E-14              
++wr = 1                        
++voff = -0.06525               nfactor = 0.14                eta0 = 0.08                   
++etab = -0.79                  dsub = 0.67                   cit = 6.15E-4                 
++cdsc = 2.5E-4                 cdscb = 5E-5                  cdscd = 0                     
++pclm = 3.6                    pdiblc1 = 0.124               pdiblc2 = 1.97961E-6          
++pdiblcb = 0                   drout = 0.334                 pscbe1 = 1E10                 
++pscbe2 = 6.42556E-4           pvag = 0                      delta = 0.01                  
++alpha0 = 0                    alpha1 = 0                    beta0 = 30                    
++xpart = 0                     cgso = 'cgpl20a*1.2E-10'      cgdo = 'cgpl20a*2.8e-010'              
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -4E-7                    
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgpl20a*2.0E-11'      
++cgdl = 'cgpl20a*1e-010'       ldif = 0                      hdif = 0
++acm = 13                      rsh = 0                       cj = 'rcjpl20a*0.00010465'                 
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswpl20a*4.6738e-010'             
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                      tlevc = 1
++tnom = 25                     ute = -1.82                   kt1 = -0.6204                 
++kt1l = 3E-8                   kt2 = -0.0212                 ua1 = -3.15E-9                
++ub1 = -8.1E-18                uc1 = 1.1E-10                 at = -2.41152E5               
++prt = 5.7E3                   nj = 1.0182                   xti = 4.5                     
+                    
+.ends
+
+***********************************************************************************
+.subckt pld20a_lvgs d g s b w=2.0E-5 l=1.0E-6 dtemp=0.0 ad=125p pd=60u as=20p ps=42u pf=1
+.param
++rdss = rdsspl20a              vv1 = 0.3                     w0 = 0.0 
++vv2 = 0.0                     tc1x = 5.166e-3               tc2x = 0.0                                    
+r1 d d1 'rdss*(1+vv1*abs(v(d,d1))+vv2*v(d,d1)*v(d,d1))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+m1 d1 g s1 b plv_20a_lvgs w=w l=l dtemp=dtemp ad=ad pd=pd as=as ps=ps m=pf
+r2 s1 s '(rdss/20)*(1+vv1*abs(v(s1,s))+vv2*v(s1,s)*v(s1,s))/(w+w0)' dtemp=dtemp tc1=tc1x tc2=tc2x m=pf
+
+.model plv_20a_lvgs pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = toxpl20a                xj = 2.5E-7                   nch = 1.7E17                  
++wint = 2E-7                   wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = lintpl20a              ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1E-8                   dwb = 1E-8                    
++vth0 = vth0pl20a              wvth0 = 1.4E-7                pvth0 = -4.3E-14              
++k1 = 0.2571                   k2 = 0.024                    k3 = 0                        
++k3b = -1.5                    w0 = 2.5E-6                   nlx = 2.1238E-7               
++dvt0 = 0.3                    dvt1 = 0.1581                 dvt2 = -0.365                 
++dvt0w = 0                     dvt1w = 5.3E6                 dvt2w = -0.032                
++ngate = 1E23                  
++u0 = 0.07972                  lu0 = -1.722E-8               ua = 1.69E-8                  
++ub = -4.9377E-18              uc = -2.69E-10                vsat = vsatpl20a                    
++a0 = 0.6                      la0 = -9E-7                   ags = 0.35                    
++lags = 5.676E-7               b0 = 4.9E-7                   b1 = 0                        
++keta = -8.2E-3                a1 = 0                        a2 = 1                        
++rdsw = 3.41E3                 prdsw = -1.9437E-9            prwb = 0.0695                 
++pprwb = 3.4E-14               prwg = -0.075                 pprwg = -3.7E-14              
++wr = 1                        
++voff = -0.06525               nfactor = 0.14                eta0 = 0.08                   
++etab = -0.79                  dsub = 0.67                   cit = 6.15E-4                 
++cdsc = 2.5E-4                 cdscb = 5E-5                  cdscd = 0                     
++pclm = 3.6                    pdiblc1 = 0.124               pdiblc2 = 1.97961E-6          
++pdiblcb = 0                   drout = 0.334                 pscbe1 = 1E10                 
++pscbe2 = 6.42556E-4           pvag = 0                      delta = 0.01                  
++alpha0 = 0                    alpha1 = 0                    beta0 = 30                    
++xpart = 0                     cgso = 'cgpl20a*1.2E-10'      cgdo = 'cgpl20a*2.8e-010'              
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -4E-7                    
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgpl20a*2.0E-11'      
++cgdl = 'cgpl20a*1e-010'       ldif = 0                      hdif = 0
++acm = 13                      rsh = 0                       cj = 'rcjpl20a*0.00010465'                 
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswpl20a*4.6738e-010'             
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                      tlevc = 1
++tnom = 25                     ute = -1.82                   kt1 = -0.6204                 
++kt1l = 3E-8                   kt2 = -0.0212                 ua1 = -3.15E-9                
++ub1 = -8.1E-18                uc1 = 1.1E-10                 at = -2.41152E5               
++prt = 5.7E3                   nj = 1.0182                   xti = 4.5                                         
+.ends
+
+
+********************************************************************************
+.model nld20an nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = toxnl20a                xj = 2.5E-7                   nch = 1.4993E17               
++wint = 1.638E-7               wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = lintnl20a              ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.2E-8                 dwb = 1.8E-8                  
++vth0 = vth0nl20a              k1 = 0.784                    k2 = 0.041988                 
++k3 = 5.5                      k3b = -2.6                    w0 = 2.5E-6                   
++nlx = 3.8E-7                  dvt0 = 2.2                    dvt1 = 0.84                   
++dvt2 = 0                      dvt0w = 0                     dvt1w = 5.3E6                 
++dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.0501                   ua = 2.652E-10                ub = 1.94E-18                 
++uc = 7.268E-11                vsat = vsatnl20a              lvsat = -0.16485              
++pvsat = 1.76E-7               a0 = 1.3                      la0 = -1.87E-6                
++ags = 0.14162                 b0 = 2.2E-7                   b1 = 0                        
++keta = 0                      lketa = -5.36E-8              pketa = 2.4E-14               
++a1 = 0                        a2 = 1                        rdsw = rdswnl20a             
++prdsw = -3.5E-9               prwb = 0                      prwg = -2.67053E-2            
++pprwg = -3.72E-14             wr = 1                        
++voff = -0.12                  nfactor = 1                   eta0 = 0                      
++etab = 0                      dsub = 0.8                    cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 1.157                  pdiblc1 = 0.39                pdiblc2 = 2.72E-4             
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4E9                  
++pscbe2 = 1E-5                 pvag = 10                     delta = 0.01                  
++alpha0 = -3.137E-7            alpha1 = 0.29                 beta0 = 114.75                
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       
++xpart = 0                     cgso = 'cgnl20a*1.0E-10'      cgdo = 'cgnl20a*4.1e-010'     
++cgbo = 0                      cj = 'rcjnl20a*0.00010465'    mj = 0.78039                   
++mjsw = 0.78039                cjsw = 'rcjswnl20a*4.6738e-010'     js = 1E-6                
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.5                  
++ckappa = 0.1                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -6E-7                   dwc = 0                       
++noff = 1                      voffcv = 0                    acde = 0.46                   
++moin = 15                     cgsl = 'cgnl20a*1.0E-11'      cgdl = 'cgnl20a*1e-010'
++tnom = 25                     ute = -1.6644                 kt1 = -0.34928                
++kt1l = 0                      kt2 = -0.038297               ua1 = 2.3E-9                  
++wua1 = -3E-16                 ub1 = -4.095E-18              uc1 = -1.1157E-10             
++at = -1.368E5                 pat = -4.104E-7               prt = 8.558544E3              
++pprt = -5.9345E-9             nj = 1.0182                   xti = 4.5                            
+
+********************************************************************************
+.model nld20an_lvgs nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = toxnl20a                xj = 2.5E-7                   nch = 1.4993E17               
++wint = 1.638E-7               wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = lintnl20a              ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.2E-8                 dwb = 1.8E-8                  
++vth0 = vth0nl20a              k1 = 0.784                    k2 = 0.041988                 
++k3 = 5.5                      k3b = -2.6                    w0 = 2.5E-6                   
++nlx = 3.8E-7                  dvt0 = 2.2                    dvt1 = 0.84                   
++dvt2 = 0                      dvt0w = 0                     dvt1w = 5.3E6                 
++dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.0501                   ua = 2.652E-10                ub = 1.94E-18                 
++uc = 7.268E-11                vsat = vsatnl20a              lvsat = -0.16485              
++pvsat = 1.76E-7               a0 = 1.586                    la0 = -1.87E-6                
++ags = 0.14162                 b0 = 2.2E-7                   b1 = 0                        
++keta = 0                      lketa = -5.36E-8              pketa = 2.4E-14               
++a1 = 0                        a2 = 1                        rdsw = rdswnl20a             
++prdsw = -3.5E-9               prwb = 0                      prwg = -2.67053E-2            
++pprwg = -3.72E-14             wr = 1                        
++voff = -0.12                  nfactor = 1                   eta0 = 0                      
++etab = 0                      dsub = 0.8                    cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 1.157                  pdiblc1 = 0.39                pdiblc2 = 2.72E-4             
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4E9                  
++pscbe2 = 1E-5                 pvag = 10                     delta = 0.01                  
++alpha0 = -3.137E-7            alpha1 = 0.29                 beta0 = 114.75                
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       
++xpart = 0                     cgso = 'cgnl20a*1.0E-10'      cgdo = 'cgnl20a*4.1e-010'      
++cgbo = 0                      cj = 'rcjnl20a*0.00010465'    mj = 0.78039                   
++mjsw = 0.78039                cjsw = 'rcjswnl20a*4.6738e-010'     js = 1E-6                
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.5      
++ckappa = 0.1                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -6E-7                   dwc = 0                       
++noff = 1                      voffcv = 0                    acde = 0.46                   
++moin = 15                     cgsl = 'cgnl20a*1.0E-11'      cgdl = 'cgnl20a*1e-010'      
++tnom = 25                     ute = -1.6644                 kt1 = -0.34928                
++kt1l = 0                      kt2 = -0.038297               ua1 = 2.3E-9                  
++wua1 = -3E-16                 ub1 = -4.095E-18              uc1 = -1.1157E-10             
++at = -1.368E5                 pat = -4.104E-7               prt = 8.558544E3              
++pprt = -5.9345E-9             nj = 1.0182                   xti = 4.5                  
+
+********************************************************************************
+*                                                                              *
+* 12V HVOX 20V LDMOS MODEL                                                     *
+*                                                                              *
+********************************************************************************
+.model nhd20ai nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxni20a'              xj = 2.5E-7                   nch = 3.44E16                 
++wint = 2.0775E-7              wl = -6.8407E-13              wln = 1                       
++ww = 4.2E-14                  wwn = 1                       wwl = 1.2E-19                 
++lint = 'lintni20a'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -9.63E-9                dwb = 2.812E-8                
++vth0 = 'vth0ni20a'            wvth0 = 1.25398E-7            k1 = 1.493                    
++k2 = 7.74275E-2               k3 = 0.25882                  k3b = -1.74                   
++w0 = 1.1161E-7                nlx = 3.4E-8                  dvt0 = 5.35                   
++dvt1 = 0.63                   dvt2 = -0.06                  dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 6.51804E-2               ua = 2.064E-9                 ub = -6.156E-19               
++uc = 1.5E-11                  vsat = 'vsatni20a'            lvsat = -0.06                 
++a0 = 1.045661                 la0 = -1.8334E-6              pa0 = 7.4E-13                 
++ags = 4.80983E-2              b0 = 4.18E-7                  b1 = 4.44E-21                 
++keta = 0.013                  lketa = -1.89E-7              wketa = 3E-8                  
++pketa = 3.8E-14               a1 = 0                        a2 = 1                        
++rdsw = 'rdswni20a'            prdsw = -3.7296E-9            prwb = 0                      
++prwg = -0.019691              pprwg = -3.75E-14             wr = 1                        
++voff = -0.1552                pvoff = -4.736E-13            nfactor = 1.23                
++eta0 = 9.68884E-6             etab = 0                      dsub = 0.677923               
++cit = 5E-5                    cdsc = 2.4E-4                 cdscb = 0                     
++cdscd = 0                     
++pclm = 1.56735                pdiblc1 = 1E-3                pdiblc2 = 1E-6                
++pdiblcb = 0                   drout = 1                     pscbe1 = 3.816E7              
++pscbe2 = 1.18E-9              pvag = -0.35                  delta = 0.01                  
++alpha0 = -2.3E-7              alpha1 = 1.5                  beta0 = 157.975               
++xpart = 0                     cgso = 'cgni20a*9.0E-11'      cgdo = 'cgni20a*3.3e-010'     
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -2.44E-7                
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgni20a*2.0E-11'      
++cgdl = 'cgni20a*1e-010'       
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjni20a*0.0001197'    
++mj = 0.35009                  mjsw = 0.78039                cjsw = 'rcjswni20a*4.6738e-010' 
++js = 7.3667E-7                jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.63703                      
++tnom = 25                     ute = -1.62767                kt1 = -0.71                   
++kt1l = -2E-7                  kt2 = -0.079                  ua1 = 2.7E-9                  
++wua1 = -1.2E-15               ub1 = -5.7E-18                
++uc1 = -3.5E-11                at = -1.8432E4                prt = 1.470629E4              
++pprt = -2.598584E-8           nj = 1.0182                   xti = 4.5                  
+
+********************************************************************************
+.model nhd20ai_lvgs nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxni20a'              xj = 2.5E-7                   nch = 3.44E16                 
++wint = 2.0775E-7              wl = -6.8407E-13              wln = 1                       
++ww = 4.2E-14                  wwn = 1                       wwl = 1.2E-19                 
++lint = 'lintni20a'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -9.63E-9                dwb = 2.812E-8                
++vth0 = 'vth0ni20a'            wvth0 = 1.25398E-7            k1 = 1.493                    
++k2 = 7.74275E-2               k3 = 0.25882                  k3b = -1.74                   
++w0 = 1.1161E-7                nlx = 3.4E-8                  dvt0 = 5.35                   
++dvt1 = 0.63                   dvt2 = -0.06                  dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 6.51804E-2               ua = 2.064E-9                 ub = -6.156E-19               
++uc = 1.5E-11                  vsat = 'vsatni20a'            lvsat = -0.06                 
++a0 = 1.045661                 la0 = -1.8334E-6              pa0 = 7.4E-13                 
++ags = 4.80983E-2              b0 = 4.18E-7                  b1 = 4.44E-21                 
++keta = 0.013                  lketa = -1.89E-7              wketa = 3E-8                  
++pketa = 3.8E-14               a1 = 0                        a2 = 1                        
++rdsw = 'rdswni20a'            prdsw = -3.7296E-9            prwb = 0                      
++prwg = -0.019691              pprwg = -3.75E-14             wr = 1                        
++voff = -0.1552                pvoff = -4.736E-13            nfactor = 1.23                
++eta0 = 9.68884E-6             etab = 0                      dsub = 0.677923               
++cit = 5E-5                    cdsc = 2.4E-4                 cdscb = 0                     
++cdscd = 0                     
++pclm = 1.56735                pdiblc1 = 1E-3                pdiblc2 = 1E-6                
++pdiblcb = 0                   drout = 1                     pscbe1 = 3.816E7              
++pscbe2 = 1.18E-9              pvag = -0.35                  delta = 0.01                  
++alpha0 = -2.3E-7              alpha1 = 1.5                  beta0 = 157.975               
++xpart = 0                     cgso = 'cgni20a*9.0E-11'      cgdo = 'cgni20a*3.3e-010'     
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -2.44E-7                
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgni20a*2.0E-11'      
++cgdl = 'cgni20a*1e-010'       
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjni20a*0.0001197'    
++mj = 0.35009                  mjsw = 0.78039                cjsw = 'rcjswni20a*4.6738e-010' 
++js = 7.3667E-7                jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.63703                      
++tnom = 25                     ute = -1.62767                kt1 = -0.71                   
++kt1l = -2E-7                  kt2 = -0.079                  ua1 = 2.7E-9                  
++wua1 = -1.2E-15               ub1 = -5.7E-18                
++uc1 = -3.5E-11                at = -1.8432E4                prt = 1.470629E4              
++pprt = -2.598584E-8           nj = 1.0182                   xti = 4.5
+
+********************************************************************************
+.model phd20a pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxp20a'               xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.85E-7                wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintp20a'             ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -7.8E-9                 dwb = 2.1E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0p20a'             k1 = 0.94                     k2 = 3.52836E-2               
++lk2 = -8.93256E-8             k3 = 14.95                    k3b = -4.2                    
++w0 = 2.5E-6                   nlx = 1.74E-7                 dvt0 = 2.464                  
++dvt1 = 0.159                  dvt2 = 0.094                  dvt0w = 0.6                   
++dvt1w = 6.36E4                dvt2w = -0.032                ngate = 1E23                  
++u0 = 3.42353E-2               pu0 = -7.44975E-15            ua = 9.38808E-9               
++ub = -7.555778E-18            uc = -8.47656E-11             vsat = 'vsatp20a'             
++a0 = 1.22368                  la0 = -2.130624E-6            ags = 0.062                   
++lags = 9.3E-8                 wags = -3.72E-8               b0 = 0                        
++b1 = 0                        keta = 2.052096E-3            lketa = -1.138913E-7          
++wketa = 2.154701E-8           a1 = 0                        a2 = 1                        
++rdsw = 'rdswp20a'             wrdsw = -9.400755E-3                           
++prwb = 0.034608               prwg = -1.64328E-2            wr = 1                        
++voff = -0.06063               nfactor = 0.1                 eta0 = 0                      
++etab = -0.0238                dsub = 0.3752                 cit = 4.06E-4                 
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 4.21619                ppclm = -7.80776E-12          pdiblc1 = 0.2418              
++pdiblc2 = 4.3E-6              pdiblcb = 0                   drout = 0.84                  
++pscbe1 = 4.24E8               pscbe2 = 1E-20                pvag = 0                      
++delta = 0.01                  alpha0 = 0                    alpha1 = 0                    
++beta0 = 30                    
++acm = 13                      ldif = 0                      hdif = 0                      
++rsh = 0                       
++xpart = 0                     cgso = 'cgp20a*9.2e-11'       cgdo = 'cgp20a*2.6e-010'      
++cgbo = 0                      cj = 'rcjp20a*0.00010465'     mj = 0.78039                  
++mjsw = 0.78039                cjsw = 'rcjswp20a*4.6738e-010' js = 1E-6                 
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.5                 
++ckappa = 0.3                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -4.5E-7                 dwc = 0                       
++vfbcv = -1                    noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgp20a*2.3e-11'       
++cgdl = 'cgp20a*1e-010'        
++tnom = 25                     ute = -1.46                   kt1 = -0.6468                 
++kt1l = -1.2E-7                kt2 = -0.06072                ua1 = 7.11E-10                
++wua1 = -1.566E-15             ub1 = -8.8E-18                
++uc1 = -5.6E-11                at = -1E4                     prt = 2.808192E4              
++nj = 1.0182                   xti = 4.5                     tlevc = 1                    
+
+********************************************************************************
+.model phd20a_lvgs pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxp20a'               xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.85E-7                wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintp20a'             ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -7.8E-9                 dwb = 2.1E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0p20a'             k1 = 0.94                     k2 = 3.52836E-2               
++lk2 = -8.93256E-8             k3 = 14.95                    k3b = -4.2                    
++w0 = 2.5E-6                   nlx = 1.74E-7                 dvt0 = 2.464                  
++dvt1 = 0.159                  dvt2 = 0.094                  dvt0w = 0.6                   
++dvt1w = 6.36E4                dvt2w = -0.032                ngate = 1E23                  
++u0 = 3.42353E-2               pu0 = -7.44975E-15            ua = 9.38808E-9               
++ub = -7.555778E-18            uc = -8.47656E-11             vsat = 'vsatp20a'             
++a0 = 1.22368                  la0 = -2.130624E-6            ags = 0.062                   
++lags = 9.3E-8                 wags = -3.72E-8               b0 = 0                        
++b1 = 0                        keta = 2.052096E-3            lketa = -1.138913E-7          
++wketa = 2.154701E-8           a1 = 0                        a2 = 1                        
++rdsw = 'rdswp20a'             wrdsw = -9.400755E-3                           
++prwb = 0.034608               prwg = -1.64328E-2            wr = 1                        
++voff = -0.06063               nfactor = 0.1                 eta0 = 0                      
++etab = -0.0238                dsub = 0.3752                 cit = 4.06E-4                 
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 4.21619                ppclm = -7.80776E-12          pdiblc1 = 0.2418              
++pdiblc2 = 4.3E-6              pdiblcb = 0                   drout = 0.84                  
++pscbe1 = 4.24E8               pscbe2 = 1E-20                pvag = 0                      
++delta = 0.01                  alpha0 = 0                    alpha1 = 0                    
++beta0 = 30                    
++acm = 13                      ldif = 0                      hdif = 0                      
++rsh = 0                       
++xpart = 0                     cgso = 'cgp20a*9.2e-11'       cgdo = 'cgp20a*2.6e-010'      
++cgbo = 0                      cj = 'rcjp20a*0.00010465'     mj = 0.78039                  
++mjsw = 0.78039                cjsw = 'rcjswp20a*4.6738e-010' js = 1E-6                 
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.5                 
++ckappa = 0.3                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -4.5E-7                 dwc = 0                       
++vfbcv = -1                    noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgp20a*2.3e-11'       
++cgdl = 'cgp20a*1e-010'        
++tnom = 25                     ute = -1.46                   kt1 = -0.6468                 
++kt1l = -1.2E-7                kt2 = -0.06072                ua1 = 7.11E-10                
++wua1 = -1.566E-15             ub1 = -8.8E-18                
++uc1 = -5.6E-11                at = -1E4                     prt = 2.808192E4              
++nj = 1.0182                   xti = 4.5                     tlevc = 1                    
+
+********************************************************************************
+.model nhd20an nmos
++level = 53.0                  version = 3.2                 binunit = 2.0                 
++mobmod = 1.0                  capmod = 3.0                  
++tox = toxnn20a                xj = 2.5E-7                   nch = 3.44E16                 
++wint = 1.95989E-7             wl = -4.0E-13                 wln = 1.0                     
++ww = 1.406523E-17             wwn = 1.0                     wwl = -2.2E-19                
++lint = lintnn20a              ll = 0.0                      lln = 1.0                     
++lw = 0.0                      lwn = 1.0                     lwl = 0.0                     
++llc = 0.0                     lwc = 0.0                     lwlc = 0.0                    
++wlc = 0.0                     wwc = 0.0                     wwlc = 0.0                    
++dwg = -6.0E-9                 dwb = 3.8E-8                  
++vth0 = vth0nn20a              k1 = 1.493                    k2 = 0.0895                   
++k3 = 0.25882                  k3b = -1.74                   w0 = 1.1161E-7                
++nlx = 3.4E-8                  dvt0 = 5.35                   dvt1 = 0.63                   
++dvt2 = -0.06                  dvt0w = 0.0                   dvt1w = 5300000.0             
++dvt2w = -0.032                ngate = 1E23  
++u0 = 0.0662                   ua = 2.58E-9                  ub = -1.8E-18                 
++uc = 1.5E-11                  vsat = vsatnn20a              lvsat = -0.06                 
++a0 = 1.02                     la0 = -1.07E-6                ags = 0.044                   
++lags = 0.0                    b0 = 4.18E-7                  b1 = 4.44E-21                 
++keta = 0.013                  lketa = -1.5E-7               wketa = 2.0E-8                
++a1 = 0.0                      a2 = 1.0                      rdsw = rdswnn20a                
++prdsw = 0.0                   prwb = 0.0                    pprwb = 0.0                   
++prwg = -0.029                 pprwg = -2.5E-14              wr = 1.0                      
++voff = -0.08                  nfactor = 1.0                 eta0 = 9.68884E-6             
++etab = 0.0                    dsub = 0.677923               cit = 5.0E-5                  
++cdsc = 2.4E-4                 cdscb = 0.0                   cdscd = 0.0                   
++pclm = 2.58                   pdiblc1 = 0.0010              pdiblc2 = 1.0E-6              
++pdiblcb = 0.0                 drout = 0.56                  pscbe1 = 3.816E7              
++pscbe2 = 1.18E-9              pvag = -0.35                  delta = 0.1568                
++alpha0 = 3E-7                 alpha1 = 3.8                  beta0 = 175.1375                    
++acm = 13.0                    rsh = 0.0                     cgbo = 0.0 
++xpart = 0.0                   cgso = 'cgnn20a*8.5E-11'      cgdo = 'cgnn20a*3.3e-010'                                            
++ckappa = 0.6                  cf = 0.0                      clc = 1.0E-7                  
++cle = 0.6                     dlc = -2.44e-7                dwc = 0.0                     
++noff = 1.0                    voffcv = 0.0                  acde = 1.0                    
++moin = 15.0                   cgsl = 'cgnn20a*4.0E-11'      cgdl = 'cgnn20a*1e-010'                   
++tnom = 25.0                   ute = -1.62767                kt1 = -0.71                   
++kt1l = -2.0E-7                kt2 = -0.079                  ua1 = 2.7E-9                  
++wua1 = -1.2E-15               ub1 = -3.8E-18                uc1 = -3.5E-11                
++at = 0.0                      prt = 12600.0                                     
++nj = 1.0182                   xti = 4.5                           
++cj = 'rcjnn20a*0.00010465'    mj =  0.78039                 pb = 0.5
++mjsw = 0.78039                cjsw = 'rcjswnn20a*4.6738e-010'  pbsw = 0.5              
++js = 1e-006                   jsw = 1e-012                  tlevc = 1     
+ 
+********************************************************************************
+.model nhd20an_lvgs nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxnn20a'              xj = 2.5E-7                   nch = 3.44E16                 
++wint = 1.95989E-7             wl = -4E-13                   wln = 1                       
++ww = 1.406523E-17             wwn = 1                       wwl = -2.2E-19                
++lint = 'lintnn20a'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -6E-9                   dwb = 3.8E-8                  
++vth0 = 'vth0nn20a'            k1 = 1.493                    k2 = 0.0895                   
++k3 = 0.25882                  k3b = -1.74                   w0 = 1.1161E-7                
++nlx = 3.4E-8                  dvt0 = 5.35                   dvt1 = 0.63                   
++dvt2 = -0.06                  dvt0w = 0                     dvt1w = 5.3E6                 
++dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.0662                   ua = 2.58E-9                  ub = -1.8E-18                 
++uc = 1.5E-11                  vsat = 'vsatnn20a'            lvsat = -0.06                 
++a0 = 1.4178                   la0 = -1.4231E-6              ags = 0.05588                 
++lags = 0                      b0 = 4.18E-7                  b1 = 4.44E-21                 
++keta = 0.013                  lketa = -1.5E-7               wketa = 2E-8                  
++a1 = 0                        a2 = 1                        rdsw = 'rdswnn20a'            
++prdsw = 0                     prwb = 0                      pprwb = 0                     
++prwg = -0.029                 pprwg = -2.5E-14              wr = 1                        
++voff = -0.08                  nfactor = 1                   eta0 = 9.68884E-6             
++etab = 0                      dsub = 0.677923               cit = 5E-5                    
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 2.58                   pdiblc1 = 1E-3                pdiblc2 = 1E-6                
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 3.816E7              
++pscbe2 = 1.18E-9              pvag = -0.35                  delta = 0.1568                
++alpha0 = 3E-7                 alpha1 = 3.8                  beta0 = 175.1375              
++tlevc = 1                     acm = 13                      rsh = 0                       
++xpart = 0                     cgso = 'cgnn20a*8.5E-11'      cgdo = 'cgnn20a*3.3e-010'     
++cgbo = 0                      cj = 'rcjnn20a*0.00010465'    mj = 0.78039                  
++mjsw = 0.78039                cjsw = 'rcjswnn20a*4.6738e-010' js = 1E-6              
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.5                  
++ckappa = 0.6                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -2.44E-7                dwc = 0                       
++noff = 1                      voffcv = 0                    acde = 1                      
++moin = 15                     cgsl = 'cgnn20a*4.0E-11'      cgdl = 'cgnn20a*1e-010'       
++tnom = 25                     ute = -1.62767                kt1 = -0.71                   
++kt1l = -2E-7                  kt2 = -0.079                  ua1 = 2.7E-9                  
++wua1 = -1.2E-15               ub1 = -3.8E-18                uc1 = -3.5E-11                
++at = 0                        prt = 1.26E4                  nj = 1.0182                   
++xti = 4.5                  
+
+
+           
+.ENDL HD20A
+
+********************************************************************************
+*                                                                              *
+*                        20V/40V HV symmetric LDMOS                            *
+*                                                                              *
+********************************************************************************
+****************************************************************************
+* 5V LVOX symmetric LDMOS                                                  *
+****************************************************************************
+.LIB HD40S
+
+.model nld40s nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxnl40s'              xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.7E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintnl40s'            ll = 1.039178E-17             lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -3.4E-8                 dwb = 1.353426E-9             xl = 0                        
++xw = 0                        
++vth0 = 'vth0nl40s'            pvth0 = 1.9E-13               k1 = 0.865574                 
++k2 = 0.0211                   k3 = 1.593352                 k3b = -1.968508               
++w0 = 3.852321E-7              nlx = 3.430078E-7             dvt0 = 2.899698               
++dvt1 = 7.05612E-2             dvt2 = 0.15                   dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 4.39989E-2               ua = -5.816461E-10            ub = 2.74E-18                 
++uc = 7.7E-11                  vsat = 'vsatnl40s'            pvsat = 2E-6                  
++a0 = 1                        ags = 0.125                   b0 = 4.4E-7                   
++b1 = 0                        keta = -6.594739E-3           a1 = 0                        
++a2 = 1                        rdsw = 'rdswnl40s'            prdsw = -6.5E-8               
++prwb = 0.084                  prwg = -0.027                 pprwg = -5.8E-14              
++wr = 1                        
++voff = -0.116671              nfactor = 0.232959            eta0 = 0.040209               
++etab = -0.07                  dsub = 0.166485               cit = 3.828333E-4             
++cdsc = 1.201423E-4            cdscb = 0                     cdscd = 0                     
++pclm = 0.55                   pdiblc1 = 0.39                pdiblc2 = 1.2E-4              
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4.24E8               
++pscbe2 = 1E-20                pvag = 0                      delta = 0.01                  
++alpha0 = -2.45E-7             alpha1 = 0.079                beta0 = 150                   
++xpart = 0                     cgso = 'cgnl40s*5e-010'       cgdo = 'cgnl40s*5e-010'       
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -7.2E-7                 
++dwc = 0                       vfbcv = -1                    noff = 1                      
++voffcv = 0                    acde = 0.46                   moin = 15                     
++cgsl = 'cgnl40s*1e-010'       cgdl = 'cgnl40s*1e-010'       
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjnl40s*0.00010465'    
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswnl40s*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                   
++tnom = 25                     ute = -1.3                    kt1 = -0.4                    
++kt1l = 0                      kt2 = -0.03052                ua1 = 4.85E-9                 
++ub1 = -5.5E-18                uc1 = -5.6E-11                at = 3.3E4                    
++prt = 2.5E4                   nj = 1.0182                   xti = 4.5
+
+****************************************************************************
+.model nld40s_lvgs nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxnl40s'              xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.7E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintnl40s'            ll = 1.039178E-17             lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -3.4E-8                 dwb = 1.353426E-9             xl = 0                        
++xw = 0                        
++vth0 = 'vth0nl40s'            pvth0 = 1.9E-13               k1 = 0.865574                 
++k2 = 0.0211                   k3 = 1.593352                 k3b = -1.968508               
++w0 = 3.852321E-7              nlx = 3.430078E-7             dvt0 = 2.899698               
++dvt1 = 7.05612E-2             dvt2 = 0.15                   dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 4.39989E-2               ua = -5.816461E-10            ub = 2.74E-18                 
++uc = 7.7E-11                  vsat = 'vsatnl40s'            pvsat = 2E-6                  
++a0 = 1                        ags = 0.125                   b0 = 4.4E-7                   
++b1 = 0                        keta = -6.594739E-3           a1 = 0                        
++a2 = 1                        rdsw = 'rdswnl40s'            prdsw = -6.5E-8               
++prwb = 0.084                  prwg = -0.027                 pprwg = -5.8E-14              
++wr = 1                        
++voff = -0.116671              nfactor = 0.232959            eta0 = 0.040209               
++etab = -0.07                  dsub = 0.166485               cit = 3.828333E-4             
++cdsc = 1.201423E-4            cdscb = 0                     cdscd = 0                     
++pclm = 0.55                   pdiblc1 = 0.39                pdiblc2 = 1.2E-4              
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4.24E8               
++pscbe2 = 1E-20                pvag = 0                      delta = 0.01                  
++alpha0 = -2.45E-7             alpha1 = 0.079                beta0 = 150                   
++xpart = 0                     cgso = 'cgnl40s*5e-010'       cgdo = 'cgnl40s*5e-010'       
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -7.2E-7                 
++dwc = 0                       vfbcv = -1                    noff = 1                      
++voffcv = 0                    acde = 0.46                   moin = 15                     
++cgsl = 'cgnl40s*1e-010'       cgdl = 'cgnl40s*1e-010'       
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjnl40s*0.00010465'    
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswnl40s*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                   
++tnom = 25                     ute = -1.3                    kt1 = -0.4                    
++kt1l = 0                      kt2 = -0.03052                ua1 = 4.85E-9                 
++ub1 = -5.5E-18                uc1 = -5.6E-11                at = 3.3E4                    
++prt = 2.5E4                   nj = 1.0182                   xti = 4.5
+
+*********************************************************************************
+.model pld40s pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxpl40s'              xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.3E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintpl40s'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -2.3E-8                 dwb = 2.5E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0pl40s'            lvth0 = 6.1344E-8             k1 = 0.2939                   
++k2 = 5.12E-3                  lk2 = -1.5E-8                 k3 = -24.925                  
++k3b = -1.8                    w0 = 2.45E-6                  nlx = 1E-8                    
++dvt0 = 2.2                    dvt1 = 0.53                   dvt2 = -0.032                 
++dvt0w = 0                     dvt1w = 5.3E6                 dvt2w = -0.032                
++ngate = 1E23                  
++u0 = 0.03799                  ua = 5.52535E-9               ub = 3.4025E-19               
++uc = -1.25E-10                vsat = 'vsatpl40s'            pvsat = -1E-8                 
++a0 = 0.2                      la0 = 0                       ags = 0.6116                  
++b0 = 1.01E-6                  b1 = 0                        keta = 0                      
++a1 = 0                        a2 = 1                        rdsw = 'rdswpl40s'            
++prdsw = -3.5E-8               prwb = 0.038                  pprwb = 0                     
++prwg = -0.0319                pprwg = -8.5E-14              wr = 1                        
++voff = -0.0705                nfactor = 0.3                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 0.65                   pdiblc1 = 0.39                pdiblc2 = 4.5E-4              
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4.24E8               
++pscbe2 = 1E-20                pvag = 0                      delta = 0.02205               
++alpha0 = 0                    beta0 = 30                    
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       
++xpart = 0                     cgso = 'cgpl40s*4e-010'       cgdo = 'cgpl40s*4e-010'       
++cgbo = 0                      cj = 'rcjpl40s*0.00010465'    mj = 0.78039                 
++mjsw = 0.78039                cjsw = 'rcjswpl40s*4.6738e-010' js = 1E-6               
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.5                
++ckappa = 0.6                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -8.85E-7                dwc = 0                       
++vfbcv = -1                    noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgpl40s*1e-010'       
++cgdl = 'cgpl40s*1e-010'       
++tnom = 25                     ute = -1.36                   kt1 = -0.5734                 
++kt1l = 0                      kt2 = -0.02644                ua1 = 3.0051E-9               
++ub1 = -5.9247E-18             uc1 = -5.6E-11                at = 2E4                 
++prt = 9.1E4                   nj = 1.0182                   xti = 4.5                                   
+
+*********************************************************************************
+.model pld40s_lvgs pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxpl40s'              xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.3E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintpl40s'            ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -2.3E-8                 dwb = 2.5E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0pl40s'            lvth0 = 6.1344E-8             k1 = 0.2939                   
++k2 = 5.12E-3                  lk2 = -1.5E-8                 k3 = -24.925                  
++k3b = -1.8                    w0 = 2.45E-6                  nlx = 1E-8                    
++dvt0 = 2.2                    dvt1 = 0.53                   dvt2 = -0.032                 
++dvt0w = 0                     dvt1w = 5.3E6                 dvt2w = -0.032                
++ngate = 1E23                  
++u0 = 0.03799                  ua = 5.52535E-9               ub = 3.4025E-19               
++uc = -1.25E-10                vsat = 'vsatpl40s'            pvsat = -1E-8                 
++a0 = 0.2                      la0 = 0                       ags = 0.6116                  
++b0 = 1.01E-6                  b1 = 0                        keta = 0                      
++a1 = 0                        a2 = 1                        rdsw = 'rdswpl40s'            
++prdsw = -3.5E-8               prwb = 0.038                  pprwb = 0                     
++prwg = -0.0319                pprwg = -8.5E-14              wr = 1                        
++voff = -0.0705                nfactor = 0.3                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 0.65                   pdiblc1 = 0.39                pdiblc2 = 4.5E-4              
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 4.24E8               
++pscbe2 = 1E-20                pvag = 0                      delta = 0.02205               
++alpha0 = 0                    beta0 = 30                    
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       
++xpart = 0                     cgso = 'cgpl40s*4e-010'       cgdo = 'cgpl40s*4e-010'       
++cgbo = 0                      cj = 'rcjpl40s*0.00010465'    mj = 0.78039                 
++mjsw = 0.78039                cjsw = 'rcjswpl40s*4.6738e-010' js = 1E-6               
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.5                
++ckappa = 0.6                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -8.85E-7                dwc = 0                       
++vfbcv = -1                    noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgpl40s*1e-010'       
++cgdl = 'cgpl40s*1e-010'       
++tnom = 25                     ute = -1.36                   kt1 = -0.5734                 
++kt1l = 0                      kt2 = -0.02644                ua1 = 3.0051E-9               
++ub1 = -5.9247E-18             uc1 = -5.6E-11                at = 2E4                 
++prt = 9.1E4                   nj = 1.0182                   xti = 4.5 
+
+****************************************************************************
+* 12V HVOX symmetric LDMOS                                                 *
+****************************************************************************
+.model nhd40s nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxn40s'               xj = 2.5E-7                   nch = 3.6E16                  
++wint = 2.4E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintn40s'             ll = 0                        lln = 1                       
++lw = 1E-12                    lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -2.36E-8                dwb = 5.215482E-8             
++vth0 = 'vth0n40s'             pvth0 = 2.5E-14               k1 = 1.609856                 
++k2 = 6.80406E-2               pk2 = -9.5E-14                k3 = 2.107837                 
++k3b = -1.344226               w0 = 6.131669E-9              nlx = 0                       
++dvt0 = 0.708474               dvt1 = 6.79125E-2             dvt2 = 8.965004E-3            
++dvt0w = 0                     dvt1w = 5.3E6                 dvt2w = -0.032                
++ngate = 1E23                  
++u0 = 0.072                    ua = 2.71E-9                  ub = -4.1E-19                 
++uc = 6.1E-11                  vsat = 'vsatn40s'             pvsat = 1E-7                  
++a0 = 1.23                     ags = 0.053                   lags = -7.45E-8               
++b0 = 5.2E-7                   b1 = 0                        keta = 7E-3                   
++wketa = 2.5E-8                a1 = 0                        a2 = 1                        
++rdsw = 'rdswn40s'             prdsw = -4E-8                 prwb = 0.019                  
++pprwb = 2.195E-13             prwg = -0.0214                pprwg = -3.56E-14             
++wr = 1                        
++voff = -2.70739E-2            nfactor = 1.309934            eta0 = 0                      
++etab = 0                      dsub = 0.411111               cit = 0                       
++cdsc = 1.2E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 4                      pdiblc1 = 0.39                pdiblc2 = 0                   
++pdiblcb = 2.506389E-4         drout = 0.56                  pscbe1 = 4.24E8               
++pscbe2 = 1E-9                 pvag = 1.5                    delta = 0.2                   
++alpha0 = -1.9E-6              alpha1 = 1.3                  beta0 = 300                   
++xpart = 0                     cgso = 'cgn40s*4.5e-010'      cgdo = 'cgn40s*4.5e-010'      
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -6.3E-7                 
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgn40s*1e-010'        
++cgdl = 'cgn40s*1e-010'        
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjn40s*0.00010465'     
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswn40s*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                  
++tnom = 25                     ute = -1.77731                kt1 = -0.743334               
++kt1l = -4.33E-7               kt2 = -0.07                   ua1 = 2.47E-9                 
++wua1 = -1.3E-15               ub1 = -4.9E-18                uc1 = -1.6E-11                
++at = 1E4                      prt = 4.2E4                   pprt = -4E-8                  
++nj = 1.0182                   xti = 4.5                  
+                 
+****************************************************************************
+.model nhd40s_lvgs nmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxn40s'               xj = 2.5E-7                   nch = 3.6E16                  
++wint = 2.4E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintn40s'             ll = 0                        lln = 1                       
++lw = 1E-12                    lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -2.36E-8                dwb = 5.215482E-8             
++vth0 = 'vth0n40s'             pvth0 = 2.5E-14               k1 = 1.609856                 
++k2 = 6.80406E-2               pk2 = -9.5E-14                k3 = 2.107837                 
++k3b = -1.344226               w0 = 6.131669E-9              nlx = 0                       
++dvt0 = 0.708474               dvt1 = 6.79125E-2             dvt2 = 8.965004E-3            
++dvt0w = 0                     dvt1w = 5.3E6                 dvt2w = -0.032                
++ngate = 1E23                  
++u0 = 0.072                    ua = 2.71E-9                  ub = -4.1E-19                 
++uc = 6.1E-11                  vsat = 'vsatn40s'             pvsat = 1E-7                  
++a0 = 2.23                     la0 = 8E-7                    pa0 = 5E-12                   
++ags = 0.062                   b0 = 5.2E-7                   b1 = 0                        
++keta = 7E-3                   wketa = 2.5E-8                a1 = 0                        
++a2 = 1                        rdsw = 'rdswn40s'             prdsw = -4E-8                 
++prwb = 0.019                  pprwb = 2.195E-13             prwg = -0.0214                
++pprwg = -3.56E-14             wr = 1                        
++voff = -2.70739E-2            nfactor = 1.309934            eta0 = 0                      
++etab = 0                      dsub = 0.411111               cit = 0                       
++cdsc = 1.2E-4                 cdscb = 0                     cdscd = 0                     
++pclm = 5.4                    pdiblc1 = 0.39                pdiblc2 = 0                   
++pdiblcb = 2.506389E-4         drout = 0.56                  pscbe1 = 4.24E8               
++pscbe2 = 1E-9                 pvag = 1.5                    delta = 0.2                   
++alpha0 = -1.9E-6              alpha1 = 1.3                  beta0 = 300                   
++xpart = 0                     cgso = 'cgn40s*4.5e-010'      cgdo = 'cgn40s*4.5e-010'      
++cgbo = 0                      ckappa = 0.6                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -6.3E-7                 
++dwc = 0                       noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgn40s*1e-010'        
++cgdl = 'cgn40s*1e-010'        
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjn40s*0.00010465'     
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswn40s*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                  
++tnom = 25                     ute = -1.77731                kt1 = -0.743334               
++kt1l = -4.33E-7               kt2 = -0.07                   ua1 = 2.47E-9                 
++wua1 = -1.3E-15               ub1 = -4.9E-18                uc1 = -1.6E-11                
++at = 1E4                      prt = 4.2E4                   pprt = -4E-8                  
++nj = 1.0182                   xti = 4.5                  
+
+****************************************************************************
+.model phd40s pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxp40s'               xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.7E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintp40s'             ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.15E-8                dwb = 2.7E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0p40s'             k1 = 1.08                     k2 = -0.0135                  
++pk2 = -5E-14                  k3 = 13                       k3b = -4.6                    
++w0 = 2.6E-6                   nlx = 7.1E-7                  dvt0 = 8                      
++dvt1 = 0.125                  dvt2 = 0.053                  dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.036                    ua = 9.9E-9                   ub = -8.6E-18                 
++uc = -1.46E-10                vsat = 'vsatp40s'             pvsat = -2.2E-7               
++a0 = 0.9                      la0 = -1.6E-6                 ags = 0.057                   
++b0 = 5.3E-7                   b1 = 0                        keta = -0.012                 
++wketa = 3.84E-8               a1 = 0                        a2 = 1                        
++rdsw = 'rdswp40s'             prdsw = -9E-9                 prwb = 0.024                  
++prwg = -2.3E-3                pprwg = -3.8E-14              wr = 1                        
++voff = -0.015                 nfactor = 0.4                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 0                       
++cdsc = 0                      cdscb = 3E-4                  cdscd = 0                     
++pclm = 0.1                    pdiblc1 = 8E-3                pdiblc2 = 3.9E-5              
++pdiblcb = 0                   drout = 0.162                 pscbe1 = 4.24E8               
++pscbe2 = 1E-9                 pvag = 10                     delta = 0.1                   
++alpha0 = 0                    beta0 = 30                    
++xpart = 0                     cgso = 'cgp40s*3e-010'        cgdo = 'cgp40s*3e-010'        
++cgbo = 0                      ckappa = 0.9                  cf = 0                        
++clc = 1E-7                    cle = 0.6                     dlc = -1.3E-6                 
++dwc = 0                       vfbcv = -1                    noff = 1                      
++voffcv = 0                    acde = 1                      moin = 15                     
++cgsl = 'cgp40s*1e-010'        cgdl = 'cgp40s*1e-010'        
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       cj = 'rcjp40s*0.00010465'     
++mj = 0.78039                  mjsw = 0.78039                cjsw = 'rcjswp40s*4.6738e-010' 
++js = 1E-6                     jsw = 1E-12                   pbsw = 0.5                    
++pb = 0.5                  
++tnom = 25                     ute = -1.7                    kt1 = -0.88                   
++kt1l = 0                      kt2 = -0.07373                ua1 = -1.7E-9                 
++ub1 = -4.9E-18                uc1 = 6.8E-11                 at = 0                        
++prt = 7.68E4                  nj = 1.0182                   xti = 4.5                  
+
+
+****************************************************************************
+.model phd40s_lvgs pmos
++level = 53                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    
++tox = 'toxp40s'               xj = 1.5E-7                   nch = 1.7E17                  
++wint = 1.7E-7                 wl = 0                        wln = 1                       
++ww = 0                        wwn = 1                       wwl = 0                       
++lint = 'lintp40s'             ll = 0                        lln = 1                       
++lw = 0                        lwn = 1                       lwl = 0                       
++llc = 0                       lwc = 0                       lwlc = 0                      
++wlc = 0                       wwc = 0                       wwlc = 0                      
++dwg = -1.15E-8                dwb = 2.7E-8                  xl = 0                        
++xw = 0                        
++vth0 = 'vth0p40s'             k1 = 1.08                     k2 = -0.0135                  
++pk2 = -5E-14                  k3 = 13                       k3b = -4.6                    
++w0 = 2.6E-6                   nlx = 7.1E-7                  dvt0 = 8                      
++dvt1 = 0.125                  dvt2 = 0.053                  dvt0w = 0                     
++dvt1w = 5.3E6                 dvt2w = -0.032                ngate = 1E23                  
++u0 = 0.036                    ua = 9.9E-9                   ub = -8.6E-18                 
++uc = -1.46E-10                vsat = 'vsatp40s'             pvsat = -2.2E-7               
++a0 = 1.28                     la0 = -3.2E-6                 ags = 0.06213                 
++b0 = 5.3E-7                   b1 = 0                        keta = -0.012                 
++wketa = 3.84E-8               a1 = 0                        a2 = 1                        
++rdsw = 'rdswp40s'             prdsw = -9E-9                 prwb = 0.024                  
++prwg = -2.3E-3                pprwg = -3.8E-14              wr = 1                        
++voff = -0.015                 nfactor = 0.4                 eta0 = 0.08                   
++etab = -0.07                  dsub = 0.56                   cit = 0                       
++cdsc = 0                      cdscb = 3E-4                  cdscd = 0                     
++pclm = 0.1                    pdiblc1 = 8E-3                pdiblc2 = 3.9E-5              
++pdiblcb = 0                   drout = 0.162                 pscbe1 = 4.24E8               
++pscbe2 = 1E-9                 pvag = 10                     delta = 0.1                   
++alpha0 = 0                    beta0 = 30                    
++tlevc = 1                     acm = 13                      ldif = 0                      
++hdif = 0                      rsh = 0                       
++xpart = 0                     cgso = 'cgp40s*3e-010'        cgdo = 'cgp40s*3e-010'        
++cgbo = 0                      cj = 'rcjp40s*0.00010465'     mj = 0.78039                  
++mjsw = 0.78039                cjsw = 'rcjswp40s*4.6738e-010' js = 1E-6                     
++jsw = 1E-12                   pbsw = 0.5                    pb = 0.5                      
++ckappa = 0.9                  cf = 0                        clc = 1E-7                    
++cle = 0.6                     dlc = -1.3E-6                 dwc = 0                       
++vfbcv = -1                    noff = 1                      voffcv = 0                    
++acde = 1                      moin = 15                     cgsl = 'cgp40s*1e-010'        
++cgdl = 'cgp40s*1e-010'        
++tnom = 25                     ute = -1.7                    kt1 = -0.88                   
++kt1l = 0                      kt2 = -0.07373                ua1 = -1.7E-9                 
++ub1 = -4.9E-18                uc1 = 6.8E-11                 at = 0                        
++prt = 7.68E4                  nj = 1.0182                   xti = 4.5 
+                    
+
+.ENDL HD40S
+
+
+****************************************************************************
+*                  5V MOS DEVICE MODEL
+*
+****************************************************************************
+*
+.LIB MOS_5V
+.MODEL  NENH5  NMOS
+****************************************************************************
++level = 53.0                  version = 3.2                 binunit = 2.0                 
++mobmod = 1.0                  capmod = 3.0                  nqsmod = 0.0                  
++noimod = 2.0                  elm = 5.0
++tox = TOXN5                   xj = 1.5E-7                   nch = 2.6427001E17            
++wint = 2.06E-7                wl = 0.0                      wln = 1.0                     
++ww = -3.85E-14                wwn = 1.0                     wwl = -8.9E-21                
++lint = LINTN5                 ll = 0.0                      lln = 1.0                     
++lw = 0.0                      lwn = 1.0                     lwl = 0.0  
++llc=0        wwc=0        wwlc=0         lwlc=0       lwc=0        wlc=0                    
++dwg = -4.7E-9                 dwb = 4.0144035E-9                                 
++NoiA= 2.55299009817658E+18    NoiB= 57418.4                 NoiC= 1.184E-13 
++Ef= 1.00606083869934          Em= 41000000          
++vth0 = VTH0N5                 k1 = 0.899                    k2 = -0.00132                 
++lk2 = -7.9E-9                 pk2 = 1.3E-15                 k3 = 1.3                      
++k3b = -1.0                    w0 = 3.3856E-7                nlx = 2.5E-7                  
++dvt0 = 3.6                    dvt1 = 0.577073               dvt2 = -0.05                  
++dvt0w = 0.113                 dvt1w = 380413.5              dvt2w = 0.0                   
++ngate = 1.0E23                
++u0 = 0.0485                   ua = 1.75E-10                 ub = 1.95E-18                 
++uc = 8.042E-11                vsat = VSATN5                 pvsat = 1.5E-9                
++a0 = 0.96293                  la0 = -2.4E-7                 ags = 0.16                    
++b0 = 5.05E-7                  b1 = 1.5E-6                   keta = -0.0087                
++wketa = 2.8E-9                a1 = 0.0                      a2 = 0.7707                   
++rdsw = 890.0                  prdsw = 0.0                   prwb = -0.0204                
++prwg = -0.0086                pprwg = -9.704E-15            wr = 1.0                      
++voff = -0.1474                nfactor = 0.5307              eta0 = 0.153                  
++etab = -0.0545                dsub = 0.660661               cit = 1.74E-5                 
++cdsc = 0.0032076              cdscb = 9.4E-4                cdscd = 0.0                   
++pclm = 3.69157                pdiblc1 = 0.0060              pdiblc2 = 7.60798025E-4 
++pdiblcb = -0.0057974          drout = 0.882604              pscbe1 = 4.43525E8            
++pscbe2 = 4.290039E-6          pvag = 0.05282615             delta = 0.0097016
++alpha0  =  -3e-005            beta0   = 40                  alpha1  = 156                
++calcacm = 1
++acm = 12.0                    rsh = 0.0                     hdif = 4.5E-7
++xpart = 0.0                   cgso = 'RCGON5*5.6E-11'       cgdo = 'RCGON5*5.6E-11'                
++cj = 'RCJN5*8.2674E-4'        mj = 0.35509                  mjsw = 0.24761                
++cjsw = 'RCJSWN5*1.548E-10'    cjswg = 'RCJSWGN5*3.0428E-10' mjswg = 0.40184               
++js = 3.5294E-7                jsw = 3.771E-13               pbsw = 0.66826                
++pb = 0.77859                  pbswg = 0.87501               ckappa = 0.6                  
++cf = 0.0                      clc = 1.0E-7                  cle = 0.6                     
++dlc = 3.148E-8                dwc = 2.06E-7                 noff = 3.0                    
++lnoff = 1.12E-6               voffcv = 0.05                 lvoffcv = -8.0E-8             
++acde = 0.7                    moin = 25.0                   cgsl = 'RCGON5*1.42E-10'                
++cgdl = 'RCGON5*1.42E-10'      cgbo = 0.0         
++tnom = 25.0                   ute = -2.0                    kt1 = -0.4324409              
++kt1l = 2.6E-8                 kt2 = -0.06351579             ua1 = 2.15E-11                
++wua1 = -1.7E-16               ub1 = -5.505773E-19           wub1 = 0.0                    
++uc1 = -5.219E-11              at = 22418.28                 prt = 575.0                   
++nj = 1.0413                   xti = 4.2                     tlevc = 1                  
+*                                                 
+**************************************************************
+.MODEL  PENH5  PMOS
+**************************************************************
++level = 53.0                  version = 3.2                 binunit = 2.0                 
++mobmod = 1.0                  capmod = 3.0                  nqsmod = 0.0           
++noimod = 2.0                  elm = 5.0 
++tox = TOXP5                   xj = 1.5E-7                   nch = 5.647E16                
++wint = 2.19E-7                wl = 4.0E-14                  wln = 1.0                     
++ww = -4.08E-14                wwn = 1.0                     wwl = -2.18E-20               
++lint = LINTP5                 ll = 8.4E-15                  lln = 1.0                     
++lw = 0.0                      lwn = 1.0                     lwl = 0.0 
++llc=0        wwc=0        wwlc=0         lwlc=0       lwc=0        wlc=0                     
++dwg = -8.672E-9               dwb = 0.0                                       
++NoiA= 4.3904E+18              NoiB= 9931.7                  NoiC= 1.7105E-12 
++Ef= .972708761692047          Em= 41000000                
++vth0 = VTH0P5                 wvth0 = 1.93E-7               pvth0 = 1.0E-14 
++k1 = 0.42                     lk1 = 5.0E-8                  k2 = 0.0                      
++lk2 = -1.08E-8                k3 = 11.5                     wk3 = 0.0                     
++k3b = -0.6                    w0 = -1.34E-7                 nlx = 1.3E-7                  
++dvt0 = 0.1                    dvt1 = 0.2624650              dvt2 = -0.05                  
++dvt0w = 0.03                  dvt1w = 684000.0              dvt2w = -0.05                 
++ngate = 1.0E23                
++u0 = 0.0205                   ua = 1.64E-9                  ub = 1.55E-18                 
++uc = -3.2E-11                 vsat = VSATP5                 pvsat = 4.0E-8                
++a0 = 0.92                     la0 = -5.0E-7                 wa0 = -8.0E-8                 
++ags = 0.213                   wags = 0.0                    b0 = 3.29E-7    
++b1 = 1.5000001E-7             keta = -0.0088                lketa = -1.3E-8 
++wketa = 4.8E-9                a1 = 0.0                      a2 = 1.0                      
++rdsw = 650.0                  prdsw = -2.0E-11              prwb = -0.3                   
++pprwb = -4.0E-14              prwg = -0.01                  wr = 1.0                      
++voff = -0.15                  nfactor = 1.6272775           lnfactor = 3.0E-7             
++eta0 = 0.08                   etab = -0.1                   dsub = 0.8613645              
++cit = 7.5E-5                  cdsc = 1.8E-5                 cdscb = 0.0                   
++cdscd = 0.0                   
++pclm = 5.50                   pdiblc1 = 0.0                 pdiblc2 = 1.0E-5              
++pdiblcb = 0.0                 drout = 0.84                  pscbe1 = 6.0E8                
++pscbe2 = 7.458E-7             pvag = 1.0                    delta = 0.05                  
++alpha0  = 7.5e-007            beta0   = 30                  alpha1  = 1.475          
++calcacm = 1 
++acm = 12.0                    rsh = 0.0                     hdif = 4.5E-7                  
++xpart = 0.0                   cgso = 'RCGOP5*4.3E-11'       cgdo = 'RCGOP5*4.3E-11'                
++cgbo = 0.0                    cj = 'RCJP5*0.0012687'        mj = 0.6169       
++mjsw = 0.21578                cjsw = 'RCJSWP5*1.5762e-010'  cjswg = 'RCJSWGP5*2.1016e-010'            
++mjswg = 0.64876               js = 5.9347e-007              jsw = 1.3041e-013              
++pbsw = 0.89236                pb = 0.97334                  pbswg = 0.9031               
++ckappa = 1.66                 cf = 0.0                      clc = 1.0E-7                  
++cle = 0.6                     dlc = 3.1E-8                  dwc = 2.19E-7                     
++vfbcv = -1.0                  noff = 2.9                    lnoff = 8.0E-7  
++voffcv = -0.03                lvoffcv = -4.52E-8            acde = 1.6     
++moin = 3.0                    cgsl = 'RCGOP5*1.8E-10'       cgdl = 'RCGOP5*1.8E-10'                
++tnom = 25.0                   ute = -0.94                   kt1 = -0.605  
++kt1l = -3.0E-8                kt2 = -0.042                  ua1 = 3.61E-9                 
++lua1 = -8.0E-16               wua1 = 0.0                    ub1 = -4.5E-18  
++lub1 = -3.0E-25               wub1 = 0.0                    uc1 = -1.05E-10               
++luc1 = 4.5E-17                at = 500.0                    prt = -10.0                   
++nj = 1.0977                   xti = 7.0                     tlevc = 1
+
+***************************************************************
+*                    DIODE                                    *
+***************************************************************   
+***************************************************************
+*                  MODEL OF 5V  N+/PW DIODE                   *
+***************************************************************   
+.MODEL NDIO5 D
++Level = 3
++JS   =3.5294e-007              CJ    = 0.00082674        
++JSW  =3.771e-013               CJSW  = 1.548e-010 
++N    = 1.0413                  MJ    = 0.35509
++RS   = 6.1795e-007             MJSW  = 0.24761      
++IK   = 1e+004                  PB    = 0.77859    
++IKR  =0                        PHP   = 0.66826      
++VB   =11               
++IBV  =1e-003       
++LM   =0.00
++LP   =0.00
++WM   =0.00
++WP   =0.00
++xm   =0.00
++xoi  =1.00E+04
++xom  =1.00E+04
++xp   =0.00
++xw   =0.00
++TRS  =0.00       
++TLEV =1
++TLEVC =1
++CTA  =0.00
++CTP  =0.00
++EG   =1.11       
++TCV  =0.00
++GAP1 =0.000702
++GAP2 =1108       
++ttt1 =0.00
++TTT2 =0.00
++TREF =25.0
++TM1  =0.00
++TM2  =0.00
++TPB  =0.00
++TPHP =0.00
++XTI  =4.2         
+*
+***************************************************************
+*                  MODEL OF 5V  P+/NW DIODE                   *
+***************************************************************
+.MODEL PDIO5 D
++Level = 3            
++JS   =5.9347e-007              CJ    = 0.0012687        
++JSW  =1.3041e-013              CJSW  = 1.5762e-010  
++N    =1.0977                   MJ    = 0.6169       
++RS   = 6.4356e-007             MJSW  = 0.21578   
++IK   = 5.9093e+005             PB    = 0.97334     
++IKR  =0                        PHP   = 0.89236      
++VB   =10.8               
++IBV  =1e-003       
++LM   =0.00
++LP   =0.00
++WM   =0.00
++WP   =0.00
++xm   =0.00
++xoi  =1.00E+04
++xom  =1.00E+04
++xp   =0.00
++xw   =0.00
++TRS  =0.00      
++TLEV =1
++TLEVC =1
++CTA  =0.00
++CTP  =0.00
++EG   =1.11       
++TCV  =0.00
++GAP1 =0.000702     
++GAP2 =1108       
++ttt1 =0.00
++TTT2 =0.00
++TREF =25.0
++TM1  =0.00
++TM2  =0.00
++TPB  =0.00
++TPHP =0.00
++XTI  =7.0        
+**************************************************
+.model isodiod20 D
++ level=3
++ js=2.5227e-006  
++ jsw=3.3637e-011  
++ n=1.0369       
++ rs=2.8075e-008
++ cj=0.00010489   
++ cjsw=2.4482e-009  
++ mj=0.30359      
++ mjsw=0.29306      
++ pb=0.53639      
++ php=0.36618    
++ ik=7986.4       
++ trs=0.0020687    
++ eg=1.11
++ tref=25
++ xti=5.1525       
++ tlev=1
++ tlevc=1
+
+.model isodiod40 D
++ level=3
++ js=2.6236E-06
++ jsw=3.5655e-011  
++ n=1.0369       
++ rs=2.8075e-008
++ cj=0.00010221   
++ cjsw=1.9491e-009  
++ mj=0.30878      
++ mjsw=0.29427      
++ pb=0.53426      
++ php=0.31627    
++ ik=7986.4       
++ trs=0.002796     
++ eg=1.11
++ tref=25
++ xti=5.1525       
++ tlev=1
++ tlevc=1
+
+.model pwnbldiod D
++ level=3
++ js=4.2369e-007  
++ jsw=4.8038e-013  
++ n=1.0882       
++ rs=8.333e-008 
++ cj=0.00014915   
++ cjsw=3.313e-010   
++ mj=0.215        
++ mjsw=0.43786      
++ pb=0.1978       
++ php=0.96746    
++ ik=1.7402e+005  
++ trs=0.0034       
++ eg=1.11
++ tref=25
++ xti=6.09         
++ tlev=1
++ tlevc=1
+
+******************************************
+
+**** 01. dnpluspw   -- FOR 10V N+/PW DIODE MODEL           *
+
+.SUBCKT dnpluspw plus minus nw pwring
+.param l=5e-6 w=5e-6
+
+.MODEL ndiod10 D 
++level=3
++js=3.5294e-007 cj=0.00082674 jsw=3.771e-013 cjsw=1.548e-010 n=1.0413 mj=0.35509
++rs=6.1795e-007 mjsw=0.24761 ik=1e004 pb=0.77859 ikr=0 php=0.66826 vb=11 ibv=1e-003
++lm=0 lp=0 wm=0 wp=0 xm=0 xoi=1.00e+04 xom=1.00e+04 xp=0 xw=0
++trs=0 tlev=1 tlevc=1 cta=0 ctp=0 eg=1.11 tcv=0 gap1=0.000702 gap2=1108
++ttt1=0 ttt2=0 tref=25 tm1=0 tm2=0 tpb=0 tphp=0 xti=4.2
+
+dmain  plus minus  ndiod10  l=l w=w
+d1 plus nw pwnbldiod l='l+2*2.1e-6' w='w+2*2.1e-6'
+d2  pwring nw isodiod20 l='l+2*4.1e-6' w='w+2*4.1e-6'
+
+.ENDS dnpluspw
+
+******************************************
+**** 02. dpplusnw   -- FOR 10V P+/NW DIODE MODEL           *
+
+.SUBCKT dpplusnw plus minus pwring
+.param l=5e-6 w=5e-6
+
+.MODEL pdiod10 D
++Level = 3  JS   =5.9347e-007  CJ    = 0.0012687  MJSW  = 0.21578     
++JSW  =1.3041e-013 CJSW  = 1.5762e-010 N    =1.0977 MJ    = 0.6169 RS   = 6.4356e-007    
++IK   = 5.9093e+005 PB    = 0.97334 IKR  =0 PHP   = 0.89236 VB   =10.8 IBV  =1e-003 LM   =0.00
++LP   =0.00 WM   =0.00 WP   =0.00 xm   =0.00 xoi  =1.00E+04 xom  =1.00E+04
++xp   =0.00 xw   =0.00 TRS  =0.00 TLEV =1 TLEVC =1 CTA  =0.00 CTP  =0.00
++EG   =1.11 TCV  =0.00 GAP1 =0.000702 GAP2 =1108 ttt1 =0.00 TTT2 =0.00
++TREF =25.0 TM1  =0.00 TM2  =0.00 TPB  =0.00 TPHP =0.00 XTI  =7.0
+
+
+dmain plus minus pdiod10 w=w l=l
+d1  pwring minus isodiod20 l='l+4e-6' w='w+4e-6'
+
+.ENDS dpplusnw
+
+
+***************************************************************
+*            MODEL OF 5V SCHOTTKY BARRIER DIODE               *
+***************************************************************  
+
+.SUBCKT dsch5 plus minus pwring
+.param l=1.4e-5 w=1.4e-5
+
+.MODEL dsch_5 D 
++level   = 3            tlev    = 1            tlevc   = 1
++tref    = 25           xti     = -17.25       vb      = 5
++js      = 77.3         jsw     = 0            ik      = 2.5509e+007              
++ibv     = 0.001        n       = 1.0941       rs      = 1.875e-008 
++cj      = 0.001329     mj      = 0.81865      pb      = 0.94735                  
++cjsw    = 0            mjsw    = 0.33         php     = 0.8         
+
+dmain plus minus dsch_5 l=l w=w
+d1 pwring minus isodiod20 l='l+2*13.6e-6' w='w+2*13.6e-6'
+
+.ENDS dsch5
+
+
+***************************************************************
+*           MODEL OF 20V SCHOTTKY BARRIER DIODE               *
+***************************************************************  
+
+.SUBCKT dsch20 plus minus pwring
+.param l=1.2e-5 w=1.2e-5
+
+.MODEL dsch_20 D 
++level   = 3            tlev    = 1            tlevc   = 1
++tref    = 25           xti     = -17.8        vb      = 20
++js      = 70.034       jsw     = 0            ik      = 1.3098e+005              
++ibv     = 0.001        n       = 0.92114      rs      = 1.7144e-008
++cj      = 0.0012524    mj      = 0.31792      pb      = 0.30076                        
++cjsw    = 0            mjsw    = 0.33         php     = 0.8                                  
+
+dmain plus minus dsch_20 l=l w=w
+d1 pwring minus isodiod20 l='l+2*14.6e-6' w='w+2*14.6e-6'
+
+.ENDS dsch20
+
+***************************************************************
+*           MODEL OF 40V SCHOTTKY BARRIER DIODE               *
+***************************************************************  
+
+.SUBCKT dsch40 plus minus pwring
+.param l=1.1e-5 w=1.1e-5
+
+.MODEL dsch_40 D 
++level   = 3            tlev    = 1            tlevc   = 1
++tref    = 25           xti     = -17.38       vb      = 40
++js      = 39.243       jsw     = 0            ik      = 57125            
++ibv     = 0.001        n       = 1.024        rs      = 1.9247e-008
++cj      = 0.00077714   mj      = 0.16723      pb      = 0.10526                               
++cjsw    = 0            mjsw    = 0.33         php     = 0.8                          
+
+dmain plus minus dsch_40 l=l w=w
+d1 pwring minus isodiod40 l='l+2*17.5e-6' w='w+2*17.5e-6'
+
+.ENDS dsch40
+***************************************************************
+*                 20v/40v floating cmos model                 *
+***************************************************************
+
+*** 20V floating pmos *
+.SUBCKT pl20 d g s b pwring
+.param l=0.5e-6 w=10e-6 ad=10e-12 as=10e-12 pd=22e-6 ps=22e-6 nrs=0  nrd=0 l_well=5e-6 w_well=12e-6
+*** model penh5 mosfet is PMOS device model
+m1 d g s b penh5 l=l w=w ad=ad as=as pd=pd ps=ps nrs=nrs nrd=nrd
+d2 pwring b isodiod20 l=l_well w=w_well
+.ENDS pl20
+
+******************************************
+
+*** 40V floating pmos *
+.SUBCKT pl40 d g s b pwring
+.param l=0.5e-6 w=10e-6 ad=10e-12 as=10e-12 pd=22e-6 ps=22e-6 nrs=0  nrd=0 l_well=5e-6 w_well=12e-6
+*** model penh5 mosfet is PMOS device model
+m1 d g s b penh5 l=l w=w ad=ad as=as pd=pd ps=ps nrs=nrs nrd=nrd
+d2 pwring b isodiod40 l=l_well w=w_well
+.ENDS pl40
+
+******************************************
+
+*** 20V floating nmos *
+.SUBCKT  nl20 d g s b nwring pwring
+.param l=0.5e-6 w=10e-6 ad=10e-12 as=10e-12 pd=22e-6 ps=22e-6 nrs=0  nrd=0 l_well=5e-6 w_well=12e-6
+*** model nenh5 mosfet is PMOS device model
+m1 d g s b nenh5 l=l w=w ad=ad as=as pd=pd ps=ps nrs=nrs nrd=nrd
+d1 b nwring pwnbldiod l=l_well w=w_well
+d2 pwring nwring isodiod20 l='l_well+1e-6' w='w_well+1e-6'
+.ENDS nl20
+
+******************************************
+
+*** 40V floating nmos *
+.SUBCKT  nl40 d g s b nwring pwring
+.param l=0.5e-6 w=10e-6 ad=10e-12 as=10e-12 pd=22e-6 ps=22e-6 nrs=0  nrd=0 l_well=5e-6 w_well=12e-6
+*** model nenh5 mosfet is NMOS device model
+m1 d g s b nenh5 l=l w=w ad=ad as=as pd=pd ps=ps nrs=nrs nrd=nrd
+d1  b nwring pwnbldiod l=l_well w=w_well
+d2  pwring nwring isodiod40 l='l_well+1e-6' w='w_well+1e-6'
+.ENDS nl40
+
+.ENDL MOS_5V
+
+
+***********************************************************************
+
+***********************************************************************
+*                BJT   MODEL                                          *
+***********************************************************************
+
+.lib vnpn40
+.MODEL vnpn40 NPN level = 1
++tref    = 25            
++cjc     = 1.11335e-014    cje     = 2.01739e-015    cjs     = 2.56542e-013    fc      = 0.5           
++mjc     = 0.78039         mje     = 0.39825         mjs     = 0.35009         vjc     = 0.5          
++vje     = 0.80483         vjs     = 0.63703         
++is      = 'isn*0.986e-016'  subs    = 1               rb      = 20              re      = 30            
++irb     = 0.1             rc      = 42.257          rbm     = 5               bf      = 'bfn*48'
++nf      = 1.0679          vaf     = 77              ikf     = 0.00032245      ise     = 6.3348e-015   
++ne      = 2.1614          br      = 1.174           iss     = 6.5e-014        nr      = 1.065         
++var     = 6.5             ikr     = 0.002           nkf     = 0.5             isc     = 4.6393e-016   
++nc      = 1.269         
++xtb     = 0               xti     = 3.7403          eg      = 1.11            tlev    = 0             
++tlevc   = 1               tnf1    = 0               tnr1    = 0               tne1    = 1.72e-005     
++tnc1    = 0.000168        tbf1    = 0.0075205       tbr1    = 0.00068139      tvar1   = 0             
++tikf1   = -0.0032         trb1    = -0.006          trc1    = -0.001516       tbf2    = -5.7e-007     
++tbr2    = -2.7e-006  
+.endl vnpn40
+
+.lib lpnp40
+.MODEL lpnp40 PNP 
++level = 1                     tlev = 0                      tlevc = 1                     
++tref = 25                     subs = -1                     
++is = 'isp*1.5278E-16'         bf = 'bfp*2.9862E2'           nf = 1.008                    
++vaf = 240.579                 ikf = 1.031942E-5             ise = 5.215158E-16            
++ne = 1.488968                 br = 15.5                     nr = 0.99366                  
++var = 6.45414                 ikr = 5.5104E-6               isc = 2.3516E-15              
++nc = 1.37                     
++rb = 15.6                     irb = 1E-3                    rbm = 3.6                     
++re = 48.84                    rc = 5                        
++cje = 2.585E-14               vje = 0.717                   mje = 0.2323                  
++cjc = 1.331E-13               vjc = 0.4697                  mjc = 0.2609                  
++cjs = 0                       vjs = 0.8137                  mjs = 0.3509                  
++xcjc = 1                      fc = 0.5                      
++xtb = 0                       xti = 3.443301                eg = 1.18                     
++tbf1 = 6.051737E-3            tbf2 = 6E-6                   tikf1 = -4.45148E-3           
++tikf2 = 8.9E-6                tne1 = 5E-5                   tbr1 = 3.864E-3               
++tbr2 = -6.48E-6               tre1 = 2E-4                   tre2 = 0                      
++trb1 = 0                      trb2 = 0                      
+.endl lpnp40
+*
+.lib dio 
+***************************************************************
+*                      MODEL OF 3.2*3.2 ZENER DIODE           *
+***************************************************************   
+**
+.model  zener  d  level = 3
++area    = 6.6e-011     pj      = 4.78e-005    tref    = 25           xoi     = 7e-007     
++xom     = 1e-006     
++js      = 0.0007       jsw     = 0            ik      = 3313.9       vb      = 5.8        
++ibv     = 1.71e+005    ikr     = 3.3485e+009  n       = 1.3144       ijth    = 0.1        
++rs      = 2.4942e-008
++cj      = 0.0024528    cjp     = 0            pb      = 0.52328      php     = 0.8        
++fcs     = 0.5          mj      = 0.097        mjsw    = 0.33         fc      = 0.5        
++tt      = 0          
++tlev    = 1            tlevc   = 1            trs     = -0.0057899   tcv     = 8e-005
++xti     = 9.5737       cta     = 0.00045      ctp     = 0            eg      = 1.11       
++tpb     = 0.0022448    tphp    = 0            gap1    = 0.000702     gap2    = 1108       
++ttt1    = 0            ttt2    = 0            tm1     = 0            tm2     = 0          
+.endl dio
+*
+**************************************************************************
+*
+*   RESISTOR MODELS
+*
+**************************************************************************
+*
+.LIB RES
+******************************************************
+.SUBCKT RNDIFF N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RNDIFF  DW=-0.05U PTC1=3.6e-3 PTC2=0 PVC1=3.3e-4 PVC2=2.3e-3 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RNDIFF
+
+.SUBCKT RNFFO N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RNFFO  DW=0.09U PTC1=1.5e-3 PTC2=0 PVC1=1.3e-3 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RNFFO
+
+.SUBCKT RPDIFF N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RPDIFF  DW=-0.04U PTC1=3.7e-3 PTC2=0 PVC1=8.5e-4 PVC2=2.5e-3 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RPDIFF
+
+.SUBCKT RPFFO N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RPFFO  DW=0.07U PTC1=1.3e-3 PTC2=0 PVC1=1.0e-3 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RPFFO
+
+.SUBCKT RPWELL N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RPWELL  DW=0.1U PTC1=3e-3 PTC2=0 PVC1=4.6e-3 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RPWELL
+
+.SUBCKT RHVPW N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RHVPW  DW=2.24U PTC1=7.2e-3 PTC2=0 PVC1=4.3e-2 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RHVPW
+
+.SUBCKT RPLCD N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RPLCD  DW=0.06U PTC1=6.0e-4 PTC2=0 PVC1=2.0e-4 PVC2=1.4e-3 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RPLCD
+
+.SUBCKT RRPOLYH N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RRPOLYH  DW=0.08U PTC1=-1.1e-3 PTC2=0 PVC1=-1.2e-4 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RRPOLYH
+
+.SUBCKT RRPOLYL N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RRPOLYL  DW=0.1U PTC1=-2.1e-5 PTC2=5.7e-7 PVC1=-5e-5 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RRPOLYL
+
+.SUBCKT RM1 N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RM1 DW=-0.02U PTC1=3.7E-03 PTC2=0 PVC1=0 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RM1
+
+.SUBCKT RM2 N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RM2 DW=-0.02U PTC1=3.8E-03 PTC2=0 PVC1=0 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RM2
+
+.SUBCKT RM3 N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RM3 DW=-0.02U PTC1=3.8E-03 PTC2=0 PVC1=0 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RM3
+
+.SUBCKT RM4 N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RM4 DW=-0.02U PTC1=3.9E-03 PTC2=0 PVC1=0 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RM4
+
+.SUBCKT RTM4 N1 N2 L=LENGTH W=WIDTH PF=1
+.PARAM RSH=RSH_RTM4 DW=-0.02U PTC1=3.9E-03 PTC2=0 PVC1=0 PVC2=0 PT='TEMPER'
+.PARAM TFAC='1.0+PTC1*(PT-25.0)+PTC2*(PT-25.0)*(PT-25.0)'
+R1 N1 N2 'RSH/PF*L/(W-DW)*(1+PVC1*ABS(V(N2,N1))+PVC2*V(N2,N1)*V(N2,N1))*TFAC'
+.ENDS RTM4
+
+.ENDL RES
+
+
+*
+*************************************************************************
+
+**************************************************************************
+*
+*   MIP MODEL
+*
+**************************************************************************
+*
+.LIB MIP
+******************************************************
+.SUBCKT CAPMIP 1 2  C_LENGTH=1e-6  C_WIDTH=1e-6 pf=1
+.PARAM C_COX= CC_COX
+.PARAM C_CAPSW= CC_CAPSW
+.PARAM C_TNOM= 25
+.PARAM C_TC1= 3.2E-5
+.PARAM C_TC2= 0
+.PARAM C_VCR1= 2.0E-4
+.PARAM C_VCR2= 1.0E-5
+.PARAM C_AREA='C_LENGTH*C_WIDTH'
+.PARAM C_PERI='2*(C_LENGTH+C_WIDTH)'
+.PARAM C_C0='(C_COX*C_AREA+C_CAPSW*C_PERI)*(1+C_TC1*(TEMPER-C_TNOM)+C_TC2*(TEMPER-C_TNOM)*(TEMPER-C_TNOM))'
+*/
+*/ MODEL FOR CAPACITANCE
+C_MIP 1 2 C='pf*C_C0*(1+C_VCR1*ABS(V(1,2))+C_VCR2*ABS(V(1,2))*ABS(V(1,2)))'
+*//
+.ENDS CAPMIP
+
+******************************************************
+.SUBCKT CAPMIP1 1 2  C_LENGTH=1e-6  C_WIDTH=1e-6 pf=1
+.PARAM C_COX= CC_COX1
+.PARAM C_CAPSW= CC_CAPSW1
+.PARAM C_TNOM= 25
+.PARAM C_TC1= 3.5E-5
+.PARAM C_TC2= 0
+.PARAM C_VCR1= 5.2E-4
+.PARAM C_VCR2= 3.1E-5
+.PARAM C_AREA='C_LENGTH*C_WIDTH'
+.PARAM C_PERI='2*(C_LENGTH+C_WIDTH)'
+.PARAM C_C0='(C_COX*C_AREA+C_CAPSW*C_PERI)*(1+C_TC1*(TEMPER-C_TNOM)+C_TC2*(TEMPER-C_TNOM)*(TEMPER-C_TNOM))'
+*/
+*/ MODEL FOR CAPACITANCE
+C_MIP 1 2 C='pf*C_C0*(1+C_VCR1*ABS(V(1,2))+C_VCR2*ABS(V(1,2))*ABS(V(1,2)))'
+*//
+.ENDS CAPMIP1
+.ENDL MIP
+*
+**************************************************************************
+*
+*   MOS VARACTOR MODEL
+*
+**************************************************************************
+*
+.LIB MOSVAR
+******************************************************
+.subckt cpnw12 1 2  c_length=1e-6  c_width=1e-6 pf=1
+.param cvar1= 3.3e-4
+.param cvar2= 1.85e-4
+.param cvar3= -0.45
+.param cvar4= 0.8
+c_poly_nwell 1 2 c='pf*rcpnw12*c_length*c_width*(cvar1+cvar2*(1+tanh((v(1,2)+cvar3)/cvar4)))'
+.ends cpnw12
+
+.subckt cppw12 1 2  c_length=1e-6  c_width=1e-6 pf=1
+.param cvar1= 3.8e-4
+.param cvar2= 1.6e-4
+.param cvar3= 0.7
+.param cvar4= 2.5
+c_poly_pwell 1 2 c='pf*rcppw12*c_length*c_width*(cvar1+cvar2*(1+tanh((-v(1,2)+cvar3)/cvar4)))'
+.ends cppw12
+
+.subckt cpnw5 1 2  c_length=1e-6  c_width=1e-6 pf=1
+.param cvar1= 3.3e-4
+.param cvar2= 12.2e-4
+.param cvar3= -0.2
+.param cvar4= 0.5
+c_poly_nwell 1 2 c='pf*rcpnw5*c_length*c_width*(cvar1+cvar2*(1+tanh((v(1,2)+cvar3)/cvar4)))'
+.ends cpnw5
+
+.subckt cppw5 1 2  c_length=1e-6  c_width=1e-6 pf=1
+.param cvar1= 6.5e-4
+.param cvar2= 11e-4
+.param cvar3= -0.7
+.param cvar4= 1
+c_poly_pwell 1 2 c='pf*rcppw5*c_length*c_width*(cvar1+cvar2*(1+tanh((-v(1,2)+cvar3)/cvar4)))'
+.ends cppw5
+
+.ENDL MOSVAR

@@ -1,0 +1,104 @@
+
+module itf ( clk_sys, rst, ld, di, clk_set, ld_m, di_m, clk_set_m );
+input  [3:0] di;
+input  [1:0] clk_set;
+output [3:0] di_m;
+output [1:0] clk_set_m;
+input  clk_sys, rst, ld;
+output ld_m;
+    wire n1, n2, n3, n4, n5, n6, n7, n8;
+    IVDA U3 ( .A(ld), .Z(n1) );
+    IVDA U4 ( .A(di[3]), .Z(n2) );
+    IVDA U5 ( .A(di[2]), .Z(n3) );
+    IVDA U6 ( .A(di[1]), .Z(n4) );
+    IVDA U7 ( .A(di[0]), .Z(n5) );
+    IVDA U8 ( .A(clk_set[1]), .Z(n6) );
+    IVDA U9 ( .A(clk_set[0]), .Z(n7) );
+    FD2 \clk_set_m_reg[0]  ( .D(n7), .CP(clk_sys), .CD(n8), .Q(clk_set_m[0])
+         );
+    FD2 \clk_set_m_reg[1]  ( .D(n6), .CP(clk_sys), .CD(n8), .Q(clk_set_m[1])
+         );
+    FD2 \di_m_reg[0]  ( .D(n5), .CP(clk_sys), .CD(n8), .Q(di_m[0]) );
+    FD2 \di_m_reg[1]  ( .D(n4), .CP(clk_sys), .CD(n8), .Q(di_m[1]) );
+    FD2 \di_m_reg[2]  ( .D(n3), .CP(clk_sys), .CD(n8), .Q(di_m[2]) );
+    FD2 \di_m_reg[3]  ( .D(n2), .CP(clk_sys), .CD(n8), .Q(di_m[3]) );
+    FD2 ld_m_reg ( .D(n1), .CP(clk_sys), .CD(n8), .Q(ld_m) );
+    IVI U10 ( .A(rst), .Z(n8) );
+endmodule
+
+
+module div ( clk_sys, rst, clk_set, clk_tx );
+input  [1:0] clk_set;
+input  clk_sys, rst;
+output clk_tx;
+    wire \cnt[2] , \cnt[1] , \cnt[0] , N29, N30, N31, n7, n8, n9, n10, n11, 
+        n12, n13, n14, n15, n16, n17, n18, n19, n20, n21, n22, n23, n24, n25, 
+        n26, n27, \U3/U1/Z_3 , \U3/U1/Z_2 , \U3/U1/Z_1 , \U3/U1/Z_0 ;
+    FD2S \cnt_reg[0]  ( .D(1'b1), .CP(clk_sys), .CD(n7), .TI(1'b0), .TE(n8), 
+        .Q(\cnt[0] ) );
+    FD2 \cnt_reg[1]  ( .D(N29), .CP(clk_sys), .CD(n7), .Q(\cnt[1] ), .QN(n20)
+         );
+    FD2 \cnt_reg[2]  ( .D(N30), .CP(clk_sys), .CD(n7), .Q(\cnt[2] ), .QN(n18)
+         );
+    FD2 \cnt_reg[3]  ( .D(N31), .CP(clk_sys), .CD(n7), .Q(clk_tx) );
+    IVI U5 ( .A(rst), .Z(n7) );
+    ENI U6 ( .A(\cnt[1] ), .B(\U3/U1/Z_1 ), .Z(n15) );
+    ENI U7 ( .A(\U3/U1/Z_2 ), .B(\cnt[2] ), .Z(n23) );
+    ENI U8 ( .A(\U3/U1/Z_3 ), .B(clk_tx), .Z(n25) );
+    ENI U9 ( .A(\U3/U1/Z_0 ), .B(\cnt[0] ), .Z(n8) );
+    ND2I U10 ( .A(n9), .B(n10), .Z(n24) );
+    ND2I U11 ( .A(\U3/U1/Z_2 ), .B(\cnt[2] ), .Z(n9) );
+    ND2I U12 ( .A(n11), .B(n22), .Z(n10) );
+    ND2I U13 ( .A(n17), .B(n18), .Z(n11) );
+    ND2I U14 ( .A(n12), .B(n13), .Z(n22) );
+    ND2I U15 ( .A(\U3/U1/Z_1 ), .B(\cnt[1] ), .Z(n12) );
+    ND2I U16 ( .A(n16), .B(n14), .Z(n13) );
+    ND2I U17 ( .A(n19), .B(n20), .Z(n14) );
+    IVI U18 ( .A(n21), .Z(n16) );
+    ENI U19 ( .A(n16), .B(n15), .Z(N29) );
+    IVI U20 ( .A(\U3/U1/Z_2 ), .Z(n17) );
+    IVI U21 ( .A(\U3/U1/Z_1 ), .Z(n19) );
+    ND2I U22 ( .A(\U3/U1/Z_0 ), .B(\cnt[0] ), .Z(n21) );
+    ENI U23 ( .A(n23), .B(n22), .Z(N30) );
+    ENI U24 ( .A(n25), .B(n24), .Z(N31) );
+    NR2I U25 ( .A(clk_set[0]), .B(n26), .Z(\U3/U1/Z_1 ) );
+    NR2I U26 ( .A(clk_set[1]), .B(n27), .Z(\U3/U1/Z_2 ) );
+    NR2I U27 ( .A(clk_set[0]), .B(clk_set[1]), .Z(\U3/U1/Z_3 ) );
+    NR2I U28 ( .A(n27), .B(n26), .Z(\U3/U1/Z_0 ) );
+    IVI U29 ( .A(clk_set[0]), .Z(n27) );
+    IVI U30 ( .A(clk_set[1]), .Z(n26) );
+endmodule
+
+
+module counter ( clk, rst, ld, di, q, cy );
+input  [3:0] di;
+output [3:0] q;
+input  clk, rst, ld;
+output cy;
+    wire N12, N8, N9, N10, N11, n2, n3, n4, n5, n6, n7;
+    FD2 \q_reg[0]  ( .D(N12), .CP(clk), .CD(n2), .Q(q[0]), .QN(N8) );
+    FD2S \q_reg[1]  ( .D(N9), .CP(clk), .CD(n2), .TI(di[1]), .TE(ld), .Q(q[1])
+         );
+    FD2S \q_reg[2]  ( .D(N10), .CP(clk), .CD(n2), .TI(di[2]), .TE(ld), .Q(q[2]
+        ), .QN(n5) );
+    FD2S \q_reg[3]  ( .D(N11), .CP(clk), .CD(n2), .TI(di[3]), .TE(ld), .Q(q[3]
+        ), .QN(n4) );
+    IVI U3 ( .A(rst), .Z(n2) );
+    IVI U4 ( .A(n3), .Z(N9) );
+    ENI U5 ( .A(q[0]), .B(q[1]), .Z(n3) );
+    ENI U6 ( .A(q[2]), .B(n6), .Z(N10) );
+    ENI U7 ( .A(n7), .B(n4), .Z(N11) );
+    ND2I U8 ( .A(q[1]), .B(q[0]), .Z(n6) );
+    NR2I U9 ( .A(n6), .B(n5), .Z(n7) );
+    AN4 U10 ( .A(q[1]), .B(q[0]), .C(q[3]), .D(q[2]), .Z(cy) );
+    MUX21H U11 ( .A(N8), .B(di[0]), .S(ld), .Z(N12) );
+endmodule
+
+
+module top ( clk_sys, rst, ld, di, clk_set, q, cy );
+input  [3:0] di;
+input  [1:0] clk_set;
+output [3:0] q;
+input  clk_sys, rst, ld;
+output cy;
+    wire clk_tx_w, ld_w, \clk_set

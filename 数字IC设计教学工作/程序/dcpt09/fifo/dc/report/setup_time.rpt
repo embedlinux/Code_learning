@@ -1,0 +1,57 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fifo16x8
+Version: 2003.03
+Date   : Sun Apr  5 11:47:51 2009
+****************************************
+
+Operating Conditions: TCCOM   Library: fsa0a_c_sc_tc
+Wire Load Model Mode: top
+
+  Startpoint: wr_n (input port clocked by CLK)
+  Endpoint: fifo_regs/re13_reg[0]
+            (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo16x8           G5K                   fsa0a_c_sc_tc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.60       0.60 f
+  wr_n (in)                                0.01       0.61 f
+  U55/O (INV2)                             0.05       0.66 r
+  U57/O (INV3)                             0.04       0.70 f
+  fifo_regs/wr_n (rr16)                    0.00       0.70 f
+  fifo_regs/U40/O (OR2P)                   0.12       0.82 f
+  fifo_regs/U35/O (INV2)                   0.05       0.87 r
+  fifo_regs/U60/O (OR3B2P)                 0.22       1.09 f
+  fifo_regs/U44/O (INV2)                   0.06       1.16 r
+  fifo_regs/U84/O (AN2T)                   0.14       1.30 r
+  fifo_regs/U62/O (BUF3)                   0.11       1.41 r
+  fifo_regs/U269/O (MUX2)                  0.12       1.52 r
+  fifo_regs/re13_reg[0]/D (DFFRBN)         0.00       1.52 r
+  data arrival time                                   1.52
+
+  clock CLK (rise edge)                    2.00       2.00
+  clock network delay (ideal)              0.00       2.00
+  clock uncertainty                       -0.20       1.80
+  fifo_regs/re13_reg[0]/CK (DFFRBN)        0.00       1.80 r
+  library setup time                      -0.09       1.71
+  data required time                                  1.71
+  -----------------------------------------------------------
+  data required time                                  1.71
+  data arrival time                                  -1.52
+  -----------------------------------------------------------
+  slack (MET)                                         0.19
+
+
+1

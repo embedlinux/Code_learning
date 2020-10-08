@@ -1,0 +1,5 @@
+# Reading C:/Modeltech_5.7c/tcl/vsim/pref.tcl 
+# vsim {E:\½Ì?¹¤×÷\Êý×ÖICÉè¼?Ì?¹¤×÷\VerilogExamples\source\counter.v} 
+# ** Error: (vsim-19) Failed to access library 'work' at "work".
+# No such file or directory. (errno = ENOENT)
+# Error loading design

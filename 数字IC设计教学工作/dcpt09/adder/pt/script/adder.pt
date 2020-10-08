@@ -1,0 +1,39 @@
+#------------------------------------------------------------------------------
+# File   : A TCL format DC script file for a ADDER
+# Author : xinxn 
+# date   : 2009-04-02    
+#------------------------------------------------------------------------------
+set TECH_LIB_PATH "/usr/iclib/fsa0a_c/2004Q4v1.1/SC/FrontEnd/synopsys"
+set IO_LIB_PATH   "/usr/iclib/fsa0a_c/2004Q4v1.1/IO/FrontEnd/synopsys"
+#------------------------------------------------------------------------------
+set search_path [concat $TECH_LIB_PATH $IO_LIB_PATH $search_path]
+echo $search_path
+#------------------------------------------------------------------------------
+set target_library {fsa0a_c_sc_tc.db}
+set link_library {* fsa0a_c_sc_tc.db fsa0a_c_io_tc.db}
+set symbol_library {fsa0a_c_sc.sdb}
+#------------------------------------------------------------------------------
+# add DesignWare Libs to link library
+#------------------------------------------------------------------------------
+set synthetic_library {dw_foundation.sldb}
+lappend link_library $synthetic_library
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+set TECH_LIB fsa0a_c_sc_tc
+set IO_LIB   fsa0a_c_io_tc
+set WORK_DIR /usr/dcpt09/adder/dc
+set THIS_DESIGN adder
+#------------------------------------------------------------------------------
+# reports path and file
+#------------------------------------------------------------------------------
+set SETUP_RPT_FILE $WORK_DIR/report/setup_time.rpt
+set HOLD_RPT_FILE  $WORK_DIR/report/hold_time.rpt
+set VIOL_FILE      $WORK_DIR/report/voilation.rpt
+//-----------------------------------------------------------------------------
+read_verilog $DESIGN_PATH/adder_gate.v
+
+list_designs
+
+current_design adder
+
+link_design

@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : top
+Version: 2003.03
+Date   : Tue Apr 12 08:56:42 2005
+****************************************
+
+Operating Conditions: 
+Wire Load Model Mode: top
+
+  Startpoint: clk_set[0] (input port clocked by clk_1)
+  Endpoint: u1/clk_set_m_reg[0]
+            (rising edge-triggered flip-flop clocked by clk_1)
+  Path Group: clk_1
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                05x05                 class
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk_1 (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.10       0.10 r
+  clk_set[0] (in)                          0.00       0.10 r
+  u1/clk_set[0] (itf)                      0.00       0.10 r
+  u1/U9/Z (IVDA)                           0.68       0.78 r
+  u1/clk_set_m_reg[0]/D (FD2)              0.00       0.78 r
+  data arrival time                                   0.78
+
+  clock clk_1 (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.10       0.10
+  u1/clk_set_m_reg[0]/CP (FD2)             0.00       0.10 r
+  library hold time                        0.40       0.50
+  data required time                                  0.50
+  -----------------------------------------------------------
+  data required time                                  0.50
+  data arrival time                                  -0.78
+  -----------------------------------------------------------
+  slack (MET)                                         0.28
+
+
+1

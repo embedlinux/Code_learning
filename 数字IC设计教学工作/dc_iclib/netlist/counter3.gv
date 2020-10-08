@@ -1,0 +1,34 @@
+
+module counter ( clk, rst, ld, di, q, cy );
+input  [3:0] di;
+output [3:0] q;
+input  clk, rst, ld;
+output cy;
+    wire n20, n21, n22, N12, N10, N11, n2, n3, n4, n5, n6, n7, n8, n9, n10, 
+        n11, n12, n15, n17, n18, n19;
+    EOI U3 ( .A(q[0]), .B(q[1]), .Z(n2) );
+    B2I U4 ( .A(di[3]), .Z2(n3) );
+    B2I U5 ( .A(di[2]), .Z2(n4) );
+    B2I U6 ( .A(di[1]), .Z2(n5) );
+    B2IP U7 ( .A(ld), .Z2(n6) );
+    OR2P U8 ( .A(n19), .B(n7), .Z(n9) );
+    IVI U9 ( .A(n9), .Z(n10) );
+    B2I U10 ( .A(n18), .Z1(n11), .Z2(n12) );
+    B2I U11 ( .A(n20), .Z1(n7), .Z2(q[2]) );
+    B5IP U12 ( .A(rst), .Z(n17) );
+    B2I U13 ( .A(n22), .Z1(n8), .Z2(q[0]) );
+    IVI U14 ( .A(n21), .Z(n15) );
+    IVAP U15 ( .A(n15), .Z(q[1]) );
+    FD2 \q_reg[0]  ( .D(N12), .CP(clk), .CD(n17), .Q(n22) );
+    FD2S \q_reg[1]  ( .D(n2), .CP(clk), .CD(n17), .TI(n5), .TE(n6), .Q(n21) );
+    FD2S \q_reg[2]  ( .D(N10), .CP(clk), .CD(n17), .TI(n4), .TE(n6), .Q(n20)
+         );
+    FD2S \q_reg[3]  ( .D(N11), .CP(clk), .CD(n17), .TI(n3), .TE(n6), .Q(q[3]), 
+        .QN(n18) );
+    ENI U16 ( .A(n19), .B(q[2]), .Z(N10) );
+    ENI U17 ( .A(n10), .B(n12), .Z(N11) );
+    ND2I U18 ( .A(q[1]), .B(q[0]), .Z(n19) );
+    AN4 U19 ( .A(q[1]), .B(q[0]), .C(n11), .D(q[2]), .Z(cy) );
+    MUX21H U20 ( .A(n8), .B(di[0]), .S(ld), .Z(N12) );
+endmodule
+

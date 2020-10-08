@@ -1,0 +1,22 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : delay_calculation
+Design : dly
+Version: 2003.03
+Date   : Thu Apr 14 23:51:04 2005
+****************************************
+
+From port:                        s_in
+To port:                          s_out
+
+Operating Conditions: 
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+dly                    05x05             class
+
+Error: There is no cell or net delay arc between pins 's_in' and 's_out'.
+	The pins must be on the same net or the same cell. (RPT-35)
+1

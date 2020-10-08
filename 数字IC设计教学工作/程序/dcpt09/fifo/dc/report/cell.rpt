@@ -1,0 +1,137 @@
+ 
+****************************************
+Report : cell
+Design : fifo16x8
+Version: 2003.03
+Date   : Sun Apr  5 11:47:51 2009
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U3                        OR2P            fsa0a_c_sc_tc   6.000000  
+U4                        OR3             fsa0a_c_sc_tc   6.000000  
+U5                        OR2             fsa0a_c_sc_tc   4.000000  
+U6                        XNR2            fsa0a_c_sc_tc   9.000000  
+U7                        INV2            fsa0a_c_sc_tc   3.000000  
+U8                        OR2             fsa0a_c_sc_tc   4.000000  
+U9                        INV2            fsa0a_c_sc_tc   3.000000  
+U10                       BUF1            fsa0a_c_sc_tc   4.000000  
+U11                       XOR2            fsa0a_c_sc_tc   9.000000  
+U12                       XOR2            fsa0a_c_sc_tc   9.000000  
+U13                       OA12            fsa0a_c_sc_tc   6.000000  
+U14                       OR2P            fsa0a_c_sc_tc   6.000000  
+U15                       BUF2            fsa0a_c_sc_tc   5.000000  
+U16                       INV3            fsa0a_c_sc_tc   4.000000  
+U17                       INV1            fsa0a_c_sc_tc   3.000000  
+U18                       AN2P            fsa0a_c_sc_tc   6.000000  
+U19                       XOR3            fsa0a_c_sc_tc   18.000000 
+U20                       BUF2            fsa0a_c_sc_tc   5.000000  
+U21                       MUX2            fsa0a_c_sc_tc   7.000000  
+U22                       INV2            fsa0a_c_sc_tc   3.000000  
+U23                       MUX2            fsa0a_c_sc_tc   7.000000  
+U24                       INV3            fsa0a_c_sc_tc   4.000000  
+U25                       INV2            fsa0a_c_sc_tc   3.000000  
+U26                       NR2P            fsa0a_c_sc_tc   6.000000  
+U27                       INV3            fsa0a_c_sc_tc   4.000000  
+U28                       ND2             fsa0a_c_sc_tc   3.000000  
+U29                       ND2             fsa0a_c_sc_tc   3.000000  
+U30                       ND2             fsa0a_c_sc_tc   3.000000  
+U31                       BUF2            fsa0a_c_sc_tc   5.000000  
+U32                       XOR2            fsa0a_c_sc_tc   9.000000  
+U33                       BUF2            fsa0a_c_sc_tc   5.000000  
+U34                       INV2            fsa0a_c_sc_tc   3.000000  
+U35                       BUF1            fsa0a_c_sc_tc   4.000000  
+U36                       ND2             fsa0a_c_sc_tc   3.000000  
+U37                       BUF2            fsa0a_c_sc_tc   5.000000  
+U38                       BUF2            fsa0a_c_sc_tc   5.000000  
+U39                       BUF3            fsa0a_c_sc_tc   6.000000  
+U40                       BUF3            fsa0a_c_sc_tc   6.000000  
+U41                       BUF2            fsa0a_c_sc_tc   5.000000  
+U42                       BUF3            fsa0a_c_sc_tc   6.000000  
+U43                       INV2            fsa0a_c_sc_tc   3.000000  
+U44                       BUF1            fsa0a_c_sc_tc   4.000000  
+U45                       INV2            fsa0a_c_sc_tc   3.000000  
+U46                       AN2             fsa0a_c_sc_tc   4.000000  
+U47                       AN2             fsa0a_c_sc_tc   4.000000  
+U48                       AN2             fsa0a_c_sc_tc   4.000000  
+U49                       AN2             fsa0a_c_sc_tc   4.000000  
+U50                       AN2             fsa0a_c_sc_tc   4.000000  
+U51                       AN2             fsa0a_c_sc_tc   4.000000  
+U52                       AN2             fsa0a_c_sc_tc   4.000000  
+U53                       AOI12           fsa0a_c_sc_tc   8.000000  
+U54                       AN2             fsa0a_c_sc_tc   4.000000  
+U55                       INV2            fsa0a_c_sc_tc   3.000000  
+U56                       BUF2            fsa0a_c_sc_tc   5.000000  
+U57                       INV3            fsa0a_c_sc_tc   4.000000  
+U58                       AN2P            fsa0a_c_sc_tc   6.000000  
+U59                       INV2            fsa0a_c_sc_tc   3.000000  
+U60                       BUF3            fsa0a_c_sc_tc   6.000000  
+U61                       BUF3            fsa0a_c_sc_tc   6.000000  
+U62                       BUF1            fsa0a_c_sc_tc   4.000000  
+U63                       BUF1            fsa0a_c_sc_tc   4.000000  
+U64                       ND2             fsa0a_c_sc_tc   3.000000  
+U65                       XOR2            fsa0a_c_sc_tc   9.000000  
+U66                       XOR2            fsa0a_c_sc_tc   9.000000  
+U67                       XOR2            fsa0a_c_sc_tc   9.000000  
+U68                       XOR2            fsa0a_c_sc_tc   9.000000  
+U69                       XOR2            fsa0a_c_sc_tc   9.000000  
+U70                       XOR2            fsa0a_c_sc_tc   9.000000  
+U71                       XOR2            fsa0a_c_sc_tc   9.000000  
+U72                       XOR2            fsa0a_c_sc_tc   9.000000  
+U73                       OR2P            fsa0a_c_sc_tc   6.000000  
+U74                       BUF4            fsa0a_c_sc_tc   7.000000  
+U75                       XOR2            fsa0a_c_sc_tc   9.000000  
+U76                       ND2             fsa0a_c_sc_tc   3.000000  
+U77                       XOR2            fsa0a_c_sc_tc   9.000000  
+U78                       XOR2            fsa0a_c_sc_tc   9.000000  
+U79                       INV3            fsa0a_c_sc_tc   4.000000  
+U80                       BUF3            fsa0a_c_sc_tc   6.000000  
+U81                       XOR2            fsa0a_c_sc_tc   9.000000  
+U82                       BUF1            fsa0a_c_sc_tc   4.000000  
+U83                       BUF4            fsa0a_c_sc_tc   7.000000  
+U84                       BUF4            fsa0a_c_sc_tc   7.000000  
+U85                       INV4            fsa0a_c_sc_tc   5.000000  
+U86                       INV3            fsa0a_c_sc_tc   4.000000  
+U87                       INV4            fsa0a_c_sc_tc   5.000000  
+U88                       ND2             fsa0a_c_sc_tc   3.000000  
+U89                       AO112           fsa0a_c_sc_tc   8.000000  
+U90                       NR5             fsa0a_c_sc_tc   11.000000 
+U91                       XOR3            fsa0a_c_sc_tc   18.000000 
+U92                       MUX2            fsa0a_c_sc_tc   7.000000  
+U93                       MUX2            fsa0a_c_sc_tc   7.000000  
+U94                       MUX2            fsa0a_c_sc_tc   7.000000  
+U95                       MUX2            fsa0a_c_sc_tc   7.000000  
+U96                       MUX2            fsa0a_c_sc_tc   7.000000  
+U97                       MUX2            fsa0a_c_sc_tc   7.000000  
+U98                       MUX2            fsa0a_c_sc_tc   7.000000  
+U99                       ND6             fsa0a_c_sc_tc   12.000000 
+do_reg[0]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+do_reg[1]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+do_reg[2]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+do_reg[3]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+do_reg[4]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+do_reg[5]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+do_reg[6]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+do_reg[7]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+empty_reg                 DFFSBN          fsa0a_c_sc_tc   20.000000 n
+fifo_regs                 rr16                            4921.000000
+                                                                    h, n
+full_reg                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+p_rd_reg[0]               DFFRBP          fsa0a_c_sc_tc   21.000000 n
+p_rd_reg[1]               DFFRBP          fsa0a_c_sc_tc   21.000000 n
+p_rd_reg[2]               DFFRBP          fsa0a_c_sc_tc   21.000000 n
+p_rd_reg[3]               DFFRBP          fsa0a_c_sc_tc   21.000000 n
+p_wr_reg[0]               DFFRBP          fsa0a_c_sc_tc   21.000000 n
+p_wr_reg[1]               DFFRBP          fsa0a_c_sc_tc   21.000000 n
+p_wr_reg[2]               DFFRBP          fsa0a_c_sc_tc   21.000000 n
+p_wr_reg[3]               DFFRBP          fsa0a_c_sc_tc   21.000000 n
+--------------------------------------------------------------------------------
+Total 116 cells                                           5906.000000
+1

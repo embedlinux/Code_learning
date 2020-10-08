@@ -1,0 +1,8 @@
+E:/VerilogExamples/source/traffic_tb.v {1 {vlog -work work E:/VerilogExamples/source/traffic_tb.v
+Model Technology ModelSim SE vlog 5.7c Compiler 2003.03 Mar 13 2003
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}}

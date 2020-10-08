@@ -1,0 +1,47 @@
+
+module div ( clk_sys, rst, clk_set, clk_tx );
+input  [1:0] clk_set;
+input  clk_sys, rst;
+output clk_tx;
+    wire \cnt[3] , \cnt[2] , \cnt[1] , \cnt[0] , N29, N30, N31, n5, n6, n7, n8, 
+        n9, n11, n12, n13, n14, n15, n16, n17, n18, n21, n22, n23, n24, n25, 
+        n26, n27, n28, n29, n30, n31, n32, n33, n34, n35, \U3/U1/Z_3 , 
+        \U3/U1/Z_2 , \U3/U1/Z_1 ;
+    IVI U3 ( .A(clk_set[0]), .Z(n35) );
+    ND2I U4 ( .A(n26), .B(n27), .Z(n30) );
+    AN2I U5 ( .A(n12), .B(n14), .Z(n5) );
+    NR2P U6 ( .A(clk_set[0]), .B(clk_set[1]), .Z(\U3/U1/Z_3 ) );
+    B2I U7 ( .A(\cnt[1] ), .Z1(n7), .Z2(n8) );
+    IVI U8 ( .A(\cnt[3] ), .Z(n9) );
+    IVI U9 ( .A(n9), .Z(clk_tx) );
+    OR2P U10 ( .A(n35), .B(n34), .Z(n11) );
+    IVI U11 ( .A(n11), .Z(n12) );
+    B2I U12 ( .A(\cnt[2] ), .Z1(n6), .Z2(n13) );
+    B2I U13 ( .A(\cnt[0] ), .Z2(n14) );
+    B5IP U14 ( .A(rst), .Z(n21) );
+    B2I U15 ( .A(\U3/U1/Z_2 ), .Z1(n16), .Z2(n15) );
+    NR2P U16 ( .A(clk_set[1]), .B(n35), .Z(\U3/U1/Z_2 ) );
+    B2I U17 ( .A(\U3/U1/Z_1 ), .Z1(n18), .Z2(n17) );
+    NR2P U18 ( .A(clk_set[0]), .B(n34), .Z(\U3/U1/Z_1 ) );
+    FD2S \cnt_reg[0]  ( .D(1'b1), .CP(clk_sys), .CD(n21), .TI(1'b0), .TE(n22), 
+        .Q(\cnt[0] ) );
+    FD2 \cnt_reg[1]  ( .D(N29), .CP(clk_sys), .CD(n21), .Q(\cnt[1] ) );
+    FD2 \cnt_reg[2]  ( .D(N30), .CP(clk_sys), .CD(n21), .Q(\cnt[2] ) );
+    FD2 \cnt_reg[3]  ( .D(N31), .CP(clk_sys), .CD(n21), .Q(\cnt[3] ) );
+    ENI U21 ( .A(n8), .B(n17), .Z(n29) );
+    ENI U22 ( .A(n15), .B(n13), .Z(n31) );
+    ENI U23 ( .A(\U3/U1/Z_3 ), .B(clk_tx), .Z(n33) );
+    ENI U24 ( .A(n12), .B(n14), .Z(n22) );
+    ND2I U25 ( .A(n23), .B(n24), .Z(n32) );
+    ND2I U26 ( .A(n15), .B(n13), .Z(n23) );
+    ND2I U27 ( .A(n25), .B(n30), .Z(n24) );
+    ND2I U28 ( .A(n16), .B(n6), .Z(n25) );
+    ND2I U29 ( .A(n17), .B(n8), .Z(n26) );
+    ND2I U30 ( .A(n5), .B(n28), .Z(n27) );
+    ND2I U31 ( .A(n18), .B(n7), .Z(n28) );
+    ENI U32 ( .A(n5), .B(n29), .Z(N29) );
+    ENI U33 ( .A(n30), .B(n31), .Z(N30) );
+    ENI U34 ( .A(n33), .B(n32), .Z(N31) );
+    IVI U35 ( .A(clk_set[1]), .Z(n34) );
+endmodule
+

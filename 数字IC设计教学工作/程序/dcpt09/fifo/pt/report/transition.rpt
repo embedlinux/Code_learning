@@ -1,0 +1,111 @@
+****************************************
+Report : timing
+	-path full
+	-delay max
+	-nets
+	-max_paths 1
+	-transition_time
+	-capacitance
+Design : fifo16x8
+Version: U-2003.03-SP1
+Date   : Sun Apr  5 12:02:38 2009
+****************************************
+
+
+  Startpoint: rst (input port clocked by CLK)
+  Endpoint: fifo_regs/re14_reg[1]
+               (recovery check against rising-edge clock CLK)
+  Path Group: **async_default**
+  Path Type: max
+
+  Point                       Fanout    Cap      Trans       Incr       Path
+  -----------------------------------------------------------------------------
+  clock CLK (rise edge)                           0.00       0.00       0.00
+  clock network delay (ideal)                                0.00       0.00
+  input external delay                                       0.60       0.60 f
+  rst (in)                                        0.04       0.01       0.61 f
+  rst (net)                      1     0.01                         
+  U39/O (BUF3)                                    0.06       0.10       0.71 f
+  n31 (net)                      2     0.04                         
+  fifo_regs/rst (rr16)                            0.00       0.00       0.71 f
+  fifo_regs/rst (net)                                               
+  fifo_regs/U45/O (INV2)                          0.10       0.06       0.77 r
+  fifo_regs/n184 (net)           3     0.02                         
+  fifo_regs/U110/O (BUF1)                         0.10       0.11       0.88 r
+  fifo_regs/n177 (net)           2     0.02                         
+  fifo_regs/U107/O (BUF2)                         0.08       0.10       0.98 r
+  fifo_regs/n176 (net)           3     0.03                         
+  fifo_regs/U112/O (BUF2)                         0.08       0.09       1.07 r
+  fifo_regs/n175 (net)           3     0.02                         
+  fifo_regs/U46/O (BUF2)                          0.09       0.10       1.17 r
+  fifo_regs/n169 (net)           3     0.03                         
+  fifo_regs/U109/O (BUF4)                         0.10       0.11       1.29 r
+  fifo_regs/n165 (net)           5     0.06                         
+  fifo_regs/U316/O (BUF4)                         0.09       0.11       1.40 r
+  fifo_regs/n163 (net)           4     0.05                         
+  fifo_regs/re14_reg[1]/RB (DFFRBN)               0.09       0.00       1.40 r
+  data arrival time                                                     1.40
+
+  clock CLK (rise edge)                           0.00       2.00       2.00
+  clock network delay (ideal)                                0.00       2.00
+  clock uncertainty                                         -0.20       1.80
+  fifo_regs/re14_reg[1]/CK (DFFRBN)                                     1.80 r
+  library recovery time                                      0.00       1.80
+  data required time                                                    1.80
+  -----------------------------------------------------------------------------
+  data required time                                                    1.80
+  data arrival time                                                    -1.40
+  -----------------------------------------------------------------------------
+  slack (MET)                                                           0.40
+
+
+  Startpoint: wr_n (input port clocked by CLK)
+  Endpoint: fifo_regs/re14_reg[0]
+               (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: max
+
+  Point                       Fanout    Cap      Trans       Incr       Path
+  -----------------------------------------------------------------------------
+  clock CLK (rise edge)                           0.00       0.00       0.00
+  clock network delay (ideal)                                0.00       0.00
+  input external delay                                       0.60       0.60 f
+  wr_n (in)                                       0.04       0.01       0.61 f
+  wr_n (net)                     1     0.01                         
+  U55/O (INV2)                                    0.08       0.05       0.66 r
+  n64 (net)                      1     0.02                         
+  U57/O (INV3)                                    0.06       0.04       0.70 f
+  n65 (net)                      4     0.04                         
+  fifo_regs/wr_n (rr16)                           0.00       0.00       0.70 f
+  fifo_regs/wr_n (net)                                              
+  fifo_regs/U40/O (OR2P)                          0.06       0.12       0.82 f
+  fifo_regs/n343 (net)           2     0.02                         
+  fifo_regs/U35/O (INV2)                          0.08       0.05       0.87 r
+  fifo_regs/n345 (net)           3     0.02                         
+  fifo_regs/U60/O (OR3B2P)                        0.08       0.22       1.09 f
+  fifo_regs/n344 (net)           2     0.02                         
+  fifo_regs/U44/O (INV2)                          0.10       0.06       1.16 r
+  fifo_regs/n178 (net)           3     0.02                         
+  fifo_regs/U85/O (AN2T)                          0.10       0.14       1.30 r
+  fifo_regs/n44 (net)            4     0.04                         
+  fifo_regs/U61/O (BUF3)                          0.10       0.11       1.41 r
+  fifo_regs/n127 (net)           5     0.05                         
+  fifo_regs/U263/O (MUX2)                         0.08       0.12       1.52 r
+  fifo_regs/n185 (net)           1     0.01                         
+  fifo_regs/re14_reg[0]/D (DFFRBN)                0.08       0.00       1.52 r
+  data arrival time                                                     1.52
+
+  clock CLK (rise edge)                           0.00       2.00       2.00
+  clock network delay (ideal)                                0.00       2.00
+  clock uncertainty                                         -0.20       1.80
+  fifo_regs/re14_reg[0]/CK (DFFRBN)                                     1.80 r
+  library setup time                                        -0.09       1.71
+  data required time                                                    1.71
+  -----------------------------------------------------------------------------
+  data required time                                                    1.71
+  data arrival time                                                    -1.52
+  -----------------------------------------------------------------------------
+  slack (MET)                                                           0.19
+
+
+1

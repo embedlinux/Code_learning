@@ -1,0 +1,47 @@
+Performing power analysis through design. (low effort)
+Warning: There are sequential cells with no output activity annotation. (PWR-96)
+Warning: Sequential cell cnt_reg[0] with no output activity annotation. (PWR-81)
+Warning: Sequential cell cnt_reg[1] with no output activity annotation. (PWR-81)
+Warning: Sequential cell cnt_reg[2] with no output activity annotation. (PWR-81)
+Warning: Sequential cell cnt_reg[3] with no output activity annotation. (PWR-81)
+ 
+****************************************
+Report : power
+	-analysis_effort low
+Design : div
+Version: 2003.03
+Date   : Mon Apr 11 17:25:05 2005
+****************************************
+
+
+Library(s) Used:
+
+    class (File: /usr/synopsys/libraries/syn/class.db)
+
+Warning: The library cells used by your design are not characterized for internal power. (PWR-26)
+
+Operating Conditions: 
+Wire Load Model Mode: top
+
+Design        Wire Load Model            Library
+------------------------------------------------
+div                    05x05             class
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 0.100000ff
+    Time Units = 1ns
+    Dynamic Power Units = 100nW    (derived from V,C,T units)
+    Leakage Power Units = Unitless
+
+
+  Cell Internal Power  =   0.0000 nW    (0%)
+  Net Switching Power  =   5.7854 uW  (100%)
+                         ---------
+Total Dynamic Power    =   5.7854 uW  (100%)
+
+Cell Leakage Power     =   0.0000 
+
+1

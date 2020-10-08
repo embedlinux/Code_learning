@@ -1,0 +1,3062 @@
+#@ # 
+#@ # Running pt_shell Version U-2003.03-SP1 for linux -- May 16, 2003
+#@ # Date:   Sun Apr  5 12:02:24 2009
+#@ # Run by: root@xxn
+#@ 
+
+source /usr/Primetime/admin/setup/.synopsys_pt.setup
+#@ #
+#@ # .synopsys_pt.setup: Initialization File for PrimeTime
+#@ #
+#@ 
+#@ 
+#@ #
+#@ # Enable stack trace output on fatal.  Not available for all architectures.
+#@ #
+#@ if { $sh_arch == "sparcOS5" || $sh_arch == "hpux10" ||      $sh_arch == "hp32" || $sh_arch == "linux" } {
+#@   set_unix_variable SYNOPSYS_TRACE ""
+#@ }
+#@ 
+#@ #
+#@ # Variable settings
+#@ #
+#@ 
+#@ #
+#@ # Synopsys strongly recommends that you use new variable message
+#@ # tracing for debugging purposes only.
+#@ #
+#@ set sh_new_variable_message true
+#@ 
+#@ #
+#@ # Synopsys strongly recommends that you uncomment the following command
+#@ # in order to set sh_command_abbrev_mode to the value "Command-Line-Only".
+#@ # Command abbreviation is intended as an interactive convenience.  Using
+#@ # abbreviations in scripts can cause commands to fail in subsequent releases.
+#@ # 
+#@ #set sh_command_abbrev_mode "Command-Line-Only"
+#@ 
+#@ #
+#@ # Some useful aliases
+#@ #
+#@ alias list_commands		help
+#@ alias report_constraints	report_constraint
+#@ alias report_clocks		report_clock
+#@ 
+#@ #
+#@ # The alias for get_clock was added when get_clock_network_objects
+#@ # was introduced, as it conflicts with get_clocks (and get_clock is a
+#@ # typical abbreviation for get_clocks)
+#@ #
+#@ alias get_clock get_clocks
+#@ 
+#@ 
+#@ #
+#@ #
+#@ # The alias of q to quit is commented out.  Remove the comment 
+#@ # character if you want this alias.  Some users find that having 
+#@ # this particular alias causes problems when mixed with page-mode
+#@ # for reports - an accidental repeated 'q' not only cancels the
+#@ # output but exits the tool.
+#@ #
+#@ #alias q quit
+#@ 
+#@ 
+#@ # -- End source /usr/Primetime/admin/setup/.synopsys_pt.setup
+
+#@ ################################################################
+#@ # File: pt_setup.tcl
+#@ ################################################################
+#@ 
+#@ #****h* ptgui/pt_setup.tcl
+#@ # DESCRIPTION
+#@ #      This file is sourced during initialization of the
+#@ #      pt_shell_exec application. It is the entry point for
+#@ #      setting up ekki-related features.
+#@ #
+#@ #      This script started from syn_setup.tcl copied
+#@ #      from ../syn on 3/12/02.  Any changes in that script 
+#@ #      may need to be modified for PrimeTime and added here.
+#@ #
+#@ #  History:
+#@ #    March 15 2002 -- Donna Nakano: Created -- copied ../syn/syn_setup.tcl
+#@ #                     and modified for PrimeTime use. 
+#@ #***
+#@ 
+#@ # DO NOT ADD ANY CODE IN FRONT OF GUARD
+#@ #if { ![ info exists Guards::pt_setup_tcl] } {
+#@ # set guard
+#@ #variable Guards::pt_setup_tcl 1
+#@ 
+#@ # Return immediately if gui_register_commands is not known
+#@ # This means that we are running a PT with stubbed GUI.
+#@ if { [string length [info commands gui_register_commands]] == 0 } {
+#@   return
+#@ }
+#@ 
+#@ # register ekki commands that don't require window resources
+#@ gui_register_commands
+#@ 
+#@ # do NOT start GUI by default
+#@ set gui_auto_start false
+#@ set gui_enable_xterm true
+#@ 
+#@ # Define the variable used to set the title bar caption
+#@ gui_create_var -name "gui_product_name" -value "PrimeTime"
+#@ 
+#@ 
+#@ # Source the script to customize variant shell commands
+#@ source [file join $::synopsys_root auxx gui setup snpsCustomize.tcl]
+#@ # The following namespace contains Tcl procs used to customize
+#@ # dialogs (or potentially other things) to a specific
+#@ # application.
+#@ # This file will be included by all applications providing a default
+#@ # implementation for all the procs in namespace Customize.
+#@ # Applications that need a different implementation have to
+#@ # redefine the appropriate procs by overwriting the procs after
+#@ # having read this file.
+#@ #
+#@ # If you encounter a dialog that does not work for your application,
+#@ # because it uses some core command, that your appplication does not
+#@ # support or supports with a different syntax, do the following:
+#@ # (1) In this file write a proc in namespace Customize that works
+#@ #     exactly as it is currently used in the dialog
+#@ # (2) In the dialog substitute the call to the core Tcl command
+#@ #     to the Tcl command you just wrote.
+#@ # (3) Overwrite the proc in your application specific Customize file
+#@ #     according to the needs of your application.
+#@ # Since all applications have to source this file, this makes sure,
+#@ # that you break no other application by these changes, while
+#@ # making the dialog reusable for you.
+#@ 
+#@ namespace eval Customize {
+#@ }
+#@ 
+#@ # Return all existing path groups
+#@ proc ::Customize::get_path_groups { args } {
+#@     return [eval ::get_path_groups $args ]
+#@ }
+#@ 
+#@ 
+#@ # Update timing
+#@ proc ::Customize::update_timing { } {
+#@     echo "Warning: ::Customize::update_timing has not been overridden!!"
+#@ }
+#@ 
+#@ # Return an object attribute
+#@ proc ::Customize::get_attribute { args } {
+#@     return [eval ::get_attribute $args ]
+#@ }
+#@ 
+#@ # Source a tcl file, handling some exceptions
+#@ proc ::Customize::source_tcl_file { args } {
+#@     return [ eval ::source_tcl_file $args ]
+#@ }
+#@ 
+#@ # Return a gui defined object attribute of type float
+#@ proc ::Customize::gui_get_float_attribute { args } {
+#@     return [ eval ::gui_get_attribute $args ]
+#@ }
+#@ 
+#@ # get nets
+#@ proc ::Customize::get_all_nets { } {
+#@     return [find net -hierarchy *]
+#@ }
+#@ 
+#@ # the browser type used for object chooser
+#@ proc ::Customize::get_hier_browser_class { } {
+#@     return "Hier"
+#@ }
+#@ 
+#@ # Get timing paths
+#@ proc ::Customize::get_timing_paths { args } {
+#@     return [eval ::get_timing_paths $args]
+#@ }
+#@ 
+#@ # proc for informing the undo system that a "group undo" set of operations
+#@ # is beginning
+#@ proc ::Customize::begin_group_op { description }  {
+#@   return 1
+#@ }
+#@ # begin_group_up is temporary, to workaround a C++ typo
+#@ proc ::Customize::begin_group_up { description }  {
+#@   ::Customize::begin_group_op $description
+#@   return 1
+#@ }
+#@ 
+#@ # proc for informing the undo system that a "group undo" set of operations
+#@ # is ending
+#@ proc ::Customize::end_group_op { }  {
+#@   return 1
+#@ }
+#@ # end_group_up is temporary, to workaround a C++ typo
+#@ proc ::Customize::end_group_up { args }  {
+#@   ::Customize::end_group_op
+#@   return 1
+#@ }
+#@ # -- End source /usr/Primetime/auxx/gui/setup/snpsCustomize.tcl
+
+#@ source [file join $::synopsys_root auxx gui pt snpsCustomize.tcl]
+#@ 
+#@ ##############################################################################
+#@ # FILE:     snpsCustomize.tcl
+#@ ##############################################################################
+#@ 
+#@ #****h* ptgui/snpsCustomize.tcl
+#@ # DESCRIPTION
+#@ #  Allows customization in use of core commands that differ
+#@ #           in syntax from one product to another.
+#@ #
+#@ #  History:
+#@ #    March 15 2002 -- Donna Nakano: Created -- copied verbatim from ../syn/snpsCustomize.tcl
+#@ #    April 12 2002 -- Donna Nakano: Adding customization of get_path_groups.
+#@ #
+#@ #***
+#@ 
+#@ # SYNOPSYS CONFIDENTIAL
+#@ # Copyright (C)©2002 Synopsys Inc. All Rights Reserved. Forwarding or copying
+#@ # of this document, in any medium, in whole or in part, or disclosure of its
+#@ # contents, to other than the authorized recipient, is strictly prohibited.
+#@ 
+#@ # The following namespace contains Tcl procs used to customize
+#@ # dialogs (or potentially other things) to a specific
+#@ # application.
+#@ # You only need to insert an implementation of a proc here, if
+#@ # the implementation is different from the implementation
+#@ # in setup/snspCustomize.tcl.
+#@ 
+#@ ############################################################
+#@ 
+#@ #****f* ptgui/::Customize::get_path_groups
+#@ # DESCRIPTION
+#@ #  Return all existing path groups
+#@ #  While DC assumes the wildcard if no argument is given,
+#@ #  PrimeTime requires a pattern argument.
+#@ #***
+#@ proc ::Customize::get_path_groups { args } {
+#@   if { [llength $args] == 0} {
+#@     return [::get_path_groups *]
+#@   }
+#@   return [ eval ::get_path_groups $args ]
+#@ }
+#@ 
+#@ 
+#@ ############################################################
+#@ 
+#@ #****f* ptgui/::Customize::get_attribute
+#@ # DESCRIPTION
+#@ # Return an attribute value for each object in collection
+#@ # While the DC supports this for collections that
+#@ # contain more than one object, PrimeTime does not
+#@ # so wrap the PrimeTime get_attribute with iteration.
+#@ #
+#@ # USAGE
+#@ #  get_attribute [-quite] [-class classname] clct attr_name
+#@ #***
+#@ proc ::Customize::get_attribute { args } {
+#@   # optional flags and arguments
+#@   set quietopt {}
+#@   set classopt {}
+#@ 
+#@   # required arguments
+#@   set multi {}
+#@   set attrname {}
+#@ 
+#@   # current state for argument parsing
+#@   set state need_clct
+#@   set error {}
+#@ 
+#@   # parse the args
+#@   foreach arg $args {
+#@     switch -- $state {
+#@ 
+#@       need_clct {
+#@         switch -- $arg {
+#@            "-quiet" { 
+#@              set quietopt "-quiet" 
+#@            }
+#@            "-class" { 
+#@               set state need_class
+#@            }
+#@            default {
+#@              set multi $arg
+#@              set state need_attr
+#@            }
+#@          }
+#@        }
+#@ 
+#@        need_class {
+#@          set classopt "-class $arg"
+#@          set state need_clct
+#@        }
+#@ 
+#@        need_attr {
+#@          set attrname $arg
+#@          set state need_nothing
+#@        }
+#@ 
+#@        need_nothing {
+#@          set error "too many arguments"
+#@        }
+#@     }
+#@ 
+#@     ####################################################################
+#@     # Proceed with our special processing only if we have the required 
+#@     # arguments and have not detected an error so far, and
+#@     # the collection has multiple objects.  If these conditions are met,
+#@     # index through the multiple object collection, calling PrimeTime's 
+#@     # get_attribute for each object.
+#@     #
+#@     if { ([llength $multi] >= 1) && ([llength $attrname] >= 1)  && ([llength $error] == 0) } {
+#@       set count [ sizeof_collection $multi ]
+#@       if { $count > 1 } {
+#@         set ret {}
+#@         set i 0
+#@         while { $i < $count } {
+#@           set one [ index_collection $multi $i ]
+#@           if { ([llength $quietopt] > 0)  && ([llength $classopt] > 0) } {
+#@             lappend ret [ ::get_attribute $quietopt $classopt $one $attrname ]
+#@           } elseif  { [llength $quietopt] > 0 } {
+#@             lappend ret [ ::get_attribute $quietopt $one $attrname ]
+#@           } elseif  { [llength $classopt] > 0 } {
+#@             lappend ret [ ::get_attribute $classopt $one $attrname ]
+#@           } else {
+#@             lappend ret [ ::get_attribute $one $attrname ]
+#@           }
+#@           incr i
+#@         }
+#@         return $ret
+#@       }
+#@     }
+#@     #
+#@     ####################################################################
+#@ 
+#@   }
+#@ 
+#@   #####################################################################
+#@   # Let PrimeTime's get_attribute deal with other cases, including
+#@   # reporting errors on missing or extra arguments.
+#@   #
+#@   return [ eval ::get_attribute $args ]
+#@ }
+#@ 
+#@ #================================================================
+#@ 
+#@ #****f* ptgui/::Customize::source_tcl_file
+#@ # NOTES
+#@ #   This procedure was in use liberally by the DC setup script
+#@ #   and syn_setup.tcl.  Reproduced it here in a separate namespace
+#@ #   to avoid collision with built in source when abbreviated.
+#@ #   source_tcl_file is defined in dc_procs.tcl for the syn apps.
+#@ #   Appears to just catch and handle uncaught errors. 
+#@ #   Commented out echo_trace -- another undefined procedure.
+#@ # HISTORY
+#@ #  Donna Nakano 3/14/02 -- created
+#@ #  Donna Nakano 6/25/02 -- moved into this namespace.
+#@ #***
+#@ proc ::Customize::source_tcl_file {filename dir msg verbose} {
+#@ 
+#@     set __qual_pref_file [file join $dir $filename]
+#@     if {[file exists  $__qual_pref_file]} {
+#@       if { $verbose } {
+#@         echo $msg $__qual_pref_file
+#@       }
+#@       # use catch to recover from errors in the pref file
+#@ #     echo_trace "Sourcing $__qual_pref_file"
+#@       # to speed up sourcing use read and eval
+#@       set f [open $__qual_pref_file]
+#@       if {[catch {namespace eval :: [read -nonewline $f]} __msg]} {
+#@           echo Error: Error during sourcing of $__qual_pref_file
+#@           if {$__msg != ""}  { echo $__msg }
+#@           # actually, it looks like $__msg is always null after
+#@           # source fails
+#@       }
+#@       close $f
+#@ #    } else {
+#@ #      echo_trace "Info: File ' $__qual_pref_file ' does not exist!"
+#@     }
+#@ }
+#@ define_proc_attributes ::Customize::source_tcl_file -hidden
+#@ 
+#@ #****f* ptgui/::Customize::gui_get_float_attribute
+#@ # DESCRIPTION
+#@ #   Return a gui defined object attribute of type float
+#@ # NOTES
+#@ #   In PrimeTime, the value -1048576 means undefined or unknown.
+#@ #   The value 1048576.0 means infinity 
+#@ # HISTORY
+#@ #  Emily 7/31/02
+#@ #***
+#@ proc ::Customize::gui_get_float_attribute { args } {
+#@     set val [eval ::gui_get_attribute $args]
+#@     if {$val == -1048576} {
+#@       return "**UNKNOWN**"
+#@     }
+#@     if {$val == 1048576.0} {
+#@       return "**INFINITY**"
+#@     }
+#@     return $val
+#@ }
+#@ define_proc_attributes ::Customize::gui_get_float_attribute -hidden
+#@ 
+#@ #****f* ptgui/::Customize::update_timing
+#@ # DESCRIPTION
+#@ #   Update timing IF NECESSARY
+#@ #***
+#@ proc ::Customize::update_timing { } {
+#@     get_timing_paths
+#@ }
+#@ define_proc_attributes ::Customize::update_timing -hidden
+#@ #================================================================
+#@ 
+#@ # -- End source /usr/Primetime/auxx/gui/pt/snpsCustomize.tcl
+
+#@ 
+#@ ::Customize::source_tcl_file snpsBrowse.tcl [file join $::synopsys_root auxx gui pt ] "Loading snpsBrowse.tcl" 0
+#@ 
+#@ #****f* ptgui/ekki_source_qtcl_startup_file
+#@ # DESCRIPTION
+#@ #   source qtcl startup file
+#@ #***
+#@ proc ekki_source_qtcl_startup_file { dir {verbose 1} } {
+#@     ::Customize::source_tcl_file ".synopsys_qtcl.tcl" $dir "Initializing qtcl settings from file " $verbose
+#@ }
+#@ define_proc_attributes ekki_source_qtcl_startup_file -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/ekki_source_gui_pref_file
+#@ # DESCRIPTION
+#@ #   source an ekki gui pref. file
+#@ #***
+#@ proc ekki_source_gui_pref_file { dir {verbose 1} } {
+#@     ::Customize::source_tcl_file [gui_get_var_value -name "pref_file_name"] $dir "Initializing gui preferences from file " $verbose
+#@ }
+#@ define_proc_attributes ekki_source_gui_pref_file -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/ekki_read_startup_files
+#@ # DESCRIPTION
+#@ #   read startup files.
+#@ #***
+#@ proc ekki_read_startup_files {}  {
+#@   ekki_source_qtcl_startup_file [file join $::synopsys_root auxx gui qtcl] 0
+#@   set setup_file "pt_gui_setup.tcl"
+#@   set msg "Initializing gui startup settings from file "
+#@ 
+#@   ::Customize::source_tcl_file $setup_file [file join $::synopsys_root auxx gui pt] $msg 0
+#@ #  The following lines cause problems -- not sure why.
+#@ #  Don't think we want to provide ability to customize yet anyway.  DN 3/14/02
+#@ #  ::Customize::source_tcl_file $setup_file $::env(HOME) $msg
+#@ #  ::Customize::source_tcl_file $setup_file .            $msg
+#@ }
+#@ define_proc_attributes ekki_read_startup_files -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/ekki_load_preferences
+#@ # DESCRIPTION
+#@ #***
+#@ proc ekki_load_preferences {} {
+#@     gui_set_var_value -name "read_pref_file" -value 1
+#@     ekki_source_gui_pref_file [gui_get_var_value -name "pref_file_path"]
+#@     gui_set_var_value -name "read_pref_file" -value 0
+#@ }
+#@ define_proc_attributes ekki_load_preferences -hidden -hide_body -dont_abbrev
+#@ 
+#@ 
+#@ 
+#@ #===========================================================================================
+#@ 
+#@ #****f* ptgui/ekki_start_callback
+#@ # DESCRIPTION
+#@ #   GUI SESSION CALLBACK PROC
+#@ #***
+#@ proc ekki_start_callback {} {
+#@     global sh_new_variable_message
+#@     set save_var_mode $sh_new_variable_message
+#@     set sh_new_variable_message false
+#@     ekki_read_startup_files
+#@     gui_register_pt_commands
+#@     gui_pt_start
+#@ 
+#@     if { $::gui_start_option_no_windows == 0 } {
+#@       if { ![string compare [gui_get_window_ids] ""] } {
+#@         set t [snpsTopLevel::create_window]
+#@         gui_create_window -type DesignStatus -parent $t -rect {{0 0} {220 40}}  -dock_state left -icon $::synopsys_root/auxx/gui/images/toolbars/design_stat_24_xpm.xpm
+#@         gui_create_window -type Hier -parent $t -rect {{0 40} {220 700}}  -dock_state left
+#@         set cons [gui_create_window -type Console -parent $t  -rect {{0 0} {600 180}} -dock_state bottom] 
+#@ 	echo ""
+#@         gui_set_active_window -window $cons
+#@       }
+#@     }
+#@     set sh_new_variable_message $save_var_mode
+#@ }
+#@ define_proc_attributes ekki_start_callback -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/ekki_gui_stop_callback_with_check
+#@ # DESCRIPTION
+#@ #***
+#@ proc ekki_gui_stop_callback_with_check {} {
+#@   gui_update_pref_file
+#@ 
+#@   # remove guards for GUI setup scripts
+#@   if { [ info exists Guards::syn_gui_tcl_root] } { clean_gui_syn_tcl_root }
+#@   if { [ info exists Guards::pt_gui_tcl_root] }  { clean_pt_gui_tcl_root }
+#@ }
+#@ define_proc_attributes ekki_gui_stop_callback_with_check -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/ekki_gui_stop_callback
+#@ # DESCRIPTION
+#@ #***
+#@ proc ekki_gui_stop_callback {} {
+#@   gui_delete_pt_commands
+#@   if { [catch ekki_gui_stop_callback_with_check f] } {
+#@     echo "ERROR in 'ekki_gui_stop_callback_with':"
+#@     error_info
+#@   }
+#@ }
+#@ define_proc_attributes ekki_gui_stop_callback -hidden -hide_body -dont_abbrev
+#@ 
+#@ # Register callback for gui_start and gui_stop.
+#@ gui_register_session_callback -pre -cmd ekki_start_callback
+#@ gui_register_session_callback -post -cmd ekki_gui_stop_callback
+#@ 
+#@ #****f* ptgui/gui_determine_view_show_state
+#@ # DESCRIPTION
+#@ #***
+#@ proc gui_determine_view_show_state {topLevel} {
+#@     set showState "normal"
+#@     set workspaceState [gui_get_toplevel_attrib -window $topLevel -workspace maximized]
+#@     if { ![string compare $workspaceState "true"] } {
+#@       set showState "maximized"
+#@     }
+#@     return $showState
+#@ }
+#@ define_proc_attributes gui_determine_view_show_state  -hidden -hide_body -dont_abbrev
+#@ 
+#@ 
+#@ #===========================================================================================
+#@ 
+#@ #****f* ptgui/gui_set_output_log_file_from_var
+#@ # DESCRIPTION
+#@ #   Set the gui variable determining the output log file if sh_output_log_file was set in setup.
+#@ #***
+#@ proc gui_set_output_log_file_from_var {} {
+#@   global sh_output_log_file
+#@   if { [info exists sh_output_log_file] } {
+#@     if { $sh_output_log_file != "" } {
+#@       gui_create_var -name "gui_output_log_file" -value "$sh_output_log_file"
+#@     }
+#@   }
+#@ }
+#@ define_proc_attributes gui_set_output_log_file_from_var -hidden -hide_body -dont_abbrev
+#@ 
+#@ gui_set_output_log_file_from_var
+#@ 
+#@ #===========================================================================================
+#@ # Don't try to create "global" selection bus.  This is alaready created during
+#@ # Ekki initialization.
+#@ #create_selection_bus -name global
+#@ #===========================================================================================
+#@ 
+#@ snic_register_commands
+#@ 
+#@ gui_nl_register
+#@ 
+#@ ::Customize::source_tcl_file base.tcl [file join $::synopsys_root auxx gui misc] "Define Misc namespace" 0
+#@ 
+#@ ::Customize::source_tcl_file base.tcl [file join $::synopsys_root auxx gui histogram] "Define histogram namespace" 0
+#@ 
+#@ ::Customize::source_tcl_file base.tcl [file join $::synopsys_root auxx gui schematic] "Define schematic namespace" 0
+#@ 
+#@ ::Customize::source_tcl_file browser.tcl [file join $::synopsys_root auxx gui pt] "Define Browser namespace" 0
+#@ 
+#@ 
+#@ ##################################################################
+#@ ##################################################################
+#@ ################## Begin Selection Namespace #####################
+#@ ##################################################################
+#@ ##################################################################
+#@ 
+#@ namespace eval Selection {
+#@ #****f* ptgui/::Selection::change_selection_by_clct
+#@ # DESCRIPTION
+#@ #***
+#@     proc change_selection_by_clct { settingName clct } {
+#@         Misc::traceIn Selection::change_selection_by_clct $settingName $clct
+#@         upvar $settingName setting
+#@ 
+#@         set cmd {change_selection}
+#@         if { [info exists setting(SlctContainer)] } {
+#@             if { $setting(SlctContainer) != "" } {
+#@                 set cmd "$cmd -name \$setting(SlctContainer)"
+#@             }
+#@         }
+#@         if { [info exists setting(SlctOperation)] } {
+#@             if { $setting(SlctOperation) != "" } {
+#@                 set cmd "$cmd -\$setting(SlctOperation)"
+#@             }
+#@         }
+#@         set cmd "$cmd \$clct"
+#@         Misc::trace1 Selection::change_selection_by_clct $cmd
+#@         eval $cmd
+#@         return ""
+#@     }
+#@ # new hide
+#@    define_proc_attributes change_selection_by_clct -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/::Selection::change_selection_by_name_list_and_type
+#@ # DESCRIPTION
+#@ #***
+#@     proc change_selection_by_name_list_and_type { settingName list type {nl ""} } {
+#@         Misc::traceIn Selection::change_selection_by_name_list_and_type $settingName $list $type $nl
+#@         
+#@         if { $nl == "" } {
+#@             set nl1 [snic_create_snicdb]
+#@         } else {
+#@             set nl1 $nl
+#@         }
+#@ 
+#@         set hlist [list]
+#@         foreach name $list {
+#@             lappend hlist [snic_find -nl $nl1 -type $type -name $name]
+#@         }
+#@         Misc::trace1 Selection::change_selection_by_name_list_and_type $hlist
+#@ 
+#@         switch -exact -- $type {
+#@             cell { set option "-cells" }
+#@             pin { set option "-pins" }
+#@             net { set option "-nets" }
+#@         }
+#@         set cmd "snic_convert -nl \$nl1 $option \$hlist"
+#@         set clct [eval $cmd]
+#@ 
+#@         if { $nl == "" } {
+#@             snic_remove_nl -nl $nl1
+#@         }
+#@         change_selection_by_clct $settingName $clct
+#@     }
+#@ # new hide
+#@    define_proc_attributes change_selection_by_name_list_and_type -hidden -hide_body -dont_abbrev
+#@ }
+#@ 
+#@ ##################################################################
+#@ ##################################################################
+#@ ################### End Selection Namespace ######################
+#@ ##################################################################
+#@ ##################################################################
+#@ 
+#@ 
+#@ ##################################################################
+#@ ##################################################################
+#@ ################## Begin FileBrowse Namespace ####################
+#@ ##################################################################
+#@ ##################################################################
+#@ 
+#@ namespace eval FileBrowse {
+#@ #****f* ptgui/::FileBrowse::CreateFileBrowseWidget
+#@ # DESCRIPTION
+#@ #***
+#@     proc CreateFileBrowseWidget { args } {
+#@         parse_proc_arguments -args $args options
+#@ 
+#@         set parent ""
+#@         if { [info exists options(-parent)] } { 
+#@ 	    set parent $options(-parent)
+#@ 	}
+#@ 
+#@         set name ""
+#@         if { [info exists options(-name)] } { 
+#@ 	    set name $options(-name)
+#@ 	}         
+#@    
+#@         set widgetLabelBuddy ""
+#@         if { [info exists options(-label_buddy)] } { 
+#@ 	    set widgetLabelBuddy $options(-label_buddy)
+#@ 	}  
+#@ 
+#@         set title ""
+#@         if { [info exists options(-title)] } { 
+#@ 	    set title "\"$options(-title)\""
+#@ 	} 
+#@ 
+#@         set mode "AnyFile"
+#@         if { [info exists options(-mode)] } { 
+#@ 	    set mode "\"$options(-mode)\""
+#@ 	}
+#@ 
+#@         set filter "\"All Files (*)\""
+#@         if { [info exists options(-filter)] } { 
+#@ 	    set filter "\"$options(-filter)\""
+#@ 	} 
+#@ 
+#@         set dir "./"
+#@         if { [info exists options(-dir)] } { 
+#@ 	    set dir "\"$options(-dir)\""
+#@ 	} 
+#@ 
+#@         set format ""
+#@         if { [info exists options(-formats)] } { 
+#@ 	    set format "\"$options(-formats)\""
+#@ 	} 
+#@ 
+#@         set bAppend 0
+#@         if { [info exists options(-append)] } { 
+#@ 	    set bAppend 1
+#@ 	}          
+#@ 
+#@         set box [qtcl_create_widget -name $name -qclass QHBox -parent $parent]
+#@         if { $widgetLabelBuddy != "" } {
+#@ 	    qtcl_create_widget -name LineEditFile -qclass QLineEdit -parent $box -buddy $widgetLabelBuddy
+#@ 	} else {
+#@ 	    qtcl_create_widget -name LineEditFile -qclass QLineEdit -parent $box
+#@ 	}
+#@         qtcl_create_widget -name PushButtonBrowse -qclass QPushButton -parent $box
+#@         qtcl_set_widget_property -name $parent|*|PushButtonBrowse -property text -value "&Browse..."   
+#@ 
+#@         if { $format != "" } {
+#@             qtcl_connect_widgets -sender "$parent|*|PushButtonBrowse" -signal "clicked()" -cmd "gui_file_dialog -title $title -mode $mode -filter $filter -dir $dir -formats $format -cmd \"::FileBrowse::retrieve_file_name_from_dlg %cwd %files $box $bAppend\""
+#@ 	} else {
+#@             qtcl_connect_widgets -sender "$parent|*|PushButtonBrowse" -signal "clicked()" -cmd "gui_file_dialog -title $title -mode $mode -filter $filter -dir $dir -cmd \"::FileBrowse::retrieve_file_name_from_dlg %cwd %files $box $bAppend\""
+#@ 	}
+#@ 
+#@         return $box
+#@ 
+#@     }
+#@     define_proc_attributes ::FileBrowse::CreateFileBrowseWidget         -define_args {
+#@             {-parent "Specify the parent widget of this widget" AString string required}
+#@             {-name  "File browse widget name" AString string optional}
+#@             {-label_buddy "Sepcify the widget on the left side of the file name line edit" AString string optional}
+#@             {-title "Specify the file dialog title" AString string optional}
+#@             {-mode "Specify the file dialog mode" AString string optional}
+#@             {-filter "Specify the file dialog filter" AString string optional}
+#@             {-dir "Specify the file dialog initial directory" AString string optional}
+#@             {-formats "Specify the file dialog file format" AString string optional}
+#@             {-append "append the newly selected files to the file name line edit" "" boolean optional}
+#@     }  -hidden -hide_body -dont_abbrev
+#@ # new hide
+#@ 
+#@ #****f* ptgui/::FileBrowse::retrieve_file_name_from_dlg
+#@ # DESCRIPTION
+#@ #***
+#@     proc retrieve_file_name_from_dlg { cwd file dlg append } {
+#@         if { $file != "" } {
+#@ 	    if { $append == "1" } {
+#@                 set fileText [qtcl_get_widget_property -name $dlg|*|LineEditFile -property text]
+#@                 append fileText " "
+#@ 	    }
+#@             append fileText $file
+#@             qtcl_set_widget_property -name $dlg|*|LineEditFile -property text -value $fileText
+#@         }
+#@ 
+#@         return 0
+#@     }
+#@ # new hide
+#@     define_proc_attributes retrieve_file_name_from_dlg -hidden -hide_body -dont_abbrev
+#@ }
+#@ 
+#@ ##################################################################
+#@ ##################################################################
+#@ ################## End FileBrowse Namespace ######################
+#@ ##################################################################
+#@ ##################################################################
+#@ 
+#@ 
+#@ # Define application specific attributes
+#@ ::Customize::source_tcl_file pt_attr_setup.tcl [file join $::synopsys_root auxx gui pt] "Initializing PrimeTime specific attributes" 0
+#@ 
+#@ 
+#@ 
+#@ ##################################################################
+#@ ##################################################################
+#@ ################## Begin Dialogs Namespace #######################
+#@ ##################################################################
+#@ ##################################################################
+#@ 
+#@ namespace eval DialogWidgets {
+#@ }
+#@ 
+#@ ::Customize::source_tcl_file HistBinInformation.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing Histogram Binning Info Dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file HistBin1Information.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing Histogram Binning Info Dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file HistDeltaDelay.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing Histogram Binning Info Dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file HistBumpVoltage.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing Histogram Binning Info Dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file HistBumpNoise.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing Histogram Binning Info Dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file PathPinSimpleInfo.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing dialog to get simple information about path pins" 0
+#@ 
+#@ ::Customize::source_tcl_file PathsBasicInfo.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing dialog to get basic information about paths" 0
+#@ 
+#@ ::Customize::source_tcl_file PathsBasicSimpleInfo.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing dialog to get simple basic information about paths" 0
+#@ 
+#@ ::Customize::source_tcl_file SlctOperationInfo.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing dialog to get simple information about selection operation" 0
+#@ 
+#@ ::Customize::source_tcl_file ObjectListInfo.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing dialog to get selection container of objects" 0
+#@ 
+#@ ::Customize::source_tcl_file FanInOutInfo.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing dialog to get information about what fan cone to compute" 0
+#@ 
+#@ ::Customize::source_tcl_file SchematicWhatIf.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing dialog to get information about what cell to size to or buffer to insert" 0
+#@ 
+#@ ::Customize::source_tcl_file WindowReuseInfo.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing dialog to get information about how to reuse active window" 0
+#@ 
+#@ ::Customize::source_tcl_file PrimeTimePathOptions.tcl [file join $::synopsys_root auxx gui pt dialogs ] "Loading PrimeTimePathOptions.tcl" 0
+#@ 
+#@ ::Customize::source_tcl_file PrimeTimePathPins.tcl [file join $::synopsys_root auxx gui pt dialogs ] "Loading PrimeTimePathPins.tcl" 0
+#@ 
+#@ ::Customize::source_tcl_file pt_report.tcl [file join $::synopsys_root auxx gui pt ] "Loading pt_report.tcl" 0
+#@ 
+#@ ::Customize::source_tcl_file  docBrowser.tcl [file join $::synopsys_root auxx gui docBrowser ] "Loading Doc Browser" 0
+#@ # package.tcl --
+#@ #
+#@ # utility procs formerly in init.tcl which can be loaded on demand
+#@ # for package management.
+#@ #
+#@ # RCS: @(#) $Id: package.tcl,v 1.14.2.2 2001/08/24 16:19:10 dgp Exp $
+#@ #
+#@ # Copyright (c) 1991-1993 The Regents of the University of California.
+#@ # Copyright (c) 1994-1998 Sun Microsystems, Inc.
+#@ #
+#@ # See the file "license.terms" for information on usage and redistribution
+#@ # of this file, and for a DISCLAIMER OF ALL WARRANTIES.
+#@ #
+#@ 
+#@ # Create the package namespace
+#@ namespace eval ::pkg {
+#@ }
+#@ 
+#@ # pkg_compareExtension --
+#@ #
+#@ #  Used internally by pkg_mkIndex to compare the extension of a file to
+#@ #  a given extension. On Windows, it uses a case-insensitive comparison
+#@ #  because the file system can be file insensitive.
+#@ #
+#@ # Arguments:
+#@ #  fileName	name of a file whose extension is compared
+#@ #  ext		(optional) The extension to compare against; you must
+#@ #		provide the starting dot.
+#@ #		Defaults to [info sharedlibextension]
+#@ #
+#@ # Results:
+#@ #  Returns 1 if the extension matches, 0 otherwise
+#@ 
+#@ proc pkg_compareExtension { fileName {ext {}} } {
+#@     global tcl_platform
+#@     if {![string length $ext]} {set ext [info sharedlibextension]}
+#@     if {[string equal $tcl_platform(platform) "windows"]} {
+#@         return [string equal -nocase [file extension $fileName] $ext]
+#@     } else {
+#@         # Some unices add trailing numbers after the .so, so
+#@         # we could have something like '.so.1.2'.
+#@         set root $fileName
+#@         while {1} {
+#@             set currExt [file extension $root]
+#@             if {[string equal $currExt $ext]} {
+#@                 return 1
+#@             } 
+#@ 
+#@ 	    # The current extension does not match; if it is not a numeric
+#@ 	    # value, quit, as we are only looking to ignore version number
+#@ 	    # extensions.  Otherwise we might return 1 in this case:
+#@ 	    #		pkg_compareExtension foo.so.bar .so
+#@ 	    # which should not match.
+#@ 
+#@ 	    if { ![string is integer -strict [string range $currExt 1 end]] } {
+#@ 		return 0
+#@ 	    }
+#@             set root [file rootname $root]
+#@ 	}
+#@     }
+#@ }
+#@ 
+#@ # pkg_mkIndex --
+#@ # This procedure creates a package index in a given directory.  The
+#@ # package index consists of a "pkgIndex.tcl" file whose contents are
+#@ # a Tcl script that sets up package information with "package require"
+#@ # commands.  The commands describe all of the packages defined by the
+#@ # files given as arguments.
+#@ #
+#@ # Arguments:
+#@ # -direct		(optional) If this flag is present, the generated
+#@ #			code in pkgMkIndex.tcl will cause the package to be
+#@ #			loaded when "package require" is executed, rather
+#@ #			than lazily when the first reference to an exported
+#@ #			procedure in the package is made.
+#@ # -verbose		(optional) Verbose output; the name of each file that
+#@ #			was successfully rocessed is printed out. Additionally,
+#@ #			if processing of a file failed a message is printed.
+#@ # -load pat		(optional) Preload any packages whose names match
+#@ #			the pattern.  Used to handle DLLs that depend on
+#@ #			other packages during their Init procedure.
+#@ # dir -			Name of the directory in which to create the index.
+#@ # args -		Any number of additional arguments, each giving
+#@ #			a glob pattern that matches the names of one or
+#@ #			more shared libraries or Tcl script files in
+#@ #			dir.
+#@ 
+#@ proc pkg_mkIndex {args} {
+#@     global errorCode errorInfo
+#@     set usage {"pkg_mkIndex ?-direct? ?-lazy? ?-load pattern? ?-verbose? ?--? dir ?pattern ...?"};
+#@ 
+#@     set argCount [llength $args]
+#@     if {$argCount < 1} {
+#@ 	return -code error "wrong # args: should be\n$usage"
+#@     }
+#@ 
+#@     set more ""
+#@     set direct 1
+#@     set doVerbose 0
+#@     set loadPat ""
+#@     for {set idx 0} {$idx < $argCount} {incr idx} {
+#@ 	set flag [lindex $args $idx]
+#@ 	switch -glob -- $flag {
+#@ 	    -- {
+#@ 		# done with the flags
+#@ 		incr idx
+#@ 		break
+#@ 	    }
+#@ 	    -verbose {
+#@ 		set doVerbose 1
+#@ 	    }
+#@ 	    -lazy {
+#@ 		set direct 0
+#@ 		append more " -lazy"
+#@ 	    }
+#@ 	    -direct {
+#@ 		append more " -direct"
+#@ 	    }
+#@ 	    -load {
+#@ 		incr idx
+#@ 		set loadPat [lindex $args $idx]
+#@ 		append more " -load $loadPat"
+#@ 	    }
+#@ 	    -* {
+#@ 		return -code error "unknown flag $flag: should be\n$usage"
+#@ 	    }
+#@ 	    default {
+#@ 		# done with the flags
+#@ 		break
+#@ 	    }
+#@ 	}
+#@     }
+#@ 
+#@     set dir [lindex $args $idx]
+#@     set patternList [lrange $args [expr {$idx + 1}] end]
+#@     if {[llength $patternList] == 0} {
+#@ 	set patternList [list "*.tcl" "*[info sharedlibextension]"]
+#@     }
+#@ 
+#@     set oldDir [pwd]
+#@     cd $dir
+#@ 
+#@     if {[catch {eval glob $patternList} fileList]} {
+#@ 	global errorCode errorInfo
+#@ 	cd $oldDir
+#@ 	return -code error -errorcode $errorCode -errorinfo $errorInfo $fileList
+#@     }
+#@     foreach file $fileList {
+#@ 	# For each file, figure out what commands and packages it provides.
+#@ 	# To do this, create a child interpreter, load the file into the
+#@ 	# interpreter, and get a list of the new commands and packages
+#@ 	# that are defined.
+#@ 
+#@ 	if {[string equal $file "pkgIndex.tcl"]} {
+#@ 	    continue
+#@ 	}
+#@ 
+#@ 	# Changed back to the original directory before initializing the
+#@ 	# slave in case TCL_LIBRARY is a relative path (e.g. in the test
+#@ 	# suite). 
+#@ 
+#@ 	cd $oldDir
+#@ 	set c [interp create]
+#@ 
+#@ 	# Load into the child any packages currently loaded in the parent
+#@ 	# interpreter that match the -load pattern.
+#@ 
+#@ 	if {[string length $loadPat]} {
+#@ 	    if {$doVerbose} {
+#@ 		tclLog "currently loaded packages: '[info loaded]'"
+#@ 		tclLog "trying to load all packages matching $loadPat"
+#@ 	    }
+#@ 	    if {![llength [info loaded]]} {
+#@ 		tclLog "warning: no packages are currently loaded, nothing"
+#@ 		tclLog "can possibly match '$loadPat'"
+#@ 	    }
+#@ 	}
+#@ 	foreach pkg [info loaded] {
+#@ 	    if {! [string match $loadPat [lindex $pkg 1]]} {
+#@ 		continue
+#@ 	    }
+#@ 	    if {$doVerbose} {
+#@ 		tclLog "package [lindex $pkg 1] matches '$loadPat'"
+#@ 	    }
+#@ 	    if {[catch {
+#@ 		load [lindex $pkg 0] [lindex $pkg 1] $c
+#@ 	    } err]} {
+#@ 		if {$doVerbose} {
+#@ 		    tclLog "warning: load [lindex $pkg 0] [lindex $pkg 1]\nfailed with: $err"
+#@ 		}
+#@ 	    } elseif {$doVerbose} {
+#@ 		tclLog "loaded [lindex $pkg 0] [lindex $pkg 1]"
+#@ 	    }
+#@ 	    if {[string equal [lindex $pkg 1] "Tk"]} {
+#@ 		# Withdraw . if Tk was loaded, to avoid showing a window.
+#@ 		$c eval [list wm withdraw .]
+#@ 	    }
+#@ 	}
+#@ 	cd $dir
+#@ 
+#@ 	$c eval {
+#@ 	    # Stub out the package command so packages can
+#@ 	    # require other packages.
+#@ 
+#@ 	    rename package __package_orig
+#@ 	    proc package {what args} {
+#@ 		switch -- $what {
+#@ 		    require { return ; # ignore transitive requires }
+#@ 		    default { eval __package_orig {$what} $args }
+#@ 		}
+#@ 	    }
+#@ 	    proc tclPkgUnknown args {}
+#@ 	    package unknown tclPkgUnknown
+#@ 
+#@ 	    # Stub out the unknown command so package can call
+#@ 	    # into each other during their initialilzation.
+#@ 
+#@ 	    proc unknown {args} {}
+#@ 
+#@ 	    # Stub out the auto_import mechanism
+#@ 
+#@ 	    proc auto_import {args} {}
+#@ 
+#@ 	    # reserve the ::tcl namespace for support procs
+#@ 	    # and temporary variables.  This might make it awkward
+#@ 	    # to generate a pkgIndex.tcl file for the ::tcl namespace.
+#@ 
+#@ 	    namespace eval ::tcl {
+#@ 		variable file		;# Current file being processed
+#@ 		variable direct		;# -direct flag value
+#@ 		variable x		;# Loop variable
+#@ 		variable debug		;# For debugging
+#@ 		variable type		;# "load" or "source", for -direct
+#@ 		variable namespaces	;# Existing namespaces (e.g., ::tcl)
+#@ 		variable packages	;# Existing packages (e.g., Tcl)
+#@ 		variable origCmds	;# Existing commands
+#@ 		variable newCmds	;# Newly created commands
+#@ 		variable newPkgs {}	;# Newly created packages
+#@ 	    }
+#@ 	}
+#@ 
+#@ 	$c eval [list set ::tcl::file $file]
+#@ 	$c eval [list set ::tcl::direct $direct]
+#@ 
+#@ 	# Download needed procedures into the slave because we've
+#@ 	# just deleted the unknown procedure.  This doesn't handle
+#@ 	# procedures with default arguments.
+#@ 
+#@ 	foreach p {pkg_compareExtension} {
+#@ 	    $c eval [list proc $p [info args $p] [info body $p]]
+#@ 	}
+#@ 
+#@ 	if {[catch {
+#@ 	    $c eval {
+#@ 		set ::tcl::debug "loading or sourcing"
+#@ 
+#@ 		# we need to track command defined by each package even in
+#@ 		# the -direct case, because they are needed internally by
+#@ 		# the "partial pkgIndex.tcl" step above.
+#@ 
+#@ 		proc ::tcl::GetAllNamespaces {{root ::}} {
+#@ 		    set list $root
+#@ 		    foreach ns [namespace children $root] {
+#@ 			eval lappend list [::tcl::GetAllNamespaces $ns]
+#@ 		    }
+#@ 		    return $list
+#@ 		}
+#@ 
+#@ 		# init the list of existing namespaces, packages, commands
+#@ 
+#@ 		foreach ::tcl::x [::tcl::GetAllNamespaces] {
+#@ 		    set ::tcl::namespaces($::tcl::x) 1
+#@ 		}
+#@ 		foreach ::tcl::x [package names] {
+#@ 		    set ::tcl::packages($::tcl::x) 1
+#@ 		}
+#@ 		set ::tcl::origCmds [info commands]
+#@ 
+#@ 		# Try to load the file if it has the shared library
+#@ 		# extension, otherwise source it.  It's important not to
+#@ 		# try to load files that aren't shared libraries, because
+#@ 		# on some systems (like SunOS) the loader will abort the
+#@ 		# whole application when it gets an error.
+#@ 
+#@ 		if {[pkg_compareExtension $::tcl::file [info sharedlibextension]]} {
+#@ 		    # The "file join ." command below is necessary.
+#@ 		    # Without it, if the file name has no \'s and we're
+#@ 		    # on UNIX, the load command will invoke the
+#@ 		    # LD_LIBRARY_PATH search mechanism, which could cause
+#@ 		    # the wrong file to be used.
+#@ 
+#@ 		    set ::tcl::debug loading
+#@ 		    load [file join . $::tcl::file]
+#@ 		    set ::tcl::type load
+#@ 		} else {
+#@ 		    set ::tcl::debug sourcing
+#@ 		    source $::tcl::file
+#@ 		    set ::tcl::type source
+#@ 		}
+#@ 
+#@ 		# As a performance optimization, if we are creating 
+#@ 		# direct load packages, don't bother figuring out the 
+#@ 		# set of commands created by the new packages.  We 
+#@ 		# only need that list for setting up the autoloading 
+#@ 		# used in the non-direct case.
+#@ 		if { !$::tcl::direct } {
+#@ 		    # See what new namespaces appeared, and import commands
+#@ 		    # from them.  Only exported commands go into the index.
+#@ 		    
+#@ 		    foreach ::tcl::x [::tcl::GetAllNamespaces] {
+#@ 			if {! [info exists ::tcl::namespaces($::tcl::x)]} {
+#@ 			    namespace import -force ${::tcl::x}::*
+#@ 			}
+#@ 
+#@ 			# Figure out what commands appeared
+#@ 			
+#@ 			foreach ::tcl::x [info commands] {
+#@ 			    set ::tcl::newCmds($::tcl::x) 1
+#@ 			}
+#@ 			foreach ::tcl::x $::tcl::origCmds {
+#@ 			    catch {unset ::tcl::newCmds($::tcl::x)}
+#@ 			}
+#@ 			foreach ::tcl::x [array names ::tcl::newCmds] {
+#@ 			    # determine which namespace a command comes from
+#@ 			    
+#@ 			    set ::tcl::abs [namespace origin $::tcl::x]
+#@ 			    
+#@ 			    # special case so that global names have no leading
+#@ 			    # ::, this is required by the unknown command
+#@ 			    
+#@ 			    set ::tcl::abs 				    [lindex [auto_qualify $::tcl::abs ::] 0]
+#@ 			    
+#@ 			    if {[string compare $::tcl::x $::tcl::abs]} {
+#@ 				# Name changed during qualification
+#@ 				
+#@ 				set ::tcl::newCmds($::tcl::abs) 1
+#@ 				unset ::tcl::newCmds($::tcl::x)
+#@ 			    }
+#@ 			}
+#@ 		    }
+#@ 		}
+#@ 
+#@ 		# Look through the packages that appeared, and if there is
+#@ 		# a version provided, then record it
+#@ 
+#@ 		foreach ::tcl::x [package names] {
+#@ 		    if {[string compare [package provide $::tcl::x] ""] 			    && ![info exists ::tcl::packages($::tcl::x)]} {
+#@ 			lappend ::tcl::newPkgs 			    [list $::tcl::x [package provide $::tcl::x]]
+#@ 		    }
+#@ 		}
+#@ 	    }
+#@ 	} msg] == 1} {
+#@ 	    set what [$c eval set ::tcl::debug]
+#@ 	    if {$doVerbose} {
+#@ 		tclLog "warning: error while $what $file: $msg"
+#@ 	    }
+#@ 	} else {
+#@ 	    set what [$c eval set ::tcl::debug]
+#@ 	    if {$doVerbose} {
+#@ 		tclLog "successful $what of $file"
+#@ 	    }
+#@ 	    set type [$c eval set ::tcl::type]
+#@ 	    set cmds [lsort [$c eval array names ::tcl::newCmds]]
+#@ 	    set pkgs [$c eval set ::tcl::newPkgs]
+#@ 	    if {$doVerbose} {
+#@ 		tclLog "commands provided were $cmds"
+#@ 		tclLog "packages provided were $pkgs"
+#@ 	    }
+#@ 	    if {[llength $pkgs] > 1} {
+#@ 		tclLog "warning: \"$file\" provides more than one package ($pkgs)"
+#@ 	    }
+#@ 	    foreach pkg $pkgs {
+#@ 		# cmds is empty/not used in the direct case
+#@ 		lappend files($pkg) [list $file $type $cmds]
+#@ 	    }
+#@ 
+#@ 	    if {$doVerbose} {
+#@ 		tclLog "processed $file"
+#@ 	    }
+#@ 	    interp delete $c
+#@ 	}
+#@     }
+#@ 
+#@     append index "# Tcl package index file, version 1.1\n"
+#@     append index "# This file is generated by the \"pkg_mkIndex$more\" command\n"
+#@     append index "# and sourced either when an application starts up or\n"
+#@     append index "# by a \"package unknown\" script.  It invokes the\n"
+#@     append index "# \"package ifneeded\" command to set up package-related\n"
+#@     append index "# information so that packages will be loaded automatically\n"
+#@     append index "# in response to \"package require\" commands.  When this\n"
+#@     append index "# script is sourced, the variable \$dir must contain the\n"
+#@     append index "# full path name of this file's directory.\n"
+#@ 
+#@     foreach pkg [lsort [array names files]] {
+#@ 	set cmd {}
+#@ 	foreach {name version} $pkg {
+#@ 	    break
+#@ 	}
+#@ 	lappend cmd ::pkg::create -name $name -version $version
+#@ 	foreach spec $files($pkg) {
+#@ 	    foreach {file type procs} $spec {
+#@ 		if { $direct } {
+#@ 		    set procs {}
+#@ 		}
+#@ 		lappend cmd "-$type" [list $file $procs]
+#@ 	    }
+#@ 	}
+#@ 	append index "\n[eval $cmd]"
+#@     }
+#@ 
+#@     set f [open pkgIndex.tcl w]
+#@     puts $f $index
+#@     close $f
+#@     cd $oldDir
+#@ }
+#@ 
+#@ # tclPkgSetup --
+#@ # This is a utility procedure use by pkgIndex.tcl files.  It is invoked
+#@ # as part of a "package ifneeded" script.  It calls "package provide"
+#@ # to indicate that a package is available, then sets entries in the
+#@ # auto_index array so that the package's files will be auto-loaded when
+#@ # the commands are used.
+#@ #
+#@ # Arguments:
+#@ # dir -			Directory containing all the files for this package.
+#@ # pkg -			Name of the package (no version number).
+#@ # version -		Version number for the package, such as 2.1.3.
+#@ # files -		List of files that constitute the package.  Each
+#@ #			element is a sub-list with three elements.  The first
+#@ #			is the name of a file relative to $dir, the second is
+#@ #			"load" or "source", indicating whether the file is a
+#@ #			loadable binary or a script to source, and the third
+#@ #			is a list of commands defined by this file.
+#@ 
+#@ proc tclPkgSetup {dir pkg version files} {
+#@     global auto_index
+#@ 
+#@     package provide $pkg $version
+#@     foreach fileInfo $files {
+#@ 	set f [lindex $fileInfo 0]
+#@ 	set type [lindex $fileInfo 1]
+#@ 	foreach cmd [lindex $fileInfo 2] {
+#@ 	    if {[string equal $type "load"]} {
+#@ 		set auto_index($cmd) [list load [file join $dir $f] $pkg]
+#@ 	    } else {
+#@ 		set auto_index($cmd) [list source [file join $dir $f]]
+#@ 	    } 
+#@ 	}
+#@     }
+#@ }
+#@ 
+#@ # tclMacPkgSearch --
+#@ # The procedure is used on the Macintosh to search a given directory for files
+#@ # with a TEXT resource named "pkgIndex".  If it exists it is sourced in to the
+#@ # interpreter to setup the package database.
+#@ 
+#@ proc tclMacPkgSearch {dir} {
+#@     foreach x [glob -directory $dir -nocomplain *.shlb] {
+#@ 	if {[file isfile $x]} {
+#@ 	    set res [resource open $x]
+#@ 	    foreach y [resource list TEXT $res] {
+#@ 		if {[string equal $y "pkgIndex"]} {source -rsrc pkgIndex}
+#@ 	    }
+#@ 	    catch {resource close $res}
+#@ 	}
+#@     }
+#@ }
+#@ 
+#@ # tclPkgUnknown --
+#@ # This procedure provides the default for the "package unknown" function.
+#@ # It is invoked when a package that's needed can't be found.  It scans
+#@ # the auto_path directories and their immediate children looking for
+#@ # pkgIndex.tcl files and sources any such files that are found to setup
+#@ # the package database.  (On the Macintosh we also search for pkgIndex
+#@ # TEXT resources in all files.)  As it searches, it will recognize changes
+#@ # to the auto_path and scan any new directories.
+#@ #
+#@ # Arguments:
+#@ # name -		Name of desired package.  Not used.
+#@ # version -		Version of desired package.  Not used.
+#@ # exact -		Either "-exact" or omitted.  Not used.
+#@ 
+#@ proc tclPkgUnknown {name version {exact {}}} {
+#@     global auto_path tcl_platform env
+#@ 
+#@     if {![info exists auto_path]} {
+#@ 	return
+#@     }
+#@     # Cache the auto_path, because it may change while we run through
+#@     # the first set of pkgIndex.tcl files
+#@     set old_path [set use_path $auto_path]
+#@     while {[llength $use_path]} {
+#@ 	set dir [lindex $use_path end]
+#@ 	# we can't use glob in safe interps, so enclose the following
+#@ 	# in a catch statement, where we get the pkgIndex files out
+#@ 	# of the subdirectories
+#@ 	catch {
+#@ 	    foreach file [glob -directory $dir -join -nocomplain 		    * pkgIndex.tcl] {
+#@ 		set dir [file dirname $file]
+#@ 		if {[file readable $file] && ![info exists procdDirs($dir)]} {
+#@ 		    if {[catch {source $file} msg]} {
+#@ 			tclLog "error reading package index file $file: $msg"
+#@ 		    } else {
+#@ 			set procdDirs($dir) 1
+#@ 		    }
+#@ 		}
+#@ 	    }
+#@ 	}
+#@ 	set dir [lindex $use_path end]
+#@ 	set file [file join $dir pkgIndex.tcl]
+#@ 	# safe interps usually don't have "file readable", nor stderr channel
+#@ 	if {([interp issafe] || [file readable $file]) && 		![info exists procdDirs($dir)]} {
+#@ 	    if {[catch {source $file} msg] && ![interp issafe]}  {
+#@ 		tclLog "error reading package index file $file: $msg"
+#@ 	    } else {
+#@ 		set procdDirs($dir) 1
+#@ 	    }
+#@ 	}
+#@ 	# On the Macintosh we also look in the resource fork 
+#@ 	# of shared libraries
+#@ 	# We can't use tclMacPkgSearch in safe interps because it uses glob
+#@ 	if {(![interp issafe]) && 		[string equal $tcl_platform(platform) "macintosh"]} {
+#@ 	    set dir [lindex $use_path end]
+#@ 	    if {![info exists procdDirs($dir)]} {
+#@ 		tclMacPkgSearch $dir
+#@ 		set procdDirs($dir) 1
+#@ 	    }
+#@ 	    foreach x [glob -directory $dir -nocomplain *] {
+#@ 		if {[file isdirectory $x] && ![info exists procdDirs($x)]} {
+#@ 		    set dir $x
+#@ 		    tclMacPkgSearch $dir
+#@ 		    set procdDirs($dir) 1
+#@ 		}
+#@ 	    }
+#@ 	}
+#@ 	set use_path [lrange $use_path 0 end-1]
+#@ 	if {[string compare $old_path $auto_path]} {
+#@ 	    foreach dir $auto_path {
+#@ 		lappend use_path $dir
+#@ 	    }
+#@ 	    set old_path $auto_path
+#@ 	}
+#@     }
+#@ }
+#@ 
+#@ # ::pkg::create --
+#@ #
+#@ #	Given a package specification generate a "package ifneeded" statement
+#@ #	for the package, suitable for inclusion in a pkgIndex.tcl file.
+#@ #
+#@ # Arguments:
+#@ #	args		arguments used by the create function:
+#@ #			-name		packageName
+#@ #			-version	packageVersion
+#@ #			-load		{filename ?{procs}?}
+#@ #			...
+#@ #			-source		{filename ?{procs}?}
+#@ #			...
+#@ #
+#@ #			Any number of -load and -source parameters may be
+#@ #			specified, so long as there is at least one -load or
+#@ #			-source parameter.  If the procs component of a 
+#@ #			module specifier is left off, that module will be
+#@ #			set up for direct loading; otherwise, it will be
+#@ #			set up for lazy loading.  If both -source and -load
+#@ #			are specified, the -load'ed files will be loaded 
+#@ #			first, followed by the -source'd files.
+#@ #
+#@ # Results:
+#@ #	An appropriate "package ifneeded" statement for the package.
+#@ 
+#@ proc ::pkg::create {args} {
+#@     append err(usage) "[lindex [info level 0] 0] "
+#@     append err(usage) "-name packageName -version packageVersion"
+#@     append err(usage) "?-load {filename ?{procs}?}? ... "
+#@     append err(usage) "?-source {filename ?{procs}?}? ..."
+#@ 
+#@     set err(wrongNumArgs) "wrong # args: should be \"$err(usage)\""
+#@     set err(valueMissing) "value for \"%s\" missing: should be \"$err(usage)\""
+#@     set err(unknownOpt)   "unknown option \"%s\": should be \"$err(usage)\""
+#@     set err(noLoadOrSource) "at least one of -load and -source must be given"
+#@ 
+#@     # process arguments
+#@     set len [llength $args]
+#@     if { $len < 6 } {
+#@ 	error $err(wrongNumArgs)
+#@     }
+#@     
+#@     # Initialize parameters
+#@     set opts(-name)		{}
+#@     set opts(-version)		{}
+#@     set opts(-source)		{}
+#@     set opts(-load)		{}
+#@ 
+#@     # process parameters
+#@     for {set i 0} {$i < $len} {incr i} {
+#@ 	set flag [lindex $args $i]
+#@ 	incr i
+#@ 	switch -glob -- $flag {
+#@ 	    "-name"		-
+#@ 	    "-version"		{
+#@ 		if { $i >= $len } {
+#@ 		    error [format $err(valueMissing) $flag]
+#@ 		}
+#@ 		set opts($flag) [lindex $args $i]
+#@ 	    }
+#@ 	    "-source"		-
+#@ 	    "-load"		{
+#@ 		if { $i >= $len } {
+#@ 		    error [format $err(valueMissing) $flag]
+#@ 		}
+#@ 		lappend opts($flag) [lindex $args $i]
+#@ 	    }
+#@ 	    default {
+#@ 		error [format $err(unknownOpt) [lindex $args $i]]
+#@ 	    }
+#@ 	}
+#@     }
+#@ 
+#@     # Validate the parameters
+#@     if { [llength $opts(-name)] == 0 } {
+#@ 	error [format $err(valueMissing) "-name"]
+#@     }
+#@     if { [llength $opts(-version)] == 0 } {
+#@ 	error [format $err(valueMissing) "-version"]
+#@     }
+#@     
+#@     if { [llength $opts(-source)] == 0 && [llength $opts(-load)] == 0 } {
+#@ 	error $err(noLoadOrSource)
+#@     }
+#@ 
+#@     # OK, now everything is good.  Generate the package ifneeded statment.
+#@     set cmdline "package ifneeded $opts(-name) $opts(-version) "
+#@     
+#@     set cmdList {}
+#@     set lazyFileList {}
+#@ 
+#@     # Handle -load and -source specs
+#@     foreach key {load source} {
+#@ 	foreach filespec $opts(-$key) {
+#@ 	    foreach {filename proclist} {{} {}} {
+#@ 		break
+#@ 	    }
+#@ 	    foreach {filename proclist} $filespec {
+#@ 		break
+#@ 	    }
+#@ 	    
+#@ 	    if { [llength $proclist] == 0 } {
+#@ 		set cmd "\[list $key \[file join \$dir [list $filename]\]\]"
+#@ 		lappend cmdList $cmd
+#@ 	    } else {
+#@ 		lappend lazyFileList [list $filename $key $proclist]
+#@ 	    }
+#@ 	}
+#@     }
+#@ 
+#@     if { [llength $lazyFileList] > 0 } {
+#@ 	lappend cmdList "\[list tclPkgSetup \$dir $opts(-name)		$opts(-version) [list $lazyFileList]\]"
+#@     }
+#@     append cmdline [join $cmdList "\\n"]
+#@     return $cmdline
+#@ }
+#@ 
+#@ # -- End source /usr/Primetime/auxx/tcllib/lib/tcl8.3/package.tcl
+
+#@ # Tcl package index file, version 1.1
+#@ # This file is generated by the "pkg_mkIndex -direct" command
+#@ # and sourced either when an application starts up or
+#@ # by a "package unknown" script.  It invokes the
+#@ # "package ifneeded" command to set up package-related
+#@ # information so that packages will be loaded automatically
+#@ # in response to "package require" commands.  When this
+#@ # script is sourced, the variable $dir must contain the
+#@ # full path name of this file's directory.
+#@ 
+#@ package ifneeded snpsTclPro 1.0 [list source [file join $dir			snpsTclPro.tcl]]
+#@ # -- End source /usr/Primetime/auxx/tcllib/snps_tcl/snpsTclPro/pkgIndex.tcl
+
+#@ # Tcl package index file, version 1.1
+#@ # This file is generated by the "pkg_mkIndex -direct" command
+#@ # and sourced either when an application starts up or
+#@ # by a "package unknown" script.  It invokes the
+#@ # "package ifneeded" command to set up package-related
+#@ # information so that packages will be loaded automatically
+#@ # in response to "package require" commands.  When this
+#@ # script is sourced, the variable $dir must contain the
+#@ # full path name of this file's directory.
+#@ 
+#@ package ifneeded snpsTest 1.0 [list source [file join $dir snpsTest.tcl]]
+#@ # -- End source /usr/Primetime/auxx/tcllib/snps_tcl/snpsTest/pkgIndex.tcl
+
+#@ # Tcl package index file, version 1.1
+#@ # This file is generated by the "pkg_mkIndex -direct" command
+#@ # and sourced either when an application starts up or
+#@ # by a "package unknown" script.  It invokes the
+#@ # "package ifneeded" command to set up package-related
+#@ # information so that packages will be loaded automatically
+#@ # in response to "package require" commands.  When this
+#@ # script is sourced, the variable $dir must contain the
+#@ # full path name of this file's directory.
+#@ 
+#@ package ifneeded snpsUtils 1.0 [list source [file join $dir snpsUtils.tcl]]
+#@ # -- End source /usr/Primetime/auxx/tcllib/snps_tcl/snpsUtils/pkgIndex.tcl
+
+#@ if {![package vsatisfies [package provide Tcl] 8]} {return}
+#@ if {[info exists tcl_platform(debug)]} {
+#@     package ifneeded dde 1.1 [list load [file join $dir tcldde83d.dll] dde]
+#@ } else {
+#@     package ifneeded dde 1.1 [list load [file join $dir tcldde83.dll] dde]
+#@ }
+#@ # -- End source /usr/Primetime/auxx/tcllib/lib/tcl8.3/dde1.1/pkgIndex.tcl
+
+#@ # Tcl package index file, version 1.1
+#@ # This file is generated by the "pkg_mkIndex" command
+#@ # and sourced either when an application starts up or
+#@ # by a "package unknown" script.  It invokes the
+#@ # "package ifneeded" command to set up package-related
+#@ # information so that packages will be loaded automatically
+#@ # in response to "package require" commands.  When this
+#@ # script is sourced, the variable $dir must contain the
+#@ # full path name of this file's directory.
+#@ 
+#@ if {![package vsatisfies [package provide Tcl] 8.2]} {return}
+#@ package ifneeded http 2.4.2 [list tclPkgSetup $dir http 2.4.2 {{http.tcl source {::http::config ::http::formatQuery ::http::geturl ::http::reset ::http::wait ::http::register ::http::unregister}}}]
+#@ # -- End source /usr/Primetime/auxx/tcllib/lib/tcl8.3/http/pkgIndex.tcl
+
+#@ # Tcl package index file, version 1.0
+#@ # This file is generated by the "pkg_mkIndex" command
+#@ # and sourced either when an application starts up or
+#@ # by a "package unknown" script.  It invokes the
+#@ # "package ifneeded" command to set up package-related
+#@ # information so that packages will be loaded automatically
+#@ # in response to "package require" commands.  When this
+#@ # script is sourced, the variable $dir must contain the
+#@ # full path name of this file's directory.
+#@ 
+#@ package ifneeded http 1.0 [list tclPkgSetup $dir http 1.0 {{http.tcl source {httpCopyDone httpCopyStart httpEof httpEvent httpFinish httpMapReply httpProxyRequired http_code http_config http_data http_formatQuery http_get http_reset http_size http_status http_wait}}}]
+#@ # -- End source /usr/Primetime/auxx/tcllib/lib/tcl8.3/http1.0/pkgIndex.tcl
+
+#@ if {![package vsatisfies [package provide Tcl] 8.2]} {return}
+#@ package ifneeded msgcat 1.1.1 [list source [file join $dir msgcat.tcl]]
+#@ # -- End source /usr/Primetime/auxx/tcllib/lib/tcl8.3/msgcat/pkgIndex.tcl
+
+#@ # Tcl package index file, version 1.1
+#@ # This file is generated by the "pkg_mkIndex -direct" command
+#@ # and sourced either when an application starts up or
+#@ # by a "package unknown" script.  It invokes the
+#@ # "package ifneeded" command to set up package-related
+#@ # information so that packages will be loaded automatically
+#@ # in response to "package require" commands.  When this
+#@ # script is sourced, the variable $dir must contain the
+#@ # full path name of this file's directory.
+#@ 
+#@ if {![package vsatisfies [package provide Tcl] 8]} {return}
+#@ package ifneeded opt 0.4.3 [list source [file join $dir optparse.tcl]]
+#@ # -- End source /usr/Primetime/auxx/tcllib/lib/tcl8.3/opt/pkgIndex.tcl
+
+#@ if {![package vsatisfies [package provide Tcl] 8]} {return}
+#@ if {[info exists tcl_platform(debug)]} {
+#@     package ifneeded registry 1.0             [list load [file join $dir tclreg83d.dll] registry]
+#@ } else {
+#@     package ifneeded registry 1.0             [list load [file join $dir tclreg83.dll] registry]
+#@ }
+#@ # -- End source /usr/Primetime/auxx/tcllib/lib/tcl8.3/reg1.0/pkgIndex.tcl
+
+#@ # Tcl package index file, version 1.1
+#@ # This file is generated by the "pkg_mkIndex" command
+#@ # and sourced either when an application starts up or
+#@ # by a "package unknown" script.  It invokes the
+#@ # "package ifneeded" command to set up package-related
+#@ # information so that packages will be loaded automatically
+#@ # in response to "package require" commands.  When this
+#@ # script is sourced, the variable $dir must contain the
+#@ # full path name of this file's directory.
+#@ 
+#@ if {![package vsatisfies [package provide Tcl] 8.2]} {return}
+#@ package ifneeded tcltest 1.0.2 [list source [file join $dir tcltest.tcl]]
+#@ # -- End source /usr/Primetime/auxx/tcllib/lib/tcl8.3/tcltest1.0/pkgIndex.tcl
+
+#@ ########################################################################
+#@ # Package: snpsUtils
+#@ # Version: 1.0
+#@ # Date:    03/16/2001
+#@ #
+#@ # Description:
+#@ #   This packages defines general utilities for Tcl.
+#@ #
+#@ # Exported Commands:
+#@ #   try            - a Tcl try/catch construct
+#@ #   
+#@ #   absolute_path  - absolute path for a file name
+#@ #   get_temp_name  - return a temportary file name
+#@ #
+#@ # Namespace: snpsUtils
+#@ #
+#@ #########################################################################
+#@ 
+#@ package provide snpsUtils 1.0
+#@ 
+#@ namespace eval snpsUtils {
+#@   namespace export try absolute_path get_temp_name
+#@ }
+#@ 
+#@ #------------------------------------------------
+#@ #
+#@ # ABSTRACT 
+#@ #   This command is similar to the try/catch construct
+#@ #   of standard C++. The command executes the code in the try-block.  If
+#@ #   an error occurs, then the catch block is executed.  The catch-block
+#@ #   has access to the variabes snpsUtils::try::error_message and
+#@ #   snpsUtils::try::error_info.
+#@ #   
+#@ #   It also supports a Java-esque finally block to execute any cleanup
+#@ #   code after the try block. The finally block will be executed irrespective
+#@ #   of whether the try block succeeded or failed."
+#@ #
+#@ # ARGS 
+#@ # {"tblock"    "Code to execute" "try-block" script}
+#@ # {"action"     "Keyword before the catch block" "action"
+#@ #   one_of_string {required value_help {values {catch catch-throw}}}}
+#@ # {"cblock"  "Code to execute if the try-block fails." "catch-block" script}
+#@ # {finally      "finally keyword" finally
+#@ #   one_of_string {optional value_help {values {finally}}}}
+#@ # {fblock       "Code that is always executed after try block" finally-block
+#@ #   script optional}
+#@ #
+#@ proc snpsUtils::try { args } {
+#@   set arg(-rethrow) 0
+#@   parse_proc_arguments -args $args arg
+#@ 
+#@   if {[info exists arg(finally)] && ![info exists arg(fblock)]} {
+#@     return -code error "Missing script after \"finally\" keyword"
+#@   }
+#@ 
+#@   # Make sure the namespace is defined.
+#@   namespace eval try {}
+#@ 
+#@   # Execute the try-block
+#@   if {[catch {uplevel $arg(tblock)} try::error_message]} {
+#@     set try::error_info $::errorInfo
+#@     # Execute the catch-block
+#@     uplevel $arg(cblock)
+#@     # Execute the finally block, if specified
+#@     if {[info exists arg(fblock)]} {
+#@       uplevel $arg(fblock)
+#@     }
+#@     # Progate the error if requested
+#@     if { ![string compare $arg(action) "catch-throw"] } {
+#@       error $try::error_message $try::error_info
+#@     }
+#@   } else {
+#@     # Execute the finally block, if specified
+#@     if {[info exists arg(fblock)]} {
+#@       uplevel $arg(fblock)
+#@     }
+#@   }
+#@ 
+#@ }
+#@ define_proc_attributes snpsUtils::try -info {a try-catch construct} -define_args {
+#@   {"tblock"    "Code to execute" "try-block" script}
+#@   {"action"     "Keyword before the catch block" "action"
+#@     one_of_string {required value_help {values {catch catch-throw}}}}
+#@   {"cblock"  "Code to execute if the try-block fails." "catch-block" script}
+#@   {finally      "finally keyword" finally
+#@     one_of_string {optional value_help {values {finally}}}}
+#@   {fblock       "Code that is always executed after try block" finally-block
+#@     script optional}
+#@ }
+#@ 
+#@ 
+#@ 
+#@ #------------------------------------------------
+#@ #
+#@ # ABSTRACT 
+#@ #   return the absolute path name for the specified
+#@ #   file/directory name.
+#@ #
+#@ # ARGS  
+#@ #   fname - string unix path name
+#@ #
+#@ proc ::snpsUtils::absolute_path { path {from ""} } {
+#@ 
+#@     suppress_message -force CMD-013
+#@ 
+#@     if {"$from" == ""} { set from [pwd] }
+#@ 
+#@     # First expand the beginning of the path
+#@     if { [string match {/*} $path] } {
+#@         # Already an absolute path, just return it
+#@         set fullPath $path
+#@     } elseif { [string match {~*} $path] } {
+#@         # leading ~ in path
+#@         if { [string first "/" $path] == -1 } {
+#@             set fullPath [glob -nocomplain $path]
+#@         } else {
+#@             regsub {/.*} $path "" relativePath
+#@             regsub {~[a-zA-Z0-9]*/} $path "[glob -nocomplain $relativePath]/" fullPath
+#@         }
+#@     } else {
+#@         # relative path to current dir.
+#@         set fullPath $from/$path
+#@     }
+#@ 
+#@     # Strip all /./ from path
+#@     while {[regsub -all {/\.(/|$)} $fullPath "/" fullPath]} {}
+#@     # Interpret /../
+#@     while {[regsub -all {/[^/]*/\.\.(/|$)} $fullPath "/" fullPath]} {}
+#@ 
+#@     unsuppress_message CMD-013
+#@ 
+#@     #
+#@     # strip automounter garbage
+#@     #
+#@     set fullPath [snpsUtils::strip_filename $fullPath]
+#@ 
+#@     #
+#@     # strip trailing '/'
+#@     #
+#@     set fullPath [string trimright $fullPath "/"]
+#@ 
+#@     return $fullPath
+#@ }
+#@ 
+#@ #------------------------------------------------
+#@ #
+#@ # ABSTRACT 
+#@ #   strip the STRIPPATH stuff from a pathname
+#@ #
+#@ # ARGS  
+#@ #   fname - string unix path name
+#@ #
+#@ proc ::snpsUtils::strip_filename { fname } {
+#@   if { $fname == "" } {
+#@     return ""
+#@   }
+#@ 
+#@   #
+#@   # Loop through the dirs in the STRIPPATH until one
+#@   # is successfully replaced with ""
+#@   #
+#@   global env
+#@   if { [info exists env(STRIPPATH)] } {
+#@     set pathDirs [split $env(STRIPPATH) ": \t\n"]
+#@     if { $pathDirs != "" } {
+#@       foreach dir $pathDirs {
+#@         # empty entries can happen if we have multiple split chars
+#@         if { $dir != "" } {
+#@           set expr "^${dir}"
+#@           if { [regsub $expr $fname "" fname] } {
+#@             break
+#@           }
+#@         }
+#@       }
+#@     }
+#@   }
+#@ 
+#@   return $fname
+#@ }
+#@ 
+#@ #------------------------------------------------
+#@ #
+#@ # ABSTRACT 
+#@ #   a utility procedure which returns a temp 
+#@ #   file/directory name
+#@ #
+#@ #
+#@ # ARGS  
+#@ # {-nameBase   "begining of tmp name" "nameBase (default: tmp)"
+#@ #              string {optional}}
+#@ # {-tmpDir     "default temp directory" "tmpDir"
+#@ #              string {optional}}
+#@ # {-nameExt    "default file extension" ""
+#@ #              string {optional}}
+#@ #
+#@ proc snpsUtils::get_temp_name { args } {
+#@   set argVals(-nameBase) "tmp"
+#@   set argVals(-tmpDir)   ""
+#@   set argVals(-nameExt)  ""
+#@   parse_proc_arguments -args $args argVals
+#@ 
+#@   #
+#@   # Setup a list of dirs to check for one which
+#@   # exists and is writable
+#@   #
+#@ 
+#@   # setup some arch-specific dirs to be searched
+#@   global sh_arch
+#@   if { $sh_arch == "x86NT" || $sh_arch == "msvc50" } {
+#@     set tmpDirList {
+#@                 "."
+#@                    }
+#@     set envVars "TMP TEMP"
+#@   } else {
+#@     set tmpDirList {
+#@                 "/usr/tmp"
+#@                 "/var/tmp"
+#@                 "/tmp"
+#@                 "."
+#@                    }
+#@     set envVars "TMPDIR"
+#@   }
+#@   # add dirs from env vars
+#@   global env
+#@   foreach envVar $envVars {
+#@     if { [info exists env($envVars)] } {
+#@       set tmpDirList [concat $env($envVars) $tmpDirList]
+#@     }
+#@   }
+#@   # add the dir from the switch
+#@   if { $argVals(-tmpDir) != "" } {
+#@     set tmpDirList [concat $argVals(-tmpDir) $tmpDirList]
+#@   }
+#@ 
+#@   #
+#@   # search the dirs in the list for one which is writable
+#@   set tmpdir ""
+#@   foreach dir $tmpDirList {
+#@     set fullDirName ""
+#@     catch {set fullDirName [glob $dir]}
+#@     if { [file isdirectory $fullDirName] &&
+#@          [file writable $fullDirName] } {
+#@       set tmpdir $fullDirName
+#@       break
+#@     }
+#@   }
+#@   if { $tmpdir == "" } {
+#@     return -code error "Could not find a writable tmp directory"
+#@   }
+#@ 
+#@   #
+#@   # found a writable dir now gen a tmp name
+#@   #
+#@   set tmpName $argVals(-nameBase)
+#@   set cnt ""
+#@   set ext ""
+#@   if {[string length $argVals(-nameExt)]} {
+#@     set ext ".$argVals(-nameExt)"
+#@   }
+#@ 
+#@   while { [file exists [file join $fullDirName $tmpName$cnt$ext]] } {
+#@     if { $cnt ==  "" } {
+#@       set tmpName "$tmpName[pid]"
+#@       set cnt 0
+#@     } else {
+#@       incr cnt
+#@     }
+#@   }
+#@   set tmpName $fullDirName/$tmpName$cnt$ext
+#@ 
+#@   return $tmpName
+#@ }
+#@ define_proc_attributes snpsUtils::get_temp_name -info   {a utility procedure which returns a temp file/directory name} -define_args {
+#@   {-nameBase   "begining of tmp name" "nameBase (default: tmp)"
+#@                string {optional}}
+#@   {-tmpDir     "default temp directory" "tmpDir"
+#@                string {optional}}
+#@   {-nameExt    "default file extension" ""
+#@                string {optional}}
+#@ }
+#@ 
+#@ # -- End source /usr/Primetime/auxx/tcllib/snps_tcl/snpsUtils/snpsUtils.tcl
+
+#@ 
+#@ #################################################################################################
+#@ # This line was commented out in syn/syn_setup.tcl -- don't know why -- DN 3/15/02
+#@ #::Customize::source_tcl_file PreferencesDlg.tcl [file join $::synopsys_root auxx gui dialogs] "Initializing dialog to set preferences" 0
+#@ #################################################################################################
+#@ 
+#@ ::Customize::source_tcl_file CompileLinkDesign.tcl [file join $::synopsys_root auxx gui dialogs ] "Intializing dialogs Link DesignOptimization CompileLinkDesign.tcl" 0
+#@ 
+#@ ::Customize::source_tcl_file obsoleteDialogBase.tcl [file join $::synopsys_root auxx gui misc] "Load procs to create dialogs, which are obsolete but still used at several places" 0
+#@ 
+#@ ###############################################################
+#@ ###############################################################
+#@ ######## Procs for creation of contents of dialogs ############
+#@ ###############################################################
+#@ 
+#@ ::Customize::source_tcl_file DialogEndpointSlack.tcl [file join $::synopsys_root auxx gui histogram] "Define procs for enpoint slack dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file DialogPathsSlack.tcl [file join $::synopsys_root auxx gui histogram] "Define procs for paths slack dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file DialogNetCapacitance.tcl [file join $::synopsys_root auxx gui histogram] "Define procs for net capacitance dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file DialogDRC.tcl [file join $::synopsys_root auxx gui histogram] "Define procs for DRC histogram dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file DialogBottleneck.tcl [file join $::synopsys_root auxx gui histogram] "Define procs for bottleneck histogram dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file DialogPathSchematicFanInOut.tcl [file join $::synopsys_root auxx gui schematic] "Define procs for Add Fanin Fanout dialog" 0
+#@ 
+#@ ::Customize::source_tcl_file DialogPathSchematicAddPaths.tcl [file join $::synopsys_root auxx gui schematic] "Define procs for Add Paths dialog" 0
+#@ define_proc_attributes ::Dialogs::PathSchematicAddPathsContentsCreator -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes ::Dialogs::PathSchematicAddPathsDialogOK -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes ::Dialogs::CreatePathSchematicAddPathsDialog -hidden -hide_body -dont_abbrev
+#@ 
+#@ 
+#@ ::Customize::source_tcl_file DialogSchematicWhatIf.tcl [file join $::synopsys_root auxx gui schematic] "Define procs for Size Cell and Insert Buffer dialogs" 0
+#@ 
+#@ ::Customize::source_tcl_file DialogDeltaDelay.tcl [file join $::synopsys_root auxx gui histogram] "Define procs for delta delay dialogs" 0
+#@ 
+#@ ::Customize::source_tcl_file DialogBumpVoltage.tcl [file join $::synopsys_root auxx gui histogram] "Define procs for bump voltage dialogs" 0
+#@ 
+#@ ::Customize::source_tcl_file DialogBumpNoise.tcl [file join $::synopsys_root auxx gui histogram] "Define procs for noise bump dialogs" 0
+#@ 
+#@ namespace eval Dialogs {
+#@ #****f* ptgui/::Dialogs::SelectPathsContentsCreator
+#@ # DESCRIPTION
+#@ # Create the contents of a path selection dialog
+#@ #***
+#@     proc SelectPathsContentsCreator { parent dialog } {
+#@         set box [qtcl_create_widget -name SelectPathsContents -qclass QVBox -parent $parent]
+#@ #        set pathPinInfo [setupPathPinSimpleInfo $box]
+#@         array set settings {}
+#@         set pathPinInfo [setupPrimeTimePathPinInfo $box $dialog settings]
+#@ #        set pathsBasicInfo [setupPathBasicInfo $box]
+#@         set pathsBasicInfo [setupPrimeTimePathInfo $box settings]
+#@         set slctOperation [setupSlctOperationInfo $box]
+#@ 
+#@         return $box
+#@     }
+#@ # new hide
+#@     define_proc_attributes SelectPathsContentsCreator -hidden -hide_body -dont_abbrev
+#@ 
+#@     # Create the contents of a Select Fan In/Out Code dialog
+#@     array set SelectFanInOutContentsCreatorSetting { }
+#@ #****f* ptgui/::Dialogs::SelectFanInOutContentsCreator
+#@ # DESCRIPTION
+#@ #***
+#@     proc SelectFanInOutContentsCreator { parent dialog } {
+#@         set box [qtcl_create_widget -name SelecFanInOutsContents -qclass QVBox -parent $parent]
+#@         upvar Dialogs::SelectFanInOutContentsCreatorSetting setting
+#@         upvar Dialogs::FanInOutInfoSettings fsetting
+#@         array set setting [array get fsetting]
+#@         set setting(dialog) $dialog
+#@         set fanInOutInfo [setupFanInOutInfo $box Dialogs::SelectFanInOutContentsCreatorSetting]
+#@ 
+#@         set slctOperation [setupSlctOperationInfo $box]
+#@ 
+#@         return $box
+#@     }
+#@ # new hide
+#@     define_proc_attributes SelectFanInOutContentsCreator -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/::Dialogs::PathSchematicContentsCreator
+#@ # DESCRIPTION
+#@ # Create the contents of a Path Schematic Generation dialog 
+#@ #***
+#@     proc PathSchematicContentsCreator { parent dialog } {
+#@         set box [qtcl_create_widget -name PathSchematicContents -qclass QVBox -parent $parent]
+#@         set pathPinInfo [setupPathPinSimpleInfo $box]
+#@         set pathsBasicInfo [setupPathBasicInfo $box]
+#@ 
+#@         return $box
+#@     }
+#@ # new hide
+#@     define_proc_attributes PathSchematicContentsCreator -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/::Dialogs::ObjectChooserContentsCreator
+#@ # DESCRIPTION
+#@ # Create the contents of an object chooser dialog.
+#@ # The created widget has an extra property chosenObjectsSlctBus
+#@ # holding the name of the selection bus that contains
+#@ # the chosen objects.
+#@ # Be sure to remove this selection bus when you do not
+#@ # need it any more.
+#@ #***
+#@     proc ObjectChooserContentsCreator { parent dialog { args {} } } {
+#@       parse_proc_arguments -args $args options
+#@       # Bus containing all chosen objects
+#@       set slctedObjs [create_selection_bus]
+#@       # Bus holding the selection within the list of chosen objects
+#@       set slctedObjSelection [create_selection_bus]
+#@       # Bus holding the selection within the hierarchy browser
+#@       set hierObjs [create_selection_bus]
+#@ 
+#@       set splitter [qtcl_create_widget -name ObjectChooser -qclass QSplitter -parent $parent]
+#@       qtcl_set_widget_property -name $splitter -property orientation -value Vertical
+#@       qtcl_add_widget_property -name $splitter -property chosenObjectsSlctBus -type QString -value $slctedObjs
+#@       qtcl_connect_widgets -sender $splitter -signal "destroyed()" -cmd "create_selection_bus -remove -name $slctedObjSelection ;         create_selection_bus -remove -name $hierObjs ; create_selection_bus -remove -name $slctedObjs"
+#@ 
+#@     # Hierarchy Browser
+#@     set hier [qtcl_create_widget -name Hierarchy -parent $splitter -qclass Hier]
+#@     if { [info exists options(-leftPaneWidth)] } {
+#@         set leftPaneWidth $options(-leftPaneWidth)
+#@     } else {
+#@         set leftPaneWidth 200
+#@     }
+#@     qtcl_set_property -name "$hier" -property sizes -value "$leftPaneWidth"
+#@     if { [info exists options(-rightPane)] } {
+#@         # Switch the right hand side to the right type
+#@         qtcl_set_property -name "$hier|VBoxRight|TypeCombo" -property currentItem -value $options(-rightPane)
+#@         qtcl_activate_slot -receiver $hier -slot "pickRightPaneDisplayType(const QString&)" -values \"[qtcl_get_property -name "$hier|VBoxRight|TypeCombo" -property currentText]\"
+#@     }
+#@     # Install event filter for right hand pane for double click
+#@     set doubleClickFilterCells [qtcl_create_widget -name DoubleClickFilterCells -parent "$hier|VBoxRight|*|CellsHierList" -qclass QtclEventFilter]
+#@     qtcl_activate_slot -receiver $doubleClickFilterCells -slot "catchEventOfType(int)" -values 4
+#@     qtcl_set_property -name $doubleClickFilterCells -property tclCmd -value "change_selection -name $slctedObjs -add \[get_selection -name $hierObjs\]"
+#@     qtcl_install_eventfilter -name "${hier}|VBoxRight|*|CellsHierList" -filter $doubleClickFilterCells
+#@     qtcl_install_eventfilter -name "${hier}|VBoxRight|*|CellsAllList" -filter $doubleClickFilterCells
+#@     qtcl_install_eventfilter -name "${hier}|VBoxRight|*|PinsList" -filter $doubleClickFilterCells
+#@     qtcl_install_eventfilter -name "${hier}|VBoxRight|*|PinsChildList" -filter $doubleClickFilterCells
+#@     qtcl_install_eventfilter -name "${hier}|VBoxRight|*|NetsList" -filter $doubleClickFilterCells
+#@ 
+#@ 
+#@     # Add button into already hierarchy browser
+#@     set ChooseHBox [qtcl_create_widget -name ChooseHBox -parent "$hier|*|VBoxRight" -qclass QHBox] 
+#@     Qtcl::createExpander $ChooseHBox
+#@     set Choose [qtcl_create_widget -name ChooseButton -parent $ChooseHBox -qclass QPushButton]
+#@     Qtcl::createExpander $ChooseHBox
+#@     qtcl_set_widget_property -name $Choose -property text -value "&Click to Choose Objects"
+#@     qtcl_connect_widgets -sender "$Choose" -signal "clicked()" -cmd "change_selection -name $slctedObjs -add \[get_selection -name $hierObjs\]"
+#@     # Switch list on right side of Hier Browser to slctBus $hierObjs
+#@     qtcl_set_widget_property -name "$hier" -property slctBus -value $hierObjs
+#@ 
+#@     # List of chosen objects
+#@     set box1 [qtcl_create_widget -name Box1 -qclass QVBox -parent $splitter]
+#@     set selList [qtcl_create_widget -name SelList -parent $box1 -qclass SelList]
+#@     qtcl_set_widget_property -name $selList -property slctBusC -value $slctedObjs
+#@     qtcl_set_widget_property -name $selList -property slctBus -value $slctedObjSelection
+#@     set RemoveHBox [qtcl_create_widget -name RemoveHBox -parent $box1 -qclass QHBox]
+#@     Qtcl::createExpander $RemoveHBox
+#@     set Remove [qtcl_create_widget -name RemoveButton -parent $RemoveHBox -qclass QPushButton]
+#@     Qtcl::createExpander $RemoveHBox
+#@     qtcl_set_widget_property -name $Remove -property text -value "Click to &Remove Objects"
+#@     qtcl_connect_widgets -sender "$Remove" -signal "clicked()" -cmd "change_selection -name $slctedObjs -remove \[get_selection -name $slctedObjSelection\]"
+#@ 
+#@     return $splitter
+#@ 
+#@     }
+#@     define_proc_attributes ObjectChooserContentsCreator         -define_args {
+#@             {-rightPane "Index of values shown in the right pane of hierarchy browser" AInt int optional}
+#@         }  -hidden -hide_body -dont_abbrev
+#@ #new hide
+#@ 
+#@     ###############################################################
+#@     ###############################################################
+#@     ######## Procs for handling OK button of dialogs ##############
+#@     ###############################################################
+#@ 
+#@     array set selectPathsDialogPathSetting { }
+#@     array set selectPathsDialogSlctSetting { }
+#@ 
+#@ #****f* ptgui/::Dialogs::SelectPathsDialogOK
+#@ # DESCRIPTION
+#@ #***
+#@     proc SelectPathsDialogOK { } {
+#@         set dialog ${DialogWidgets::SelectPathsDialog}
+#@         array set pathSetting { }
+#@ 
+#@ #        Dialogs::getPathBasicInfo Dialogs::selectPathsDialogPathSetting $dialog
+#@ #        Dialogs::getPathPinSimpleInfo Dialogs::selectPathsDialogPathSetting $dialog
+#@ 
+#@         Dialogs::getPrimeTimePathInfo Dialogs::selectPathsDialogPathSetting $dialog
+#@         Dialogs::getPrimeTimePathPinInfo Dialogs::selectPathsDialogPathSetting $dialog
+#@ 
+#@         array set slctSetting { }
+#@         Dialogs::getSlctOperationInfo Dialogs::selectPathsDialogSlctSetting $dialog
+#@ 
+#@         Selection::change_selection_by_clct Dialogs::selectPathsDialogSlctSetting [PrimeTimeMisc::create_timing_path_clct ::Dialogs::selectPathsDialogPathSetting]
+#@ 
+#@         return ""
+#@     }
+#@ # new hide
+#@     define_proc_attributes SelectPathsDialogOK -hidden -hide_body -dont_abbrev
+#@ 
+#@ 
+#@     array set SelectFanInOutDialogFanInOutSetting { }
+#@     array set SelectFanInOutDialogSlctSetting { }
+#@ 
+#@ #****f* ptgui/::Dialogs::SelectFanInOutDialogOK
+#@ # DESCRIPTION
+#@ #***
+#@     proc SelectFanInOutDialogOK { {slctBus global} } {
+#@         set dialog ${DialogWidgets::SelectFanInOutDialog}
+#@ 
+#@         upvar Dialogs::SelectFanInOutDialogFanInOutSetting fanInOutSetting
+#@         array set fanInOutSetting { }
+#@         
+#@         Dialogs::getFanInOutInfo Dialogs::SelectFanInOutDialogFanInOutSetting $dialog
+#@ 
+#@         upvar Dialogs::SelectFanInOutDialogSlctSetting slctSetting
+#@         array set slctSetting { }
+#@         Dialogs::getSlctOperationInfo Dialogs::SelectFanInOutDialogSlctSetting $dialog
+#@ 
+#@         set startClct [get_selection -name $fanInOutSetting(startPinsSlctContainer)]
+#@         set endClct [get_selection -name $fanInOutSetting(stopLogicSlctContainer)]
+#@ 
+#@         if { $startClct != "" } {
+#@             set cmd "snic_faninout -start_pins \$startClct -fwd \$fanInOutSetting(fanDirectionFwd) -levels \$fanInOutSetting(logicLevels)"
+#@             if { $endClct != "" } {
+#@                 set cmd "$cmd -stop_logic \$endClct"
+#@             }
+#@             if { $fanInOutSetting(stopAtSequentialCellsChecked) == "FALSE" } {
+#@                 set cmd "$cmd -dont_stop_at_sequential_cells"
+#@             }
+#@             Misc::trace1 Dialogs::SelectFanInOutDialogOK $cmd
+#@             set clct [eval $cmd]
+#@             if { $clct != "" } {
+#@                 Selection::change_selection_by_clct Dialogs::SelectFanInOutDialogSlctSetting $clct
+#@             }
+#@         }
+#@         return ""
+#@     }
+#@ # new hide
+#@     define_proc_attributes SelectFanInOutDialogOK -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/::Dialogs::CreateSelectPathsDialog
+#@ # DESCRIPTION
+#@ #***
+#@     proc CreateSelectPathsDialog { } {
+#@         modelessDialog ::Dialogs::SelectPathsContentsCreator "Select Paths" SelectPathsDialog "Dialogs::SelectPathsDialogOK"
+#@     }
+#@ # new hide
+#@     define_proc_attributes CreateSelectPathsDialog -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/::Dialogs::CreateSelectFanInOutDialog
+#@ # DESCRIPTION
+#@ #***
+#@     proc CreateSelectFanInOutDialog { {slctBus global} } {
+#@         ::Qtcl::modelessDialog             -creator ::Dialogs::SelectFanInOutContentsCreator             -title "Select Fanin/Fanout"             -name SelectFanInOutDialog             -OKCmd "Dialogs::SelectFanInOutDialogOK $slctBus"             -verticalStretch 1
+#@     }
+#@ # new hide
+#@     define_proc_attributes CreateSelectFanInOutDialog -hidden -hide_body -dont_abbrev
+#@ 
+#@     array set PathSchematicDialogPathSetting { }
+#@ 
+#@ #****f* ptgui/::Dialogs::PathSchematicDialogOK
+#@ # DESCRIPTION
+#@ #***
+#@     proc PathSchematicDialogOK { } {
+#@         set dialog ${DialogWidgets::PathSchematicDialog}
+#@ 
+#@         upvar Dialogs::PathSchematicDialogPathSetting pathSetting
+#@         array set pathSetting { }
+#@ 
+#@         Dialogs::getPathBasicInfo Dialogs::PathSchematicDialogPathSetting $dialog
+#@         Dialogs::getPathPinSimpleInfo Dialogs::PathSchematicDialogPathSetting $dialog
+#@ 
+#@         set paths [Misc::create_timing_path_clct Dialogs::PathSchematicDialogPathSetting]
+#@         Schematic::create_path_schematic_of_paths_and_logic $paths {}
+#@         return ""
+#@     }
+#@ # new hide
+#@     define_proc_attributes PathSchematicDialogOK -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/::Dialogs::CreatePathSchematicDialog
+#@ # DESCRIPTION
+#@ #***
+#@     proc CreatePathSchematicDialog { } {
+#@         modelessDialog ::Dialogs::PathSchematicContentsCreator "Path Schematic" PathSchematicDialog "Dialogs::PathSchematicDialogOK"
+#@     }
+#@ # new hide
+#@     define_proc_attributes CreatePathSchematicDialog -hidden -hide_body -dont_abbrev
+#@ 
+#@ 
+#@ #****f* ptgui/::Dialogs::CreateObjectChooserDialog
+#@ # DESCRIPTION
+#@ # Create an object chooser dialog.
+#@ #***
+#@     proc CreateObjectChooserDialog { args } {
+#@         parse_proc_arguments -args $args options
+#@ 
+#@         array set callOptions [array get options]
+#@ 
+#@         if { ![info exists callOptions(-creator)] } {
+#@             set callOptions(-creator) Dialogs::ObjectChooserContentsCreator
+#@         }
+#@         if { ![info exists callOptions(-title)] } {
+#@             set callOptions(-title) "Object Chooser"
+#@         }
+#@         if { ![info exists callOptions(-name)] } {
+#@             set callOptions(-name) ObjectChooserDialog
+#@         }
+#@         if { ![info exists callOptions(-dialogProperties)] } {
+#@             set callOptions(-dialogProperties) {{resizeAfterFirstShow 1} {sizeAfterFirstShow {700 500}}}
+#@         }
+#@         if { ![info exists callOptions(-verticalStretch)] } {
+#@             set callOptions(-verticalStretch) 1
+#@         }
+#@ 
+#@         set cmd ::Qtcl::modalDialog
+#@         set cmd [concat ::Qtcl::modalDialog [array get callOptions]]
+#@         eval $cmd
+#@         return ""
+#@     }
+#@     define_proc_attributes CreateObjectChooserDialog         -define_args {
+#@             {-creator "Creator of dialog contents" ACmd string optional}
+#@             {-creator_args "Arguments provided to creator" AList list optional}
+#@             {-title "Dialog title" ATitle string optional}
+#@             {-name "Dialog name" AName string optional}
+#@             {-OKCmd "OK command" ACmd string optional}
+#@             {-insert_buttons_cmd "Command inserting buttons" ACmd string optional}
+#@             {-noCancelButton "Do not show cancel button" ABool int optional}
+#@             {-infotip "Infotip help for Dialog" ATip string optional}
+#@             {-dont_show "Do not show dialog" ABool int optional}
+#@             {-parent "Parent of dialogs" AString string optional}
+#@             {-validateCmd "Command to validate dialog" ACmd string optional}
+#@             {-dialogProperties "List of properties to set on dialog" APropertyList list optional}
+#@             {-modifierCmd "Command used to modify created dialog after generation" ACmd string optional}
+#@             {-verticalStretch "Make sure that contents of dialog is strectched on vertical resizing of dialog" ABool int optional}
+#@         }  -hidden -hide_body -dont_abbrev
+#@     #new hide
+#@ 
+#@ #****f* ptgui/::Dialogs::GenericTextLabelPseudoCreator
+#@ # DESCRIPTION
+#@ #***
+#@     proc GenericTextLabelPseudoCreator { text parent dialog } {
+#@         set box [qtcl_create_widget -name Text -qclass QLabel -parent $parent]
+#@         qtcl_set_widget_property -name $box -property text -value $text
+#@ 
+#@         return $box
+#@     }
+#@ # new hide
+#@     define_proc_attributes GenericTextLabelPseudoCreator -hidden -hide_body -dont_abbrev
+#@ 
+#@ 
+#@ }
+#@ 
+#@ ##################################################################
+#@ ##################################################################
+#@ ################### End Dialogs Namespace ########################
+#@ ##################################################################
+#@ ##################################################################
+#@ 
+#@ ##################################################################
+#@ ##################################################################
+#@ ################### Begin Highlight Namespace ####################
+#@ ##################################################################
+#@ ##################################################################
+#@ namespace eval Highlight {
+#@ }
+#@ gui_create_pref_key -key "auto_increment_highlight_color" -value_type bool -value true -keep_value_if_exist
+#@ 
+#@ 
+#@ # Highlight
+#@ proc ::Highlight::highlightClct { args } {
+#@     Misc::traceIn ::Highlight::highlightClct $args
+#@     parse_proc_arguments -args $args options
+#@     if { ![info exists options(-window)] } {
+#@         set options(-window) [gui_get_current_window -view]
+#@     }
+#@ 
+#@     if { [info exists options(-add)] } {
+#@         set clct $options(-add)
+#@         set specifier "-add"
+#@     } else {
+#@         if { ![info exists options(-remove)] } {
+#@             error "Either -add or -remove has to be specified"
+#@         }
+#@         set clct $options(-remove)
+#@         set specifier "-exact -remove"
+#@     }
+#@     set slctTarget {}
+#@     if { [::Misc::has_method -window $options(-window) -method adjustHighlightSet] } {
+#@         set slctTarget [create_selection_bus]
+#@         ::Misc::exec_method -window $options(-window) -method adjustHighlightSet -args "-clct $clct -slct_targets $slctTarget"
+#@         set clct $slctTarget
+#@     }
+#@     set cmd "gui_set_highlight -window \$options(-window) $specifier \$clct"
+#@     if { [info exists options(-color)] } {
+#@         set cmd "$cmd -color $options(-color)"
+#@     }
+#@     if { [gui_get_pref_value -key "auto_increment_highlight_color"]  } {
+#@         set cmd "$cmd -next_color"
+#@     }
+#@     eval $cmd
+#@     if { $slctTarget != {} } {
+#@         create_selection_bus -remove -name $slctTarget
+#@     }
+#@ }
+#@ define_proc_attributes ::Highlight::highlightClct     -define_args {
+#@         {-add "Collection of objects to be highlighted" AClct string optional}
+#@         {-remove "Collection of object to be unhighlighted" AClct string optional}
+#@         {-window "Window to highlight objects in" AString string optional}
+#@         {-color "Color to highlight objects with" AString string optional}
+#@     } -hidden
+#@ 
+#@ 
+#@ # Return true iff the window supports highlighting
+#@ proc ::Highlight::view_supports_highlighting { args } {
+#@     parse_proc_arguments -args $args options
+#@     if { ![info exists options(-window)] } {
+#@         set options(-window) [gui_get_current_window -view]
+#@     }
+#@ 
+#@     set type [gui_get_window_attribute -window $options(-window) -attribute type]
+#@     switch [lindex $type 0] {
+#@         Schematic -
+#@         Symbol { return 1 }
+#@     }
+#@     return 0
+#@ }
+#@ define_proc_attributes ::Highlight::view_supports_highlighting     -define_args {
+#@         {-window "Name of the window" AWnd string optional}
+#@     }
+#@ 
+#@ ##################################################################
+#@ ##################################################################
+#@ #################### End Highlight Namespace #####################
+#@ ##################################################################
+#@ ##################################################################
+#@ 
+#@ ##################################################################
+#@ ##################################################################
+#@ 
+#@ #****f* ptgui/ekki_report_on_change_selection
+#@ # DESCRIPTION
+#@ #  this proc get called when a change_selection [find objType objName] get invoked in report window.
+#@ #***
+#@ proc ekki_report_on_change_selection { designName objType objName } {
+#@ #    echo design name : $designName
+#@ #    echo object type : $objType
+#@ #    echo object name : $objName
+#@ }
+#@ define_proc_attributes ekki_report_on_change_selection -hidden -hide_body -dont_abbrev
+#@ 
+#@ #Define dialogs related procedures/globals
+#@ 
+#@ namespace eval Dialogs {
+#@ 
+#@   # generic dialog defaults
+#@   variable pynpp_modal_dialog_timeout {-1}
+#@ 
+#@   # Read Design Dialog defaults
+#@   variable cwd_read_design "./"
+#@   variable fmt_read_design "Auto"
+#@ 
+#@   # Analyze Design Dialog defaults
+#@   variable cwd_analyze_design "./"
+#@   variable fmt_analyze_design "Auto"
+#@ 
+#@   # Elaborate Design Dialog defaults
+#@   variable lib_elaborate_design ""
+#@   variable design_elaborate_design ""
+#@   variable update_elaborate_design "false"
+#@   variable param_elaborate_design ""
+#@ 
+#@   # SavAs Dialog defaults
+#@   variable cwd_save_as "./"
+#@   variable fmt_save_as "Auto"
+#@   variable hflag_save_as 1
+#@ 
+#@   # Execute Script Dialog defaults
+#@   variable cwd_execute_script "./"
+#@ 
+#@   # Save Constraint Dialog defaults
+#@   variable cwd_save_constraint "./"
+#@   variable fmt_save_constraint "sdf"
+#@   variable file_save_constraint ""
+#@ 
+#@   # Save Timing Dialog defaults
+#@   variable cwd_save_design_timing "./"
+#@ 
+#@   # Save Design Setup Dialog defaults
+#@   variable cwd_save_design_setup "./"
+#@ 
+#@   # Save Physical Cluster Dialog defaults
+#@   variable cwd_save_phys_cluster "./"
+#@ 
+#@   # Import Design Timing Dialog
+#@   variable cwd_import_design_timing "./"
+#@ 
+#@   # Import Physical Cluster Dialog defaults
+#@   variable cwd_import_phys_cluster "./"
+#@ 
+#@   set read_design_formats {
+#@     "{Auto}"
+#@     "{DB (db)}"
+#@     "{EQUATION (edif)}"
+#@     "{LSI (lsi)}"
+#@     "{MENTOR (mif)}"
+#@     "{PLA (pla)}"
+#@     "{STATE TABLE (st)}"
+#@     "{TAGAS (tdl)}"
+#@     "{VERILOG (v)}"
+#@     "{VHDL (vhdl)}"
+#@     "{XNF (xnf)}"
+#@   }
+#@ 
+#@   set read_design_suffix {
+#@     {db}
+#@     {gdb}
+#@     {sdb}
+#@     {pdb}
+#@     {edif}
+#@     {eqn}
+#@     {fnc}
+#@     {lsi}
+#@     {mif}
+#@     {v}
+#@     {vhd}
+#@     {vhdl}
+#@   }
+#@ 
+#@   set analyze_design_formats {
+#@     "{Auto}"
+#@     "{VERILOG (v)}"
+#@     "{VHDL (vhdl)}"
+#@   }
+#@ 
+#@   set analyze_design_suffix {
+#@     {v}
+#@     {vhd}
+#@     {vhdl}
+#@   }
+#@ 
+#@   set script_file_suffix {
+#@     {script}
+#@     {scr}
+#@     {dcs}
+#@     {dcv}
+#@     {dc}
+#@     {con}
+#@     {tcl}
+#@     {pt}
+#@   }
+#@ 
+#@   set design_setup_suffix {
+#@     {dc}
+#@   }
+#@ 
+#@   set phys_cluster_suffix {
+#@     {pdef}
+#@   }
+#@ 
+#@   set phys_cluster_formats {
+#@     "{Physical Design Exchange Format}"
+#@   }
+#@ 
+#@   set save_constraint_formats {
+#@     "{SDF (sdf)}"
+#@     "{SDF 2.1 (sdf-v2.1)}"
+#@     "{Synopsys generic format (synopsys)}"
+#@   }
+#@ 
+#@   set save_constraint_suffix {
+#@     "{sdf}"
+#@     "{sdf-v2.1}"
+#@     "{synopsys}"
+#@   }
+#@ 
+#@   set save_design_timing_formats {
+#@     "{SDF (sdf)}"
+#@   }
+#@ 
+#@   set save_design_timing_suffix {
+#@     {sdf}
+#@   }
+#@ 
+#@   set import_design_timing_formats {
+#@     "{SDF (sdf)}"
+#@   }
+#@ 
+#@   set import_design_timing_suffix {
+#@     {sdf}
+#@   }
+#@ }
+#@ 
+#@ ##############################################################################################
+#@ ####### Preferences ##########################################################################
+#@ ##############################################################################################
+#@ 
+#@ # Tcl scripts for preferences reader/writer versioning and
+#@ # default preferences setting.
+#@ set __pt_pref_reader_version_file  ".synopsys_pt_pref_reader_version.tcl"
+#@ set __pt_system_default_prefs_file ".synopsys_pt_sysdef_prefs.tcl"
+#@ 
+#@ 
+#@ # source default system preferences file.
+#@ ::Customize::source_tcl_file $__pt_system_default_prefs_file [file join $::synopsys_root auxx gui pt] "nop" 0
+#@ 
+#@ gui_set_var_value -name "pref_file_name" -value ".synopsys_pt_prefs.tcl"
+#@ gui_set_var_value -name "pref_file_path" -value "$::env(HOME)"
+#@ 
+#@ gui_create_var -name "gui_use_pref_reader_version_proc" -value "pt_use_pref_reader_version"
+#@ # IMPORTANT: update this when the pref writer version need to be pumped up.
+#@ # current pref. writer version is 1.
+#@ gui_create_var -name "gui_current_pref_writer_version" -value_type integer -value 1
+#@ 
+#@ # now source the pref. reader version file
+#@ ::Customize::source_tcl_file $__pt_pref_reader_version_file [file join $::synopsys_root auxx gui pt] "nop" 0
+#@ 
+#@ gui_create_var -name "connect_layout_pref_update" -value_type bool -value 0
+#@ 
+#@ # Now load the preferences
+#@ ekki_load_preferences
+#@ 
+#@ # Tcl scripts for preferences reader/writer versioning and
+#@ # default preferences setting.
+#@ unset __pt_pref_reader_version_file
+#@ unset __pt_system_default_prefs_file
+#@ 
+#@ ##############################################################################################
+#@ ####### End preferences ######################################################################
+#@ ##############################################################################################
+#@ 
+#@ # control whether we want to display windows on gui_start
+#@ # this variable's value may be overriden.
+#@ set gui_start_option_no_windows 0
+#@ 
+#@ 
+#@ ##############################################################################################
+#@ #### Hide undocumented commands, procedures and variables
+#@ ##############################################################################################
+#@ 
+#@ source [file join $::synopsys_root auxx gui pt pt_hide.tcl]
+#@ ################################################################
+#@ # File: pt_hide.tcl
+#@ ################################################################
+#@ 
+#@ #****h* ptgui/pt_hide.tcl
+#@ # DESCRIPTION
+#@ #    This file is sourced during initialization of the
+#@ #    pt_shell_exec application or during gui startup. 
+#@ #    It hides global procs, commands and vars that are 
+#@ #    not documented at the user level.
+#@ #
+#@ #  History:
+#@ #    December 4 2002 -- Donna Nakano: Created
+#@ # 
+#@ #***
+#@ 
+#@ # DO NOT ADD ANY CODE IN FRONT OF GUARD
+#@ #if { ![ info exists Guards::pt_hide_tcl] } {
+#@ # set guard
+#@ #variable Guards::pt_hide_tcl 1
+#@ 
+#@ ##############################################################################################
+#@ #### Hide undocumented commands, procedures and variables
+#@ ##############################################################################################
+#@ 
+#@ # procs
+#@ 
+#@ define_proc_attributes gui_create_schematic -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes show_path_schematic -hidden -hide_body -dont_abbrev
+#@ 
+#@ define_proc_attributes snpsBrowse::show_pdf_file -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes snpsBrowse::show_url_netscape -hidden -hide_body -dont_abbrev
+#@ 
+#@ define_proc_attributes Histogram::gui_create_histogram -hidden -hide_body -dont_abbrev
+#@ 
+#@ define_proc_attributes snpsGuiReport::gui_report_selection -hidden -hide_body -dont_abbrev
+#@ 
+#@ # procs in Misc name space
+#@ define_proc_attributes Misc::autoServiceState -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::exec_method -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::get_timing_paths -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::has_method -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::installAutoService -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::installSlctBusDisabler -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::install_method -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::switchAutoServiceState -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::widgetSlctBusDisableHelper -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::pinAirlineBaseObject -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::trimInfotip -hidden -hide_body -dont_abbrev
+#@ 
+#@ define_proc_attributes Misc::Setting::create -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::Setting::apply -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::Setting::get -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Misc::Setting::settingStateInfo -hidden -hide_body -dont_abbrev
+#@ 
+#@ # procs in Schematic name space
+#@ define_proc_attributes ::Schematic::warnDroppedCells -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes ::Schematic::isShow  -hidden -hide_body -dont_abbrev
+#@ 
+#@ #****f* ptgui/_gui_hide_commands
+#@ # DESCRIPTION
+#@ # 
+#@ #***
+#@ proc __gui_hide_commands {} {
+#@ # Qtcl procedures
+#@ define_proc_attributes Qtcl::createDialog -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Qtcl::getObjectData -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Qtcl::initObject -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Qtcl::messageBox -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Qtcl::modalDialog -hidden -hide_body -dont_abbrev
+#@ define_proc_attributes Qtcl::modelessDialog -hidden -hide_body -dont_abbrev
+#@ 
+#@ # GUI commands from gui and default command groups
+#@ 
+#@ rename -force -hidden gui_create_schematic guicmd
+#@ rename -force -hidden guicmd gui_create_schematic 
+#@ 
+#@ rename -force -hidden get_gui_stroke_bindings guicmd
+#@ rename -force -hidden guicmd get_gui_stroke_bindings 
+#@ 
+#@ rename -force -hidden gui_add_hotkey_binding guicmd
+#@ rename -force -hidden guicmd gui_add_hotkey_binding 
+#@ 
+#@ rename -force -hidden gui_add_menu guicmd
+#@ rename -force -hidden guicmd gui_add_menu 
+#@ 
+#@ rename -force -hidden gui_add_toolbar_item guicmd
+#@ rename -force -hidden guicmd gui_add_toolbar_item 
+#@ 
+#@ rename -force -hidden gui_change_window_parent guicmd
+#@ rename -force -hidden guicmd gui_change_window_parent 
+#@ 
+#@ rename -force -hidden gui_clone_window guicmd
+#@ rename -force -hidden guicmd gui_clone_window 
+#@ 
+#@ rename -force -hidden gui_close_window guicmd
+#@ rename -force -hidden guicmd gui_close_window 
+#@ 
+#@ rename -force -hidden gui_create_toolbar guicmd
+#@ rename -force -hidden guicmd gui_create_toolbar 
+#@ 
+#@ rename -force -hidden gui_create_window guicmd
+#@ rename -force -hidden guicmd gui_create_window 
+#@ 
+#@ rename -force -hidden gui_execute_events guicmd
+#@ rename -force -hidden guicmd gui_execute_events 
+#@ 
+#@ rename -force -hidden gui_execute_menu_item guicmd
+#@ rename -force -hidden guicmd gui_execute_menu_item 
+#@ 
+#@ rename -force -hidden gui_execute_report guicmd
+#@ rename -force -hidden guicmd gui_execute_report 
+#@ 
+#@ rename -force -hidden gui_execute_tcl_command guicmd
+#@ rename -force -hidden guicmd gui_execute_tcl_command 
+#@ 
+#@ rename -force -hidden gui_exist_window guicmd
+#@ rename -force -hidden guicmd gui_exist_window 
+#@ 
+#@ rename -force -hidden gui_exist_window_type guicmd
+#@ rename -force -hidden guicmd gui_exist_window_type 
+#@ 
+#@ rename -force -hidden gui_file_dialog guicmd
+#@ rename -force -hidden guicmd gui_file_dialog 
+#@ 
+#@ rename -force -hidden gui_get_current_window guicmd
+#@ rename -force -hidden guicmd gui_get_current_window 
+#@ 
+#@ rename -force -hidden gui_get_data guicmd
+#@ rename -force -hidden guicmd gui_get_data 
+#@ 
+#@ rename -force -hidden gui_get_menu_attribute guicmd
+#@ rename -force -hidden guicmd  gui_get_menu_attribute  
+#@ 
+#@ rename -force -hidden gui_get_menu_roots guicmd
+#@ rename -force -hidden guicmd gui_get_menu_roots 
+#@ 
+#@ rename -force -hidden gui_get_toolbar_names guicmd
+#@ rename -force -hidden guicmd gui_get_toolbar_names 
+#@ 
+#@ rename -force -hidden gui_get_window_attribute guicmd
+#@ rename -force -hidden guicmd gui_get_window_attribute 
+#@ 
+#@ rename -force -hidden gui_handle_licenses_from_dlg guicmd
+#@ rename -force -hidden guicmd gui_handle_licenses_from_dlg 
+#@ 
+#@ rename -force -hidden gui_hide_toolbar guicmd
+#@ rename -force -hidden guicmd gui_hide_toolbar 
+#@ 
+#@ rename -force -hidden gui_list_menus guicmd
+#@ rename -force -hidden guicmd gui_list_menus 
+#@ 
+#@ rename -force -hidden gui_register_view_template guicmd
+#@ rename -force -hidden guicmd gui_register_view_template 
+#@ 
+#@ rename -force -hidden gui_remove_menu guicmd
+#@ rename -force -hidden guicmd gui_remove_menu 
+#@ 
+#@ rename -force -hidden gui_remove_toolbar guicmd
+#@ rename -force -hidden guicmd gui_remove_toolbar 
+#@ 
+#@ rename -force -hidden gui_remove_toolbar_item guicmd
+#@ rename -force -hidden guicmd gui_remove_toolbar_item 
+#@ 
+#@ rename -force -hidden gui_restore_window_config guicmd
+#@ rename -force -hidden guicmd gui_restore_window_config 
+#@ 
+#@ rename -force -hidden gui_save_constraint_dialog guicmd
+#@ rename -force -hidden guicmd gui_save_constraint_dialog 
+#@ 
+#@ rename -force -hidden gui_save_window_config guicmd
+#@ rename -force -hidden guicmd gui_save_window_config 
+#@ 
+#@ rename -force -hidden gui_scroll guicmd
+#@ rename -force -hidden guicmd gui_scroll 
+#@ 
+#@ rename -force -hidden gui_set_active_window guicmd
+#@ rename -force -hidden guicmd gui_set_active_window 
+#@ 
+#@ rename -force -hidden gui_set_data guicmd
+#@ rename -force -hidden guicmd gui_set_data 
+#@ 
+#@ rename -force -hidden gui_set_highlight guicmd
+#@ rename -force -hidden guicmd gui_set_highlight 
+#@ 
+#@ rename -force -hidden gui_set_menu_attributes guicmd
+#@ rename -force -hidden guicmd gui_set_menu_attributes 
+#@ 
+#@ rename -force -hidden gui_set_menu_bar guicmd
+#@ rename -force -hidden guicmd gui_set_menu_bar 
+#@ 
+#@ rename -force -hidden gui_set_preference_option guicmd
+#@ rename -force -hidden guicmd gui_set_preference_option 
+#@ 
+#@ rename -force gui_set_window_attributes guicmd
+#@ rename -force -hidden guicmd gui_set_window_attributes 
+#@ 
+#@ rename -force gui_get_window_attribute guicmd
+#@ rename -force -hidden guicmd gui_get_window_attribute
+#@ 
+#@ rename -force -hidden gui_setup_variables_from_dlg guicmd
+#@ rename -force -hidden guicmd gui_setup_variables_from_dlg 
+#@ 
+#@ rename -force -hidden gui_show_about_dialog guicmd
+#@ rename -force -hidden guicmd gui_show_about_dialog 
+#@ 
+#@ rename -force -hidden gui_show_import_timing_dialog guicmd
+#@ rename -force -hidden guicmd gui_show_import_timing_dialog 
+#@ 
+#@ rename -force -hidden gui_show_preferences_dialog guicmd
+#@ rename -force -hidden guicmd gui_show_preferences_dialog 
+#@ 
+#@ rename -force -hidden gui_show_toolbar guicmd
+#@ rename -force -hidden guicmd gui_show_toolbar 
+#@ 
+#@ rename -force -hidden gui_show_window guicmd
+#@ rename -force -hidden guicmd gui_show_window 
+#@ 
+#@ rename -force -hidden gui_update_toolbars guicmd
+#@ rename -force -hidden guicmd gui_update_toolbars 
+#@ 
+#@ rename -force -hidden gui_update_window guicmd
+#@ rename -force -hidden guicmd gui_update_window 
+#@ 
+#@ rename -force -hidden gui_window_hier_name guicmd
+#@ rename -force -hidden guicmd gui_window_hier_name 
+#@ 
+#@ rename -force -hidden gui_zoom guicmd
+#@ rename -force -hidden guicmd gui_zoom 
+#@ 
+#@ rename -force -hidden set_gui_stroke_binding guicmd
+#@ rename -force -hidden guicmd set_gui_stroke_binding 
+#@ 
+#@ rename -force -hidden set_gui_stroke_preferences guicmd
+#@ rename -force -hidden guicmd set_gui_stroke_preferences 
+#@ 
+#@ #rename -force -hidden Qtcl::createDialog guicmd
+#@ #rename -force -hidden guicmd Qtcl::createDialog 
+#@ 
+#@ #rename -force -hidden Qtcl::getObjectData guicmd
+#@ #rename -force -hidden guicmd Qtcl::getObjectData 
+#@ 
+#@ #rename -force -hidden Qtcl::initObject guicmd
+#@ #rename -force -hidden guicmd Qtcl::initObject 
+#@ 
+#@ #rename -force -hidden Qtcl::messageBox guicmd
+#@ #rename -force -hidden guicmd Qtcl::messageBox 
+#@ 
+#@ #rename -force -hidden Qtcl::modalDialog guicmd
+#@ #rename -force -hidden guicmd Qtcl::modalDialog 
+#@ 
+#@ #rename -force -hidden Qtcl::modelessDialog guicmd
+#@ #rename -force -hidden guicmd Qtcl::modelessDialog 
+#@ 
+#@ rename -force -hidden snpsGuiReport::gui_report_selection guicmd
+#@ rename -force -hidden guicmd snpsGuiReport::gui_report_selection 
+#@ 
+#@ rename -force -hidden gui_view_port_history guicmd
+#@ rename -force -hidden guicmd gui_view_port_history
+#@ 
+#@ }
+#@ define_proc_attributes __gui_hide_commands -hidden -hide_body -dont_abbrev
+#@ 
+#@ ##########################################################################
+#@ 
+#@ #****f* ptgui/__gui_hide_default_commands
+#@ # DESCRIPTION
+#@ #   Hide Ekki/GUI commands that are registered as a part of the 
+#@ #   default command set that are not currently supported for
+#@ #   end-user use.
+#@ #***
+#@ proc __gui_hide_default_commands {} {
+#@ rename -force -hidden gui_add_ruler_point guicmd
+#@ rename -force -hidden guicmd gui_add_ruler_point 
+#@ 
+#@ rename -force -hidden gui_bin guicmd 
+#@ rename -force -hidden guicmd gui_bin
+#@ 
+#@ rename -force -hidden gui_create_attrdef guicmd
+#@ rename -force -hidden guicmd gui_create_attrdef 
+#@ 
+#@ rename -force -hidden gui_create_execute_callback guicmd
+#@ rename -force -hidden guicmd gui_create_execute_callback 
+#@ 
+#@ rename -force -hidden gui_create_output_callback guicmd
+#@ rename -force -hidden guicmd gui_create_output_callback 
+#@ 
+#@ rename -force -hidden gui_create_pref_category guicmd
+#@ rename -force -hidden guicmd gui_create_pref_category 
+#@ 
+#@ rename -force -hidden gui_create_pref_key guicmd
+#@ rename -force -hidden guicmd gui_create_pref_key 
+#@ 
+#@ rename -force -hidden gui_create_var guicmd
+#@ rename -force -hidden guicmd gui_create_var 
+#@ 
+#@ rename -force -hidden gui_delete_attrdef guicmd
+#@ rename -force -hidden guicmd gui_delete_attrdef 
+#@ 
+#@ rename -force -hidden gui_exist_pref_category guicmd
+#@ rename -force -hidden guicmd gui_exist_pref_category 
+#@ 
+#@ rename -force -hidden gui_exist_pref_key guicmd
+#@ rename -force -hidden guicmd gui_exist_pref_key 
+#@ 
+#@ rename -force -hidden gui_exist_var guicmd
+#@ rename -force -hidden guicmd gui_exist_var 
+#@ 
+#@ rename -force -hidden gui_get_all_rulers guicmd
+#@ rename -force -hidden guicmd gui_get_all_rulers 
+#@ 
+#@ rename -force -hidden gui_get_pref_categories guicmd
+#@ rename -force -hidden guicmd gui_get_pref_categories 
+#@ 
+#@ rename -force -hidden gui_get_pref_keys guicmd
+#@ rename -force -hidden guicmd gui_get_pref_keys 
+#@ 
+#@ rename -force -hidden gui_get_pref_value guicmd
+#@ rename -force -hidden guicmd gui_get_pref_value 
+#@ 
+#@ rename -force -hidden gui_get_pref_value_type guicmd
+#@ rename -force -hidden guicmd gui_get_pref_value_type 
+#@ 
+#@ rename -force -hidden gui_get_region guicmd
+#@ rename -force -hidden guicmd gui_get_region 
+#@ 
+#@ # TODO -- reintroduce when we merge in Quang's rename
+#@ #rename -force -hidden gui_get_var_value guicmd
+#@ #rename -force -hidden guicmd gui_get_var_value 
+#@ 
+#@ rename -force -hidden gui_get_window_ids guicmd
+#@ rename -force -hidden guicmd gui_get_window_ids 
+#@ 
+#@ rename -force -hidden gui_get_window_types guicmd
+#@ rename -force -hidden guicmd gui_get_window_types 
+#@ 
+#@ rename -force -hidden gui_list_attrdefs guicmd
+#@ rename -force -hidden guicmd gui_list_attrdefs 
+#@ 
+#@ rename -force -hidden gui_new_ruler guicmd
+#@ rename -force -hidden guicmd gui_new_ruler 
+#@ 
+#@ rename -force -hidden gui_register_commands guicmd
+#@ rename -force -hidden guicmd gui_register_commands 
+#@ 
+#@ rename -force -hidden gui_register_pref_cat_update_callback guicmd
+#@ rename -force -hidden guicmd gui_register_pref_cat_update_callback 
+#@ 
+#@ rename -force -hidden gui_register_pref_key_update_callback guicmd
+#@ rename -force -hidden guicmd gui_register_pref_key_update_callback 
+#@ 
+#@ rename -force -hidden gui_register_session_callback guicmd
+#@ rename -force -hidden guicmd gui_register_session_callback 
+#@ 
+#@ rename -force -hidden gui_register_window_callback guicmd
+#@ rename -force -hidden guicmd gui_register_window_callback 
+#@ 
+#@ rename -force -hidden gui_remove_all_rulers guicmd
+#@ rename -force -hidden guicmd gui_remove_all_rulers 
+#@ 
+#@ rename -force -hidden gui_remove_pref_category guicmd
+#@ rename -force -hidden guicmd gui_remove_pref_category 
+#@ 
+#@ rename -force -hidden gui_remove_pref_key guicmd
+#@ rename -force -hidden guicmd gui_remove_pref_key 
+#@ 
+#@ rename -force -hidden gui_remove_var guicmd
+#@ rename -force -hidden guicmd gui_remove_var 
+#@ 
+#@ rename -force -hidden gui_set_pref_value guicmd
+#@ rename -force -hidden guicmd gui_set_pref_value 
+#@ 
+#@ rename -force -hidden gui_set_region guicmd
+#@ rename -force -hidden guicmd gui_set_region 
+#@ 
+#@ rename -force -hidden gui_set_var guicmd
+#@ rename -force -hidden guicmd gui_set_var
+#@ 
+#@ rename -force -hidden gui_get_var guicmd
+#@ rename -force -hidden guicmd gui_get_var
+#@ 
+#@ rename -force -hidden gui_test guicmd
+#@ rename -force -hidden guicmd gui_test 
+#@ 
+#@ rename -force -hidden gui_unregister_pref_cat_update_callback guicmd
+#@ rename -force -hidden guicmd gui_unregister_pref_cat_update_callback 
+#@ 
+#@ rename -force -hidden gui_unregister_pref_key_update_callback guicmd
+#@ rename -force -hidden guicmd gui_unregister_pref_key_update_callback 
+#@ 
+#@ rename -force -hidden gui_update_attrdef guicmd
+#@ rename -force -hidden guicmd gui_update_attrdef 
+#@ 
+#@ rename -force -hidden gui_update_pref_file guicmd
+#@ rename -force -hidden guicmd gui_update_pref_file 
+#@ 
+#@ rename -force -hidden create_selection_bus guicmd
+#@ rename -force -hidden guicmd create_selection_bus
+#@ 
+#@ rename -force -hidden create_selection_bus_callback guicmd
+#@ rename -force -hidden guicmd create_selection_bus_callback
+#@ 
+#@ rename -force -hidden create_selection_callback_cmd guicmd
+#@ rename -force -hidden guicmd create_selection_callback_cmd
+#@ 
+#@ rename -force -hidden get_selection_buses guicmd
+#@ rename -force -hidden guicmd get_selection_buses
+#@ 
+#@ rename -force -hidden filter_by_selection guicmd
+#@ rename -force -hidden guicmd filter_by_selection
+#@ 
+#@ rename -force -hidden gui_add_annotation guicmd
+#@ rename -force -hidden guicmd gui_add_annotation
+#@ 
+#@ rename -force -hidden gui_get_all_annotations guicmd
+#@ rename -force -hidden guicmd gui_get_all_annotations
+#@ 
+#@ rename -force -hidden gui_remove_all_annotations guicmd
+#@ rename -force -hidden guicmd gui_remove_all_annotations
+#@ 
+#@ rename -force -hidden gui_has_license guicmd
+#@ rename -force -hidden guicmd gui_has_license
+#@ 
+#@ rename -force -hidden register_netlist_callback guicmd
+#@ rename -force -hidden guicmd register_netlist_callback
+#@ 
+#@ rename -force -hidden win_select_objects_silent guicmd
+#@ rename -force -hidden guicmd win_select_objects_silent
+#@ 
+#@ #######################################################################
+#@ #  The following are procedures
+#@ 
+#@ rename -force -hidden snpsBrowse::show_pdf_file guicmd
+#@ rename -force -hidden guicmd snpsBrowse::show_pdf_file 
+#@ 
+#@ rename -force -hidden snpsBrowse::show_url_netscape guicmd
+#@ rename -force -hidden guicmd snpsBrowse::show_url_netscape 
+#@ 
+#@ }
+#@ define_proc_attributes __gui_hide_default_commands -hidden -hide_body -dont_abbrev
+#@ 
+#@ # now go ahead and hide them
+#@ # gui commands are hidden from pt_gui_setup.tcl
+#@ #__gui_hide_commands
+#@ __gui_hide_default_commands
+#@ 
+#@ # END OF GUARD
+#@ #}
+#@ # -- End source /usr/Primetime/auxx/gui/pt/pt_hide.tcl
+
+#@ 
+#@ # END OF GUARD
+#@ #}
+#@ # -- End source /usr/Primetime/auxx/gui/pt/pt_setup.tcl
+
+gui_start
+gui_execute_script_from_dlg
+#@ #------------------------------------------------------------------------------
+#@ # File   : A PT script file for a FIFO
+#@ # Author : xinxn 
+#@ # date   : 2009-04-02    
+#@ #------------------------------------------------------------------------------
+#@ set sh_enable_page_mode true
+#@ 
+#@ set TECH_LIB_PATH "/usr/iclib/fsa0a_c/2004Q4v1.1/SC/FrontEnd/synopsys"
+#@ set IO_LIB_PATH   "/usr/iclib/fsa0a_c/2004Q4v1.1/IO/FrontEnd/synopsys"
+#@ set DESIGN_PATH   "/usr/fifo09/dc/netlist"
+#@ set search_path [concat $TECH_LIB_PATH $IO_LIB_PATH $DESIGN_PATH  $search_path]
+#@ 
+#@ set link_path {* fsa0a_c_sc_tc.db fsa0a_c_io_tc.db}
+#@ 
+#@ read_verilog $DESIGN_PATH/fifo16x8_gate.v
+#@ 
+#@ list_designs
+#@ 
+#@ current_design fifo16x8
+#@ 
+#@ link_design
+#@ 
+#@ #------------------------------------------------------------------------------
+#@ #------------------------------------------------------------------------------
+#@ set TECH_LIB fsa0a_c_sc_tc
+#@ set IO_LIB   fsa0a_c_io_tc
+#@ set THIS_DESIGN fifo16x8
+#@ #------------------------------------------------------------------------------
+#@ # reports path and file
+#@ #------------------------------------------------------------------------------
+#@ set WORK_DIR /usr/fifo09/pt
+#@ 
+#@ set SETUP_RPT_FILE $WORK_DIR/report/setup_time.rpt
+#@ set HOLD_RPT_FILE $WORK_DIR/report/hold_time.rpt
+#@ set TRANS_RPT_FILE $WORK_DIR/report/transition.rpt
+#@ set SUMMARY_RPT_FILE $WORK_DIR/report/summary.rpt
+#@ set VIOL_FILE $WORK_DIR/report/voilation.rpt
+#@ #------------------------------------------------------------------------------
+#@ set SDF_FILE  $WORK_DIR/sdf/fifo16x8.sdf
+#@ #------------------------------------------------------------------------------
+#@ set CLK_PER 2.0
+#@ set HALF_PER [expr $CLK_PER/2.0]
+#@ set IN_DLY [expr $CLK_PER * 0.3]
+#@ set OUT_DLY [expr $CLK_PER * 0.3]
+#@ set MAX_TRANSITION [expr $CLK_PER/20.0]
+#@ #-------------------------------------------------------------------------------
+#@ set ALL_EX_CLK [remove_from_collection [all_inputs] [get_ports clk]]
+#@ #------------------------------------------------------------------------------
+#@ # design rules constraints
+#@ #------------------------------------------------------------------------------
+#@ set_operating_conditions TCCOM
+#@ set_wire_load_model -name G5K
+#@ set_wire_load_mode  top
+#@ #------------------------------------------------------------------------------
+#@ set_driving_cell -no_design_rule -lib_cell XMD -library $IO_LIB -pin O $ALL_EX_CLK
+#@ 
+#@ set_drive 0 [get_ports clk]
+#@ set_load [load_of $IO_LIB/YA2GSD/I] [all_outputs]
+#@ 
+#@ set_max_transition $MAX_TRANSITION [get_designs $THIS_DESIGN]
+#@ 
+#@ set MAX_LOAD [expr [load_of $TECH_LIB/BUF1/I]*8]
+#@ set_max_capacitance $MAX_LOAD $ALL_EX_CLK
+#@ 
+#@ set_max_transition $MAX_TRANSITION $ALL_EX_CLK
+#@ 
+#@ set_max_fanout 8 $ALL_EX_CLK
+#@ #------------------------------------------------------------------------------
+#@ # Timing constraints
+#@ #------------------------------------------------------------------------------
+#@ create_clock -p $CLK_PER -name CLK [get_ports clk]
+#@ set_clock_uncertainty -setup 0.2 CLK
+#@ set_clock_uncertainty -hold 0.1 CLK
+#@ set_input_delay -max $IN_DLY -clock CLK $ALL_EX_CLK 
+#@ set_input_delay -min 0 -clock CLK $ALL_EX_CLK
+#@ set_output_delay $OUT_DLY [all_outputs]
+#@ #------------------------------------------------------------------------------
+#@ report_port 
+#@ report_clock -skew
+#@ report_port -input_delay
+#@ report_port -output_delay
+#@ check_timing
+#@ #------------------------------------------------------------------------------
+#@ report_constraint -all_violators > $VIOL_FILE
+#@ #------------------------------------------------------------------------------
+#@ report_timing > $SETUP_RPT_FILE
+#@ report_timing -delay min > $HOLD_RPT_FILE
+#@ #------------------------------------------------------------------------------
+#@ report_timing -nets -transition_time -capacitance > $TRANS_RPT_FILE
+#@ report_timing -nworst 10 -path_type summary > $SUMMARY_RPT_FILE
+#@ #------------------------------------------------------------------------------
+#@ write_sdf $SDF_FILE
+#@ 
+#@ quit

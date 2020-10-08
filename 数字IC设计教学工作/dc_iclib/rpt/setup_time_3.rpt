@@ -1,0 +1,48 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : counter
+Version: 2003.03
+Date   : Mon Apr 11 16:01:00 2005
+****************************************
+
+Operating Conditions: 
+Wire Load Model Mode: top
+
+  Startpoint: q_reg[3] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cy (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  counter            05x05                 class
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  q_reg[3]/CP (FD2S)                       0.00       0.00 r
+  q_reg[3]/QN (FD2S)                       1.74       1.74 f
+  U10/Z1 (B2I)                             0.92       2.66 r
+  U19/Z (AN4)                              1.03       3.69 r
+  cy (out)                                 0.00       3.69 r
+  data arrival time                                   3.69
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.10       9.90
+  output external delay                   -4.00       5.90
+  data required time                                  5.90
+  -----------------------------------------------------------
+  data required time                                  5.90
+  data arrival time                                  -3.69
+  -----------------------------------------------------------
+  slack (MET)                                         2.21
+
+
+1

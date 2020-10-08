@@ -1,0 +1,9 @@
+                       
+set target_library {fsa0a_c_sc_tc.db}
+set link_library {* fsa0a_c_sc_tc.db}
+set symbol_library {fsa0a_c_sc.sdb}                         
+set search_path " /usr/iclib/fsa0a_c/2004Q4v1.1/SC/FrontEnd/synopsys "
+
+set WORK_DIR "/usr/xxn/dc_iclib"
+
+

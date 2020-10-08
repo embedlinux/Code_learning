@@ -1,0 +1,55 @@
+ 
+****************************************
+Report : cell
+Design : div
+Version: 2003.03
+Date   : Mon Apr 11 17:25:05 2005
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U3                        IVI             class           1.000000  
+U4                        ND2I            class           1.000000  
+U5                        AN2I            class           2.000000  
+U6                        NR2P            class           2.000000  
+U7                        B2I             class           2.000000  
+U8                        IVI             class           1.000000  
+U9                        IVI             class           1.000000  
+U10                       OR2P            class           2.000000  
+U11                       IVI             class           1.000000  
+U12                       B2I             class           2.000000  
+U13                       B2I             class           2.000000  
+U14                       B5IP            class           3.000000  
+U15                       B2I             class           2.000000  
+U16                       NR2P            class           2.000000  
+U17                       B2I             class           2.000000  
+U18                       NR2P            class           2.000000  
+U21                       ENI             class           3.000000  
+U22                       ENI             class           3.000000  
+U23                       ENI             class           3.000000  
+U24                       ENI             class           3.000000  
+U25                       ND2I            class           1.000000  
+U26                       ND2I            class           1.000000  
+U27                       ND2I            class           1.000000  
+U28                       ND2I            class           1.000000  
+U29                       ND2I            class           1.000000  
+U30                       ND2I            class           1.000000  
+U31                       ND2I            class           1.000000  
+U32                       ENI             class           3.000000  
+U33                       ENI             class           3.000000  
+U34                       ENI             class           3.000000  
+U35                       IVI             class           1.000000  
+cnt_reg[0]                FD2S            class           10.000000 n
+cnt_reg[1]                FD2             class           9.000000  n
+cnt_reg[2]                FD2             class           9.000000  n
+cnt_reg[3]                FD2             class           9.000000  n
+--------------------------------------------------------------------------------
+Total 35 cells                                            94.000000
+1

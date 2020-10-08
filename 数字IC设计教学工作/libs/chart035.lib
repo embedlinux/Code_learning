@@ -1,0 +1,2902 @@
+*****************************************************************************************
+* File: chart035.lib
+* Library file for HSPICE
+*****************************************************************************************
+* CHARTERED SEMICONDUCTOR MANUFACTURING LTD
+*
+* Doc #        : YI-046-SM005
+* Revision     : 1N
+* Process name : 0.35UM 3.3V/5V DUAL GATE SALICIDE ANALOG PROCESS WITH PLDD STRUCTURE
+* Process ID   : 2A323-F5A-5TA
+* Wafer tested :
+*                Lot #2XZV51048.1 wafer #03 for MOSFET without DNWell
+*                Lot #2XZV51048.1 wafer #03 for N+/PWell & P+/NWell diode
+*                Lot #2XZY24019.1 wafer #03 for ESD diode and NWell/Psub diode
+*                Lot #2XZY24019.1 wafer #03 for BJT
+*                Lot #2XZV25130.1 wafer #01 for resistor except NWell resistor
+*                Lot #2XZV15229.1 wafer #13 for NWell resistor
+*                Lot #2XZT43054.8 wafer #10 for PIP capacitor
+*                Lot #3HVB06133.1 wafer #05 for resistor noise
+*****************************************************************************************
+* Models included in this release :
+*
+* Model Name      Description
+* nmos_3p3        BSIM3v3 model for thin gate 3.3V NMOS without DNWell
+* pmos_3p3        BSIM3v3 model for thin gate 3.3V PMOS without DNWell
+* nmos_5p0        BSIM3v3 model for thick gate 5.0V NMOs without DNWell
+* pmos_5p0        BSIM3v3 model for thick gate 5.0V PMOS without DNWell
+* nmos_5p0_esd_ds BSIM3v3 Rev.0 model for thick gate 5.0V SAB Drain&Source NMOS
+* pmos_5p0_esd_ds BSIM3v3 Rev.0 model for thick gate 5.0V SAB Drain&Source PMOS
+* nmos_5p0_esd_ss BSIM3v3 Rev.0 model for thick gate 5.0V SAB Drain only NMOS
+* pmos_5p0_esd_ss BSIM3v3 Rev.0 model for thick gate 5.0V SAB Drain only PMOS
+*
+* vpnp_2x2        Gummel-Poon model for VPNP with emitter size of 2um x 2um
+* vpnp_5x5        Gummel-Poon model for VPNP with emitter size of 5um x 5um
+* vpnp_10x10      Gummel-Poon model for VPNP with emitter size of 10um x 10um
+* lpnp_3p3_1x1    Gummel-Poon model for LPNP with emitter size of 1um x 1um
+* lpnp_3p3_2x2    Gummel-Poon model for LPNP with emitter size of 2um x 2um
+* lpnp_3p3_5x5    Gummel-Poon model for LPNP with emitter size of 5um x 5um
+* lpnp_3p3_10x10  Gummel-Poon model for LPNP with emitter size of 10um x 10um
+*
+* np_3p3          Model for thin gate 3.3V N+/PWell diode
+* pn_3p3          Model for thin gate 3.3V P+/Nwell diode
+* np_5p0          Model for thick gate 5.0V N+/PWell diode
+* pn_5p0          Model for thick gate 5.0V P+/Nwell diode
+* nwp             Model for Nwell/Psub diode
+* np_3p3_esd      Model for ESD thin gate 3.3V N+/PWell diode
+* np_5p0_esd      Model for ESD thick gate 5.0V N+/PWell diode
+*
+* nplus_u         3-T Model for unsalicided N+ resistor
+* pplus_u         3-T Model for unsalicided P+ resistor
+* nplus_u_epi     3-T Model for unsalicided N+ resistor on EPI substrate
+* pplus_u_epi     3-T Model for unsalicided P+ resistor on EPI substrate
+* nwell           3-T Model for Nwell resistor
+* npolyf_u        3-T Model for unsalicided Poly2 resistor
+* npolyf_u_1k     3-T Model for 1K Poly2 resistor
+* rm1             2-T Model for metal1 resistor
+*
+* pip             Model for PIP capacitor
+*****************************************************************************************
+* Disclaimer for Resistor Model
+*
+* This resistor model was generated based on resistor characterization (CZ) report
+* (R-EZ-ER-380 Rev 1I). The user is required to follow the instruction on the usage
+* and limitations of the model given in CZ report.Every resistor type and various
+* parameters extracted are based on a set of resistor dimensions. Therefore user should
+* take note of this and use his/her judgement in extending them beyound their verified
+* range Also to be noted that VCR values are set to zero by default in this model.
+* If need arises, please refer to the document containing VCR tables in the lotus notes
+* or CZ  for voltage coefficients of resistor r_vc1 and r_vc2.
+*
+* Disclaimer for SAB 5V CMOS Paper Model
+*
+* These 5V (ESD) with SAB models was generated based on the existing 5V CMOS models. nplus_u (NMOS) and
+* pplus_u (PMOS) resistor models added at the end of drain/source connections. Additional instance parameter
+* "ldop=0.2u" and/or "lsop=0.2um" for overlap of SAB at drain/source can be nestlisted and modified accordingly.
+***************************************************************************************************
+* Revision History:
+*
+* Rev 1A: Released on the 6th of Nov, 2002 by Lin H/Jia TL/XIAO H/BHAT GA
+*         1. MOSFET without DNWell model, VPNP model, diode model, resistor model and PIP capacitor model are released
+*
+*            Lot# 2XZV51048.1 wf#03 for MOSFET without DNWell models
+*            Lot# 2XZV51048.1 wf#03 for N+/PWell & P+/NWell diode models
+*            Lot# 2XZY24019.1 wf#03 for ESD N+/PWell diode models and Nwell/Psub diode model
+*            Lot# 2XZY24019.1 wf#03 for VPNP models
+*            Lot# 2XZY24019.1 wf#03 for resistor models except poly2 1k resistor
+*            Lot# 2PLV46377.2 wf#09 for poly2 1k resistor model
+*            Lot# 2XZT43054.8 wf#10 for PIP capacitor model
+*
+*
+* Rev 1B: Released on 18 February 2003 by LGH
+*         1. LPNP models and GDS files are added. Raw data are measured from Lot# 2XZY24019.1 wfr#03.
+*         2. Device model name is changed following to Chartered's device naming convention
+*
+*            Summary of the model name change from rev. 1a to 1b
+*
+*            Rev 1A        Rev 1B          Description
+*            tn-nmos       nmos_tn         BSIM3v3 model for thin gate 3.3V NMOS without DNWell
+*            tn-pmos       pmos_tn         BSIM3v3 model for thin gate 3.3V PMOS without DNWell
+*            tk-nmos       nmos_tk         BSIM3v3 model for thick gate 5.0V NMOS without DNWell
+*            tk-pmos       pmos_tk         BSIM3v3 model for thick gate 5.0V PMOS without DNWell
+*            tn_np         np_tn           Diode model for N+/PWell diode (from thin gate pattern)
+*            tn_pn         pn_tn           Diode model for P+/Nwell diode (from thin gate pattern)
+*            tk_np         np_tk           Diode model for N+/PWell diode (from thick gate pattern)
+*            tk_pn         pn_tk           Diode model for P+/Nwell diode (from thick gate pattern)
+*            nw_p          nwp             Diode model for Nwell/Psub diode
+*            ESD_tn_np     ESD_np_tn       Diode model for ESD N+/PWell diode (from thin gate pattern)
+*            ESD_tk_np     ESD_np_tk       Diode model for ESD N+/PWell diode (from thick gate pattern)
+*            nplus_res     nplus_sb        Resistor model for unsalicided N+ resistor
+*            pplus_res     pplus_sb        Resistor model for unsalicided P+ resistor
+*            nwell_res     nwell           Resistor model for Nwell resistor
+*            poly_res      poly_sb         Resistor model for unsalicided Poly2 resistor
+*            metal1        rm1             Resistor model for metal1 resistor
+*            r1k_res       poly_1k         Resistor model for 1K Poly2 resistor
+*            CPIP_035      pip             Capacitor model for PIP capacitor
+*
+*
+* Rev 1C: Released on 15 July 2003 by LGH
+*         1. Minor bugs in the model file are fixed.
+*            For PIP capacitor, capacitance expression is changed from
+*                CPIP_cao 1 2 POLY CPIP_c0 CPIP_c1 CPIP_c2
+*            to
+*                CPIP_cap 1 2 c='CPIP_c0*(1+CPIP_vcr1*v(1,2) ... ',
+*
+*            for nwell, np_3p3_esd and np_5p0_esd diode model,
+*            ibv value is changed to 1E-3 from 1E-6, and
+*
+*            for rm1 resistor, Parameter name, Tnom in HSPICE model file
+*            is changed to Tref.
+*
+*         2. Voltage coefficients of resistor models are set to zero,
+*            since values of last version models were valid to limited sizes.
+*
+*         3. Device model names are changed following to Chartered's device
+*            naming convention, EDA-CAD-000-GS002 Rev1B.
+*
+*            Summary of the model name change from rev. 1b to 1c
+*
+*            Rev 1B     Rev 1C      Description
+*            nmos_tn    nmos_3p3    BSIM3v3 model for thin gate 3.3V NMOS without DNWell
+*            pmos_tn    pmos_3p3    BSIM3v3 model for thin gate 3.3V PMOS without DNWell
+*            nmos_tk    nmos_5p0    BSIM3v3 model for thick gate 5.0V NMOS without DNWell
+*            pmos_tk    pmos_5p0    BSIM3v3 model for thick gate 5.0V PMOS without DNWell
+*            vpnp2x2    vpnp_2x2    Gummel-Poon model for VPNP with emitter size of 2um x 2um
+*            vpnp5x5    vpnp_5x5    Gummel-Poon model for VPNP with emitter size of 5um x 5um
+*            vpnp10x10  vpnp_10x10  Gummel-Poon model for VPNP with emitter size of 10um x 10um
+*            lpnp1x1    lpnp_1x1    Gummel-Poon model for thin gate LPNP with emitter size of 1um x 1um and base width of 0.35um
+*            lpnp2x2    lpnp_2x2    Gummel-Poon model for thin gate LPNP with emitter size of 2um x 2um and base width of 0.35um
+*            lpnp5x5    lpnp_5x5    Gummel-Poon model for thin gate LPNP with emitter size of 5um x 5um and base width of 0.35um
+*            lpnp10x10  lpnp_10x10  Gummel-Poon model for thin gate LPNP with emitter size of 10um x 10um and base width of 0.35um
+*            np_tn      np_3p3      Model for thin gate N+/PWell diode
+*            pn_tn      pn_3p3      Model for thin gate P+/Nwell diode
+*            np_tk      np_5p0      Model for thick gate N+/PWell diode
+*            pn_tk      pn_5p0      Model for thick gate P+/Nwell diode
+*            nwp        nwp         Model for Nwell/Psub diode
+*            ESD_np_tn  np_3p3_esd  Model for ESD thin gate N+/PWell diode
+*            ESD_np_tk  np_5p0_esd  Model for ESD thick gate N+/PWell diode
+*            nplus_sb   nplus_u     3 Terminal Model for unsalicided N+ resistor
+*            pplus_sb   pplus_u     3 Terminal Model for unsalicided P+ resistor
+*            nwell      nwell       3 Terminal Model for Nwell resistor
+*            poly_sb    npolyf_u    3 Terminal Model for unsalicided Poly2 resistor
+*            rm1        rm1         2 Terminal Model for metal1 resistor
+*            poly_1k    npoly_u_1k  3 Terminal Model for 1K Poly2 resistor
+*            pip        pip         Model for PIP capacitor
+*
+*
+* Rev 1D: Released on 8 October 2003 by LGH
+*         1. Updated resistor models based on characterization report R-EZ-ER-380 Rev 1E
+*
+*
+* Rev 1E: Released on 27 February 2004 by LGH
+*         1. Updated BJT GDS files to follow design rule YI-046-DR002
+*
+*
+* Rev 1F: Released on 28 May 2004 by LGH
+*         1. Fixed a bug in p plus resistor model named pplus_u;
+*                 Corrected polarity of parasitic diode components in the subcircuit model.
+*         2. Changed 1K Poly2 resistor name as npolyf_u_1k, following device naming convention, EDA-CAD-000-GS002
+*
+*
+* Rev 1G: Released on 9 Feb 2006 by LGH and KK
+*         1. MOSFET without DNWell statistical model parameters added
+*
+*
+* Rev 1H: Released on 31 October 2006
+*         1. Updated the 1K High Rs N+ Poly resistor model (npolyf_u_1k) and
+*            NWELL resistor model (nwell)- Delta L, Delta W and Temperature co-efficient
+*            parameters - along with new terminal resistance models for the same
+*            based on resistor characterization (CZ) report (R-EZ-ER-380 Rev 1I) --> UMA
+*         2. Added resistor corner models --> LCL
+*         3. Added thin gate 3.3V MOSFET with DNWell models --> LCL
+*         4. Added thick gate 5.0V MOSFET with DNWell models --> Sandeep
+*         5. Added thin gate 3.3V low-Vt MOSFET with DNWell models --> LCL
+*         6. Added DNWell/Psub diode model --> Sandeep
+*         7. Updated noise model for thin gate 3.3V MOSFET without DNWell --> LCL
+*         8. Updated noise model for thick gate 5.0V MOSFET without DNWell --> Sandeep
+*
+* Rev 1I: Released on 21 April 2007 --> SD/UMA
+*         1. Aligned nmos_5p0(without dnwell) to meet the SPECS.-->SD
+*         2. Removed following device models with DNwell from previous Rev (sm046005-1h.hspice)
+*            nmos_3p3_dw, pmos_3p3_dw,nmos_5p0_dw,pmos_5p0_dw,nmos_3p3_lvt_dw
+*            pmos_3p3_lvt_dw,dnwps -->SD
+*
+*         3. Flicker noise models have been included for nplus_u, pplus_u, nwell, npolyf_u and npolyf_u_1k
+*             resistors.-->UMA
+*         4. The 'res.va' file has been modified to enable noise simulation.-->UMA
+*         5. The resistor model syntax has been standardized.  -->UMA
+*
+* Rev 1J: Released on 3 Aug 2007 by UMA
+*         1. Updated noise parameters for Spectre/Eldo models of 3.3V and 5V MOSFETs to align with
+*            those of the Hspice models.
+*         2. Upgraded 3.3V and 5V MOS BSIM3v3 model version from 3.2 to 3.3 for Hspice and Spectre
+*            and from 3.2 to 3.24 for Eldo. This is to enable better noise continuity with bias
+*            and temperature.
+*         3. Updated the Verilog-A file "res.va" and removed "m=m" from body resistor model
+*            instances in Spectre model file to enable Spectre simulator version independent
+*            support for multiplicity 'm' factor of body resistor models.
+*
+* Rev 1K: Released on May 15 2008 by SW
+*          Added in N+ & P+ unsalicide resistor on EPI substrate
+*          Change pip model "c_length=50u c_width=5u" to "c_length=l c_width=w" in hspice and eldo format model file.
+*          Replaced diode spectre model file using hspice directly converted one.
+*          Modified resistor model hspice & eldo format to make them compatible.
+*
+*
+* Rev 1l: Released on Aug 15 2008 by ywl
+*         1) Added corner model for pip
+*         2) Added mismatch for nmos_5p0, pmos_5p0, npolyf_u_1k, npolyf_u and pip.
+*         3) changed to subcircuit format in hspice file  for nmos_3p3, pmos_3p3, nmos_5p0 and pmos_5p0;
+*         4) changed to subcircuit format in spectre file for nmos_3p3, pmos_3p3, nmos_5p0, pmos_5p0 and pip;
+*
+* Rev 1M: Released on Dec 10 2008 by ZJX
+*         1) Added mismatch model for nmos_3p3, pmos_3p3.
+*
+* Rev 1N: Released on Sept 01 2009 by HL
+*         1) Added 5V CMOS paper models (rev.0) with SAB Drain/Source (nmos_5p0_esd_ds, pmos_5p0_esd_ds).
+*         2) Added 5V CMOS paper models (rev.0) with SAB Drain only (nmos_5p0_esd_ss, pmos_5p0_esd_ss).
+*         3) Updated 5V N+/Pwell & P+/Nwell diode models
+*         4) Renamed sig_limit parameter to fet_mc_skew.
+***************************************************************************************************
+*
+.lib statistical
+.param
++ sw_stat_global = 1
++ sw_stat_mismatch=1
++ fet_mc_skew = 3
++ mc_vth2 = agauss(0, 1, 1)
++ mc_tox2 = agauss(0, 1, 1)
++ mc_xl2 = agauss(0, 1, 1)
++ mc_xw2 = agauss(0, 1, 1)
++ mc_xj2 = agauss(0, 1, 1)
+
++ mc_vthn = agauss(0, 1, 1)
++ mc_vthp = agauss(0, 1, 1)
++ mc_vth = mc_vth2
++ mc_toxn = agauss(0, 1, 1)
++ mc_toxp = agauss(0, 1, 1)
++ mc_tox = mc_tox2
++ mc_xln = agauss(0, 1, 1)
++ mc_xlp = agauss(0, 1, 1)
++ mc_xl = mc_xl2
++ mc_xwn = agauss(0, 1, 1)
++ mc_xwp = agauss(0, 1, 1)
++ mc_xw = mc_xw2
++ mc_xjn = agauss(0, 1, 1)
++ mc_xjp = agauss(0, 1, 1)
++ mc_xj = mc_xj2
++ mc_lint = agauss(0, 1, 1)
++ mc_wint = agauss(0, 1, 1)
+
+.lib 'chart035.lib' rc
+.lib 'chart035.lib' stdev
+.lib 'chart035.lib' NSTAT
+.lib 'chart035.lib' PSTAT
+.lib 'chart035.lib' device_stat
+.lib 'chart035.lib' resistor_stat
+.lib 'chart035.lib' capacitor_stat
+.endl
+*
+.lib typical
+.lib 'chart035.lib' rc
+.lib 'chart035.lib' sigma
+.lib 'chart035.lib' NT
+.lib 'chart035.lib' PT
+.lib 'chart035.lib' device
+.endl typical
+*
+.lib ss
+.lib 'chart035.lib' rc
+.lib 'chart035.lib' sigma
+.lib 'chart035.lib' NS
+.lib 'chart035.lib' PS
+.lib 'chart035.lib' device
+.endl ss
+*
+.lib ff
+.lib 'chart035.lib' rc
+.lib 'chart035.lib' sigma
+.lib 'chart035.lib' NF
+.lib 'chart035.lib' PF
+.lib 'chart035.lib' device
+.endl ff
+*
+.lib sf
+.lib 'chart035.lib' rc
+.lib 'chart035.lib' sigma
+.lib 'chart035.lib' NSF
+.lib 'chart035.lib' PSF
+.lib 'chart035.lib' device
+.endl sf
+*
+.lib fs
+.lib 'chart035.lib' rc
+.lib 'chart035.lib' sigma
+.lib 'chart035.lib' NFS
+.lib 'chart035.lib' PFS
+.lib 'chart035.lib' device
+.endl fs
+*************************************************
+.LIB bjt
+.lib 'chart035.lib' bip
+.ENDL
+*************************************************
+.LIB diode
+.lib 'chart035.lib' dio
+.ENDL
+*************************************************
+.LIB resistor_stat
+.param
++ rsh_npolyf_u = 65
++ rsh_npolyf_u_1k = 1000
+.lib 'chart035.lib' res_stat
+.ENDL
+*************************************************
+.LIB resistor_typical
+.param
++ rsh_nplus_u = 100
++ rsh_pplus_u = 210
++ rsh_nplus_u_epi = 95
++ rsh_pplus_u_epi = 197.5
++ rsh_nwell = 850
++ rsh_npolyf_u = 65
++ rsh_npolyf_u_1k = 1000
++ rsh_rm1 = 0.06
+.lib 'chart035.lib' res
+.ENDL
+*
+.LIB resistor_ss
+.param
++ rsh_nplus_u = '100 + 10'
++ rsh_pplus_u = '210 + 20'
++ rsh_nplus_u_epi = '95 + 10'
++ rsh_pplus_u_epi = '197.5 + 20'
++ rsh_nwell = '850 + 150'
++ rsh_npolyf_u = '65 + 10'
++ rsh_npolyf_u_1k = '1000 + 200'
++ rsh_rm1 = '0.06 + 0.01'
+.lib 'chart035.lib' res
+.ENDL
+*
+.LIB resistor_ff
+.param
++ rsh_nplus_u = '100 - 10'
++ rsh_pplus_u = '210 - 20'
++ rsh_nplus_u_epi = '95 - 10'
++ rsh_pplus_u_epi = '197.5 - 20'
++ rsh_nwell = '850 - 150'
++ rsh_npolyf_u = '65 - 10'
++ rsh_npolyf_u_1k = '1000 - 200'
++ rsh_rm1 = '0.06 - 0.01'
+.lib 'chart035.lib' res
+.ENDL
+*************************************************
+.lib capacitor_stat
+.lib 'chart035.lib' cap_stat
+.endl
+*
+.lib capacitor_typical
+.param cap_corner=1
+.lib 'chart035.lib' cap
+.endl
+*
+.lib capacitor_ss
+.param cap_corner=1.08
+.lib 'chart035.lib' cap
+.endl
+*
+.lib capacitor_ff
+.param cap_corner=0.92
+.lib 'chart035.lib' cap
+.endl
+*==============================================================================*
+*
+.lib rc
+*-------------------------------------------------------------------------------
+.param
++ tox_n_tn= 7.69E-09    vtho_n_tn= 0.6053       lint_n_tn= 4.124E-08    wint_n_tn= 6.300E-08
++ tox_n_tk= 1.21E-08    vtho_n_tk= 0.658        lint_n_tk= 7.313E-08    wint_n_tk= 1.0775000E-07
++ cgdo_n_tn= 1.06E-10   cgso_n_tn= 1.06E-10     cgdo_n_tk= 7.85E-11     cgso_n_tk= 7.85E-11
++ tox_p_tn= 8.69E-09    vtho_p_tn= -0.845       lint_p_tn= -2.5226E-08  wint_p_tn= 4.990E-08
++ tox_p_tk= 1.33E-08    vtho_p_tk= -0.81225     lint_p_tk= -2.00E-08    wint_p_tk= 7.99E-08
++ cgdo_p_tn= 1.05E-10   cgso_p_tn= 1.05E-10     cgdo_p_tk= 1.15E-10     cgso_p_tk= 1.15E-10
++ xl_n_tn= 0            xl_n_tk= 0              xl_p_tn= 0              xl_p_tk= 0
++ xw_n_tn= 0            xw_n_tk= 0              xw_p_tn= 0              xw_p_tk= 0
++ xj_n_tn= 1e-7         xj_n_tk= 1e-7           xj_p_tn= 1e-7           xj_p_tk= 1e-7
+*-------------------------------------------------------------------------------
+.endl rc
+*
+*
+.lib stdev
+*-------------------------------------------------------------------------------
+.param
++ std_vthon_tn='(0.01098*mc_vth + 0.01779*mc_vthn)*sw_stat_global*fet_mc_skew/3'
++ std_toxn_tn='6.73068E-10*mc_toxn*sw_stat_global*fet_mc_skew/3'
+*+ std_lintn_tn=0.4822E-8 std_wintn_tn=0.6745E-8
++ std_xln_tn='9.90483E-9*mc_xl*sw_stat_global*fet_mc_skew/3'
++ std_xwn_tn='(46.05005E-9*mc_xw + 0E-9*mc_xwn)*sw_stat_global*fet_mc_skew/3'
++ std_xjn_tn='0E-7*mc_xjn*sw_stat_global*fet_mc_skew/3'
+**********************************************************************************
++ std_vthon_tk='(0.02267*mc_vth + 0.01706*mc_vthn)*sw_stat_global*fet_mc_skew/3'
++ std_toxn_tk='0E-10*mc_toxn*sw_stat_global*fet_mc_skew/3'
+*+ std_lintk_tk=0.4822E-8 std_wintn_tk=0.6745E-8
++ std_xln_tk='25.82076E-9*mc_xl*sw_stat_global*fet_mc_skew/3'
++ std_xwn_tk='0E-9*mc_xwn*sw_stat_global*fet_mc_skew/3'
++ std_xjn_tk='0E-7*mc_xjn*sw_stat_global*fet_mc_skew/3'
+**********************************************************************************
++ std_vthop_tn='(-0.01098*mc_vth + 0*mc_vthp)*sw_stat_global*fet_mc_skew/3'
++ std_toxp_tn='1.35941E-10*mc_toxp*sw_stat_global*fet_mc_skew/3'
+*+ std_lintp_tn=1.3461E-8 std_wintp_tn=1.7520E-8
++ std_xlp_tn='16.64332E-9*mc_xl*sw_stat_global*fet_mc_skew/3'
++ std_xwp_tn='(46.05005E-9*mc_xw + 38.13070E-9*mc_xwp)*sw_stat_global*fet_mc_skew/3'
++ std_xjp_tn='0.24617E-7/3*mc_xjp*sw_stat_global*fet_mc_skew/3'
+**********************************************************************************
++ std_vthop_tk='(-0.02267*mc_vth + 0*mc_vthp)*sw_stat_global*fet_mc_skew/3'
++ std_toxp_tk='10.72381E-10*mc_toxp*sw_stat_global*fet_mc_skew/3'
+*+ std_lintp_tk=1.3461E-8 std_wintp_tk=1.7520E-8
++ std_xlp_tk='18.16590E-9*mc_xl*sw_stat_global*fet_mc_skew/3'
++ std_xwp_tk='18.70829E-9*mc_xwp*sw_stat_global*fet_mc_skew/3'
++ std_xjp_tk='0.1E-7*mc_xjp*sw_stat_global*fet_mc_skew/3'
+**********************************************************************************
+*-------------------------------------------------------------------------------
+.endl stdev
+*
+*
+.lib sigma
+*-------------------------------------------------------------------------------
+.param
++ sg_vthon_tn=+0.010057 sg_toxn_tn=0.8578E-10 sg_lintn_tn=0.4822E-8 sg_wintn_tn=0.6745E-8
++ sg_vthon_tk=+0.014118 sg_toxn_tk=2.0096E-10 sg_lintn_tk=0.8374E-8 sg_wintn_tk=0.9304E-8
++ sg_vthop_tn=-0.012953 sg_toxp_tn=0.8578E-10 sg_lintp_tn=1.3461E-8 sg_wintp_tn=1.7520E-8
++ sg_vthop_tk=-0.014706 sg_toxp_tk=2.0096E-10 sg_lintp_tk=1.3664E-8 sg_wintp_tk=2.8140E-8
+*-------------------------------------------------------------------------------
+.endl sigma
+*
+*
+*==============================================================================*
+*
+.lib NSTAT
+*-----------------------------------------------------------------------------
+.param
++ toxn_tn= 'tox_n_tn+ std_toxn_tn'
++ vthon_tn= 'vtho_n_tn+ std_vthon_tn'
++ lintn_tn=lint_n_tn  wintn_tn=wint_n_tn
+************************************************************
++ toxn_tk= 'tox_n_tk+ std_toxn_tk'
++ vthon_tk= 'vtho_n_tk+ std_vthon_tk'
++ lintn_tk=lint_n_tk  wintn_tk=wint_n_tk
+************************************************************
++ cgdon_tn=cgdo_n_tn     cgson_tn=cgso_n_tn
++ cgdon_tk=cgdo_n_tk     cgson_tk=cgso_n_tk
+************************************************************
++ xln_tn= 'xl_n_tn + std_xln_tn'
++ xln_tk= 'xl_n_tk + std_xln_tk'
+************************************************************
++ xwn_tn= 'xw_n_tn + std_xwn_tn'
++ xwn_tk= 'xw_n_tk + std_xwn_tk'
+************************************************************
++ xjn_tn= 'xj_n_tn+ std_xjn_tn'
++ xjn_tk= 'xj_n_tk+ std_xjn_tk'
+*-----------------------------------------------------------------------------
+.endl NSTAT
+*
+.lib PSTAT
+*-----------------------------------------------------------------------------
+.param
++ toxp_tn= 'tox_p_tn + std_toxp_tn'
++ vthop_tn= 'vtho_p_tn + std_vthop_tn'
++ lintp_tn=lint_p_tn  wintp_tn=wint_p_tn
+************************************************************
++ toxp_tk= 'tox_p_tk + std_toxp_tk'
++ vthop_tk= 'vtho_p_tk + std_vthop_tk'
++ lintp_tk=lint_p_tk  wintp_tk=wint_p_tk
+************************************************************
++ cgdop_tn=cgdo_p_tn     cgsop_tn=cgso_p_tn
++ cgdop_tk=cgdo_p_tk     cgsop_tk=cgso_p_tk
+************************************************************
++ xlp_tn= 'xl_p_tn + std_xlp_tn'
++ xlp_tk= 'xl_p_tk + std_xlp_tk'
+************************************************************
++ xwp_tn= 'xw_p_tn + std_xwp_tn'
++ xwp_tk= 'xw_p_tk + std_xwp_tk'
+************************************************************
++ xjp_tn= 'xj_p_tn + std_xjp_tn'
++ xjp_tk= 'xj_p_tk + std_xjp_tk'
+*-----------------------------------------------------------------------------
+.endl PSTAT
+*
+.lib NT
+*-----------------------------------------------------------------------------
+.param
++ toxn_tn= tox_n_tn  vthon_tn=vtho_n_tn  lintn_tn=lint_n_tn  wintn_tn=wint_n_tn
++ toxn_tk=tox_n_tk  vthon_tk=vtho_n_tk  lintn_tk=lint_n_tk  wintn_tk=wint_n_tk
++ cgdon_tn=cgdo_n_tn     cgson_tn=cgso_n_tn
++ cgdon_tk=cgdo_n_tk     cgson_tk=cgso_n_tk
++ xln_tn=xl_n_tn         xln_tk= xl_n_tk
++ xwn_tn=xw_n_tn         xwn_tk= xw_n_tk
++ xjn_tn=xj_n_tn         xjn_tk= xj_n_tk
+*-----------------------------------------------------------------------------
+.endl NT
+*
+.lib PT
+*-----------------------------------------------------------------------------
+.param
++ toxp_tn=tox_p_tn  vthop_tn=vtho_p_tn  lintp_tn=lint_p_tn  wintp_tn=wint_p_tn
++ toxp_tk=tox_p_tk  vthop_tk=vtho_p_tk  lintp_tk=lint_p_tk  wintp_tk=wint_p_tk
++ cgdop_tn=cgdo_p_tn     cgsop_tn=cgso_p_tn
++ cgdop_tk=cgdo_p_tk     cgsop_tk=cgso_p_tk
++ xlp_tn= xl_p_tn        xlp_tk= xl_p_tk
++ xwp_tn= xw_p_tn        xwp_tk= xw_p_tk
++ xjp_tn= xj_p_tn        xjp_tk= xj_p_tk
+*-----------------------------------------------------------------------------
+.endl PT
+*
+.lib NS
+*---------------------------------------------------------------------------
+.param
++ toxn_tn='tox_n_tn+4.0*sg_toxn_tn'      vthon_tn='vtho_n_tn+6.76*sg_vthon_tn'
++ lintn_tn='lint_n_tn-5.5*sg_lintn_tn'   wintn_tn='wint_n_tn+2.0*sg_wintn_tn'
++ toxn_tk='tox_n_tk+4.0*sg_toxn_tk'      vthon_tk='vtho_n_tk+4.64*sg_vthon_tk'
++ lintn_tk='lint_n_tk-5.45*sg_lintn_tk'  wintn_tk='wint_n_tk+1.5*sg_wintn_tk'
++ cgdon_tn='1.1*cgdo_n_tn'               cgson_tn='1.1*cgso_n_tn'
++ cgdon_tk='1.1*cgdo_n_tk'               cgson_tk='1.1*cgso_n_tk'
++ xln_tn= xl_n_tn                        xln_tk= xl_n_tk
++ xwn_tn= xw_n_tn                        xwn_tk= xw_n_tk
++ xjn_tn= xj_n_tn                        xjn_tk= xj_n_tk
+*---------------------------------------------------------------------------
+.endl NS
+*
+.lib PS
+*----------------------------------------------------------------------------
+.param
++ toxp_tn='tox_p_tn+4.0*sg_toxp_tn'      vthop_tn='vtho_p_tn+5.0*sg_vthop_tn'
++ lintp_tn='lint_p_tn-2.7*sg_lintp_tn'   wintp_tn='wint_p_tn+0.8*sg_wintp_tn'
++ toxp_tk='tox_p_tk+4.0*sg_toxp_tk'      vthop_tk='vtho_p_tk+6.0*sg_vthop_tk'
++ lintp_tk='lint_p_tk-3.3*sg_lintp_tk'   wintp_tk='wint_p_tk+0.55*sg_wintp_tk'
++ cgdop_tn='1.1*cgdo_p_tn'               cgsop_tn='1.1*cgso_p_tn'
++ cgdop_tk='1.1*cgdo_p_tk'               cgsop_tk='1.1*cgso_p_tk'
++ xlp_tn= xl_p_tn                        xlp_tk= xl_p_tk
++ xwp_tn= xw_p_tn                        xwp_tk= xw_p_tk
++ xjp_tn= xj_p_tn                        xjp_tk= xj_p_tk
+*----------------------------------------------------------------------------
+.endl PS
+*
+.lib NF
+*---------------------------------------------------------------------------
+.param
++ toxn_tn='tox_n_tn-4.0*sg_toxn_tn'      vthon_tn='vtho_n_tn-8.65*sg_vthon_tn'
++ lintn_tn='lint_n_tn+3.2*sg_lintn_tn'   wintn_tn='wint_n_tn-1.1*sg_wintn_tn'
++ toxn_tk='tox_n_tk-4.0*sg_toxn_tk'      vthon_tk='vtho_n_tk-4.5*sg_vthon_tk'
++ lintn_tk='lint_n_tk+3.75*sg_lintn_tk'  wintn_tk='wint_n_tk-1.5*sg_wintn_tk'
++ cgdon_tn='0.9*cgdo_n_tn'               cgson_tn='0.9*cgso_n_tn'
++ cgdon_tk='0.9*cgdo_n_tk'               cgson_tk='0.9*cgso_n_tk'
++ xln_tn= xl_n_tn                        xln_tk= xl_n_tk
++ xwn_tn= xw_n_tn                        xwn_tk= xw_n_tk
++ xjn_tn= xj_n_tn                        xjn_tk= xj_n_tk
+*---------------------------------------------------------------------------
+.endl NF
+*
+.lib PF
+*---------------------------------------------------------------------------
+.param
++ toxp_tn='tox_p_tn-4.0*sg_toxp_tn'      vthop_tn='vtho_p_tn-6.0*sg_vthop_tn'
++ lintp_tn='lint_p_tn+1.5*sg_lintp_tn'   wintp_tn='wint_p_tn-0.6*sg_wintp_tn'
++ toxp_tk='tox_p_tk-4.0*sg_toxp_tk'      vthop_tk='vtho_p_tk-6.0*sg_vthop_tk'
++ lintp_tk='lint_p_tk+2.4*sg_lintp_tk'   wintp_tk='wint_p_tk-0.4*sg_wintp_tk'
++ cgdop_tn='0.9*cgdo_p_tn'               cgsop_tn='0.9*cgso_p_tn'
++ cgdop_tk='0.9*cgdo_p_tk'               cgsop_tk='0.9*cgso_p_tk'
++ xlp_tn= xl_p_tn                        xlp_tk= xl_p_tk
++ xwp_tn= xw_p_tn                        xwp_tk= xw_p_tk
++ xjp_tn= xj_p_tn                        xjp_tk= xj_p_tk
+*----------------------------------------------------------------------------
+.endl PF
+*
+.lib NSF
+*---------------------------------------------------------------------------
+.param
++ toxn_tn=tox_n_tn                       vthon_tn='vtho_n_tn+6.76*sg_vthon_tn'
++ lintn_tn=lint_n_tn                     wintn_tn=wint_n_tn
++ toxn_tk=tox_n_tk                       vthon_tk='vtho_n_tk+1.64*sg_vthon_tk'
++ lintn_tk='lint_n_tk-3.75*sg_lintn_tk'  wintn_tk=wint_n_tk
++ cgdon_tn='1.1*cgdo_n_tn'               cgson_tn='1.1*cgso_n_tn'
++ cgdon_tk='1.1*cgdo_n_tk'               cgson_tk='1.1*cgso_n_tk'
++ xln_tn= xl_n_tn                        xln_tk= xl_n_tk
++ xwn_tn= xw_n_tn                        xwn_tk= xw_n_tk
++ xjn_tn= xj_n_tn                        xjn_tk= xj_n_tk
+*---------------------------------------------------------------------------
+.endl NSF
+*
+.lib PSF
+*---------------------------------------------------------------------------
+.param
++ toxp_tn=tox_p_tn                       vthop_tn='vtho_p_tn-6.0*sg_vthop_tn'
++ lintp_tn=lint_p_tn                     wintp_tn=wint_p_tn
++ toxp_tk=tox_p_tk                       vthop_tk='vtho_p_tk-6.0*sg_vthop_tk'
++ lintp_tk=lint_p_tk                     wintp_tk=wint_p_tk
++ cgdop_tn='0.9*cgdo_p_tn'               cgsop_tn='0.9*cgso_p_tn'
++ cgdop_tk='0.9*cgdo_p_tk'               cgsop_tk='0.9*cgso_p_tk'
++ xlp_tn= xl_p_tn                        xlp_tk= xl_p_tk
++ xwp_tn= xw_p_tn                        xwp_tk= xw_p_tk
++ xjp_tn= xj_p_tn                        xjp_tk= xj_p_tk
+*----------------------------------------------------------------------------
+.endl PSF
+*
+.lib NFS
+*---------------------------------------------------------------------------
+.param
++ toxn_tn=tox_n_tn                       vthon_tn='vtho_n_tn-8.65*sg_vthon_tn'
++ lintn_tn=lint_n_tn                     wintn_tn=wint_n_tn
++ toxn_tk=tox_n_tk                       vthon_tk='vtho_n_tk-1.6*sg_vthon_tk'
++ lintn_tk='lint_n_tk+2.99*sg_lintn_tk'  wintn_tk=wint_n_tk
++ cgdon_tn='0.9*cgdo_n_tn'               cgson_tn='0.9*cgso_n_tn'
++ cgdon_tk='0.9*cgdo_n_tk'               cgson_tk='0.9*cgso_n_tk'
++ xln_tn= xl_n_tn                        xln_tk= xl_n_tk
++ xwn_tn= xw_n_tn                        xwn_tk= xw_n_tk
++ xjn_tn= xj_n_tn                        xjn_tk= xj_n_tk
+*---------------------------------------------------------------------------
+.endl NFS
+*
+.lib PFS
+*---------------------------------------------------------------------------
+.param
++ toxp_tn=tox_p_tn                       vthop_tn='vtho_p_tn+5.0*sg_vthop_tn'
++ lintp_tn=lint_p_tn                     wintp_tn=wint_p_tn
++ toxp_tk=tox_p_tk                       vthop_tk='vtho_p_tk+6.0*sg_vthop_tk'
++ lintp_tk=lint_p_tk                     wintp_tk=wint_p_tk
++ cgdop_tn='1.1*cgdo_p_tn'               cgsop_tn='1.1*cgso_p_tn'
++ cgdop_tk='1.1*cgdo_p_tk'               cgsop_tk='1.1*cgso_p_tk'
++ xlp_tn= xl_p_tn                        xlp_tk= xl_p_tk
++ xwp_tn= xw_p_tn                        xwp_tk= xw_p_tk
++ xjp_tn= xj_p_tn                        xjp_tk= xj_p_tk
+*----------------------------------------------------------------------------
+.endl PFS
+*
+*==============================================================================*
+*
+.lib device
+*-------------------------------------------------------------------------------------------------------
+* 0.35um Logic Salicide Dual-gate Process with PLDD structure - Thin gate NMOS transistor without DNWell
+
+.subckt nmos_3p3 d g s b w=0 l=0
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
+m0 d g s b nmos_3p3 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+.model nmos_3p3 NMOS
++Level= 53
+*+lmin=3.5e-7 lmax=1.0e-5 wmin=4.0e-7 wmax=2.0e-5
++Tnom=25.0
++version =3.3  hspver=98.2  paramchk=1
+*+Tox= 7.69E-09
+*+Toxm= 7.69E-09
++Tox= toxn_tn
++Toxm= toxn_tn
++Xj= xjn_tn
++xl= xln_tn
++xw= xwn_tn
++Nch= 2.0857000E+17
++lln= 1.0000000
++lwn= 1.0000000
++wln= 1.0000000
++wwn= 0.2296553
+*+lint= 4.1240000E-08
++lint= lintn_tn
++ll= 7.4999990E-15
++lw= 0.00
++lwl= 3.5036500E-21
+*+wint= 6.3000000E-08
++wint= wintn_tn
++wl= 0.00
++ww= -4.7510910E-10
++wwl= 0.00
++Mobmod=  1
++binunit= 2
++Dwg= 3.9968030E-15
++Dwb= 9.0300000E-09
+* DIODE PARAMETERS
++ACM= 12
++ldif=0.00
++hdif=3.5e-7
++rd= 0
++rs= 0
++rsc= 0
++rdc= 0
++calcacm= 1
++rsh= 0
+*+Vth0= 0.6053000
++Vth0= vthon_tn
++K1= 0.6780000
++K2= 0.00
++K3= 8.2500000E-06
++Dvt0= 4.95 pDvt0=-4e-14
++Dvt1= 0.7868235
++Dvt2= -5.0000000E-02
++Dvt0w= 4.3137080E-17
++Dvt1w= 7.0232080E+05
++Dvt2w= -5.0000000E-02
++Nlx= 1.2477851E-07
++W0= 8.6645000E-06
++K3b= 21.0000000
++Ngate= 1.0000000E+23
++Vfb= -0.8771217
++Vsat= 1.0079E+05 wVsat= 2.2500001E-02
++Ua= -4.7621650E-10
++Ub= 2.5418619E-18 pUb= -1.8000001E-32
++Uc= 7.8748400E-11 pUc= -3.0000002E-24
++Rdsw= 1.1460000E+03 lRdsw= -2.3999999E-05 wRdsw= -1.9199999E-04 pRdsw= 1.0000002E-11
++Prwb= 2.9500000E-02
++Prwg= -3.2596290E-09
++Wr= 1.0000000
++U0= 4.1371720E-02
++A0= 1.1916870
++Keta= -1.1081000E-02 lKeta= 4.0000000E-09 pKeta= 1.6500001E-15
++A1= 0.00
++A2= 1.0000000
++Ags= 0.2550000 pAgs= -2.5000000E-14
++B0= 5.1200000E-08
++B1= 0.00
++Voff= -0.1338250
++NFactor= 0.8875200
++Cit= 0.00
++Cdsc= 6.4040180E-04
++Cdscb= 0.00
++Cdscd= 0.00
++Eta0= 9.5819440E-02 pEta0= -3.3600000E-15
++Etab= -3.8400000E-02 pEtab= 2.0000002E-15
++Dsub= 0.7796514
++Pclm= 1.0838157
++Pdiblc1= 3.3256570E-03
++Pdiblc2= 1.0673814E-03
++Pdiblcb= 0.00
++Drout= 9.5951120E-02
+*+Pscbe1= 6.0831020E+08
++Pscbe1= 8.5164E+08
++Pscbe2= 4.2862750E-05
++Pvag= 7.0746630E-02
++Delta= 2.1450121E-03
++Alpha0= 1.1000003E-06 pAlpha0= 1.5000000E-19
++Alpha1= 4.7757240 lAlpha1= -3.7000010E-07 pAlpha1= -8.2000000E-13
++Beta0= 22.4853550 lBeta0= 8.0000000E-08
++kt1= -0.2782500 lkt1= 1.2179998E-08
++kt2= -2.0000000E-02 lkt2= -1.0000000E-08
++At= 3.4000000E+04
++Ute= -1.7243394 wUte= 8.0000000E-08
++Ua1= -4.5460420E-13
++Ub1= 3.3460160E-21
++Uc1= -7.6289290E-12
++Kt1l= -2.2191699E-08
++Prt= 3.9055000E+02
++Cj= 1.023908E-03
++Mj= 0.3494655
++Pb= 0.7271543
++Cjsw= 2.26855E-10
++Mjsw= 0.2693402
++Pbsw= 0.9497247
++Tcj= 9.626137E-04
++Tcjsw= 7.622131E-04
++Tpb= 1.57771E-03
++Tpbsw= 2.341272E-03
++JS   =3.05E-07
++JSW  =1.40E-13
++Nj=0.9935
++Xti=3.0
++Cgdo=cgdon_tn
++Cgso=cgson_tn
++Cgbo=1.0E-13
++Capmod= 3
++NQSMOD= 0
++Elm= 5
++Xpart= 0
++cgsl= 2.2E-10
++cgdl= 2.2E-10
++ckappa= 0.6
++cf= 0.0
++clc= 1.0E-07
++cle= 0.6
++Dlc= 1.3E-09
++Dwc= 6.300E-08
++Vfbcv= -1
++Llc= 0
++Lwc= 0
++Wlc= 0
++Wwc= 0
++Lwlc= 0
++Wwlc= 0
++Acde= 0.5
++Moin= 15
++Noff= 1
++Voffcv= 0
++noimod= 2
++NoiA=8e+018
++NoiB=7000
++NoiC=1.4e-013
++Ef=0.99
++Em=41000000
+.ends nmos_3p3
+*-------------------------------------------------------------------------------------------------------
+* 0.35um Logic Salicide Dual-gate Process with PLDD structure - Thin gate PMOS transistor without DNWell
+.subckt pmos_3p3 d g s b w=0 l=0
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
+m0 d g s b pmos_3p3 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+
+.model pmos_3p3 PMOS
++Level= 53
+*+lmin=3.5e-7 lmax=1.0e-5 wmin=4.0e-7 wmax=2.0e-5
++Tnom=25.0
++version =3.3  hspver=98.2  paramchk=1
+*+Tox= 8.69E-09
+*+Toxm= 8.69E-09
++Tox= toxp_tn
++Toxm= toxp_tn
++Xj= xjp_tn $1.0000000E-07
++xl=xlp_tn
++xw=xwp_tn
++Nch= 6.9300000E+16
++lln= 1.0000000
++lwn= 0.9690366
++wln= 1.1131999
++wwn= 0.1000000
+*+lint= -2.5225001E-08
++lint= lintp_tn
++ll= 0.00
++lw= -3.5000000E-15
++lwl= 2.5025000E-20
+*+wint= 4.9900000E-08
++wint= wintp_tn
++wl= 5.4900000E-14
++ww= -3.7500000E-09
++wwl= -1.2000000E-14
++Mobmod=  1
++binunit= 2
++Dwg= -2.0000000E-08
++Dwb= 0.00 wDwb= 6.0000000E-15 pDwb= -5.0000000E-22
+* DIODE PARAMETERS
++ACM= 12
++ldif=0.00
++hdif=3.5e-7
++rd= 0
++rs= 0
++rsc= 0
++rdc= 0
++calcacm= 1
++rsh= 0
+*+Vth0= -0.8370000
++Vth0= vthop_tn
++K1= 0.4883000 lK1= 9.9999990E-10
++K2= -1.0000000E-04
++K3= 0.7100000
++Dvt0= 2.4753001
++Dvt1= 0.3918000
++Dvt2= 1.5000000E-02
++Dvt0w= -0.5864000
++Dvt1w= 5.7000000E+05
++Dvt2w= -5.0000000E-02
++Nlx= 1.9200000E-07
++W0= 0.00
++K3b= 0.2240000
++Ngate= 1.0000000E+23
++Vfb= -0.4029894
++Vsat= 2.3000000E+05 pVsat= 3.5000000E-09
++Ua= 3.1400000E-09
++Ub= 6.9500000E-19
++Uc= 1.0700000E-10
++Rdsw= 1.7900000E+03 lRdsw= -2.2000000E-04
++Prwb= 0.1194000
++Prwg= 0.00
++Wr= 0.9209000
++U0= 2.7700000E-02
++A0= 1.5649250
++Keta= -1.6677311E-02
++A1= 0.00
++A2= 0.2960000
++Ags= 0.3275000 lAgs= 1.5300000E-07
++B0= 5.1200000E-07
++B1= 6.5000000E-07
++Voff= -0.1239000
++NFactor= 1.0000000 pNFactor= -3.5000000E-14
++Cit= 3.6750000E-04
++Cdsc= 9.3120000E-04
++Cdscb= 2.8855001E-04
++Cdscd= 0.00
++Eta0= 7.9114790E-02 lEta0= 4.1000000E-08 pEta0= -1.3000000E-14
++Etab= 0.00
++Dsub= 0.7003863
++Pclm= 3.2580400
++Pdiblc1= 1.5564860E-02
++Pdiblc2= 2.6037599E-04
++Pdiblcb= -0.1487453
++Drout= 0.1666364
++Pscbe1= 5.8755800E+08
++Pscbe2= 1.0000000E-08
++Pvag= 3.6609710
++Delta= 1.0000000E-02
++Alpha0= 1.9999997E-09
++Alpha1= 0.2700000 wAlpha1= -6.0000000E-08
++Beta0= 28.7999990 lBeta0= -1.1000000E-06
++kt1= -0.5600000 pkt1= 1.9999920E-15
++kt2= -4.6000000E-02
++At= 1.3600000E+05 pAt= -2.0000002E-09
++Ute= -1.4900000 lUte= 1.0000000E-07 pUte= -1.0000000E-14
++Ua1= 2.5800000E-09 pUa1= -5.4955000E-23
++Ub1= -5.6795000E-18 lUb1= -9.0000000E-25 wUb1= 3.3200000E-25 pUb1= 1.2999999E-31
++Uc1= -5.4000000E-10 lUc1= 4.4994500E-17 wUc1= 1.1000000E-16 pUc1= -9.9100000E-24
++Kt1l= 0.00
++Prt= 0.00 wPrt= 4.5000000E-04 pPrt= -5.0000000E-11
++Cj= 1.22954E-03
++Mj= 0.4149161
++Pb= 0.8488845
++Cjsw= 3.63341E-10
++Mjsw= 0.2938261
++Pbsw= 0.6648861
++Tcj= 9.489684E-04
++Tcjsw= 7.016366E-04
++Tpb= 1.612079E-03
++Tpbsw= 1.115389E-03
++JS=2.18e-7
++JSW=1.00e-13
++Nj=1.0
++Xti=3.0
+*+Cgdo=1.05E-10
+*+Cgso=1.05E-10
++Cgdo=cgdop_tn
++Cgso=cgsop_tn
++Cgbo=1.0E-13
++Capmod= 3
++NQSMOD= 0
++Elm= 5
++Xpart= 0
++cgsl= 1.50000E-10
++cgdl= 1.50000E-10
++ckappa= 0.6000000
++cf= 0.00
++clc= 1.0000000E-07
++cle= 0.6000000
++Dlc= -5.999996E-09
++Dwc= 4.990E-08
++Vfbcv= -0.2912
++Llc= 0
++Lwc= 0
++Wlc= 0
++Wwc= 0
++Lwlc= 0
++Wwlc= 0
++Acde= 0.5
++Moin= 15
++Noff= 2
++Voffcv= -0.03
++noimod= 2
++NoiA=5e+018
++NoiB=20000
++NoiC=9e-014
++Ef=1
++Em=41000000
+.ends pmos_3p3
+*--------------------------------------------------------------------------------------------------------
+* 0.35um Logic Salicide Dual-gate Process with PLDD structure - Thick gate NMOS transistor without DNWell
+.subckt nmos_5p0 d g s b w=0 l=0
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
+m0 d g s b nmos_5p0 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+
+.model nmos_5p0 NMOS
++Level= 53
+*+lmin=5.0e-7 lmax=1.0e-5 wmin=4.0e-7 wmax=2.0e-5
++Tnom=25.0
++version =3.3  hspver=98.2  paramchk=1
+*+Tox= 1.21E-08
+*+Toxm= 1.21E-08
++Tox= toxn_tk
++Toxm= toxn_tk
++Xj= xjn_tk $1.0000000E-07
++xl=xln_tk
++xw=xwn_tk
++Nch= 1.6999999E+17
++lln= 1.0000000
++lwn= 1.0000000
++wln= 1.0000000
++wwn= 1.0000000
+*+lint= 7.3130000E-08
++lint= lintn_tk
++ll= 0.00
++lw= 1.0675428E-14
++lwl= 0.00
+*+wint= 1.0775000E-07
++wint= wintn_tk
++wl= -1.2360000E-14
++ww= -1.5000000E-14
++wwl= 0.00
++Mobmod=  1
++binunit= 2
++Dwg= -4.5460000E-09
++Dwb= 0.00
+* DIODE PARAMETERS
++ACM= 12
++ldif=0.00
++hdif=3.5e-7
++rd= 0
++rs= 0
++rsc= 0
++rdc= 0
++calcacm= 1
++rsh= 0
+*+Vth0= 0.6593010
++Vth0= vthon_tk
++K1= 0.8888025
++K2= 0.00
++K3= -2.4999999E-03
++Dvt0= 2.4217300
++Dvt1= 0.4416460
++Dvt2= 3.7745000E-02 lDvt2= -2.9999995E-08
++Dvt0w= 0.00
++Dvt1w= 0.00
++Dvt2w= 0.00
++Nlx= 1.7500000E-07
++W0= 2.4999999E-06
++K3b= -4.8000000
++Ngate= 1.0000000E+20
++Vfb= -1.0025127
++Vsat= 9.1300000E+04 wVsat= 6.7380000E-03
++Ua= 2.2687787E-11
++Ub= 2.2268000E-18
++Uc= 5.9000000E-11 lUc= -1.9992001E-17
++Rdsw= 1.6000000E+03 lRdsw= -5.3312000E-05 wRdsw= -2.4747499E-04 pRdsw= 1.9199999E-11
++Prwb= 0.00
++Prwg= -1.5000001E-02
++Wr= 1.0000000
++U0= 4.9000000E-02
++A0= 1.1520000
++Keta= -6.5000000E-03 lKeta= -2.5000000E-09 pketa=1.6E-15
++A1= 0.00
++A2= 1.0000000
++Ags= 0.1490800
++B0= 3.30000E-08
++B1= 0
++Voff= -8.4350000E-02
++NFactor= 1.1500000
++Cit= 0.00
++Cdsc= 0.00
++Cdscb= 9.1669960E-05
++Cdscd= 1.7400000E-04
++Eta0= 2.2400000E-08
++Etab= 0.00
++Dsub= 0.4700000
++Pclm= 1.1051079
++Pdiblc1= 0.1000000
++Pdiblc2= 0
++Pdiblcb= 0.00
++Drout= 0.6136480
++Pscbe1= 8.6315000E+08
++Pscbe2= 5.0000000E-05
++Pvag= 0.00
++Delta= 1.0000000E-02
++Alpha0= -7.4566500E-08
++Alpha1= 4.7000000
++Beta0= 29.0000000
++kt1= -0.4242900
++kt2= -2.9899999E-02
++At= 1.6191798E+04 lAt= 1.0000000E-03
++Ute= -1.8720000 lUte= 7.4000000E-08 wUte= 1.0000000E-07 pUte= -3.2500000E-14
++Ua1= 1.0500000E-09
++Ub1= -2.4100000E-18 wUb1= 2.0000003E-25
++Uc1= -5.9400000E-11
++Kt1l= 3.0000002E-08
++Prt= 1.0580000E+03 wPrt= -5.0000000E-05
++Cj= 0.00104
++Mj= 0.363
++Pb= 0.777
++Cjsw= 2.7E-10
++Mjsw= 0.25
++Pbsw= 0.716
++Tpb= 0.00171
++Tpbsw= 0.00174
++Tcj= 0.001
++Tcjsw= 0.000731
++JS   =3.39E-07
++JSW  =5.00e-14
++Nj=0.9075
++Xti=3.0
++Cgdo=cgdon_tk
++Cgso=cgson_tk
++Cgbo=1.0E-13
++Capmod= 3
++NQSMOD= 0
++Elm= 5
++Xpart= 0
++cgsl= 2.52E-10
++cgdl= 2.52E-10
++ckappa= 0.6
++cf= 0.00
++clc= 1.0E-07
++cle= 0.6
+*+Dlc= 8.02E-08
++Dlc= 2.52E-08
++Dwc= 1.0775000E-07
++Vfbcv= -1
++Llc= 0
++Lwc= 0
++Wlc= 0
++Wwc= 0
++Lwlc= 0
++Wwlc= 0
++Acde= 0.5
++Moin= 15
++Noff= 1
++Voffcv= 0
++noimod= 2
++NoiA=5.6234133E+19
++NoiB=2.7542287E+04
++NoiC=-1.0000000E-14
++Ef=1.0
++Em=4.1000000E+07
+.ends nmos_5p0
+*--------------------------------------------------------------------------------------------------------
+* 0.35um Logic Salicide Dual-gate Process with PLDD structure - Thick gate PMOS transistor without DNWell
+* LOT: 2XZV51048.1          WAF: 03
+*
+.subckt pmos_5p0 d g s b w=0 l=0
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
+m0 d g s b pmos_5p0 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+
+.model pmos_5p0 PMOS
++Level= 53
+*+lmin=5.0e-7 lmax=5.0e-7 wmin=1.0e-4 wmax=1.0e-4
++Tnom=25.0
++version =3.3  hspver=98.2  paramchk=1
+*+Tox= 1.33E-08
+*+Toxm= 1.33E-08
++Tox= toxp_tk
++Toxm= toxp_tk
++Xj= xjp_tk $1.0000000E-07
++xl=xlp_tk
++xw=xwp_tk
++Nch= 5.2639000E+16
++lln= 1.0000000
++lwn= 0.9350000
++wln= 1.0000000
++wwn= 0.3975000
+*+lint= -2.0000000E-08
++lint= lintp_tk
++ll= 4.000000E-15
++lw= -6.3400000E-33
++lwl= 2.7600000E-21
+*+wint= 7.9900000E-08
++wint= wintp_tk
++wl= -8.5800000E-15
++ww= -7.3100000E-11
++wwl= 0.00
++Mobmod=  1
++binunit= 2
++Dwg= -1.1410000E-08
++Dwb= 6.9502000E-09
++ACM= 12
++ldif=0.00
++hdif=3.5e-7
++rd= 0
++rs= 0
++rsc= 0
++rdc= 0
++calcacm= 1
++rsh= 0
+*+Vth0= -0.8122500
++Vth0= vthop_tk
++K1= 0.7000000
++K2= -9.6749990E-04
++K3= -6.000
++Dvt0= 9.4300000 lDvt0= 1.1175870E-08
++Dvt1= 1.2625000
++Dvt2= 2.0000000E-02
++Dvt0w= -0.1707747
++Dvt1w= 1.0000000E+06
++Dvt2w= 1.0000000E-20
++Nlx= 5.9633500E-09
++W0= 3.5200000E-06
++K3b= -5.8000000
++Ngate= 1.0000000E+23
++Vfb= -0.5724223
++Vsat= 1.1400000E+05 pVsat= -2.00E-09
++Ua= 2.8280001E-09
++Ub= 5.2650000E-19
++Uc= -4.5100000E-11
++Rdsw= 2.1546001E+03 wRdsw= -3.4000000E-04
++Prwb= -4.9999990E-02 lPrwb= 4.0600000E-08
++Prwg= 0.00
++Wr= 1.0184190
++U0= 2.3850000E-02
++A0= 0.9220000
++Keta= 7.6000020E-03 lKeta= -7.3500010E-09 wKeta= 3.1255001E-09
++A1= 0.00
++A2= 1.0000000
++Ags= 0.1507200 wAgs= -4.1050000E-08
++B0= 0.00
++B1= 0.00
++Voff= -0.1961950
++NFactor= 1.000000
++Cit= -1.0000000E-04
++Cdsc= 1.2000001E-03
++Cdscb= 0.00
++Cdscd= 1.0000000E-04
++Eta0= 0.1040810
++Etab= -6.2750000E-03
++Dsub= 0.6504101
++Pclm= 2.8090270
++Pdiblc1= 2.5000000E-07
++Pdiblc2= 3.3727400E-03
++Pdiblcb= -1.0000000E-03
++Drout= 1.1109270
++Pscbe1= 5.5825000E+08
++Pscbe2= 5.8000000E-08
++Pvag= 0.6244011
++Delta= 1.0000000E-02
++Alpha0= 7.35E-07
++Alpha1= 1.905
++Beta0= 34.2638
++kt1= -0.5250000 lkt1= -3.3975000E-08
++kt2= -4.8900000E-02
++At= -7.0300000E+04
++Ute= -1.4105000 wUte= 2.9999999E-08
++Ua1= 6.4250000E-10
++Ub1= -3.0240001E-18
++Uc1= -9.0720000E-11
++Kt1l= 0.00
++Prt= 0.00
++Cj= 0.00126
++Mj= 0.425
++Pb= 0.86
++Cjsw= 2.83E-10
++Mjsw= 0.254
++Pbsw= 0.6
++Tcj= 0.000956
++Tcjsw= 0.000612
++Tpb= 0.00159
++Tpbsw= 0.00102
++JS=1.69E-07
++JSW=9.5e-14
++N=1.0
++Xti=3.0
+*+Cgdo=1.0504E-10
+*+Cgso=1.0504E-10
++Cgdo=cgdop_tk
++Cgso=cgsop_tk
++Cgbo=1.0E-13
++Capmod= 3
++NQSMOD= 0
++Elm= 5
++Xpart= 0
++cgsl= 1.1940000E-10
++cgdl= 1.1940000E-10
++ckappa= 0.3000000
++cf= 0.00
++clc= 1.0000000E-07
++cle= 0.6000000
++Dlc= 3.499935E-08
++Dwc= 7.99E-08
++Vfbcv= -0.4337252
++Llc= 0
++Lwc= 0
++Wlc= 0
++Wwc= 0
++Lwlc= 0
++Wwlc= 0
++Acde= 0.5
++Moin= 15
++Noff= 3
++Voffcv= 0
++noimod= 2
++NoiA=1.9952623E+19
++NoiB=1.8197009E+04
++NoiC=3.5444000E-14
++Ef=1.0
++Em=4.1000000E+07
+.ends pmos_5p0
+*--------------------------------------------------------------------------------------------------------
+* Paper Model: 0.35um Logic with SAB Drain/Source sides - Thick gate 5V NMOS transistor
+
+.subckt nmos_5p0_esd_ds (d g s b) w=1u l=1u ldop=0.2u lsop=0.2u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
+ xnmos_5p0 de g se b nmos_5p0 w='w' l='l' as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+ xrdop de d nplus_u_m wr='w' lr='ldop' dtemp=dtemp
+ xrsop se s nplus_u_m wr='w' lr='lsop' dtemp=dtemp
+
+.subckt nplus_u_m  1 2 r_length=lr r_width=wr dtemp=0
+*****************************************************************************
+* N+ diffusion unsalicided resistor
+*****************************************************************************
+.param r_rsh0= 100
+.param r_dw= -3.81e-8
+.param r_dl= 3.59e-8
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_tnom='25+dtemp'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1=1.78e-3
+.param r_tc2=5.88e-7
+.param r_area = 'r_length * r_width'
+.param r_peri = '2*(r_length + r_width)'
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+.param r_af=1.79
+.param r_kf=6.3542e-24
+*/ model for body resistor
+.model nplus_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ body
+rbody_r 1 2 nplus_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(2,1))/r_n+r_vc2*abs(v(2,1))*abs(v(2,1))/r_n/r_n)'
+.ends
+.ends
+*--------------------------------------------------------------------------------------------------------
+* Paper Model: 0.35um Logic with SAB Drain/Source sides - Thick gate PMOS transistor
+
+.subckt pmos_5p0_esd_ds (d g s b) w=1u l=1u ldop=0.2u lsop=0.2u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
+ xpmos_5p0 de g se b pmos_5p0 w='w' l='l' as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+ xrdop de d pplus_u_m wr='w' lr='ldop' dtemp=dtemp
+ xrsop se s pplus_u_m wr='w' lr='lsop' dtemp=dtemp
+
+.subckt pplus_u_m  1 2 r_length=lr r_width=wr dtemp=0
+*****************************************************************************
+* P+ diffusion unsalicided resistor
+*****************************************************************************
+.param r_rsh0= 210
+.param r_dw= -8.3e-8
+.param r_dl= 2.17e-8
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1= 1.22e-3
+.param r_tc2= 1.55e-6
+.param r_tnom='25+dtemp'
+.param r_area = 'r_length * r_width'
+.param r_peri = '2*(r_length + r_width)'
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+.param r_af=1.9751
+.param r_kf=2.4522e-22
+*/ model for body resistor
+.model pplus_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ body
+rbody_r 1 2 pplus_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(2,1))/r_n+r_vc2*abs(v(2,1))*abs(v(2,1))/r_n/r_n)'
+.ends
+.ends
+*--------------------------------------------------------------------------------------------------------
+* Paper Model: 0.35um Logic with SAB Drain side ONLY - Thick gate 5V NMOS transistor
+
+.subckt nmos_5p0_esd_ss (d g s b) w=1u l=1u ldop=0.2u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
+ xnmos_5p0 de g s b nmos_5p0 w='w' l='l' as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+ xrdop de d nplus_u_m wr='w' lr='ldop' dtemp=dtemp
+
+.subckt nplus_u_m  1 2 r_length=lr r_width=wr dtemp=0
+*****************************************************************************
+* N+ diffusion unsalicided resistor
+*****************************************************************************
+.param r_rsh0= 100
+.param r_dw= -3.81e-8
+.param r_dl= 3.59e-8
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_tnom='25+dtemp'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1=1.78e-3
+.param r_tc2=5.88e-7
+.param r_area = 'r_length * r_width'
+.param r_peri = '2*(r_length + r_width)'
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+.param r_af=1.79
+.param r_kf=6.3542e-24
+*/ model for body resistor
+.model nplus_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ body
+rbody_r 1 2 nplus_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(2,1))/r_n+r_vc2*abs(v(2,1))*abs(v(2,1))/r_n/r_n)'
+.ends
+.ends
+*--------------------------------------------------------------------------------------------------------
+* Paper Model: 0.35um Logic with SAB Drain side ONLY - Thick gate PMOS transistor
+
+.subckt pmos_5p0_esd_ss (d g s b) w=1u l=1u ldop=0.2u as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
+ xpmos_5p0 de g s b pmos_5p0 w='w' l='l' as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+ xrdop de d pplus_u_m wr='w' lr='ldop' dtemp=dtemp
+
+.subckt pplus_u_m  1 2 r_length=lr r_width=wr dtemp=0
+*****************************************************************************
+* P+ diffusion unsalicided resistor
+*****************************************************************************
+.param r_rsh0= 210
+.param r_dw= -8.3e-8
+.param r_dl= 2.17e-8
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1= 1.22e-3
+.param r_tc2= 1.55e-6
+.param r_tnom='25+dtemp'
+.param r_area = 'r_length * r_width'
+.param r_peri = '2*(r_length + r_width)'
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+.param r_af=1.9751
+.param r_kf=2.4522e-22
+*/ model for body resistor
+.model pplus_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ body
+rbody_r 1 2 pplus_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(2,1))/r_n+r_vc2*abs(v(2,1))*abs(v(2,1))/r_n/r_n)'
+.ends
+.ends
+**============================================================================**
+.ENDL device
+*
+.lib device_stat
+*--------------------------------------------------------------------------------------------------------
+* 0.35um Logic Salicide Dual-gate Process with PLDD structure - Thin gate NMOS transistor without DNWell
+.subckt nmos_3p3 d g s b w=0 l=0
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
++ par_vth_tnn=0.0121
++ par_k_tnn= 0.0136
++ par_l_tnn= 0
++ par_w_tnn= 0
++ par_leff_tnn = 'l - par_l_tnn'
++ par_weff_tnn = 'par*(w - par_w_tnn)'
++ p_sqrtarea_tnn = 'sqrt((par_leff_tnn)*(par_weff_tnn))'
++ var_k_tnn= '0.7071 * par_k_tnn* 1e-06 / p_sqrtarea_tnn'
++ var_vth_tnn='0.7071*par_vth_tnn* 1e-06 / p_sqrtarea_tnn'
+
++ mis_k_tnn = agauss (0, var_k_tnn, 1)
++ mis_vth_tnn = agauss (0, var_vth_tnn, 1)
++ std_u0n_tn='1-mis_k_tnn*sw_stat_mismatch'
++ mis_vthon_tn='mis_vth_tnn*sw_stat_mismatch'
+
+m0 d g s b nmos_3p3 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+
+.model nmos_3p3 NMOS
++Level= 53
+*+lmin=3.5e-7 lmax=1.0e-5 wmin=4.0e-7 wmax=2.0e-5
++Tnom=25.0
++version =3.3  hspver=98.2  paramchk=1
+*+Tox= 7.69E-09
+*+Toxm= 7.69E-09
++Tox= toxn_tn
++Toxm= toxn_tn
++Xj= xjn_tn
++xl= xln_tn
++xw= xwn_tn
++Nch= 2.0857000E+17
++lln= 1.0000000
++lwn= 1.0000000
++wln= 1.0000000
++wwn= 0.2296553
+*+lint= 4.1240000E-08
++lint= lintn_tn
++ll= 7.4999990E-15
++lw= 0.00
++lwl= 3.5036500E-21
+*+wint= 6.3000000E-08
++wint= wintn_tn
++wl= 0.00
++ww= -4.7510910E-10
++wwl= 0.00
++Mobmod=  1
++binunit= 2
++Dwg= 3.9968030E-15
++Dwb= 9.0300000E-09
++ACM= 12
++ldif=0.00
++hdif=3.5e-7
++rd= 0
++rs= 0
++rsc= 0
++rdc= 0
++calcacm= 1
++rsh= 0
+*+Vth0= 0.6053000
++Vth0= 'vthon_tn+mis_vthon_tn'
++K1= 0.6780000
++K2= 0.00
++K3= 8.2500000E-06
++Dvt0= 4.95 pDvt0=-4e-14
++Dvt1= 0.7868235
++Dvt2= -5.0000000E-02
++Dvt0w= 4.3137080E-17
++Dvt1w= 7.0232080E+05
++Dvt2w= -5.0000000E-02
++Nlx= 1.2477851E-07
++W0= 8.6645000E-06
++K3b= 21.0000000
++Ngate= 1.0000000E+23
++Vfb= -0.8771217
++Vsat= 1.0079E+05 wVsat= 2.2500001E-02
++Ua= -4.7621650E-10
++Ub= 2.5418619E-18 pUb= -1.8000001E-32
++Uc= 7.8748400E-11 pUc= -3.0000002E-24
++Rdsw= 1.1460000E+03 lRdsw= -2.3999999E-05 wRdsw= -1.9199999E-04 pRdsw= 1.0000002E-11
++Prwb= 2.9500000E-02
++Prwg= -3.2596290E-09
++Wr= 1.0000000
++U0= '4.1371720E-02*std_u0n_tn'
++A0= 1.1916870
++Keta= -1.1081000E-02 lKeta= 4.0000000E-09 pKeta= 1.6500001E-15
++A1= 0.00
++A2= 1.0000000
++Ags= 0.2550000 pAgs= -2.5000000E-14
++B0= 5.1200000E-08
++B1= 0.00
++Voff= -0.1338250
++NFactor= 0.8875200
++Cit= 0.00
++Cdsc= 6.4040180E-04
++Cdscb= 0.00
++Cdscd= 0.00
++Eta0= 9.5819440E-02 pEta0= -3.3600000E-15
++Etab= -3.8400000E-02 pEtab= 2.0000002E-15
++Dsub= 0.7796514
++Pclm= 1.0838157
++Pdiblc1= 3.3256570E-03
++Pdiblc2= 1.0673814E-03
++Pdiblcb= 0.00
++Drout= 9.5951120E-02
+*+Pscbe1= 6.0831020E+08
++Pscbe1= 8.5164E+08
++Pscbe2= 4.2862750E-05
++Pvag= 7.0746630E-02
++Delta= 2.1450121E-03
++Alpha0= 1.1000003E-06 pAlpha0= 1.5000000E-19
++Alpha1= 4.7757240 lAlpha1= -3.7000010E-07 pAlpha1= -8.2000000E-13
++Beta0= 22.4853550 lBeta0= 8.0000000E-08
++kt1= -0.2782500 lkt1= 1.2179998E-08
++kt2= -2.0000000E-02 lkt2= -1.0000000E-08
++At= 3.4000000E+04
++Ute= -1.7243394 wUte= 8.0000000E-08
++Ua1= -4.5460420E-13
++Ub1= 3.3460160E-21
++Uc1= -7.6289290E-12
++Kt1l= -2.2191699E-08
++Prt= 3.9055000E+02
++Cj= 1.023908E-03
++Mj= 0.3494655
++Pb= 0.7271543
++Cjsw= 2.26855E-10
++Mjsw= 0.2693402
++Pbsw= 0.9497247
++Tcj= 9.626137E-04
++Tcjsw= 7.622131E-04
++Tpb= 1.57771E-03
++Tpbsw= 2.341272E-03
++JS   =3.05E-07
++JSW  =1.40E-13
++Nj=0.9935
++Xti=3.0
++Cgdo=cgdon_tn
++Cgso=cgson_tn
++Cgbo=1.0E-13
++Capmod= 3
++NQSMOD= 0
++Elm= 5
++Xpart= 0
++cgsl= 2.2E-10
++cgdl= 2.2E-10
++ckappa= 0.6
++cf= 0.0
++clc= 1.0E-07
++cle= 0.6
++Dlc= 1.3E-09
++Dwc= 6.300E-08
++Vfbcv= -1
++Llc= 0
++Lwc= 0
++Wlc= 0
++Wwc= 0
++Lwlc= 0
++Wwlc= 0
++Acde= 0.5
++Moin= 15
++Noff= 1
++Voffcv= 0
++noimod= 2
++NoiA=8e+018
++NoiB=7000
++NoiC=1.4e-013
++Ef=0.99
++Em=41000000
+.ends nmos_3p3
+*--------------------------------------------------------------------------------------------------------
+* 0.35um Logic Salicide Dual-gate Process with PLDD structure - Thin gate PMOS transistor without DNWell
+.subckt pmos_3p3 d g s b w=0 l=0
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
++ par_vth_tnp=0.014
++ par_k_tnp= 0
++ par_l_tnp= 0
++ par_w_tnp= 0
++ par_leff_tnp = 'l - par_l_tnp'
++ par_weff_tnp = 'par*(w - par_w_tnp)'
++ p_sqrtarea_tnp = 'sqrt((par_leff_tnp)*(par_weff_tnp))'
++ var_k_tnp= '0.7071 * par_k_tnp* 1e-06 / p_sqrtarea_tnp'
++ var_vth_tnp='0.7071*par_vth_tnp* 1e-06 / p_sqrtarea_tnp'
+
++ mis_k_tnp = agauss (0, var_k_tnp, 1)
++ mis_vth_tnp= agauss (0, var_vth_tnp, 1)
++ std_u0p_tn='1-mis_k_tnp*sw_stat_mismatch'
++ mis_vthop_tn='mis_vth_tnp*sw_stat_mismatch'
+
+m0 d g s b pmos_3p3 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+
+.model pmos_3p3 PMOS
++Level= 53
+*+lmin=3.5e-7 lmax=1.0e-5 wmin=4.0e-7 wmax=2.0e-5
++Tnom=25.0
++version =3.3  hspver=98.2  paramchk=1
+*+Tox= 8.69E-09
+*+Toxm= 8.69E-09
++Tox= toxp_tn
++Toxm= toxp_tn
++Xj= xjp_tn $1.0000000E-07
++xl=xlp_tn
++xw=xwp_tn
++Nch= 6.9300000E+16
++lln= 1.0000000
++lwn= 0.9690366
++wln= 1.1131999
++wwn= 0.1000000
+*+lint= -2.5225001E-08
++lint= lintp_tn
++ll= 0.00
++lw= -3.5000000E-15
++lwl= 2.5025000E-20
+*+wint= 4.9900000E-08
++wint= wintp_tn
++wl= 5.4900000E-14
++ww= -3.7500000E-09
++wwl= -1.2000000E-14
++Mobmod=  1
++binunit= 2
++Dwg= -2.0000000E-08
++Dwb= 0.00 wDwb= 6.0000000E-15 pDwb= -5.0000000E-22
++ACM= 12
++ldif=0.00
++hdif=3.5e-7
++rd= 0
++rs= 0
++rsc= 0
++rdc= 0
++calcacm= 1
++rsh= 0
+*+Vth0= -0.8370000
++Vth0= 'vthop_tn+mis_vthop_tn'
++K1= 0.4883000 lK1= 9.9999990E-10
++K2= -1.0000000E-04
++K3= 0.7100000
++Dvt0= 2.4753001
++Dvt1= 0.3918000
++Dvt2= 1.5000000E-02
++Dvt0w= -0.5864000
++Dvt1w= 5.7000000E+05
++Dvt2w= -5.0000000E-02
++Nlx= 1.9200000E-07
++W0= 0.00
++K3b= 0.2240000
++Ngate= 1.0000000E+23
++Vfb= -0.4029894
++Vsat= 2.3000000E+05 pVsat= 3.5000000E-09
++Ua= 3.1400000E-09
++Ub= 6.9500000E-19
++Uc= 1.0700000E-10
++Rdsw= 1.7900000E+03 lRdsw= -2.2000000E-04
++Prwb= 0.1194000
++Prwg= 0.00
++Wr= 0.9209000
++U0= '2.7700000E-02*std_u0p_tn'
++A0= 1.5649250
++Keta= -1.6677311E-02
++A1= 0.00
++A2= 0.2960000
++Ags= 0.3275000 lAgs= 1.5300000E-07
++B0= 5.1200000E-07
++B1= 6.5000000E-07
++Voff= -0.1239000
++NFactor= 1.0000000 pNFactor= -3.5000000E-14
++Cit= 3.6750000E-04
++Cdsc= 9.3120000E-04
++Cdscb= 2.8855001E-04
++Cdscd= 0.00
++Eta0= 7.9114790E-02 lEta0= 4.1000000E-08 pEta0= -1.3000000E-14
++Etab= 0.00
++Dsub= 0.7003863
++Pclm= 3.2580400
++Pdiblc1= 1.5564860E-02
++Pdiblc2= 2.6037599E-04
++Pdiblcb= -0.1487453
++Drout= 0.1666364
++Pscbe1= 5.8755800E+08
++Pscbe2= 1.0000000E-08
++Pvag= 3.6609710
++Delta= 1.0000000E-02
++Alpha0= 1.9999997E-09
++Alpha1= 0.2700000 wAlpha1= -6.0000000E-08
++Beta0= 28.7999990 lBeta0= -1.1000000E-06
++kt1= -0.5600000 pkt1= 1.9999920E-15
++kt2= -4.6000000E-02
++At= 1.3600000E+05 pAt= -2.0000002E-09
++Ute= -1.4900000 lUte= 1.0000000E-07 pUte= -1.0000000E-14
++Ua1= 2.5800000E-09 pUa1= -5.4955000E-23
++Ub1= -5.6795000E-18 lUb1= -9.0000000E-25 wUb1= 3.3200000E-25 pUb1= 1.2999999E-31
++Uc1= -5.4000000E-10 lUc1= 4.4994500E-17 wUc1= 1.1000000E-16 pUc1= -9.9100000E-24
++Kt1l= 0.00
++Prt= 0.00 wPrt= 4.5000000E-04 pPrt= -5.0000000E-11
++Cj= 1.22954E-03
++Mj= 0.4149161
++Pb= 0.8488845
++Cjsw= 3.63341E-10
++Mjsw= 0.2938261
++Pbsw= 0.6648861
++Tcj= 9.489684E-04
++Tcjsw= 7.016366E-04
++Tpb= 1.612079E-03
++Tpbsw= 1.115389E-03
++JS=2.18e-7
++JSW=1.00e-13
++Nj=1.0
++Xti=3.0
+*+Cgdo=1.05E-10
+*+Cgso=1.05E-10
++Cgdo=cgdop_tn
++Cgso=cgsop_tn
++Cgbo=1.0E-13
++Capmod= 3
++NQSMOD= 0
++Elm= 5
++Xpart= 0
++cgsl= 1.50000E-10
++cgdl= 1.50000E-10
++ckappa= 0.6000000
++cf= 0.00
++clc= 1.0000000E-07
++cle= 0.6000000
++Dlc= -5.999996E-09
++Dwc= 4.990E-08
++Vfbcv= -0.2912
++Llc= 0
++Lwc= 0
++Wlc= 0
++Wwc= 0
++Lwlc= 0
++Wwlc= 0
++Acde= 0.5
++Moin= 15
++Noff= 2
++Voffcv= -0.03
++noimod= 2
++NoiA=5e+018
++NoiB=20000
++NoiC=9e-014
++Ef=1
++Em=41000000
+.ends pmos_3p3
+*--------------------------------------------------------------------------------------------------------
+* 0.35um Logic Salicide Dual-gate Process with PLDD structure - Thick gate NMOS transistor without DNWell
+.subckt nmos_5p0 d g s b w=0 l=0
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
++ par_vth_tkn=0.0149
++ par_k_tkn= 0.0155
++ par_l_tkn= 0
++ par_w_tkn= 0
++ par_leff_tkn = 'l - par_l_tkn'
++ par_weff_tkn = 'par*(w - par_w_tkn)'
++ p_sqrtarea_tkn = 'sqrt((par_leff_tkn)*(par_weff_tkn))'
++ var_k_tkn= '0.7071 * par_k_tkn* 1e-06 / p_sqrtarea_tkn'
++ var_vth_tkn='0.7071*par_vth_tkn* 1e-06 / p_sqrtarea_tkn'
+
++ mis_k_tkn = agauss (0, var_k_tkn, 1)
++ mis_vth_tkn = agauss (0, var_vth_tkn, 1)
++ std_u0n_tk='1-mis_k_tkn*sw_stat_mismatch'
++ mis_vthon_tk='mis_vth_tkn*sw_stat_mismatch'
+
+m0 d g s b nmos_5p0 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+
+.model nmos_5p0 NMOS
++Level= 53
+*+lmin=5.0e-7 lmax=1.0e-5 wmin=4.0e-7 wmax=2.0e-5
++Tnom=25.0
++version =3.3  hspver=98.2  paramchk=1
+*+Tox= 1.21E-08
+*+Toxm= 1.21E-08
++Tox= toxn_tk
++Toxm= toxn_tk
++Xj= xjn_tk $1.0000000E-07
++xl=xln_tk
++xw=xwn_tk
++Nch= 1.6999999E+17
++lln= 1.0000000
++lwn= 1.0000000
++wln= 1.0000000
++wwn= 1.0000000
+*+lint= 7.3130000E-08
++lint= lintn_tk
++ll= 0.00
++lw= 1.0675428E-14
++lwl= 0.00
+*+wint= 1.0775000E-07
++wint= wintn_tk
++wl= -1.2360000E-14
++ww= -1.5000000E-14
++wwl= 0.00
++Mobmod=  1
++binunit= 2
++Dwg= -4.5460000E-09
++Dwb= 0.00
++ACM= 12
++ldif=0.00
++hdif=3.5e-7
++rd= 0
++rs= 0
++rsc= 0
++rdc= 0
++calcacm= 1
++rsh= 0
+*+Vth0= 0.6593010
++Vth0= 'vthon_tk+mis_vthon_tk'
++K1= 0.8888025
++K2= 0.00
++K3= -2.4999999E-03
++Dvt0= 2.4217300
++Dvt1= 0.4416460
++Dvt2= 3.7745000E-02 lDvt2= -2.9999995E-08
++Dvt0w= 0.00
++Dvt1w= 0.00
++Dvt2w= 0.00
++Nlx= 1.7500000E-07
++W0= 2.4999999E-06
++K3b= -4.8000000
++Ngate= 1.0000000E+20
++Vfb= -1.0025127
++Vsat= 9.1300000E+04 wVsat= 6.7380000E-03
++Ua= 2.2687787E-11
++Ub= 2.2268000E-18
++Uc= 5.9000000E-11 lUc= -1.9992001E-17
++Rdsw= 1.6000000E+03 lRdsw= -5.3312000E-05 wRdsw= -2.4747499E-04 pRdsw= 1.9199999E-11
++Prwb= 0.00
++Prwg= -1.5000001E-02
++Wr= 1.0000000
++U0= '4.9000000E-02*std_u0n_tk'
++A0= 1.1520000
++Keta= -6.5000000E-03 lKeta= -2.5000000E-09 pketa=1.6E-15
++A1= 0.00
++A2= 1.0000000
++Ags= 0.1490800
++B0= 3.30000E-08
++B1= 0
++Voff= -8.4350000E-02
++NFactor= 1.1500000
++Cit= 0.00
++Cdsc= 0.00
++Cdscb= 9.1669960E-05
++Cdscd= 1.7400000E-04
++Eta0= 2.2400000E-08
++Etab= 0.00
++Dsub= 0.4700000
++Pclm= 1.1051079
++Pdiblc1= 0.1000000
++Pdiblc2= 0
++Pdiblcb= 0.00
++Drout= 0.6136480
++Pscbe1= 8.6315000E+08
++Pscbe2= 5.0000000E-05
++Pvag= 0.00
++Delta= 1.0000000E-02
++Alpha0= -7.4566500E-08
++Alpha1= 4.7000000
++Beta0= 29.0000000
++kt1= -0.4242900
++kt2= -2.9899999E-02
++At= 1.6191798E+04 lAt= 1.0000000E-03
++Ute= -1.8720000 lUte= 7.4000000E-08 wUte= 1.0000000E-07 pUte= -3.2500000E-14
++Ua1= 1.0500000E-09
++Ub1= -2.4100000E-18 wUb1= 2.0000003E-25
++Uc1= -5.9400000E-11
++Kt1l= 3.0000002E-08
++Prt= 1.0580000E+03 wPrt= -5.0000000E-05
++Cj= 0.00104
++Mj= 0.363
++Pb= 0.777
++Cjsw= 2.7E-10
++Mjsw= 0.25
++Pbsw= 0.716
++Tpb= 0.00171
++Tpbsw= 0.00174
++Tcj= 0.001
++Tcjsw= 0.000731
++JS   =3.39E-07
++JSW  =5.00e-14
++Nj=0.9075
++Xti=3.0
++Cgdo=cgdon_tk
++Cgso=cgson_tk
++Cgbo=1.0E-13
++Capmod= 3
++NQSMOD= 0
++Elm= 5
++Xpart= 0
++cgsl= 2.52E-10
++cgdl= 2.52E-10
++ckappa= 0.6
++cf= 0.00
++clc= 1.0E-07
++cle= 0.6
+*+Dlc= 8.02E-08
++Dlc= 2.52E-08
++Dwc= 1.0775000E-07
++Vfbcv= -1
++Llc= 0
++Lwc= 0
++Wlc= 0
++Wwc= 0
++Lwlc= 0
++Wwlc= 0
++Acde= 0.5
++Moin= 15
++Noff= 1
++Voffcv= 0
++noimod= 2
++NoiA=5.6234133E+19
++NoiB=2.7542287E+04
++NoiC=-1.0000000E-14
++Ef=1.0
++Em=4.1000000E+07
+.ends nmos_5p0
+*--------------------------------------------------------------------------------------------------------
+* 0.35um Logic Salicide Dual-gate Process with PLDD structure - Thick gate PMOS transistor without DNWell
+* LOT: 2XZV51048.1          WAF: 03
+*
+.subckt pmos_5p0 d g s b w=0 l=0
++ as=0 ad=0 ps=0 pd=0 nrd=0 nrs=0 par=1 dtemp=0
+
++ par_vth_tkp=0.0153
++ par_k_tkp= 0.000
++ par_l_tkp= -4.3e-8
++ par_w_tkp= 0
++ par_leff_tkp = 'l - par_l_tkp'
++ par_weff_tkp = 'par*(w - par_w_tkp)'
++ p_sqrtarea_tkp = 'sqrt((par_leff_tkp)*(par_weff_tkp))'
++ var_k_tkp= '0.7071 * par_k_tkp* 1e-06 / p_sqrtarea_tkp'
++ var_vth_tkp='0.7071*par_vth_tkp* 1e-06 / p_sqrtarea_tkp'
+
++ mis_k_tkp = agauss (0, var_k_tkp, 1)
++ mis_vth_tkp= agauss (0, var_vth_tkp, 1)
++ std_u0p_tk='1-mis_k_tkp*sw_stat_mismatch'
++ mis_vthop_tk='mis_vth_tkp*sw_stat_mismatch'
+
+m0 d g s b pmos_5p0 w=w l=l as=as ad=ad ps=ps pd=pd nrd=nrd nrs=nrs dtemp=dtemp
+
+.model pmos_5p0 PMOS
++Level= 53
+*+lmin=5.0e-7 lmax=5.0e-7 wmin=1.0e-4 wmax=1.0e-4
++Tnom=25.0
++version =3.3  hspver=98.2  paramchk=1
+*+Tox= 1.33E-08
+*+Toxm= 1.33E-08
++Tox= toxp_tk
++Toxm= toxp_tk
++Xj= xjp_tk $1.0000000E-07
++xl=xlp_tk
++xw=xwp_tk
++Nch= 5.2639000E+16
++lln= 1.0000000
++lwn= 0.9350000
++wln= 1.0000000
++wwn= 0.3975000
+*+lint= -2.0000000E-08
++lint= lintp_tk
++ll= 4.000000E-15
++lw= -6.3400000E-33
++lwl= 2.7600000E-21
+*+wint= 7.9900000E-08
++wint= wintp_tk
++wl= -8.5800000E-15
++ww= -7.3100000E-11
++wwl= 0.00
++Mobmod=  1
++binunit= 2
++Dwg= -1.1410000E-08
++Dwb= 6.9502000E-09
++ACM= 12
++ldif=0.00
++hdif=3.5e-7
++rd= 0
++rs= 0
++rsc= 0
++rdc= 0
++calcacm= 1
++rsh= 0
+*+Vth0= -0.8122500
++Vth0= 'vthop_tk+mis_vthop_tk'
++K1= 0.7000000
++K2= -9.6749990E-04
++K3= -6.000
++Dvt0= 9.4300000 lDvt0= 1.1175870E-08
++Dvt1= 1.2625000
++Dvt2= 2.0000000E-02
++Dvt0w= -0.1707747
++Dvt1w= 1.0000000E+06
++Dvt2w= 1.0000000E-20
++Nlx= 5.9633500E-09
++W0= 3.5200000E-06
++K3b= -5.8000000
++Ngate= 1.0000000E+23
++Vfb= -0.5724223
++Vsat= 1.1400000E+05 pVsat= -2.00E-09
++Ua= 2.8280001E-09
++Ub= 5.2650000E-19
++Uc= -4.5100000E-11
++Rdsw= 2.1546001E+03 wRdsw= -3.4000000E-04
++Prwb= -4.9999990E-02 lPrwb= 4.0600000E-08
++Prwg= 0.00
++Wr= 1.0184190
++U0= '2.3850000E-02*std_u0p_tk'
++A0= 0.9220000
++Keta= 7.6000020E-03 lKeta= -7.3500010E-09 wKeta= 3.1255001E-09
++A1= 0.00
++A2= 1.0000000
++Ags= 0.1507200 wAgs= -4.1050000E-08
++B0= 0.00
++B1= 0.00
++Voff= -0.1961950
++NFactor= 1.000000
++Cit= -1.0000000E-04
++Cdsc= 1.2000001E-03
++Cdscb= 0.00
++Cdscd= 1.0000000E-04
++Eta0= 0.1040810
++Etab= -6.2750000E-03
++Dsub= 0.6504101
++Pclm= 2.8090270
++Pdiblc1= 2.5000000E-07
++Pdiblc2= 3.3727400E-03
++Pdiblcb= -1.0000000E-03
++Drout= 1.1109270
++Pscbe1= 5.5825000E+08
++Pscbe2= 5.8000000E-08
++Pvag= 0.6244011
++Delta= 1.0000000E-02
++Alpha0= 7.35E-07
++Alpha1= 1.905
++Beta0= 34.2638
++kt1= -0.5250000 lkt1= -3.3975000E-08
++kt2= -4.8900000E-02
++At= -7.0300000E+04
++Ute= -1.4105000 wUte= 2.9999999E-08
++Ua1= 6.4250000E-10
++Ub1= -3.0240001E-18
++Uc1= -9.0720000E-11
++Kt1l= 0.00
++Prt= 0.00
++Cj= 0.00126
++Mj= 0.425
++Pb= 0.86
++Cjsw= 2.83E-10
++Mjsw= 0.254
++Pbsw= 0.6
++Tcj= 0.000956
++Tcjsw= 0.000612
++Tpb= 0.00159
++Tpbsw= 0.00102
++JS=1.69E-07
++JSW=9.5e-14
++N=1.0
++Xti=3.0
+*+Cgdo=1.0504E-10
+*+Cgso=1.0504E-10
++Cgdo=cgdop_tk
++Cgso=cgsop_tk
++Cgbo=1.0E-13
++Capmod= 3
++NQSMOD= 0
++Elm= 5
++Xpart= 0
++cgsl= 1.1940000E-10
++cgdl= 1.1940000E-10
++ckappa= 0.3000000
++cf= 0.00
++clc= 1.0000000E-07
++cle= 0.6000000
++Dlc= 3.499935E-08
++Dwc= 7.99E-08
++Vfbcv= -0.4337252
++Llc= 0
++Lwc= 0
++Wlc= 0
++Wwc= 0
++Lwlc= 0
++Wwlc= 0
++Acde= 0.5
++Moin= 15
++Noff= 3
++Voffcv= 0
++noimod= 2
++NoiA=1.9952623E+19
++NoiB=1.8197009E+04
++NoiC=3.5444000E-14
++Ef=1.0
++Em=4.1000000E+07
+.ends pmos_5p0
+.ENDL device_stat
+***************************************************************************************************
+*
+.LIB bip
+**============================================================================**
+* BJT Model
+* =========
+* Temp = -40C to 125C
+*
+*       Three VPNP and four LPNP are included in this release.
+*             Model Name            Emitter Size          Remarks
+*             vpnp_2x2              2um x 2um             Vertical PNP
+*             vpnp_5x5              5um x 5um             Vertical PNP
+*             vpnp_10x10            10um x 10um           Vertical PNP
+*             lpnp_1x1              1um x 1um             Lateral PNP
+*             lpnp_2x2              2um x 2um             Lateral PNP
+*             lpnp_5x5              5um x 5um             Lateral PNP
+*             lpnp_10x10            10um x 10um           Lateral PNP
+*------------------------------------------------------------------------------*
+.model vpnp_10x10 pnp
++subs=1                                 is=1.55e-17                     bf=2.038
++nf=1.0085                              vaf=199.08                      ikf=3.333e-03
++ise=1.343e-15                          ne=1.92                         br=0.1215
++nr=1.01                                var=22.7783                     ikr=5.145e-04
++isc=2.80e-15                           nc=1.345                        rb=17.6245
++irb=0.1                                rbm=1.0                         re=9.406
++rc=34.4893                             xti=4.8866                      xtb=1.289
++eg=1.12                                cje=1.229e-13                   vje=0.849
++mje=0.415                              cjc=4.38e-14                    vjc=0.61
++mjc=0.23                               nkf=0.4797                      tref=25.0
+*
+.model vpnp_5x5 pnp
++subs=1                                 is=4.24e-18                     bf=2.21
++nf=1.0036                              vaf=76.166                      ikf=1.8436e-03
++ise=5.9349e-16                         ne=1.988                        br=0.168
++nr=1.008                               var=19.8993                     ikr=9.66e-05
++isc=3.1178e-15                         nc=1.201                        rb=27.4
++irb=0.1                                rbm=1.0                         re=19.8937
++rc=33.964                              xti=5.076                       xtb=1.28
++eg=1.12                                cje=3.073e-14                   vje=0.849
++mje=0.415                              cjc=2.07e-14                    vjc=0.61
++mjc=0.23                               nkf=0.4989                      tref=25.0
+*
+.model vpnp_2x2 pnp
++subs=1                                 is=8.45e-19                     bf=2.685
++nf=0.9956                              vaf=76.166                      ikf=6.8062e-04
++ise=1.35e-16                           ne=1.92                         br=0.0335
++nr=0.996                               var=15.8757                     ikr=1.9513e-04
++isc=1.82e-15                           nc=1.345                        rb=27.4
++irb=0.1                                rbm=1.0                         re=58.3364
++rc=43.125                              xti=5.1936                      xtb=1.024
++eg=1.12                                cje=4.916e-15                   vje=0.849
++mje=0.415                              cjc=1.094e-14                   vjc=0.61
++mjc=0.23                               nkf=0.4989                      tref=25.0
+*
+.model lpnp_3p3_1x1 pnp
++subs=-1                                is=1.0914e-17                   bf=23.2053
++nf=1.04                                vaf=6.6                         ikf=1.2194e-06
++ise=7.3256e-21                         ne=1.075                        br=2.3
++nr=1.04                                var=4.68                        ikr=0.1
++isc=4.50e-18                           nc=1.056                        rb=1000.0
++irb=3.094e-05                          rbm=332.4412                    re=12.286
++rc=15.3995                             xti=1.6                         xtb=-1.0
++eg=1.12                                cje=2.682904e-15                vje=0.8488845
++mje=0.4149161                          cjc=1.80723e-14                 vjc=0.8488845
++mjc=0.4149161                          cjs=3.99506e-14                 vjs=0.61
++mjs=0.23                               nkf=0.38                        tref=25.0
+*
+.model lpnp_3p3_2x2 pnp
++subs=-1                                is=2.1186e-17                   bf=11.8347
++nf=1.04                                vaf=5.742                       ikf=1.4023e-06
++ise=7.3256e-21                         ne=1.075                        br=2.3
++nr=1.04                                var=4.212                       ikr=0.1
++isc=4.50e-18                           nc=1.056                        rb=366.0
++irb=3.094e-05                          rbm=119.46                      re=6.2287
++rc=15.3995                             xti=1.6                         xtb=-1.0
++eg=1.12                                cje=7.82489e-15                 vje=0.8488845
++mje=0.4149161                          cjc=2.51594e-14                 vjc=0.8488845
++mjc=0.4149161                          cjs=4.5685e-14                  vjs=0.61
++mjs=0.23                               nkf=0.3078                      tref=25.0
+*
+.model lpnp_3p3_5x5 pnp
++subs=-1                                is=5.4728e-17                   bf=4.8742
++nf=1.04                                vaf=4.3639                      ikf=2.1245e-06
++ise=7.3256e-21                         ne=1.075                        br=2.3
++nr=1.04                                var=4.0014                      ikr=0.1
++isc=4.50e-18                           nc=1.056                        rb=132.5
++irb=3.094e-05                          rbm=66.8                        re=3.4258
++rc=15.3995                             xti=1.6                         xtb=-1.0
++eg=1.12                                cje=3.80053e-14                 vje=0.8488845
++mje=0.4149161                          cjc=4.64209e-14                 vjc=0.8488845
++mjc=0.4149161                          cjs=6.49402e-14                 vjs=0.61
++mjs=0.23                               nkf=0.2462                      tref=25.0
+*
+.model lpnp_3p3_10x10 pnp
++subs=-1                                is=1.16e-16                     bf=3.2486
++nf=1.04                                vaf=3.5026                      ikf=1.3112e-06
++ise=5.4942e-20                         ne=1.1                          br=4.719
++nr=1.04                                var=3.5802                      ikr=0.1
++isc=4.50e-18                           nc=1.056                        rb=75.0
++irb=4.0531e-05                         rbm=47.3                        re=1.855
++rc=15.3995                             xti=1.6                         xtb=-1.0
++eg=1.12                                cje=1.37488e-13                 vje=0.8488845
++mje=0.4149161                          cjc=8.18567e-14                 vjc=0.8488845
++mjc=0.4149161                          cjs=1.03872e-13                 vjs=0.61
++mjs=0.23                               nkf=0.2462                      tref=25.0
+*
+.endl bip
+***************************************************************************************************
+***************************************************************************************************
+.lib dio
+******************************************************
+*Diode Model for N+/PWell Junction Diode - Thin gate
+******************************************************
+.model np_3p3 d
++level=3                                js=3.05e-07                     jsw=1.40e-13
++n=1.0104                               rs=2.0e-11                      ik=4.41e+04
++ikr=0.00                               vb=9.25                         ibv=1.00e-03
++trs=4.40e-03                           eg=1.1556                       xti=3.0
++tref=25.0                              tlev=1
++cj=1.023908e-03                        mj=0.3494655                    pb=0.7271543
++cjsw=2.26855e-10                       mjsw=0.2693402                  php=0.9497247
++tpb=1.57771e-03                        tphp=2.341272e-03               cta=9.626137e-04
++ctp=7.622131e-04                       tlevc=1
+*
+******************************************************
+*diode model for p+/nwell junction diode - thin gate
+******************************************************
+.model pn_3p3 d
++level=3                                js=2.18e-07                     jsw=1.00e-13
++n=1.0176                               rs=2.0e-11                      ik=1.58e+05
++ikr=0.00                               vb=8.32                         ibv=1.00e-03
++trs=4.00e-03                           eg=1.146                        xti=3.15
++tref=25.0                              tlev=1
++cj=1.22954e-03                         mj=0.4149161                    pb=0.8488845
++cjsw=3.63341e-10                       mjsw=0.2938261                  php=0.6648861
++tpb=1.612079e-03                       tphp=1.115389e-03               cta=9.489684e-04
++ctp=7.016366e-04                       tlevc=1
+*
+******************************************************
+*diode model for n+/pwell junction diode - thick gate
+******************************************************
+.model np_5p0 d
++level=3                                js=6.7376e-008                  jsw=5.00e-14
++n=0.9298                               rs=2.0e-11                      ik=8.235e+006
++ikr=0.0001                             vb=10.2                         ibv=1.00e-03
++trs=4.40e-03                           eg=1.1556                       xti=3.0
++tref=25.0                              tlev=1
++cj=0.00104                             mj=0.363                        pb=0.777
++cjsw=2.7e-10                           mjsw=0.25                       php=0.716
++tpb=0.00171                            tphp=0.00174                    cta=0.001
++ctp=0.000731                           tlevc=1                         jtun=0.019359        
++jtunsw=1.645e-008                      ntun=35.47 
+*
+******************************************************
+*diode model for p+/nwell junction diode - thick gate
+******************************************************
+.model pn_5p0 d
++level=3                                js=1.69e-07                     jsw=9.50e-14
++n=1.0053                               rs=2.0e-11                      ik=2.25e+007
++ikr=1e-008                             vb=8.38                         ibv=1.00e-03
++trs=3.40e-03                           eg=1.156                        xti=3.15
++tref=25.0                              tlev=1
++cj=0.00126                             mj=0.425                        pb=0.86
++cjsw=2.83e-10                          mjsw=0.254                      php=0.6
++tpb=0.00159                            tphp=0.00102                    cta=0.000956
++ctp=0.000612                           tlevc=1                         jtun=7.5e-009        
++jtunsw=1.25e-013                       ntun=8.7124  
+*
+******************************************************
+*model for esd n+/pwell junction diode - thin gate
+******************************************************
+.model np_3p3_esd d
++level=3                                area=1e-8                       pj=4e-4
++js=6.12e-07                            jsw=1.43e-14                    n=1.028
++rs=2.0e-11                             ik=5.02e+04                     ikr=0
++vb=9.4                                 ibv=1.00e-03                    trs=9.01e-04
++eg=1.16                                tref=25.0                       xti=3.0
++tlev=1.0
++cj=1.08e-03                            mj=0.372                        pb=0.821
++cjsw=5.09e-10                          mjsw=0.316                      php=0.748
++cta=1.05e-03                           ctp=4.00e-04                    tpb=2.00e-03
++tphp=2.00e-03                          tlevc=1
+*
+******************************************************
+*model for esd n+/pwell junction diode - thick gate
+******************************************************
+.model np_5p0_esd d
++level=3                                area=1e-8                       pj=4e-4
++js=4.7628e-07                          jsw=1.22e-14                    n=1.015
++rs=2.0e-11                             ik=4.59e+04                     ikr=0
++vb=9.5                                 ibv=1.00e-03                    trs=1.5432e-03
++eg=1.16                                tref=25.0                       xti=3.0
++tlev=1.0
++cj=1.08e-03                            mj=0.358                        pb=0.809
++cjsw=4.12e-10                          mjsw=0.358                      php=0.776
++cta=1.40e-03                           ctp=1.03e-03                    tpb=1.40e-03
++tphp=8.00e-04                          tlevc=1
+*
+******************************************************
+*diode model for nwell/psub junction diode
+******************************************************
+.model nwp d
++level=3                                js=1.44e-06                     jsw=2.24e-14
++n=1.0303                               rs=2.0e-11                      ik=2.58e+04
++ikr=0.00                               vb=17.0                         ibv=1.00e-03
++trs=1.15e-03                           eg=1.16                         tref=25.0
++xti=3.0                                tlev=1.0                        cj=1.71e-04
++mj=0.23                                pb=0.61                         cjsw=4.76e-10
++mjsw=0.317                             php=0.619                       cta=2.10e-03
++ctp=1.60e-03                           tpb=3.73e-03                    tphp=1.80e-03
++tlevc=1
+*
+.endl dio
+***************************************************************************************************
+.LIB res
+*
+.subckt npolyf_u  1 2 3 r_length=l r_width=w par=1 dtemp=0
+*****************************************************************************
+* N+ Poly Unsalicided resistor
+*****************************************************************************
+.param r_rsh0= rsh_npolyf_u
+.param r_dw= 2.05e-8
+.param r_dl= 2.63e-08
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_tnom='25+dtemp'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1=5.79e-4
+.param r_tc2=4.99e-7
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+*
+*
+.param r_af=1.6712
+.param r_kf=1.3063e-23
+.param
++ rt_tc1=1.30e-03
++ rt_tc2=-6.03e-07
++ rt_temp='1+rt_tc1*(temper-r_tnom)+rt_tc2*(temper-r_tnom)*(temper-r_tnom)'
+
+*/ model for substrate capacitance
+.model r_csub c  cox=1.191e-4 capsw=0
+*/ model for terminal resistor
+.model npolyf_u_rt r rsh=30.08 dw= r_dw  tref=25
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ model for body resistor
+.model npolyf_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+
+*/ terminal 1
+rt1 1 11 npolyf_u_rt l='1u*rt_temp' w=r_width
+c1_r 1 3 r_csub l='0.5*r_length' w=r_width
+*/ body
+rbody_r 11 21 npolyf_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(21,11))/r_n+r_vc2*abs(v(21,11))*abs(v(21,11))/r_n/r_n)'
+*/ terminal 2
+rt2 21 2 npolyf_u_rt l='1u*rt_temp' w=r_width
+c2_r 2 3 r_csub l='0.5*r_length' w=r_width
+
+.ends npolyf_u
+*/
+*/
+.subckt nplus_u  1 2 3 r_length=l r_width=w par=1 dtemp=0
+*****************************************************************************
+* N+ diffusion unsalicided resistor
+*****************************************************************************
+.param r_rsh0= rsh_nplus_u
+.param r_dw= -3.81e-8
+.param r_dl= 3.59e-8
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_tnom='25+dtemp'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1=1.78e-3
+.param r_tc2=5.88e-7
+.param r_area = '0.5*r_length * r_width'
+.param r_peri = 'r_length + r_width'
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+.param r_af=1.79
+.param r_kf=6.3542e-24
+.param
++ rt_tc1=8e-4
++ rt_tc2=-2.15e-6
++ rt_temp='1+rt_tc1*(temper-r_tnom)+rt_tc2*(temper-r_tnom)*(temper-r_tnom)'
+
+*/ model for substrate capacitance
+.model r_dsub d level=3 Cj=1.024E-03 Mj=0.3494655 Pb=0.7271543 Cjsw=2.26e-10 Mjsw=0.2693402 Php=0.9497247 tref=25
+*/ model for terminal resistor
+.model nplus_u_rt r rsh=75.6 dw=r_dw  tref=25
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ model for body resistor
+.model nplus_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+
+*/ terminal 1
+d1_r 3 1 r_dsub area=r_area pj=r_peri
+rt1 1 11 nplus_u_rt l='1u*rt_temp' w=r_width
+*/ body
+rbody_r 11 21 nplus_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(21,11))/r_n+r_vc2*abs(v(21,11))*abs(v(21,11))/r_n/r_n)'
+*/ terminal 2
+rt2 21 2 nplus_u_rt l='1u*rt_temp' w=r_width
+d2_r 3 2 r_dsub area=r_area pj=r_peri
+
+.ends nplus_u
+*/
+*/
+.subckt pplus_u  1 2 3 r_length=l r_width=w par=1 dtemp=0
+*****************************************************************************
+* P+ diffusion unsalicided resistor
+*****************************************************************************
+.param r_rsh0= rsh_pplus_u
+.param r_dw= -8.3e-8
+.param r_dl= 2.17e-8
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1= 1.22e-3
+.param r_tc2= 1.55e-6
+.param r_tnom='25+dtemp'
+.param r_area = '0.5*r_length * r_width'
+.param r_peri = 'r_length + r_width'
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+.param r_af=1.9751
+.param r_kf=2.4522e-22
+.param
++ rt_tc1=-1.34e-3
++ rt_tc2=-1.42e-6
++ rt_temp='1+rt_tc1*(temper-r_tnom)+rt_tc2*(temper-r_tnom)*(temper-r_tnom)'
+
+*/ model for substrate capacitance
+.model r_dsub d level=3 Cj=1.23E-03 Mj=0.4149161 Pb=0.8488845 Cjsw=3.64e-10 Mjsw=0.2938261 Php=0.6648861 tref=25
+*/ model for terminal resistor
+.model pplus_u_rt r rsh= 373.59 dw= r_dw  tref=25
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ model for body resistor
+.model pplus_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+
+*/ terminal 1
+d1_r 1 3 r_dsub area=r_area pj=r_peri
+rt1 1 11 pplus_u_rt l='1u*rt_temp' w=r_width
+*/ body
+rbody_r 11 21 pplus_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(21,11))/r_n+r_vc2*abs(v(21,11))*abs(v(21,11))/r_n/r_n)'
+*/ terminal 2
+rt2 21 2 pplus_u_rt l='1u*rt_temp' w=r_width
+d2_r 2 3 r_dsub area=r_area pj=r_peri
+
+.ends pplus_u
+*/
+*/
+.subckt nwell  1 2 3 r_length=l r_width=w par=1 dtemp=0
+*****************************************************************************
+* Nwell diffusion unsalicided resistor model
+*****************************************************************************
+.param r_rsh0= rsh_nwell
+.param r_dw= 0.0945e-6
+.param r_dl= 0.0123e-6
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_tnom='25+dtemp'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1=3.11E-03
+.param r_tc2=1.16E-05
+.param r_area = '0.5*r_length * r_width'
+.param r_peri = 'r_length + r_width'
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+.param r_af=1.7621
+.param r_kf=3.7792e-24
+.param
++ rt_tc1=5.82e-3
++ rt_tc2=6.85e-5
++ rt_temp='1+rt_tc1*(temper-r_tnom)+rt_tc2*(temper-r_tnom)*(temper-r_tnom)'
+
+*/ model for substrate capacitance
+.model r_dsub d level=3 Cj=1.71E-04 Mj=0.23 Pb=0.61 Cjsw=4.76E-10 Mjsw=0.317 Php=0.619 tref=25
+*/ model for terminal resistor
+.model nwell_rt r rsh=108.39 dw=r_dw  tref=25
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ model for body resistor
+.model nwell_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+
+*/ terminal 1
+d1_r 3 1 r_dsub area = r_area pj = r_peri
+rt1 1 11 nwell_rt l='1u*rt_temp' w=r_width
+*/ body
+rbody_r 11 21 nwell_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(2,1))/r_n+r_vc2*abs(v(2,1))*abs(v(2,1))/r_n/r_n)'
+*/ terminal 2
+rt2 21 2 nwell_rt l='1u*rt_temp' w=r_width
+d2_r 3 2 r_dsub area = r_area pj = r_peri
+
+.ends nwell
+*/
+*/
+.subckt npolyf_u_1k  1 2 3 r_length=l r_width=w par=1 dtemp=0
+*****************************************************************************
+* 1K Poly Unsalicided resistor
+*****************************************************************************
+.param r_rsh0= rsh_npolyf_u_1k
+.param r_dw= -0.0539e-6
+.param r_dl= 0.528e-6
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_tnom='25+dtemp'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1=-2.14E-03
+.param r_tc2=7.08E-06
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+*
+*
+.param r_af=2.0426
+.param r_kf=9.2472e-22
+.param
++ rt_tc1=-3.29E-03
++ rt_tc2=1.08E-05
++ rt_temp='1+rt_tc1*(temper-r_tnom)+rt_tc2*(temper-r_tnom)*(temper-r_tnom)'
+
+*/ model for substrate capacitance
+.model r_csub c  cox=1.191e-4 capsw=0
+*/ model for terminal resistor
+.model npolyf_u_1k_rt r rsh= 50.16 dw= r_dw  tref=25
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ model for body resistor
+.model npolyf_u_1k_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+
+*/ terminal 1
+rt1 1 11 npolyf_u_1k_rt l='1u*rt_temp' w=r_width
+c1_r 1 3 r_csub l='0.5*r_length' w=r_width
+*/ body
+rbody_r 11 21 npolyf_u_1k_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(2,1))/r_n+r_vc2*abs(v(2,1))*abs(v(2,1))/r_n/r_n)'
+*/ terminal 2
+rt2 21 2 npolyf_u_1k_rt l='1u*rt_temp' w=r_width
+c2_r 2 3 r_csub l='0.5*r_length' w=r_width
+.ends npolyf_u_1k
+*/
+*/
+.model rm1 R
+*****************************************************************************
+* Metal 1 resistor
+*****************************************************************************
++ Rsh = rsh_rm1 dW =0 TC1 = 3.82e-3 TC2 = -2.23e-7 Tref=25
+*/
+*/
+.subckt nplus_u_epi  1 2 3 r_length=l r_width=w par=1 dtemp=0
+*****************************************************************************
+* N+ diffusion unsalicided resistor, EPI substrate
+*****************************************************************************
+.param r_rsh0= rsh_nplus_u_epi
+.param r_dw= -3.81e-8
+.param r_dl= 3.59e-8
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_tnom='25+dtemp'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1=1.78e-3
+.param r_tc2=5.88e-7
+.param r_area = '0.5*r_length * r_width'
+.param r_peri = 'r_length + r_width'
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+.param r_af=1.79
+.param r_kf=6.3542e-24
+.param
++ rt_tc1=8e-4
++ rt_tc2=-2.15e-6
++ rt_temp='1+rt_tc1*(temper-r_tnom)+rt_tc2*(temper-r_tnom)*(temper-r_tnom)'
+
+
+*/ model for substrate capacitance
+.model r_dsub d level=3 Cj=1.024E-03 Mj=0.3494655 Pb=0.7271543 Cjsw=2.26e-10 Mjsw=0.2693402 Php=0.9497247 tref=25
+*/ model for terminal resistor
+.model nplus_u_rt r rsh=75.6 dw=r_dw  tref=25
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ model for body resistor
+.model nplus_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+
+*/ terminal 1
+d1_r 3 1 r_dsub area=r_area pj=r_peri
+rt1 1 11 nplus_u_rt l='1u*rt_temp' w=r_width
+*/ body
+rbody_r 11 21 nplus_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(21,11))/r_n+r_vc2*abs(v(21,11))*abs(v(21,11))/r_n/r_n)'
+*/ terminal 2
+rt2 21 2 nplus_u_rt l='1u*rt_temp' w=r_width
+d2_r 3 2 r_dsub area=r_area pj=r_peri
+
+.ends nplus_u_epi
+*/
+*/
+.subckt pplus_u_epi  1 2 3 r_length=l r_width=w par=1 dtemp=0
+*****************************************************************************
+* P+ diffusion unsalicided resistor, EPI substrate
+*****************************************************************************
+.param r_rsh0= rsh_pplus_u_epi
+.param r_dw= -8.3e-8
+.param r_dl= 2.17e-8
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1= 1.22e-3
+.param r_tc2= 1.55e-6
+.param r_tnom='25+dtemp'
+.param r_area = '0.5*r_length * r_width'
+.param r_peri = 'r_length + r_width'
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+.param r_af=1.9751
+.param r_kf=2.4522e-22
+.param
++ rt_tc1=-1.34e-3
++ rt_tc2=-1.42e-6
++ rt_temp='1+rt_tc1*(temper-r_tnom)+rt_tc2*(temper-r_tnom)*(temper-r_tnom)'
+
+*/ model for substrate capacitance
+.model r_dsub d level=3 Cj=1.23E-03 Mj=0.4149161 Pb=0.8488845 Cjsw=3.64e-10 Mjsw=0.2938261 Php=0.6648861 tref=25
+*/ model for terminal resistor
+.model pplus_u_rt r rsh= 373.59 dw= r_dw  tref=25
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ model for body resistor
+.model pplus_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+
+*/ terminal 1
+d1_r 1 3 r_dsub area=r_area pj=r_peri
+rt1 1 11 pplus_u_rt l='1u*rt_temp' w=r_width
+*/ body
+rbody_r 11 21 pplus_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(21,11))/r_n+r_vc2*abs(v(21,11))*abs(v(21,11))/r_n/r_n)'
+*/ terminal 2
+rt2 21 2 pplus_u_rt l='1u*rt_temp' w=r_width
+d2_r 2 3 r_dsub area=r_area pj=r_peri
+
+.ends pplus_u_epi
+*/
+.ENDL res
+***************************************************************************************************
+.LIB res_stat
+*
+.subckt npolyf_u  1 2 3 r_length=l r_width=w par=1 dtemp=0
+*****************************************************************************
+* N+ Poly Unsalicided resistor
+*****************************************************************************
+*.param r_rsh0= rsh_npolyf_u
+.param r_dw= 2.05e-8
+.param r_dl= 2.63e-08
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_tnom='25+dtemp'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1=5.79e-4
+.param r_tc2=4.99e-7
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+*
+.param par_r       =0.0815
+.param par_sqrtarea='sqrt(par*(r_l)*(r_w))'
+.param var_r       ='0.7071*par_r*1e-06/par_sqrtarea'
+.param mis_r       =agauss(0, var_r, 1)
+.param r_rsh0='rsh_npolyf_u*(1 + mis_r*sw_stat_mismatch)'
+*
+.param r_af=1.6712
+.param r_kf=1.3063e-23
+.param
++ rt_tc1=1.30e-03
++ rt_tc2=-6.03e-07
++ rt_temp='1+rt_tc1*(temper-r_tnom)+rt_tc2*(temper-r_tnom)*(temper-r_tnom)'
+
+*/ model for substrate capacitance
+.model r_csub c  cox=1.191e-4 capsw=0
+*/ model for terminal resistor
+.model npolyf_u_rt r rsh=30.08 dw= r_dw  tref=25
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ model for body resistor
+.model npolyf_u_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+
+*/ terminal 1
+rt1 1 11 npolyf_u_rt l='1u*rt_temp' w=r_width
+c1_r 1 3 r_csub l='0.5*r_length' w=r_width
+*/ body
+rbody_r 11 21 npolyf_u_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(21,11))/r_n+r_vc2*abs(v(21,11))*abs(v(21,11))/r_n/r_n)'
+*/ terminal 2
+rt2 21 2 npolyf_u_rt l='1u*rt_temp' w=r_width
+c2_r 2 3 r_csub l='0.5*r_length' w=r_width
+
+.ends npolyf_u
+*/
+*/
+.subckt npolyf_u_1k  1 2 3 r_length=l r_width=w par=1 dtemp=0
+*****************************************************************************
+* 1K Poly Unsalicided resistor
+*****************************************************************************
+*.param r_rsh0= rsh_npolyf_u_1k
+.param r_dw= -0.0539e-6
+.param r_dl= 0.528e-6
+.param r_l='r_length-2*r_dl'
+.param r_w='r_width-2*r_dw'
+.param r_n='r_l/r_w'
+.param r_tnom='25+dtemp'
+.param r_vc1=0
+.param r_vc2=0
+.param r_tc1=-2.14E-03
+.param r_tc2=7.08E-06
+.param r_temp='1+r_tc1*(temper-r_tnom)+r_tc2*(temper-r_tnom)*(temper-r_tnom)'
+*
+.param par_r       =0.0330
+.param par_sqrtarea='sqrt(par*(r_l)*(r_w))'
+.param var_r       ='0.7071*par_r*1e-06/par_sqrtarea'
+.param mis_r       =agauss(0, var_r, 1)
+.param r_rsh0='rsh_npolyf_u_1k*(1 + mis_r*sw_stat_mismatch)'
+*
+.param r_af=2.0426
+.param r_kf=9.2472e-22
+.param
++ rt_tc1=-3.29E-03
++ rt_tc2=1.08E-05
++ rt_temp='1+rt_tc1*(temper-r_tnom)+rt_tc2*(temper-r_tnom)*(temper-r_tnom)'
+
+*/ model for substrate capacitance
+.model r_csub c  cox=1.191e-4 capsw=0
+*/ model for terminal resistor
+.model npolyf_u_1k_rt r rsh= 50.16 dw= r_dw  tref=25
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+*/ model for body resistor
+.model npolyf_u_1k_body r
++ af      =r_af
++ kf      =r_kf
++ noise   =1
+
+*/ terminal 1
+rt1 1 11 npolyf_u_1k_rt l='1u*rt_temp' w=r_width
+c1_r 1 3 r_csub l='0.5*r_length' w=r_width
+*/ body
+rbody_r 11 21 npolyf_u_1k_body
++ r='r_temp*r_n*(r_rsh0+r_vc1*abs(v(2,1))/r_n+r_vc2*abs(v(2,1))*abs(v(2,1))/r_n/r_n)'
+*/ terminal 2
+rt2 21 2 npolyf_u_1k_rt l='1u*rt_temp' w=r_width
+c2_r 2 3 r_csub l='0.5*r_length' w=r_width
+.ends npolyf_u_1k
+*/
+.ENDL res_stat
+***************************************************************************************************
+.LIB cap
+*****************************************************************************
+*
+*       The size of the capacitor used for modelling
+*       length=50um, width=5um
+*
+*****************************************************************************
+
+.subckt pip  1 2  l=1u w=1um c_length=l c_width=w par=1 dtemp=0
+*****************************************************************************
+*/ PIP capacitor model
+*****************************************************************************
+.param c_cox='1.25e-3*cap_corner'
+.param c_capsw=0
+.param c_tnom='25+dtemp'
+.param c_tc1=23.5e-6
+.param c_tc2=0.03e-6
+.param c_vcr1=86.1e-6
+.param c_vcr2=-12.7e-6
+.param c_area='c_length*c_width'
+.param c_peri='2*(c_length+c_width)'
+.param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper-c_tnom)+c_tc2*(temper-c_tnom)*(temper-c_tnom))'
+*/
+*/ model for capacitance
+c_cap 1 2 c='c_c0*(1+c_vcr1*v(1,2)+c_vcr2*v(1,2)*v(1,2))' ctype=1
+*//
+.ends pip
+
+.endl cap
+*
+.LIB cap_stat
+*
+*****************************************************************************
+*
+*       The size of the capacitor used for modelling
+*       length=50um, width=5um
+*
+*****************************************************************************
+
+.subckt pip  1 2  c_length=l c_width=w par=1 dtemp=0
+*****************************************************************************
+*/ PIP capacitor model
+*****************************************************************************
+.param par_c= 0.433
+.param par_area= 'par * c_length * c_width'
+.param var_c= '(par_c * 1e-12)/par_area'
+.param mis_c = agauss(0, var_c, 1)
+.param c_cox='1.25e-3*(1 + mis_c*sw_stat_mismatch)'
+.param c_capsw=0
+.param c_tnom='25+dtemp'
+.param c_tc1=23.5e-6
+.param c_tc2=0.03e-6
+.param c_vcr1=86.1e-6
+.param c_vcr2=-12.7e-6
+.param c_area='c_length*c_width'
+.param c_peri='2*(c_length+c_width)'
+.param c_c0='(c_cox*c_area+c_capsw*c_peri)*(1+c_tc1*(temper-c_tnom)+c_tc2*(temper-c_tnom)*(temper-c_tnom))'
+*/
+*/ model for capacitance
+c_cap 1 2 c='c_c0*(1+c_vcr1*v(1,2)+c_vcr2*v(1,2)*v(1,2))' ctype=1
+*//
+.ends pip
+
+.endl cap_stat
+**********************  The End of 'chart035.lib'  ***********************

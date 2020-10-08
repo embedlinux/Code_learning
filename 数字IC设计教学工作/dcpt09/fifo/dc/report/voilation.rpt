@@ -1,0 +1,20 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : fifo16x8
+Version: 2003.03
+Date   : Sun Apr  5 11:47:51 2009
+****************************************
+
+
+   max_area
+
+                             Required        Actual
+   Design                      Area           Area           Slack
+   -----------------------------------------------------------------
+   fifo16x8                     0.00        5906.00       -5906.00  (VIOLATED)
+
+
+1

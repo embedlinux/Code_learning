@@ -1,0 +1,980 @@
+*CSMC Confidential
+*This file is the exclusive property of CSMC and shall not be distributed, reproduced or 
+*disclosed in whole or in part without prior permission of CSMC 
+*CSMC 0.35um double poly quadruple metal mix process model only for HSPICE
+
+***************** corner_lib of 3.3V tt model ******************
+.lib tt
+.param
++toxn=0    vth0n=0    xln=0       xwn=0     cjn=1     cjswn=1    cjswgn=1    cgdon=1   cgson=1  
++toxp=0    vth0p=0    xlp=0       xwp=0     cjp=1     cjswp=1    cjswgp=1    cgdop=1   cgsop=1  
+*
++toxn33_dn=8.04E-9         dvthn33_dn=0        dxln33_dn=0        dxwn33_dn=0    
++cjn33_dn=1                cjswn33_dn=1        cjswgn33_dn=1      cgson33_dn=1       cgdon33_dn=1 
+*
++n_d33=1
++js_d33=1
++jsw_d33=1
++cj_d33=1
++cjsw_d33=1
+.lib 'st3524.lib' mos
+.endl tt
+
+***************** corner_lib of 3.3V ff model ******************
+.lib ff
+.param
++toxn=-6.9E-10     vth0n=-1E-3    xln=-2.8E-8      xwn=2.8E-8    cjn=0.9        cjswn=0.9      cjswgn=0.9       cgdon=1.1   cgson=1.1  
++toxp=-8.3E-10     vth0p=0.085    xlp=-5.3E-8      xwp=4E-8      cjp=0.9        cjswp=0.9      cjswgp=0.9       cgdop=1.1   cgsop=1.1  
+* 
++toxn33_dn=7.236E-09       dvthn33_dn=-0.017        dxln33_dn=-2.1E-8         dxwn33_dn=3.4E-8     
++cjn33_dn=0.9              cjswn33_dn=0.9           cjswgn33_dn=0.9           cgson33_dn=1.1              cgdon33_dn=1.1 
+*
++n_d33=0.99
++js_d33=1.3
++jsw_d33=1.5
++cj_d33=0.9
++cjsw_d33=0.9
+.lib 'st3524.lib' mos
+.endl ff
+
+***************** corner_lib of 3.3V ss model ******************
+.lib ss
+.param
++toxn=6.9E-10     vth0n=1E-3      xln=4.4E-8        xwn=-4.4E-8      cjn=1.1       cjswn=1.1       cjswgn=1.1      cgdon=0.9   cgson=0.9  
++toxp=8.3E-10     vth0p=-0.078    xlp=7E-8          xwp=-4E-8        cjp=1.1       cjswp=1.1       cjswgp=1.1      cgdop=0.9   cgsop=0.9  
+*  
++toxn33_dn= 8.844E-09        dvthn33_dn= 3.14E-3         dxln33_dn= 5.4E-8             dxwn33_dn=-4E-8
++cjn33_dn=1.1            cjswn33_dn=1.1            cjswgn33_dn=1.1             cgson33_dn= 0.9         cgdon33_dn= 0.9  
+*
++n_d33=1.01
++js_d33=0.7
++jsw_d33=0.5
++cj_d33=1.1
++cjsw_d33=1.1 
+.lib 'st3524.lib' mos
+.endl ss
+
+***************** corner_lib of 3.3V fs model ******************
+.lib fs
+.param
++toxn=-3.45E-10   vth0n=-1E-3     xln=-1.4E-8      xwn=1.4E-8    cjn=0.92      cjswn=0.92     cjswgn=0.92      cgdon=1.08   cgson=1.08  
++toxp=4.15E-10    vth0p=-0.078    xlp=3.5E-8       xwp=-2E-8     cjp=1.08      cjswp=1.08     cjswgp=1.08      cgdop=0.92   cgsop=0.92  
+* 
++toxn33_dn=7.638E-09        dvthn33_dn=-0.017           dxln33_dn=-1.05E-8         dxwn33_dn=1.7E-8       
++cjn33_dn=0.92            cjswn33_dn=0.92            cjswgn33_dn=0.92             cgson33_dn=1.08     cgdon33_dn=1.08 
+* 
++n_d33=0.99
++js_d33=1.3
++jsw_d33=1.5
++cj_d33=0.9
++cjsw_d33=0.9
+.lib 'st3524.lib' mos
+.endl fs
+
+***************** corner_lib of 3.3V sf model ******************
+.lib sf
+.param
++toxn=3.45E-10    vth0n=1E-3     xln=2.2E-8       xwn=-2.2E-8    cjn=1.08      cjswn=1.08     cjswgn=1.08     cgdon=0.92   cgson=0.92  
++toxp=-4.15E-10   vth0p=0.085    xlp=-2.65E-8     xwp=2E-8       cjp=0.92      cjswp=0.92     cjswgp=0.92     cgdop=1.08   cgsop=1.08  
+*  
++toxn33_dn=8.442E-09        dvthn33_dn=3.14E-3         dxln33_dn=2.7E-8             dxwn33_dn=-2E-8
++cjn33_dn=1.08            cjswn33_dn=1.08            cjswgn33_dn=1.08             cgson33_dn=0.92          cgdon33_dn=0.92  
+*   
++n_d33=1.01
++js_d33=0.7
++jsw_d33=0.5
++cj_d33=1.1
++cjsw_d33=1.1
+.lib 'st3524.lib' mos
+.endl sf
+
+***************** corner_lib of 5V tt model ******************
+.lib tt_5v
+.param
++toxn5=0    vth0n5=0    xln5=0       xwn5=0    cjn5=1     cjswn5=1    cjswgn5=1    cgdon5=1   cgson5=1
++toxp5=0    vth0p5=0    xlp5=0       xwp5=0    cjp5=1     cjswp5=1    cjswgp5=1    cgdop5=1   cgsop5=1
+*
++toxn5_dn=1.4348E-8              dvthn5_dn=0                 dxln5_dn=0                 dxwn5_dn=0
++cjn5_dn=1                     cjswn5_dn=1                 cjswgn5_dn=1                 cgson5_dn=1         cgdon5_dn=1 
+*
++n_d5=1
++js_d5=1
++jsw_d5=1
++cj_d5=1
++cjsw_d5=1
+.lib 'st3524.lib' mos_5v
+.endl tt_5v
+
+***************** corner_lib of 5V ff model ******************
+.lib ff_5v
+.param
++toxn5=-1E-9     vth0n5=-1E-3     xln5=-7.7E-8        xwn5=7.7E-8    cjn5=0.9        cjswn5=0.9      cjswgn5=0.9       cgdon5=1.1   cgson5=1.1
++toxp5=-1.45E-9  vth0p5=0.08      xlp5=-8.4E-8        xwp5=4E-8      cjp5=0.9        cjswp5=0.9      cjswgp5=0.9       cgdop5=1.1   cgsop5=1.1
+*
++toxn5_dn=1.2913E-8          dvthn5_dn=-5.9E-3             dxln5_dn=-4.12E-8             dxwn5_dn=2e-8       
++cjn5_dn= 0.9               cjswn5_dn=0.9              cjswgn5_dn=0.9               cgson5_dn=1.1           cgdon5_dn=1.1
+*
++n_d5=0.99
++js_d5=1.3
++jsw_d5=1.5
++cj_d5=0.9
++cjsw_d5=0.9
+.lib 'st3524.lib' mos_5v
+.endl ff_5v
+
+***************** corner_lib of 5V ss model ******************
+.lib ss_5v
+.param
++toxn5=1E-9      vth0n5=0.02      xln5=1.2E-7         xwn5=-4E-8     cjn5=1.1        cjswn5=1.1      cjswgn5=1.1       cgdon5=0.9   cgson5=0.9
++toxp5=1.45E-9   vth0p5=-0.086    xlp5=1.3E-7         xwp5=-4E-8     cjp5=1.1        cjswp5=1.1      cjswgp5=1.1       cgdop5=0.9   cgsop5=0.9
+*
++toxn5_dn=1.57828E-8         dvthn5_dn=3.4E-4             dxln5_dn=8.8E-8            dxwn5_dn=-2E-8
++cjn5_dn=1.1             cjswn5_dn=1.1              cjswgn5_dn=1.1               cgson5_dn=0.9      cgdon5_dn=0.9 
+* 
++n_d5=1.01
++js_d5=0.7
++jsw_d5=0.5
++cj_d5=1.1
++cjsw_d5=1.1
+.lib 'st3524.lib' mos_5v 
+.endl ss_5v
+
+***************** corner_lib of 5V fs model ******************
+.lib fs_5v
+.param
++toxn5=-5E-10    vth0n5=-1E-3     xln5=-3.85E-8      xwn5=3.85E-8    cjn5=0.92       cjswn5=0.92     cjswgn5=0.92      cgdon5=1.08   cgson5=1.08
++toxp5=7.25E-10  vth0p5=-0.086    xlp5=6.5E-8        xwp5=-2E-8      cjp5=1.08       cjswp5=1.08     cjswgp5=1.08      cgdop5=0.92   cgsop5=0.92
+*
++toxn5_dn= 1.363E-8          dvthn5_dn  = -5.9E-3             dxln5_dn  = -2.06E-8             dxwn5_dn    = 1e-8       
++cjn5_dn  = 0.92           cjswn5_dn  = 0.92              cjswgn5_dn = 0.92               cgson5_dn   = 1.08       cgdon5_dn   = 1.08
+* 
++n_d5=0.99
++js_d5=1.3
++jsw_d5=1.5
++cj_d5=0.9
++cjsw_d5=0.9
+.lib 'st3524.lib' mos_5v
+.endl fs_5v
+
+***************** corner_lib of 5V sf model ******************
+.lib sf_5v
+.param
++toxn5=5E-10        vth0n5=0.02    xln5=6E-8      xwn5=-2E-8    cjn5=1.08      cjswn5=1.08     cjswgn5=1.08     cgdon5=0.92   cgson5=0.92
++toxp5=-7.25E-10    vth0p5=0.08    xlp5=-4.2E-8   xwp5=2E-8     cjp5=0.92      cjswp5=0.92     cjswgp5=0.92     cgdop5=1.08   cgsop5=1.08
+*
++toxn5_dn= 1.5065E-8         dvthn5_dn  = 3.4E-4             dxln5_dn  = 4.4E-8            dxwn5_dn    = -1E-8
++cjn5_dn  = 1.08             cjswn5_dn  = 1.08              cjswgn5_dn = 1.08               cgson5_dn   = 0.92      cgdon5_dn   = 0.92 
+*  
++n_d5=1.01
++js_d5=0.7
++jsw_d5=0.5
++cj_d5=1.1
++cjsw_d5=1.1
+.lib 'st3524.lib' mos_5v
+.endl sf_5v
+
+***************************3.3V mos model**************************
+.lib mos
+
+.model mn33 nmos
+***** Flag Parameter ***
++level = 49                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    nqsmod = 0                    
++noimod = 2                    
+***** Geometry Range Parameter ***
++lmin = 3.5E-7                 lmax = 1.00001E-4              wmin = 4E-7                   
++wmax = 1.00001E-4             
+***** Process Parameter ***
++tox = '8.04E-9+toxn'                 toxm = 8.04E-9                xj = 1.2E-7                   
++nch = 1.286154E17             
+***** dW and dL Parameter ***
++wint = 1.386335E-7            wl = -2.64374E-14             wln = 1.003913                
++ww = -3.124483E-14            wwn = 1                       wwl = 2.543825E-21            
++lint = 0                      ll = 1.132366E-14             lln = 1                       
++lw = 2.055E-15                lwn = 1.116981                lwl = -1.485244E-21           
++dwg = -9.812081E-9            dwb = 0                       xl = '0+xln'                        
++xw = '0+xwn'                        
+***** Vth Related  Parameter ***
++vth0 = '0.612956+vth0n'               wvth0 = -7.536626E-8          pvth0 = -1.252205E-14         
++k1 = 0.791449                 k2 = -7.98431E-2              pk2 = -2.28687E-16            
++k3 = 19.580858                k3b = 1.776118                w0 = 2.505864E-7              
++nlx = 1.599157E-7             wnlx = -1E-14                 dvt0 = 5.179592               
++dvt1 = 0.629164               dvt2 = -4.70948E-2            dvt0w = 6.769653              
++dvt1w = 2.180188E6            dvt2w = 0                     ngate = 1E22                  
+***** Mobility Related Parameter ***
++u0 = 4.03124E-2               lu0 = 3.506874E-9             pu0 = 1.597556E-15            
++ua = -1.149445E-9             lua = 1.87722E-16             pua = 3.048964E-22            
++ub = 3.433705E-18             lub = 6.909725E-26            pub = -5.381624E-31           
++uc = 9.57528E-11              luc = 7.755977E-18            puc = -3.6828E-23             
++vsat = 9.04022E4              pvsat = 0                     a0 = 1.4815                   
++la0 = -3.075891E-7            pa0 = -6.672675E-14           ags = 0.313335                
++lags = 7.445466E-8            pags = 6.919982E-14           b0 = 2.69968E-8               
++b1 = 0                        keta = -5.19946E-2            wketa = 3.538E-9              
++pketa = 0                     a1 = 0                        a2 = 1                        
++rdsw = 668.820842             prwb = 0                      prwg = 0                      
++wr = 1                        
+***** Subthreshold Related Parameter ***
++voff = -0.14036               pvoff = 2.078674E-15          nfactor = 1                   
++eta0 = 4E-3                   peta0 = 8.673494E-15          etab = -0.0224                
++petab = -1.495289E-15         dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
+***** Output Resistance Related Parameter ***
++pclm = 1.027                  pdiblc1 = 0.151536            pdiblc2 = 4E-4                
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 5.751984E8           
++pscbe2 = 6E-6                 pvag = 0                      delta = 0.01                  
++alpha0 = 3.74E-7              alpha1 = 1.224                beta0 = 17.8                  
+***** NQS Parameter ***
++elm = 5                       
+***** Capacitance Parameter ***
++xpart = 1                     cgso = '3.16E-10*cgson'               cgdo = '3.16E-10*cgdon'               
++cgbo = 0                      cf = 0                        dlc = 4e-8                       
++dwc = 5e-8                    noff = 1                      voffcv = -0.0606              
++acde = 0.885                  moin = 10.65                  
+***** Souce/Drain Junction Diode Model Parameter ***
++tlevc = 1                     calcacm = 1                   acm = 12                      
++ldif = 1.2E-7                 hdif = 2.8E-7                 rsh = 82                      
++rd = 0                        rs = 0                        rsc = 0                       
++rdc = 0                       cj = '8.127607E-4*cjn'              mj = 0.351725                 
++mjsw = 9.80747E-2                cjsw = '2.883792E-10*cjswn'           cjswg = '2.996978E-10*cjswgn'          
++mjswg = 0.26369               js = 2.230222E-7              jsw = 1.07943E-12           
++pbsw = 0.466958               pb = 0.780178                 pbswg = 0.4              
+***** Temperature Coeffient ***
++tref = 25                     ute = -1.2                    kt1 = -0.29                   
++kt1l = 6E-9                   kt2 = -0.04312                ua1 = 3.91E-9                 
++lua1 = -2E-16                 wua1 = -2E-16                 ub1 = -5.21E-18               
++uc1 = -5.6E-11                at = 3.3E4                    prt = 0                       
++xti = 3                       nj = 1.011371                 tpb = 1.786688E-3             
++tpbsw = 1.486194E-3           tpbswg = 0                    tcj = 9.624849E-4             
++tcjsw = 3.573034E-4           tcjswg = 2.917211E-3    
+***** Flicker Noise Model Parameter ***
++noia = 7e19                   noib = 2.365504e4             noic = 5.4e-13                
++em = 2e8                      ef = 1.19                                                  
+
+
+.model mp33 pmos
+***** Flag Parameter ***
++level = 49                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    nqsmod = 0                    
++noimod = 2                    
+***** Geometry Range Parameter ***
++lmin = 3.5E-7                 lmax = 1.00001E-4              wmin = 4E-7                   
++wmax = 1.00001E-4             
+***** Process Parameter ***
++tox = '8.301892E-9+toxp'             toxm = 8.30189E-9             xj = 1.5E-7                   
++nch = 1.065958E17             
+***** dW and dL Parameter ***
++wint = 1.742418E-7            wl = -7.105533E-14            wln = 1                       
++ww = -1.738557E-13            wwn = 0.926127                wwl = 4.316307E-20            
++lint = -2E-8                  ll = -1.372995E-14            lln = 1                       
++lw = -7.048289E-14            lwn = 1                       lwl = -1.015918E-20           
++dwg = -1.684447E-8            dwb = 0                       xl = '0+xlp'                        
++xw = '0+xwp'                        
+***** Vth Related  Parameter ***
++vth0 = '-0.650244+vth0p'              lvth0 = -7.61385E-8           wvth0 = -3E-8                 
++pvth0 = 1.85328E-14           k1 = 0.231495                 k2 = 8.53872E-2               
++lk2 = 2.561616E-9             pk2 = -7.684848E-15           k3 = 1.296                    
++k3b = 0.373464                w0 = 0                        nlx = 1.643512E-7             
++dvt0 = 3.679654               dvt1 = 0.464707               dvt2 = -1E-3                  
++dvt0w = 5.7                   dvt1w = 5.3E6                 dvt2w = -0.032                
++ngate = 1E22                  
+***** Mobility Related Parameter ***
++u0 = 0.02152                  ua = 1.8125E-9                pua = -1.684352E-22           
++ub = 6.2222E-19               pub = 5.057836E-31            uc = -2.325E-11               
++luc = -1.70425E-17            vsat = 2.257E5                a0 = 1.8                      
++la0 = -7.91536E-7             pa0 = -4.351854E-13           ags = 0.2101                  
++lags = 3.595015E-7            pags = 3.339762E-13           b0 = 1.839287E-7              
++b1 = 0                        keta = -0.0105                lketa = -1.5615E-8            
++wketa = 8.905E-9              pketa = -1.416E-14            a1 = 0                        
++a2 = 1                        rdsw = 1.242143E3             prwb = 0                      
++prwg = 0                      wr = 1                        
+***** Subthreshold Related Parameter ***
++voff = -0.2136                lvoff = 6.408E-9              wvoff = -3.12E-8              
++pvoff = 3.204E-14             nfactor = 1.9                 eta0 = 0.1                    
++etab = -0.048                 dsub = 0.56                   cit = 3E-4                    
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
+***** Output Resistance Related Parameter ***
++pclm = 2.2                    ppclm = 5.28E-12              pdiblc1 = 0.3159              
++pdiblc2 = 8.6E-3              pdiblcb = 0                   drout = 0.56                  
++pscbe1 = 8E8                  pscbe2 = 1E-5                 pvag = 0                      
++delta = 0.01                  alpha0 = 2.1E-9               alpha1 = 4.7E-3               
++beta0 = 16.1725               
+***** NQS Parameter ***
++elm = 5                       
+***** Capacitance Parameter ***
++xpart = 1                     cgso = '2.03E-10*cgsop'               cgdo = '2.03E-10*cgdop'               
++cgbo = 0                      cf = 0                        dlc = 4e-8                       
++dwc = 5e-8                    noff = 3.8                    
++voffcv = -0.094872            acde = 1.59                   moin = 11.1                   
++cgsl = 0                      cgdl = 0                      tlevc = 1
+***** Souce/Drain Junction Diode Model Parameter ***
++calcacm = 1                   acm = 12                      ldif = 1.2E-7                 
++hdif = 2.8E-7                 rsh = 150                     rd = 0                        
++rs = 0                        rsc = 0                       rdc = 0                       
++cj = '1.104019E-3*cjp'                   mj = 0.581622                     mjsw = 0.150829                   
++cjsw = '3.127131E-10*cjswp'                cjswg = '1.715229E-10*cjswgp'                 mjswg = 0.27811                  
++js = 6.265689E-7              jsw = 1.57925E-12                       pbsw = 0.519065                   
++pb = 1.1                      pbswg = 0.483368                
+***** Temperature Coeffient ***
++tref = 25                     ute = -1.505059               kt1 = -0.543492               
++kt1l = -4E-9                  kt2 = -8.47832E-2             ua1 = -4.093747E-10           
++lua1 = -4E-16                 wua1 = 2.55316E-16            pua1 = -7.379E-22             
++ub1 = -1.805554E-18           uc1 = -5.6E-11                at = 0                        
++prt = 284.134347              xti = 3                       nj = 1.038482                
++tpb = 1.341686E-3             tpbsw = 1.652058E-3           tpbswg = 2.096671E-3              
++tcj = 9.695762E-4             tcjsw = 4.280031E-4           tcjswg = 1.102498E-3 
+***** Flicker Noise Model Parameter ***
++noia = 5.9909E19              noib = 4.4E3                  noic = 1.69706E-12            
++em = 2.85E6                   ef = 1.06                     
+
+.model mn33dn_core nmos
+***** Flag Parameter ***
++level = 49                    version = 3.3                 binunit = 2                   
++mobmod = 1                    capmod = 3                    nqsmod = 0                     
++noimod = 2                    
+***** Geometry Range Parameter ***
++lmin = 3.4999E-7                 lmax = 1.00001E-4              wmin = 3.9999E-7                   
++wmax = 1.00001E-4             
+***** Process Parameter ***
++tox = 'toxn33_dn'                 toxm = 8.04E-9                xj = 1.2E-7                   
++nch = 1.286154E17             
+***** dW and dL Parameter ***
++wint = 1.186335E-7            wl = -2.64374E-14             wln = 1.003913                
++ww = -2.324483E-14            wwn = 1                       wwl = 2.543825E-21            
++lint = 8.182369E-9            ll = 6.312941E-15             lln = 1                       
++lw = 2.055E-15                lwn = 1.116981                lwl = -1.485244E-21           
++dwg = -9.812081E-9            dwb = 0                       xl = '0+dxln33_dn'                        
++xw = '0+dxwn33_dn'                        
+***** Vth Related  Parameter ***
++vth0 = '0.564091+dvthn33_dn'      wvth0 = -7.536626E-8          pvth0 = -2.627294E-14         
++k1 = 0.791449                 k2 = -8.22781E-2              pk2 = -2.28687E-16            
++k3 = 39.078146                k3b = 2.734943                w0 = 7.447294E-7              
++nlx = 2.281403E-7             dvt0 = 4.370627               dvt1 = 0.568356               
++dvt2 = -1.40989E-2            dvt0w = 0.735082              dvt1w = 2.104037E6            
++dvt2w = -1.26193E-2           ngate = 1E22                  
+***** Mobility Related Parameter ***
++u0 = 4.03124E-2               lu0 = 3.506874E-9             pu0 = 1.597556E-15            
++ua = -1.109445E-9             lua = 1.87722E-16             pua = 3.048964E-22            
++ub = 3.433705E-18             lub = 6.909725E-26            pub = -5.381624E-31           
++uc = 7.732039E-11             luc = 7.755977E-18            puc = -3.6828E-23             
++vsat = 9.437654E4             pvsat = 0                     a0 = 1.121316                 
++la0 = -3.352269E-7            pa0 = -6.672675E-14           ags = 0.291932                
++lags = 1.489093E-7            pags = 6.919982E-14           b0 = 3.39968E-8               
++b1 = 0                        keta = -9.239352E-3           lketa = -6.19946E-9           
++wketa = -1.4152E-10           pketa = 0                     a1 = 0                        
++a2 = 1                        rdsw = 668.820842             prwb = 0                      
++prwg = 0                      wr = 1                        
+***** Subthreshold Related Parameter ***
++voff = -0.14036               pvoff = 2.078674E-15          nfactor = 1                   
++eta0 = 1.51221E-2             peta0 = 8.673494E-15          etab = -2.41321E-2            
++petab = -1.495289E-15         dsub = 0.56                   cit = 0                       
++cdsc = 2.4E-4                 cdscb = 0                     cdscd = 0                     
+***** Output Resistance Related Parameter ***
++pclm = 1.027                  pdiblc1 = 0.151536            pdiblc2 = 4E-4                
++pdiblcb = 0                   drout = 0.56                  pscbe1 = 3.911349E8           
++pscbe2 = 6E-6                 pvag = 0                      delta = 0.01                  
++alpha0 = 9.4176E-7            alpha1 = 4.236                beta0 = 20.8                  
+***** NQS Parameter ***
++elm = 5                       
+***** Capacitance Parameter ***
++xpart = 1                     cgso = '3.16E-10*cgson33_dn'               cgdo = '3.16E-10*cgdon33_dn'               
++cgbo = 0                      cf = 0                        dlc = 4e-8                       
++dwc = 5e-8                        noff = 1                      voffcv = -0.0606              
++acde = 0.885                  moin = 10.65                  
+***** Souce/Drain Junction Diode Model Parameter ***
++tlevc = 1                     calcacm = 1                   acm = 12                      
++ldif = 1.2E-7                 hdif = 2.8E-7                 rsh = 82                      
++rd = 0                        rs = 0                        rsc = 0                       
++rdc = 0                       cj = '8.127607E-4*cjn33_dn'              mj = 0.351725                
++mjsw = 9.80747E-2                cjsw = '2.883792E-10*cjswn33_dn'           cjswg = '2.996978E-10*cjswgn33_dn'          
++mjswg = 0.26369               js = 2.230222E-7              jsw = 1.07943E-12           
++pbsw = 0.466958               pb = 0.780178                 pbswg = 0.4               
+***** Temperature Coeffient ***
++tref = 25                     ute = -1.2                    kt1 = -0.29                   
++kt1l = 6E-9                   kt2 = -0.04312                ua1 = 3.91E-9                 
++lua1 = -2E-16                 wua1 = -2E-16                 ub1 = -5.21E-18               
++uc1 = -5.6E-11                at = 3.3E4                    prt = 0                       
++xti = 3                       nj = 1.011371                 tpb = 1.786688E-3             
++tpbsw = 1.486194E-3           tpbswg = 0                    tcj = 9.624849E-4             
++tcjsw = 3.573034E-4           tcjswg = 2.917211E-3 
+***** Flicker Noise Model Parameter ***
++noia = 2E18                   noib = 1E4                    noic = 1.5E-13                
++em = 1E8                      ef = 1.16                     
+*******************macro********************
+.subckt mn33dn d g s b dn w=20e-6 l=3.5e-7 d1_area=4e-10 d1_pj=8e-5 dtemp=0 count=1
+dsub b dn dpwdn33 area=d1_area pj=d1_pj dtemp=dtemp m=count
+m1 d g s b mn33dn_core w=w l=l m=count dtemp=dtemp                                
+.model dpwdn33 d
+***** Flag Parameters ***
++level = 3                     
+***** DC Model Parameter ***
++ibv = 278                     ik = 3.755599E4                ikr = 0                       
++js = '6.356133E-7*js_d33'       jsw = '4.129171E-14*jsw_d33'     n = '1.002263*n_d33'                  
++rs = 2.400866E-8              bv = 24                        area = 3.6E-9                 
++pj = 2.4E-4                                    
+***** Capacitance Parameter ***
++cj = '2.936412E-4*cj_d33'       pb = 0.659364                 mj = 0.349281                 
++fc = 0.5                      cjsw = '2.340731E-10*cjsw_d33'           
++mjsw = 0.130274               php = 0.4                  
+***** Temperature coefficient ***
++tlev = 1                      tlevc = 1                     tref = 25                     
++eg = 1.16                     xti = 3                       cta = 1.342337E-3             
++ctp = 8.526469E-4             tcv = 0                       tpb = 2.071302E-3             
++tphp = 1.697713E-3            trs = 1.875616E-3          
+.ends mn33dn 
+.endl mos
+
+.lib mos_5v
+
+.model mn5 nmos
+***** Flag Parameter ***
++level = 49                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    nqsmod = 0                    
++noimod = 2                    
+***** Geometry Range Parameter ***
++lmin = 5E-7                   lmax = 1.00001E-4              wmin = 4E-7                   
++wmax = 1.00001E-4             
+***** Process Parameter ***
++tox = '1.4348E-8+toxn5'               toxm = 1.4348E-8              xj = 1E-7                     
++nch = 1.02272E17              
+***** dW and dL Parameter ***
++wint = 1.358595E-7            wl = -5.043226E-14            wln = 1                       
++ww = -3.626481E-14            wwn = 1                       wwl = 3.497168E-21            
++lint = 4.459421E-8            ll = 2.425166E-15             lln = 1                       
++lw = -8.77119E-15             lwn = 1                       lwl = -8.423363E-21           
++dwg = -2.3386E-9              dwb = 8.98973E-9              xl = '0+xln5'                        
++xw = '0+xwn5'                        
+***** Vth Related  Parameter ***
++vth0 = '0.661025+vth0n5'               wvth0 = -1.974986E-8          pvth0 = -3.44448E-14          
++k1 = 0.950728                 k2 = -4.287527E-4             lk2 = 2.886624E-9             
++pk2 = 2.396764E-15            k3 = 1E-3                     k3b = 0.858                   
++w0 = 2.5E-7                   nlx = 3.473604E-7             dvt0 = 3.688199               
++dvt1 = 0.562791               dvt2 = 0                      dvt0w = 4.7                   
++dvt1w = 1.298E6               dvt2w = -2.49136E-2           ngate = 1E22                  
+***** Mobility Related Parameter ***
++u0 = 5.17126E-2               pu0 = -1.672334E-15           ua = 6.010017E-11             
++pua = -1.885041E-22           ub = 2.258557E-18             uc = 5.416833E-11             
++puc = -2.260939E-23           vsat = 8.4728E4               a0 = 1.045                    
++la0 = -2.8E-7                 wa0 = -2.474894E-8            pa0 = 2.271557E-14            
++ags = 0.12768                 lags = -1.348301E-8           wags = -6.017983E-9           
++pags = -1.74586E-14           b0 = 0                        b1 = 0                        
++keta = -1E-4                  lketa = -1.2E-8               pketa = 4E-15                 
++a1 = 0                        a2 = 1                        rdsw = 1.385365E3             
++prwb = 0.07374                prwg = 1.13176E-2             wr = 1                        
+***** Subthreshold Related Parameter ***
++voff = -0.127602              lvoff = 7.646892E-9           wvoff = 2.123774E-9           
++pvoff = 4.480966E-15          nfactor = 0.470578            pnfactor = 0                  
++eta0 = 0.0288                 peta0 = 9.5808E-16            etab = -8E-3                  
++dsub = 0.56                   cit = 4.099E-4                cdsc = 0                      
++cdscb = 0                     cdscd = 0                     
+***** Output Resistance Related Parameter ***
++pclm = 0.538679               ppclm = 2.544E-13             pdiblc1 = 1.066213E-3         
++pdiblc2 = 3.453206E-3         pdiblcb = 0                   drout = 0.56                  
++pscbe1 = 3.858282E8           pscbe2 = 3E-7                 pvag = 0                      
++delta = 0.01                  alpha0 = 2.730878E-6          alpha1 = 60.206695            
++beta0 = 41.107481             
+***** NQS Parameter ***
++elm = 5                       
+***** Capacitance Parameter ***
++xpart = 1                     cgso = '2.92E-10*cgson5'               cgdo = '2.92E-10*cgdon5'               
++cgbo = 0                      cf = 0                        noff = 1.3309                 
++voffcv = -4.00034E-2          acde = 1.048359               moin = 20   
++dlc= -7e-8                    dwc = -5e-8                  
+***** Souce/Drain Junction Diode Model Parameter ***
++tlevc = 1                     calcacm = 1                   acm = 12                      
++ldif = 1E-7                   hdif = 3E-7                   rsh = 82                      
++rd = 0                        rs = 0                        rsc = 0                       
++rdc = 0                       cj = '7.172265E-4*cjn5'              mj = 0.38143                   
++mjsw = 0.105396               cjsw = '2.997162E-10*cjswn5'           cjswg = '2.197683E-10*cjswgn5'          
++mjswg = 0.288152              js = 8.826E-7              jsw = 2.11652E-12            
++pbsw = 0.4                    pb = 0.847792                 pbswg = 0.4               
+***** Temperature Coeffient ***
++tref = 25                     ute = -1.445308               wute = 1.26422E-7             
++kt1 = -0.366867               wkt1 = 4.1E-8                 kt1l = -1E-9                  
++kt2 = -4.43807E-2             ua1 = 2.689409E-9             lua1 = -8.634611E-16          
++wua1 = 6.148681E-18           ub1 = -4.182359E-18           lub1 = 1.740238E-24           
++wub1 = -1.411836E-25          pub1 = -1.2E-31               uc1 = 2.721239E-11            
++luc1 = 4.245133E-17           at = 2.462682E4               prt = 550                     
++nj = 1.052975                 xti = 3                       tpb = 1.952073E-3          
++tpbsw = 1.187967E-3           tpbswg = 2.99683E-3           tcj = 1.011618E-3             
++tcjsw = 3.878739E-4           tcjswg = 0          
+***** Flicker Noise Model Parameter ***
++noia = 7.69534e19             noib = 1.007284e4             noic = -1e-13                 
++em = 4.70002e6                ef = 1.01                     
+
+
+
+.model mp5 pmos
+***** Flag Parameter ***
++level = 49                    version = 3.2                 binunit = 2                   
++mobmod = 1                    capmod = 3                    nqsmod = 0                    
++noimod = 2                    
+***** Geometry Range Parameter ***
++lmin = 5E-7                   lmax = 1.00001E-4              wmin = 4E-7                   
++wmax = 1.00001E-4             
+***** Process Parameter ***
++tox = '1.455635E-8+toxp5'             toxm = 1.45563E-8             xj = 1.5E-7                   
++nch = 1.343E17                
+***** dW and dL Parameter ***
++wint = 1.76899E-7             wl = -5.525815E-14            wln = 1                       
++ww = -5.46846E-14             wwn = 1                       wwl = 1.109608E-20            
++lint = -2.5344E-8             ll = -2.156297E-14            lln = 1                       
++lw = -9.19383E-14             lwn = 1                       lwl = 3.010103E-21            
++dwg = -1.345641E-8            dwb = -7.974289E-9            xl = '0+xlp5'                        
++xw = '0+xwp5'                        
+***** Vth Related  Parameter ***
++vth0 = '-0.949353+vth0p5'              lvth0 = 8.081426E-8           pvth0 = -1E-14                
++k1 = 0.48654                  k2 = 8.49519E-2               lk2 = -6.44E-9                
++k3 = 3.617884                 k3b = -1.009167               w0 = 5E-9                     
++nlx = 1.022276E-6             dvt0 = 1.89419                dvt1 = 1.733304               
++dvt2 = -0.01                  dvt0w = 0.301294              dvt1w = 8.166899E3            
++dvt2w = -0.05                 ngate = 1E22                  
+***** Mobility Related Parameter ***
++u0 = 2.06787E-2               ua = 2.088026E-9              ub = 9.086501E-19             
++uc = -5.766E-11               luc = 2.24874E-17             vsat = 7.7E4                  
++a0 = 1.35                     la0 = -8.505731E-7            pa0 = -4.05E-14               
++ags = 0.09345                 lags = 1.079155E-7            pags = 9.91872E-15            
++b0 = 1.417E-7                 b1 = 0                        keta = 0                      
++lketa = -1.9188E-8            wketa = 6.936E-9              pketa = -1.803936E-14         
++a1 = 0                        a2 = 1                        rdsw = 879.967853             
++prwb = 0                      prwg = 0                      wr = 1                        
+***** Subthreshold Related Parameter ***
++voff = -0.133309              lvoff = -3E-8                 wvoff = -1.99688E-8           
++pvoff = 6.753212E-14          nfactor = 0.911365            eta0 = 0.0234                 
++peta0 = 5.616E-14             etab = -0.07                  dsub = 0.56                   
++cit = 0                       cdsc = 2.4E-4                 cdscb = 0                     
++cdscd = 0                     
+***** Output Resistance Related Parameter ***
++pclm = 2.08                   ppclm = 1.352E-12             pdiblc1 = 0.39                
++pdiblc2 = 8.6E-3              pdiblcb = 0                   drout = 0.56                  
++pscbe1 = 5.0456E8             pscbe2 = 1E-5                 pvag = 0                      
++delta = 0.01                  alpha0 = 2.217932E-6          alpha1 = -1.54                
++beta0 = 30.78934              
+***** NQS Parameter ***
++elm = 5                       
+***** Capacitance Parameter ***
++xpart = 1                     cgso = '2.00E-10*cgsop5'               cgdo = '2.00E-10*cgdop5'               
++cgbo = 0                      cf = 0                        noff = 2                      
++voffcv = -5.45974E-2          acde = 1.0478                 moin = 10     
++tlevc = 1                     dlc= -7e-8                    dwc = -5e-8
+***** Souce/Drain Junction Diode Model Parameter ***
++calcacm = 1                   acm = 12                      ldif = 1E-7                   
++hdif = 3E-7                   rsh = 150                     rd = 0                        
++rs = 0                        rsc = 0                       rdc = 0                       
++cj = '1.104019E-3*cjp5'              mj = 0.581622                 mjsw = 0.150829              
++cjsw = '3.127131E-10*cjswp5'           cjswg = '2.157178E-10*cjswgp5'           mjswg = 0.245473              
++js = 6.265689E-7              jsw = 2.76619E-12                 pbsw = 0.519065               
++pb = 1.1                      pbswg = 0.455327              
+***** Temperature Coeffient ***
++tref = 25                     ute = -1.451459               kt1 = -0.597135               
++kt1l = 2.856E-8               kt2 = -7.87068E-2             ua1 = -1.583015E-10           
++lua1 = -4.1084E-16            wua1 = 2.107567E-16           pua1 = -5.5556E-22          
++ub1 = -3.151501E-18           lub1 = -4.765235E-25          uc1 = -4.834832E-11           
++at = 0                        pat = 0                       prt = 700                     
++xti = 3                       nj = 1.038482                
++tpb = 1.341686E-3             tpbsw = 1.652058E-3           tpbswg = 1.084153E-3              
++tcj = 9.695762E-4             tcjsw = 4.280031E-4           tcjswg = 4.280031E-4
+***** Flicker Noise Model Parameter ***
++noia = 2.59e19                noib = 1e4                    noic = 7.59706e-12            
++em = 2.5e6                    ef = 1.18                     
+  
+.model mn5dn_core nmos
+***** Flag Parameter ***
++level = 49                    version = 3.3                 binunit = 2                   
++mobmod = 1                    capmod = 3                    nqsmod = 0                   
++noimod = 2                    
+***** Geometry Range Parameter ***
++lmin = 4.9999E-7                   lmax = 1.00001E-4              wmin = 3.9999E-7                   
++wmax = 1.00001E-4             
+***** Process Parameter ***
++tox = 'toxn5_dn'               toxm = 1.4348E-8              xj = 1E-7                     
++nch = 1.02272E17              
+***** dW and dL Parameter ***
++wint = 1.358595E-7            wl = -8.928041E-14            wln = 1                       
++ww = -3.626481E-14            wwn = 1                       wwl = 2.119438E-20            
++lint = 5.28374E-8             ll = 1.461391E-15             lln = 1                       
++lw = 2.374069E-14             lwn = 1                       lwl = -2.329105E-20           
++dwg = -2.3386E-9              dwb = 8.98973E-9              xl = '0+dxln5_dn'                        
++xw = '0+dxwn5_dn'                        
+***** Vth Related  Parameter ***
++vth0 = '0.677345+dvthn5_dn'      wvth0 = -1.974986E-8          pvth0 = -5.16121E-14          
++k1 = 0.950728                 k2 = -1.071882E-4             lk2 = 5.229936E-9             
++pk2 = -2.501618E-15           k3 = 8.261669                 wk3 = -2.851823E-6            
++k3b = 0.864195                w0 = 2.390167E-7              nlx = 2.906321E-7             
++dvt0 = 6.790021               dvt1 = 0.839609               dvt2 = 0                      
++dvt0w = 0.336471              dvt1w = 9.858163E5            dvt2w = -0.547033             
++ngate = 1E22                  
+***** Mobility Related Parameter ***
++u0 = 5.17126E-2               pu0 = -3.019487E-15           ua = 6.010017E-11             
++pua = -2.041592E-22           ub = 2.458557E-18             uc = 6.716833E-11             
++puc = -2.273561E-23           vsat = 7.604006E4             a0 = 1.170833                 
++la0 = -5.589782E-7            wa0 = -2.474894E-8            pa0 = 2.271557E-14            
++ags = 0.142367                lags = 7.875832E-8            wags = -6.017983E-9           
++pags = -3.51879E-14           b0 = 7.822567E-9              b1 = 1E-7                     
++keta = 3E-3                   lketa = -2.496E-8             pketa = 4E-15                 
++a1 = 0                        a2 = 1                        rdsw = 1.668563E3             
++prwb = 0.07374                prwg = -3.39528E-2            wr = 1                        
+***** Subthreshold Related Parameter ***
++voff = -0.127602              lvoff = 7.646892E-9           wvoff = 2.123774E-9           
++pvoff = 4.480966E-15          nfactor = 0.734102            lnfactor = 8.809224E-8        
++pnfactor = 0                  eta0 = 3.17491E-2             peta0 = 9.5808E-16            
++etab = -0.02                  dsub = 0.56                   cit = 4.099E-4                
++cdsc = 0                      cdscb = 0                     cdscd = 0                     
+***** Output Resistance Related Parameter ***
++pclm = 0.538679               ppclm = 2.544E-13             pdiblc1 = 1.066213E-3         
++pdiblc2 = 3.453206E-3         pdiblcb = 0                   drout = 0.56                  
++pscbe1 = 3.858282E8           pscbe2 = 3E-7                 pvag = 0                      
++delta = 0.01                  alpha0 = 2.165439E-6          alpha1 = 39.206695            
++palpha1 = 3E-12               beta0 = 39.207481             
+***** NQS Parameter ***
++elm = 5                       
+***** Capacitance Parameter ***
++xpart = 1                     cgso = '2.92E-10*cgson5_dn'               cgdo = '2.92E-10*cgdon5_dn'               
++cgbo = 0                      cf = 0                        noff = 1.3309                 
++voffcv = -4.00034E-2          acde = 1.048359               moin = 20   
++dlc= -7e-8                    dwc = -5e-8                  
+***** Souce/Drain Junction Diode Model Parameter ***
++tlevc = 1                     calcacm = 1                   acm = 12                      
++ldif = 1E-7                   hdif = 3E-7                   rsh = 82                      
++rd = 0                        rs = 0                        rsc = 0                     
++rdc = 0                       cj = '7.172265E-4*cjn5_dn'              mj = 0.38143                  
++mjsw = 0.105396               cjsw = '2.997162E-10*cjswn5_dn'           cjswg = '2.197683E-10*cjswgn5_dn'          
++mjswg = 0.288152              js = 8.826E-7              jsw = 2.11652E-12            
++pbsw = 0.4                    pb = 0.847792                 pbswg = 0.4              
+***** Temperature Coeffient ***
++tref = 25                     ute = -1.445308               wute = 1.26422E-7             
++kt1 = -0.366867               wkt1 = 4.1E-8                 kt1l = -1E-9                  
++kt2 = -4.43807E-2             ua1 = 2.689409E-9             lua1 = -8.634611E-16          
++wua1 = 6.148681E-18           ub1 = -4.182359E-18           lub1 = 1.740238E-24           
++wub1 = -1.411836E-25          pub1 = -1.2E-31               uc1 = 2.721239E-11            
++luc1 = 4.245133E-17           at = 2.462682E4               prt = 550                     
++nj = 1.052975                 xti = 3                       tpb = 1.952073E-3          
++tpbsw = 1.187967E-3           tpbswg = 3.49683E-4           tcj = 1.011618E-3             
++tcjsw = 3.878739E-4           tcjswg = 0   
+***** Flicker Noise Model Parameter ***
++noia = 4E18                   noib = 1.55E4                 noic = -1.8E-13               
++em = 5E6                      ef = 1.06                     
+*******************macro********************
+.subckt mn5dn d g s b dn w=20e-6 l=5e-7 d1_area=4e-10 d1_pj=8e-5 dtemp=0 count=1
+dsub b dn dpwdn5 area=d1_area pj=d1_pj dtemp=dtemp m=count
+m1 d g s b mn5dn_core w=w l=l m=count dtemp=dtemp                                
+.model dpwdn5 d
+***** Flag Parameters ***
++level = 3                     
+***** DC Model Parameter ***
++ibv = 278                     ik = 3.755599E4                ikr = 0                       
++js = '6.356133E-7*js_d5'       jsw = '4.129171E-14*jsw_d5'     n = '1.002263*n_d5'                  
++rs = 2.400866E-8              bv = 24                        area = 3.6E-9                 
++pj = 2.4E-4                                    
+***** Capacitance Parameter ***
++cj = '2.936412E-4*cj_d5'       pb = 0.659364                 mj = 0.349281                 
++fc = 0.5                      cjsw = '2.340731E-10*cjsw_d5'           
++mjsw = 0.130274               php = 0.4                  
+***** Temperature coefficient ***
++tlev = 1                      tlevc = 1                     tref = 25                     
++eg = 1.16                     xti = 3                       cta = 1.342337E-3             
++ctp = 8.526469E-4             tcv = 0                       tpb = 2.071302E-3             
++tphp = 1.697713E-3            trs = 1.875616E-3          
+.ends mn5dn
+.endl mos_5v
+
+.lib biptypical
+.param
++is_b= 1        bf_b= 1       nf_b= 1       rb_b= 1         re_b= 1
++rc_b= 1        cje_b= 1      cjc_b=1
+.lib 'st3524.lib' bip
+.endl biptypical
+
+.lib bipfast
+.param
++is_b= 1.3      bf_b= 1.18    nf_b= 0.99    rb_b= 0.8       re_b= 0.8
++rc_b= 0.8      cje_b= 0.9    cjc_b= 0.9
+.lib 'st3524.lib' bip
+.endl bipfast
+
+.lib bipslow
+.param
++is_b= 0.7      bf_b= 0.82    nf_b= 1.01    rb_b= 1.2       re_b=  1.2
++rc_b= 1.2      cje_b= 1.1    cjc_b= 1.1
+.lib 'st3524.lib' bip
+.endl bipslow
+
+.lib bip
+.model qvp5 pnp
+*** Flag Parameter ***
++level = 1                     tlev = 0                      tlevc = 1                     
++tref = 25                     subs = 1                      
+*** DC Model Parameter ***
++is = '8.927469E-18*is_b'      bf = '5.997743*bf_b'          nf = '1.010379*nf_b'                 
++vaf = 183.6                   ikf = 6.153875E-4             nkf = 0.483584                
++ise = 1.031249E-15            ne = 2.253767                 br = 7.2912E-3                
++nr = 1.01                     var = 11.17395                ikr = 0.10918                 
++isc = 0                       nc = 2                        
+*** Series Resistance Related Parameter ***
++rb = '20.310183*rb_b'         irb = 0.675                   rbm = 1                       
++re = '13.222422*re_b'         rc = '15*rc_b'                       
+*** Capacitance Parameter ***
++cje = '3.428E-14*cje_b'       vje = 1.110775                mje = 0.595635                   
++cjc = '2.260E-14*cjc_b'       vjc = 0.472361                mjc = 0.326238                                  
++cjs = 0                       vjs = 0.75                    mjs = 0.5                     
++tf = 1E-10                    xtf = 1                       vtf = 10                      
++itf = 0.1                     xcjc = 1                      fc = 0.5                      
++tr = 0                        
+*** Temperature coefficient ***
++xti = 3                       eg = 1.16                     tbf1 = 6.779273E-3            
++tbf2 = 1.510293E-5            tnf1 = 1.533642E-5            tnf2 = -3.310802E-7                    
++tikf1 = -4.920506E-3          tikf2 = 8.20476E-6            tne1 = 1.32E-3                
++tne2 = -1.3E-5                cte = 8.140233E-4             ctc = 1.237016E-3                
++tvje = 1.341686E-3            tvjc = 1.479981E-3            trb1 = -9.642494E-4           
++trb2 = -1.776756E-5           
+
+.model qvp10 pnp
+*** Flag Parameter ***
++level = 1                     tlev = 0                      tlevc = 1                     
++tref = 25                     subs = 1                      
+*** DC Model Parameter ***
++is = '2.555641E-17*is_b'      bf = '5.395086*bf_b'          nf = '1.005119*nf_b'                 
++vaf = 306                     ikf = 1.378205E-3             nkf = 0.512738                
++ise = 6.980926E-15            ne = 2.188187                 br = 1.32912E-2               
++nr = 1.008                    var = 12.555                  ikr = 0.103                   
++isc = 0                       nc = 2                        
+*** Series Resistance Related Parameter ***
++rb = '10*rb_b'                irb = 0.675                   rbm = 1                       
++re = '10.900904*re_b'         rc = '10*rc_b'                       
+*** Capacitance Parameter ***
++cje = '1.237E-13*cje_b'       vje = 1.110775                mje = 0.595635                  
++cjc = '4.204E-14*cjc_b'       vjc = 0.472361                mjc = 0.326238                 
++cjs = 0                       vjs = 0.75                    mjs = 0.5                     
++tf = 1E-10                    xtf = 1                       vtf = 10                      
++itf = 0.1                     xcjc = 1                      fc = 0.5                      
++tr = 0                        
+*** Temperature coefficient ***
++xti = 3                       eg = 1.16                     tbf1 = 6.673984E-3            
++tbf2 = 8.059585E-6            tnf1 = -2.082852E-5           tnf2 = -3.990486E-7          
++tikf1 = -8.715E-3             tikf2 = 4.352E-5              cte = 8.140233E-4               
++ctc = 1.237016E-3             tvje = 1.341686E-3            tvjc = 1.479981E-3
++tre1 = -2.3E-3                tre2 = 2.3E-5    
+
+.model qvp20 pnp
+*** Flag Parameter ***
++level = 1                     tlev = 0                      tlevc = 1                     
++tref = 25                     subs = 1                      
+*** DC Model Parameter ***
++is = '8.892011E-17*is_b'      bf = '4.950238*bf_b'          nf = '1.004172*nf_b'                 
++vaf = 354.008                 ikf = 3.062598E-3             nkf = 0.552307                
++ise = 7.19994E-16             ne = 1.602644                 br = 2.32586E-2               
++nr = 1.00503                  var = 13.555                  ikr = 0.103                   
++isc = 0                       nc = 2                        
+*** Series Resistance Related Parameter ***
++rb = '6.177899*rb_b'          irb = 0.675                   rbm = 1                       
++re = '9.68009*re_b'           rc = '10*rc_b'                       
+*** Capacitance Parameter ***
++cje = '4.682E-13*cje_b'       vje = 1.110775                mje = 0.595635                   
++cjc = '9.511E-14*cjc_b'       vjc = 0.472361                mjc = 0.326238                 
++cjs = 0                       vjs = 0.75                    mjs = 0.5                     
++tf = 1E-10                    xtf = 1                       vtf = 10                      
++itf = 0.1                     xcjc = 1                      fc = 0.5                      
++tr = 0                        
+*** Temperature coefficient ***
++xti = 3                       eg = 1.16                     tbf1 = 6.513453E-3            
++tbf2 = 5.832956E-6            tnf1 = -3.144496E-5           tnf2 = -4.860376E-7           
++tikf1 = -4.386102E-3          tikf2 = 3.77079E-6            tne1 = 1.422108E-3            
++tne2 = 1.632912E-5            cte = 8.140233E-4             ctc = 1.237016E-3                
++tvje = 1.341686E-3            tvjc = 1.479981E-3            trb1 = 2.760351E-3            
++trb2 = 1.323458E-5 
+.endl bip
+
+************* diode model ************
+.lib diotypical
+.param
++n_d=1
++js_d=1
++jsw_d=1
++cj_d=1
++cjsw_d=1
+.lib 'st3524.lib' diode
+.endl diotypical
+.lib diofast
+.param
++n_d=0.99
++js_d=1.3
++jsw_d=1.5
++cj_d=0.9
++cjsw_d=0.9
+.lib 'st3524.lib' diode
+.endl diofast
+.lib dioslow
+.param
++n_d=1.01
++js_d=0.7
++jsw_d=0.5
++cj_d=1.1
++cjsw_d=1.1
+.lib 'st3524.lib' diode
+.endl dioslow                    
+.lib diode
+.model dnppw33 d
+*** Flag Parameter ***
++level = 3                     tlev = 1                      tlevc = 1                     
+*** DC Model Parameter ***
++ibv = 278                     ik = 7.511198E4               ikr = 0                       
++js = '2.230222E-7*js_d'       jsw = '4.129171E-14*jsw_d'    n = '1.011371*n_d'                   
++rs = 2.360756E-8              bv = 9                        
+*** Geometric Junction Parameter ***
++area = 3.6E-9                 pj = 2.4E-4                   
+*** Capacitance Parameter ***
++cj = '8.127607E-4*cj_d'       pb = 0.780178                 mj = 0.351725                 
++fc = 0                        cjsw = '2.883792E-10*cjsw_d'  fcs = 0                       
++mjsw = 9.80747E-2             php = 0.466958                
+*** Temperature coefficient ***
++tref = 25                     eg = 1.16                     xti = 3                       
++cta = 9.624849E-4             ctp = 3.573034E-4             tcv = 0                       
++tpb = 1.786688E-3             tphp = 1.486194E-3            trs = 2.375616E-3 
+
+.model dnppw5 d
+*** Flag Parameter ***
++level = 3                     tlev = 1                      tlevc = 1                     
+*** DC Model Parameter ***
++ibv = 278                     ik = 7.511198E4               ikr = 0                       
++js = '8.826E-7*js_d'          jsw = '4.129171E-14*jsw_d'    n = '1.052975*n_d'                   
++rs = 2.411954E-8              bv = 10                       
+*** Geometric Junction Parameter ***
++area = 3.6E-9                 pj = 2.4E-4                   
+*** Capacitance Parameter ***
++cj = '7.172265E-4*cj_d'       pb = 0.847792                 mj = 0.38143                  
++fc = 0                        cjsw = '2.997162E-10*cjsw_d'  fcs = 0                       
++mjsw = 0.105396               php = 0.4                     
+*** Temperature coefficient ***
++tref = 25                     eg = 1.16                     xti = 3                       
++cta = 1.011618E-3             ctp = 3.878739E-4             tcv = 0                       
++tpb = 1.952073E-3             tphp = 1.187967E-3            trs = 2.259331E-3  
+            
+.model dppnw d
+*** Flag Parameter ***
++level = 3                     tlev = 1                      tlevc = 1                     
+*** DC Model Parameter ***
++ibv = 278                     ik = 1.749789E5               ikr = 0                       
++js = '6.265689E-7*js_d'       jsw = '3.9E-14*jsw_d'         n = '1.038482*n_d'                  
++rs = 2.666659E-8              bv = 9.5                      
+*** Geometric Junction Parameter ***
++area = 3.6E-9                 pj = 2.4E-4                   
+*** Capacitance Parameter ***
++cj = '1.104019E-3*cj_d'       pb = 1.1                      mj = 0.581622                 
++fc = 0                        cjsw = '3.127131E-10*cjsw_d'  fcs = 0                       
++mjsw = 0.150829               php = 0.519065                
+*** Temperature coefficient ***
++tref = 25                     eg = 1.16                     xti = 3                       
++cta = 9.695762E-4             ctp = 4.280031E-4             tcv = 0                       
++tpb = 1.341686E-3             tphp = 1.652058E-3            trs = 2.2E-3                
+
+.model dnwpsub d
+*** Flag Parameter ***
++level = 3                     tlev = 1                      tlevc = 1                     
+*** DC Model Parameter ***
++ibv = 278                     ik = 3E5                      ikr = 0                       
++js = '7.886048E-7*js_d'       jsw = '2.1E-13*jsw_d'         n = '1.098039*n_d'                   
++rs = 2.355191E-8              bv = 18                       
+*** Geometric Junction Parameter ***
++area = 3.6E-9                 pj = 2.4E-4                   
+*** Capacitance Parameter ***
++cj = '3.047472E-6*cj_d'       pb = 1.1                      mj = 0.183064                
++fc = 0                        cjsw = '5.653349E-10*cjsw_d'  fcs = 0                       
++mjsw =0.783406                php = 0.4                     
+*** Temperature coefficient ***
++tref = 25                     eg = 1.16                     xti = 3                     
++cta = 4.864961E-3             ctp = 2E-3                    tcv = 0                       
++tpb = 8.27E-3                 tphp = 0                      trs = 2.625766E-3                      
+
+.model dpwdn d
+***** Flag Parameters ***
++level = 3                     
+***** DC Model Parameter ***
++ibv = 278                     ik = 3.755599E4                ikr = 0                       
++js = '6.356133E-7*js_d'       jsw = '4.129171E-14*jsw_d'     n = '1.002263*n_d'                  
++rs = 2.400866E-8              bv = 24                        area = 3.6E-9                 
++pj = 2.4E-4                                    
+***** Capacitance Parameter ***
++cj = '2.936412E-4*cj_d'       pb = 0.659364                 mj = 0.349281                 
++fc = 0.5                      cjsw = '2.340731E-10*cjsw_d'           
++mjsw = 0.130274               php = 0.4                  
+***** Temperature coefficient ***
++tlev = 1                      tlevc = 1                     tref = 25                     
++eg = 1.16                     xti = 3                       cta = 1.342337E-3             
++ctp = 8.526469E-4             tcv = 0                       tpb = 2.071302E-3             
++tphp = 1.697713E-3            trs = 1.875616E-3          
+
+.endl diode                 
+
+*****
+.lib restypical
+.param
++nwelldrsh = 0
++pplusdrsh = 0
++nplusdrsh = 0
++poly2drsh = 0
++hrdrsh = 0
+.lib 'st3524.lib' res
+.endl restypical
+
+.lib resfast
+.param
++nwelldrsh = -184.41
++pplusdrsh = -24.4
++nplusdrsh = -9.7
++poly2drsh = -19.6
++hrdrsh = -199.1
+.lib 'st3524.lib' res
+.endl resfast
+
+.lib resslow
+.param
++nwelldrsh = 184.5
++pplusdrsh = 14.7
++nplusdrsh = 9.72
++poly2drsh = 19.5
++hrdrsh = 199.1
+.lib 'st3524.lib' res
+.endl resslow
+
+.lib res
+*******************nwell resistor ******************************************************
+.subckt rnwell n1 n2 l=length w=width 
+.param dl=-2.611u dw=1.107981u
+.param rsh='856.95+nwelldrsh' ptc1=4.651926e-3  ptc2=8.961317e-6 pvc1a=-6.375507e-4 pvc1b=-3.088637e-2 pvc2=2.449854e-4 pt='temper'
+.param tfac='1.0+ptc1*(pt-25)+ptc2*(pt-25)*(pt-25)'
+r1 n1 n2 'rsh*((l-dl)/(w-dw))*(1+(pvc1a+pvc1b/(w*1e6))*v(n2,n1)+pvc2*(v(n2,n1)*v(n2,n1)))*tfac'
+.ends rnwell
+
+*******************pplus resistor ******************************************************
+.subckt rpplus n1 n2 l=length w=width 
+.param dl=-0.691u dw=0.11304u
+.param rsh='146.6+pplusdrsh' ptc1=1.227357e-3  ptc2=1.490333e-8  pvc1=8e-4 pvc2=5.592e-5 pt='temper'
+.param tfac='1.0+ptc1*(pt-25)+ptc2*(pt-25)*(pt-25)'
+r1 n1 n2 'rsh*((l-dl)/(w-dw))*(1+pvc1*abs(v(n2,n1))+pvc2*(v(n2,n1)*v(n2,n1)))*tfac'
+.ends rpplus
+
+*******************nplus resistor ******************************************************
+.subckt rnplus n1 n2 l=length w=width 
+.param dl=-1.02u dw=0.120356u
+.param rsh='74.8+nplusdrsh' ptc1=1.478806e-3 ptc2=1.067649e-7 pvc1=-2.01153e-4 pvc2=3.015256e-4 pt='temper'
+.param tfac='1.0+ptc1*(pt-25)+ptc2*(pt-25)*(pt-25)'
+r1 n1 n2 'rsh*((l-dl)/(w-dw))*(1+pvc1*abs(v(n2,n1))+pvc2*(v(n2,n1)*v(n2,n1)))*tfac'      
+.ends rnplus
+
+*******************poly2 resistor ******************************************************
+.subckt rpoly2 n1 n2 l=length w=width 
+.param dl=-0.4643u  dw=0.1575095u
+.param rsh='48.9+poly2drsh' ptc1=2.805681e-4  ptc2=-6.320391e-7 pvc1=5.79e-5 pvc2=3.71036e-4 pt='temper'
+.param tfac='1.0+ptc1*(pt-25)+ptc2*(pt-25)*(pt-25)'
+r1 n1 n2 'rsh*((l-dl)/(w-dw))*(1+pvc1*abs(v(n2,n1))+pvc2*(v(n2,n1)*v(n2,n1)))*tfac'
+.ends rpoly2
+
+
+*******************hr poly2 resistor ***************************************************
+.subckt rhrp2 n1 n2 l=length w=width 
+.param dl=0 dw=0.04547837u
+.param rsh='995.5+hrdrsh' ptc1=-1.642979e-3  ptc2=4.768102e-6  pvc1=0  pvc2=-7.604434e-5  pt='temper'
+.param tfac='1.0+ptc1*(pt-25)+ptc2*(pt-25)*(pt-25)'
+r1 n1 n2 'rsh*((l-dl)/(w-dw))*(1+pvc1*abs(v(n2,n1))+pvc2*(v(n2,n1)*v(n2,n1)))*tfac'
+.ends rhrp2
+.endl res 
+

@@ -1,0 +1,48 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : div
+Version: 2003.03
+Date   : Mon Apr 11 17:25:05 2005
+****************************************
+
+Operating Conditions: 
+Wire Load Model Mode: top
+
+  Startpoint: cnt_reg[3] (rising edge-triggered flip-flop clocked by clk_1)
+  Endpoint: clk_tx (output port clocked by clk_1)
+  Path Group: clk_1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  div                05x05                 class
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk_1 (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  cnt_reg[3]/CP (FD2)                      0.00       0.00 r
+  cnt_reg[3]/Q (FD2)                       1.44       1.44 f
+  U8/Z (IVI)                               0.24       1.68 r
+  U9/Z (IVI)                               0.18       1.87 f
+  clk_tx (out)                             0.00       1.87 f
+  data arrival time                                   1.87
+
+  clock clk_1 (rise edge)                 10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.10       9.90
+  output external delay                   -8.00       1.90
+  data required time                                  1.90
+  -----------------------------------------------------------
+  data required time                                  1.90
+  data arrival time                                  -1.87
+  -----------------------------------------------------------
+  slack (MET)                                         0.03
+
+
+1

@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : adder
+Version: 2003.03
+Date   : Sun Apr  5 23:34:28 2009
+****************************************
+
+Operating Conditions: TCCOM   Library: fsa0a_c_sc_tc
+Wire Load Model Mode: top
+
+  Startpoint: b[20] (input port clocked by CLK)
+  Endpoint: bm_reg[20] (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  adder              G5K                   fsa0a_c_sc_tc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 f
+  b[20] (in)                               0.01       0.01 f
+  U604/O (INV2)                            0.03       0.04 r
+  U603/OB (MXL2P)                          0.15       0.19 f
+  bm_reg[20]/D (DFFRBN)                    0.00       0.19 f
+  data arrival time                                   0.19
+
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.10       0.10
+  bm_reg[20]/CK (DFFRBN)                   0.00       0.10 r
+  library hold time                       -0.01       0.09
+  data required time                                  0.09
+  -----------------------------------------------------------
+  data required time                                  0.09
+  data arrival time                                  -0.19
+  -----------------------------------------------------------
+  slack (MET)                                         0.10
+
+
+1

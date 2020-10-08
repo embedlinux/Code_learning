@@ -1,0 +1,1037 @@
+ 
+****************************************
+Report : cell
+Design : adder
+Version: 2003.03
+Date   : Sun Apr  5 23:34:28 2009
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   BO - reference allows boundary optimization
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U3                        BUF2            fsa0a_c_sc_tc   5.000000  
+U5                        BUF2            fsa0a_c_sc_tc   5.000000  
+U6                        ND2P            fsa0a_c_sc_tc   6.000000  
+U7                        BUF3            fsa0a_c_sc_tc   6.000000  
+U8                        BUF3            fsa0a_c_sc_tc   6.000000  
+U9                        BUF3            fsa0a_c_sc_tc   6.000000  
+U10                       BUF3            fsa0a_c_sc_tc   6.000000  
+U11                       BUF3            fsa0a_c_sc_tc   6.000000  
+U12                       BUF2            fsa0a_c_sc_tc   5.000000  
+U13                       BUF3            fsa0a_c_sc_tc   6.000000  
+U14                       BUF2            fsa0a_c_sc_tc   5.000000  
+U15                       BUF2            fsa0a_c_sc_tc   5.000000  
+U16                       DELA            fsa0a_c_sc_tc   8.000000  
+U17                       BUF3            fsa0a_c_sc_tc   6.000000  
+U18                       BUF3            fsa0a_c_sc_tc   6.000000  
+U19                       BUF3            fsa0a_c_sc_tc   6.000000  
+U20                       BUF3            fsa0a_c_sc_tc   6.000000  
+U21                       BUF3            fsa0a_c_sc_tc   6.000000  
+U22                       BUF3            fsa0a_c_sc_tc   6.000000  
+U23                       BUF3            fsa0a_c_sc_tc   6.000000  
+U24                       BUF2            fsa0a_c_sc_tc   5.000000  
+U25                       BUF3            fsa0a_c_sc_tc   6.000000  
+U26                       BUF3            fsa0a_c_sc_tc   6.000000  
+U27                       BUF3            fsa0a_c_sc_tc   6.000000  
+U28                       BUF2            fsa0a_c_sc_tc   5.000000  
+U29                       BUF3            fsa0a_c_sc_tc   6.000000  
+U30                       BUF3            fsa0a_c_sc_tc   6.000000  
+U31                       BUF3            fsa0a_c_sc_tc   6.000000  
+U32                       BUF3            fsa0a_c_sc_tc   6.000000  
+U33                       BUF3            fsa0a_c_sc_tc   6.000000  
+U34                       BUF3            fsa0a_c_sc_tc   6.000000  
+U35                       BUF2            fsa0a_c_sc_tc   5.000000  
+U36                       BUF3            fsa0a_c_sc_tc   6.000000  
+U37                       BUF3            fsa0a_c_sc_tc   6.000000  
+U38                       BUF3            fsa0a_c_sc_tc   6.000000  
+U39                       BUF3            fsa0a_c_sc_tc   6.000000  
+U40                       BUF3            fsa0a_c_sc_tc   6.000000  
+U41                       BUF3            fsa0a_c_sc_tc   6.000000  
+U42                       BUF2            fsa0a_c_sc_tc   5.000000  
+U43                       BUF3            fsa0a_c_sc_tc   6.000000  
+U44                       BUF3            fsa0a_c_sc_tc   6.000000  
+U45                       BUF3            fsa0a_c_sc_tc   6.000000  
+U46                       BUF3            fsa0a_c_sc_tc   6.000000  
+U47                       BUF3            fsa0a_c_sc_tc   6.000000  
+U48                       BUF3            fsa0a_c_sc_tc   6.000000  
+U49                       BUF3            fsa0a_c_sc_tc   6.000000  
+U50                       BUF2            fsa0a_c_sc_tc   5.000000  
+U51                       BUF3            fsa0a_c_sc_tc   6.000000  
+U52                       BUF2            fsa0a_c_sc_tc   5.000000  
+U53                       BUF3            fsa0a_c_sc_tc   6.000000  
+U54                       BUF3            fsa0a_c_sc_tc   6.000000  
+U55                       BUF3            fsa0a_c_sc_tc   6.000000  
+U56                       BUF3            fsa0a_c_sc_tc   6.000000  
+U57                       BUF3            fsa0a_c_sc_tc   6.000000  
+U58                       BUF2            fsa0a_c_sc_tc   5.000000  
+U59                       BUF3            fsa0a_c_sc_tc   6.000000  
+U60                       BUF3            fsa0a_c_sc_tc   6.000000  
+U61                       BUF3            fsa0a_c_sc_tc   6.000000  
+U62                       BUF2            fsa0a_c_sc_tc   5.000000  
+U63                       BUF3            fsa0a_c_sc_tc   6.000000  
+U64                       BUF2            fsa0a_c_sc_tc   5.000000  
+U65                       BUF3            fsa0a_c_sc_tc   6.000000  
+U66                       BUF3            fsa0a_c_sc_tc   6.000000  
+U67                       BUF3            fsa0a_c_sc_tc   6.000000  
+U68                       BUF3            fsa0a_c_sc_tc   6.000000  
+U69                       BUF3            fsa0a_c_sc_tc   6.000000  
+U70                       BUF3            fsa0a_c_sc_tc   6.000000  
+U71                       BUF2            fsa0a_c_sc_tc   5.000000  
+U72                       BUF3            fsa0a_c_sc_tc   6.000000  
+U73                       BUF3            fsa0a_c_sc_tc   6.000000  
+U74                       BUF2            fsa0a_c_sc_tc   5.000000  
+U75                       BUF3            fsa0a_c_sc_tc   6.000000  
+U76                       BUF3            fsa0a_c_sc_tc   6.000000  
+U77                       BUF3            fsa0a_c_sc_tc   6.000000  
+U78                       BUF3            fsa0a_c_sc_tc   6.000000  
+U79                       BUF2            fsa0a_c_sc_tc   5.000000  
+U80                       BUF3            fsa0a_c_sc_tc   6.000000  
+U81                       BUF3            fsa0a_c_sc_tc   6.000000  
+U82                       BUF2            fsa0a_c_sc_tc   5.000000  
+U83                       BUF3            fsa0a_c_sc_tc   6.000000  
+U84                       BUF2            fsa0a_c_sc_tc   5.000000  
+U85                       BUF3            fsa0a_c_sc_tc   6.000000  
+U86                       BUF3            fsa0a_c_sc_tc   6.000000  
+U87                       BUF2            fsa0a_c_sc_tc   5.000000  
+U88                       BUF3            fsa0a_c_sc_tc   6.000000  
+U89                       BUF3            fsa0a_c_sc_tc   6.000000  
+U90                       BUF2            fsa0a_c_sc_tc   5.000000  
+U91                       BUF3            fsa0a_c_sc_tc   6.000000  
+U92                       BUF2            fsa0a_c_sc_tc   5.000000  
+U93                       BUF3            fsa0a_c_sc_tc   6.000000  
+U94                       BUF2            fsa0a_c_sc_tc   5.000000  
+U95                       BUF3            fsa0a_c_sc_tc   6.000000  
+U96                       BUF3            fsa0a_c_sc_tc   6.000000  
+U97                       BUF2            fsa0a_c_sc_tc   5.000000  
+U98                       BUF3            fsa0a_c_sc_tc   6.000000  
+U99                       BUF3            fsa0a_c_sc_tc   6.000000  
+U100                      BUF3            fsa0a_c_sc_tc   6.000000  
+U101                      BUF3            fsa0a_c_sc_tc   6.000000  
+U102                      BUF2            fsa0a_c_sc_tc   5.000000  
+U103                      BUF3            fsa0a_c_sc_tc   6.000000  
+U104                      BUF3            fsa0a_c_sc_tc   6.000000  
+U105                      BUF3            fsa0a_c_sc_tc   6.000000  
+U106                      BUF3            fsa0a_c_sc_tc   6.000000  
+U107                      BUF2            fsa0a_c_sc_tc   5.000000  
+U108                      BUF3            fsa0a_c_sc_tc   6.000000  
+U109                      BUF3            fsa0a_c_sc_tc   6.000000  
+U110                      BUF3            fsa0a_c_sc_tc   6.000000  
+U111                      BUF3            fsa0a_c_sc_tc   6.000000  
+U112                      BUF3            fsa0a_c_sc_tc   6.000000  
+U113                      BUF2            fsa0a_c_sc_tc   5.000000  
+U114                      BUF3            fsa0a_c_sc_tc   6.000000  
+U115                      BUF2            fsa0a_c_sc_tc   5.000000  
+U116                      BUF3            fsa0a_c_sc_tc   6.000000  
+U117                      BUF2            fsa0a_c_sc_tc   5.000000  
+U118                      BUF3            fsa0a_c_sc_tc   6.000000  
+U119                      BUF3            fsa0a_c_sc_tc   6.000000  
+U120                      BUF2            fsa0a_c_sc_tc   5.000000  
+U121                      BUF3            fsa0a_c_sc_tc   6.000000  
+U122                      BUF3            fsa0a_c_sc_tc   6.000000  
+U123                      BUF3            fsa0a_c_sc_tc   6.000000  
+U124                      BUF3            fsa0a_c_sc_tc   6.000000  
+U125                      BUF2            fsa0a_c_sc_tc   5.000000  
+U126                      BUF3            fsa0a_c_sc_tc   6.000000  
+U127                      BUF3            fsa0a_c_sc_tc   6.000000  
+U128                      BUF2            fsa0a_c_sc_tc   5.000000  
+U129                      BUF3            fsa0a_c_sc_tc   6.000000  
+U130                      BUF3            fsa0a_c_sc_tc   6.000000  
+U131                      BUF3            fsa0a_c_sc_tc   6.000000  
+U132                      BUF2            fsa0a_c_sc_tc   5.000000  
+U133                      BUF3            fsa0a_c_sc_tc   6.000000  
+U134                      BUF3            fsa0a_c_sc_tc   6.000000  
+U135                      BUF3            fsa0a_c_sc_tc   6.000000  
+U136                      BUF2            fsa0a_c_sc_tc   5.000000  
+U137                      BUF3            fsa0a_c_sc_tc   6.000000  
+U138                      BUF2            fsa0a_c_sc_tc   5.000000  
+U139                      BUF3            fsa0a_c_sc_tc   6.000000  
+U140                      BUF3            fsa0a_c_sc_tc   6.000000  
+U141                      BUF2            fsa0a_c_sc_tc   5.000000  
+U142                      BUF3            fsa0a_c_sc_tc   6.000000  
+U143                      BUF2            fsa0a_c_sc_tc   5.000000  
+U144                      BUF2            fsa0a_c_sc_tc   5.000000  
+U145                      BUF3            fsa0a_c_sc_tc   6.000000  
+U146                      BUF2            fsa0a_c_sc_tc   5.000000  
+U147                      BUF2            fsa0a_c_sc_tc   5.000000  
+U148                      BUF3            fsa0a_c_sc_tc   6.000000  
+U149                      BUF2            fsa0a_c_sc_tc   5.000000  
+U150                      BUF3            fsa0a_c_sc_tc   6.000000  
+U151                      BUF3            fsa0a_c_sc_tc   6.000000  
+U152                      BUF2            fsa0a_c_sc_tc   5.000000  
+U153                      BUF3            fsa0a_c_sc_tc   6.000000  
+U154                      BUF3            fsa0a_c_sc_tc   6.000000  
+U155                      BUF2            fsa0a_c_sc_tc   5.000000  
+U156                      BUF3            fsa0a_c_sc_tc   6.000000  
+U157                      BUF3            fsa0a_c_sc_tc   6.000000  
+U158                      BUF2            fsa0a_c_sc_tc   5.000000  
+U159                      BUF2            fsa0a_c_sc_tc   5.000000  
+U160                      BUF2            fsa0a_c_sc_tc   5.000000  
+U161                      BUF3            fsa0a_c_sc_tc   6.000000  
+U162                      BUF3            fsa0a_c_sc_tc   6.000000  
+U163                      BUF2            fsa0a_c_sc_tc   5.000000  
+U164                      BUF3            fsa0a_c_sc_tc   6.000000  
+U165                      BUF2            fsa0a_c_sc_tc   5.000000  
+U166                      BUF3            fsa0a_c_sc_tc   6.000000  
+U167                      BUF2            fsa0a_c_sc_tc   5.000000  
+U168                      BUF2            fsa0a_c_sc_tc   5.000000  
+U169                      BUF3            fsa0a_c_sc_tc   6.000000  
+U170                      BUF3            fsa0a_c_sc_tc   6.000000  
+U171                      BUF2            fsa0a_c_sc_tc   5.000000  
+U172                      BUF3            fsa0a_c_sc_tc   6.000000  
+U173                      BUF2            fsa0a_c_sc_tc   5.000000  
+U174                      BUF3            fsa0a_c_sc_tc   6.000000  
+U175                      BUF3            fsa0a_c_sc_tc   6.000000  
+U176                      BUF2            fsa0a_c_sc_tc   5.000000  
+U177                      BUF2            fsa0a_c_sc_tc   5.000000  
+U178                      BUF3            fsa0a_c_sc_tc   6.000000  
+U179                      BUF2            fsa0a_c_sc_tc   5.000000  
+U180                      BUF2            fsa0a_c_sc_tc   5.000000  
+U181                      XOR2P           fsa0a_c_sc_tc   10.000000 
+U182                      BUF3            fsa0a_c_sc_tc   6.000000  
+U183                      BUF2            fsa0a_c_sc_tc   5.000000  
+U184                      BUF2            fsa0a_c_sc_tc   5.000000  
+U185                      BUF2            fsa0a_c_sc_tc   5.000000  
+U186                      BUF2            fsa0a_c_sc_tc   5.000000  
+U187                      BUF2            fsa0a_c_sc_tc   5.000000  
+U188                      BUF2            fsa0a_c_sc_tc   5.000000  
+U189                      BUF2            fsa0a_c_sc_tc   5.000000  
+U190                      BUF3            fsa0a_c_sc_tc   6.000000  
+U191                      BUF2            fsa0a_c_sc_tc   5.000000  
+U192                      BUF2            fsa0a_c_sc_tc   5.000000  
+U193                      BUF4            fsa0a_c_sc_tc   7.000000  
+U194                      BUF2            fsa0a_c_sc_tc   5.000000  
+U195                      BUF4            fsa0a_c_sc_tc   7.000000  
+U196                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U197                      INV2            fsa0a_c_sc_tc   3.000000  
+U198                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U199                      INV2            fsa0a_c_sc_tc   3.000000  
+U200                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U201                      INV2            fsa0a_c_sc_tc   3.000000  
+U202                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U203                      INV2            fsa0a_c_sc_tc   3.000000  
+U204                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U205                      INV2            fsa0a_c_sc_tc   3.000000  
+U206                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U207                      INV2            fsa0a_c_sc_tc   3.000000  
+U208                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U209                      INV2            fsa0a_c_sc_tc   3.000000  
+U210                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U211                      INV2            fsa0a_c_sc_tc   3.000000  
+U212                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U213                      INV2            fsa0a_c_sc_tc   3.000000  
+U214                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U215                      INV2            fsa0a_c_sc_tc   3.000000  
+U216                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U217                      INV2            fsa0a_c_sc_tc   3.000000  
+U218                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U219                      INV2            fsa0a_c_sc_tc   3.000000  
+U220                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U221                      INV2            fsa0a_c_sc_tc   3.000000  
+U222                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U223                      INV2            fsa0a_c_sc_tc   3.000000  
+U224                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U225                      INV2            fsa0a_c_sc_tc   3.000000  
+U226                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U227                      INV2            fsa0a_c_sc_tc   3.000000  
+U228                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U229                      INV2            fsa0a_c_sc_tc   3.000000  
+U230                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U231                      INV2            fsa0a_c_sc_tc   3.000000  
+U232                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U233                      INV2            fsa0a_c_sc_tc   3.000000  
+U234                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U235                      INV2            fsa0a_c_sc_tc   3.000000  
+U236                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U237                      INV2            fsa0a_c_sc_tc   3.000000  
+U238                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U239                      INV2            fsa0a_c_sc_tc   3.000000  
+U240                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U241                      INV2            fsa0a_c_sc_tc   3.000000  
+U242                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U243                      INV2            fsa0a_c_sc_tc   3.000000  
+U244                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U245                      INV2            fsa0a_c_sc_tc   3.000000  
+U246                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U247                      INV2            fsa0a_c_sc_tc   3.000000  
+U248                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U249                      INV2            fsa0a_c_sc_tc   3.000000  
+U250                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U251                      INV2            fsa0a_c_sc_tc   3.000000  
+U252                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U253                      INV2            fsa0a_c_sc_tc   3.000000  
+U254                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U255                      INV2            fsa0a_c_sc_tc   3.000000  
+U256                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U257                      INV2            fsa0a_c_sc_tc   3.000000  
+U258                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U259                      INV2            fsa0a_c_sc_tc   3.000000  
+U260                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U261                      INV2            fsa0a_c_sc_tc   3.000000  
+U262                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U263                      INV2            fsa0a_c_sc_tc   3.000000  
+U264                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U265                      INV2            fsa0a_c_sc_tc   3.000000  
+U266                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U267                      INV2            fsa0a_c_sc_tc   3.000000  
+U268                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U269                      INV2            fsa0a_c_sc_tc   3.000000  
+U270                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U271                      INV2            fsa0a_c_sc_tc   3.000000  
+U272                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U273                      INV2            fsa0a_c_sc_tc   3.000000  
+U274                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U275                      INV2            fsa0a_c_sc_tc   3.000000  
+U276                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U277                      INV2            fsa0a_c_sc_tc   3.000000  
+U278                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U279                      INV2            fsa0a_c_sc_tc   3.000000  
+U280                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U281                      INV2            fsa0a_c_sc_tc   3.000000  
+U282                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U283                      INV2            fsa0a_c_sc_tc   3.000000  
+U284                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U285                      INV2            fsa0a_c_sc_tc   3.000000  
+U286                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U287                      INV2            fsa0a_c_sc_tc   3.000000  
+U288                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U289                      INV2            fsa0a_c_sc_tc   3.000000  
+U290                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U291                      INV2            fsa0a_c_sc_tc   3.000000  
+U292                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U293                      INV2            fsa0a_c_sc_tc   3.000000  
+U294                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U295                      INV2            fsa0a_c_sc_tc   3.000000  
+U296                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U297                      INV2            fsa0a_c_sc_tc   3.000000  
+U298                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U299                      INV2            fsa0a_c_sc_tc   3.000000  
+U300                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U301                      INV2            fsa0a_c_sc_tc   3.000000  
+U302                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U303                      INV2            fsa0a_c_sc_tc   3.000000  
+U304                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U305                      INV2            fsa0a_c_sc_tc   3.000000  
+U306                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U307                      INV2            fsa0a_c_sc_tc   3.000000  
+U308                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U309                      INV2            fsa0a_c_sc_tc   3.000000  
+U310                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U311                      INV2            fsa0a_c_sc_tc   3.000000  
+U312                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U313                      INV2            fsa0a_c_sc_tc   3.000000  
+U314                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U315                      INV2            fsa0a_c_sc_tc   3.000000  
+U316                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U317                      INV2            fsa0a_c_sc_tc   3.000000  
+U318                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U319                      INV2            fsa0a_c_sc_tc   3.000000  
+U320                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U321                      INV2            fsa0a_c_sc_tc   3.000000  
+U322                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U323                      INV2            fsa0a_c_sc_tc   3.000000  
+U324                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U325                      INV2            fsa0a_c_sc_tc   3.000000  
+U326                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U327                      INV2            fsa0a_c_sc_tc   3.000000  
+U328                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U329                      INV2            fsa0a_c_sc_tc   3.000000  
+U330                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U331                      INV2            fsa0a_c_sc_tc   3.000000  
+U332                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U333                      INV2            fsa0a_c_sc_tc   3.000000  
+U334                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U335                      INV2            fsa0a_c_sc_tc   3.000000  
+U336                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U337                      INV2            fsa0a_c_sc_tc   3.000000  
+U338                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U339                      INV2            fsa0a_c_sc_tc   3.000000  
+U340                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U341                      INV2            fsa0a_c_sc_tc   3.000000  
+U342                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U343                      INV2            fsa0a_c_sc_tc   3.000000  
+U344                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U345                      INV2            fsa0a_c_sc_tc   3.000000  
+U346                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U347                      INV2            fsa0a_c_sc_tc   3.000000  
+U348                      BUF2            fsa0a_c_sc_tc   5.000000  
+U349                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U350                      INV2            fsa0a_c_sc_tc   3.000000  
+U351                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U352                      INV2            fsa0a_c_sc_tc   3.000000  
+U353                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U354                      INV2            fsa0a_c_sc_tc   3.000000  
+U355                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U356                      INV2            fsa0a_c_sc_tc   3.000000  
+U357                      BUF1            fsa0a_c_sc_tc   4.000000  
+U358                      MUX2            fsa0a_c_sc_tc   7.000000  
+U359                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U360                      INV2            fsa0a_c_sc_tc   3.000000  
+U361                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U362                      INV2            fsa0a_c_sc_tc   3.000000  
+U363                      BUF2            fsa0a_c_sc_tc   5.000000  
+U364                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U365                      INV2            fsa0a_c_sc_tc   3.000000  
+U366                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U367                      INV2            fsa0a_c_sc_tc   3.000000  
+U368                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U369                      INV2            fsa0a_c_sc_tc   3.000000  
+U370                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U371                      INV2            fsa0a_c_sc_tc   3.000000  
+U372                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U373                      INV2            fsa0a_c_sc_tc   3.000000  
+U374                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U375                      INV2            fsa0a_c_sc_tc   3.000000  
+U376                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U377                      INV2            fsa0a_c_sc_tc   3.000000  
+U378                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U379                      INV2            fsa0a_c_sc_tc   3.000000  
+U380                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U381                      INV2            fsa0a_c_sc_tc   3.000000  
+U382                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U383                      INV2            fsa0a_c_sc_tc   3.000000  
+U384                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U385                      INV2            fsa0a_c_sc_tc   3.000000  
+U386                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U387                      INV2            fsa0a_c_sc_tc   3.000000  
+U388                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U389                      INV2            fsa0a_c_sc_tc   3.000000  
+U390                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U391                      INV2            fsa0a_c_sc_tc   3.000000  
+U392                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U393                      INV2            fsa0a_c_sc_tc   3.000000  
+U394                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U395                      INV2            fsa0a_c_sc_tc   3.000000  
+U396                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U397                      INV2            fsa0a_c_sc_tc   3.000000  
+U398                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U399                      INV2            fsa0a_c_sc_tc   3.000000  
+U400                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U401                      INV2            fsa0a_c_sc_tc   3.000000  
+U402                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U403                      INV2            fsa0a_c_sc_tc   3.000000  
+U404                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U405                      INV2            fsa0a_c_sc_tc   3.000000  
+U406                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U407                      INV2            fsa0a_c_sc_tc   3.000000  
+U408                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U409                      INV2            fsa0a_c_sc_tc   3.000000  
+U410                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U411                      INV2            fsa0a_c_sc_tc   3.000000  
+U412                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U413                      INV2            fsa0a_c_sc_tc   3.000000  
+U414                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U415                      INV2            fsa0a_c_sc_tc   3.000000  
+U416                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U417                      INV2            fsa0a_c_sc_tc   3.000000  
+U418                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U419                      INV2            fsa0a_c_sc_tc   3.000000  
+U420                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U421                      INV2            fsa0a_c_sc_tc   3.000000  
+U422                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U423                      INV2            fsa0a_c_sc_tc   3.000000  
+U424                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U425                      INV2            fsa0a_c_sc_tc   3.000000  
+U426                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U427                      INV2            fsa0a_c_sc_tc   3.000000  
+U428                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U429                      INV2            fsa0a_c_sc_tc   3.000000  
+U430                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U431                      INV2            fsa0a_c_sc_tc   3.000000  
+U432                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U433                      INV2            fsa0a_c_sc_tc   3.000000  
+U434                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U435                      INV2            fsa0a_c_sc_tc   3.000000  
+U436                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U437                      INV2            fsa0a_c_sc_tc   3.000000  
+U438                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U439                      INV2            fsa0a_c_sc_tc   3.000000  
+U440                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U441                      INV2            fsa0a_c_sc_tc   3.000000  
+U442                      BUF2            fsa0a_c_sc_tc   5.000000  
+U443                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U444                      INV2            fsa0a_c_sc_tc   3.000000  
+U445                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U446                      INV2            fsa0a_c_sc_tc   3.000000  
+U447                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U448                      INV2            fsa0a_c_sc_tc   3.000000  
+U449                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U450                      INV2            fsa0a_c_sc_tc   3.000000  
+U451                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U452                      INV2            fsa0a_c_sc_tc   3.000000  
+U453                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U454                      INV2            fsa0a_c_sc_tc   3.000000  
+U455                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U456                      INV2            fsa0a_c_sc_tc   3.000000  
+U457                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U458                      INV2            fsa0a_c_sc_tc   3.000000  
+U459                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U460                      INV2            fsa0a_c_sc_tc   3.000000  
+U461                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U462                      INV2            fsa0a_c_sc_tc   3.000000  
+U463                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U464                      INV2            fsa0a_c_sc_tc   3.000000  
+U465                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U466                      INV2            fsa0a_c_sc_tc   3.000000  
+U467                      BUF1            fsa0a_c_sc_tc   4.000000  
+U468                      MUX2            fsa0a_c_sc_tc   7.000000  
+U469                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U470                      INV2            fsa0a_c_sc_tc   3.000000  
+U471                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U472                      INV2            fsa0a_c_sc_tc   3.000000  
+U473                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U474                      INV2            fsa0a_c_sc_tc   3.000000  
+U475                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U476                      INV2            fsa0a_c_sc_tc   3.000000  
+U477                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U478                      INV2            fsa0a_c_sc_tc   3.000000  
+U479                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U480                      INV2            fsa0a_c_sc_tc   3.000000  
+U481                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U482                      INV2            fsa0a_c_sc_tc   3.000000  
+U483                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U484                      INV2            fsa0a_c_sc_tc   3.000000  
+U485                      BUF1            fsa0a_c_sc_tc   4.000000  
+U486                      MUX2            fsa0a_c_sc_tc   7.000000  
+U487                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U488                      INV2            fsa0a_c_sc_tc   3.000000  
+U489                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U490                      INV2            fsa0a_c_sc_tc   3.000000  
+U491                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U492                      INV2            fsa0a_c_sc_tc   3.000000  
+U493                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U494                      INV2            fsa0a_c_sc_tc   3.000000  
+U495                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U496                      INV2            fsa0a_c_sc_tc   3.000000  
+U497                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U498                      INV2            fsa0a_c_sc_tc   3.000000  
+U499                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U500                      INV2            fsa0a_c_sc_tc   3.000000  
+U501                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U502                      INV2            fsa0a_c_sc_tc   3.000000  
+U503                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U504                      INV2            fsa0a_c_sc_tc   3.000000  
+U505                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U506                      INV2            fsa0a_c_sc_tc   3.000000  
+U507                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U508                      INV2            fsa0a_c_sc_tc   3.000000  
+U509                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U510                      INV2            fsa0a_c_sc_tc   3.000000  
+U511                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U512                      INV2            fsa0a_c_sc_tc   3.000000  
+U513                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U514                      INV2            fsa0a_c_sc_tc   3.000000  
+U515                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U516                      INV2            fsa0a_c_sc_tc   3.000000  
+U517                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U518                      INV2            fsa0a_c_sc_tc   3.000000  
+U519                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U520                      INV2            fsa0a_c_sc_tc   3.000000  
+U521                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U522                      INV2            fsa0a_c_sc_tc   3.000000  
+U523                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U524                      INV2            fsa0a_c_sc_tc   3.000000  
+U525                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U526                      INV2            fsa0a_c_sc_tc   3.000000  
+U527                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U528                      INV2            fsa0a_c_sc_tc   3.000000  
+U529                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U530                      INV2            fsa0a_c_sc_tc   3.000000  
+U531                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U532                      INV2            fsa0a_c_sc_tc   3.000000  
+U533                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U534                      INV2            fsa0a_c_sc_tc   3.000000  
+U535                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U536                      INV2            fsa0a_c_sc_tc   3.000000  
+U537                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U538                      INV2            fsa0a_c_sc_tc   3.000000  
+U539                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U540                      INV2            fsa0a_c_sc_tc   3.000000  
+U541                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U542                      INV2            fsa0a_c_sc_tc   3.000000  
+U543                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U544                      INV2            fsa0a_c_sc_tc   3.000000  
+U545                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U546                      INV2            fsa0a_c_sc_tc   3.000000  
+U547                      INV3            fsa0a_c_sc_tc   4.000000  
+U548                      INV3            fsa0a_c_sc_tc   4.000000  
+U549                      INV4            fsa0a_c_sc_tc   5.000000  
+U550                      INV4            fsa0a_c_sc_tc   5.000000  
+U551                      INV2            fsa0a_c_sc_tc   3.000000  
+U552                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U553                      INV2            fsa0a_c_sc_tc   3.000000  
+U554                      ND3T            fsa0a_c_sc_tc   10.000000 
+U555                      INV2            fsa0a_c_sc_tc   3.000000  
+U556                      INV1            fsa0a_c_sc_tc   3.000000  
+U557                      INV2            fsa0a_c_sc_tc   3.000000  
+U558                      BUF4            fsa0a_c_sc_tc   7.000000  
+U559                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U560                      INV2            fsa0a_c_sc_tc   3.000000  
+U561                      INV4            fsa0a_c_sc_tc   5.000000  
+U562                      INV2            fsa0a_c_sc_tc   3.000000  
+U563                      INV4            fsa0a_c_sc_tc   5.000000  
+U564                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U565                      INV2            fsa0a_c_sc_tc   3.000000  
+U566                      INV3            fsa0a_c_sc_tc   4.000000  
+U567                      INV4            fsa0a_c_sc_tc   5.000000  
+U568                      BUF4            fsa0a_c_sc_tc   7.000000  
+U569                      BUF4            fsa0a_c_sc_tc   7.000000  
+U570                      INV4            fsa0a_c_sc_tc   5.000000  
+U571                      INV3            fsa0a_c_sc_tc   4.000000  
+U572                      INV3            fsa0a_c_sc_tc   4.000000  
+U573                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U574                      INV2            fsa0a_c_sc_tc   3.000000  
+U575                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U576                      INV2            fsa0a_c_sc_tc   3.000000  
+U577                      BUF4            fsa0a_c_sc_tc   7.000000  
+U578                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U579                      BUF2            fsa0a_c_sc_tc   5.000000  
+U580                      INV4            fsa0a_c_sc_tc   5.000000  
+U581                      BUF4            fsa0a_c_sc_tc   7.000000  
+U582                      INV4            fsa0a_c_sc_tc   5.000000  
+U583                      BUF4            fsa0a_c_sc_tc   7.000000  
+U584                      INV2            fsa0a_c_sc_tc   3.000000  
+U585                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U586                      INV2            fsa0a_c_sc_tc   3.000000  
+U587                      INV2            fsa0a_c_sc_tc   3.000000  
+U588                      BUF4            fsa0a_c_sc_tc   7.000000  
+U589                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U590                      INV2            fsa0a_c_sc_tc   3.000000  
+U591                      INV2            fsa0a_c_sc_tc   3.000000  
+U592                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U593                      INV2            fsa0a_c_sc_tc   3.000000  
+U594                      BUF4            fsa0a_c_sc_tc   7.000000  
+U595                      BUF4            fsa0a_c_sc_tc   7.000000  
+U596                      INV4            fsa0a_c_sc_tc   5.000000  
+U597                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U598                      INV2            fsa0a_c_sc_tc   3.000000  
+U599                      BUF4            fsa0a_c_sc_tc   7.000000  
+U600                      BUF3            fsa0a_c_sc_tc   6.000000  
+U601                      BUF3            fsa0a_c_sc_tc   6.000000  
+U602                      BUF3            fsa0a_c_sc_tc   6.000000  
+U603                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U604                      INV2            fsa0a_c_sc_tc   3.000000  
+U605                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U606                      INV2            fsa0a_c_sc_tc   3.000000  
+U607                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U608                      INV2            fsa0a_c_sc_tc   3.000000  
+U609                      INV2            fsa0a_c_sc_tc   3.000000  
+U610                      BUF2            fsa0a_c_sc_tc   5.000000  
+U611                      BUF1            fsa0a_c_sc_tc   4.000000  
+U612                      BUF3            fsa0a_c_sc_tc   6.000000  
+U613                      BUF4            fsa0a_c_sc_tc   7.000000  
+U614                      INV4            fsa0a_c_sc_tc   5.000000  
+U615                      BUF3            fsa0a_c_sc_tc   6.000000  
+U616                      INV4            fsa0a_c_sc_tc   5.000000  
+U617                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U618                      INV2            fsa0a_c_sc_tc   3.000000  
+U619                      INV4            fsa0a_c_sc_tc   5.000000  
+U620                      BUF2            fsa0a_c_sc_tc   5.000000  
+U621                      MXL2P           fsa0a_c_sc_tc   12.000000 
+U622                      INV2            fsa0a_c_sc_tc   3.000000  
+U623                      BUF3            fsa0a_c_sc_tc   6.000000  
+U624                      BUF4            fsa0a_c_sc_tc   7.000000  
+U625                      BUF3            fsa0a_c_sc_tc   6.000000  
+U626                      MUX2P           fsa0a_c_sc_tc   8.000000  
+U627                      BUF4            fsa0a_c_sc_tc   7.000000  
+U628                      BUF4            fsa0a_c_sc_tc   7.000000  
+U629                      INV1            fsa0a_c_sc_tc   3.000000  
+U630                      BUF3            fsa0a_c_sc_tc   6.000000  
+U631                      INV3            fsa0a_c_sc_tc   4.000000  
+U632                      INV4            fsa0a_c_sc_tc   5.000000  
+U633                      INV3            fsa0a_c_sc_tc   4.000000  
+U634                      INV1            fsa0a_c_sc_tc   3.000000  
+U635                      INV1            fsa0a_c_sc_tc   3.000000  
+U636                      INV1            fsa0a_c_sc_tc   3.000000  
+U637                      INV1            fsa0a_c_sc_tc   3.000000  
+U638                      INV1            fsa0a_c_sc_tc   3.000000  
+U639                      INV1            fsa0a_c_sc_tc   3.000000  
+U640                      INV1            fsa0a_c_sc_tc   3.000000  
+U641                      INV1            fsa0a_c_sc_tc   3.000000  
+U642                      INV1            fsa0a_c_sc_tc   3.000000  
+U643                      INV1            fsa0a_c_sc_tc   3.000000  
+U644                      INV2            fsa0a_c_sc_tc   3.000000  
+U645                      BUF4            fsa0a_c_sc_tc   7.000000  
+U646                      BUF2            fsa0a_c_sc_tc   5.000000  
+U647                      INV1            fsa0a_c_sc_tc   3.000000  
+U648                      INV1            fsa0a_c_sc_tc   3.000000  
+U649                      INV1            fsa0a_c_sc_tc   3.000000  
+U650                      INV1            fsa0a_c_sc_tc   3.000000  
+U651                      INV1            fsa0a_c_sc_tc   3.000000  
+U652                      INV2            fsa0a_c_sc_tc   3.000000  
+U653                      BUF2            fsa0a_c_sc_tc   5.000000  
+U654                      BUF2            fsa0a_c_sc_tc   5.000000  
+U655                      BUF2            fsa0a_c_sc_tc   5.000000  
+U656                      BUF2            fsa0a_c_sc_tc   5.000000  
+U657                      BUF2            fsa0a_c_sc_tc   5.000000  
+U658                      BUF2            fsa0a_c_sc_tc   5.000000  
+U659                      BUF2            fsa0a_c_sc_tc   5.000000  
+U660                      BUF2            fsa0a_c_sc_tc   5.000000  
+U661                      BUF2            fsa0a_c_sc_tc   5.000000  
+U662                      BUF2            fsa0a_c_sc_tc   5.000000  
+U663                      BUF2            fsa0a_c_sc_tc   5.000000  
+U664                      BUF2            fsa0a_c_sc_tc   5.000000  
+U665                      BUF3            fsa0a_c_sc_tc   6.000000  
+U666                      BUF3            fsa0a_c_sc_tc   6.000000  
+U667                      BUF3            fsa0a_c_sc_tc   6.000000  
+U668                      INV3            fsa0a_c_sc_tc   4.000000  
+U669                      INV3            fsa0a_c_sc_tc   4.000000  
+U670                      BUF4            fsa0a_c_sc_tc   7.000000  
+U671                      INV3            fsa0a_c_sc_tc   4.000000  
+U672                      INV3            fsa0a_c_sc_tc   4.000000  
+U673                      INV4            fsa0a_c_sc_tc   5.000000  
+U674                      BUF3            fsa0a_c_sc_tc   6.000000  
+U675                      BUF3            fsa0a_c_sc_tc   6.000000  
+U676                      BUF3            fsa0a_c_sc_tc   6.000000  
+U677                      BUF3            fsa0a_c_sc_tc   6.000000  
+U678                      BUF2            fsa0a_c_sc_tc   5.000000  
+U679                      BUF3            fsa0a_c_sc_tc   6.000000  
+U680                      BUF3            fsa0a_c_sc_tc   6.000000  
+U681                      BUF2            fsa0a_c_sc_tc   5.000000  
+U682                      BUF3            fsa0a_c_sc_tc   6.000000  
+U683                      INV3            fsa0a_c_sc_tc   4.000000  
+U684                      INV4            fsa0a_c_sc_tc   5.000000  
+U685                      BUF3            fsa0a_c_sc_tc   6.000000  
+U686                      BUF3            fsa0a_c_sc_tc   6.000000  
+U687                      BUF3            fsa0a_c_sc_tc   6.000000  
+U688                      XNR2P           fsa0a_c_sc_tc   11.000000 
+U689                      INV2            fsa0a_c_sc_tc   3.000000  
+U690                      BUF4            fsa0a_c_sc_tc   7.000000  
+U691                      BUF4            fsa0a_c_sc_tc   7.000000  
+U692                      BUF4            fsa0a_c_sc_tc   7.000000  
+U693                      BUF4            fsa0a_c_sc_tc   7.000000  
+U694                      BUF4            fsa0a_c_sc_tc   7.000000  
+U695                      BUF4            fsa0a_c_sc_tc   7.000000  
+U696                      BUF4            fsa0a_c_sc_tc   7.000000  
+U697                      INV4            fsa0a_c_sc_tc   5.000000  
+U698                      INV3            fsa0a_c_sc_tc   4.000000  
+U699                      INV3            fsa0a_c_sc_tc   4.000000  
+U700                      INV4            fsa0a_c_sc_tc   5.000000  
+U701                      INV3            fsa0a_c_sc_tc   4.000000  
+U702                      BUF3            fsa0a_c_sc_tc   6.000000  
+U703                      BUF3            fsa0a_c_sc_tc   6.000000  
+U704                      BUF3            fsa0a_c_sc_tc   6.000000  
+U705                      BUF3            fsa0a_c_sc_tc   6.000000  
+U706                      BUF3            fsa0a_c_sc_tc   6.000000  
+U707                      BUF3            fsa0a_c_sc_tc   6.000000  
+U708                      BUF3            fsa0a_c_sc_tc   6.000000  
+U709                      BUF3            fsa0a_c_sc_tc   6.000000  
+U710                      BUF3            fsa0a_c_sc_tc   6.000000  
+U711                      BUF3            fsa0a_c_sc_tc   6.000000  
+U712                      BUF3            fsa0a_c_sc_tc   6.000000  
+U713                      BUF3            fsa0a_c_sc_tc   6.000000  
+U714                      BUF3            fsa0a_c_sc_tc   6.000000  
+U715                      BUF3            fsa0a_c_sc_tc   6.000000  
+U716                      BUF3            fsa0a_c_sc_tc   6.000000  
+U717                      BUF3            fsa0a_c_sc_tc   6.000000  
+U718                      BUF3            fsa0a_c_sc_tc   6.000000  
+U719                      BUF3            fsa0a_c_sc_tc   6.000000  
+U720                      BUF3            fsa0a_c_sc_tc   6.000000  
+U721                      BUF3            fsa0a_c_sc_tc   6.000000  
+U722                      BUF3            fsa0a_c_sc_tc   6.000000  
+U723                      BUF3            fsa0a_c_sc_tc   6.000000  
+U724                      BUF3            fsa0a_c_sc_tc   6.000000  
+U725                      BUF3            fsa0a_c_sc_tc   6.000000  
+U726                      BUF3            fsa0a_c_sc_tc   6.000000  
+U727                      BUF3            fsa0a_c_sc_tc   6.000000  
+U728                      BUF3            fsa0a_c_sc_tc   6.000000  
+U729                      BUF3            fsa0a_c_sc_tc   6.000000  
+U730                      BUF3            fsa0a_c_sc_tc   6.000000  
+U731                      BUF3            fsa0a_c_sc_tc   6.000000  
+U732                      BUF3            fsa0a_c_sc_tc   6.000000  
+U733                      BUF3            fsa0a_c_sc_tc   6.000000  
+U734                      BUF3            fsa0a_c_sc_tc   6.000000  
+U735                      BUF3            fsa0a_c_sc_tc   6.000000  
+U736                      BUF3            fsa0a_c_sc_tc   6.000000  
+U737                      BUF3            fsa0a_c_sc_tc   6.000000  
+U738                      BUF3            fsa0a_c_sc_tc   6.000000  
+U739                      BUF3            fsa0a_c_sc_tc   6.000000  
+U740                      BUF3            fsa0a_c_sc_tc   6.000000  
+U741                      BUF3            fsa0a_c_sc_tc   6.000000  
+U742                      BUF3            fsa0a_c_sc_tc   6.000000  
+U743                      BUF3            fsa0a_c_sc_tc   6.000000  
+U744                      BUF3            fsa0a_c_sc_tc   6.000000  
+U745                      BUF3            fsa0a_c_sc_tc   6.000000  
+U746                      BUF3            fsa0a_c_sc_tc   6.000000  
+U747                      BUF3            fsa0a_c_sc_tc   6.000000  
+U748                      BUF3            fsa0a_c_sc_tc   6.000000  
+U749                      BUF3            fsa0a_c_sc_tc   6.000000  
+U750                      BUF3            fsa0a_c_sc_tc   6.000000  
+U751                      BUF3            fsa0a_c_sc_tc   6.000000  
+U752                      BUF3            fsa0a_c_sc_tc   6.000000  
+U753                      BUF3            fsa0a_c_sc_tc   6.000000  
+U754                      BUF3            fsa0a_c_sc_tc   6.000000  
+U755                      BUF3            fsa0a_c_sc_tc   6.000000  
+U756                      BUF3            fsa0a_c_sc_tc   6.000000  
+U757                      BUF3            fsa0a_c_sc_tc   6.000000  
+U758                      BUF3            fsa0a_c_sc_tc   6.000000  
+U759                      BUF3            fsa0a_c_sc_tc   6.000000  
+U760                      BUF3            fsa0a_c_sc_tc   6.000000  
+U761                      BUF3            fsa0a_c_sc_tc   6.000000  
+U762                      BUF3            fsa0a_c_sc_tc   6.000000  
+U763                      BUF3            fsa0a_c_sc_tc   6.000000  
+U764                      BUF3            fsa0a_c_sc_tc   6.000000  
+U765                      BUF3            fsa0a_c_sc_tc   6.000000  
+U766                      INV1            fsa0a_c_sc_tc   3.000000  
+U767                      INV4            fsa0a_c_sc_tc   5.000000  
+U768                      INV4            fsa0a_c_sc_tc   5.000000  
+U769                      INV4            fsa0a_c_sc_tc   5.000000  
+U770                      INV4            fsa0a_c_sc_tc   5.000000  
+U771                      INV3            fsa0a_c_sc_tc   4.000000  
+U772                      INV3            fsa0a_c_sc_tc   4.000000  
+U773                      INV4            fsa0a_c_sc_tc   5.000000  
+U774                      INV4            fsa0a_c_sc_tc   5.000000  
+U775                      INV4            fsa0a_c_sc_tc   5.000000  
+U776                      INV4            fsa0a_c_sc_tc   5.000000  
+U777                      INV4            fsa0a_c_sc_tc   5.000000  
+U778                      BUF4            fsa0a_c_sc_tc   7.000000  
+U779                      INV4            fsa0a_c_sc_tc   5.000000  
+U780                      INV4            fsa0a_c_sc_tc   5.000000  
+U781                      INV4            fsa0a_c_sc_tc   5.000000  
+U782                      INV4            fsa0a_c_sc_tc   5.000000  
+U783                      INV4            fsa0a_c_sc_tc   5.000000  
+U784                      INV4            fsa0a_c_sc_tc   5.000000  
+U785                      INV4            fsa0a_c_sc_tc   5.000000  
+U786                      INV3            fsa0a_c_sc_tc   4.000000  
+U787                      INV3            fsa0a_c_sc_tc   4.000000  
+U788                      MUX2P           fsa0a_c_sc_tc   8.000000  
+U789                      BUF4            fsa0a_c_sc_tc   7.000000  
+U790                      BUF4            fsa0a_c_sc_tc   7.000000  
+U791                      BUF4            fsa0a_c_sc_tc   7.000000  
+U792                      BUF4            fsa0a_c_sc_tc   7.000000  
+U793                      BUF4            fsa0a_c_sc_tc   7.000000  
+U794                      BUF4            fsa0a_c_sc_tc   7.000000  
+U795                      BUF4            fsa0a_c_sc_tc   7.000000  
+U796                      BUF4            fsa0a_c_sc_tc   7.000000  
+U797                      BUF4            fsa0a_c_sc_tc   7.000000  
+U798                      BUF4            fsa0a_c_sc_tc   7.000000  
+U799                      BUF4            fsa0a_c_sc_tc   7.000000  
+U800                      BUF4            fsa0a_c_sc_tc   7.000000  
+U801                      BUF4            fsa0a_c_sc_tc   7.000000  
+U802                      MUX2P           fsa0a_c_sc_tc   8.000000  
+U803                      INV4            fsa0a_c_sc_tc   5.000000  
+U804                      INV4            fsa0a_c_sc_tc   5.000000  
+U805                      INV4            fsa0a_c_sc_tc   5.000000  
+U806                      INV4            fsa0a_c_sc_tc   5.000000  
+U807                      INV4            fsa0a_c_sc_tc   5.000000  
+U808                      INV4            fsa0a_c_sc_tc   5.000000  
+U809                      INV4            fsa0a_c_sc_tc   5.000000  
+U810                      INV4            fsa0a_c_sc_tc   5.000000  
+U811                      BUF4            fsa0a_c_sc_tc   7.000000  
+U812                      INV4            fsa0a_c_sc_tc   5.000000  
+U813                      INV4            fsa0a_c_sc_tc   5.000000  
+U814                      INV4            fsa0a_c_sc_tc   5.000000  
+U815                      INV4            fsa0a_c_sc_tc   5.000000  
+U816                      INV4            fsa0a_c_sc_tc   5.000000  
+U817                      INV4            fsa0a_c_sc_tc   5.000000  
+U818                      INV4            fsa0a_c_sc_tc   5.000000  
+U819                      INV4            fsa0a_c_sc_tc   5.000000  
+U820                      INV4            fsa0a_c_sc_tc   5.000000  
+U821                      INV4            fsa0a_c_sc_tc   5.000000  
+U822                      INV4            fsa0a_c_sc_tc   5.000000  
+add_52                    adder_DW01_add_64_1             3633.000000
+                                                                    BO, h
+am_reg[0]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[1]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[2]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[3]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[4]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[5]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[6]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[7]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[8]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[9]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[10]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[11]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[12]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[13]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[14]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[15]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[16]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[17]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[18]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[19]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[20]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[21]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[22]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[23]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[24]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[25]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[26]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[27]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[28]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[29]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[30]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[31]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[32]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[33]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[34]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[35]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[36]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[37]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[38]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[39]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[40]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[41]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[42]                DFFRBN          fsa0a_c_sc_tc   19.000000 n
+am_reg[43]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[44]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[45]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[46]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[47]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[48]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[49]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[50]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[51]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[52]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[53]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[54]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[55]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[56]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[57]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[58]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+am_reg[59]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[60]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[61]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[62]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+am_reg[63]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[0]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[1]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[2]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[3]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[4]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[5]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[6]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[7]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[8]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[9]                 DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[10]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[11]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[12]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[13]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[14]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[15]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[16]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[17]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[18]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[19]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[20]                DFFRBN          fsa0a_c_sc_tc   19.000000 n
+bm_reg[21]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[22]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[23]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[24]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[25]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[26]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[27]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[28]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[29]                DFFRBN          fsa0a_c_sc_tc   19.000000 n
+bm_reg[30]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[31]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[32]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[33]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[34]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[35]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[36]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[37]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[38]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[39]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[40]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[41]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[42]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[43]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[44]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[45]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[46]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[47]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[48]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[49]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[50]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[51]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[52]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[53]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[54]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[55]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[56]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[57]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[58]                DFFRBT          fsa0a_c_sc_tc   25.000000 n
+bm_reg[59]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[60]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[61]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[62]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+bm_reg[63]                DFFRBP          fsa0a_c_sc_tc   21.000000 n
+cnt_reg[0]                JKFRBN          fsa0a_c_sc_tc   26.000000 n
+cnt_reg[1]                QDFFRBP         fsa0a_c_sc_tc   19.000000 n
+cnt_reg[2]                QDFFRBP         fsa0a_c_sc_tc   19.000000 n
+s_reg[0]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[1]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[2]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[3]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[4]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[5]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[6]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[7]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[8]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[9]                  DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[10]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[11]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[12]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[13]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[14]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[15]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[16]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[17]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[18]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[19]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[20]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[21]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[22]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[23]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[24]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[25]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[26]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[27]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[28]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[29]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[30]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[31]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[32]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[33]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[34]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[35]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[36]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[37]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[38]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[39]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[40]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[41]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[42]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[43]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[44]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[45]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[46]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[47]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[48]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[49]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[50]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[51]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[52]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[53]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[54]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[55]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[56]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[57]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[58]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[59]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[60]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[61]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[62]                 DFFRBP          fsa0a_c_sc_tc   21.000000 n
+s_reg[63]                 QDFFRBP         fsa0a_c_sc_tc   19.000000 n
+--------------------------------------------------------------------------------
+Total 1015 cells                                          13176.000000
+1

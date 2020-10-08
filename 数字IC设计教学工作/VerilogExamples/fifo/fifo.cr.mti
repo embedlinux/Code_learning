@@ -1,0 +1,15 @@
+E:/VerilogExamples/source/fifo_tb2.v {1 {vlog -work work E:/VerilogExamples/source/fifo_tb2.v
+Model Technology ModelSim SE vlog 5.7c Compiler 2003.03 Mar 13 2003
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}} E:/VerilogExamples/source/fifo16x8.v {1 {vlog -work work E:/VerilogExamples/source/fifo16x8.v
+Model Technology ModelSim SE vlog 5.7c Compiler 2003.03 Mar 13 2003
+-- Compiling module fifo16x8
+
+Top level modules:
+	fifo16x8
+
+} {} {}}

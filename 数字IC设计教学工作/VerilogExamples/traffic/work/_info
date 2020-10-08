@@ -1,0 +1,25 @@
+m255
+cModel Technology
+dC:\Modeltech_5.7c\examples
+vtestbench
+I;9GbBPS5NlZ2J;aLGdTBO0
+VhGfW:390DM[oDMzegDH9`2
+dE:\VerilogExamples\traffic
+w1110686570
+FE:/VerilogExamples/source/traffic_tb.v
+L0 8
+OE;L;5.7c;17
+r1
+31
+o-work work
+vtraffic_controller
+I@:eLWk8a5KFlj[I>YMSJg2
+V8IT?YaDjlkAbKc250@O8@1
+dE:\VerilogExamples\traffic
+w1110685904
+FE:/VerilogExamples/source/traffic_controller.v
+L0 3
+OE;L;5.7c;17
+r1
+31
+o-work work

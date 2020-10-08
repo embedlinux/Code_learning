@@ -1,0 +1,17 @@
+                       
+set target_library {fsa0a_c_sc_tc.db}
+set link_library {* fsa0a_c_sc_tc.db}
+set symbol_library {fsa0a_c_sc.sdb}                         
+set search_path " /usr/iclib/fsa0a_c/2004Q4v1.1/SC/FrontEnd/synopsys "
+
+set designer " XinXiaoNing "
+set find_converts_name_lists "false"
+# set hdlin_translate_off_skip_text true
+
+# set write_name_nets_same_as_ports true
+# set compile_fix_multiple_port_nets true
+# set verilogout_no_tri true
+
+# set power_preserve_rtl_hier_names "true"
+
+

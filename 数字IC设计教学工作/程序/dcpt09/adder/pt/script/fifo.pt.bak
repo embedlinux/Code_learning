@@ -1,0 +1,106 @@
+#------------------------------------------------------------------------------
+# File   : A PT script file for a FIFO
+# Author : xinxn 
+# date   : 2009-04-02    
+#------------------------------------------------------------------------------
+set sh_enable_page_mode true
+
+set TECH_LIB_PATH "/usr/iclib/fsa0a_c/2004Q4v1.1/SC/FrontEnd/synopsys"
+set IO_LIB_PATH   "/usr/iclib/fsa0a_c/2004Q4v1.1/IO/FrontEnd/synopsys"
+set DESIGN_PATH   "/usr/fifo09/dc/netlist"
+set search_path [concat $TECH_LIB_PATH $IO_LIB_PATH $DESIGN_PATH  $search_path]
+
+set link_path {* fsa0a_c_sc_tc.db fsa0a_c_io_tc.db}
+
+read_verilog $DESIGN_PATH/fifo16x8_gate.v
+
+list_designs
+
+current_design fifo16x8
+
+link_design
+
+#------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+set TECH_LIB fsa0a_c_sc_tc
+set IO_LIB   fsa0a_c_io_tc
+set THIS_DESIGN fifo16x8
+#------------------------------------------------------------------------------
+# reports path and file
+#------------------------------------------------------------------------------
+set WORK_DIR /usr/fifo09/pt
+
+set SETUP_RPT_FILE $WORK_DIR/report/setup_time.rpt
+set HOLD_RPT_FILE $WORK_DIR/report/hold_time.rpt
+set TRANS_RPT_FILE $WORK_DIR/report/transition.rpt
+set SUMMARY_RPT_FILE $WORK_DIR/report/summary.rpt
+set VIOL_FILE $WORK_DIR/report/voilation.rpt
+#------------------------------------------------------------------------------
+set SDF_FILE  $WORK_DIR/sdf/fifo16x8.sdf
+#------------------------------------------------------------------------------
+set CLK_PER 2.0
+set HALF_PER [expr $CLK_PER/2.0]
+set IN_DLY [expr $CLK_PER * 0.3]
+set OUT_DLY [expr $CLK_PER * 0.3]
+set MAX_TRANSITION [expr $CLK_PER/20.0]
+#-------------------------------------------------------------------------------
+set ALL_EX_CLK [remove_from_collection [all_inputs] [get_ports clk]]
+#------------------------------------------------------------------------------
+# design rules constraints
+#------------------------------------------------------------------------------
+set_operating_conditions TCCOM
+set_wire_load_model -name G5K
+set_wire_load_mode  top
+#------------------------------------------------------------------------------
+set_driving_cell -no_design_rule -lib_cell XMD -library $IO_LIB -pin O $ALL_EX_CLK
+
+set_drive 0 [get_ports clk]
+set_load [load_of $IO_LIB/YA2GSD/I] [all_outputs]
+
+set_max_transition $MAX_TRANSITION [get_designs $THIS_DESIGN]
+
+set MAX_LOAD [expr [load_of $TECH_LIB/BUF1/I]*8]
+set_max_capacitance $MAX_LOAD $ALL_EX_CLK
+
+set_max_transition $MAX_TRANSITION $ALL_EX_CLK
+
+set_max_fanout 8 $ALL_EX_CLK
+#------------------------------------------------------------------------------
+# Timing constraints
+#------------------------------------------------------------------------------
+create_clock -p $CLK_PER -name CLK [get_ports clk]
+set_clock_uncertainty -setup 0.2 CLK
+set_clock_uncertainty -hold 0.1 CLK
+set_input_delay -max $IN_DLY -clock CLK $ALL_EX_CLK 
+set_input_delay -min 0 -clock CLK $ALL_EX_CLK
+set_output_delay $OUT_DLY [all_outputs]
+#------------------------------------------------------------------------------
+report_port 
+report_clock -skew
+report_port -input_delay
+report_port -output_delay
+check_timing
+#------------------------------------------------------------------------------
+report_constraint -all_violators > $VIOL_FILE
+#------------------------------------------------------------------------------
+report_timing > $SETUP_RPT_FILE
+report_timing -delay min > $HOLD_RPT_FILE
+#------------------------------------------------------------------------------
+report_timing -nets -transition_time -capacitance > $TRANS_RPT_FILE
+report_timing -nworst 10 -path_type summary > $SUMMARY_RPT_FILE
+#------------------------------------------------------------------------------
+write_sdf $SDF_FILE
+
+quit
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -1,0 +1,24 @@
+ 
+****************************************
+Report : area
+Design : counter
+Version: 2003.03
+Date   : Sun Apr 10 11:24:41 2005
+****************************************
+
+Library(s) Used:
+
+    class (File: /usr/synopsys/libraries/syn/class.db)
+
+Number of ports:               11
+Number of nets:                27
+Number of cells:               17
+Number of references:          10
+
+Combinational area:         30.000000
+Noncombinational area:      39.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:            69.000000
+Total area:                 undefined
+1

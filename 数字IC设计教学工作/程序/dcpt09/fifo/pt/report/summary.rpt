@@ -1,0 +1,55 @@
+****************************************
+Report : timing
+	-path summary
+	-delay max
+	-nworst 10
+	-max_paths 10
+Design : fifo16x8
+Version: U-2003.03-SP1
+Date   : Sun Apr  5 12:02:38 2009
+****************************************
+
+Startpoint                      Endpoint                           Slack
+------------------------------------------------------------------------
+rst (in)                        fifo_regs/re6_reg[6]/RB (DFFRBN)
+                                                                    0.40
+rst (in)                        fifo_regs/re11_reg[2]/RB (DFFRBN)
+                                                                    0.40
+rst (in)                        fifo_regs/re12_reg[0]/RB (DFFRBN)
+                                                                    0.40
+rst (in)                        fifo_regs/re12_reg[1]/RB (DFFRBN)
+                                                                    0.40
+rst (in)                        fifo_regs/re12_reg[3]/RB (DFFRBN)
+                                                                    0.40
+rst (in)                        fifo_regs/re12_reg[5]/RB (DFFRBN)
+                                                                    0.40
+rst (in)                        fifo_regs/re12_reg[7]/RB (DFFRBN)
+                                                                    0.40
+rst (in)                        fifo_regs/re13_reg[1]/RB (DFFRBN)
+                                                                    0.40
+rst (in)                        fifo_regs/re14_reg[1]/RB (DFFRBN)
+                                                                    0.40
+rst (in)                        fifo_regs/re14_reg[3]/RB (DFFRBN)
+                                                                    0.40
+wr_n (in)                       fifo_regs/re13_reg[2]/D (DFFRBN)
+                                                                    0.19
+wr_n (in)                       fifo_regs/re13_reg[2]/D (DFFRBN)
+                                                                    0.19
+wr_n (in)                       fifo_regs/re14_reg[0]/D (DFFRBN)
+                                                                    0.19
+wr_n (in)                       fifo_regs/re14_reg[0]/D (DFFRBN)
+                                                                    0.19
+wr_n (in)                       fifo_regs/re14_reg[2]/D (DFFRBN)
+                                                                    0.19
+wr_n (in)                       fifo_regs/re14_reg[2]/D (DFFRBN)
+                                                                    0.19
+wr_n (in)                       fifo_regs/re14_reg[5]/D (DFFRBN)
+                                                                    0.19
+wr_n (in)                       fifo_regs/re14_reg[5]/D (DFFRBN)
+                                                                    0.19
+wr_n (in)                       fifo_regs/re14_reg[6]/D (DFFRBN)
+                                                                    0.19
+wr_n (in)                       fifo_regs/re14_reg[6]/D (DFFRBN)
+                                                                    0.19
+
+1

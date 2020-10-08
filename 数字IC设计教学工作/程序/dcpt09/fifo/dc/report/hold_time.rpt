@@ -1,0 +1,48 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 1
+Design : fifo16x8
+Version: 2003.03
+Date   : Sun Apr  5 11:47:51 2009
+****************************************
+
+Operating Conditions: TCCOM   Library: fsa0a_c_sc_tc
+Wire Load Model Mode: top
+
+  Startpoint: rd_n (input port clocked by CLK)
+  Endpoint: do_reg[6] (rising edge-triggered flip-flop clocked by CLK)
+  Path Group: CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fifo16x8           G5K                   fsa0a_c_sc_tc
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.00       0.00 r
+  rd_n (in)                                0.02       0.02 r
+  U86/O (INV3)                             0.04       0.05 f
+  U21/O (MUX2)                             0.15       0.21 f
+  do_reg[6]/D (DFFRBT)                     0.00       0.21 f
+  data arrival time                                   0.21
+
+  clock CLK (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  clock uncertainty                        0.10       0.10
+  do_reg[6]/CK (DFFRBT)                    0.00       0.10 r
+  library hold time                       -0.01       0.09
+  data required time                                  0.09
+  -----------------------------------------------------------
+  data required time                                  0.09
+  data arrival time                                  -0.21
+  -----------------------------------------------------------
+  slack (MET)                                         0.12
+
+
+1

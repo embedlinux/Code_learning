@@ -1,0 +1,60 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : top
+Version: 2003.03
+Date   : Tue Apr 12 08:56:42 2005
+****************************************
+
+Operating Conditions: 
+Wire Load Model Mode: top
+
+  Startpoint: u1/clk_set_m_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_1)
+  Endpoint: u2/cnt_reg[3]
+            (rising edge-triggered flip-flop clocked by clk_1)
+  Path Group: clk_1
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  top                05x05                 class
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk_1 (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  u1/clk_set_m_reg[1]/CP (FD2)             0.00       0.00 r
+  u1/clk_set_m_reg[1]/Q (FD2)              1.74       1.74 r
+  u1/clk_set_m[1] (itf)                    0.00       1.74 r
+  u2/clk_set[1] (div)                      0.00       1.74 r
+  u2/U30/Z (IVI)                           0.18       1.92 f
+  u2/U25/Z (NR2I)                          1.11       3.03 r
+  u2/U21/Z (IVI)                           0.12       3.15 f
+  u2/U17/Z (ND2I)                          0.25       3.41 r
+  u2/U16/Z (ND2I)                          0.12       3.53 f
+  u2/U14/Z (ND2I)                          0.33       3.86 r
+  u2/U12/Z (ND2I)                          0.12       3.98 f
+  u2/U10/Z (ND2I)                          0.29       4.27 r
+  u2/U24/Z (ENI)                           0.42       4.69 f
+  u2/cnt_reg[3]/D (FD2)                    0.00       4.69 f
+  data arrival time                                   4.69
+
+  clock clk_1 (rise edge)                 10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.10       9.90
+  u2/cnt_reg[3]/CP (FD2)                   0.00       9.90 r
+  library setup time                      -0.85       9.05
+  data required time                                  9.05
+  -----------------------------------------------------------
+  data required time                                  9.05
+  data arrival time                                  -4.69
+  -----------------------------------------------------------
+  slack (MET)                                         4.36
+
+
+1

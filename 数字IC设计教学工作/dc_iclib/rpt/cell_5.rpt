@@ -1,0 +1,23 @@
+ 
+****************************************
+Report : cell
+Design : top
+Version: 2003.03
+Date   : Tue Apr 12 08:56:42 2005
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+u1                        itf                             71.000000 h, n
+u2                        div                             77.000000 h, n
+u3                        counter                         59.000000 h, n
+--------------------------------------------------------------------------------
+Total 3 cells                                             207.000000
+1

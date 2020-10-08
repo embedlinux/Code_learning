@@ -1,0 +1,37 @@
+ 
+****************************************
+Report : cell
+Design : counter
+Version: 2003.03
+Date   : Sun Apr 10 11:24:41 2005
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U3                        EOI             class           3.000000  
+U4                        OR2P            class           2.000000  
+U5                        IVI             class           1.000000  
+U6                        B2I             class           2.000000  
+U7                        B2I             class           2.000000  
+U8                        B2I             class           2.000000  
+U9                        B2I             class           2.000000  
+U10                       B2I             class           2.000000  
+U11                       B5IP            class           3.000000  
+U12                       ENI             class           3.000000  
+U13                       ENI             class           3.000000  
+U14                       ND2I            class           1.000000  
+U15                       MUX21H          class           4.000000  
+q_reg[0]                  FD2             class           9.000000  n
+q_reg[1]                  FD2S            class           10.000000 n
+q_reg[2]                  FD2S            class           10.000000 n
+q_reg[3]                  FD2S            class           10.000000 n
+--------------------------------------------------------------------------------
+Total 17 cells                                            69.000000
+1

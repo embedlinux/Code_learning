@@ -1,0 +1,102 @@
+m255
+cModel Technology
+dE:\VerilogExamples\counter
+vcounter
+IX:4AMIoK]Ua?ePaHn`J4E2
+VYf91m6Jjna^2S>L0gZ8B@2
+dE:\VerilogExamples
+w1109217906
+FE:/VerilogExamples/source/counter.v
+L0 9
+OE;L;5.7c;17
+r1
+31
+o-work work
+vff_byte_crc_tb
+I3`Bd74LW0lMRR>1KITkMh1
+VGob`zg<cAjkg6PjlIFY5?3
+dE:\VerilogExamples
+w1180243908
+FE:/VerilogExamples/ff_byte_crc_tb.v
+L0 4
+OE;L;5.7c;17
+r1
+31
+o-work work
+vff_rcv_crc_tb
+IafhCh@YlL2UgG]n?40@=<3
+VXI91Xl35NzS``hc]m[Pzb0
+dE:\VerilogExamples
+w1180241670
+FE:/VerilogExamples/ff_rcv_crc_tb.v
+L0 2
+OE;L;5.7c;17
+r1
+31
+o-work work
+vff_rcv_crv_tb
+IKaz2bCehW1KC?3>41^l3E1
+VL_<Y^MIhVD^@B_CD6]OVC2
+dE:\VerilogExamples
+w1179675556
+FE:/VerilogExamples/ff_rcv_crc_tb.v
+L0 2
+OE;L;5.7c;17
+r1
+31
+o-work work
+vff_rcv_fcs
+I^:OO^dd7fS<1o0hcac=Lf3
+V@:h^dAU[1N_@SU^RDIe<73
+dE:\VerilogExamples
+w1180241826
+FE:/VerilogExamples/FF_CRC.v
+L0 5
+OE;L;5.7c;17
+r1
+31
+o-work work
+vff_rcv_fcs_1b
+IXb?>l=LHmAd5Y]clgVMRz2
+VCz@0_C=Nc=MGP7Ch;`jRA0
+dE:\VerilogExamples
+w1179672778
+FE:/VerilogExamples/FF_CRC_1.v
+L0 5
+OE;L;5.7c;17
+r1
+31
+o-work work
+vff_rcv_fcs_4b
+ICVG`YD0CnnPle;?EEGY291
+ViZI]a[8iz0QOAhKN;:l7J1
+dE:\VerilogExamples
+w1179844332
+FE:/VerilogExamples/FF_CRC_4.v
+L0 5
+OE;L;5.7c;17
+r1
+31
+o-work work
+vff_rcv_fcs_8b
+IL41S:[iGPbVD1TTYNjglo0
+Vk1VZnUKlgLgVfWV`H;;>S3
+dE:\VerilogExamples
+w1180243970
+FE:/VerilogExamples/FF_CRC_8.v
+L0 5
+OE;L;5.7c;17
+r1
+31
+o-work work
+vtestbench
+ImoQOLh^^MH4lYGVV2[aNY0
+VhGfW:390DM[oDMzegDH9`2
+dE:\VerilogExamples
+w1109218890
+FE:/VerilogExamples/source/counter_tb.v
+L0 9
+OE;L;5.7c;17
+r1
+31
+o-work work

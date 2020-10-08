@@ -1,0 +1,25 @@
+m255
+cModel Technology
+dC:\Modeltech_5.7c\examples
+vfifo16x8
+I:7R^f0h[d6feB10la7WTo3
+VZ2;[;LE;GOZ25VLcb>0Rz2
+dE:\VerilogExamples\fifo
+w1109215700
+FE:/VerilogExamples/source/fifo16x8.v
+L0 9
+OE;L;5.7c;17
+r1
+31
+o-work work
+vtestbench
+I`J<I:nFC;C46iKHZeKTnJ3
+VhGfW:390DM[oDMzegDH9`2
+dE:\VerilogExamples\fifo
+w1109216898
+FE:/VerilogExamples/source/fifo_tb2.v
+L0 9
+OE;L;5.7c;17
+r1
+31
+o-work work
